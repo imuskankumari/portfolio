@@ -1,0 +1,21 @@
+p#one
+{
+background-color: blue; color: aqua;    
+}
+p#two
+{
+background-color: aqua; color: beige;
+}
+p#three
+{
+background-color: black; color: azure;
+}
+p#four
+{
+background-color: blueviolet; color: rgb(255, 198, 198);
+}
+p#five
+{
+background-color: aquamarine; color: azure;
+}
+

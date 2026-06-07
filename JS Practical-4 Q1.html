@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practical-4 Q1.</title>
+    <style>
+        h1 {
+            font-size: 50px;
+            color: palevioletred;
+        }
+
+        form {
+            border: 1px solid;
+            border-width: 5px;
+            height: 1200px;
+            width: 800px;
+            border-color: palevioletred;
+            padding: 10px;
+        }
+
+        #one {
+            font-size: 50px;
+            background-color: palevioletred;
+            color: white;
+            height: 60px;
+            width: 220px;
+        }
+
+        #two {
+            font-size: 50px;
+            background-color: palevioletred;
+            color: white;
+            height: 60px;
+            width: 150px;
+        }
+
+        #three {
+            font-size: 50px;
+            background-color: palevioletred;
+            color: white;
+            height: 60px;
+            width: 400px;
+        }
+
+        #four {
+            font-size: 50px;
+            background-color: palevioletred;
+            color: white;
+            height: 60px;
+            width: 400px;
+        }
+
+        #five {
+            font-size: 50px;
+            font-size: 50px;
+            background-color: palevioletred;
+            color: white;
+            height: 120px;
+            width: 350px;
+        }
+
+        #six {
+            font-size: 50px;
+            background-color: palevioletred;
+            color: white;
+            height: 60px;
+            width: 400px;
+        }
+
+        #seven {
+            font-size: 50px;
+            background-color: palevioletred;
+            color: white;
+            height: 60px;
+            width: 400px;
+        }
+
+        #eight {
+            font-size: 50px;
+            background-color: palevioletred;
+            color: white;
+            height: 60px;
+            width: 400px;
+        }
+
+        #nine {
+            font-size: 50px;
+            background-color: palevioletred;
+            color: white;
+            height: 60px;
+            width: 400px;
+        }
+
+        #ten {
+            font-size: 50px;
+            background-color: palevioletred;
+            color: white;
+            height: 60px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body bgcolor="pink">
+    <script>
+        document.write("<h1><u>Q1.WAP in JS to calculate area & rectangle of any</u><h1>");
+        function refresh() {
+            f1.in.disabled = false;
+            f1.bn.disabled = false;
+            f1.cal_rectangle.disabled = false;
+            f1.radius.disabled = false;
+            f1.cal_cirle.disabled = false;
+            f1.ans1.disabled = false;
+            f1.ans2.disabled = false;
+        }
+        function rectangle() {
+            f1.in.disabled = false;
+            f1.bn.disabled = false;
+            f1.ans1.disabled = false;
+            f1.cal_rectangle.disabled = false;
+            f1.radius.disabled = true;
+            f1.cal_cirle.disabled = true;
+            f1.ans2.disabled = true;
+        }
+        function circle() {
+            f1.radius.disabled = false;
+            f1.cal_cirle.disabled = false;
+            f1.ans2.disabled = false;
+            f1.in.disabled = true;
+            f1.bn.disabled = true;
+            f1.cal_rectangle.disabled = true;
+            f1.ans1.disabled = true;
+        }
+        function area_of_rectangle() {
+            i = parseInt(f1.in.value);
+            b = parseInt(f1.bn.value);
+            a = i * b;
+            f1.ans1.value = a;
+        }
+        function area_of_cirle() {
+            r = parseInt(f1.radius.value);
+            a = 3.14 * r * r;
+            f1.ans2.value = a;
+        }
+    </script>
+    <form name="f1">
+        <input id="one" type="button" value="Retangle" onclick="rectangle()">
+        <input id="two" type="button" value="Circle" onclick="circle()"> <br>
+        <fieldset>
+            <legend>Rectangle</legend>
+            Enter Length <br> <input id="three" type="text" name="in" size="10"> <br>
+            Enter Breadth <br> <input id="four" type="text" name="bn" size="10" <br>
+            <input id="five" type="button" value="Area of 
+        Rectangle" name="cal_rectangle" onclick="area_of_rectangle()"> <br>
+            Area <input id="six" type="text" name="ans1" size="10"> <br>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Circle</legend>
+            Enter Radius <br> <input id="seven" type="text" name="radius" size="10"> <br>
+            Area <br> <input id="eight" type="text" name="ans2" size="10"> <br>
+            <input id="nine" type="button" value="Area of Circle" name="cal_cirle" onclick="area_of_cirle()">
+        </fieldset>
+        <br>
+        <input id="ten" type="button" value="Refresh" onclick="refresh()">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+h1{
+    background-color: antiquewhite;
+    color: black;
+    text-align: center;
+    font-size: 100px;
+}
+#one{
+    background-image: url(shiva.png);
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 500px;
+    animation-name: Shiva;
+    animation-delay: 1s;
+    animation-duration: 2s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+@keyframes Shiva{
+    from{border-radius: 0; margin: 0; background-image: url(shiva.png);}
+    to{border-radius: 0; margin: 50%; background-image: url(shiva\ 1.jpg); transform:rotate(30deg) translate(100px,200px) scale(2,2) skewx(30deg)}
+}    
+#two{
+    background-image: url(ganesha.jpg);
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 500px;
+    animation-name: Mahakal;
+    animation-delay: 0;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+@keyframes Mahakal{
+    from{border-radius: 0; margin: 0; background-image: url(ganesha.jpg);}
+    to{border-radius: 0; margin: 50%; background-image: url(Jai\ Shree\ Ram.jpg); transform:rotate(360deg) translate(200px,200px) scale(4,4) skewY(50deg)}
+}
+#three{
+    background-image: url(Aadiyogi.jpg);
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 1000px;
+    animation-name: Mahakal;
+    animation-delay: 1s;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+@keyframes Mahakal{
+    from{border-radius: 0; margin: 0; background-image: url(Aadiyogi.jpg);}
+    to{border-radius: 0; margin: 50%; background-image: url(ganesha.jpg); transform:rotate(80deg) translate(400px,400px) scale(5,5) skew(100deg)}
+}
+

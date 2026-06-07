@@ -1,0 +1,56 @@
+body {
+    height:auto;
+    width:auto;
+    background:-webkit-linear-gradient(left, red, orange, yellow);
+}
+#title {
+    height: 100px;
+    width: auto;
+    color: white ;
+    background:-webkit-linear-gradient(60deg,green,blue);
+    padding: 10px;
+    font-size: 50px;
+    text-align: center;
+}
+#main2 {
+    height: 600px;
+    width: auto;
+}
+
+#menu {
+    height: 580px;
+    width: 20%;
+    background: -webkit-repeating-linear-gradient(top left, yellow, gold 10%, khaki 10%);
+    padding: 10px;
+    color: black;
+    font-size: 30px;
+    float: left;
+}
+
+#menu p {
+    height: 40px;
+    width: 180px;
+    color: white;
+    background: -webkit-linear-gradient(purple, olive);
+}
+
+#base {
+    height: 80px;
+    padding: 10px;
+    width: auto;
+    font-size: 020px;
+    background-color: teal;
+}
+
+#main {
+    margin: 5px 100px;
+    width: auto;
+    height: 900px;
+}
+
+#CI {
+    height: 580px;
+    width: 77%;
+    float: right;
+    border: 4px rgb(233, 0, 0) dotted;
+}

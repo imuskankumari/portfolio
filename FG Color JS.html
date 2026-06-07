@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FG Color JS</title>
+</head>
+<body bgcolor="gree" text="blue">
+<h1><u>Background Colors Examle</u></h1>    
+<input type="button" value="Yellow Screen" onclick='document.fgColor="yellow"'>
+<script language="javascript">
+    document.writeln("<h1>Hello ! How Are You</h1>")
+</script>
+<form>
+    <input type="button" value="Apply fgColor in Text" onclick='document.fgColor="white"'>
+
+    <input type="button" value="Apply in bgColor in Screen" onclick='document.bgColor="red"'>
+</form><br><br>
+<form name="f1">
+    Colors (Red,Green,Blue,Purple,Orange): <input type="text" name="color1">
+<input type="button" value="Set Color" onclick="bg()">
+</form>
+<script>
+    function bg()
+    {
+        x=document.f1.color1.value;
+
+        switch(x) 
+        {
+            case"red":
+            document.bgColor="red";
+            document.fgColor="white";
+            break;
+            case"blue":
+            document.bgColor="blue";
+            document.fgColor="yellow";
+            break;
+            case"green":
+            document.bgColor="green";
+            document.fgColor="White";
+            break;
+            case"purple":
+            document.bgColor="purple";
+            document.fgColor="pink";
+            break;
+            case"orange":
+            document.bgColor="orange";
+            document.fgColor="black";
+            break;
+            default:
+            document.bgColor="white";
+            document.fgColor="black";
+        }
+    }
+
+</script>
+</body>
+</html>

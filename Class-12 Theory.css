@@ -1,0 +1,38 @@
+Div#one{
+text-align: center;
+height:200px;
+width:200px;
+background-color: rgb(231, 123, 0);
+color: rgb(0, 40, 173);
+margin-top: auto;
+font-size: 50px;
+padding-left:10px;
+float:left;
+border-radius:1%;
+}
+#two{
+text-align:center;
+height:200px;
+width:200px;
+background-color: rgb(0, 38, 255);
+color: rgb(255, 255, 255);
+margin-left: 30%;
+font-size: 20px;
+padding-left:10px;
+float:center;
+border-radius:50%;
+}
+#three{
+text-align:center;
+height:200px;
+width:200px;
+background-color: rgb(25, 109, 0);
+color: rgb(0, 22, 145);
+
+font-size: 50px;
+padding-left:10px;
+float:right;
+border-radius:6%;
+}
+
+

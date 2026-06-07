@@ -1,63 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class-12 Practical (1)</title>
+    <title>Muskan Kumari - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <link rel="stylesheet" type="text/css" href="Class-12 Practical WWW Home Page.css">
-    <div id="main">
-        <div id="title"><h1>Welcome To My Portfolio</h1><br>I am Muskan Kumari
-        </div>
-        <div id="main2">
-            <div id="menu">
-                <p><a href="CLASS-2 PRACTICAL.html" target="mainarea">Home</a></p>
-                <p><a href="CLASS-1 PRATICAL.html" target="mainarea">My 1st WebPage</a></p>
-                <p><a href="CLASS-2 PRACTICAL.html" target="mainarea">My 2nd WebPage</a></p>
-                <p><a href="CLASS-3 THEORY.html" target="mainarea">My 2nd WebPage</a></p>
-                <p><a href="CLASS-3 THEORY.html" target="mainarea">My 2nd WebPage</a></p>
-                <p><a href="CLASS-3 THEORY.html" target="mainarea">My 2nd WebPage</a></p>
-                <p><a href="CLASS-3 THEORY.html" target="mainarea">My 2nd WebPage</a></p>
-                <p><a href="CLASS-3 THEORY.html" target="mainarea">My 2nd WebPage</a></p>
-                <p><a href="CLASS-3 THEORY.html" target="mainarea">My 2nd WebPage</a></p>
-                <p><a href="CLASS-3 THEORY.html" target="mainarea">My 2nd WebPage</a></p>
-                <p><a href="CLASS-3 THEORY.html" target="mainarea">My 2nd WebPage</a></p>
 
+    <header id="title">
+        <h1>Welcome To My Portfolio</h1>
+        <p>I am Muskan Kumari</p>
+    </header>
 
-                <p><a href="CLASS-5 PRACTICAL.html" target="mainarea">Course</a></p>
-                <p><a href="Modern Structure Enquiry Form (Students Registration).html" target="mainarea">Admission</a></p>
-                <p><a href="CLASS-10 PRACTICAL.html">Apply Online</a></p>
-                <p><a href="#">Feedback</a></p>
-                <P><a href="CLASS-8 PRACTICAL.html">Gallery</a></P>
-                <p><a href="#">Contact Us</a></p>
-            </div>
-            <div id="CI">
-                <iframe src="Class-12 Practical Home Page  Text(2).html" name="mainarea" height="580px" width="1025px"></iframe>
-                <div id="adds">
-        <div id="add1"></div>
-        <div id="add2"><p>Jai Shree Ram</p></div>
-        <div id="add3"><marquee direction="down" height="180px" onmouseover="this.stop();" onmouseout="this.start()">
-            Jai Shree Ram 
-            Jai Shree Ram
-            Jai Shree Ram 
-            Jai Shree Ram 
-            Jai Shree Ram
-            Jai Shree Ram 
-            Jai Shree Ram 
-            Jai Shree Ram
-            Jai Shree Ram 
-            </marquee>
-        </div>
-</div>
+    <main id="main2">
+        
+        <aside id="menu">
+            <div class="profile-container">
+                <img src="my-photo.jpg" alt="Muskan Kumari" class="profile-img">
+                <h2>Muskan Kumari</h2>
+                <p class="designation">Graphic & Web Designer</p>
+                <p class="about-text">
+                    Creative Graphic & Web Designer hoon. Mujhe modern web layouts design karna, colors ke saath khelna aur interactive user interfaces banana pasand hai. Yeh mera personal portfolio hai jahan maine apne design projects ko showcase kiya hai.
+                </p>
             </div>
             
-        </div>
-        <div class="style I" id="base">&copy;&reg;Jai Shree Ram, New Delhi-110043
-        </div>
-</div>
-    
+            <nav class="nav-links">
+                <a href="home-content.html" target="mainarea" class="btn">Home</a>
+                <a href="CLASS-2 PRACTICAL.html" target="mainarea" class="btn">Course</a>
+                <a href="Modern Structure Enquiry Form (Students Registration).html" target="mainarea" class="btn">Admission</a>
+                <a href="CLASS-10 PRACTICAL.html" target="mainarea" class="btn">Apply Online</a>
+                <a href="#" target="mainarea" class="btn">Feedback</a>
+                <a href="CLASS-8 PRACTICAL.html" target="mainarea" class="btn">Gallery</a>
+                <a href="#" target="mainarea" class="btn">Contact Us</a>
+            </nav>
+        </aside>
+
+        <section id="content-area">
+            <iframe src="home-content.html" name="mainarea" id="main-iframe"></iframe>
+            
+            <div id="notification-panel">
+                <div class="marquee-box">
+                    <span class="animated-text">Jai Shree Ram</span>
+                </div>
+                <div class="marquee-box scroll-box">
+                    <marquee direction="down" height="120px" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
+                        <p>This is new Notification 1</p>
+                        <p>This is new Notification 2</p>
+                        <p>This is new Notification 3</p>
+                        <p>This is new Notification 4</p>
+                    </marquee>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>

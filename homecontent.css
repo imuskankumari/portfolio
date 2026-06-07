@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+.article-card {
+    flex: 1;
+    max-width: 600px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    aspect-ratio: 16 / 10;
+}
+.bg-slider {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: slideImages 16s infinite linear;
+}
+@keyframes slideImages {
+    0%, 20% { background-image: url('ganesha.jpg'); }
+    25%, 45% { background-image: url('shiva 1.jpg'); }
+    50%, 70% { background-image: url('Jai Shree Ram.jpg'); }
+    75%, 100% { background-image: url('Aadiyogi.jpg'); }
+}
+.article-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+}

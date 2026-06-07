@@ -2,48 +2,52 @@ body {
     margin: 0;
     padding: 20px;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #ffffff;
+    background-color: #f4f4f9;
     display: flex;
-    gap: 20px;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    min-height: 100vh;
 }
-.article-card {
-    flex: 1;
-    max-width: 600px;
+.portfolio-card {
+    width: 100%;
+    max-width: 700px;
     position: relative;
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     aspect-ratio: 16 / 10;
 }
-.bg-slider {
+/* Yahan aapki Graphic Designing ki photos change hongi */
+.design-slider {
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
-    animation: slideImages 16s infinite linear;
+    animation: changeDesigns 12s infinite linear;
 }
-@keyframes slideImages {
-    0%, 20% { background-image: url('ganesha.jpg'); }
-    25%, 45% { background-image: url('shiva 1.jpg'); }
-    50%, 70% { background-image: url('Jai Shree Ram.jpg'); }
-    75%, 100% { background-image: url('Aadiyogi.jpg'); }
+@keyframes changeDesigns {
+    0%, 30% { background-image: url('photo1.jpg'); }
+    35%, 65% { background-image: url('photo2.jpg'); }
+    70%, 100% { background-image: url('photo3.jpg'); }
 }
-.article-overlay {
+.text-overlay {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
     color: white;
-    padding: 30px;
+    padding: 30px 20px;
     box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
+}
+.text-overlay h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+.text-overlay p {
+    margin: 0;
     font-size: 16px;
-    line-height: 1.6;
+    opacity: 0.9;
 }

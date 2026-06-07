@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official SBI KYC Updation Form (Annexure B)</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background: #f4f4f4; margin: 0; padding: 20px; }
+        .form-container { max-width: 900px; margin: auto; background: white; padding: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .header-section { text-align: center; }
+        h2 { border-bottom: 1px solid #000; padding-bottom: 5px; font-size: 1.2em; }
+        .instruction { font-size: 0.7em; color: #555; margin-bottom: 15px; }
+        .field-row { display: flex; flex-wrap: wrap; margin-bottom: 10px; }
+        .field { flex: 1; min-width: 150px; margin-right: 10px; }
+        label { display: block; font-size: 0.8em; margin-bottom: 3px; font-weight: bold; }
+        input, input[type="date"], input[type="number"], select {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #000; /* mimic official form borders */
+            box-sizing: border-box;
+            font-size: 0.8em;
+        }
+        .section-title { font-weight: bold; margin-top: 20px; border-top: 1px solid #000; padding-top: 5px; font-size: 0.9em; }
+        .checkbox-group label { display: inline; margin-right: 15px; font-weight: normal; font-size: 0.8em; }
+        .full-width { width: 100%; margin-right: 0; }
+        .box-grid { display: grid; grid-template-columns: repeat(20, 1fr); gap: 0px; border: 1px solid black; }
+        .box-grid input { border: none; padding: 0; text-align: center; font-size: 0.7em; }
+        .photo-box { border: 1px solid black; width: 150px; height: 180px; text-align: center; padding-top: 10px; float: right; margin-top: -220px; font-size: 0.7em; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <header class="header-section">
+        <h2>KYC UPDATION FORM INDIVIDUAL (Annexure B)</h2>
+        <p class="instruction">Fields marked asterix (*) are mandatory. Please fill up in BLOCK letters only and use black ink for signature.</p>
+    </header>
+
+    <form action="/submit-sbi-kyc-official" method="POST">
+        
+        <div class="section-title">1 Personal Details</div>
+        
+        <div class="field-row">
+            <div class="field full-width">
+                <label>Name* (Same as ID Proof):</label>
+                <input type="text" name="full_name" placeholder="F I R S T N A M E M I D D L E N A M E L A S T N A M E" required>
+            </div>
+        </div>
+
+        <div class="field-row">
+            <div class="field">
+                <label>Date of Birth* (DD MM YYYY):</label>
+                <input type="text" name="dob" placeholder="D D M M Y Y Y Y" pattern="\d{2} \d{2} \d{4}" required>
+            </div>
+            <div class="field">
+                <label>Gender*:</label>
+                <div class="checkbox-group">
+                    <label><input type="radio" name="gender" value="Male"> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                    <label><input type="radio" name="gender" value="Transgender"> Transgender</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="field-row full-width">
+            <label>Name of Father/Mother/Spouse* (Please Tick One):</label>
+            <input type="text" name="parent_spouse_name" required>
+        </div>
+
+        <div class="field-row">
+            <div class="field">
+                <label>Nationality*:</label>
+                <select name="nationality">
+                    <option value="Indian">Indian</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+             <div class="field full-width">
+                <label>PAN*/Tax Identification Number or equivalent:</label>
+                <input type="text" name="pan" placeholder="If PAN is not submitted, submit Form 60" required>
+            </div>
+        </div>
+
+        <div class="section-title">Occupation Type*</div>
+         <div class="form-group">
+            <div class="checkbox-group">
+                <label><input type="radio" name="occupation" value="S-Service"> S-Service (Private/Public/Govt)</label>
+                <label><input type="radio" name="occupation" value="O-Others"> O-Others (Professional/Self employed/Retired/House Wife/Student)</label>
+                <label><input type="radio" name="occupation" value="B-Business"> B-Business</label>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="form-group">
+                <label>Monthly Income*: Rs.</label>
+                <input type="number" name="monthly_income">
+            </div>
+             <div class="form-group">
+                <label>Net Worth (approx value) Rs.</label>
+                <input type="number" name="net_worth">
+            </div>
+        </div>
+        
+        <div class="section-title">2 Contact Details (All communications will be sent on provided Mobile No./Email-ID)</div>
+        <div class="grid-2">
+            <div class="form-group">
+                <label>Mobile No.:</label>
+                <input type="tel" name="mobile" required>
+            </div>
+             <div class="form-group">
+                <label>Email ID:</label>
+                <input type="email" name="email">
+            </div>
+        </div>
+
+        <div class="section-title">3 Proof of Identity/Address (Please tick the appropriate Box (any one ID type))*</div>
+        <div class="form-group">
+            <div class="checkbox-group">
+                <label><input type="radio" name="doc_type" value="A-PASSPORT"> A-PASSPORT</label>
+                <label><input type="radio" name="doc_type" value="B-VOTER"> B-VOTER'S IDENTITY CARD</label>
+                <label><input type="radio" name="doc_type" value="C-DRIVING"> C-DRIVING LICENCE</label>
+                <label><input type="radio" name="doc_type" value="D-AADHAAR"> D-UID (AADHAR)</label>
+                <label><input type="radio" name="doc_type" value="E-NREGA"> E-NREGA JOB CARD</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Document No/Identification Number*:</label>
+            <input type="text" name="document_number" required>
+        </div>
+
+        <div class="section-title">4 Address details Current Permanent Overseas</div>
+        <div class="form-group">
+            <label>Address*:</label>
+            <input type="text" name="address_current" required>
+        </div>
+        <div class="grid-3">
+            <div class="form-group">
+                <label>City/Village*:</label>
+                <input type="text" name="city">
+            </div>
+            <div class="form-group">
+                <label>State*:</label>
+                <input type="text" name="state">
+            </div>
+            <div class="form-group">
+                 <label>Pin*:</label>
+                <input type="text" name="pin">
+            </div>
+        </div>
+
+        <!-- Photo Section from PDF Page 3 -->
+        <div class="photo-box">
+            PHOTO*<br>
+            Please Paste Recent passport Size<br>
+            (Do not Staple)
+        </div>
+
+        <div class="section-title">7 DECLARATION CUM UNDERTAKING CUM SELF–CERTIFICATION</div>
+        <div class="form-group">
+            <label><input type="checkbox" required> I hereby declare that I have submitted the Aadhaar Card issued by UIDAI voluntarily for identification and /or address proof towards the compliance of KYC norms under the PMLA, 2002.</label>
+            <label><input type="checkbox" required> I hereby consent that the Bank may verify the same with the UIDAI and authorise the UIDAI expressly to release the identity and address through biometric authentication to the Bank YES.</label>
+            <label><input type="checkbox" required> I agree that my personal KYC details may be shared with Central KYC registry or any other competent authority.</label>
+        </div>
+        
+        <button type="submit" class="submit-btn">Submit Official KYC Form</button>
+    </form>
+</div>
+
+</body>
+</html>
+
+</body>
+</html>

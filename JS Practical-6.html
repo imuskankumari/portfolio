@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practical-6</title>
+</head>
+<body>
+    <h4>Q1.WAP in Java script to set background color according to the user.</h4>
+    <h6><u>Solution of Question 1.</u></h6>
+    <form name="f1">
+        Select the Color of Background <input type="text" id="color1">
+        <input type="button" value="set bg" onClick="bg()">
+    </form>
+    <script>
+        function bg() 
+        {
+            x=document.f1.color1.value;
+            switch (x) 
+            {
+                case'red':
+                    document.bgColor="red";
+                break;
+                case'blue':
+                    document.bgColor="blue";
+                break;
+                case'green':
+                    document.bgColor="green";
+                break;
+                case'purple':
+                    document.fgColor="purple";
+                break;
+                case'orange':
+                    document.bgColor="orange";
+                break;
+                default:
+                    document.bgColor="white"
+
+            }
+        }
+        document.write("<hr color=black>");
+    </script>
+    <hr color="black">
+    <h4>Q2.WAP in Java script to change the size of image by prssing zoom in zoom out but-ton.</h4>
+    <h6><u>Solution of Question 2.</u></h6>
+    <form name="f2">
+        <img src="shiva.png" height="50" width="50" name="i2">
+        <div style="float:right;">
+        <input type="button" value="+" name="b1" onclick="zi()">
+        <input type="button" value="-" name="b2" onclick="zo()">
+        </div>
+    </form>
+    <script>
+        function zi()
+        {
+            f2.i2.height+=50;
+            f2.i2.width+=50;
+        }
+        function zo()
+        {
+            f2.i2.height-=50;
+            f2.i2.height-=50;
+        }
+        document.write("<hr color=black>");
+    </script>
+    <hr color="black">
+    <h4>Q3.WAP in java script to find out the grade sof a student, Where 5 subjects  marks are entered by user & Grades are  as follows:<br>
+    if Total marks is greater than 90, Grade A, if Total marks  is greater than 70, Grade B<br>
+    if Total marks is greater than 60, Grade C, Else Grade is fail</h4>
+    <h6><u>Solution of Question 3.</u></h6>
+    <script>
+        sub1 = parseInt(prompt("Enter Marks for Subject 1"));
+        sub2 = parseInt(prompt("Enter Marks for Subject 1"));
+        sub3 = parseInt(prompt("Enter Marks for Subject 3"));
+        sub4 = parseInt(prompt("Enter Marks for Subject 4"));
+        sub5 = parseInt(prompt("Enter Marks for Subject 5"));
+
+        total = sub1+sub2+sub3+sub4+sub5;
+        document.write("Hindi Marks ="+sub1+"<br>");
+        document.write("English Marks ="+sub2+"<br>");
+        document.write("Maths Marks ="+sub3+"<br>");
+        document.write("Science Marks ="+sub4+"<br>");
+         if(total>90) {
+            document.write("Total Marks: "+ total + "<br> Grade A");
+        } else if (total > 70) {
+            document.write("Total Marks: " + total + "<br> Grade B");
+        } else if (total > 60) {
+            document.write("Total Marks:" + total + "<br> Grade C");
+        } else {
+            document.write("Total Marks:" + total + "<br>Fail")
+        }
+        document.write("<hr color=bla>");
+    </script>
+    <hr color="black">
+    <h4>Q4.WAP in Java Script to calculate the intrest, 
+        Where Principal & Time are enterd by user and Rates are as follows:<br>
+    If Principal is greater than 25000, Rate is 25%, If Principal is greater than 18000, Rate is 15% Else Rate is 10%</h4>
+    <h6><u>Solution of Question 4.</u></h6>
+    <script>
+        p=parseInt(prompt("Enter the Principal Amount"));
+        if(p>25000){
+            document.write("Interest (25%):" + (p*25/100));
+         } else if (p > 18000) {
+            document.write("Interest(15%):" + (p * 15/100));
+         } else {
+            document.write("Interest (100):" + (p *10/100));
+         }
+    </script>
+
+    
+
+
+</body>
+</html>

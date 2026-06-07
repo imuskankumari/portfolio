@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+
+<body bgcolor="#00000">
+    <form method="" action="">
+        <table border="1" align="left" width="400" height="400" bgcolor="99ff33">
+            <caption>
+                <font face="cabibri" color="99ff33" size="6">
+                    <u><b>Registration Form</u></b>
+            </caption>
+            </font>
+            <font color="red" size="5">
+                <tr>
+                    <th width="200">Enter First Name</th>
+                    <td><input type="text" name="fn" id="fn1" size="12" title="enter first name"
+                            placeholder="Enter First Name" required></td>
+                </tr>
+                <tr>
+                    <th width="200">Enter Last Name</th>
+                    <td><input type="text" name="ln" id="ln1" maxlength="10" title="enter last name"
+                            placeholder="Enter Last Name"></td>
+                </tr>
+                <tr>
+                    <th width="200">Enter Passward</th>
+                    <td><input type="text" name="passward" maxlength="10"></td>
+                </tr>
+                <tr>
+                    <th width="500"> Re-Enter Passward</th>
+                    <td><input type="password" /></td>
+                </tr>
+                <tr>
+                    <th>Enter E-mail</th>
+                    <td><input type="e-mail" /></td>
+                </tr>
+                <tr>
+                    <th>Enter Mobile</th>
+                    <td><input type="number" /></td>
+                </tr>
+                <tr>
+                    <th>Enter Address</th>
+                    <td><textarea rows="8" cols="20"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th width="500">Select Your Gender</th>
+                    <td>Female<input type="radio" name="G" value="F">
+                        Male<input type="radio" name="G" value="M">
+                    </td>
+                </tr>
+                <tr>
+                    <th width="500"> Select Your Hobby</th>
+                    <td>
+                        Hobby 1 <input type="checkbox" name="x[]" value="h1" />
+                        Hobby 2 <input type="checkbox" name="x[]" value="h2" />
+                        Hobby 3 <input type="checkbox" name="x[]" value="h3">
+                        Hobby 4 <input type="checkbox" name="x[]" value="h4">
+                    </td>
+                </tr>
+                <tr>
+                  <th width="800"> Select Your Date of  Birth </th>
+                    <td><input type="date" /></td>
+                </tr>
+                <tr>
+                    <th>Select Country</th>
+                    <td><select name="" country>
+                            <option value="" selected="selected" disabled="disabled"> Select Your Country
+                            </option>
+                            <option value="1">India</option>
+                            <option value="2">USA</option>
+                            <option value="3">Russia</option>
+                            <option value="4">China</option>
+                            <option value="5">South Koria</option>
+                            <option value="6">Saudi Arab</option>
+                            <option value="7">UK</option>
+                            <option value="8">Australia</option>
+                            <option value="9">Jarmani</option>
+                            <option value="10">Itali</option>
+                        </select>
+                        ````</td>
+                </tr>
+                <tr>
+                    <th>Upload Your Pic</th>
+                    <td><input type="File" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="submit" value="Save My DAta" />
+                        <input type="reset" value="Reset Data">
+                    </td>
+                </tr>
+            </font>
+        </table>
+    </form>
+</body>
+
+</html>

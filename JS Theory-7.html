@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Theory-7</title>
+</head>
+<style>
+h1 {
+    color: orangered;
+}
+#one {
+    border: 5px solid;
+    color: greenyellow;
+    background-color: teal;
+}
+#two {
+    border: 5px solid;
+    color: greenyellow;
+    background-color: teal;
+}
+</style>
+<body onload="alert('Your WebPage is Loaded Alert !')" onunload="alert('Your WebPage is UnLoaded Alert !')">
+    <font color="orange">
+    <h1><u>Functions</u></h1>
+    <div id="one">
+    <ol>
+        <li>Alert()<br>It displays an alert box which contain a message, OK & Cancel Button.</li>
+        <li>Confirm()<br>It displays a confirmation box which contain a Question, OK & Cancel Button.</li>
+    </ol>
+    </div>
+    <hr color="gree" width="600px" align="left">
+    <ol type="1" start="1"><li><h2><u>Alert Function</u></h2></li></ol>
+    <h1><u>Example: 1</u></h1>
+    <button onclick="alert('Welcome')">Alert</button>
+    <hr color="gree" width="300px" align="left">
+    <h1><u>Example: 2</u></h1>
+    <button onclick="myfunction()">Open Alert Box</button>
+    <script>
+        function myfunction() {
+            alert("Chek the Passward");
+        }
+    </script>
+    <hr color="gree" width="600px" align="left">
+    <ol type="1" start="2"><li><h2><u>Confirm</u></h2></li></ol>
+    <h1><u>Example: 1</u></h1>
+    <button onclick="confirm('I can leave')">Confirm</button>
+    <hr color="gree" width="300px" align="left">
+    <h1><u>Example: 2</u></h1>
+    <button onclick="showConfirm()">Click Here</button>
+    <script>
+        function showConfirm() {
+            result = confirm("Do you want to continue?");
+            if(result==true) {
+                document.write("You Pressed OK");
+            } else {
+                document.write("You Pressed Cancel");
+            }
+        }
+    </script>
+    <h1><u>Events are used to call the functions</u></h1>
+    <div id="two">
+    <ol>
+        <li>OnClick<br>(Function will be called when you click.)</li>
+        <li>OnMouseOver<br>(Function will be called when you mouseover.)</li>
+        <li>OnDBlClick<br>(Function will be called when you double click.)</li>
+        <li>OnChange<br>(Function will be called when you change the content of input box.)</li>
+        <li>OnLoad<br>(Function will be called when you open the webpage.)</li>
+        <li>OnUnLoad<br>(Function will be called when you close the webpage.)</li>
+    </ol>
+    </div>
+    <hr color="gree" width="600px" align="left">
+    <ol type="1" start="1"><li><h2><u>OnClick</u></li></h2></ol>
+    <button onclick="alert('You Click Me Alert !')">Please Click Me</button>
+    <hr color="gree" width="200px" align="left">
+    <ol type="1" start="2"><li><h2><u>OnMouseOver</u></li></h2></ol>
+    <button onmouseover="alert('Your Mouse Over Alert !')">Please Mouse Over</button>
+    <hr color="gree" width="200px" align="left">
+    <ol type="1" start="3"><li><h2><u>OnDBClick</u></li></h2></ol>
+    <button ondblclick="alert('You Double Click Me Alert !')">Please Double Click Me</button>
+    <hr color="gree" width="200px" align="left">
+    <ol type="1" start="4"><li><h2><u>OnChange</u></li></h2></ol>
+    <input type="text" onchange="alert('Your Content Changed Alert !')" placeholder="Please Write Something and Move the cursor outside" size="45px">
+    <hr color="gree" width="200px" align="left">
+    <ol type="1" start="5"><li><h2><u>OnLoad (Using in HTML Body Tag)</u></li></h2></ol>
+    <hr color="gree" width="450px" align="left">
+    <ol type="1" start="6"><li><h2><u>OnUnLoad (Using in HTML Body Tag)</u></li></h2></ol>
+    <hr color="gree" align="left">
+</font>
+</body>
+</html>

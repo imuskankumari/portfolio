@@ -1,0 +1,46 @@
+body {
+    font-size: 14px;
+    color: bold;
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+div {
+    box-sizing: border-box;
+    width: 100px;
+    border: 100px solid black;
+    float: left;
+    align-content: center;
+    align-items: center;
+}
+input, select {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: block;
+    width: 100px;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+form {
+    width: 300px;
+    background: #fff;
+    padding: 15px 40px 40px;
+    border: 1px solid #ccc;
+    margin: 50px auto 0;
+    border-radius: 5px; 
+}
+input [type="submit"] {
+    font-size: 110px;
+    font-weight: 100px;
+    background: #006dcc;
+    border-color: #016BC1;
+    box-shadow: 0 3px 0 #0165b6;
+    color: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+}
+input [type="submit"] :hover {
+    background: #0165b6;
+}
+input [type="reset"] :hover {
+    background: blue;
+}

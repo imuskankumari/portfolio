@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Theory-4</title>
+    <h1><u>Function</u></h1>
+<script>
+    function Ram(){
+        document.write("Jai Shree Ram")
+        document.write("<br>")
+    }
+    Ram();
+    Ram();
+    Ram();
+    Ram();
+    document.write("<br>")
+</script>
+</head>
+<body onkeydown="ky">
+    <form name="f1">
+        <input type="button" value="Click Me" name="clk" onclick="clickf()">
+        <br><br>
+        <input type="button" value="Double Click Me" name="db" ondblclick="dbI()">
+        <br><br>
+        <input type="button" value="On Mouse" name="mouse" onmouseover="mof()">
+        <br><br>
+        <input type="text" name="ch" onchange="chf()">
+    </form>
+<script>
+        function clickf() 
+        {
+        f1.clk.value="JAI SHREE RAM";
+        f1.clk.bgColor="red";
+        }
+        function chf()
+        {
+            document.bgColor=f1.ch.value;
+        }
+        function mof()
+        {
+            f1.mouse.value="Har Har MAHADEV";
+        }
+        function dbI()
+        {
+            f1.db.value="JAI JAI SIYA RAM";
+            f1.db.bgColor="Orange";
+        }
+        function ky()
+        {
+            alert("Press Key")
+        }
+</script>
+<script>
+    function sum(a=20,b=10){
+        document.write(a+b);
+        document.write("<br>")
+    }
+    sum();
+    sum(50,50);
+    sum(100,100);
+    sum(500,500);
+    sum(2000,2000);
+    document.write("<br>")
+    function sub(x,y){
+        document.write(x-y);
+        document.write("<br>");
+    }
+    sub();
+    sub(20,20);
+    sub(50,10);
+    document.write("<br>");
+    function name(a="Jai",b="Hanumaan"){
+        document.write(a+" "+b);
+        document.write("<br>");
+    }
+    name();
+    name("Ram","Hanumaan");
+    name("Ram","Kumar");
+    document.write("<br>");
+    function add(a=20,b=10){
+        document.write(a+b);
+        document.write("<br>");
+    }
+    add();
+    add(40,80);
+    function alt(){
+        alert("This is Function Alert");
+    }
+    alt();
+    document.write("<br>");
+    document.write("<br>");
+</script>
+<h1><u>Keyboard Events</u></h1>
+<h1><u>OnClick</u></h1>
+<input type="button" value="onclick" onclick="add()">
+<br><br>
+<button onclick="alert('Button Clicked!')">Click Me</button>
+<h1><u>OnBlur</u></h1>
+<input type="button" value="onblur" onblur="add()">
+<br><br>
+<input type="text" onblur="alert('फोकस हट गया!')" placeholder="यहाँ टाइप करें...">
+<br><br>
+<input type="text" onblur="alert('Blur ho Gaya!')" placeholder="Blur ka Test">
+<br><br>
+<h1><u>OnChange</u></h1>
+<input type="button" value="onchange" onchange="add()">
+<br><br>
+<!-- Input field me kuch likh kar bahar click karein -->
+<input type="text" onchange="myFunction(this.value)">
+<script>
+  function myFunction(val) {
+    alert("Nayi value hai: " + val);
+  }
+</script>
+<br><br>
+<input type="text" name="ch" onchange="chf()">
+<br><br>
+<input type="text" onchange="alert('Change hua!')">
+<br><br>
+<h1><u>OnFocus</u></h1>
+<input type="text" onfocus="this.style.backgroundColor='blue'" placeholder="HAR HAR MAHADEV">
+<br><br>
+<input type="text" onfocus="this.style.background='yellow'" value="JAI JAI SHREE RAM">
+<br><br>
+<input type="text" onfocus="this.style.backgroundColor='yellow'" placeholder="Focus Ka Test">
+<br><br>
+<h1><u>OnSelect</u></h1>
+<input type="text" value="Please Select Me" onselect="alert('Thankyou For Select Me')">
+<br><br>
+<!-- Jab aap text select karenge, alert box dikhega -->
+<input type="text" value="Text ko select karein" onselect="alert('Aapne text select kiya hai!')">
+<br><br>
+<input type="text" value="Select Me" onselect="alert('You Are Select Me Thanks!')">
+<br><br>
+<h1><u>OnSubmit</u></h1>
+<form onsubmit="alert('Submit Your Name Alert!')" onreset="alert('Your Text is Reset Alert!')">
+    Name: <input type="text" placeholder="Enter Your Name" size="20">
+    <br><br>
+    <input type="submit">
+    <button type="reset">Reset</button>
+    <br>
+</form>
+<br>
+<form onsubmit="alert('Submit Hua!')" onreset="alert('Reset Hua!')">
+  Name: <input type="text" name="name" placeholder="Enter Your Name" size="20">
+  <br><br>
+  <button type="submit">Submit</button>
+  <button type="reset">Reset</button>
+</form>
+<br>
+<form onsubmit="alert('Submit Hua!')" onreset="alert('Reset Hua!')">
+    Name: <input type="text" placeholder="Enter Your Name" size="20">
+    <br><br>
+    <input type="submit">
+    <input type="reset">
+</form>
+<br><br>
+<h1><u>OnReset</u></h1>
+<form onreset="alert('Your Text Is Reset')">
+Please Type: <input type="text" placeholder="Please Kuch Type Kare" size="40">
+<br>
+<button type="reset">Reset</button>
+</form>
+<br><br>
+<h1><u>OnKeyDown</u></h1>
+<input type="text" value="Please Type Me" onkeydown="alert('Key Down Alert!')">
+<br><br>
+<input type="text" onkeydown="alert('Key Down!')" placeholder="Please Kuch Type Karen">
+<br><br>
+
+<br><br>
+<h1><u>OnkeyPress</u></h1>
+<input type="button" value="onkeypress" onkeypress="add()">
+<br><br>
+<h1><u>OnKeyUp</u></h1>
+<input type="button" value="onkeyup" onkeyup="add()">
+<br><br>
+<h1><u>Mouse Events</u></h1>
+<h1><u>OnMouseOver</u></h1>
+<button onmouseover="this.style.color='Orange'">Apna Mouse Yaha Layen</button>
+<br><br>
+<button onmouseover="this.style.color='red'">Mouse yaha laye</button>
+<br><br>
+<input type="button" value="onmouseover" onmouseover="add()">
+<br><br>
+<h1><u>OnMouseOut</u></h1>
+<input type="button" value="onmouseout" onmouseout="add()">
+<br><br>
+<h1><u>OnMouseDown</u></h1>
+<input type="button" value="onmousedown" onmousedown="add()">
+<br><br>
+<h1><u>OnMouseUp</u></h1>
+<button style="padding: 12px 24px; font-size: 16px; font-weight: bold; background-color: #2C3E50; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.2s; onmouseup="alert('Your MouseUp Alert!')">Apna Mouse Up Karen</button>
+
+<br><br>
+<h1><u>Click Events</u></h1>
+<h1><u>OnClick</u></h1>
+<input type="button" value="onclick" onclick="add()">
+<br><br>
+<h1><u>OnDBClick</u></h1>
+<input type="button" value="ondblclick" ondblclick="add()">
+<br><br>
+<h1><u>Load Events</u></h1>
+<h1><u>OnLoad</u></h1>
+<input type="button" value="onload" onload="add()">
+<br><br>
+<h1><u>OnUnLoad</u></h1>
+<input type="button" value="onunload" onunload="add()">
+<br><br>
+<h1><u>Disabled Property</u></h1>
+formname.fieldname.disabled=true;
+formname.fieldname.disabled=false
+<h2>फॉर्म फ़ील्ड को डिसेबल/एनेबल करें</h2>
+
+    <!-- फॉर्म का नाम 'myForm' है -->
+    <form name="myForm">
+        <input type="text" name="myInput" value="इस टेक्स्ट को देखें" id="myInput">
+        <br><br>
+        
+        <!-- चेकबॉक्स -->
+        <input type="checkbox" name="myCheckbox" onclick="toggleField()">
+        <label for="myCheckbox">मुझे डिसेबल करें</label>
+    </form>
+
+    <script>
+        function toggleField() {
+            // formName.fieldName.disabled = true/false
+            
+            // अगर चेकबॉक्स टिक है (checked == true)
+            if (document.myForm.myCheckbox.checked) {
+                // इनपुट फ़ील्ड को डिसेबल करें (true)
+                document.myForm.myInput.disabled = true;
+            } else {
+                // इनपुट फ़ील्ड को एनेबल करें (false)
+                document.myForm.myInput.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>
+

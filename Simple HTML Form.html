@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple HTML Form</title>
+    <link rel="stylesheet" href="Simple HTML Form.css">
+    <script src="Simple HTML Form.js"></script>
+</head>
+<body>
+    <h1 style="text-align:center">Registration Form</h1>
+    <form name="RegForm" action="/submit.php" onsubmit="return validateForm()" method="post">
+        <p>Name: <br><input type="text" size="65" name="Name"></p>
+        <p>Address: <br><input type="text" size="65" name="Address"></p>
+        <p>E-mail Address: <br><input type="email" size="65" name="E-mail"></p>
+        <p>Passward: <br><input type="password" size="65" name="Passward"></p>
+        <p>TelePhone: <br><input type="tel" size="65" name="TelePhone"></p>
+        <p>Select Your Course : <br>
+            <select type="text" value="" name="Subject">
+                <option>B.Tech</option>
+                <option>BBA</option>
+                <option>BCA</option>
+                <option>B.Com</option>
+            </select></p><br>
+            <p><b>Comments:</b><textarea cols="40" name="Comment"></textarea></p>
+            <p><input type="submit" value="Send" name="Submit"><input type="reset" value="Reset" name="Reset"></p>
+        </form>
+</body>
+</html>

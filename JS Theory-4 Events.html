@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Theory-4 Events</title>
+    <h1><u>OnLoad</u></h1>
+    </head>
+<body onload="window.alert('page is loaded sucessfully!');">
+    <h3>Event fires after the page loading finished.</h3>
+    <br><br>
+    <h1><u>OnUnLoad</u></h1>
+    <h3>Runs when user leaves or Closes the page.</h3>
+    <script>window.onunload=function() {
+        alert("Page is Unloading");
+    }
+    </script>
+    <h1><u>OnChange</u></h1>
+    <input onchange="alert(this.value);" type="number"><br>
+    <br><br>
+    <h1><u>OnBlur</u></h1>
+    <input type="text" onblur="alert('text input loses focus!');"><button type="button">Submit</button>
+    <p>Write something in the input box and then click elsewhere in the document body</p>
+    <br><br>
+    <h1><u>oncontextmenu</u></h1>
+    <button type="button" oncontextmenu="alert('you have right-clicked a button!');" Right Click on Me </button>
+        <a href="#" oncontextmenu="alert('you have right-clicked a link!');">Right Click on Me</a>
+        <br><br>
+        <script>
+            function highlightInput(elm) {
+                elm.style.background ="orange";
+            }
+        </script>
+        <input type="text" onfocus="highlightInput(this);">
+        <button type="button">Button</button> 
+        <br><br>
+        <h1><u>OnMouseOver</u></h1>
+        <h1 onmouseover="style.color='blue'" onmouseover="style.color='red'">Mouse over the text</h1>
+        <br><br>
+        <h1><u>OnKeyDown</u></h1>
+        <script>
+          function color(color) {
+            document.forms[0].myInput.style.background=color;
+          } 
+        </script>
+        <form>
+            Write a message: <br>
+            <input type="text" onkeydown="color('yellow');" onkeyup="color('white');" name="myInput">
+        </form>
+        <br><br>
+        <script>
+            function hiThere() {
+                alert('Hi there!');
+            }
+        </script>
+        <button type="button" onclick="hiThere()">Click me event</button>
+        <br><br>
+        <h1><u>OnSubmit</u></h1>
+        <form action="/action_page.php">
+            Enter Name <input type="text" name="fname">
+            <input type="submit" value="Submit">
+        </form>
+        <script>
+            function myFunction() {
+                alert("The form was submitted");
+            }
+        </script>
+        <br><br>
+        <h1><u>OnReset</u></h1>
+        <form onreset="myFunction()">
+            Enter Name: <input type="text">
+            <input type="reset">
+        </form>
+        <script>
+            function myFunction() {
+                alert("The form was reset");
+            }
+        </script>
+            <br><br>
+        <h1><u>OnKeyDown</u></h1>
+        <input type="text" onkeydown="myFunction()">
+        <p id="demo"></p> 
+        <script>
+            function myFunction() {
+                document.getElementById("demo").innerHTML="You pressed a key inside the input field";
+            }
+        </script>
+        <br><br>
+        <h1><u>OnkeyPress</u></h1>
+        <input type="text" onkeypress="myFunction()">
+        <script>
+            function myFunction() {
+                alert("You pressed a key inside the input       field");
+            }
+        </script>
+        <br><br>
+        <h1><u>OnKeyUp</u></h1>
+        Enter your Name: <input type="text" id="fname" onkeyup="myFunction()">
+        <script>
+            function myFunction() {
+                let x =
+                document.getElementById("fname");
+                x.value = x.value.toUpperCase();
+            }
+        </script>
+        <br><br>
+        <h1><u>OnSelect</u></h1>
+        <input type="text" value="Jai Shree Ram" onselect="myFunction()">
+        <script>
+            function myFunction() {
+                alert("You selected some text")
+            }
+        </script>
+        <h1><u>OnMouseDown</u></h1>
+        <button type="button" onmousedown="showMessage()">Please Mouse Button Pressed!</button>
+        <script>
+            function showMessage() {
+                alert("Your MouseDown Alert!");
+            }
+        </script>
+        <h1><u>OnMouseOut</u></h1>
+        <h2 id="text" onmouseout="changeColor()">Please Move Mouse away from this text</h2>
+        <script>
+            function changeColor() {
+                document.getElementById("text").style.color="red";
+            }
+        </script>
+        <h1><u>OnMouseUp</u></h1>
+        <button type="button" onmouseup="showMessage()">Please Release Your Mouse Button</button>
+        <script>
+            function showMessage() {
+                alert("Your MouseUP/Mouse Button Release Alert!");
+            }
+        </script>
+        <h1><u>Disable Property</u></h1>
+        <input type="text" id="myinput" value="Hello">
+        <button onclick="disableBox()">Disable Text Box</button>
+        <script>
+            function disableBox() {
+                document.getElementById("myinput").disable=true;
+            }
+        </script>
+        <h1>The Input Disabled Attribute</h1>
+        <form action="/action_page.php">
+            <lable for="fname">First name:</lable>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label for="iname">Last name:</label>
+            <input type="text" id="Iname" name="Iname" disabled><br><br>
+            <input type="submit" value="Submit">
+        </form>
+
+
+</form>
+</body>
+</html>

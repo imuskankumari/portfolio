@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practical-5</title>
+</head>
+<style>
+    form {
+        border: 2px solid;
+        color: palevioletred;
+    }
+</style>
+<body>
+    <script>
+        document.write("<h1>Q1. WAP in Java Script to Find out the number entered by user is even or odd.</h1>"+"<br>")
+        no = prompt("Enter a number to check if it is even or odd.");
+        document.write("<h1><u>Example 1:</u></h1>"+"<br>");
+        if(no%2==0) {
+            alert("This is Even Number");
+        } else {
+            alert("This is Odd Number");
+        }
+        document.write("I am check this no. ="+" "+no+"<br>"+"<br>");
+        document.write("<h1><u>Example 2:</u></h1>"+"<br>");
+        const number=prompt("Enter a Number:")
+        if(number % 2 == 0) {
+            document.write("The Number is Even<br>");
+        } else {
+            document.write("The Number is Odd.<br><br>");
+        }
+        document.write("I am check this no. ="+" "+number+"<br>");
+        document.write("<h1>Q2. WAP in Java Script to find out the number entere by user is positive or negative.</h1>");
+        document.write("<h1><u>Example 1:</u></h1>"+"<br>");
+        num = prompt("Enter the Number");
+        if(num >= 0) {
+            alert("This is Positive Number");
+        } else {
+            alert("This is Negative Number");
+        }
+        document.write("I am Check this no. ="+" "+num+"<br>");
+        document.write("<h1><u>Example 2:</u></h1>"+"<br>");
+        n = prompt("Enter No.");
+        if(n >= 0) {
+            if(n ==0 ) {
+                document.write("The No. is Zero");
+            } else {
+                document.write("The No. is Positive");
+            }
+        } else {
+            document.write("The No. is Negative<br>");
+        }
+        document.write("<h1>Q3. WAP in Java Script to find out the user is eleigible for voting or not.</h1>");
+        document.write("<h1><u>Example 1:</u></h1>"+"<br>");
+        age = prompt("Enter Your Age");
+        if(age >= 18) {
+            alert("You are Eleigible for Indian Voting.");
+        } else {
+            alert("You are not Eleigible For Indian Voting.");
+        }
+        document.write("I am check this age ="+" "+age+"<br>");
+        document.write("<h1><u>Example 2:</u></h1>"+"<br>");
+        age = prompt("Please Enter Your Age");
+        if(age<5)
+        document.write("You Are Child You Are Not Eleigible for Indian Voting!<br>");
+    if(age>=5)
+    document.write("You Are Not Child You Are Eleigible For Indian Voting!<br>");
+        document.write("I am check this age ="+" "+age+"<br>");
+        document.write("<h1>Q4. WAP in Java Script to find out the student is pass or fail.</h1>");
+        marks=prompt("Enter Your Marks");
+        if(marks>=33) {
+            alert("Congratulations You Are Pass The Exam!");
+        } else {
+            alert("You Are Fail The Exam");
+        }
+        document.write("I am Check this Marks ="+" "+marks+"<br>");
+    </script>
+    <form name="mcq1">
+        Q1.Who is our First Prime Minister?<br>
+        <input type="radio" name="q1" id="a1">Dr. Rajendra Prashad<br>
+        <input type="radio" name="q1" id="a2">Mr. Rakesh Sharma<br>
+        <input type="radio" name="q1" id="a3">Mrs. Indira Gandhi<br>
+        <input type="radio" name="q1" id="a4">Mr. Jawahar Lal Nehru<br><br>
+        Q2.Which is the National Bird of India?<br>
+        <input type="radio" name="q2" id="b1">Peacock<br>
+        <input type="radio" name="q2">Crow<br>
+        <input type="radio" name="q2" id="b3">Eagle<br>
+        <input type="radio" name="q2" id="b4">Tiger<br><br>
+        Q3.Which is our National Animal of India?<br>
+        <input type="radio" name="q3" id="c1">Lion<br>
+        <input type="radio" name="q3" id="c2">Tiger<br>
+        <input type="radio" name="q3" id="c3">Dog<br>
+        <input type="radio" name="q3" id="c4">Giraffe<br><br>
+        Q4.Who was the First Person travelled on moon?<br>
+        <input type="radio" name="q4" id="d1">Neil Armstrong<br>
+        <input type="radio" name="q4" id="d2">George Bush<br>
+        <input type="radio" name="q4" id="d3">Rakesh Sharma<br>
+        <input type="radio" name="q4" id="d4">Charles Babbage<br><br>
+        Q5.What is the Capital of Panjab?<br>
+        <input type="radio" name="q5" id="e1">Haryana<br>
+        <input type="radio" name="q5" id="e2">Chandigarh<br>
+        <input type="radio" name="q5" id="e3">Gurdas Pur<br>
+        <input type="radio" name="q5" id="e4">Sonipat<br><br>
+        <input type="button" value="Submit" name="s1" onclick="marks()"><br>
+
+        <div id="result1" style="height: 30px; width: 300px;">Marks</div>
+
+        <div id="result2" style="height: 30px;width: 300px;">result</div>
+    </form>
+    <script>
+        function marks() {
+            m = 0;
+            x = document.getElementById("result1");
+            y = document.getElementById("result2");
+            if (mcq1.a4.checked) m++;
+            if (mcq1.b1.checked) m++;
+            if (mcq1.c2.checked) m++;
+            if (mcq1.d1.checked) m++;
+            if (mcq1.e2.checked) m++;
+            x.innerHTML = "your result is " + m + "/5."
+
+            if (m >= 3)
+                y.innerHTML = "<font color=green><b>" + "passed" + "</b></font>";
+            else
+                y.innerHTML = "<font color=red><b>" + "failed" + "</b></font>";
+        }
+    </script>
+</body>
+
+</html>

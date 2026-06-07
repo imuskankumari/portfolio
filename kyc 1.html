@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Banking KYC Form 2026</title>
+    <!-- Google Fonts for Modern Look -->
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1a237e; /* Bank Blue */
+            --secondary-color: #ffd600; /* Gold Highlight */
+            --bg-color: #f0f2f5;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-top: 8px solid var(--primary-color);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        .kyc-status {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .section-header {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            margin: 25px 0 15px 0;
+            border-left: 5px solid var(--primary-color);
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .grid-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 13px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        input, select {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 5px rgba(26, 35, 126, 0.2);
+        }
+
+        .upload-box {
+            border: 2px dashed #bbb;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            background: #fafafa;
+            cursor: pointer;
+        }
+
+        .consent-box {
+            background: #fff9c4;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 13px;
+            margin-top: 20px;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 25px;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #0d1440;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>डिजिटल KYC अपडेशन फॉर्म - 2026</h1>
+        <div class="kyc-status">● 256-Bit SSL सुरक्षित एन्क्रिप्शन</div>
+    </header>
+
+    <form action="#" method="POST" enctype="multipart/form-data">
+        
+        <!-- Section 1: Basic Info -->
+        <div class="section-header">1. व्यक्तिगत जानकारी (Personal Information)</div>
+        <div class="grid-row">
+            <div class="form-group">
+                <label>पूरा नाम (PAN कार्ड के अनुसार) *</label>
+                <input type="text" placeholder="उदा. राकेश कुमार" required>
+            </div>
+            <div class="form-group">
+                <label>जन्म तिथि *</label>
+                <input type="date" required>
+            </div>
+            <div class="form-group">
+                <label>लिंग (Gender)</label>
+                <select>
+                    <option>पुरुष (Male)</option>
+                    <option>महिला (Female)</option>
+                    <option>अन्य (Other)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid-row">
+            <div class="form-group">
+                <label>PAN कार्ड नंबर *</label>
+                <input type="text" placeholder="ABCDE1234F" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" required>
+            </div>
+            <div class="form-group">
+                <label>आधार नंबर (अंतिम 4 अंक) *</label>
+                <input type="password" maxlength="4" placeholder="XXXX" required>
+            </div>
+        </div>
+
+        <!-- Section 2: Contact Info -->
+        <div class="section-header">2. संपर्क विवरण (Contact Details)</div>
+        <div class="grid-row">
+            <div class="form-group">
+                <label>आधार लिंक्ड मोबाइल नंबर *</label>
+                <input type="tel" placeholder="+91 98765-43210" required>
+            </div>
+            <div class="form-group">
+                <label>ईमेल एड्रेस</label>
+                <input type="email" placeholder="name@example.com">
+            </div>
+        </div>
+
+        
+        <div class="section-header">3. दस्तावेज अपलोड (Document Upload)</div>
+        <div class="grid-row">
+            <div class="form-group">
+                <label>OVD दस्तावेज चुनें</label>
+                <select>
+                    <option>आधार कार्ड (e-Aadhaar)</option>
+                    <option>पासपोर्ट</option>
+                    <option>ड्राइविंग लाइसेंस</option>
+                    <option>वोटर ID</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>फाइल अपलोड करें (PDF/JPG)</label>
+                <div class="upload-box" onclick="document.getElementById('fileInput').click()">
+                    <span>📄 फाइल चुनें या यहाँ ड्रैग करें</span>
+                    <input type="file" id="fileInput" style="display:none">
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: 2026 Compliance -->
+        <div class="section-header">4. सुरक्षा और सहमति (Compliance)</div>
+        <div class="consent-box">
+            <input type="checkbox" id="consent" required>
+            <label for="consent" style="display:inline; font-weight: normal;">
+                मैं प्रमाणित करता हूँ कि दी गई जानकारी सही है। मैं 2026 के नियमों के तहत <b>Video-KYC (V-CIP)</b> और <b>Geotagging</b> (लोकेशन ट्रैकिंग) के लिए अपनी सहमति देता हूँ ताकि धोखाधड़ी से बचा जा सके।
+            </label>
+        </div>
+
+        <button type="submit" class="submit-btn">सत्यापन शुरू करें (Proceed to Verify)</button>
+    </form>
+</div>
+
+</body>
+</html>
+
+</body>
+</html>

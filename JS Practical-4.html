@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practical-4</title>
+
+    <style>
+        h1{
+            font-size: 50px;
+            color: palevioletred;
+        }
+        form{
+            border: 1px solid;
+            border-width: 10px;
+            height: 500px;
+            width: 350px;
+            border-color: palevioletred;
+            padding: 10px;
+            }
+        input {
+            height: 50px;
+            width: 300px;
+            font-size: 50px;
+            background-color: palevioletred;
+            color: white;
+        }
+        #one {
+            background-color: palevioletred;
+            color: red;
+            height: 50px;
+            width: 50px;
+        }
+
+        #two {
+            background-color: palevioletred;
+            color: red;
+            height: 50px;
+            width: 50px;
+        }
+
+        #three {
+            background-color: palevioletred;
+            color: red;
+            height: 50px;
+            width: 50px;
+        }
+
+        #four {
+            background-color: palevioletred;
+            color: red;
+            height: 50px;
+            width: 50px;
+        }
+
+        #five {
+            background-color: palevioletred;
+            color: red;
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.write("<h1><u>Program-I</u></h1>");
+        function plus() {
+            x = parseInt(f1.fn.value);
+            y = parseInt(f1.sn.value);
+            z = x + y;
+            f1.ans.value = z;
+        }
+        function minus() {
+            x = parseInt(f1.fn.value);
+            y = parseInt(f1.sn.value);
+            z = x - y;
+            f1.ans.value = z;
+        }
+        function multiply() {
+            x = parseInt(f1.fn.value);
+            y = parseInt(f1.sn.value);
+            z = x * y;
+            f1.ans.value = z;
+        }
+        function divide() {
+            x = parseint(f1.fn.value);
+            y = parseInt(f1.sn.value);
+            z = x / y;
+            f1.ans.value = z;
+        }
+        function remain() {
+            x = parseInt(f1.fn.value);
+            y = parseInt(f1.sn.value);
+            z = x % y;
+            f1.ans.value = z
+        }
+    </script>
+        <form name="f1">
+            <font size="50px" color="palevioletred">First Number</font><br> <input type="text" name="fn" size="10"> <br>
+            <font size="50px" color="palevioletred">Second Number</font><br> <input type="text" name="sn" size="10"> <br>
+            <font size="50px" color="palevioletred">Result</font><br> <input type="text" name="ans" size="10"> <br>
+            <br><br>
+            <input id="one" type="button" value="+" onclick="plus()">
+            <input id="two" type="button" value="-" onclick="minus()">
+            <input id="three" type="button" value="*" onclick="multiply()">
+            <input id="four" type="button" value="/" onclick="divide()">
+            <input id="five" type="button" value="%" onclick="remain()">
+</form>
+</body>
+</html>

@@ -3,59 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Muskan Kumari | Creative Portfolio</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
-    <header id="title">
-        <h1>Welcome To My Portfolio</h1>
-        <p>I am Muskan Kumari</p>
-    </header>
-
-    <main id="main2">
+    <!-- Modern Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="logo-section">
+            <img src="logo.jpg" alt="MK Logo" class="profile-logo">
+            <h2>Muskan Kumari</h2>
+            <p>Graphic & Web Designer</p>
+        </div>
         
-        <aside id="menu">
-            <div class="profile-container">
-                <img src="Logo.png" alt="Muskan Kumari" class="profile-img">
-                <h2>Muskan Kumari</h2>
-                <p class="designation">Graphic & Web Designer</p>
-                <p class="about-text">
-                    Creative Graphic & Web Designer hoon. Mujhe modern web layouts design karna, colors ke saath khelna aur interactive user interfaces banana pasand hai. Yeh mera personal portfolio hai jahan maine apne design projects ko showcase kiya hai.
-                </p>
-            </div>
-            
-            <nav class="nav-links">
-                <a href="homecontent.html" target="mainarea" class="btn">Home</a>
-                <a href="CLASS-2 PRACTICAL.html" target="mainarea" class="btn">Course</a>
-                <a href="Modern Structure Enquiry Form (Students Registration).html" target="mainarea" class="btn">Admission</a>
-                <a href="CLASS-10 PRACTICAL.html" target="mainarea" class="btn">Apply Online</a>
-                <a href="#" target="mainarea" class="btn">Feedback</a>
-                <a href="CLASS-8 PRACTICAL.html" target="mainarea" class="btn">Gallery</a>
-                <a href="#" target="mainarea" class="btn">Contact Us</a>
-            </nav>
-        </aside>
+        <ul class="nav-links">
+            <li><a href="home.html" target="mainarea" class="active">Home & Bio</a></li>
+            <li><a href="gellery.html" target="mainarea">Gallery</a></li>
+            <li><a href="services.html" target="mainarea">Services</a></li>
+            <li><a href="contact.html" target="mainarea">Contact Us</a></li>
+        </ul>
 
-        <section id="content-area">
-            <iframe src="home-content.html" name="mainarea" id="main-iframe"></iframe>
-            
-            <div id="notification-panel">
-                <div class="marquee-box">
-                    <span class="animated-text">Jai Shree Ram</span>
-                </div>
-                <div class="marquee-box scroll-box">
-                    <marquee direction="down" height="120px" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
-                        <p>This is new Notification 1</p>
-                        <p>This is new Notification 2</p>
-                        <p>This is new Notification 3</p>
-                        <p>This is new Notification 4</p>
-                    </marquee>
-                </div>
-            </div>
-        </section>
+        <div class="sidebar-footer">
+            <p>Delhi, India</p>
+        </div>
+    </nav>
 
+    <!-- Main Content Area (No Blank Space - Automatically loads home.html) -->
+    <main class="content-container">
+        <iframe src="home.html" name="mainarea" title="Portfolio Content"></iframe>
     </main>
 
-    <script src="script.js"></script>
 </body>
 </html>

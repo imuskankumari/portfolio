@@ -3,52 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Creative Portfolio</title>
-    <link rel="stylesheet" href="index.css">
-    <!-- Font awesome icons ke liye link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Home Showcase</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
 
-    <!-- LEFT PREMIUM SIDEBAR PANEL -->
-    <div class="sidebar">
-        <div class="profile-box">
-            <!-- Aapki round profile photo yahan aayegi -->
-            <img src="logo.jpg" alt="Muskan Kumari" class="profile-img">
-            <h2>Muskan Kumari</h2>
-            <p class="tagline">Graphic & Web Designer</p>
-        </div>
-
-        <!-- MODERN GLOWING NAVIGATION BUTTONS -->
-        <nav class="nav-menu">
-            <a href="home.html" target="main-display" class="nav-btn active"><i class="fas fa-home"></i> Home</a>
-            <a href="gallery.html" target="main-display" class="nav-btn"><i class="fas fa-palette"></i> Gallery</a>
-            <a href="services.html" target="main-display" class="nav-btn"><i class="fas fa-laptop-code"></i> Services</a>
-            <a href="contact.html" target="main-display" class="nav-btn"><i class="fas fa-envelope"></i> Contact</a>
-        </nav>
-
-        <!-- SOCIAL FOOTER LINKS -->
-        <div class="social-links">
-            <a href="https://behance.net/musankumari143" target="_blank"><i class="fab fa-behance"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    <!-- HERO IMAGE SLIDER -->
+    <div class="hero-slider-section">
+        <div class="luxury-slider"></div>
+        <div class="slider-overlay">
+            <h1>Creative Masterpieces</h1>
+            <p>I specialize in Graphic Design, Vector Illustration Tracing, and Modern Web Designing.</p>
         </div>
     </div>
 
-    <!-- RIGHT MAIN WINDOW AREA (No Empty Space) -->
-    <div class="main-content">
-        <iframe src="home.html" name="main-display" frameborder="0" class="display-frame"></iframe>
+    <!-- DETAILS BOX: ABOUT, EXPERIENCE & EDUCATION -->
+    <div class="details-wrapper">
+        
+        <!-- About / Intro Card -->
+        <div class="glass-card full-width">
+            <h2><span class="gradient-text">About Me</span></h2>
+            <p class="about-p">I am Muskan Kumari from Delhi, an aspiring professional Graphic & Web Designer. Equipped with deep creative instincts and modern technical tools, I turn raw concepts into high-converting visual graphics and clean web interfaces.</p>
+        </div>
+
+        <!-- Experience & Education Row -->
+        <div class="two-column-grid">
+            
+            <!-- Experience Box -->
+            <div class="glass-card">
+                <h2><span class="gradient-text"><i class="fas fa-briefcase"></i> Experience</span></h2>
+                <div class="timeline-item">
+                    <h4>Graphic Designer</h4>
+                    <span class="badge">Self-Employed • Full-time</span>
+                    <p class="date">May 2026 - Present</p>
+                    <p class="desc">Creating brand strategies, social media assets, and vector traces for worldwide clients.</p>
+                </div>
+            </div>
+
+            <!-- Education Box -->
+            <div class="glass-card">
+                <h2><span class="gradient-text"><i class="fas fa-graduation-cap"></i> Education</span></h2>
+                <div class="timeline-item">
+                    <h4>Central Board of Secondary Education (CBSE)</h4>
+                    <p class="desc">Senior Secondary Education From CBSE</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Computer Education & BCA</h4>
+                    <p class="desc">Basic Computer Course (BCC) & Diploma In Computer Applications (DCA) Certified. Specialize in corporate designs.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Tools & Technologies Grid -->
+        <div class="glass-card full-width">
+            <h2><span class="gradient-text">Expertise & Tech Stack</span></h2>
+            <div class="skills-flex">
+                <span class="skill-tag">Adobe Photoshop</span>
+                <span class="skill-tag">Adobe Illustrator</span>
+                <span class="skill-tag">Adobe InDesign</span>
+                <span class="skill-tag">CorelDraw</span>
+                <span class="skill-tag">Canva</span>
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">WordPress</span>
+                <span class="skill-tag">Video Editing</span>
+            </div>
+        </div>
+
     </div>
 
-    <script>
-        // Active button glow effect script
-        const buttons = document.querySelectorAll('.nav-btn');
-        buttons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                buttons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-            });
-        });
-    </script>
 </body>
 </html>

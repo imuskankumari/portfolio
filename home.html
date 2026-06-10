@@ -3,48 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Muskan Kumari</title>
-    <link rel="stylesheet" href="home.css">
+    <title>Muskan Kumari | Creative Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+    <!-- Font awesome icons ke liye link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <div class="home-grid">
-        <!-- Left Side: Bio & Education -->
-        <div class="bio-panel">
-            <div class="card">
-                <h1>About Me</h1>
-                <p class="intro-text">I am <strong>Muskan Kumari</strong> from Delhi, an aspiring professional Graphic & Web Designer. I specialize in Graphic Design, Vector Illustration Tracing, and Web Designing.</p>
-                
-                <div class="skills-tags">
-                    <span>Photoshop</span> <span>Illustrator</span> <span>InDesign</span> 
-                    <span>CorelDraw</span> <span>Canva</span> <span>HTML</span> 
-                    <span>CSS</span> <span>JavaScript</span> <span>WordPress</span>
-                </div>
-            </div>
-
-            <div class="card education-card">
-                <h2>My Education</h2>
-                <div class="edu-item">
-                    <h4>Central Board of Secondary Education (CBSE)</h4>
-                    <p>Senior Secondary Education From CBSE</p>
-                </div>
-                <div class="edu-item">
-                    <h4>Computer Education</h4>
-                    <p>Basic Computer Course (BCC) & Diploma In Computer Applications (DCA) Certified</p>
-                    <small>MS Office, Graphic Designing, Web Designing, Video Editing</small>
-                </div>
-            </div>
+    <!-- LEFT PREMIUM SIDEBAR PANEL -->
+    <div class="sidebar">
+        <div class="profile-box">
+            <!-- Aapki round profile photo yahan aayegi -->
+            <img src="logo.jpg" alt="Muskan Kumari" class="profile-img">
+            <h2>Muskan Kumari</h2>
+            <p class="tagline">Graphic & Web Designer</p>
         </div>
 
-        <!-- Right Side: Big Modern Image Slider (Yahan aapki photos badlengi) -->
-        <div class="slider-panel">
-            <div class="main-slider"></div>
-            <div class="slider-overlay">
-                <h3>Featured Creative Works</h3>
-                <p>Scroll to gallery to see all designs</p>
-            </div>
+        <!-- MODERN GLOWING NAVIGATION BUTTONS -->
+        <nav class="nav-menu">
+            <a href="home.html" target="main-display" class="nav-btn active"><i class="fas fa-home"></i> Home</a>
+            <a href="gallery.html" target="main-display" class="nav-btn"><i class="fas fa-palette"></i> Gallery</a>
+            <a href="services.html" target="main-display" class="nav-btn"><i class="fas fa-laptop-code"></i> Services</a>
+            <a href="contact.html" target="main-display" class="nav-btn"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+
+        <!-- SOCIAL FOOTER LINKS -->
+        <div class="social-links">
+            <a href="https://behance.net/musankumari143" target="_blank"><i class="fab fa-behance"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
         </div>
     </div>
 
+    <!-- RIGHT MAIN WINDOW AREA (No Empty Space) -->
+    <div class="main-content">
+        <iframe src="home.html" name="main-display" frameborder="0" class="display-frame"></iframe>
+    </div>
+
+    <script>
+        // Active button glow effect script
+        const buttons = document.querySelectorAll('.nav-btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,124 +1,141 @@
 body {
     margin: 0;
-    padding: 25px;
-    font-family: 'Segoe UI', sans-serif;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
     background-color: #0f172a;
-    color: #f1f5f9;
-    height: 100vh;
-    overflow-y: auto;
-}
-
-.home-grid {
-    display: flex;
-    gap: 25px;
-    height: 100%;
-    min-height: 550px;
-}
-
-/* Left Bio Panel */
-.bio-panel {
-    flex: 1.2;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.card {
-    background: #1e293b;
-    padding: 30px;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-.card h1 {
-    font-size: 26px;
-    color: #38bdf8;
-    margin-bottom: 15px;
-}
-
-.intro-text {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #cbd5e1;
-}
-
-.skills-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 20px;
-}
-
-.skills-tags span {
-    background: rgba(56, 189, 248, 0.1);
-    color: #38bdf8;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 500;
-}
-
-/* Education Layout */
-.education-card h2 {
-    font-size: 22px;
-    color: #38bdf8;
-    margin-bottom: 15px;
-}
-
-.edu-item {
-    border-left: 3px solid #38bdf8;
-    padding-left: 15px;
-    margin-bottom: 15px;
-}
-
-.edu-item h4 {
-    font-size: 16px;
     color: #f8fafc;
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
-.edu-item p {
-    font-size: 14px;
-    color: #94a3b8;
-    margin-top: 3px;
-}
-
-.edu-item small {
-    display: block;
-    color: #64748b;
-    margin-top: 5px;
-}
-
-/* Right Side Slider Panel */
-.slider-panel {
-    flex: 1.5;
+/* ULTRA SLIDER CONFIGURATION */
+.hero-slider-section {
     position: relative;
-    border-radius: 16px;
+    width: 100%;
+    height: 400px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-.main-slider {
+.luxury-slider {
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
-    /* Yahan aap apni automatic badalne wali photos ke naam daal sakti hain */
-    animation: modernSlide 12s infinite linear;
+    animation: advancedSlide 15s infinite linear;
 }
 
-@keyframes modernSlide {
-    0%, 30% { background-image: url('photo1.jpg'); }
-    35%, 65% { background-image: url('photo2.jpg'); }
-    70%, 100% { background-image: url('photo3.jpg'); }
+/* Yahan aapki teen premium images badlengi */
+@keyframes advancedSlide {
+    0%, 30% { background-image: url('banner1.jpg'); }
+    35%, 65% { background-image: url('banner2.jpg'); }
+    70%, 100% { background-image: url('banner3.jpg'); }
 }
 
 .slider-overlay {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(transparent, rgba(15, 23, 42, 0.95));
-    padding: 30px;
-    color: white;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(15,23,42,0.3), #0f172a);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.slider-overlay h1 {
+    font-size: 38px;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* DETAILS CONTENT WRAPPER */
+.details-wrapper {
+    padding: 0 40px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* 2026 LUXURY GLASS LOOK */
+.glass-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 25px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.full-width { width: 100%; }
+
+.two-column-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #38bdf8, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.about-p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #cbd5e1;
+    margin: 10px 0 0 0;
+}
+
+/* TIMELINE BOXES */
+.timeline-item {
+    border-left: 2px solid #38bdf8;
+    padding-left: 15px;
+    margin-top: 15px;
+}
+
+.timeline-item h4 { margin: 0 0 5px 0; font-size: 18px; }
+
+.badge {
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    padding: 3px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.date { font-size: 13px; color: #64748b; margin: 5px 0; }
+.desc { font-size: 14px; color: #cbd5e1; margin: 0; }
+
+/* SKILLS HUB PACK */
+.skills-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.skill-tag {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    border-color: #a855f7;
+    background: rgba(168, 85, 247, 0.1);
+    transform: translateY(-2px);
+}
+
+@media(max-width: 768px) {
+    .two-column-grid { grid-template-columns: 1fr; }
 }

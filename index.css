@@ -1,99 +1,124 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --bg-dark: #0f172a;
+    --panel-dark: #1e293b;
+    --neon-blue: #38bdf8;
+    --neon-purple: #a855f7;
+    --text-white: #f8fafc;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0f172a; /* Premium Dark Background */
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
     display: flex;
     height: 100vh;
     overflow: hidden;
 }
 
-/* Modern Sidebar */
+/* SIDEBAR STRUCTURE */
 .sidebar {
-    width: 280px;
-    background: #1e293b;
-    color: #f8fafc;
+    width: 300px;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 30px 20px;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 20px;
+    box-sizing: border-box;
+    z-index: 10;
 }
 
-.logo-section {
+.profile-box {
     text-align: center;
-    margin-bottom: 30px;
 }
 
-.profile-logo {
-    width: 90px;
-    height: 90px;
+.profile-img {
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    border: 3px solid #38bdf8;
+    border: 3px solid var(--neon-blue);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
     object-fit: cover;
-    margin-bottom: 15px;
 }
 
-.logo-section h2 {
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+.profile-box h2 {
+    font-size: 22px;
+    margin: 15px 0 5px 0;
+    letter-spacing: 1px;
 }
 
-.logo-section p {
-    font-size: 13px;
-    color: #38bdf8;
-    margin-top: 5px;
+.tagline {
+    font-size: 14px;
+    color: var(--neon-blue);
+    margin: 0;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 600;
+    letter-spacing: 1.5px;
 }
 
-/* Nav Buttons */
-.nav-links {
-    list-style: none;
+/* NAV BUTTONS WITH 2026 GLOW EFFECT */
+.nav-menu {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
 }
 
-.nav-links a {
-    display: block;
-    color: #94a3b8;
+.nav-btn {
     text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: 15px;
+    color: #94a3b8;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 16px;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 15px;
     transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.nav-links a:hover, .nav-links a.active {
-    color: #ffffff;
-    background: #38bdf8;
-    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+.nav-btn i {
+    font-size: 18px;
 }
 
-.sidebar-footer {
-    text-align: center;
-    font-size: 12px;
-    color: #64748b;
+.nav-btn:hover, .nav-btn.active {
+    color: var(--text-white);
+    background: linear-gradient(90deg, rgba(56,189,248,0.15) 0%, rgba(168,85,247,0.15) 100%);
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+    transform: translateX(5px);
 }
 
-/* Full Screen Content Area */
-.content-container {
+/* SOCIAL FOOTER Icons */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #94a3b8;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px var(--neon-purple);
+}
+
+/* RIGHT MAIN AREA */
+.main-content {
     flex: 1;
     height: 100vh;
-    background-color: #0f172a;
+    background-color: var(--bg-dark);
 }
 
-iframe {
+.display-frame {
     width: 100%;
     height: 100%;
-    border: none;
-    background-color: #0f172a;
+    display: block;
 }

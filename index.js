@@ -1,4 +1,4 @@
-// Strict script to block key inspect short-cuts (Anti-theft layer)
+// Block shortcut inspect combinations (Anti-theft layer)
 document.addEventListener("keydown", function(e) {
     if (e.keyCode == 123 || 
         (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || 
@@ -8,7 +8,7 @@ document.addEventListener("keydown", function(e) {
     }
 });
 
-// Simple form handle logic
+// Basic Contact Form Submit Alert
 document.getElementById("contactForm").addEventListener("submit", function(e) {
     e.preventDefault();
     alert("Thank you! Your message has been sent successfully.");

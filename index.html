@@ -1,67 +1,150 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Creative UI & Web Designer</title>
-    <!-- FontAwesome For Icons -->
+    <title>Muskan Kumari | Graphic & Web Designer</title>
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
+<!-- Protecting your designs from right-click and long-press downloads -->
+<body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
 
-    <!-- Modern Navigation -->
+    <!-- 3-Button Navigation Bar -->
     <nav class="navbar">
-        <div class="logo">MK <span>Designs</span></div>
+        <div class="logo">
+            <div class="logo-circle">MK</div>
+            <span>Designs</span>
+        </div>
         <ul class="nav-links">
-            <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
-            <li><a href="services.html"><i class="fa-solid fa-palette"></i> My Work</a></li>
-            <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+            <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="#work"><i class="fa-solid fa-palette"></i> My Work</a></li>
+            <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
+    <!-- Home Section (With your LinkedIn Bio inside) -->
+    <section id="home" class="hero-section">
+        <div class="hero-container">
+            <div class="profile-circle">
+                <img src="your-photo.jpg" alt="Muskan Kumari" onerror="this.style.display='none'">
+                <i class="fa-solid fa-user-astronaut placeholder-avatar"></i>
+            </div>
             <h1>Hi, I'm <span class="highlight">Muskan Kumari</span></h1>
-            <h2>Graphic & Web Designer (UI/UX)</h2>
-            <p>मैं वेबसाइट्स और डिजिटल डिजाइन्स को खूबसूरत और मॉडर्न बनाती हूँ। नीचे मेरे स्किल्स और एजुकेशन की डिटेल्स हैं।</p>
-            <a href="services.html" class="btn">मेरा काम देखें <i class="fa-solid fa-arrow-right"></i></a>
+            <h2>I specialize in Graphic Design and Web Designing</h2>
+            
+            <!-- Exact LinkedIn Bio Text -->
+            <p class="linkedin-bio">I am Muskan Kumari and I am from Delhi, an aspiring professional graphic designer. I am skilled in Adobe Photoshop, Adobe Illustrator, Adobe InDesign, CorelDraw & Canva. I specialize in Graphic Design and Vector Illustration Tracing.</p>
+            
+            <a href="#work" class="btn">Explore My Designs <i class="fa-solid fa-arrow-down"></i></a>
         </div>
-    </header>
+    </section>
 
-    <!-- Education & Skills Section -->
-    <section class="info-section">
-        <div class="box education-box">
-            <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
-            <div class="info-item">
-                <h4>Graphic & Web Design Diploma / Degree</h4>
-                <p>Pursuing | Student & Self-Taught Developer</p>
-            </div>
-            <div class="info-item">
-                <h4>Schooling & Tech Learning</h4>
-                <p>Focused on UI/UX and Frontend Technologies.</p>
-            </div>
+    <!-- My Work & Services Section (With Education and Skills integrated) -->
+    <section id="work" class="work-section">
+        <div class="section-title">
+            <h2>My <span class="highlight">Work & Skills</span></h2>
+            <p>A professional showcase of my design tools, qualifications, and practice works.</p>
         </div>
 
-        <div class="box skills-box">
-            <h3><i class="fa-solid fa-code"></i> My Skills</h3>
-            <div class="skills-grid">
-                <div class="skill-tag"><i class="fa-brands fa-html5" style="color: #e34c26;"></i> HTML5</div>
-                <div class="skill-tag"><i class="fa-brands fa-css3-alt" style="color: #264de4;"></i> CSS3</div>
-                <div class="skill-tag"><i class="fa-brands fa-js" style="color: #f7df1e;"></i> JavaScript</div>
-                <div class="skill-tag"><i class="fa-solid fa-vector-square" style="color: #00b4d8;"></i> UI/UX Design</div>
-                <div class="skill-tag"><i class="fa-solid fa-image" style="color: #ff477e;"></i> Graphic Design</div>
-                <div class="skill-tag"><i class="fa-solid fa-mobile-screen" style="color: #52b788;"></i> Responsive Design</div>
+        <!-- Integrated LinkedIn Education & Skills Grid (Fills the space nicely) -->
+        <div class="skills-edu-grid">
+            <div class="meta-card">
+                <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                <div class="edu-box">
+                    <h4>Central Board of Secondary Education (CBSE)</h4>
+                    <p>Senior Secondary Education From CBSE</p>
+                </div>
+                <div class="edu-box">
+                    <h4>Computer Education</h4>
+                    <p>Basic Computer Course (BCC) and Diploma In Computer Applications (DCA) Certified (MS Office, Graphic Designing and Web Designing, Video Editing)</p>
+                </div>
+            </div>
+
+            <div class="meta-card">
+                <h3><i class="fa-solid fa-laptop-code"></i> Technical Skills</h3>
+                <div class="tags-container">
+                    <span class="tag"><i class="fa-solid fa-pen-nib"></i> Graphic Design</span>
+                    <span class="tag"><i class="fa-solid fa-globe"></i> Web Design</span>
+                    <span class="tag"><i class="fa-brands fa-html5"></i> HTML</span>
+                    <span class="tag"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+                    <span class="tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+                    <span class="tag"><i class="fa-brands fa-wordpress"></i> WordPress</span>
+                    <span class="tag"><i class="fa-solid fa-images"></i> Adobe Photoshop</span>
+                    <span class="tag"><i class="fa-solid fa-bezier-curve"></i> Adobe Illustrator</span>
+                    <span class="tag"><i class="fa-solid fa-book-open"></i> Adobe InDesign</span>
+                    <span class="tag"><i class="fa-solid fa-draw-polygon"></i> CorelDraw</span>
+                    <span class="tag"><i class="fa-solid fa-clapperboard"></i> Filmora (Video Editing)</span>
+                    <span class="tag"><i class="fa-solid fa-file-powerpoint"></i> MS PowerPoint</span>
+                    <span class="tag"><i class="fa-solid fa-file-word"></i> MS Word</span>
+                    <span class="tag"><i class="fa-solid fa-file-excel"></i> MS Excel</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Masonry Grid for your Burger Poster and Collages -->
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="burger-poster.jpg" alt="Burger Advertising Poster">
+                <div class="item-overlay">
+                    <h3>Burger Advertisement</h3>
+                    <p>Photoshop | 1:1 Creative Poster Design</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="design-collage.jpg" alt="Vector Illustration">
+                <div class="item-overlay">
+                    <h3>Vector Illustration Tracing</h3>
+                    <p>Illustrator | Precision Artwork</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="web-project.jpg" alt="Web Design Layout">
+                <div class="item-overlay">
+                    <h3>Responsive Web Design</h3>
+                    <p>HTML, CSS & JS Website Project</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & BHIM UPI Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-title">
+            <h2>Let's Work <span class="highlight">Together</span></h2>
+        </div>
+
+        <div class="contact-grid">
+            <!-- Form -->
+            <form class="contact-form" id="contactForm">
+                <h3><i class="fa-solid fa-paper-plane"></i> Send a Message</h3>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Project Details or Message..." rows="5" required></textarea>
+                <button type="submit" class="btn-submit">Submit Message</button>
+            </form>
+
+            <!-- UPI Payment Card -->
+            <div class="payment-card">
+                <h3><i class="fa-solid fa-wallet"></i> Hire / Support Me</h3>
+                <p>If you would like to buy my practice designs, hire my services, or send a token advance, you can pay directly via secure UPI link below.</p>
+                <div class="upi-box">
+                    <i class="fa-solid fa-shield-halved security-icon"></i>
+                    <h4>BHIM UPI Payment Enabled</h4>
+                    <p class="upi-id">UPI ID: <span class="highlight">muskan@upi</span></p>
+                    <a href="upi://pay?pa=muskan@upi&pn=Muskan%20Kumari" class="btn-upi"><i class="fa-solid fa-bolt"></i> Pay Securely Now</a>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Muskan Kumari | Delhi, India</p>
+        <p>&copy; 2026 Muskan Kumari | Graphic & Web Designer | New Delhi, India</p>
     </footer>
 
     <script src="index.js"></script>
 </body>
 </html>
-

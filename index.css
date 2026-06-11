@@ -1,10 +1,10 @@
-/* Trending Premium Cyber Theme Colors */
+/* Clean Dynamic Setup */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    user-select: none; /* Prevents text and image copy selection */
+    user-select: none;
 }
 
 html {
@@ -12,12 +12,12 @@ html {
 }
 
 body {
-    background-color: #080c14; /* Deep Premium Midnight Blue */
+    background-color: #080c14;
     color: #e5e7eb;
     line-height: 1.6;
 }
 
-/* Header & Navbar Setup */
+/* Header Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -31,23 +31,10 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.nav-brand {
     font-size: 22px;
     font-weight: 700;
-}
-
-/* Logo Image Styling to keep it sharp and clean */
-.nav-logo-img {
-    height: 38px;
-    width: auto;
-    object-fit: contain;
-}
-
-.logo span {
-    color: #00f2fe; /* Cyber Cyan */
+    color: #00f2fe;
 }
 
 .nav-links {
@@ -61,16 +48,16 @@ body {
     text-decoration: none;
     font-size: 15px;
     font-weight: 500;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
     color: #00f2fe;
 }
 
-/* Clean Hero Section Layout */
+/* Hero Section Styles */
 .hero-section {
-    min-height: 70vh;
+    min-height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,29 +66,31 @@ body {
     background: radial-gradient(circle at 50% 30%, rgba(0, 242, 254, 0.08), transparent 60%);
 }
 
-.hero-container h1 {
-    font-size: 3.2rem;
-    font-weight: 800;
-    margin-bottom: 10px;
+/* Circle design framing your Logo perfectly */
+.logo-profile-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    background: #0f172a;
+    border: 3px solid #00f2fe;
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.hero-container h2 {
-    font-size: 1.6rem;
-    color: #9ca3af;
-    margin-bottom: 20px;
-    font-weight: 400;
+.logo-profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps your MK Logo centered and crisp */
 }
 
-.linkedin-bio {
-    font-size: 1.05rem;
-    color: #cbd5e1;
-    max-width: 750px;
-    margin: 0 auto 35px;
-}
-
-.highlight {
-    color: #00f2fe;
-}
+.hero-container h1 { font-size: 3rem; font-weight: 800; margin-bottom: 10px; }
+.hero-container h2 { font-size: 1.5rem; color: #9ca3af; margin-bottom: 20px; font-weight: 400; }
+.linkedin-bio { font-size: 1.05rem; color: #cbd5e1; max-width: 750px; margin: 0 auto 30px; }
+.highlight { color: #00f2fe; }
 
 .btn {
     display: inline-block;
@@ -111,17 +100,14 @@ body {
     text-decoration: none;
     font-weight: 600;
     border-radius: 50px;
-    box-shadow: 0 4px 20px rgba(0, 242, 254, 0.25);
+    box-shadow: 0 4px 20px rgba(0, 242, 254, 0.2);
     transition: 0.3s ease;
 }
+.btn:hover { transform: translateY(-2px); }
 
-.btn:hover {
-    transform: translateY(-2px);
-}
-
-/* Structural Sections Setup */
+/* Services Layout Setup */
 .work-section, .contact-section {
-    padding: 70px 8%;
+    padding: 60px 8%;
 }
 
 .section-title {
@@ -129,16 +115,9 @@ body {
     margin-bottom: 40px;
 }
 
-.section-title h2 {
-    font-size: 2.3rem;
-}
+.section-title h2 { font-size: 2.2rem; }
+.section-title p { color: #6b7280; margin-top: 5px; }
 
-.section-title p {
-    color: #6b7280;
-    margin-top: 5px;
-}
-
-/* Skills Tags Box Configuration */
 .skills-panel {
     background: #0f172a;
     padding: 25px;
@@ -149,79 +128,97 @@ body {
 
 .skills-panel h3 {
     color: #00f2fe;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.tags-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+.tags-container { display: flex; flex-wrap: wrap; gap: 10px; }
+.tag {
+    background: #1e293b; padding: 8px 14px; border-radius: 8px; font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.04); display: flex; align-items: center; gap: 8px;
 }
 
-.tag {
-    background: #1e293b;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    border: 1px solid rgba(255, 255, 255, 0.04);
+/* Amazon-Style Slider (Carousel) CSS */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px; /* Perfectly centered container */
+    margin: 0 auto 50px;
+    background: #0f172a;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.carousel-slider {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+    background: #090d16;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 450px; /* Controlled static height */
+    object-fit: contain; /* CRITICAL: Prevents your 1:1 burger poster and items from cropping! */
+    display: block;
+    background-color: #080c14;
+}
+
+.slide-caption {
+    width: 100%;
+    padding: 15px;
+    background: #0f172a;
+    color: #cbd5e1;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Navigation Buttons styled like premium platforms */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 242, 254, 0.15);
+    border: 1px solid rgba(0, 242, 254, 0.4);
+    color: #00f2fe;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+    transition: 0.2s;
 }
 
-/* Balanced 1:1 Aspect Ratio Portfolio Layout */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-bottom: 40px;
+.carousel-btn:hover {
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    color: #080c14;
 }
 
-.portfolio-item {
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    background: #0f172a;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    aspect-ratio: 1 / 1; /* Locks images to look balanced and cohesive */
-}
+.prev-btn { left: 15px; }
+.next-btn { right: 15px; }
 
-.portfolio-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: 0.4s transform ease;
-}
-
-.portfolio-item:hover img {
-    transform: scale(1.03);
-}
-
-.item-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background: linear-gradient(transparent, rgba(8, 12, 20, 0.95));
-}
-
-.item-overlay h3 {
-    font-size: 1.15rem;
-    color: #fff;
-}
-
-.item-overlay p {
-    font-size: 0.85rem;
-    color: #00f2fe;
-}
-
-/* Education Area Box Layout */
+/* Education Area Layout */
 .education-panel {
     background: #0f172a;
     padding: 25px;
@@ -229,137 +226,36 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-.education-panel h3 {
-    color: #00f2fe;
-    font-size: 1.25rem;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+.education-panel h3 { color: #00f2fe; font-size: 1.2rem; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+.edu-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.edu-box { border-left: 3px solid #4facfe; padding-left: 15px; }
+.edu-box h4 { color: #fff; font-size: 1.05rem; }
+.edu-box p { color: #9ca3af; font-size: 0.9rem; margin-top: 5px; }
 
-.edu-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.edu-box {
-    border-left: 3px solid #4facfe;
-    padding-left: 15px;
-}
-
-.edu-box h4 {
-    color: #fff;
-    font-size: 1.05rem;
-}
-
-.edu-box p {
-    color: #9ca3af;
-    font-size: 0.9rem;
-    margin-top: 5px;
-}
-
-/* Contact Grid Integration */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.contact-form, .payment-card {
-    background: #0f172a;
-    padding: 30px;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-}
-
-.contact-form h3, .payment-card h3 {
-    color: #00f2fe;
-    margin-bottom: 15px;
-    font-size: 1.25rem;
-}
+/* Contact Interface Styles */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.contact-form, .payment-card { background: #0f172a; padding: 30px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.03); }
+.contact-form h3, .payment-card h3 { color: #00f2fe; margin-bottom: 15px; }
 
 input, textarea {
-    width: 100%;
-    padding: 12px;
-    background: #1e293b;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: #fff;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    font-size: 0.95rem;
+    width: 100%; padding: 12px; background: #1e293b; border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #fff; border-radius: 8px; margin-bottom: 12px; font-size: 0.95rem;
 }
+input:focus, textarea:focus { outline: none; border-color: #00f2fe; }
+.btn-submit { width: 100%; padding: 12px; background: linear-gradient(45deg, #00f2fe, #4facfe); border: none; font-weight: 600; color: #080c14; border-radius: 8px; cursor: pointer; }
 
-input:focus, textarea:focus {
-    outline: none;
-    border-color: #00f2fe;
-}
+.upi-box { text-align: center; background: #1e293b; padding: 20px; border-radius: 10px; border: 2px dashed rgba(0, 242, 254, 0.2); margin-top: 15px; }
+.security-icon { font-size: 3rem; color: #00f2fe; margin-bottom: 10px; }
+.upi-id { font-size: 1.05rem; margin: 5px 0 15px; }
+.btn-upi { display: inline-block; padding: 10px 20px; background: #52b788; color: #fff; text-decoration: none; font-weight: 600; border-radius: 6px; }
 
-.btn-submit {
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(45deg, #00f2fe, #4facfe);
-    border: none;
-    font-weight: 600;
-    color: #080c14;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+footer { text-align: center; padding: 30px; color: #4b5563; font-size: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.03); }
 
-.upi-box {
-    text-align: center;
-    background: #1e293b;
-    padding: 20px;
-    border-radius: 10px;
-    border: 2px dashed rgba(0, 242, 254, 0.2);
-    margin-top: 15px;
-}
-
-.security-icon {
-    font-size: 3rem;
-    color: #00f2fe;
-    margin-bottom: 10px;
-}
-
-.upi-id {
-    font-size: 1.05rem;
-    margin: 5px 0 15px;
-}
-
-.btn-upi {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #52b788;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 6px;
-}
-
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #4b5563;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.03);
-}
-
-/* Mobile Media Queries */
+/* Responsive Adaptations */
 @media (max-width: 850px) {
-    .navbar {
-        flex-direction: column;
-        gap: 12px;
-    }
-    .hero-container h1 {
-        font-size: 2.3rem;
-    }
-    .edu-row, .contact-grid {
-        grid-template-columns: 1fr;
-    }
-    .work-section, .contact-section {
-        padding: 40px 20px;
-    }
+    .navbar { flex-direction: column; gap: 12px; }
+    .hero-container h1 { font-size: 2.2rem; }
+    .edu-row, .contact-grid { grid-template-columns: 1fr; }
+    .work-section, .contact-section { padding: 40px 20px; }
+    .carousel-slide img { height: 320px; } /* Scales beautifully down for phones */
 }
-

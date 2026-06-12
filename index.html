@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muskan Kumari | Graphic & Web Designer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
 
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="MK Logo" class="nav-logo-img" onerror="this.style.display='none'">
+            <span>Designs</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="#services"><i class="fa-solid fa-palette"></i> Services</a></li>
+            <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="hero-container">
+            <div class="logo-profile-circle">
+                <img src="logo.png" alt="MK Logo" onerror="this.style.display='none'">
+            </div>
+            <h1>Hi, I'm <span class="highlight">Muskan Kumari</span></h1>
+            <p class="linkedin-bio">I am Muskan Kumari and I am from Delhi, an aspiring professional graphic designer. I am skilled in Adobe Photoshop, Adobe Illustrator, Adobe InDesign, CorelDraw & Canva. I specialize in Graphic & web Design.</p>
+            
+            <div class="home-panel">
+                <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                <ul class="edu-list">
+                    <li>Senior Secondary Education From CBSE</li>
+                    <li>Basic Computer Course (BCC) and Diploma In Computer Applications (DCA) Certified, (MS Office, Graphic Designing and Web Designing, Video Editing)</li>
+                </ul>
+            </div>
+
+            <div class="home-panel">
+                <h3><i class="fa-solid fa-laptop-code"></i> My Technical Skills</h3>
+                <div class="skills-wrapper">
+                    <div class="skill-group">
+                        <h4>Graphic Designing</h4>
+                        <div class="tags-container">
+                            <span class="tag"><img src="photoshop.png" alt="" class="tool-icon" onerror="this.style.display='none'"> Adobe Photoshop</span>
+                            <span class="tag"><img src="illustrator.png" alt="" class="tool-icon" onerror="this.style.display='none'"> Adobe Illustrator</span>
+                            <span class="tag">Adobe InDesign</span>
+                            <span class="tag"><img src="coreldraw.png" alt="" class="tool-icon" onerror="this.style.display='none'"> CorelDraw</span>
+                            <span class="tag"><img src="canva.png" alt="" class="tool-icon" onerror="this.style.display='none'"> Canva</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Web Designing</h4>
+                        <div class="tags-container">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">WordPress</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Video Editing</h4>
+                        <div class="tags-container">
+                            <span class="tag">Filmora</span>
+                            <span class="tag">InShot</span>
+                            <span class="tag">VN</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#services" class="btn">Explore My Work <i class="fa-solid fa-arrow-down"></i></a>
+        </div>
+    </section>
+
+    <section id="services" class="work-section">
+        <div class="section-title">
+            <h2>Graphic Design</h2>
+            <p>Amazon-Style Interactive Showcase (Click any thumbnail to view full image)</p>
+        </div>
+
+        <div class="amazon-gallery">
+            <div class="main-view-box">
+                <img id="graphicMain" src="g1.jpg" alt="Selected Graphic Design">
+            </div>
+            <div class="thumbnail-row">
+                <img src="g1.jpg" alt="" class="thumb active" onclick="changeGraphic(this.src, this)">
+                <img src="g2.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+                <img src="g3.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+                <img src="g4.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+                <img src="g5.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+                <img src="g6.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+                <img src="g7.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+                <img src="g8.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+                <img src="g9.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+                <img src="g10.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+                <img src="g11.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+                <img src="g12.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+                <img src="g13.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+                <img src="g14.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+                <img src="g15.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+                <img src="g16.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+                <img src="g17.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+                <img src="g18.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+                <img src="g19.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+                <img src="g20.jpg" alt="" class="thumb" onclick="changeGraphic(this.src, this)">
+            </div>
+        </div>
+
+        <div class="section-title space-top">
+            <h2>AI Generated Visuals</h2>
+            <p>Amazon-Style Interactive Showcase (Click any thumbnail to view full image)</p>
+        </div>
+
+        <div class="amazon-gallery">
+            <div class="main-view-box">
+                <img id="aiMain" src="ai1.png" alt="Selected AI Visual">
+            </div>
+            <div class="thumbnail-row">
+                <img src="ai1.png" alt="" class="thumb-ai active" onclick="changeAI(this.src, this)">
+                <img src="ai2.png" alt="" class="thumb-ai" onclick="changeAI(this.src, this)">
+                <img src="ai3.png" alt="" class="thumb-ai" onclick="changeAI(this.src, this)">
+                <img src="ai4.png" alt="" class="thumb-ai" onclick="changeAI(this.src, this)">
+                <img src="ai5.png" alt="" class="thumb-ai" onclick="changeAI(this.src, this)">
+                <img src="ai6.png" alt="" class="thumb-ai" onclick="changeAI(this.src, this)">
+                <img src="ai7.png" alt="" class="thumb-ai" onclick="changeAI(this.src, this)">
+                <img src="ai8.png" alt="" class="thumb-ai" onclick="changeAI(this.src, this)">
+                <img src="ai9.png" alt="" class="thumb-ai" onclick="changeAI(this.src, this)">
+                <img src="ai10.png" alt="" class="thumb-ai" onclick="changeAI(this.src, this)">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="section-title">
+            <h2>Let's Work <span class="highlight">Together</span></h2>
+        </div>
+        <div class="contact-grid">
+            <form class="contact-form" id="contactForm">
+                <h3><i class="fa-solid fa-paper-plane"></i> Send a Message</h3>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Project Details or Message..." rows="4" required></textarea>
+                <button type="submit" class="btn-submit">Submit Message</button>
+            </form>
+            <div class="payment-card">
+                <h3><i class="fa-solid fa-wallet"></i> Hire / Support Me</h3>
+                <p>If you would like to purchase any of my practice works, or hire me for freelance jobs, you can securely pay an advance via UPI.</p>
+                <div class="upi-box">
+                    <i class="fa-solid fa-shield-halved security-icon"></i>
+                    <h4>BHIM UPI Payment Link</h4>
+                    <p class="upi-id">UPI ID: <span class="highlight">muskan@upi</span></p>
+                    <a href="upi://pay?pa=muskan@upi&pn=Muskan%20Kumari" class="btn-upi"><i class="fa-solid fa-bolt"></i> Pay Securely Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Muskan Kumari | Graphic & Web Designer | New Delhi, India</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

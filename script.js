@@ -1,174 +1,163 @@
-// DOCUMENT READY CONTROLLER
+// INTERACTIVE ENGINE CORE INITIALIZER
 document.addEventListener("DOMContentLoaded", () => {
-    initFastNavigation();
-    buildAmazonGallery();
-    initSliders();
-    applyStrictAntiTheft();
+    initSPAEngine();
+    generateAmazonGrid();
+    setupDualCarousels();
+    installSecurityShields();
 });
 
-// 1. FAST SINGLE-PAGE SECTION SWITCHING (Instant & Accurate)
-function initFastNavigation() {
-    const links = document.querySelectorAll(".nav-link");
+// 1. FAST SINGLE PAGE APPLICATION CONTROLLER
+function initSPAEngine() {
+    const menus = document.querySelectorAll(".nav-link");
     const sections = document.querySelectorAll(".page-section");
 
-    links.forEach(link => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
+    menus.forEach(menu => {
+        menu.addEventListener("click", (event) => {
+            event.preventDefault();
             
-            // Remove active status from all links
-            links.forEach(l => l.classList.remove("active"));
-            // Add active to current clicked link
-            link.classList.add("active");
+            menus.forEach(m => m.classList.remove("active"));
+            menu.classList.add("active");
 
-            const targetSectionId = link.getAttribute("href").substring(1);
-
-            // Instant switch without breaking coordinates
-            sections.forEach(section => {
-                if(section.id === targetSectionId) {
-                    section.classList.add("active-section");
+            const hashTarget = menu.getAttribute("href").substring(1);
+            
+            sections.forEach(sec => {
+                if(sec.id === hashTarget) {
+                    sec.classList.add("active-section");
                 } else {
-                    section.classList.remove("active-section");
+                    sec.classList.remove("active-section");
                 }
             });
 
-            // Instantly viewport scroll setup straight to top zero position
-            window.scrollTo({
-                top: 0,
-                behavior: "instant"
-            });
+            // Instant reset to standard viewport coordinates
+            window.scrollTo({ top: 0, behavior: "instant" });
         });
     });
 }
 
-// 2. GENERATE AMAZON STYLE GALLERY THUMBNAILS (g1.jpg to g100.jpg)
-function buildAmazonGallery() {
-    const grid = document.getElementById("thumbnailsGrid");
-    let htmlContent = "";
+// ROUTING SHORTCUT FOR HOME BUTTONS
+function switchSection(targetId) {
+    const targetMenu = document.querySelector(`.nav-link[href="#${targetId}"]`);
+    if(targetMenu) {
+        targetMenu.click();
+    }
+}
 
-    for (let i = 1; i <= 100; i++) {
-        // Active class only on first item by default
-        const isActive = (i === 1) ? "active-thumb" : "";
-        htmlContent += `
-            <div class="thumb-item ${isActive}" id="thumb-${i}" onclick="switchMainImage('g${i}.jpg', 'Graphic Design Project ${i}', ${i})">
-                <img src="g${i}.jpg" alt="Design ${i}" draggable="false">
+// 2. AMAZON MATRIX GALLERY GENERATION (1 to 100 Iterations)
+function generateAmazonGrid() {
+    const rowContainer = document.getElementById("asyncThumbGrid");
+    let domBuffer = "";
+
+    for (let index = 1; index <= 100; index++) {
+        const structuralClass = (index === 1) ? "box-thumb selected-border" : "box-thumb";
+        domBuffer += `
+            <div class="${structuralClass}" id="matrix-thumb-${index}" onclick="renderStageView('g${index}.jpg', 'Graphic Design Project ${index}', ${index})">
+                <img src="g${index}.jpg" alt="Work Bundle ${index}" draggable="false">
             </div>
         `;
     }
-    grid.innerHTML = htmlContent;
+    rowContainer.innerHTML = domBuffer;
 }
 
-// SWITCH MAIN IMAGE (AMAZON STYLE LOGIC)
-function switchMainImage(imgSrc, captionText, index) {
-    const mainImg = document.getElementById("amazonMainView");
-    const caption = document.getElementById("imageCaption");
+// UPDATE BIG PICTURE DISPLAYS ON CLICK
+function renderStageView(fileSrc, textTitle, referenceKey) {
+    const viewImg = document.getElementById("mainStageImage");
+    const textNode = document.getElementById("stageCaption");
     
-    mainImg.style.opacity = "0.3";
+    viewImg.style.opacity = "0.2";
     
     setTimeout(() => {
-        mainImg.src = imgSrc;
-        caption.innerText = captionText;
-        mainImg.style.opacity = "1";
-    }, 150);
+        viewImg.src = fileSrc;
+        textNode.innerText = textTitle;
+        viewImg.style.opacity = "1";
+    }, 120);
 
-    // Update active border style on thumbnails
-    document.querySelectorAll(".thumb-item").forEach(item => {
-        item.classList.remove("active-thumb");
+    document.querySelectorAll(".box-thumb").forEach(element => {
+        element.classList.remove("selected-border");
     });
-    const selectedThumb = document.getElementById(`thumb-${index}`);
-    if(selectedThumb) {
-        selectedThumb.classList.add("active-thumb");
-    }
-}
-
-// 3. CAROUSEL SLIDERS GENERATION & LOGIC (Graphic 1-10 vs AI 1-10)
-const sliderPositions = {
-    graphicSlider: 0,
-    aiSlider: 0
-};
-
-function initSliders() {
-    const graphicSlider = document.getElementById("graphicSlider");
-    const aiSlider = document.getElementById("aiSlider");
-
-    let graphicSlidesHTML = "";
-    let aiSlidesHTML = "";
-
-    // Generate exactly 10 slides for both sliders side-by-side
-    for (let i = 1; i <= 10; i++) {
-        graphicSlidesHTML += `
-            <div class="slide">
-                <div class="secure-image-layer"></div>
-                <img src="g${i}.jpg" alt="Graphic Design Slide ${i}" draggable="false">
-            </div>
-        `;
-        aiSlidesHTML += `
-            <div class="slide">
-                <div class="secure-image-layer"></div>
-                <img src="ai${i}.png" alt="AI Visual Slide ${i}" draggable="false">
-            </div>
-        `;
-    }
-
-    graphicSlider.innerHTML = graphicSlidesHTML;
-    aiSlider.innerHTML = aiSlidesHTML;
-}
-
-function moveSlide(sliderId, direction) {
-    const slider = document.getElementById(sliderId);
-    const totalSlides = 10;
     
-    let currentPos = sliderPositions[sliderId];
-    currentPos += direction;
-
-    // Loop sliders around infinitely
-    if (currentPos >= totalSlides) {
-        currentPos = 0;
-    } else if (currentPos < 0) {
-        currentPos = totalSlides - 1;
+    const targetThumb = document.getElementById(`matrix-thumb-${referenceKey}`);
+    if(targetThumb) {
+        targetThumb.classList.add("selected-border");
     }
-
-    sliderPositions[sliderId] = currentPos;
-    slider.style.transform = `translateX(-${currentPos * 100}%)`;
 }
 
-// 4. AMAZON SEARCH SYSTEM LOGIC
-function searchGallery() {
-    const input = document.getElementById("gallerySearch").value.toLowerCase();
-    const thumbs = document.querySelectorAll(".thumb-item");
+// 3. GENERATE SIDE-BY-SIDE CAROUSEL SLIDES (10 Slides Each)
+const globalTrackIndex = { graphicTrack: 0, aiTrack: 0 };
 
-    thumbs.forEach((thumb, idx) => {
-        const indexNum = idx + 1;
-        // Search matches based on item number or custom keywords
-        const itemKeyword = `g${indexNum} project design burger work art item`;
+function setupDualCarousels() {
+    const graphicTrack = document.getElementById("graphicTrack");
+    const aiTrack = document.getElementById("aiTrack");
+
+    let graphicBuffer = "";
+    let aiBuffer = "";
+
+    for (let currentItem = 1; currentItem <= 10; currentItem++) {
+        graphicBuffer += `
+            <div class="carousel-slide">
+                <div class="anti-click-shield"></div>
+                <img src="g${currentItem}.jpg" alt="Graphic Slide ${currentItem}" draggable="false">
+            </div>
+        `;
+        aiBuffer += `
+            <div class="carousel-slide">
+                <div class="anti-click-shield"></div>
+                <img src="ai${currentItem}.png" alt="AI Concept Slide ${currentItem}" draggable="false">
+            </div>
+        `;
+    }
+
+    graphicTrack.innerHTML = graphicBuffer;
+    aiTrack.innerHTML = aiBuffer;
+}
+
+function shiftSlide(trackElementId, vectorDirection) {
+    const trackDOM = document.getElementById(trackElementId);
+    let indexPointer = globalTrackIndex[trackElementId];
+    
+    indexPointer += vectorDirection;
+
+    if (indexPointer >= 10) { indexPointer = 0; }
+    else if (indexPointer < 0) { indexPointer = 9; }
+
+    globalTrackIndex[trackElementId] = indexPointer;
+    trackDOM.style.transform = `translateX(-${indexPointer * 100}%)`;
+}
+
+// 4. NAVBAR REAL-TIME LIVE SEARCH FILTER SYSTEM
+function searchGallery() {
+    const queryInput = document.getElementById("gallerySearch").value.toLowerCase();
+    const allThumbs = document.querySelectorAll(".box-thumb");
+
+    allThumbs.forEach((thumbnailBox, serialIndex) => {
+        const itemNumber = serialIndex + 1;
+        // Build internal context for flexible strings evaluation
+        const internalMetaString = `g${itemNumber} project design item banner art layout showcase work collection burger photo graphic`;
         
-        if (itemKeyword.includes(input) || input === "") {
-            thumb.classList.remove("hidden-thumb");
+        if (internalMetaString.includes(queryInput) || queryInput === "") {
+            thumbnailBox.classList.remove("filter-hide");
         } else {
-            thumb.classList.add("hidden-thumb");
+            thumbnailBox.classList.add("filter-hide");
         }
     });
 }
 
-// 5. MAXIMUM 100% SECURITY & ANTI-DOWNLOAD CODES
-function applyStrictAntiTheft() {
-    // Block standard keyboard shortcut hacks
-    document.addEventListener("keydown", (e) => {
+// 5. MAX STABILITY PROTECTION (BLOCK HARMFUL KEYS & DRAGS)
+function installSecurityShields() {
+    document.addEventListener("keydown", (event) => {
         if (
-            e.keyCode === 123 || // F12 Key
-            (e.ctrlKey && e.shiftKey && e.keyCode === 73) || // Ctrl+Shift+I (Inspect)
-            (e.ctrlKey && e.shiftKey && e.keyCode === 74) || // Ctrl+Shift+J (Console)
-            (e.ctrlKey && e.keyCode === 85) || // Ctrl+U (View Source)
-            (e.ctrlKey && e.keyCode === 83)    // Ctrl+S (Save Webpage)
+            event.keyCode === 123 || // F12 Key Close
+            (event.ctrlKey && event.shiftKey && event.keyCode === 73) || // Inspect Element Window Close
+            (event.ctrlKey && event.keyCode === 85) || // View Source Block
+            (event.ctrlKey && event.keyCode === 83)    // Save Webpage Block
         ) {
-            e.preventDefault();
+            event.preventDefault();
             return false;
         }
     });
 
-    // Disable dragging elements
-    document.addEventListener("dragstart", (e) => {
-        if (e.target.nodeName === "IMG") {
-            e.preventDefault();
+    document.addEventListener("dragstart", (event) => {
+        if (event.target.nodeName === "IMG") {
+            event.preventDefault();
         }
     });
 }

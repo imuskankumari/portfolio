@@ -5,173 +5,163 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MK Designs | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome icons for professional look -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body oncontextmenu="return false;">
 
-    <!-- TOP NAVIGATION BAR WITH SEARCH BOX -->
     <header class="navbar">
         <div class="nav-container">
             <div class="logo-area">
                 <img src="logo.png" alt="MK Logo" class="site-logo">
-                <span class="logo-text">MK Designs</span>
+                <span class="logo-text">MK <span class="cyan-text">Designs</span></span>
             </div>
             
             <div class="search-box-container">
                 <i class="fas fa-search search-icon"></i>
-                <input type="text" id="gallerySearch" placeholder="Search designs (e.g., burger, logo)..." onkeyup="searchGallery()">
+                <input type="text" id="gallerySearch" placeholder="Search my work..." onkeyup="searchGallery()">
             </div>
 
             <nav class="nav-menus">
                 <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
-                <a href="#services" class="nav-link"><i class="fas fa-palette"></i> Services</a>
+                <a href="#services" class="nav-link"><i class="fas fa-laptop-code"></i> Services</a>
                 <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- MAIN CONTENT CONTAINER -->
     <main class="main-wrapper">
 
-        <!-- HOME SECTION -->
         <section id="home" class="page-section active-section">
-            <div class="hero-grid">
-                <div class="hero-info">
-                    <span class="welcome-tag">Welcome to my portfolio</span>
-                    <h1 class="main-title">Hi, I'm <span class="highlight">Muskan Kumari</span></h1>
-                    <p class="hero-bio">I am an aspiring professional graphic designer and web designer from Delhi. I specialize in creating visually stunning, high-impact digital art and modern web layouts.</p>
-                    
-                    <!-- Education Details -->
+            <div class="hero-center-layout">
+                
+                <div class="avatar-glow-container">
+                    <img src="logo.png" alt="Muskan Kumari" class="profile-avatar" draggable="false">
+                </div>
+
+                <div class="availability-tag">
+                    <span class="pulse-dot"></span> Available for Freelance
+                </div>
+
+                <h1 class="hero-title">Hi, I'm <span class="cyan-highlight">Muskan Kumari</span></h1>
+                <p class="hero-subtitle">I am an aspiring professional graphic and web designer from New Delhi. I specialize in crafting stunning visual layouts, high-converting brand designs, and modern web experiences.</p>
+
+                <div class="hero-cta-buttons">
+                    <a href="#services" class="btn-primary" onclick="switchSection('services')">View My Work <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn-secondary" onclick="switchSection('contact')">Let's Talk</a>
+                </div>
+
+                <div class="details-grid">
                     <div class="info-card">
                         <h3 class="card-title"><i class="fas fa-graduation-cap"></i> My Education</h3>
-                        <p class="edu-item"><strong>Senior Secondary Education:</strong> From CBSE</p>
-                        <p class="edu-item"><strong>Professional Courses:</strong> Basic Computer Course (BCC) & Diploma In Computer Applications (DCA) Certified.</p>
-                        <p class="edu-subtext">Trained in: MS Office, Graphic & Web Designing, and Video Editing.</p>
+                        <div class="edu-content">
+                            <p class="edu-degree"><strong>Senior Secondary Education</strong></p>
+                            <p class="edu-inst">Central Board of Secondary Education (CBSE)</p>
+                            
+                            <p class="edu-degree mt-15"><strong>Professional Certifications</strong></p>
+                            <p class="edu-inst">Basic Computer Course (BCC) & Diploma in Computer Applications (DCA)</p>
+                            <p class="edu-skills-learnt">Expertise acquired: MS Office, Graphic & Web Designing, and Video Editing.</p>
+                        </div>
                     </div>
 
-                    <!-- Skills Badges Grid -->
-                    <div class="skills-wrapper">
-                        <h3 class="card-title"><i class="fas fa-tools"></i> My Technical Skills</h3>
-                        <div class="skills-grid">
-                            <span class="skill-badge"><i class="fab fa-html5"></i> HTML</span>
-                            <span class="skill-badge"><i class="fab fa-css3-alt"></i> CSS</span>
-                            <span class="skill-badge"><i class="fab fa-js"></i> JavaScript</span>
-                            <span class="skill-badge"><i class="fab fa-wordpress"></i> WordPress</span>
-                            <span class="skill-badge"><i class="fas fa-paint-brush"></i> Photoshop</span>
-                            <span class="skill-badge"><i class="fas fa-pen-nib"></i> Illustrator</span>
-                            <span class="skill-badge"><i class="fas fa-book-open"></i> InDesign</span>
-                            <span class="skill-badge"><i class="fas fa-vector-square"></i> CorelDraw</span>
-                            <span class="skill-badge"><i class="fas fa-wand-magic-sparkles"></i> Canva</span>
-                            <span class="skill-badge"><i class="fas fa-video"></i> Filmora</span>
-                            <span class="skill-badge"><i class="fas fa-film"></i> Video Editing</span>
-                            <span class="skill-badge"><i class="fas fa-file-excel"></i> MS Office</span>
+                    <div class="info-card">
+                        <h3 class="card-title"><i class="fas fa-laptop-code"></i> Technical Skills</h3>
+                        <div class="skills-flex-container">
+                            <span class="skill-pill"><i class="fab fa-html5"></i> HTML</span>
+                            <span class="skill-pill"><i class="fab fa-css3-alt"></i> CSS</span>
+                            <span class="skill-pill"><i class="fab fa-js"></i> JavaScript</span>
+                            <span class="skill-pill"><i class="fab fa-wordpress"></i> WordPress</span>
+                            <span class="skill-pill"><i class="fas fa-bezier-curve"></i> Photoshop</span>
+                            <span class="skill-pill"><i class="fas fa-pen-nib"></i> Illustrator</span>
+                            <span class="skill-pill"><i class="fas fa-book"></i> InDesign</span>
+                            <span class="skill-pill"><i class="fas fa-vector-square"></i> CorelDraw</span>
+                            <span class="skill-pill"><i class="fas fa-magic"></i> Canva</span>
+                            <span class="skill-pill"><i class="fas fa-video"></i> Filmora</span>
+                            <span class="skill-pill"><i class="fas fa-file-word"></i> MS Word</span>
+                            <span class="skill-pill"><i class="fas fa-file-excel"></i> MS Excel</span>
+                            <span class="skill-pill"><i class="fas fa-file-powerpoint"></i> PowerPoint</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Profile Photo Area -->
-                <div class="hero-image-area">
-                    <div class="profile-avatar-container">
-                        <img src="trending logo.png" alt="Muskan Kumari" class="profile-photo" draggable="false">
-                    </div>
-                </div>
             </div>
         </section>
 
-        <!-- SERVICES SECTION -->
         <section id="services" class="page-section">
-            <div class="section-header">
-                <h2>Our Services & Work Gallery</h2>
-                <p>Explore my massive collection of graphic designs and AI visual concepts.</p>
+            <div class="section-title-area">
+                <h2>My Work Showcase</h2>
+                <p>Browse through my professional design collections and creations.</p>
             </div>
 
-            <!-- AMAZON STYLE INTERACTIVE GALLERY (TOP) -->
-            <div class="amazon-gallery-container">
-                <h3 class="gallery-heading"><i class="fas fa-images"></i> Amazon Style Master Collection</h3>
-                <div class="amazon-gallery-wrapper">
-                    <!-- Main Large Display Area -->
-                    <div class="main-display-box">
-                        <div class="secure-image-layer"></div>
-                        <img id="amazonMainView" src="g1.jpg" alt="Main Showcase" draggable="false">
-                        <div id="imageCaption" class="image-caption">Graphic Design Project 1</div>
+            <div class="amazon-showcase-box">
+                <h3 class="gallery-subheading"><i class="fas fa-store"></i> Amazon-Style Live Collection</h3>
+                <div class="amazon-layout-engine">
+                    <div class="stage-display">
+                        <div class="anti-click-shield"></div>
+                        <img id="mainStageImage" src="g1.jpg" alt="Showcase Visual" draggable="false">
+                        <div id="stageCaption" class="stage-caption">Graphic Design Project 1</div>
                     </div>
-                    <!-- 100 Photo Thumbnails Container -->
-                    <div class="thumbnails-grid" id="thumbnailsGrid">
-                        <!-- Generated Dynamically via JS for 100 Photos (g1.jpg to g100.jpg) -->
-                    </div>
+                    <div class="thumbnails-scroll-row" id="asyncThumbGrid">
+                        </div>
                 </div>
             </div>
 
-            <!-- DUAL CAROUSEL SIDE-BY-SIDE GRID (BOTTOM) -->
-            <div class="dual-carousel-grid">
-                
-                <!-- LEFT CAROUSEL: GRAPHIC DESIGNING -->
-                <div class="carousel-box">
-                    <h3 class="carousel-title"><i class="fas fa-vector-square"></i> Graphic Designing Showcase</h3>
-                    <div class="carousel-container">
-                        <div class="carousel-slider" id="graphicSlider">
-                            <!-- 10 Slides dynamic injection -->
-                        </div>
-                        <button class="carousel-btn prev-btn" onclick="moveSlide('graphicSlider', -1)">&#10094;</button>
-                        <button class="carousel-btn next-btn" onclick="moveSlide('graphicSlider', 1)">&#10095;</button>
+            <div class="split-carousel-row">
+                <div class="carousel-pane">
+                    <h4 class="pane-title"><i class="fas fa-palette"></i> Graphic Designing Projects</h4>
+                    <div class="slider-viewport">
+                        <div class="slider-track" id="graphicTrack"></div>
+                        <button class="track-arrow left-arrow" onclick="shiftSlide('graphicTrack', -1)">&#10094;</button>
+                        <button class="track-arrow right-arrow" onclick="shiftSlide('graphicTrack', 1)">&#10095;</button>
                     </div>
                 </div>
 
-                <!-- RIGHT CAROUSEL: AI GENERATED VISUALS -->
-                <div class="carousel-box">
-                    <h3 class="carousel-title"><i class="fas fa-robot"></i> AI Generated Visuals</h3>
-                    <div class="carousel-container">
-                        <div class="carousel-slider" id="aiSlider">
-                            <!-- 10 Slides dynamic injection -->
-                        </div>
-                        <button class="carousel-btn prev-btn" onclick="moveSlide('aiSlider', -1)">&#10094;</button>
-                        <button class="carousel-btn next-btn" onclick="moveSlide('aiSlider', 1)">&#10095;</button>
+                <div class="carousel-pane">
+                    <h4 class="pane-title"><i class="fas fa-microchip"></i> AI Generated Visuals</h4>
+                    <div class="slider-viewport">
+                        <div class="slider-track" id="aiTrack"></div>
+                        <button class="track-arrow left-arrow" onclick="shiftSlide('aiTrack', -1)">&#10094;</button>
+                        <button class="track-arrow right-arrow" onclick="shiftSlide('aiTrack', 1)">&#10095;</button>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- CONTACT SECTION -->
         <section id="contact" class="page-section">
-            <div class="section-header">
+            <div class="section-title-area">
                 <h2>Let's Work Together</h2>
-                <p>Feel free to drop a message or secure a freelance contract instantly.</p>
+                <p>Hire me for custom projects or connect with me instantly.</p>
             </div>
 
-            <div class="contact-grid">
-                <!-- Left: Message Form -->
-                <div class="contact-form-card">
+            <div class="grid-contact-container">
+                <div class="form-wrapper-card">
                     <h3><i class="fas fa-paper-plane"></i> Send a Message</h3>
-                    <form id="portfolioForm" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
-                        <div class="input-group">
-                            <input type="text" required placeholder="Your Name">
+                    <form id="contactForm" onsubmit="event.preventDefault(); alert('Thank you! Your message has been transmitted.');">
+                        <div class="form-field">
+                            <input type="text" placeholder="Your Name" required autocomplete="off">
                         </div>
-                        <div class="input-group">
-                            <input type="email" required placeholder="Your Email">
+                        <div class="form-field">
+                            <input type="email" placeholder="Your Email" required autocomplete="off">
                         </div>
-                        <div class="input-group">
-                            <textarea rows="5" required placeholder="Project Details or Message..."></textarea>
+                        <div class="form-field">
+                            <textarea placeholder="Project Details or Message..." rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">Submit Message</button>
+                        <button type="submit" class="form-submit-btn">Submit Message</button>
                     </form>
                 </div>
 
-                <!-- Right: UPI / BHIM Payment Support -->
-                <div class="payment-card">
-                    <h3><i class="fas fa-wallet"></i> Hire / Support Me</h3>
-                    <p class="payment-desc">If you would like to purchase any of my works, or hire me for freelance jobs, you can securely pay an advance via UPI.</p>
+                <div class="upi-secure-card">
+                    <h3><i class="fas fa-shield-halved"></i> Hire / Support Me</h3>
+                    <p class="upi-notice-text">If you would like to purchase any of my practice works, or hire me for freelance jobs, you can securely pay an advance via UPI.</p>
                     
-                    <div class="upi-box">
-                        <div class="upi-icon-shield">
-                            <i class="fas fa-shield-alt"></i>
+                    <div class="upi-shield-widget">
+                        <div class="shield-logo-vector">
+                            <i class="fas fa-shield-blank"></i>
+                            <i class="fas fa-check inner-check"></i>
                         </div>
-                        <span class="upi-brand">BHIM UPI Payment Link</span>
-                        <span class="upi-id">UPI ID: <strong>muskan@upi</strong></span>
+                        <span class="bhim-title">BHIM UPI Payment Link</span>
+                        <span class="vpa-address">UPI ID: <strong>muskan@upi</strong></span>
                         
-                        <!-- Real Working UPI Intent Deep Link Button -->
-                        <a href="upi://pay?pa=muskan@upi&pn=Muskan%20Kumari&cu=INR" class="upi-pay-btn">
+                        <a href="upi://pay?pa=muskan@upi&pn=Muskan%20Kumari&cu=INR" class="gateway-trigger-btn">
                             <i class="fas fa-bolt"></i> Pay Securely Now
                         </a>
                     </div>
@@ -181,8 +171,7 @@
 
     </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
+    <footer class="app-footer">
         <p>&copy; 2026 Muskan Kumari | Graphic & Web Designer | New Delhi, India</p>
     </footer>
 

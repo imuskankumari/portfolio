@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MK Designs | Portfolio</title>
+    <title>Muskan Kumari | Professional Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -18,12 +18,12 @@
             
             <div class="search-box-container">
                 <i class="fas fa-search search-icon"></i>
-                <input type="text" id="gallerySearch" placeholder="Search my work..." onkeyup="searchGallery()">
+                <input type="text" id="gallerySearch" placeholder="Search projects (e.g., burger, website)..." onkeyup="searchAndFocusGallery()">
             </div>
 
             <nav class="nav-menus">
                 <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
-                <a href="#services" class="nav-link"><i class="fas fa-laptop-code"></i> Services</a>
+                <a href="#services" class="nav-link"><i class="fas fa-briefcase"></i> Services</a>
                 <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
             </nav>
         </div>
@@ -31,54 +31,59 @@
 
     <main class="main-wrapper">
 
-        <section id="home" class="page-section active-section">
+        <section id="home" class="page-section">
             <div class="hero-center-layout">
                 
-                <div class="avatar-glow-container">
-                    <img src="logo.png" alt="Muskan Kumari" class="profile-avatar" draggable="false">
-                </div>
-
-                <div class="availability-tag">
-                    <span class="pulse-dot"></span> Available for Freelance
+                <div class="avatar-wrapper-frame">
+                    <div class="avatar-glow-ring">
+                        <img src="logo.png" alt="Muskan Kumari" class="profile-avatar" draggable="false">
+                    </div>
+                    <div class="availability-tag">
+                        <span class="pulse-dot"></span> Available for Freelance
+                    </div>
                 </div>
 
                 <h1 class="hero-title">Hi, I'm <span class="cyan-highlight">Muskan Kumari</span></h1>
-                <p class="hero-subtitle">I am an aspiring professional graphic and web designer from New Delhi. I specialize in crafting stunning visual layouts, high-converting brand designs, and modern web experiences.</p>
+                <p class="hero-subtitle">Professional Graphic & Web Designer specializing in modern brand identity, high-converting advertisement concepts, and futuristic UI/UX layouts.</p>
 
                 <div class="hero-cta-buttons">
-                    <a href="#services" class="btn-primary" onclick="switchSection('services')">View My Work <i class="fas fa-arrow-right"></i></a>
-                    <a href="#contact" class="btn-secondary" onclick="switchSection('contact')">Let's Talk</a>
+                    <a href="#services" class="btn-primary">View My Work <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn-secondary">Let's Talk</a>
                 </div>
 
-                <div class="details-grid">
-                    <div class="info-card">
-                        <h3 class="card-title"><i class="fas fa-graduation-cap"></i> My Education</h3>
-                        <div class="edu-content">
-                            <p class="edu-degree"><strong>Senior Secondary Education</strong></p>
-                            <p class="edu-inst">Central Board of Secondary Education (CBSE)</p>
-                            
-                            <p class="edu-degree mt-15"><strong>Professional Certifications</strong></p>
-                            <p class="edu-inst">Basic Computer Course (BCC) & Diploma in Computer Applications (DCA)</p>
-                            <p class="edu-skills-learnt">Expertise acquired: MS Office, Graphic & Web Designing, and Video Editing.</p>
+                <div class="resume-minimal-grid">
+                    <div class="corporate-card">
+                        <h3 class="card-heading"><i class="fas fa-graduation-cap"></i> Academic & Professional Education</h3>
+                        <div class="corporate-timeline">
+                            <div class="timeline-item">
+                                <h4>Central Board of Secondary Education (CBSE)</h4>
+                                <p class="timeline-sub">Senior Secondary Education</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Advanced Computer Education</h4>
+                                <p class="timeline-sub">Basic Computer Course (BCC) & Diploma in Computer Applications (DCA)</p>
+                                <p class="timeline-desc">Comprehensive training in Core Computing, Graphic Architecture, and Interface Engineering.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="info-card">
-                        <h3 class="card-title"><i class="fas fa-laptop-code"></i> Technical Skills</h3>
-                        <div class="skills-flex-container">
-                            <span class="skill-pill"><i class="fab fa-html5"></i> HTML</span>
-                            <span class="skill-pill"><i class="fab fa-css3-alt"></i> CSS</span>
-                            <span class="skill-pill"><i class="fab fa-js"></i> JavaScript</span>
-                            <span class="skill-pill"><i class="fab fa-wordpress"></i> WordPress</span>
-                            <span class="skill-pill"><i class="fas fa-bezier-curve"></i> Photoshop</span>
-                            <span class="skill-pill"><i class="fas fa-pen-nib"></i> Illustrator</span>
-                            <span class="skill-pill"><i class="fas fa-book"></i> InDesign</span>
-                            <span class="skill-pill"><i class="fas fa-vector-square"></i> CorelDraw</span>
-                            <span class="skill-pill"><i class="fas fa-magic"></i> Canva</span>
-                            <span class="skill-pill"><i class="fas fa-video"></i> Filmora</span>
-                            <span class="skill-pill"><i class="fas fa-file-word"></i> MS Word</span>
-                            <span class="skill-pill"><i class="fas fa-file-excel"></i> MS Excel</span>
-                            <span class="skill-pill"><i class="fas fa-file-powerpoint"></i> PowerPoint</span>
+                    <div class="corporate-card">
+                        <h3 class="card-heading"><i class="fas fa-layer-group"></i> Core Technical Expertise</h3>
+                        <div class="skills-flex-engine">
+                            <span class="skill-chip"><i class="fab fa-html5"></i> HTML5</span>
+                            <span class="skill-chip"><i class="fab fa-css3-alt"></i> CSS3</span>
+                            <span class="skill-chip"><i class="fab fa-js"></i> JavaScript</span>
+                            <span class="skill-chip"><i class="fab fa-wordpress"></i> WordPress</span>
+                            <span class="skill-chip"><i class="fas fa-palette"></i> Adobe Photoshop</span>
+                            <span class="skill-chip"><i class="fas fa-pen-nib"></i> Adobe Illustrator</span>
+                            <span class="skill-chip"><i class="fas fa-book-open"></i> Adobe InDesign</span>
+                            <span class="skill-chip"><i class="fas fa-vector-square"></i> CorelDraw</span>
+                            <span class="skill-chip"><i class="fas fa-wand-magic-sparkles"></i> Canva</span>
+                            <span class="skill-chip"><i class="fas fa-video"></i> Filmora</span>
+                            <span class="skill-chip"><i class="fas fa-film"></i> Video Editing</span>
+                            <span class="skill-chip"><i class="fas fa-file-word"></i> MS Word</span>
+                            <span class="skill-chip"><i class="fas fa-file-excel"></i> MS Excel</span>
+                            <span class="skill-chip"><i class="fas fa-file-powerpoint"></i> MS PowerPoint</span>
                         </div>
                     </div>
                 </div>
@@ -87,82 +92,82 @@
         </section>
 
         <section id="services" class="page-section">
-            <div class="section-title-area">
-                <h2>My Work Showcase</h2>
-                <p>Browse through my professional design collections and creations.</p>
+            <div class="section-title-node">
+                <h2>Featured Services & Production Gallery</h2>
+                <p>A rigorous showcase of corporate visual designs, assets, and web architectures.</p>
             </div>
 
-            <div class="amazon-showcase-box">
-                <h3 class="gallery-subheading"><i class="fas fa-store"></i> Amazon-Style Live Collection</h3>
-                <div class="amazon-layout-engine">
-                    <div class="stage-display">
-                        <div class="anti-click-shield"></div>
-                        <img id="mainStageImage" src="g1.jpg" alt="Showcase Visual" draggable="false">
-                        <div id="stageCaption" class="stage-caption">Graphic Design Project 1</div>
+            <div class="amazon-showcase-container">
+                <h3 class="gallery-block-title"><i class="fas fa-images"></i> Amazon-Style Interactive Showcase</h3>
+                <div class="amazon-core-engine">
+                    <div class="stage-view-box">
+                        <div class="security-transparent-shield"></div>
+                        <img id="mainStageImage" src="g1.jpg" alt="Main Portfolio Showcase" draggable="false">
+                        <div id="stageCaption" class="stage-image-caption">Graphic Design Project 1</div>
                     </div>
-                    <div class="thumbnails-scroll-row" id="asyncThumbGrid">
+                    <div class="thumbnails-horizontal-strip" id="thumbnailsStrip">
                         </div>
                 </div>
             </div>
 
-            <div class="split-carousel-row">
-                <div class="carousel-pane">
-                    <h4 class="pane-title"><i class="fas fa-palette"></i> Graphic Designing Projects</h4>
-                    <div class="slider-viewport">
-                        <div class="slider-track" id="graphicTrack"></div>
-                        <button class="track-arrow left-arrow" onclick="shiftSlide('graphicTrack', -1)">&#10094;</button>
-                        <button class="track-arrow right-arrow" onclick="shiftSlide('graphicTrack', 1)">&#10095;</button>
+            <div class="dual-carousel-row">
+                <div class="carousel-pane-box">
+                    <h4 class="pane-header-title"><i class="fas fa-paint-brush"></i> Graphic Designing Portfolio</h4>
+                    <div class="slider-viewport-mask">
+                        <div class="slider-stream-track" id="graphicTrack"></div>
+                        <button class="nav-arrow-btn prev-arrow" onclick="manualShift('graphicTrack', -1)">&#10094;</button>
+                        <button class="nav-arrow-btn next-arrow" onclick="manualShift('graphicTrack', 1)">&#10095;</button>
                     </div>
                 </div>
 
-                <div class="carousel-pane">
-                    <h4 class="pane-title"><i class="fas fa-microchip"></i> AI Generated Visuals</h4>
-                    <div class="slider-viewport">
-                        <div class="slider-track" id="aiTrack"></div>
-                        <button class="track-arrow left-arrow" onclick="shiftSlide('aiTrack', -1)">&#10094;</button>
-                        <button class="track-arrow right-arrow" onclick="shiftSlide('aiTrack', 1)">&#10095;</button>
+                <div class="carousel-pane-box">
+                    <h4 class="pane-header-title"><i class="fas fa-robot"></i> AI Generated Visual Concepts</h4>
+                    <div class="slider-viewport-mask">
+                        <div class="slider-stream-track" id="aiTrack"></div>
+                        <button class="nav-arrow-btn prev-arrow" onclick="manualShift('aiTrack', -1)">&#10094;</button>
+                        <button class="nav-arrow-btn next-arrow" onclick="manualShift('aiTrack', 1)">&#10095;</button>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="page-section">
-            <div class="section-title-area">
+            <div class="section-title-node">
                 <h2>Let's Work Together</h2>
-                <p>Hire me for custom projects or connect with me instantly.</p>
+                <p>Available for corporate employment, junior design roles, and elite operations.</p>
             </div>
 
-            <div class="grid-contact-container">
-                <div class="form-wrapper-card">
+            <div class="contact-structural-grid">
+                <div class="input-form-card">
                     <h3><i class="fas fa-paper-plane"></i> Send a Message</h3>
-                    <form id="contactForm" onsubmit="event.preventDefault(); alert('Thank you! Your message has been transmitted.');">
-                        <div class="form-field">
+                    <form id="corporateContactForm" onsubmit="event.preventDefault(); alert('Transmission Successful. Message logged.');">
+                        <div class="form-row">
                             <input type="text" placeholder="Your Name" required autocomplete="off">
                         </div>
-                        <div class="form-field">
+                        <div class="form-row">
                             <input type="email" placeholder="Your Email" required autocomplete="off">
                         </div>
-                        <div class="form-field">
-                            <textarea placeholder="Project Details or Message..." rows="5" required></textarea>
+                        <div class="form-row">
+                            <textarea placeholder="Project Details or Message Requirements..." rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="form-submit-btn">Submit Message</button>
+                        <button type="submit" class="form-action-button">Submit Message</button>
                     </form>
                 </div>
 
-                <div class="upi-secure-card">
-                    <h3><i class="fas fa-shield-halved"></i> Hire / Support Me</h3>
-                    <p class="upi-notice-text">If you would like to purchase any of my practice works, or hire me for freelance jobs, you can securely pay an advance via UPI.</p>
+                <div class="trust-gateway-card">
+                    <h3><i class="fas fa-shield-cat"></i> Secure Verification</h3>
+                    <p class="gateway-explainer">For contract retainer deployment, verified payment processing protocols can be executed securely via standard UPI interfaces.</p>
                     
-                    <div class="upi-shield-widget">
-                        <div class="shield-logo-vector">
-                            <i class="fas fa-shield-blank"></i>
-                            <i class="fas fa-check inner-check"></i>
+                    <div class="bhim-widget-box">
+                        <div class="shield-vector-icon">
+                            <i class="fas fa-shield-halved"></i>
+                            <i class="fas fa-check secure-checkmark"></i>
                         </div>
-                        <span class="bhim-title">BHIM UPI Payment Link</span>
-                        <span class="vpa-address">UPI ID: <strong>muskan@upi</strong></span>
+                        <span class="bhim-label-text">BHIM UPI Payment Network</span>
+                        <span class="bhim-vpa-string">UPI ID: <strong>muskan@upi</strong></span>
                         
-                        <a href="upi://pay?pa=muskan@upi&pn=Muskan%20Kumari&cu=INR" class="gateway-trigger-btn">
-                            <i class="fas fa-bolt"></i> Pay Securely Now
+                        <a href="upi://pay?pa=muskan@upi&pn=Muskan%20Kumari&cu=INR" class="live-upi-trigger">
+                            <i class="fas fa-lock"></i> Pay Securely Now
                         </a>
                     </div>
                 </div>
@@ -171,10 +176,11 @@
 
     </main>
 
-    <footer class="app-footer">
+    <footer class="corporate-footer">
         <p>&copy; 2026 Muskan Kumari | Graphic & Web Designer | New Delhi, India</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+

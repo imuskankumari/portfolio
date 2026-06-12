@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muskan Kumari | Graphic & Web Designer</title>
-    <!-- FontAwesome For Slider & Navigation Icons -->
+    <!-- FontAwesome For Navigation & Control Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
 <body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Menu -->
     <nav class="navbar">
         <div class="logo">
-            <span class="nav-brand">MK Designs</span>
+            <img src="logo.png" alt="MK Logo" class="nav-logo-img">
+            <span>Designs</span>
         </div>
         <ul class="nav-links">
             <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
@@ -22,101 +23,112 @@
         </ul>
     </nav>
 
-    <!-- Home Section -->
+    <!-- Home Section (Takes Full Screen - Content strictly limited here) -->
     <section id="home" class="hero-section">
         <div class="hero-container">
-            <!-- Fixed: Your MK Logo inside the profile circle instead of photo -->
             <div class="logo-profile-circle">
-                <img src="Logo.png" alt="MK Logo">
+                <img src="logo.png" alt="MK Logo">
             </div>
             <h1>Hi, I'm <span class="highlight">Muskan Kumari</span></h1>
-            <h2>I specialize in Graphic Design and Web Designing</h2>
-            <p class="linkedin-bio">I am Muskan Kumari and I am from Delhi, an aspiring professional graphic designer. I am skilled in Adobe Photoshop, Adobe Illustrator, Adobe InDesign, CorelDraw & Canva. I specialize in Graphic Design and Vector Illustration Tracing.</p>
+            
+            <p class="linkedin-bio">I am Muskan Kumari and I am from Delhi, an aspiring professional graphic designer. I am skilled in Adobe Photoshop, Adobe Illustrator, Adobe InDesign, CorelDraw & Canva. I specialize in Graphic & web Design.</p>
+            
+            <!-- Education Block Inside Home -->
+            <div class="home-panel">
+                <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                <ul class="edu-list">
+                    <li>Senior Secondary Education From CBSE</li>
+                    <li>Basic Computer Course (BCC) and Diploma In Computer Applications (DCA) Certified, (MS Office, Graphic Designing and Web Designing, Video Editing)</li>
+                </ul>
+            </div>
+
+            <!-- Technical Skills Block Inside Home -->
+            <div class="home-panel">
+                <h3><i class="fa-solid fa-laptop-code"></i> My Technical Skills</h3>
+                <div class="skills-wrapper">
+                    <div class="skill-group">
+                        <h4>Graphic Designing</h4>
+                        <div class="tags-container">
+                            <span class="tag"><img src="photoshop.png" alt="Photoshop" class="tool-icon"> Adobe Photoshop</span>
+                            <span class="tag"><img src="illustrator.png" alt="Illustrator" class="tool-icon"> Adobe Illustrator</span>
+                            <span class="tag"><i class="fa-solid fa-book-open"></i> Adobe InDesign</span>
+                            <span class="tag"><img src="coreldraw.png" alt="CorelDraw" class="tool-icon"> CorelDraw</span>
+                            <span class="tag"><img src="canva.png" alt="Canva" class="tool-icon"> Canva</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Web Designing</h4>
+                        <div class="tags-container">
+                            <span class="tag"><i class="fa-brands fa-html5"></i> HTML</span>
+                            <span class="tag"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+                            <span class="tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+                            <span class="tag"><i class="fa-brands fa-wordpress"></i> WordPress</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Video Editing</h4>
+                        <div class="tags-container">
+                            <span class="tag"><i class="fa-solid fa-clapperboard"></i> Filmora</span>
+                            <span class="tag"><i class="fa-solid fa-video"></i> InShot</span>
+                            <span class="tag"><i class="fa-solid fa-film"></i> VN</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <a href="#work" class="btn">Explore My Work <i class="fa-solid fa-arrow-down"></i></a>
         </div>
     </section>
 
-    <!-- My Work & Services Section -->
+    <!-- My Work / Services Section (Strictly Separated Full Screen View) -->
     <section id="work" class="work-section">
         <div class="section-title">
-            <h2>My <span class="highlight">Work & Services</span></h2>
-            <p>A professional gallery showcasing my design tools, training, and creative work.</p>
+            <h2>Graphic Design</h2>
+            <p>A full showcase gallery designed to keep image proportions original and visible.</p>
         </div>
 
-        <!-- Technical Skills Tags Panel -->
-        <div class="skills-panel">
-            <h3><i class="fa-solid fa-laptop-code"></i> Software & Skills</h3>
-            <div class="tags-container">
-                <span class="tag"><i class="fa-solid fa-pen-nib"></i> Graphic Design</span>
-                <span class="tag"><i class="fa-solid fa-globe"></i> Web Design</span>
-                <span class="tag"><i class="fa-brands fa-html5"></i> HTML</span>
-                <span class="tag"><i class="fa-brands fa-css3-alt"></i> CSS</span>
-                <span class="tag"><i class="fa-brands fa-js"></i> JavaScript</span>
-                <span class="tag"><i class="fa-brands fa-wordpress"></i> WordPress</span>
-                <span class="tag"><i class="fa-solid fa-images"></i> Adobe Photoshop</span>
-                <span class="tag"><i class="fa-solid fa-bezier-curve"></i> Adobe Illustrator</span>
-                <span class="tag"><i class="fa-solid fa-book-open"></i> Adobe InDesign</span>
-                <span class="tag"><i class="fa-solid fa-draw-polygon"></i> CorelDraw</span>
-                <span class="tag"><i class="fa-solid fa-clapperboard"></i> Filmora</span>
+        <!-- Pinterest-Style Masonry Grid Layout (Displays long, landscape & square images perfectly) -->
+        <div class="masonry-portfolio">
+            <!-- Burger Poster -->
+            <div class="masonry-item">
+                <img src="burger.jpg" alt="Burger Advertising Poster">
+                <div class="masonry-overlay">
+                    <p>Burger Advertisement (Photoshop)</p>
+                </div>
+            </div>
+            <!-- Dynamic placeholder slots for long or wide image uploads -->
+            <div class="masonry-item">
+                <img src="https://via.placeholder.com/400x600/111827/00f2fe?text=Long+Image+Example" alt="Long Project Example">
+                <div class="masonry-overlay"><p>Vector Illustration Tracing</p></div>
+            </div>
+            <div class="masonry-item">
+                <img src="https://via.placeholder.com/600x400/111827/00f2fe?text=Wide+Image+Example" alt="Wide Project Example">
+                <div class="masonry-overlay"><p>Landscape Banner Design</p></div>
             </div>
         </div>
 
-        <!-- NEW: Amazon-Style Image Carousel Slider (10 Photos Capacity) -->
+        <!-- Separate Section For AI Works -->
+        <div class="section-title ai-title-margin">
+            <h2>AI Generated Visuals</h2>
+        </div>
+
         <div class="carousel-container">
             <button class="carousel-btn prev-btn" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
-            
             <div class="carousel-slider" id="slider">
-                <!-- Photo 1: Burger Poster (Safely placed only here) -->
                 <div class="carousel-slide">
-                    <img src="Burger Poster.jpg" alt="Burger Advertising Poster">
-                    <div class="slide-caption">Burger Advertisement (Photoshop)</div>
+                    <img src="https://via.placeholder.com/800x600/111827/00f2fe?text=AI+Visual+1" alt="AI Visual 1">
+                    <div class="slide-caption">AI Creative Art Concept 1</div>
                 </div>
-                <!-- Photo 2: Placeholder (Replace src with your actual image file names) -->
                 <div class="carousel-slide">
-                    <img src="https://via.placeholder.com/800x600/111827/00f2fe?text=Design+Project+2" alt="Project 2">
-                    <div class="slide-caption">Vector Tracing Work (Illustrator)</div>
+                    <img src="https://via.placeholder.com/800x600/111827/00f2fe?text=AI+Visual+2" alt="AI Visual 2">
+                    <div class="slide-caption">AI Creative Art Concept 2</div>
                 </div>
-                <!-- Photo 3 -->
-                <div class="carousel-slide">
-                    <img src="https://via.placeholder.com/800x600/111827/00f2fe?text=Design+Project+3" alt="Project 3">
-                    <div class="slide-caption">Branding Layout (InDesign)</div>
-                </div>
-                <!-- Photo 4 -->
-                <div class="carousel-slide"><img src="https://via.placeholder.com/800x600/111827/00f2fe?text=Design+Project+4" alt="Project 4"><div class="slide-caption">CorelDraw Artwork</div></div>
-                <!-- Photo 5 -->
-                <div class="carousel-slide"><img src="https://via.placeholder.com/800x600/111827/00f2fe?text=Design+Project+5" alt="Project 5"><div class="slide-caption">Canva Social Media Design</div></div>
-                <!-- Photo 6 -->
-                <div class="carousel-slide"><img src="https://via.placeholder.com/800x600/111827/00f2fe?text=Design+Project+6" alt="Project 6"><div class="slide-caption">AI Generated Artwork Concept</div></div>
-                <!-- Photo 7 -->
-                <div class="carousel-slide"><img src="https://via.placeholder.com/800x600/111827/00f2fe?text=Design+Project+7" alt="Project 7"><div class="slide-caption">Web UI Layout Concept</div></div>
-                <!-- Photo 8 -->
-                <div class="carousel-slide"><img src="https://via.placeholder.com/800x600/111827/00f2fe?text=Design+Project+8" alt="Project 8"><div class="slide-caption">Creative Banner Advertisement</div></div>
-                <!-- Photo 9 -->
-                <div class="carousel-slide"><img src="https://via.placeholder.com/800x600/111827/00f2fe?text=Design+Project+9" alt="Project 9"><div class="slide-caption">Logo Variation Presentation</div></div>
-                <!-- Photo 10 -->
-                <div class="carousel-slide"><img src="https://via.placeholder.com/800x600/111827/00f2fe?text=Design+Project+10" alt="Project 10"><div class="slide-caption">Typography Poster Study</div></div>
             </div>
-
             <button class="carousel-btn next-btn" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
-        </div>
-
-        <!-- Education Panel -->
-        <div class="education-panel">
-            <h3><i class="fa-solid fa-graduation-cap"></i> Academic & Professional Education</h3>
-            <div class="edu-row">
-                <div class="edu-box">
-                    <h4>Central Board of Secondary Education (CBSE)</h4>
-                    <p>Senior Secondary Education From CBSE</p>
-                </div>
-                <div class="edu-box">
-                    <h4>Computer Education</h4>
-                    <p>Basic Computer Course (BCC) and Diploma In Computer Applications (DCA) Certified (MS Office, Graphic Designing and Web Designing, Video Editing)</p>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section (Isolated Full Screen View) -->
     <section id="contact" class="contact-section">
         <div class="section-title">
             <h2>Let's Work <span class="highlight">Together</span></h2>

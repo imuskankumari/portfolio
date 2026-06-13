@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Professional Portfolio</title>
+    <title>Muskan Kumari | Design Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -18,7 +18,7 @@
             
             <div class="search-box-container">
                 <i class="fas fa-search search-icon"></i>
-                <input type="text" id="gallerySearch" placeholder="Search designs (e.g., burger)..." onkeyup="searchAndFocusGallery()">
+                <input type="text" id="gallerySearch" placeholder="Search designs..." onkeyup="searchAndFocusGallery()">
             </div>
 
             <nav class="nav-menus">
@@ -36,7 +36,7 @@
                 
                 <div class="avatar-wrapper-frame">
                     <div class="avatar-glow-ring">
-                        <img src="logo.png" alt="Muskan Kumari Logo" class="profile-avatar" draggable="false">
+                        <img src="./logo.png" alt="Muskan Kumari Logo" class="profile-avatar" onerror="this.src='logo.png';" draggable="false">
                     </div>
                     <div class="availability-tag">
                         <span class="pulse-dot"></span> Available for Freelance
@@ -125,11 +125,10 @@
         <section id="services" class="page-section">
             <div class="section-title-node">
                 <h2>Featured Services & Portfolio Grid</h2>
-                <p>Explore my entire design collection mapped in an Amazon-Style matrix showcase.</p>
+                <p>Click any template card below to open and view the high-definition design output.</p>
             </div>
 
-            <div class="amazon-true-grid-layout" id="amazonGridEngine">
-                </div>
+            <div class="amazon-true-grid-layout" id="amazonGridEngine"></div>
         </section>
 
         <section id="contact" class="page-section">
@@ -167,6 +166,14 @@
 
     </main>
 
+    <div id="imageLightboxModal" class="lightbox-modal" onclick="closeLightbox()">
+        <span class="lightbox-close-btn">&times;</span>
+        <div class="lightbox-content-wrapper" onclick="event.stopPropagation()">
+            <img id="lightboxMainImage" src="" alt="HD Visual View" draggable="false">
+            <div id="lightboxCaption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
     <footer class="corporate-footer">
         <p>&copy; 2026 Muskan Kumari | Graphic & Web Designer | New Delhi, India</p>
     </footer>
@@ -174,4 +181,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-

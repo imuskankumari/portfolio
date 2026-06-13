@@ -1,97 +1,164 @@
-<!-- HERO SECTION (बिना उन दो बटन्स के) -->
-<section class="text-center py-20 bg-[#0d1117] text-white">
-  <div class="mb-6 flex justify-center">
-    <!-- आपका लोगो यहाँ आएगा -->
-    <div class="border-2 border-[#00f2fe] rounded-full p-4 inline-block text-center text-xs">
-      Muskan <br> Kumari Logo
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muskan Kumari | Professional Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body oncontextmenu="return false;">
+
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="logo.png" alt="MK Logo" class="site-logo">
+                <span class="logo-text">MK <span class="cyan-text">Designs</span></span>
+            </div>
+            
+            <div class="search-box-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="gallerySearch" placeholder="Search my production designs..." onkeyup="searchAndFocusGallery()">
+            </div>
+
+            <nav class="nav-menus">
+                <a href="#home" class="nav-link active" onclick="switchTab(event, 'home')"><i class="fas fa-home"></i> Home</a>
+                <a href="#services" class="nav-link" onclick="switchTab(event, 'services')"><i class="fas fa-th"></i> Services</a>
+                <a href="#contact" class="nav-link" onclick="switchTab(event, 'contact')"><i class="fas fa-envelope"></i> Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-wrapper">
+
+        <section id="home" class="page-section active-section">
+            <div class="hero-center-layout">
+                
+                <div class="avatar-wrapper-frame">
+                    <div class="avatar-glow-ring">
+                        <img src="logo.png" alt="Muskan Kumari Logo" class="profile-avatar" draggable="false">
+                    </div>
+                    <div class="availability-tag">
+                        <span class="pulse-dot"></span> Available for Freelance
+                    </div>
+                </div>
+
+                <h1 class="hero-title">Hi, I'm <span class="cyan-highlight">Muskan Kumari</span></h1>
+                <p class="hero-subtitle">I am Muskan Kumari and I am from Delhi, an aspiring professional graphic & Web designer. I specialize in Graphics Designs & Websites Design.</p>
+
+                <div class="master-stream-container">
+                    <div class="global-slider-mask">
+                        <button class="sound-toggle-btn" onclick="toggleGlobalAudio()"><i id="soundIcon" class="fas fa-volume-mute"></i> Toggle Audio</button>
+                        <div class="slider-stream-track" id="masterVideoTrack"></div>
+                    </div>
+                </div>
+
+                <div class="section-divider-gap"></div>
+
+                <div class="landscape-box-flow">
+                    
+                    <div class="landscape-corporate-card">
+                        <h3 class="card-heading"><i class="fas fa-graduation-cap"></i> My Qualifications Education</h3>
+                        <div class="education-content-box">
+                            <p class="edu-main-line">Senior Secondary Education From CBSE New Delhi, India</p>
+                            <p class="edu-main-line mt-15">Basic Computer Course (BCC) and Diploma In Computer Applications (DCA)</p>
+                        </div>
+                    </div>
+
+                    <div class="landscape-corporate-card">
+                        <h3 class="card-heading"><i class="fas fa-layer-group"></i> My Technical Skills</h3>
+                        
+                        <div class="skills-landscape-row">
+                            <span class="skill-group-title">Graphic Designing</span>
+                            <div class="capsule-badges-grid">
+                                <span class="pill-badge"><i class="fas fa-paint-brush"></i> Adobe Photoshop</span>
+                                <span class="pill-badge"><i class="fas fa-pen-nib"></i> Adobe Illustrator</span>
+                                <span class="pill-badge"><i class="fas fa-book-open"></i> Adobe InDesign</span>
+                                <span class="pill-badge"><i class="fas fa-vector-square"></i> CorelDraw</span>
+                                <span class="pill-badge"><i class="fas fa-wand-magic-sparkles"></i> Canva</span>
+                            </div>
+                        </div>
+
+                        <div class="skills-landscape-row">
+                            <span class="skill-group-title">Web Designing</span>
+                            <div class="capsule-badges-grid">
+                                <span class="pill-badge"><i class="fab fa-html5"></i> HTML</span>
+                                <span class="pill-badge"><i class="fab fa-css3-alt"></i> CSS</span>
+                                <span class="pill-badge"><i class="fab fa-js"></i> Javascript</span>
+                                <span class="pill-badge"><i class="fab fa-wordpress"></i> WordPress</span>
+                            </div>
+                        </div>
+
+                        <div class="skills-landscape-row">
+                            <span class="skill-group-title">Video Editing</span>
+                            <div class="capsule-badges-grid">
+                                <span class="pill-badge"><i class="fas fa-video"></i> Filmora</span>
+                                <span class="pill-badge"><i class="fas fa-play"></i> Vn</span>
+                                <span class="pill-badge"><i class="fas fa-film"></i> Inshot</span>
+                            </div>
+                        </div>
+
+                        <div class="skills-landscape-row">
+                            <span class="skill-group-title">Microsoft Office</span>
+                            <div class="capsule-badges-grid">
+                                <span class="pill-badge"><i class="fas fa-file-word"></i> MS Word</span>
+                                <span class="pill-badge"><i class="fas fa-file-excel"></i> MS Excel</span>
+                                <span class="pill-badge"><i class="fas fa-file-powerpoint"></i> MS PowerPoint</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="services" class="page-section">
+            <div class="section-title-node">
+                <h2>Portfolio Showcase</h2>
+            </div>
+            <div class="amazon-true-grid-layout" id="amazonGridEngine"></div>
+        </section>
+
+        <section id="contact" class="page-section">
+            <div class="contact-structural-grid">
+                <div class="input-form-card">
+                    <form id="corporateForm" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                        <div class="form-row"><input type="text" placeholder="Your Name" required autocomplete="off"></div>
+                        <div class="form-row"><input type="email" placeholder="Your Email" required autocomplete="off"></div>
+                        <div class="form-row"><textarea placeholder="Message Requirements..." rows="4" required></textarea></div>
+                        <button type="submit" class="form-action-button">Submit Message</button>
+                    </form>
+                </div>
+
+                <div class="trust-gateway-card">
+                    <div class="bhim-widget-box">
+                        <div class="shield-vector-icon">
+                            <i class="fas fa-shield-blank"></i>
+                            <i class="fas fa-check secure-checkmark"></i>
+                        </div>
+                        <span class="bhim-label-text">BHIM UPI Payment Network</span>
+                        <span class="bhim-vpa-string">UPI ID: <strong>muskan@upi</strong></span>
+                        <a href="upi://pay?pa=muskan@upi&pn=Muskan%20Kumari&cu=INR" class="live-upi-trigger"><i class="fas fa-lock"></i> Pay Securely Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="imageLightboxModal" class="lightbox-modal" onclick="closeLightbox()">
+        <span class="lightbox-close-btn">&times;</span>
+        <div class="lightbox-content-wrapper" onclick="event.stopPropagation()">
+            <img id="lightboxMainImage" src="" alt="HD View" draggable="false">
+            <div id="lightboxCaption" class="lightbox-caption"></div>
+        </div>
     </div>
-  </div>
-  <p class="text-[#00f2fe] text-xs font-semibold tracking-wider uppercase mb-2">• Available for Freelance</p>
-  <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="text-[#00f2fe]">Muskan Kumari</span></h1>
-  <p class="max-w-2xl mx-auto text-gray-400 text-sm leading-relaxed px-4">
-    I am Muskan Kumari and I am from Delhi, an aspiring professional graphic & Web designer. I specialize in Graphics Designs & Websites Design.
-  </p>
-</section>
 
-<!-- MAIN CONTENT SECTION (Landscape Layout) -->
-<section class="bg-[#070a0f] py-12 px-4 text-white">
-  <div class="max-w-4xl mx-auto space-y-8">
-    
-    <!-- 1. MY EDUCATION BOX -->
-    <div class="bg-[#0d1117] border border-gray-800 rounded-xl p-6 md:p-8">
-      <div class="flex items-center space-x-3 mb-6">
-        <span class="text-[#00f2fe] text-2xl">🎓</span>
-        <h2 class="text-xl font-bold text-[#00f2fe]">My Education</h2>
-      </div>
-      
-      <div class="space-y-6">
-        <div>
-          <h3 class="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">My degree</h3>
-          <p class="text-base font-medium">Senior Secondary Education From CBSE New Delhi India</p>
-        </div>
-        
-        <div>
-          <h3 class="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">My courses</h3>
-          <p class="text-base font-medium">Basic Computer Course (BCC) and Diploma In Computer Applications (DCA)</p>
-        </div>
-      </div>
-    </div>
+    <footer class="corporate-footer">
+        <p>&copy; 2026 Muskan Kumari | Graphic & Web Designer | New Delhi, India</p>
+    </footer>
 
-    <!-- 2. MY SKILLS BOX (LANDSCAPE / LONG BOX) -->
-    <div class="bg-[#0d1117] border border-gray-800 rounded-xl p-6 md:p-8">
-      <div class="flex items-center space-x-3 mb-8">
-        <span class="text-[#00f2fe] text-2xl">🥞</span>
-        <h2 class="text-xl font-bold text-[#00f2fe]">My Technical Skills</h2>
-      </div>
-      
-      <!-- एक के नीचे एक (वर्टिकल) लेआउट, कोई अगल-बगल नहीं -->
-      <div class="space-y-8">
-        
-        <!-- Graphic Designing -->
-        <div>
-          <h3 class="text-lg font-semibold text-[#00f2fe] mb-3">Graphic Designing</h3>
-          <div class="flex flex-col items-start space-y-2">
-            <span class="bg-[#161b22] border border-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm">Adobe Photoshop</span>
-            <span class="bg-[#161b22] border border-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm">Adobe Illustrator</span>
-            <span class="bg-[#161b22] border border-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm">Adobe InDesign</span>
-            <span class="bg-[#161b22] border border-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm">CorelDraw</span>
-            <span class="bg-[#161b22] border border-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm">Canva</span>
-          </div>
-        </div>
-
-        <!-- Web Designing -->
-        <div>
-          <h3 class="text-lg font-semibold text-[#00f2fe] mb-3">Web Designing</h3>
-          <div class="flex flex-col items-start space-y-2">
-            <span class="bg-[#161b22] border border-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm">HTML</span>
-            <span class="bg-[#161b22] border border-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm">CSS</span>
-            <span class="bg-[#161b22] border border-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm">JavaScript</span>
-            <span class="bg-[#161b22] border border-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm">WordPress</span>
-          </div>
-        </div>
-
-        <!-- Video Editing -->
-        <div>
-          <h3 class="text-lg font-semibold text-[#00f2fe] mb-3">Video Editing</h3>
-          <div class="flex flex-col items-start space-y-2">
-            <span class="bg-[#161b22] border border-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm">Filmora</span>
-            <span class="bg-[#161b22] border border-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm">VN</span>
-            <span class="bg-[#161b22] border border-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm">InShot</span>
-          </div>
-        </div>
-
-        <!-- Microsoft Office -->
-        <div>
-          <h3 class="text-lg font-semibold text-[#00f2fe] mb-3">Microsoft Office</h3>
-          <div class="flex flex-col items-start space-y-2">
-            <span class="bg-[#161b22] border border-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm">MS Word</span>
-            <span class="bg-[#161b22] border border-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm">MS Excel</span>
-            <span class="bg-[#161b22] border border-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm">MS PowerPoint</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
+    <script src="script.js"></script>
+</body>
+</html>

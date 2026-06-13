@@ -88,7 +88,6 @@ let sliderThreadTimer = null;
 let globalMuteState = true; 
 
 function buildCombinedWideSlider() {
-    // Triggers and starts native loop tracking for HTML players
     setTimeout(() => { playVideoAtCurrentIndex(); }, 250);
 }
 
@@ -121,7 +120,7 @@ function playVideoAtCurrentIndex() {
     const currentVideo = allVideos[activeSlideIndex];
     if (currentVideo) {
         currentVideo.muted = globalMuteState;
-        currentVideo.play().catch(() => console.log("Waiting for gesture context loop channel..."));
+        currentVideo.play().catch(() => console.log("Holding media context..."));
     }
 }
 

@@ -1,13 +1,13 @@
-// MULTI-FUNCTION PROTOCOL INTEGRATION ENGINE
+// MULTI-STREAM DYNAMIC ENGINE ENGINE
 document.addEventListener("DOMContentLoaded", () => {
-    initScrollSystem();
+    initScrollSpySystem();
     buildAmazonTrueGrid();
-    initAutoSliderEngine();
-    armSystemSecurity();
+    initVideoSlidersEngine();
+    armAntiTheftShields();
 });
 
-// 1. NAVIGATION HIGHLIGHT AND SCROLL MONITOR
-function initScrollSystem() {
+// 1. DYNAMIC ROUTING NAVIGATION PROTOCOL
+function initScrollSpySystem() {
     const links = document.querySelectorAll(".nav-link");
     const sections = document.querySelectorAll(".page-section");
 
@@ -47,7 +47,7 @@ function initScrollSystem() {
     });
 }
 
-// 2. GENERATE 100 CARD MODULES IN THE SERVICES GRID
+// 2. BUILD SERVICES PORTFOLIO CARD GRIDS (g1.jpg to g100.jpg)
 function buildAmazonTrueGrid() {
     const gridContainer = document.getElementById("amazonGridEngine");
     let domBuffer = "";
@@ -69,7 +69,6 @@ function buildAmazonTrueGrid() {
     gridContainer.innerHTML = domBuffer;
 }
 
-// 3. HD LIGHTBOX INTERACTION CONTROLLER (Click to show full image)
 function openLightbox(imgSrc, captionText) {
     const modal = document.getElementById("imageLightboxModal");
     const modalImg = document.getElementById("lightboxMainImage");
@@ -84,102 +83,39 @@ function closeLightbox() {
     document.getElementById("imageLightboxModal").style.display = "none";
 }
 
-// 4. BALANCED AUTO PLAY INTERVAL THREADS (3000ms loop Cycles)
-const trackerIndices = { graphicTrack: 0, aiTrack: 0 };
-let threadIntervals = [];
+// 3. 9:16 REEL AUTOMATIC CYCLES SYSTEM (Left: 8 Slides vs Right: 2 Slides)
+const trackerIndices = { aiTrack: 0, brandTrack: 0 };
+const sliderTotalCount = { aiTrack: 8, brandTrack: 2 }; // Sets counts boundaries dynamically
+let automaticIntervalThreads = [];
 
-function initAutoSliderEngine() {
-    const graphicTrack = document.getElementById("graphicTrack");
+function initVideoSlidersEngine() {
     const aiTrack = document.getElementById("aiTrack");
+    const brandTrack = document.getElementById("brandTrack");
 
-    let gStreamHTML = "";
-    let aStreamHTML = "";
+    let aiHTMLBuffer = "";
+    let brandHTMLBuffer = "";
 
-    for (let i = 1; i <= 10; i++) {
-        gStreamHTML += `
+    // Loop 1: Injects 8 AI Video Files (v1.mp4 to v8.mp4)
+    for (let i = 1; i <= 8; i++) {
+        aiHTMLBuffer += `
             <div class="stream-slide">
-                <img src="g${i}.jpg" alt="Graphic Artwork Slide ${i}" draggable="false">
-            </div>
-        `;
-        aStreamHTML += `
-            <div class="stream-slide">
-                <img src="ai${i}.png" alt="AI Generated Visual Slide ${i}" draggable="false">
+                <video src="v${i}.mp4" autoplay muted loop playsinline></video>
             </div>
         `;
     }
-    graphicTrack.innerHTML = gStreamHTML;
-    aiTrack.innerHTML = aStreamHTML;
 
-    threadIntervals.push(setInterval(() => { performCycleShift('graphicTrack'); }, 3000));
-    threadIntervals.push(setInterval(() => { performCycleShift('aiTrack'); }, 3000));
-}
-
-function performCycleShift(trackId) {
-    shiftTrackPosition(trackId, 1);
-}
-
-function manualShift(trackId, vector) {
-    threadIntervals.forEach(clearInterval);
-    threadIntervals = [];
-
-    shiftTrackPosition(trackId, vector);
-
-    threadIntervals.push(setInterval(() => { performCycleShift('graphicTrack'); }, 3000));
-    threadIntervals.push(setInterval(() => { performCycleShift('aiTrack'); }, 3000));
-}
-
-function shiftTrackPosition(trackId, vector) {
-    const targetTrackDOM = document.getElementById(trackId);
-    let pointer = trackerIndices[trackId];
-    
-    pointer += vector;
-
-    if (pointer >= 10) { pointer = 0; }
-    else if (pointer < 0) { pointer = 9; }
-
-    trackerIndices[trackId] = pointer;
-    targetTrackDOM.style.transform = `translateX(-${pointer * 100}%)`;
-}
-
-// 5. GLOBAL SEARCH ENGINE CONTROL
-function searchAndFocusGallery() {
-    const userQuery = document.getElementById("gallerySearch").value.toLowerCase();
-    const cards = document.querySelectorAll(".amazon-product-card-node");
-    const targetSection = document.getElementById("services");
-
-    if(userQuery !== "") {
-        const navOffset = 70;
-        const targetCoords = targetSection.getBoundingClientRect().top + window.pageYOffset - navOffset;
-        window.scrollTo({ top: targetCoords, behavior: "smooth" });
+    // Loop 2: Injects 2 Brand Identity Video Files (b1.mp4 to b2.mp4)
+    for (let j = 1; j <= 2; j++) {
+        brandHTMLBuffer += `
+            <div class="stream-slide">
+                <video src="b${j}.mp4" autoplay muted loop playsinline></video>
+            </div>
+        `;
     }
 
-    cards.forEach((card, index) => {
-        const indexNumber = index + 1;
-        const contextMetaTags = `g${indexNumber} burger design layout project identity asset artwork visual frame cover element`;
-        
-        if(contextMetaTags.includes(userQuery) || userQuery === "") {
-            card.classList.remove("filtered-out");
-        } else {
-            card.classList.add("filtered-out");
-        }
-    });
-}
+    aiTrack.innerHTML = aiHTMLBuffer;
+    brandTrack.innerHTML = brandHTMLBuffer;
 
-// 6. HOTKEY SECURITY MECHANISM
-function armSystemSecurity() {
-    document.addEventListener("keydown", (e) => {
-        if (
-            e.keyCode === 123 || 
-            (e.ctrlKey && e.shiftKey && e.keyCode === 73) || 
-            (e.ctrlKey && e.keyCode === 85) || 
-            (e.ctrlKey && e.keyCode === 83)
-        ) {
-            e.preventDefault();
-            return false;
-        }
-    });
-
-    document.addEventListener("dragstart", (e) => {
-        if (e.target.nodeName === "IMG") { e.preventDefault(); }
-    });
-}
+    // Run loops ticking independently every 3.5 seconds
+    automaticIntervalThreads.push(setInterval(() => { performTrackCycle('aiTrack'); }, 3500));
+    automaticIntervalThreads.

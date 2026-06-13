@@ -1,4 +1,4 @@
-// MULTI-CORE CONTROLLER INTEGRATOR
+// MULTI-FUNCTION PROTOCOL INTEGRATION ENGINE
 document.addEventListener("DOMContentLoaded", () => {
     initScrollSystem();
     buildAmazonTrueGrid();
@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     armSystemSecurity();
 });
 
-// 1. DYNAMIC SMOOTH SCROLL ROUTING ENGINE
+// 1. NAVIGATION HIGHLIGHT AND SCROLL MONITOR
 function initScrollSystem() {
     const links = document.querySelectorAll(".nav-link");
     const sections = document.querySelectorAll(".page-section");
@@ -29,7 +29,6 @@ function initScrollSystem() {
         });
     });
 
-    // Sync Active Highlights on Page YScroll axis
     window.addEventListener("scroll", () => {
         let activeId = "home";
         sections.forEach(sec => {
@@ -48,16 +47,16 @@ function initScrollSystem() {
     });
 }
 
-// 2. BUILD TRUE AMAZON INTERACTIVE GRID ITEMS (g1.jpg to g100.jpg)
+// 2. GENERATE 100 CARD MODULES IN THE SERVICES GRID
 function buildAmazonTrueGrid() {
     const gridContainer = document.getElementById("amazonGridEngine");
     let domBuffer = "";
 
     for (let count = 1; count <= 100; count++) {
         domBuffer += `
-            <div class="amazon-product-card-node" id="card-item-${count}">
+            <div class="amazon-product-card-node" id="card-item-${count}" onclick="openLightbox('g${count}.jpg', 'Graphic Production Layout Template #${count}')">
                 <div class="card-image-box-frame">
-                    <img src="g${count}.jpg" alt="Graphic Design Showcase Item ${count}" draggable="false">
+                    <img src="g${count}.jpg" alt="Graphic Design Showcase Item ${count}" draggable="false" onerror="this.parentNode.style.backgroundColor='#1a1f2c'">
                 </div>
                 <div class="card-title-string">Graphic Production Layout Template #${count}</div>
                 <div class="card-badge-row">
@@ -70,7 +69,22 @@ function buildAmazonTrueGrid() {
     gridContainer.innerHTML = domBuffer;
 }
 
-// 3. INFINITE AUTOMATIC PLAY ENGINE (3 SECONDS ROTATION INTERVAL)
+// 3. HD LIGHTBOX INTERACTION CONTROLLER (Click to show full image)
+function openLightbox(imgSrc, captionText) {
+    const modal = document.getElementById("imageLightboxModal");
+    const modalImg = document.getElementById("lightboxMainImage");
+    const modalCaption = document.getElementById("lightboxCaption");
+
+    modal.style.display = "flex";
+    modalImg.src = imgSrc;
+    modalCaption.innerText = captionText;
+}
+
+function closeLightbox() {
+    document.getElementById("imageLightboxModal").style.display = "none";
+}
+
+// 4. BALANCED AUTO PLAY INTERVAL THREADS (3000ms loop Cycles)
 const trackerIndices = { graphicTrack: 0, aiTrack: 0 };
 let threadIntervals = [];
 
@@ -81,7 +95,6 @@ function initAutoSliderEngine() {
     let gStreamHTML = "";
     let aStreamHTML = "";
 
-    // Generate exactly 10 clean slides each
     for (let i = 1; i <= 10; i++) {
         gStreamHTML += `
             <div class="stream-slide">
@@ -97,7 +110,6 @@ function initAutoSliderEngine() {
     graphicTrack.innerHTML = gStreamHTML;
     aiTrack.innerHTML = aStreamHTML;
 
-    // Run loops automatically 
     threadIntervals.push(setInterval(() => { performCycleShift('graphicTrack'); }, 3000));
     threadIntervals.push(setInterval(() => { performCycleShift('aiTrack'); }, 3000));
 }
@@ -107,13 +119,11 @@ function performCycleShift(trackId) {
 }
 
 function manualShift(trackId, vector) {
-    // Kill interval threads immediately to prevent click skipping anomalies
     threadIntervals.forEach(clearInterval);
     threadIntervals = [];
 
     shiftTrackPosition(trackId, vector);
 
-    // Re-spin loops
     threadIntervals.push(setInterval(() => { performCycleShift('graphicTrack'); }, 3000));
     threadIntervals.push(setInterval(() => { performCycleShift('aiTrack'); }, 3000));
 }
@@ -131,7 +141,7 @@ function shiftTrackPosition(trackId, vector) {
     targetTrackDOM.style.transform = `translateX(-${pointer * 100}%)`;
 }
 
-// 4. PROTOCOL SEARCH LOGIC (Auto focuses to Grid and filters card views instantly)
+// 5. GLOBAL SEARCH ENGINE CONTROL
 function searchAndFocusGallery() {
     const userQuery = document.getElementById("gallerySearch").value.toLowerCase();
     const cards = document.querySelectorAll(".amazon-product-card-node");
@@ -145,7 +155,6 @@ function searchAndFocusGallery() {
 
     cards.forEach((card, index) => {
         const indexNumber = index + 1;
-        // Search evaluation tags setup
         const contextMetaTags = `g${indexNumber} burger design layout project identity asset artwork visual frame cover element`;
         
         if(contextMetaTags.includes(userQuery) || userQuery === "") {
@@ -156,7 +165,7 @@ function searchAndFocusGallery() {
     });
 }
 
-// 5. ENCRYPTED ANTI-THEFT HANDLERS
+// 6. HOTKEY SECURITY MECHANISM
 function armSystemSecurity() {
     document.addEventListener("keydown", (e) => {
         if (
@@ -174,4 +183,3 @@ function armSystemSecurity() {
         if (e.target.nodeName === "IMG") { e.preventDefault(); }
     });
 }
-

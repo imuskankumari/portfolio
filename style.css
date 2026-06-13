@@ -1,4 +1,4 @@
-/* 2026 PROFESSIONAL LIQUID INTERFACE ARCHITECTURE */
+/* 2026 EXECUTIVE RESPONSIVE BENTO ENGINE */
 :root {
     --bg-deep-void: #060810;     
     --bg-card-slate: #101424;    
@@ -35,7 +35,7 @@ img, video {
     -webkit-user-drag: none;
 }
 
-/* FIXED NAVBAR (MOBILE SMART RESCALER) */
+/* FIXED NAVBAR ARCHITECTURE */
 .navbar {
     position: fixed;
     top: 0;
@@ -79,7 +79,7 @@ img, video {
 .nav-link { color: var(--slate-muted); text-decoration: none; font-size: 0.92rem; font-weight: 600; transition: color 0.2s; }
 .nav-link:hover, .nav-link.active { color: var(--neon-cyan); }
 
-/* MAIN CONTENT BLOCK - RESOLVES PHONE SCREEN CLUTTER */
+/* CONTENT MAIN BLOCK */
 .main-wrapper {
     width: 100%;
     margin-top: 70px;
@@ -87,11 +87,11 @@ img, video {
 
 .page-section {
     width: 100%;
-    padding: 60px 30px;
+    padding: 50px 30px;
     border-bottom: 1px solid var(--border-mesh);
 }
 
-/* AVATAR DEPLOYMENT OVERLAP LOGIC */
+/* HERO INITIAL CONTAINER */
 .hero-center-layout {
     display: flex;
     flex-direction: column;
@@ -104,7 +104,7 @@ img, video {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px; /* Added padding to prevent title clipping on mobile viewport */
+    margin-bottom: 35px; /* Perfect spacing to prevent mobile layout overlap */
     width: 120px;
 }
 
@@ -143,11 +143,11 @@ img, video {
 
 .pulse-dot { width: 4px; height: 4px; background-color: var(--neon-cyan); border-radius: 50%; }
 
-.hero-title { font-size: 2.3rem; font-weight: 800; margin-bottom: 12px; text-align: center; }
+.hero-title { font-size: 2.3rem; font-weight: 800; margin-bottom: 10px; text-align: center; }
 .cyan-highlight { color: var(--neon-cyan); }
 .hero-subtitle { color: var(--slate-muted); font-size: 0.98rem; max-width: 900px; margin-bottom: 30px; text-align: center; }
 
-/* AMAZON FLUID INDUSTRIAL BANNER */
+/* DYNAMIC VIDEO SLIDER MASK (AMAZON MODE RATIO) */
 .master-stream-container {
     width: 100%;
     margin-bottom: 30px;
@@ -196,7 +196,7 @@ img, video {
     z-index: 100;
 }
 
-/* 100% WIDE BENTO COVERS FLOW */
+/* WIDE HORIZONTAL LANDSCAPE CARD DESIGN SYSTEM */
 .landscape-box-flow {
     width: 100%;
     display: flex;
@@ -246,7 +246,7 @@ img, video {
     flex-shrink: 0;
 }
 
-/* Skills Cluster Layout Engine */
+/* Skills Cluster Grid Structural Setup */
 .skills-wrapper-block {
     display: flex;
     flex-direction: column;
@@ -259,7 +259,6 @@ img, video {
     gap: 12px;
 }
 
-/* Subheading Silver Balance Text */
 .category-label {
     font-size: 1.05rem;
     font-weight: 700;
@@ -267,7 +266,7 @@ img, video {
     letter-spacing: 0.3px;
 }
 
-/* FIX: Forces horizontal wrap clusters side-by-side perfectly */
+/* FIX: Forces cluster buttons to align side-by-side horizontally and auto-wrap */
 .capsules-flex-wrap {
     display: flex;
     flex-wrap: wrap; 
@@ -275,26 +274,24 @@ img, video {
     width: 100%;
 }
 
-/* Clean Pill Caps (Border Radius 50px for complete circular symmetry) */
+/* Clean Pill Capsule Node Styling (Strictly Border Radius 50px - No Icons) */
 .clean-pill-capsule {
     background-color: var(--bg-deep-void);
     border: 1px solid var(--border-mesh);
     padding: 10px 22px;
-    border-radius: 50px; /* Perfect Capsule Curve Style requested */
+    border-radius: 50px; /* Perfect Soft Curved Capsule shape matching 13565.jpg */
     font-size: 0.88rem;
     font-weight: 600;
     color: var(--pure-white);
     display: inline-block;
-    transition: all 0.2s ease;
 }
 .clean-pill-capsule:hover {
     border-color: var(--neon-cyan);
-    background-color: rgba(0, 245, 255, 0.03);
 }
 
 .section-divider-gap { width: 100%; height: 20px; }
 
-/* SERVICES GRID ARCHITECTURE */
+/* SERVICES GRID ARTIFACTS */
 .section-title-node { text-align: center; margin-bottom: 30px; }
 .section-title-node h2 { font-size: 1.8rem; color: var(--neon-cyan); font-weight: 700; }
 
@@ -335,37 +332,6 @@ img, video {
 
 .amazon-product-card-node.filtered-out { display: none !important; }
 
-/* LIGHTBOX INTERFACES & UPI PROTOCOLS */
+/* MODAL popup STYLING */
 .lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 2500; justify-content: center; align-items: center; }
-.lightbox-content-wrapper { position: relative; max-width: 90%; max-height: 85%; display: flex; flex-direction: column; align-items: center; }
-.lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; }
-.lightbox-caption { margin-top: 12px; color: var(--pure-white); font-size: 0.95rem; }
-.lightbox-close-btn { position: absolute; top: 20px; right: 25px; color: var(--slate-muted); font-size: 2.2rem; cursor: pointer; }
-
-.contact-structural-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; width: 100%; }
-.input-form-card, .trust-gateway-card { background-color: var(--bg-card-slate); border: 1px solid var(--border-mesh); padding: 24px; border-radius: 12px; }
-
-.form-row { margin-bottom: 14px; }
-.form-row input, .form-row textarea { width: 100%; padding: 12px; background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 6px; color: var(--pure-white); font-size: 0.9rem; outline: none; }
-.form-row input:focus, .form-row textarea:focus { border-color: var(--neon-cyan); }
-.form-action-button { width: 100%; padding: 12px; background-color: var(--neon-cyan); color: #07080c; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
-
-.gateway-explainer { color: var(--slate-muted); font-size: 0.85rem; margin-bottom: 18px; }
-.bhim-widget-box { background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 10px; padding: 20px; text-align: center; }
-.shield-vector-icon { font-size: 2.2rem; color: var(--neon-cyan); margin-bottom: 6px; position: relative; display: inline-block; }
-.secure-checkmark { position: absolute; font-size: 0.8rem; top: 52%; left: 50%; transform: translate(-50%, -50%); color: var(--bg-deep-void); }
-.bhim-label-text { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 2px; }
-.bhim-vpa-string { display: block; color: var(--slate-muted); font-size: 0.82rem; margin-bottom: 16px; }
-.live-upi-trigger { display: inline-flex; align-items: center; gap: 6px; background-color: var(--success-green); color: #ffffff; text-decoration: none; padding: 11px 24px; border-radius: 20px; font-weight: 600; font-size: 0.85rem; }
-
-.corporate-footer { text-align: center; padding: 20px; color: var(--slate-muted); font-size: 0.78rem; border-top: 1px solid var(--border-mesh); margin-top: 40px; }
-
-/* PHONE SCALE OPTIMIZER - RECTIFIES MOBILE CHIP TEXT CRASHES */
-@media (max-width: 850px) {
-    .contact-structural-grid, .amazon-true-grid-layout, .landscape-box-flow { grid-template-columns: 1fr; }
-    .global-slider-mask { aspect-ratio: 16 / 9; }
-    .nav-container { padding: 0 15px; }
-    .search-box-container { display: none; }
-    .hero-title { font-size: 1.8rem; line-height: 1.3; margin-top: 10px; } /* Clean separation for title on mobile screen */
-}
-
+.

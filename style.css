@@ -1,13 +1,13 @@
-/* 2026 TRENDING PROFESSIONAL SOFT LIGHT MINIMALIST INTERFACE */
+/* 2026 RESUME THEME LUXURY MINIMALIST LIGHT LAYOUT */
 :root {
-    --bg-deep-void: #f8fafc;     /* Clean, Bright, Premium White Base */
-    --bg-card-slate: #ffffff;    /* Stark Crisp White Bento Boxes */
-    --primary-slate: #0f172a;    /* Deep Jet Black Charcoal for Primary Text */
-    --slate-muted: #475569;      /* Elegant Slate Charcoal for Subtitles */
-    --neon-cyan: #0284c7;        /* Highly Professional Classic Royal Blue Accent */
-    --pill-bg: #f1f5f9;          /* Smooth Pearl Grey Capsule Background */
-    --border-mesh: #e2e8f0;      /* Razor Thin Subtle Grey Dividers */
-    --success-green: #16a34a;    /* Clean Emerald Secure Green */
+    --bg-deep-void: #fcfcfd;     /* Pure Clean Bright Surface */
+    --bg-card-slate: #ffffff;    /* Bento Box Surfaces */
+    --primary-slate: #1e293b;    /* Sharp Charcoal Text From Resume */
+    --slate-muted: #64748b;      /* Elegant Slate Details */
+    --neon-orange: #f59e0b;      /* Premium Resume Gold Orange */
+    --pill-bg: #f8fafc;          /* Velvet Grey Caps */
+    --border-mesh: #e2e8f0;      
+    --success-green: #16a34a;    
 }
 
 * {
@@ -24,10 +24,11 @@ html {
 body {
     background-color: var(--bg-deep-void);
     color: var(--primary-slate);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
     width: 100%;
+    position: relative;
 }
 
 img, video {
@@ -35,50 +36,62 @@ img, video {
     -webkit-user-drag: none;
 }
 
-/* NAVIGATION HEADER ARCHITECTURE */
+/* RESUME DECORATIVE BACKGROUND CIRCLES ENGINE */
+.resume-circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(245, 158, 11, 0.04); /* Light Orange Ambient Vector */
+    z-index: -1;
+    pointer-events: none;
+}
+.circle-top-left { width: 300px; height: 300px; top: -50px; left: -50px; }
+.circle-top-right { width: 200px; height: 200px; top: 100px; right: -40px; background-color: rgba(245, 158, 11, 0.03); }
+.circle-mid-left { width: 400px; height: 400px; top: 600px; left: -150px; }
+
+/* FIXED NAVBAR */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 70px;
-    background-color: var(--bg-card-slate);
+    background-color: rgba(255, 255, 255, 0.95);
     border-bottom: 1px solid var(--border-mesh);
     z-index: 1000;
 }
 
 .nav-container {
     width: 100%;
-    padding: 0 30px;
+    padding: 0 40px;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 .logo-area { display: flex; align-items: center; }
-.logo-text { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.3px; color: var(--primary-slate); }
+.logo-text { font-size: 1.3rem; font-weight: 800; tracking: -0.5px; color: var(--primary-slate); }
 
+/* BALANCED SEARCH BAR */
 .search-box-container { 
     position: relative; 
-    width: 340px; 
+    width: 320px; 
+    margin-left: 40px;
 }
 .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--slate-muted); }
 #gallerySearch {
     width: 100%;
-    padding: 10px 14px 10px 42px;
-    background-color: var(--bg-deep-void);
+    padding: 9px 14px 9px 40px;
+    background-color: #f1f5f9;
     border: 1px solid var(--border-mesh);
     border-radius: 20px;
     color: var(--primary-slate);
     font-size: 0.85rem;
     outline: none;
 }
-#gallerySearch:focus { border-color: var(--neon-cyan); }
 
-.nav-menus { display: flex; gap: 28px; }
-.nav-link { color: var(--slate-muted); text-decoration: none; font-size: 0.92rem; font-weight: 600; transition: color 0.2s; }
-.nav-link:hover, .nav-link.active { color: var(--neon-cyan); }
+.nav-menus { display: flex; gap: 32px; margin-left: auto; }
+.nav-link { color: var(--slate-muted); text-decoration: none; font-size: 0.95rem; font-weight: 700; transition: color 0.2s; }
+.nav-link:hover, .nav-link.active { color: var(--neon-orange); }
 
 /* CONTENT MAIN BLOCK */
 .main-wrapper {
@@ -88,11 +101,10 @@ img, video {
 
 .page-section {
     width: 100%;
-    padding: 50px 30px;
-    border-bottom: 1px solid var(--border-mesh);
+    padding: 60px 40px;
 }
 
-/* HERO SECTION LOGIC */
+/* AVATAR STRUCTURAL STYLE */
 .hero-center-layout {
     display: flex;
     flex-direction: column;
@@ -101,22 +113,18 @@ img, video {
 }
 
 .avatar-wrapper-frame {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 35px; /* Added clean safety gap for phone screens */
+    margin-bottom: 20px;
     width: 120px;
 }
 
 .avatar-glow-ring {
-    width: 105px;
-    height: 105px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
-    border: 2px solid var(--neon-cyan);
+    border: 2px solid var(--neon-orange);
     padding: 3px;
     background-color: var(--bg-card-slate);
-    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.1);
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.15);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,43 +133,45 @@ img, video {
 
 .profile-avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
 
-.availability-tag {
-    position: absolute;
-    bottom: -6px; 
-    background-color: var(--bg-card-slate);
-    border: 1px solid var(--neon-cyan);
-    color: var(--neon-cyan);
-    font-size: 0.68rem;
-    font-weight: 700;
-    padding: 3px 10px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    white-space: nowrap;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+/* Resume Exact Typography Layout Match */
+.hero-title { 
+    font-size: 2.8rem; 
+    font-weight: 900; 
+    margin-bottom: 2px; 
+    text-align: center; 
+    color: var(--primary-slate); 
+    letter-spacing: -0.5px;
 }
 
-.pulse-dot { width: 4px; height: 4px; background-color: var(--neon-cyan); border-radius: 50%; }
+.hero-designation-sub {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--neon-orange);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
 
-.hero-title { font-size: 2.3rem; font-weight: 800; margin-bottom: 10px; text-align: center; color: var(--primary-slate); }
-.cyan-highlight { color: var(--neon-cyan); }
-.hero-subtitle { color: var(--slate-muted); font-size: 0.98rem; max-width: 900px; margin-bottom: 30px; text-align: center; }
+.hero-subtitle { color: var(--slate-muted); font-size: 1rem; max-width: 800px; margin-bottom: 35px; text-align: center; }
 
-/* AMAZON STYLE FLUID ROW MEDIA PLAYERS */
+/* 9:16 VERTICAL TRACK SHIFT CORE */
 .master-stream-container {
     width: 100%;
-    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
 }
 
-.global-slider-mask {
+.global-slider-mask.vertical-reel-viewport {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 5; 
+    max-width: 280px; /* Aligns narrow vertical phone viewport size bounds */
+    aspect-ratio: 9 / 16; 
     background-color: #000000;
     overflow: hidden;
     border-radius: 12px;
-    border: 1px solid var(--border-mesh);
+    border: 3px solid var(--border-mesh); /* Grey Outline */
+    outline: 2px solid var(--neon-orange); /* Orange Double Outline layer effect requested */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .slider-stream-track {
@@ -185,24 +195,26 @@ img, video {
 .sound-toggle-btn {
     position: absolute;
     top: 15px;
-    right: 20px;
+    right: 15px;
     background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid var(--border-mesh);
     color: var(--primary-slate);
     padding: 6px 12px;
     border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 0.72rem;
+    font-weight: 700;
     cursor: pointer;
     z-index: 100;
 }
 
-/* 100% WIDE HORIZONTAL LANDSCAPE BENTO DESIGN SHEET */
+/* 100% WIDE HORIZONTAL LANDSCAPE BENTO SHEET FLOW */
 .landscape-box-flow {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .landscape-corporate-card {
@@ -210,49 +222,47 @@ img, video {
     background-color: var(--bg-card-slate);
     border: 1px solid var(--border-mesh);
     border-radius: 12px;
-    padding: 30px;
+    padding: 35px;
     text-align: left;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.01);
 }
 
 .card-heading { 
-    font-size: 1.25rem; 
-    color: var(--neon-cyan); 
-    margin-bottom: 22px; 
-    font-weight: 700; 
-    letter-spacing: 0.3px;
+    font-size: 1.3rem; 
+    color: var(--neon-orange); /* Orange Heading Style Fixed */
+    margin-bottom: 24px; 
+    font-weight: 800;
 }
 
 .education-bullet-list {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
 }
 
 .edu-list-item {
     display: flex;
     align-items: start;
     gap: 12px;
-    font-size: 1.02rem;
+    font-size: 1.05rem;
     font-weight: 600;
     color: var(--primary-slate);
-    line-height: 1.6;
 }
 
 .bullet-dot-node {
     width: 6px;
     height: 6px;
-    background-color: var(--neon-cyan);
+    background-color: var(--neon-orange);
     border-radius: 50%;
-    margin-top: 8px;
+    margin-top: 10px;
     flex-shrink: 0;
 }
 
-/* Skills Cluster Structural Wrapping Layout Engine */
+/* Skills Cluster Structural Layout Match */
 .skills-wrapper-block {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 28px;
 }
 
 .skill-category-set {
@@ -261,49 +271,51 @@ img, video {
     gap: 12px;
 }
 
+/* Silver Soft Subheading Mapped */
 .category-label {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     font-weight: 700;
-    color: var(--primary-slate);
-    letter-spacing: 0.3px;
+    color: var(--slate-muted);
 }
 
-/* FIX: Secures smooth wrapping of caps side-by-side cleanly over box widths */
-.capsules-flex-wrap {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 12px;
+/* FIX: Mapped 2x2 symmetry capsule matrix format from 13565.jpg */
+.capsules-flex-wrap, .capsules-matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(2, max-content); /* Forces exact 2 items side-by-side per row horizontally */
+    gap: 12px 16px;
     width: 100%;
 }
 
-/* Clean Pill Caps (Circular Border Radius 50px - Corrects alignment bugs) */
+/* Rounded Buttons Capsules Pill Shapes Mode */
 .clean-pill-capsule {
     background-color: var(--pill-bg);
     border: 1px solid var(--border-mesh);
-    padding: 10px 22px;
-    border-radius: 50px; /* Soft round button capsule requested in 13565.jpg */
-    font-size: 0.88rem;
+    padding: 10px 24px;
+    border-radius: 50px; /* Enforces completely round soft button caps requested */
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--primary-slate);
     display: inline-block;
     transition: all 0.2s ease;
 }
 .clean-pill-capsule:hover {
-    border-color: var(--neon-cyan);
-    background-color: rgba(2, 132, 199, 0.05);
+    border-color: var(--neon-orange);
+    background-color: rgba(245, 158, 11, 0.04);
 }
 
 .section-divider-gap { width: 100%; height: 20px; }
 
-/* SERVICES GRID ARCHITECTURE */
+/* SERVICES AMAZON SHAPE MATRIX */
 .section-title-node { text-align: center; margin-bottom: 30px; }
-.section-title-node h2 { font-size: 1.8rem; color: var(--neon-cyan); font-weight: 700; }
+.section-title-node h2 { font-size: 1.8rem; color: var(--neon-orange); font-weight: 800; }
 
 .amazon-true-grid-layout {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
     width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .amazon-product-card-node {
@@ -315,14 +327,13 @@ img, video {
     flex-direction: column;
     gap: 10px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.01);
 }
-.amazon-product-card-node:hover { border-color: var(--neon-cyan); }
+.amazon-product-card-node:hover { border-color: var(--neon-orange); }
 
 .card-image-box-frame {
     width: 100%;
     aspect-ratio: 1 / 1; 
-    background-color: var(--bg-deep-void);
+    background-color: #f8fafc;
     border-radius: 4px;
     overflow: hidden;
     display: flex;
@@ -333,49 +344,26 @@ img, video {
 
 .card-title-string { font-size: 0.85rem; font-weight: 600; color: var(--primary-slate); text-align: left; }
 .card-badge-row { display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; color: var(--slate-muted); }
-.verified-tag { color: var(--neon-cyan); font-weight: 600; }
+.verified-tag { color: var(--neon-orange); font-weight: 600; }
 
-.amazon-product-card-node.filtered-out { display: none !important; }
-
-/* LIGHTBOX MODE WINDOW */
+/* LIGHTBOX INTERFACES & CONTACT CONTAINER */
 .lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 2500; justify-content: center; align-items: center; }
 .lightbox-content-wrapper { position: relative; max-width: 90%; max-height: 85%; display: flex; flex-direction: column; align-items: center; }
 .lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; }
 .lightbox-caption { margin-top: 12px; color: #ffffff; font-size: 0.95rem; }
 .lightbox-close-btn { position: absolute; top: 20px; right: 25px; color: #ffffff; font-size: 2.2rem; cursor: pointer; }
 
-/* CONTACT STRUCTURAL CONTAINER REPAIRED GRID SET */
-.contact-structural-grid { 
-    display: grid; 
-    grid-template-columns: 1.1fr 0.9fr; 
-    gap: 24px; 
-    width: 100%; 
-}
-.input-form-card, .trust-gateway-card { 
-    background-color: var(--bg-card-slate); 
-    border: 1px solid var(--border-mesh); 
-    padding: 30px; 
-    border-radius: 12px; 
-    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-}
+.contact-structural-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; width: 100%; max-width: 1100px; margin: 0 auto; }
+.input-form-card, .trust-gateway-card { background-color: var(--bg-card-slate); border: 1px solid var(--border-mesh); padding: 24px; border-radius: 12px; }
 
 .form-row { margin-bottom: 14px; }
-.form-row input, .form-row textarea { 
-    width: 100%; 
-    padding: 14px; 
-    background-color: var(--bg-deep-void); 
-    border: 1px solid var(--border-mesh); 
-    border-radius: 6px; 
-    color: var(--primary-slate); 
-    font-size: 0.9rem; 
-    outline: none; 
-}
-.form-row input:focus, .form-row textarea:focus { border-color: var(--neon-cyan); }
-.form-action-button { width: 100%; padding: 14px; background-color: var(--neon-cyan); color: #ffffff; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
+.form-row input, .form-row textarea { width: 100%; padding: 12px; background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 6px; color: var(--primary-slate); font-size: 0.9rem; outline: none; }
+.form-row input:focus, .form-row textarea:focus { border-color: var(--neon-orange); }
+.form-action-button { width: 100%; padding: 12px; background-color: var(--neon-orange); color: #ffffff; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
 
 .gateway-explainer { color: var(--slate-muted); font-size: 0.85rem; margin-bottom: 18px; }
-.bhim-widget-box { background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 10px; padding: 24px; text-align: center; }
-.shield-vector-icon { font-size: 2.2rem; color: var(--neon-cyan); margin-bottom: 6px; position: relative; display: inline-block; }
+.bhim-widget-box { background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 10px; padding: 20px; text-align: center; }
+.shield-vector-icon { font-size: 2.2rem; color: var(--neon-orange); margin-bottom: 6px; position: relative; display: inline-block; }
 .secure-checkmark { position: absolute; font-size: 0.8rem; top: 52%; left: 50%; transform: translate(-50%, -50%); color: var(--bg-deep-void); }
 .bhim-label-text { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 2px; color: var(--primary-slate); }
 .bhim-vpa-string { display: block; color: var(--slate-muted); font-size: 0.82rem; margin-bottom: 16px; }
@@ -383,11 +371,14 @@ img, video {
 
 .corporate-footer { text-align: center; padding: 20px; color: var(--slate-muted); font-size: 0.78rem; border-top: 1px solid var(--border-mesh); margin-top: 40px; }
 
-/* PHONE SIZE SCALER ENGINE (PREVENTS HEADERS FROM CLIPPING TEXT) */
+/* HIGH DEFINITION SCALERS INTERFACE RULES */
+@media (max-width: 1100px) {
+    .amazon-true-grid-layout { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 850px) {
-    .contact-structural-grid, .amazon-true-grid-layout, .landscape-box-flow { grid-template-columns: 1fr; }
-    .global-slider-mask { aspect-ratio: 16 / 9; }
+    .contact-structural-grid, .amazon-true-grid-layout, .capsules-matrix-grid { grid-template-columns: 1fr; }
     .nav-container { padding: 0 15px; }
     .search-box-container { display: none; }
-    .hero-title { font-size: 1.8rem; line-height: 1.3; margin-top: 25px; /* Clean layout separation for mobile screens padding */ }
+    .hero-title { font-size: 2.2rem; margin-top: 25px; }
 }
+

@@ -53,9 +53,9 @@ function buildAmazonTrueGrid() {
 
     for (let count = 1; count <= 100; count++) {
         domBuffer += `
-            <div class="amazon-product-card-node" id="card-node-${count}" onclick="openLightbox('g${count}.jpg', 'Graphic Production Layout Template #${count}')">
+            <div class="amazon-product-card-node" id="card-node-${count}" onclick="openLightbox('./g${count}.jpg', 'Graphic Production Layout Template #${count}')">
                 <div class="card-image-box-frame">
-                    <img src="g${count}.jpg" alt="Production Artwork Item ${count}" draggable="false" onerror="this.parentNode.style.backgroundColor='#181c26'">
+                    <img src="./g${count}.jpg" alt="Production Artwork Item ${count}" draggable="false" onerror="this.parentNode.style.backgroundColor='#181c26'">
                 </div>
                 <div class="card-title-string">Graphic Production Layout Template #${count}</div>
                 <div class="card-badge-row">
@@ -83,7 +83,7 @@ function closeLightbox() {
 }
 
 let activeSlideIndex = 0;
-const totalSlidesCount = 20; // Corrected total bound count configuration for 12 videos
+const totalSlidesCount = 12; // Adjusted boundaries exactly for v1.mp4 to v12.mp4 stream loop
 let sliderThreadTimer = null;
 let globalMuteState = true; 
 
@@ -91,20 +91,11 @@ function buildCombinedWideSlider() {
     const track = document.getElementById("masterVideoTrack");
     let streamBuffer = "";
 
-    // Load v1.mp4 to v12.mp4 securely into the stream track
+    // Exact direct relative mapping loop channel for v1.mp4 to v12.mp4
     for (let v = 1; v <= 12; v++) {
         streamBuffer += `
             <div class="stream-slide">
-                <video class="portfolio-video-node" src="v${v}.mp4" loop playsinline muted></video>
-            </div>
-        `;
-    }
-
-    // Load fallbacks b1 to b8 securely into track bounds
-    for (let b = 1; b <= 8; b++) {
-        streamBuffer += `
-            <div class="stream-slide">
-                <video class="portfolio-video-node" src="b${b}.mp4" loop playsinline muted></video>
+                <video class="portfolio-video-node" src="./v${v}.mp4" loop playsinline muted></video>
             </div>
         `;
     }
@@ -142,7 +133,7 @@ function playVideoAtCurrentIndex() {
     const currentVideo = allVideos[activeSlideIndex];
     if (currentVideo) {
         currentVideo.muted = globalMuteState;
-        currentVideo.play().catch(() => console.log("Waiting for user interaction event..."));
+        currentVideo.play().catch(() => console.log("Holding media context..."));
     }
 }
 

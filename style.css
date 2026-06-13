@@ -1,10 +1,10 @@
-/* 2026 EDGE-TO-EDGE LIQUID LAYOUT ARCHITECTURE - NO GAPS */
+/* 2026 HIGH-END FULL WIDTH AMAZON INTERFACE SYSTEM */
 :root {
     --bg-deep-void: #07080c;    
     --bg-card-slate: #10131a;   
     --neon-cyan: #00ffcc;       
     --pure-white: #ffffff;      
-    --slate-muted: #94a3b8;     
+    --slate-muted: #8a9bb0;     
     --border-mesh: #1a1e26;     
     --success-green: #22c55e;   
 }
@@ -34,7 +34,7 @@ img, video {
     -webkit-user-drag: none;
 }
 
-/* FULL ROW FLUID NAVBAR */
+/* NAVBAR STRUCTURAL ARCHITECTURE */
 .navbar {
     position: fixed;
     top: 0;
@@ -48,7 +48,6 @@ img, video {
 
 .nav-container {
     width: 100%;
-    max-width: 100%; /* Spans full liquid width of device views */
     padding: 0 30px;
     height: 100%;
     display: flex;
@@ -57,11 +56,11 @@ img, video {
 }
 
 .logo-area { display: flex; align-items: center; gap: 10px; }
-.site-logo { height: 36px; width: 36px; object-fit: contain; }
+.site-logo { height: 36px; width: 36px; object-fit: contain; display: block; }
 .logo-text { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.3px; }
 .cyan-text { color: var(--neon-cyan); }
 
-.search-box-container { position: relative; width: 350px; }
+.search-box-container { position: relative; width: 360px; }
 .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--slate-muted); font-size: 0.85rem; }
 #gallerySearch {
     width: 100%;
@@ -76,27 +75,22 @@ img, video {
 #gallerySearch:focus { border-color: var(--neon-cyan); }
 
 .nav-menus { display: flex; gap: 28px; }
-.nav-link { color: var(--slate-muted); text-decoration: none; font-size: 0.92rem; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+.nav-link { color: var(--slate-muted); text-decoration: none; font-size: 0.92rem; font-weight: 600; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
 .nav-link:hover, .nav-link.active { color: var(--neon-cyan); }
 
-/* MAIN LIQUID ENGINE FRAME */
+/* MAIN CONTAINER ARCHITECTURE */
 .main-wrapper {
     width: 100%;
     margin-top: 70px;
 }
 
-/* HARD TAB DISPLACEMENT CONTROLS (Prevents sections from overlapping each other) */
 .page-section {
-    display: none;
     width: 100%;
-    padding: 40px 30px;
+    padding: 60px 30px;
+    border-bottom: 1px solid var(--border-mesh);
 }
 
-.page-section.active-section {
-    display: block; /* Toggles dynamically on screen */
-}
-
-/* HERO SECTION CONFIGURATION */
+/* AVATAR FRAMEWORK WITH PINPOINT SLICK OVERLAP */
 .hero-center-layout {
     display: flex;
     flex-direction: column;
@@ -104,13 +98,12 @@ img, video {
     width: 100%;
 }
 
-/* Ultra Precise Level Tag Geometry Overlap */
 .avatar-wrapper-frame {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 22px;
+    margin-bottom: 25px;
     width: 120px;
 }
 
@@ -128,11 +121,11 @@ img, video {
     overflow: hidden;
 }
 
-.profile-avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.profile-avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
 
 .availability-tag {
     position: absolute;
-    bottom: -4px; /* Perfectly snaps flat to avatar base circumference line */
+    bottom: -6px; 
     background-color: var(--bg-card-slate);
     border: 1px solid var(--neon-cyan);
     color: var(--neon-cyan);
@@ -149,16 +142,16 @@ img, video {
 
 .pulse-dot { width: 4px; height: 4px; background-color: var(--neon-cyan); border-radius: 50%; }
 
-.hero-title { font-size: 2.3rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.5px; }
+.hero-title { font-size: 2.4rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.5px; }
 .cyan-highlight { color: var(--neon-cyan); }
-.hero-subtitle { color: var(--slate-muted); font-size: 0.98rem; max-width: 900px; margin-bottom: 24px; }
+.hero-subtitle { color: var(--slate-muted); font-size: 1rem; max-width: 900px; margin-bottom: 26px; }
 
-.hero-cta-buttons { display: flex; gap: 14px; margin-bottom: 35px; }
+.hero-cta-buttons { display: flex; gap: 14px; margin-bottom: 40px; }
 .btn-primary { background-color: var(--neon-cyan); color: #07080c; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; }
 .btn-secondary { background-color: transparent; color: var(--pure-white); border: 1px solid var(--border-mesh); text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; }
 .btn-primary:hover { opacity: 0.9; } .btn-secondary:hover { background-color: var(--bg-card-slate); }
 
-/* RESUME GRID METRICS */
+/* RESUME PROFILE GRID SHEET */
 .resume-minimal-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -170,7 +163,7 @@ img, video {
     background-color: var(--bg-card-slate);
     border: 1px solid var(--border-mesh);
     border-radius: 12px;
-    padding: 26px;
+    padding: 28px;
 }
 
 .card-heading { font-size: 1.05rem; color: var(--neon-cyan); margin-bottom: 16px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
@@ -184,38 +177,34 @@ img, video {
 .mt-15 { margin-top: 14px; }
 
 .skills-flex-engine { display: flex; flex-wrap: wrap; gap: 6px; }
-.skill-chip { background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); padding: 6px 12px; border-radius: 4px; font-size: 0.78rem; font-weight: 500; display: flex; align-items: center; gap: 6px; }
+.skill-chip { background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); padding: 6px 12px; border-radius: 4px; font-size: 0.78rem; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: border-color 0.2s; }
+.skill-chip:hover { border-color: var(--neon-cyan); color: var(--neon-cyan); }
 
-.section-divider-gap { width: 100%; height: 30px; }
+.section-divider-gap { width: 100%; height: 40px; }
 
-/* REEL STYLE SINGLE MOTION CAROUSEL (BUTTONLESS & FULL-WIDTH) */
+/* TRUE AMAZON FULL SCREEN WIDE BANNER TRACKS */
 .master-stream-container {
     width: 100%;
-    background-color: var(--bg-card-slate);
-    border: 1px solid var(--border-mesh);
-    border-radius: 14px;
-    padding: 24px;
+    margin: 20px 0;
+    padding: 0;
+    background-color: #000;
 }
-
-.stream-header-title { font-size: 1rem; color: var(--pure-white); margin-bottom: 14px; text-align: left; }
 
 .global-slider-mask {
     position: relative;
     width: 100%;
-    max-width: 360px; /* Aligned symmetrically inside box bounds */
-    aspect-ratio: 9 / 16; 
-    margin: 0 auto;
+    aspect-ratio: 16 / 5; /* Matched exactly to Amazon Wide Display ratio layout rules */
     background-color: #000000;
-    border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.04);
+    border-top: 1px solid var(--border-mesh);
+    border-bottom: 1px solid var(--border-mesh);
 }
 
 .slider-stream-track {
     display: flex;
     width: 100%;
     height: 100%;
-    transition: transform 0.6s cubic-bezier(0.2, 1, 0.2, 1);
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .stream-slide {
@@ -227,20 +216,19 @@ img, video {
 .stream-slide video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Secures edge coverage flawlessly */
+    object-fit: cover; /* Spans full horizontal scale edge-to-edge seamlessly */
 }
 
-/* Audio Controller Overlay Badge */
 .sound-toggle-btn {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 20px;
+    right: 30px;
     background-color: rgba(7, 8, 12, 0.85);
     border: 1px solid var(--border-mesh);
     color: var(--neon-cyan);
-    padding: 6px 12px;
+    padding: 8px 16px;
     border-radius: 20px;
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-weight: 600;
     cursor: pointer;
     z-index: 100;
@@ -249,14 +237,14 @@ img, video {
     gap: 6px;
 }
 
-/* SERVICES 4-COLUMN ARTIFACT GRID (MATCHED TO SCREENSHOT PROPORTIONS) */
+/* SERVICES DYNAMIC GRID ARCHITECTURE (AMAZON 4 COLUMNS FORMAT) */
 .section-title-node { text-align: center; margin-bottom: 35px; }
 .section-title-node h2 { font-size: 1.7rem; margin-bottom: 6px; }
 .sub-caption { color: var(--slate-muted); font-size: 0.88rem; }
 
 .amazon-true-grid-layout {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* FORCES STRUCTURAL 4-COLUMN GRIDS FLAT */
+    grid-template-columns: repeat(4, 1fr); /* Enforces exact flat 4 Column Matrix array */
     gap: 20px;
     width: 100%;
 }
@@ -270,13 +258,13 @@ img, video {
     flex-direction: column;
     gap: 12px;
     cursor: pointer;
-    transition: transform 0.2s cubic-bezier(0.2, 1, 0.2, 1);
+    transition: transform 0.25s cubic-bezier(0.2, 1, 0.2, 1);
 }
-.amazon-product-card-node:hover { transform: scale(1.02); border-color: var(--neon-cyan); }
+.amazon-product-card-node:hover { transform: translateY(-4px); border-color: var(--neon-cyan); }
 
 .card-image-box-frame {
     width: 100%;
-    aspect-ratio: 1 / 1; /* Squarish Card Grid bounding box from Amazon design */
+    aspect-ratio: 1 / 1; /* Standard Amazon marketplace item ratios geometry */
     background-color: var(--bg-deep-void);
     border-radius: 6px;
     overflow: hidden;
@@ -292,7 +280,7 @@ img, video {
 
 .amazon-product-card-node.filtered-out { display: none !important; }
 
-/* LIGHTBOX MODAL DEPLOYMENT */
+/* LIGHTBOX DESIGN */
 .lightbox-modal {
     display: none;
     position: fixed;
@@ -311,7 +299,7 @@ img, video {
 .lightbox-caption { margin-top: 12px; color: var(--pure-white); font-size: 0.95rem; text-align: center; }
 .lightbox-close-btn { position: absolute; top: 20px; right: 25px; color: var(--slate-muted); font-size: 2.2rem; cursor: pointer; }
 
-/* CONTACT STRUCTURAL LAYOUTS */
+/* CONTACT GRID SET */
 .contact-structural-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; width: 100%; }
 .input-form-card, .trust-gateway-card { background-color: var(--bg-card-slate); border: 1px solid var(--border-mesh); padding: 26px; border-radius: 12px; }
 .input-form-card h3, .trust-gateway-card h3 { font-size: 1.1rem; margin-bottom: 16px; color: var(--neon-cyan); }
@@ -331,13 +319,13 @@ img, video {
 
 .corporate-footer { text-align: center; padding: 20px; color: var(--slate-muted); font-size: 0.78rem; border-top: 1px solid var(--border-mesh); margin-top: 40px; }
 
-/* HIGH-END METRIC MEDIA SCALER */
-@media (max-width: 1024px) {
-    .amazon-true-grid-layout { grid-template-columns: repeat(2, 1fr); } /* Scale to 2 columns on tablets */
+/* RESPONSIVE SCALER */
+@media (max-width: 1100px) {
+    .amazon-true-grid-layout { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
-    .resume-minimal-grid, .contact-structural-grid, .amazon-true-grid-layout { grid-template-columns: 1fr; } /* Flat stack layout on phones */
+    .resume-minimal-grid, .contact-structural-grid, .amazon-true-grid-layout { grid-template-columns: 1fr; }
+    .global-slider-mask { aspect-ratio: 16 / 9; } /* Safe wide display box ratio format for phones */
     .nav-container { padding: 0 15px; }
     .search-box-container { display: none; }
 }
-

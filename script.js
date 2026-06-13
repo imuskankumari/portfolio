@@ -1,36 +1,55 @@
-// SINGLE-PAGE PORTFOLIO SYSTEM CONTROL MATRIX
+// SINGLE-PAGE PORTFOLIO SYSTEM CONTROLLER
 document.addEventListener("DOMContentLoaded", () => {
+    initSmoothScrollNavigation();
     buildAmazonTrueGrid();
-    buildCombinedVideoSlider();
+    buildCombinedWideSlider();
     startAutomatedIntervals();
     armSystemSecurity();
 });
 
-// 1. HARD TAB CONTEXT SWITCHING SYSTEM (True Separation Grid)
-function switchTab(event, targetSectionId) {
-    if (event) event.preventDefault();
-    
-    const allLinks = document.querySelectorAll(".nav-link");
-    const allSections = document.querySelectorAll(".page-section");
+// 1. TRUE SINGLE PAGE LAYER SMOOTH SCROLL MONITOR
+function initSmoothScrollNavigation() {
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll(".page-section");
 
-    // Clear active states
-    allLinks.forEach(link => link.classList.remove("active"));
-    allSections.forEach(section => section.classList.remove("active-section"));
+    navLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetHash = link.getAttribute("href");
+            const targetSection = document.querySelector(targetHash);
+            
+            if (targetSection) {
+                const navBarHeight = 70;
+                const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - navBarHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
 
-    // Sync active targets
-    const selectedLink = document.querySelector(`.nav-link[href="#${targetSectionId}"]`);
-    if (selectedLink) selectedLink.classList.add("active");
+    // Auto highlight navigation buttons based on user scroll positions
+    window.addEventListener("scroll", () => {
+        let activeSectionId = "home";
+        sections.forEach(sec => {
+            const topOffset = sec.offsetTop - 90;
+            if (window.pageYOffset >= topOffset) {
+                activeSectionId = sec.getAttribute("id");
+            }
+        });
 
-    const selectedSection = document.getElementById(targetSectionId);
-    if (selectedSection) {
-        selectedSection.classList.add("active-section");
-    }
-
-    // Instantly force layout coordinates straight to zero top window position
-    window.scrollTo({ top: 0, behavior: "instant" });
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === `#${activeSectionId}`) {
+                link.classList.add("active");
+            }
+        });
+    });
 }
 
-// 2. GENERATE 100 AMAZON INDUSTRIAL GRID CARDS (g1.jpg to g100.jpg)
+// 2. GENERATE 100 AMAZON-STYLE SQUARISH GRID CARDS (g1.jpg to g100.jpg)
 function buildAmazonTrueGrid() {
     const gridContainer = document.getElementById("amazonGridEngine");
     let htmlBuffer = "";
@@ -62,21 +81,25 @@ function openLightbox(imgSrc, captionText) {
     modalCaption.innerText = captionText;
 }
 
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
+});
+
 function closeLightbox() {
     document.getElementById("imageLightboxModal").style.display = "none";
 }
 
-// 3. COMBINED VIDEO LOOPER SYSTEM (b1-b11 + v1-v8 = 19 Slides Total)
+// 3. COMBINED FULL WIDTH AMAZON VIDEO SLIDER ENGINE (b1-b11 + v1-v8 = 19 Streams)
 let activeSlideIndex = 0;
 const totalSlidesCount = 19;
 let sliderThreadTimer = null;
-let globalMuteState = true; // Audio is muted at layout initialization safely
+let globalMuteState = true; 
 
-function buildCombinedVideoSlider() {
+function buildCombinedWideSlider() {
     const track = document.getElementById("masterVideoTrack");
     let streamBuffer = "";
 
-    // Stream Group A: Injects b1.mp4 to b11.mp4
+    // Stream Group 1: Brand Videos b1.mp4 to b11.mp4 (All Lowercase Path)
     for (let b = 1; b <= 11; b++) {
         streamBuffer += `
             <div class="stream-slide">
@@ -85,7 +108,7 @@ function buildCombinedVideoSlider() {
         `;
     }
 
-    // Stream Group B: Injects v1.mp4 to v8.mp4
+    // Stream Group 2: AI Videos v1.mp4 to v8.mp4 (All Lowercase Path)
     for (let v = 1; v <= 8; v++) {
         streamBuffer += `
             <div class="stream-slide">
@@ -96,8 +119,8 @@ function buildCombinedVideoSlider() {
 
     track.innerHTML = streamBuffer;
     
-    // Play initial video frame instantly
-    setTimeout(() => { playVideoAtCurrentIndex(); }, 200);
+    // Fire initial playback instantly
+    setTimeout(() => { playVideoAtCurrentIndex(); }, 250);
 }
 
 function startAutomatedIntervals() {
@@ -107,33 +130,33 @@ function startAutomatedIntervals() {
             activeSlideIndex = 0;
         }
         executeTrackShift();
-    }, 4000); // Transitions automatically every 4 seconds
+    }, 4000); // Swipes automatically every 4 seconds
 }
 
 function executeTrackShift() {
     const track = document.getElementById("masterVideoTrack");
-    track.style.transform = `translateX(-${activeSlideIndex * 100}%)`;
-    playVideoAtCurrentIndex();
+    if(track) {
+        track.style.transform = `translateX(-${activeSlideIndex * 100}%)`;
+        playVideoAtCurrentIndex();
+    }
 }
 
 function playVideoAtCurrentIndex() {
     const allVideos = document.querySelectorAll(".portfolio-video-node");
     
-    // Pause all video instances to conserve memory buffers
     allVideos.forEach(video => {
         video.pause();
         video.currentTime = 0;
     });
 
-    // Fire current view element index channel
     const currentVideo = allVideos[activeSlideIndex];
     if (currentVideo) {
         currentVideo.muted = globalMuteState;
-        currentVideo.play().catch(err => console.log("Auto-play trigger waiting user action link..."));
+        currentVideo.play().catch(() => console.log("User gesture required for audio track initialization..."));
     }
 }
 
-// GLOBAL AUDIO VOLUME OVERLAY MANAGER
+// TOGGLE VOLUME OVERLAY CONTROLLER
 function toggleGlobalAudio() {
     globalMuteState = !globalMuteState;
     const allVideos = document.querySelectorAll(".portfolio-video-node");
@@ -145,21 +168,21 @@ function toggleGlobalAudio() {
 
     if (globalMuteState) {
         soundIcon.className = "fas fa-volume-mute";
-        alert("Audio Muted.");
     } else {
         soundIcon.className = "fas fa-volume-up";
-        alert("Audio Unmuted. Media channels open.");
     }
 }
 
-// 4. NAVBAR REAL-TIME LIVE SEARCH FILTER PROTOCOL
+// 4. SEARCH INTERACTION PROTOCOL (Focus to Grid View and Filter views)
 function searchAndFocusGallery() {
     const inputQuery = document.getElementById("gallerySearch").value.toLowerCase();
     const cards = document.querySelectorAll(".amazon-product-card-node");
+    const servicesSection = document.getElementById("services");
 
-    // If search active, instantly switch tab grid viewport context to Services view page area!
     if(inputQuery !== "") {
-        switchTab(null, 'services');
+        const navOffset = 70;
+        const targetCoords = servicesSection.getBoundingClientRect().top + window.pageYOffset - navOffset;
+        window.scrollTo({ top: targetCoords, behavior: "smooth" });
     }
 
     cards.forEach((card, index) => {
@@ -174,7 +197,7 @@ function searchAndFocusGallery() {
     });
 }
 
-// 5. ENCRYPTED SYSTEM HOTKEY SHIELDS
+// 5. SECURITY CONTROLS
 function armSystemSecurity() {
     document.addEventListener("keydown", (e) => {
         if (
@@ -192,3 +215,4 @@ function armSystemSecurity() {
         if (e.target.nodeName === "IMG" || e.target.nodeName === "VIDEO") { e.preventDefault(); }
     });
 }
+

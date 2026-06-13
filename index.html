@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Portfolio</title>
+    <title>Muskan Kumari | Professional Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -22,16 +22,16 @@
             </div>
 
             <nav class="nav-menus">
-                <a href="#home" class="nav-link active" onclick="switchTab(event, 'home')"><i class="fas fa-home"></i> Home</a>
-                <a href="#services" class="nav-link" onclick="switchTab(event, 'services')"><i class="fas fa-th"></i> Services</a>
-                <a href="#contact" class="nav-link" onclick="switchTab(event, 'contact')"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+                <a href="#services" class="nav-link"><i class="fas fa-th"></i> Services</a>
+                <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
             </nav>
         </div>
     </header>
 
     <main class="main-wrapper">
 
-        <section id="home" class="page-section active-section">
+        <section id="home" class="page-section">
             <div class="hero-center-layout">
                 
                 <div class="avatar-wrapper-frame">
@@ -46,53 +46,62 @@
                 <h1 class="hero-title">Hi, I'm <span class="cyan-highlight">Muskan Kumari</span></h1>
                 <p class="hero-subtitle">I am Muskan Kumari and I am from Delhi, an aspiring professional graphic & Web designer. I specialize in Graphics Designs & Websites Design.</p>
 
-                <div class="resume-text-flow">
-                    
-                    <h2 class="section-main-heading">My Education</h2>
-                    
-                    <div class="info-block">
-                        <p class="info-title">Senior Secondary Education From CBSE</p>
-                        <p class="info-location"><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
-                    </div>
-
-                    <div class="info-block">
-                        <p class="info-title">Basic Computer Course (BCC) and Diploma In Computer Applications (DCA) Certified</p>
-                        <p class="info-location"><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
-                        <p class="info-subtext">Ke andar ye sab sikha hai:</p>
-                        <p class="info-details-list">MS Office, Graphic and Web, Designing, Video Editing</p>
-                    </div>
-
-                    <h2 class="section-main-heading mt-40">My Skills</h2>
-
-                    <div class="skills-category-block">
-                        <p class="category-title">Graphic Designing</p>
-                        <p class="category-items">Adobe Photoshop, Adobe Illustrator, Adobe InDesign, CorelDraw, Canva</p>
-                    </div>
-
-                    <div class="skills-category-block">
-                        <p class="category-title">Web Design</p>
-                        <p class="category-items">HTML, CSS, JavaScript, WordPress</p>
-                    </div>
-
-                    <div class="skills-category-block">
-                        <p class="category-title">Video Editing</p>
-                        <p class="category-items">Filmora, Video Editing</p>
-                    </div>
-
-                    <div class="skills-category-block">
-                        <p class="category-title">Microsoft Office</p>
-                        <p class="category-items">MS Word, MS Excel, MS PowerPoint</p>
-                    </div>
-
+                <div class="hero-cta-buttons">
+                    <a href="#services" class="btn-primary">View My Work <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn-secondary">Let's Talk</a>
                 </div>
-
-                <div class="section-divider-gap"></div>
 
                 <div class="master-stream-container">
                     <div class="global-slider-mask">
                         <button class="sound-toggle-btn" onclick="toggleGlobalAudio()"><i id="soundIcon" class="fas fa-volume-mute"></i> Toggle Audio</button>
                         <div class="slider-stream-track" id="masterVideoTrack"></div>
                     </div>
+                </div>
+
+                <div class="section-divider-gap"></div>
+
+                <div class="landscape-box-flow">
+                    
+                    <div class="landscape-corporate-card">
+                        <h3 class="card-heading"><i class="fas fa-graduation-cap"></i> My Education</h3>
+                        <div class="education-content-box">
+                            <h4 class="edu-title-node">My degree</h4>
+                            <p class="edu-details-text">Senior Secondary Education From CBSE — <span class="location-tag">New Delhi, India</span></p>
+                            
+                            <h4 class="edu-title-node mt-15">My courses</h4>
+                            <p class="edu-details-text">Basic Computer Course (BCC) and Diploma In Computer Applications (DCA) Certified — <span class="location-tag">New Delhi, India</span></p>
+                            
+                            <div class="inner-learnt-box">
+                                <p class="learnt-heading">Ke andar ye sab sikha hai:</p>
+                                <p class="learnt-text-line">MS Office, Graphic and Web, Designing, Video Editing</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="landscape-corporate-card">
+                        <h3 class="card-heading"><i class="fas fa-layer-group"></i> My Skills</h3>
+                        
+                        <div class="skills-landscape-row">
+                            <span class="skill-group-title">Graphic Designing:</span>
+                            <span class="skill-items-line">Adobe Photoshop, Adobe Illustrator, Adobe InDesign, CorelDraw, Canva</span>
+                        </div>
+
+                        <div class="skills-landscape-row">
+                            <span class="skill-group-title">Web Design:</span>
+                            <span class="skill-items-line">HTML, CSS, JavaScript, WordPress</span>
+                        </div>
+
+                        <div class="skills-landscape-row">
+                            <span class="skill-group-title">Video Editing:</span>
+                            <span class="skill-items-line">Filmora, Video Editing</span>
+                        </div>
+
+                        <div class="skills-landscape-row">
+                            <span class="skill-group-title">Microsoft Office:</span>
+                            <span class="skill-items-line">MS Word, MS Excel, MS PowerPoint</span>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -148,3 +157,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+

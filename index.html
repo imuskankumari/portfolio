@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Professional Design Portfolio</title>
+    <title>Muskan Kumari | Professional Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -11,27 +11,31 @@
 
     <header class="navbar">
         <div class="nav-container">
+            <div class="logo-area">
+                <span class="logo-text">Portfolio</span>
+            </div>
+            
             <div class="search-box-container">
                 <i class="fas fa-search search-icon"></i>
                 <input type="text" id="gallerySearch" placeholder="Search my production designs..." onkeyup="searchAndFocusGallery()">
             </div>
 
             <nav class="nav-menus">
-                <a href="#home" class="nav-link active" onclick="switchTab(event, 'home')"><i class="fas fa-home"></i> Home</a>
-                <a href="#services" class="nav-link" onclick="switchTab(event, 'services')"><i class="fas fa-th"></i> Services</a>
-                <a href="#contact" class="nav-link" onclick="switchTab(event, 'contact')"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+                <a href="#services" class="nav-link"><i class="fas fa-th"></i> Services</a>
+                <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
             </nav>
         </div>
     </header>
 
     <main class="main-wrapper">
 
-        <section id="home" class="page-section active-section">
+        <section id="home" class="page-section">
             <div class="hero-center-layout">
                 
                 <div class="avatar-wrapper-frame">
                     <div class="avatar-glow-ring">
-                        <img src="./logo.png" alt="Muskan Kumari Profile" class="profile-avatar" draggable="false">
+                        <img src="logo.png" alt="Muskan Kumari Logo" class="profile-avatar" draggable="false">
                     </div>
                     <div class="availability-tag">
                         <span class="pulse-dot"></span> Available for Freelance
@@ -54,7 +58,7 @@
                 <div class="landscape-box-flow">
                     
                     <div class="landscape-corporate-card">
-                        <h3 class="card-heading">Education & Qualification</h3>
+                        <h3 class="card-heading">Academic Education & Qualification</h3>
                         <div class="education-bullet-list">
                             <div class="edu-list-item">
                                 <span class="bullet-dot-node"></span>

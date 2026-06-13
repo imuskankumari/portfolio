@@ -1,4 +1,4 @@
-/* 2026 FULL WIDTH LANDSCAPE INTERFACE THEME */
+/* 2026 FULL SCREEN LANDSCAPE BENTO ARCHITECTURE */
 :root {
     --bg-deep-void: #07080c;    
     --bg-card-slate: #10131a;   
@@ -88,7 +88,7 @@ img, video {
     padding: 40px 30px;
 }
 
-/* HERO SECTION */
+/* HERO INITIAL LAYOUT */
 .hero-center-layout {
     display: flex;
     flex-direction: column;
@@ -139,15 +139,15 @@ img, video {
 
 .pulse-dot { width: 4px; height: 4px; background-color: var(--neon-cyan); border-radius: 50%; }
 
-.hero-title { font-size: 2.3rem; font-weight: 800; margin-bottom: 10px; }
+.hero-title { font-size: 2.3rem; font-weight: 800; margin-bottom: 10px; text-align: center; }
 .cyan-highlight { color: var(--neon-cyan); }
-.hero-subtitle { color: var(--slate-muted); font-size: 0.98rem; max-width: 900px; margin-bottom: 24px; }
+.hero-subtitle { color: var(--slate-muted); font-size: 0.98rem; max-width: 900px; margin-bottom: 24px; text-align: center; }
 
 .hero-cta-buttons { display: flex; gap: 14px; margin-bottom: 35px; }
 .btn-primary { background-color: var(--neon-cyan); color: #07080c; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; }
 .btn-secondary { background-color: transparent; color: var(--pure-white); border: 1px solid var(--border-mesh); text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; }
 
-/* FULL WIDTH VIDEO BANNER */
+/* FULL WIDTH VIDEO BANNER (AMAZON STYLE FLUID) */
 .master-stream-container {
     width: 100%;
     margin-bottom: 25px;
@@ -196,12 +196,12 @@ img, video {
     z-index: 100;
 }
 
-/* 100% WIDE LANDSCAPE BOX FLOW */
+/* 100% WIDE HORIZONTAL LANDSCAPE BOXES */
 .landscape-box-flow {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
 }
 
 .landscape-corporate-card {
@@ -210,7 +210,7 @@ img, video {
     border: 1px solid var(--border-mesh);
     border-radius: 12px;
     padding: 30px;
-    text-align: left;
+    text-align: left; /* Aligns data to left-to-right */
 }
 
 .card-heading { 
@@ -231,12 +231,11 @@ img, video {
     background-color: rgba(7,8,12,0.4); 
     border-left: 3px solid var(--neon-cyan); 
     padding: 10px 16px; 
-    margin-top: 12px; 
+    margin-top: 4px; 
 }
-.learnt-heading { font-size: 0.85rem; font-weight: 700; color: var(--neon-cyan); margin-bottom: 4px; }
 .learnt-text-line { font-size: 0.95rem; color: var(--pure-white); font-weight: 500; }
 
-/* Skills Landscape Alignment */
+/* Skills Horizontal Grid Alignment */
 .skills-landscape-row {
     margin-bottom: 14px;
     font-size: 1rem;
@@ -248,7 +247,7 @@ img, video {
     font-weight: 700;
     color: var(--neon-cyan);
     display: inline-block;
-    min-width: 160px;
+    min-width: 160px; /* Secure uniform spacing alignment */
 }
 .skill-items-line {
     color: var(--pure-white);
@@ -257,7 +256,7 @@ img, video {
 .mt-15 { margin-top: 14px; }
 .section-divider-gap { width: 100%; height: 20px; }
 
-/* SERVICES GRID */
+/* PORTFOLIO GRID */
 .section-title-node { text-align: center; margin-bottom: 30px; }
 .section-title-node h2 { font-size: 1.8rem; color: var(--neon-cyan); font-weight: 700; }
 
@@ -296,7 +295,7 @@ img, video {
 .card-badge-row { display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; color: var(--slate-muted); }
 .verified-tag { color: var(--neon-cyan); font-weight: 600; }
 
-/* LIGHTBOX & CONTACT GRID */
+/* MODALS & RESTRUCTURING */
 .lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 2500; justify-content: center; align-items: center; }
 .lightbox-content-wrapper { position: relative; max-width: 90%; max-height: 85%; display: flex; flex-direction: column; align-items: center; }
 .lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; }
@@ -321,7 +320,7 @@ img, video {
 
 .corporate-footer { text-align: center; padding: 20px; color: var(--slate-muted); font-size: 0.78rem; border-top: 1px solid var(--border-mesh); margin-top: 40px; }
 
-/* RESPONSIVE SCALERS */
+/* SCALERS */
 @media (max-width: 1024px) {
     .amazon-true-grid-layout { grid-template-columns: repeat(2, 1fr); }
 }

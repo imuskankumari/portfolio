@@ -1,14 +1,13 @@
-// SINGLE-PAGE PORTFOLIO SYSTEM CONTROLLER
+// MULTI-STREAM DYNAMIC INTEL INTEGRATOR
 document.addEventListener("DOMContentLoaded", () => {
-    initSmoothScrollNavigation();
+    initSmoothScrollSpy();
     buildAmazonTrueGrid();
     buildCombinedWideSlider();
     startAutomatedIntervals();
     armSystemSecurity();
 });
 
-// 1. TRUE SINGLE PAGE LAYER SMOOTH SCROLL MONITOR
-function initSmoothScrollNavigation() {
+function initSmoothScrollSpy() {
     const navLinks = document.querySelectorAll(".nav-link");
     const sections = document.querySelectorAll(".page-section");
 
@@ -30,7 +29,6 @@ function initSmoothScrollNavigation() {
         });
     });
 
-    // Auto highlight navigation buttons based on user scroll positions
     window.addEventListener("scroll", () => {
         let activeSectionId = "home";
         sections.forEach(sec => {
@@ -49,16 +47,15 @@ function initSmoothScrollNavigation() {
     });
 }
 
-// 2. GENERATE 100 AMAZON-STYLE SQUARISH GRID CARDS (g1.jpg to g100.jpg)
 function buildAmazonTrueGrid() {
     const gridContainer = document.getElementById("amazonGridEngine");
-    let htmlBuffer = "";
+    let domBuffer = "";
 
     for (let count = 1; count <= 100; count++) {
-        htmlBuffer += `
-            <div class="amazon-product-card-node" id="card-node-${count}" onclick="openLightbox('g${count}.jpg', 'Graphic Production Layout Template #${count}')">
+        domBuffer += `
+            <div class="amazon-product-card-node" id="card-node-${count}" onclick="openLightbox('./g${count}.jpg', 'Graphic Production Layout Template #${count}')">
                 <div class="card-image-box-frame">
-                    <img src="g${count}.jpg" alt="Production Artwork Item ${count}" draggable="false" onerror="this.parentNode.style.backgroundColor='#181c26'">
+                    <img src="./g${count}.jpg" alt="Production Artwork Item ${count}" draggable="false" onerror="this.parentNode.style.backgroundColor='#181c26'">
                 </div>
                 <div class="card-title-string">Graphic Production Layout Template #${count}</div>
                 <div class="card-badge-row">
@@ -68,7 +65,7 @@ function buildAmazonTrueGrid() {
             </div>
         `;
     }
-    gridContainer.innerHTML = htmlBuffer;
+    gridContainer.innerHTML = domBuffer;
 }
 
 function openLightbox(imgSrc, captionText) {
@@ -81,15 +78,10 @@ function openLightbox(imgSrc, captionText) {
     modalCaption.innerText = captionText;
 }
 
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeLightbox();
-});
-
 function closeLightbox() {
     document.getElementById("imageLightboxModal").style.display = "none";
 }
 
-// 3. COMBINED FULL WIDTH AMAZON VIDEO SLIDER ENGINE (b1-b11 + v1-v8 = 19 Streams)
 let activeSlideIndex = 0;
 const totalSlidesCount = 19;
 let sliderThreadTimer = null;
@@ -99,27 +91,23 @@ function buildCombinedWideSlider() {
     const track = document.getElementById("masterVideoTrack");
     let streamBuffer = "";
 
-    // Stream Group 1: Brand Videos b1.mp4 to b11.mp4 (All Lowercase Path)
     for (let b = 1; b <= 11; b++) {
         streamBuffer += `
             <div class="stream-slide">
-                <video class="portfolio-video-node" src="b${b}.mp4" loop playsinline muted></video>
+                <video class="portfolio-video-node" src="./b${b}.mp4" loop playsinline muted></video>
             </div>
         `;
     }
 
-    // Stream Group 2: AI Videos v1.mp4 to v8.mp4 (All Lowercase Path)
     for (let v = 1; v <= 8; v++) {
         streamBuffer += `
             <div class="stream-slide">
-                <video class="portfolio-video-node" src="v${v}.mp4" loop playsinline muted></video>
+                <video class="portfolio-video-node" src="./v${v}.mp4" loop playsinline muted></video>
             </div>
         `;
     }
 
     track.innerHTML = streamBuffer;
-    
-    // Fire initial playback instantly
     setTimeout(() => { playVideoAtCurrentIndex(); }, 250);
 }
 
@@ -130,7 +118,7 @@ function startAutomatedIntervals() {
             activeSlideIndex = 0;
         }
         executeTrackShift();
-    }, 4000); // Swipes automatically every 4 seconds
+    }, 4000);
 }
 
 function executeTrackShift() {
@@ -152,11 +140,10 @@ function playVideoAtCurrentIndex() {
     const currentVideo = allVideos[activeSlideIndex];
     if (currentVideo) {
         currentVideo.muted = globalMuteState;
-        currentVideo.play().catch(() => console.log("User gesture required for audio track initialization..."));
+        currentVideo.play().catch(() => console.log("Waiting for interaction..."));
     }
 }
 
-// TOGGLE VOLUME OVERLAY CONTROLLER
 function toggleGlobalAudio() {
     globalMuteState = !globalMuteState;
     const allVideos = document.querySelectorAll(".portfolio-video-node");
@@ -173,7 +160,6 @@ function toggleGlobalAudio() {
     }
 }
 
-// 4. SEARCH INTERACTION PROTOCOL (Focus to Grid View and Filter views)
 function searchAndFocusGallery() {
     const inputQuery = document.getElementById("gallerySearch").value.toLowerCase();
     const cards = document.querySelectorAll(".amazon-product-card-node");
@@ -197,7 +183,6 @@ function searchAndFocusGallery() {
     });
 }
 
-// 5. SECURITY CONTROLS
 function armSystemSecurity() {
     document.addEventListener("keydown", (e) => {
         if (
@@ -215,4 +200,3 @@ function armSystemSecurity() {
         if (e.target.nodeName === "IMG" || e.target.nodeName === "VIDEO") { e.preventDefault(); }
     });
 }
-

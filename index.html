@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Professional Portfolio</title>
+    <title>Muskan Kumari | Professional Design Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -11,11 +11,6 @@
 
     <header class="navbar">
         <div class="nav-container">
-            <div class="logo-area">
-                <img src="logo.png" alt="MK Logo" class="site-logo">
-                <span class="logo-text">MK <span class="cyan-text">Designs</span></span>
-            </div>
-            
             <div class="search-box-container">
                 <i class="fas fa-search search-icon"></i>
                 <input type="text" id="gallerySearch" placeholder="Search my production designs..." onkeyup="searchAndFocusGallery()">
@@ -36,7 +31,7 @@
                 
                 <div class="avatar-wrapper-frame">
                     <div class="avatar-glow-ring">
-                        <img src="logo.png" alt="Muskan Kumari Logo" class="profile-avatar" draggable="false">
+                        <img src="./logo.png" alt="Muskan Kumari Profile" class="profile-avatar" draggable="false">
                     </div>
                     <div class="availability-tag">
                         <span class="pulse-dot"></span> Available for Freelance
@@ -49,7 +44,8 @@
                 <div class="master-stream-container">
                     <div class="global-slider-mask">
                         <button class="sound-toggle-btn" onclick="toggleGlobalAudio()"><i id="soundIcon" class="fas fa-volume-mute"></i> Toggle Audio</button>
-                        <div class="slider-stream-track" id="masterVideoTrack"></div>
+                        <div class="slider-stream-track" id="masterVideoTrack">
+                            </div>
                     </div>
                 </div>
 
@@ -58,53 +54,62 @@
                 <div class="landscape-box-flow">
                     
                     <div class="landscape-corporate-card">
-                        <h3 class="card-heading"><i class="fas fa-graduation-cap"></i> My Qualifications Education</h3>
-                        <div class="education-content-box">
-                            <p class="edu-main-line">Senior Secondary Education From CBSE New Delhi, India</p>
-                            <p class="edu-main-line mt-15">Basic Computer Course (BCC) and Diploma In Computer Applications (DCA)</p>
+                        <h3 class="card-heading">Education & Qualification</h3>
+                        <div class="education-bullet-list">
+                            <div class="edu-list-item">
+                                <span class="bullet-dot-node"></span>
+                                <p>Senior Secondary Education From CBSE New Delhi, India</p>
+                            </div>
+                            <div class="edu-list-item">
+                                <span class="bullet-dot-node"></span>
+                                <p>Basic Computer Course (BCC) and Diploma In Computer Applications (DCA)</p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="landscape-corporate-card">
-                        <h3 class="card-heading"><i class="fas fa-layer-group"></i> My Technical Skills</h3>
-                        
-                        <div class="skills-landscape-row">
-                            <span class="skill-group-title">Graphic Designing</span>
-                            <div class="capsule-badges-grid">
-                                <span class="pill-badge"><i class="fas fa-paint-brush"></i> Adobe Photoshop</span>
-                                <span class="pill-badge"><i class="fas fa-pen-nib"></i> Adobe Illustrator</span>
-                                <span class="pill-badge"><i class="fas fa-book-open"></i> Adobe InDesign</span>
-                                <span class="pill-badge"><i class="fas fa-vector-square"></i> CorelDraw</span>
-                                <span class="pill-badge"><i class="fas fa-wand-magic-sparkles"></i> Canva</span>
+                        <h3 class="card-heading">My Technical Skills</h3>
+                        <div class="skills-wrapper-block">
+                            
+                            <div class="skill-category-set">
+                                <span class="category-label">Graphic Designing</span>
+                                <div class="capsules-flex-wrap">
+                                    <span class="clean-pill">Adobe Photoshop</span>
+                                    <span class="clean-pill">Adobe Illustrator</span>
+                                    <span class="clean-pill">Adobe InDesign</span>
+                                    <span class="clean-pill">CorelDraw</span>
+                                    <span class="clean-pill">Canva</span>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="skills-landscape-row">
-                            <span class="skill-group-title">Web Designing</span>
-                            <div class="capsule-badges-grid">
-                                <span class="pill-badge"><i class="fab fa-html5"></i> HTML</span>
-                                <span class="pill-badge"><i class="fab fa-css3-alt"></i> CSS</span>
-                                <span class="pill-badge"><i class="fab fa-js"></i> Javascript</span>
-                                <span class="pill-badge"><i class="fab fa-wordpress"></i> WordPress</span>
+                            <div class="skill-category-set">
+                                <span class="category-label">Web Designing</span>
+                                <div class="capsules-flex-wrap">
+                                    <span class="clean-pill">HTML</span>
+                                    <span class="clean-pill">CSS</span>
+                                    <span class="clean-pill">Javascript</span>
+                                    <span class="clean-pill">WordPress</span>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="skills-landscape-row">
-                            <span class="skill-group-title">Video Editing</span>
-                            <div class="capsule-badges-grid">
-                                <span class="pill-badge"><i class="fas fa-video"></i> Filmora</span>
-                                <span class="pill-badge"><i class="fas fa-play"></i> Vn</span>
-                                <span class="pill-badge"><i class="fas fa-film"></i> Inshot</span>
+                            <div class="skill-category-set">
+                                <span class="category-label">Video Editing</span>
+                                <div class="capsules-flex-wrap">
+                                    <span class="clean-pill">Filmora</span>
+                                    <span class="clean-pill">Vn</span>
+                                    <span class="clean-pill">Inshot</span>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="skills-landscape-row">
-                            <span class="skill-group-title">Microsoft Office</span>
-                            <div class="capsule-badges-grid">
-                                <span class="pill-badge"><i class="fas fa-file-word"></i> MS Word</span>
-                                <span class="pill-badge"><i class="fas fa-file-excel"></i> MS Excel</span>
-                                <span class="pill-badge"><i class="fas fa-file-powerpoint"></i> MS PowerPoint</span>
+                            <div class="skill-category-set">
+                                <span class="category-label">Microsoft Office</span>
+                                <div class="capsules-flex-wrap">
+                                    <span class="clean-pill">MS Word</span>
+                                    <span class="clean-pill">MS Excel</span>
+                                    <span class="clean-pill">MS PowerPoint</span>
+                                </div>
                             </div>
+
                         </div>
                     </div>
 
@@ -117,7 +122,8 @@
             <div class="section-title-node">
                 <h2>Portfolio Showcase</h2>
             </div>
-            <div class="amazon-true-grid-layout" id="amazonGridEngine"></div>
+            <div class="amazon-true-grid-layout" id="amazonGridEngine">
+                </div>
         </section>
 
         <section id="contact" class="page-section">

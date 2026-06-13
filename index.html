@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Design Portfolio</title>
+    <title>Muskan Kumari | Professional Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -18,20 +18,20 @@
             
             <div class="search-box-container">
                 <i class="fas fa-search search-icon"></i>
-                <input type="text" id="gallerySearch" placeholder="Search designs..." onkeyup="searchAndFocusGallery()">
+                <input type="text" id="gallerySearch" placeholder="Search my production designs..." onkeyup="searchAndFocusGallery()">
             </div>
 
             <nav class="nav-menus">
-                <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
-                <a href="#services" class="nav-link"><i class="fas fa-briefcase"></i> Services</a>
-                <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="#home" class="nav-link active" onclick="switchTab(event, 'home')"><i class="fas fa-home"></i> Home</a>
+                <a href="#services" class="nav-link" onclick="switchTab(event, 'services')"><i class="fas fa-th"></i> Services</a>
+                <a href="#contact" class="nav-link" onclick="switchTab(event, 'contact')"><i class="fas fa-envelope"></i> Contact</a>
             </nav>
         </div>
     </header>
 
     <main class="main-wrapper">
 
-        <section id="home" class="page-section">
+        <section id="home" class="page-section active-section">
             <div class="hero-center-layout">
                 
                 <div class="avatar-wrapper-frame">
@@ -47,8 +47,8 @@
                 <p class="hero-subtitle">I am Muskan Kumari and I am from Delhi, an aspiring professional graphic & Web designer. I specialize in Graphics Designs & Websites Design.</p>
 
                 <div class="hero-cta-buttons">
-                    <a href="#services" class="btn-primary">View My Work <i class="fas fa-arrow-right"></i></a>
-                    <a href="#contact" class="btn-secondary">Let's Talk</a>
+                    <a href="#services" class="btn-primary" onclick="switchTab(event, 'services')">View My Work <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn-secondary" onclick="switchTab(event, 'contact')">Let's Talk</a>
                 </div>
 
                 <div class="resume-minimal-grid">
@@ -98,23 +98,12 @@
 
                 <div class="section-divider-gap"></div>
 
-                <div class="dual-carousel-row">
-                    <div class="carousel-pane-box">
-                        <h4 class="pane-header-title"><i class="fas fa-wand-magic-sparkles"></i> AI Visual Motion Slider (Auto)</h4>
-                        <div class="slider-viewport-mask vertical-reel-view">
-                            <div class="slider-stream-track" id="aiTrack"></div>
-                            <button class="nav-arrow-btn prev-arrow" onclick="manualShift('aiTrack', -1)">&#10094;</button>
-                            <button class="nav-arrow-btn next-arrow" onclick="manualShift('aiTrack', 1)">&#10095;</button>
-                        </div>
-                    </div>
-
-                    <div class="carousel-pane-box">
-                        <h4 class="pane-header-title"><i class="fas fa-play"></i> Brand Identity Motion Slider (Auto)</h4>
-                        <div class="slider-viewport-mask vertical-reel-view">
-                            <div class="slider-stream-track" id="brandTrack"></div>
-                            <button class="nav-arrow-btn prev-arrow" onclick="manualShift('brandTrack', -1)">&#10094;</button>
-                            <button class="nav-arrow-btn next-arrow" onclick="manualShift('brandTrack', 1)">&#10095;</button>
-                        </div>
+                <div class="master-stream-container">
+                    <h4 class="stream-header-title"><i class="fas fa-play"></i> Featured Motion Graphics & AI Concepts</h4>
+                    <div class="global-slider-mask">
+                        <button class="sound-toggle-btn" onclick="toggleGlobalAudio()"><i id="soundIcon" class="fas fa-volume-mute"></i> Toggle Audio</button>
+                        <div class="slider-stream-track" id="masterVideoTrack">
+                            </div>
                     </div>
                 </div>
 
@@ -123,33 +112,34 @@
 
         <section id="services" class="page-section">
             <div class="section-title-node">
-                <h2>Featured Services & Portfolio Grid</h2>
-                <p>Click any template card below to open and view the high-definition design output.</p>
+                <h2>Featured Services & Production Gallery</h2>
+                <p class="sub-caption">A rigorous showcase modeled on Amazon's grid architecture. Click any item card to expand.</p>
             </div>
 
-            <div class="amazon-true-grid-layout" id="amazonGridEngine"></div>
+            <div class="amazon-true-grid-layout" id="amazonGridEngine">
+                </div>
         </section>
 
         <section id="contact" class="page-section">
             <div class="section-title-node">
                 <h2>Let's Work Together</h2>
-                <p>Drop a line to connect for employment opportunities or secure contract deployment.</p>
+                <p class="sub-caption">Available for employment roles, creative agency contracts, and immediate deployment.</p>
             </div>
 
             <div class="contact-structural-grid">
                 <div class="input-form-card">
                     <h3><i class="fas fa-paper-plane"></i> Send a Message</h3>
-                    <form id="corporateForm" onsubmit="event.preventDefault(); alert('Message successfully sent!');">
+                    <form id="corporateForm" onsubmit="event.preventDefault(); alert('Message logged successfully.');">
                         <div class="form-row"><input type="text" placeholder="Your Name" required autocomplete="off"></div>
                         <div class="form-row"><input type="email" placeholder="Your Email" required autocomplete="off"></div>
-                        <div class="form-row"><textarea placeholder="Project Details or Message..." rows="4" required></textarea></div>
+                        <div class="form-row"><textarea placeholder="Project Details or Message Requirements..." rows="4" required></textarea></div>
                         <button type="submit" class="form-action-button">Submit Message</button>
                     </form>
                 </div>
 
                 <div class="trust-gateway-card">
                     <h3><i class="fas fa-shield-halved"></i> Secure Verification</h3>
-                    <p class="gateway-explainer">Advance token contracts or processing requirements can be executed instantly over the secure BHIM UPI protocol layer.</p>
+                    <p class="gateway-explainer">Retainer deposits or validation transactions can be processed instantly over the secure NPCI BHIM UPI network layer.</p>
                     <div class="bhim-widget-box">
                         <div class="shield-vector-icon">
                             <i class="fas fa-shield-blank"></i>
@@ -168,7 +158,7 @@
     <div id="imageLightboxModal" class="lightbox-modal" onclick="closeLightbox()">
         <span class="lightbox-close-btn">&times;</span>
         <div class="lightbox-content-wrapper" onclick="event.stopPropagation()">
-            <img id="lightboxMainImage" src="" alt="HD Visual View" draggable="false">
+            <img id="lightboxMainImage" src="" alt="HD Showcase View" draggable="false">
             <div id="lightboxCaption" class="lightbox-caption"></div>
         </div>
     </div>
@@ -180,4 +170,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-

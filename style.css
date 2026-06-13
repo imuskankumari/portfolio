@@ -1,4 +1,4 @@
-/* 2026 FULL SCREEN LANDSCAPE BENTO ARCHITECTURE */
+/* 2026 FULL SCREEN LIQUID LANDSCAPE BENTO ARCHITECTURE */
 :root {
     --bg-deep-void: #07080c;    
     --bg-card-slate: #10131a;   
@@ -34,7 +34,7 @@ img, video {
     -webkit-user-drag: none;
 }
 
-/* FIXED NAVBAR */
+/* NAVIGATION SYSTEM */
 .navbar {
     position: fixed;
     top: 0;
@@ -56,7 +56,7 @@ img, video {
 }
 
 .logo-area { display: flex; align-items: center; gap: 10px; }
-.site-logo { height: 36px; width: 36px; object-fit: contain; }
+.site-logo { height: 36px; width: 36px; object-fit: contain; display: block; }
 .logo-text { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.3px; }
 .cyan-text { color: var(--neon-cyan); }
 
@@ -77,18 +77,23 @@ img, video {
 .nav-link { color: var(--slate-muted); text-decoration: none; font-size: 0.92rem; font-weight: 600; display: flex; align-items: center; gap: 6px; }
 .nav-link:hover, .nav-link.active { color: var(--neon-cyan); }
 
-/* MAIN FRAME */
+/* MAIN LIQUID CONTAINER */
 .main-wrapper {
     width: 100%;
     margin-top: 70px;
 }
 
 .page-section {
+    display: none;
     width: 100%;
     padding: 40px 30px;
 }
 
-/* HERO INITIAL LAYOUT */
+.page-section.active-section {
+    display: block;
+}
+
+/* AVATAR PINPOINT OVERLAP SLICKNESS */
 .hero-center-layout {
     display: flex;
     flex-direction: column;
@@ -119,7 +124,7 @@ img, video {
     overflow: hidden;
 }
 
-.profile-avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.profile-avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
 
 .availability-tag {
     position: absolute;
@@ -135,22 +140,19 @@ img, video {
     align-items: center;
     gap: 4px;
     white-space: nowrap;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.6);
 }
 
 .pulse-dot { width: 4px; height: 4px; background-color: var(--neon-cyan); border-radius: 50%; }
 
 .hero-title { font-size: 2.3rem; font-weight: 800; margin-bottom: 10px; text-align: center; }
 .cyan-highlight { color: var(--neon-cyan); }
-.hero-subtitle { color: var(--slate-muted); font-size: 0.98rem; max-width: 900px; margin-bottom: 24px; text-align: center; }
+.hero-subtitle { color: var(--slate-muted); font-size: 0.98rem; max-width: 900px; margin-bottom: 30px; text-align: center; }
 
-.hero-cta-buttons { display: flex; gap: 14px; margin-bottom: 35px; }
-.btn-primary { background-color: var(--neon-cyan); color: #07080c; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; }
-.btn-secondary { background-color: transparent; color: var(--pure-white); border: 1px solid var(--border-mesh); text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; }
-
-/* FULL WIDTH VIDEO BANNER (AMAZON STYLE FLUID) */
+/* DYNAMIC LIQUID SLIDER BANNER */
 .master-stream-container {
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .global-slider-mask {
@@ -196,7 +198,7 @@ img, video {
     z-index: 100;
 }
 
-/* 100% WIDE HORIZONTAL LANDSCAPE BOXES */
+/* 100% WIDTH EDGE-TO-EDGE LANDSCAPE BENTO FLOW */
 .landscape-box-flow {
     width: 100%;
     display: flex;
@@ -210,53 +212,67 @@ img, video {
     border: 1px solid var(--border-mesh);
     border-radius: 12px;
     padding: 30px;
-    text-align: left; /* Aligns data to left-to-right */
+    text-align: left;
 }
 
 .card-heading { 
     font-size: 1.15rem; 
     color: var(--neon-cyan); 
-    margin-bottom: 18px; 
+    margin-bottom: 20px; 
     font-weight: 700; 
     display: flex; 
     align-items: center; 
     gap: 8px; 
 }
 
-.edu-title-node { font-size: 1rem; font-weight: 700; color: var(--pure-white); margin-bottom: 4px; }
-.edu-details-text { font-size: 0.95rem; color: var(--pure-white); margin-bottom: 14px; }
-.location-tag { color: var(--neon-cyan); font-weight: 600; }
+.edu-main-line { font-size: 1rem; font-weight: 600; color: var(--pure-white); line-height: 1.7; }
 
-.inner-learnt-box { 
-    background-color: rgba(7,8,12,0.4); 
-    border-left: 3px solid var(--neon-cyan); 
-    padding: 10px 16px; 
-    margin-top: 4px; 
-}
-.learnt-text-line { font-size: 0.95rem; color: var(--pure-white); font-weight: 500; }
-
-/* Skills Horizontal Grid Alignment */
+/* Skills Horizontal Row Alignment Engine */
 .skills-landscape-row {
-    margin-bottom: 14px;
-    font-size: 1rem;
-    line-height: 1.6;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .skills-landscape-row:last-child { margin-bottom: 0; }
 
 .skill-group-title {
+    font-size: 1rem;
     font-weight: 700;
     color: var(--neon-cyan);
-    display: inline-block;
-    min-width: 160px; /* Secure uniform spacing alignment */
-}
-.skill-items-line {
-    color: var(--pure-white);
+    letter-spacing: 0.3px;
 }
 
-.mt-15 { margin-top: 14px; }
+/* Rounded Capsule Badges Layout */
+.capsule-badges-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+}
+
+.pill-badge {
+    background-color: var(--bg-deep-void);
+    border: 1px solid var(--border-mesh);
+    padding: 6px 14px;
+    border-radius: 20px; /* Forces round cap style from blueprint */
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--pure-white);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+.pill-badge:hover {
+    border-color: var(--neon-cyan);
+    color: var(--neon-cyan);
+}
+
+.mt-15 { margin-top: 15px; }
 .section-divider-gap { width: 100%; height: 20px; }
 
-/* PORTFOLIO GRID */
+/* SERVICES 4-COLUMN ARTIFACT GRID */
 .section-title-node { text-align: center; margin-bottom: 30px; }
 .section-title-node h2 { font-size: 1.8rem; color: var(--neon-cyan); font-weight: 700; }
 
@@ -295,7 +311,7 @@ img, video {
 .card-badge-row { display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; color: var(--slate-muted); }
 .verified-tag { color: var(--neon-cyan); font-weight: 600; }
 
-/* MODALS & RESTRUCTURING */
+/* MODAL & RESTRUCTURING ELEMENTS */
 .lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 2500; justify-content: center; align-items: center; }
 .lightbox-content-wrapper { position: relative; max-width: 90%; max-height: 85%; display: flex; flex-direction: column; align-items: center; }
 .lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; }
@@ -320,7 +336,7 @@ img, video {
 
 .corporate-footer { text-align: center; padding: 20px; color: var(--slate-muted); font-size: 0.78rem; border-top: 1px solid var(--border-mesh); margin-top: 40px; }
 
-/* SCALERS */
+/* MEDIA RESPONSIVE SCALERS */
 @media (max-width: 1024px) {
     .amazon-true-grid-layout { grid-template-columns: repeat(2, 1fr); }
 }
@@ -329,6 +345,5 @@ img, video {
     .global-slider-mask { aspect-ratio: 16 / 9; }
     .nav-container { padding: 0 15px; }
     .search-box-container { display: none; }
-    .skill-group-title { display: block; margin-bottom: 2px; }
 }
 

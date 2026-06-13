@@ -1,13 +1,13 @@
-/* 2026 EXECUTIVE RESPONSIVE BENTO ENGINE */
+/* 2026 TRENDING PROFESSIONAL SOFT LIGHT MINIMALIST INTERFACE */
 :root {
-    --bg-deep-void: #060810;     
-    --bg-card-slate: #101424;    
-    --neon-cyan: #00f5ff;        
-    --pure-white: #ffffff;      
-    --silver-text: #e2e8f0;     
-    --slate-muted: #748aa6;      
-    --border-mesh: #1e263d;      
-    --success-green: #10b981;    
+    --bg-deep-void: #f8fafc;     /* Clean, Bright, Premium White Base */
+    --bg-card-slate: #ffffff;    /* Stark Crisp White Bento Boxes */
+    --primary-slate: #0f172a;    /* Deep Jet Black Charcoal for Primary Text */
+    --slate-muted: #475569;      /* Elegant Slate Charcoal for Subtitles */
+    --neon-cyan: #0284c7;        /* Highly Professional Classic Royal Blue Accent */
+    --pill-bg: #f1f5f9;          /* Smooth Pearl Grey Capsule Background */
+    --border-mesh: #e2e8f0;      /* Razor Thin Subtle Grey Dividers */
+    --success-green: #16a34a;    /* Clean Emerald Secure Green */
 }
 
 * {
@@ -23,7 +23,7 @@ html {
 
 body {
     background-color: var(--bg-deep-void);
-    color: var(--pure-white);
+    color: var(--primary-slate);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
@@ -35,7 +35,7 @@ img, video {
     -webkit-user-drag: none;
 }
 
-/* FIXED NAVBAR ARCHITECTURE */
+/* NAVIGATION HEADER ARCHITECTURE */
 .navbar {
     position: fixed;
     top: 0;
@@ -57,11 +57,11 @@ img, video {
 }
 
 .logo-area { display: flex; align-items: center; }
-.logo-text { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.5px; color: var(--pure-white); }
+.logo-text { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.3px; color: var(--primary-slate); }
 
 .search-box-container { 
     position: relative; 
-    width: 320px; 
+    width: 340px; 
 }
 .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--slate-muted); }
 #gallerySearch {
@@ -70,10 +70,11 @@ img, video {
     background-color: var(--bg-deep-void);
     border: 1px solid var(--border-mesh);
     border-radius: 20px;
-    color: var(--pure-white);
+    color: var(--primary-slate);
     font-size: 0.85rem;
     outline: none;
 }
+#gallerySearch:focus { border-color: var(--neon-cyan); }
 
 .nav-menus { display: flex; gap: 28px; }
 .nav-link { color: var(--slate-muted); text-decoration: none; font-size: 0.92rem; font-weight: 600; transition: color 0.2s; }
@@ -91,7 +92,7 @@ img, video {
     border-bottom: 1px solid var(--border-mesh);
 }
 
-/* HERO INITIAL CONTAINER */
+/* HERO SECTION LOGIC */
 .hero-center-layout {
     display: flex;
     flex-direction: column;
@@ -104,7 +105,7 @@ img, video {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 35px; /* Perfect spacing to prevent mobile layout overlap */
+    margin-bottom: 35px; /* Added clean safety gap for phone screens */
     width: 120px;
 }
 
@@ -115,7 +116,7 @@ img, video {
     border: 2px solid var(--neon-cyan);
     padding: 3px;
     background-color: var(--bg-card-slate);
-    box-shadow: 0 0 15px rgba(0, 245, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,22 +133,22 @@ img, video {
     color: var(--neon-cyan);
     font-size: 0.68rem;
     font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 10px;
+    padding: 3px 10px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     gap: 4px;
     white-space: nowrap;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.6);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .pulse-dot { width: 4px; height: 4px; background-color: var(--neon-cyan); border-radius: 50%; }
 
-.hero-title { font-size: 2.3rem; font-weight: 800; margin-bottom: 10px; text-align: center; }
+.hero-title { font-size: 2.3rem; font-weight: 800; margin-bottom: 10px; text-align: center; color: var(--primary-slate); }
 .cyan-highlight { color: var(--neon-cyan); }
 .hero-subtitle { color: var(--slate-muted); font-size: 0.98rem; max-width: 900px; margin-bottom: 30px; text-align: center; }
 
-/* DYNAMIC VIDEO SLIDER MASK (AMAZON MODE RATIO) */
+/* AMAZON STYLE FLUID ROW MEDIA PLAYERS */
 .master-stream-container {
     width: 100%;
     margin-bottom: 30px;
@@ -185,9 +186,9 @@ img, video {
     position: absolute;
     top: 15px;
     right: 20px;
-    background-color: rgba(6, 8, 16, 0.85);
+    background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid var(--border-mesh);
-    color: var(--neon-cyan);
+    color: var(--primary-slate);
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.75rem;
@@ -196,7 +197,7 @@ img, video {
     z-index: 100;
 }
 
-/* WIDE HORIZONTAL LANDSCAPE CARD DESIGN SYSTEM */
+/* 100% WIDE HORIZONTAL LANDSCAPE BENTO DESIGN SHEET */
 .landscape-box-flow {
     width: 100%;
     display: flex;
@@ -211,6 +212,7 @@ img, video {
     border-radius: 12px;
     padding: 30px;
     text-align: left;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
 }
 
 .card-heading { 
@@ -218,7 +220,7 @@ img, video {
     color: var(--neon-cyan); 
     margin-bottom: 22px; 
     font-weight: 700; 
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
 }
 
 .education-bullet-list {
@@ -232,8 +234,8 @@ img, video {
     align-items: start;
     gap: 12px;
     font-size: 1.02rem;
-    font-weight: 500;
-    color: var(--silver-text);
+    font-weight: 600;
+    color: var(--primary-slate);
     line-height: 1.6;
 }
 
@@ -246,7 +248,7 @@ img, video {
     flex-shrink: 0;
 }
 
-/* Skills Cluster Grid Structural Setup */
+/* Skills Cluster Structural Wrapping Layout Engine */
 .skills-wrapper-block {
     display: flex;
     flex-direction: column;
@@ -262,11 +264,11 @@ img, video {
 .category-label {
     font-size: 1.05rem;
     font-weight: 700;
-    color: var(--silver-text);
+    color: var(--primary-slate);
     letter-spacing: 0.3px;
 }
 
-/* FIX: Forces cluster buttons to align side-by-side horizontally and auto-wrap */
+/* FIX: Secures smooth wrapping of caps side-by-side cleanly over box widths */
 .capsules-flex-wrap {
     display: flex;
     flex-wrap: wrap; 
@@ -274,24 +276,26 @@ img, video {
     width: 100%;
 }
 
-/* Clean Pill Capsule Node Styling (Strictly Border Radius 50px - No Icons) */
+/* Clean Pill Caps (Circular Border Radius 50px - Corrects alignment bugs) */
 .clean-pill-capsule {
-    background-color: var(--bg-deep-void);
+    background-color: var(--pill-bg);
     border: 1px solid var(--border-mesh);
     padding: 10px 22px;
-    border-radius: 50px; /* Perfect Soft Curved Capsule shape matching 13565.jpg */
+    border-radius: 50px; /* Soft round button capsule requested in 13565.jpg */
     font-size: 0.88rem;
     font-weight: 600;
-    color: var(--pure-white);
+    color: var(--primary-slate);
     display: inline-block;
+    transition: all 0.2s ease;
 }
 .clean-pill-capsule:hover {
     border-color: var(--neon-cyan);
+    background-color: rgba(2, 132, 199, 0.05);
 }
 
 .section-divider-gap { width: 100%; height: 20px; }
 
-/* SERVICES GRID ARTIFACTS */
+/* SERVICES GRID ARCHITECTURE */
 .section-title-node { text-align: center; margin-bottom: 30px; }
 .section-title-node h2 { font-size: 1.8rem; color: var(--neon-cyan); font-weight: 700; }
 
@@ -311,6 +315,7 @@ img, video {
     flex-direction: column;
     gap: 10px;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.01);
 }
 .amazon-product-card-node:hover { border-color: var(--neon-cyan); }
 
@@ -326,12 +331,63 @@ img, video {
 }
 .card-image-box-frame img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-.card-title-string { font-size: 0.85rem; font-weight: 600; color: var(--pure-white); text-align: left; }
+.card-title-string { font-size: 0.85rem; font-weight: 600; color: var(--primary-slate); text-align: left; }
 .card-badge-row { display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; color: var(--slate-muted); }
 .verified-tag { color: var(--neon-cyan); font-weight: 600; }
 
 .amazon-product-card-node.filtered-out { display: none !important; }
 
-/* MODAL popup STYLING */
+/* LIGHTBOX MODE WINDOW */
 .lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 2500; justify-content: center; align-items: center; }
-.
+.lightbox-content-wrapper { position: relative; max-width: 90%; max-height: 85%; display: flex; flex-direction: column; align-items: center; }
+.lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; }
+.lightbox-caption { margin-top: 12px; color: #ffffff; font-size: 0.95rem; }
+.lightbox-close-btn { position: absolute; top: 20px; right: 25px; color: #ffffff; font-size: 2.2rem; cursor: pointer; }
+
+/* CONTACT STRUCTURAL CONTAINER REPAIRED GRID SET */
+.contact-structural-grid { 
+    display: grid; 
+    grid-template-columns: 1.1fr 0.9fr; 
+    gap: 24px; 
+    width: 100%; 
+}
+.input-form-card, .trust-gateway-card { 
+    background-color: var(--bg-card-slate); 
+    border: 1px solid var(--border-mesh); 
+    padding: 30px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.form-row { margin-bottom: 14px; }
+.form-row input, .form-row textarea { 
+    width: 100%; 
+    padding: 14px; 
+    background-color: var(--bg-deep-void); 
+    border: 1px solid var(--border-mesh); 
+    border-radius: 6px; 
+    color: var(--primary-slate); 
+    font-size: 0.9rem; 
+    outline: none; 
+}
+.form-row input:focus, .form-row textarea:focus { border-color: var(--neon-cyan); }
+.form-action-button { width: 100%; padding: 14px; background-color: var(--neon-cyan); color: #ffffff; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
+
+.gateway-explainer { color: var(--slate-muted); font-size: 0.85rem; margin-bottom: 18px; }
+.bhim-widget-box { background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 10px; padding: 24px; text-align: center; }
+.shield-vector-icon { font-size: 2.2rem; color: var(--neon-cyan); margin-bottom: 6px; position: relative; display: inline-block; }
+.secure-checkmark { position: absolute; font-size: 0.8rem; top: 52%; left: 50%; transform: translate(-50%, -50%); color: var(--bg-deep-void); }
+.bhim-label-text { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 2px; color: var(--primary-slate); }
+.bhim-vpa-string { display: block; color: var(--slate-muted); font-size: 0.82rem; margin-bottom: 16px; }
+.live-upi-trigger { display: inline-flex; align-items: center; gap: 6px; background-color: var(--success-green); color: #ffffff; text-decoration: none; padding: 11px 24px; border-radius: 20px; font-weight: 600; font-size: 0.85rem; }
+
+.corporate-footer { text-align: center; padding: 20px; color: var(--slate-muted); font-size: 0.78rem; border-top: 1px solid var(--border-mesh); margin-top: 40px; }
+
+/* PHONE SIZE SCALER ENGINE (PREVENTS HEADERS FROM CLIPPING TEXT) */
+@media (max-width: 850px) {
+    .contact-structural-grid, .amazon-true-grid-layout, .landscape-box-flow { grid-template-columns: 1fr; }
+    .global-slider-mask { aspect-ratio: 16 / 9; }
+    .nav-container { padding: 0 15px; }
+    .search-box-container { display: none; }
+    .hero-title { font-size: 1.8rem; line-height: 1.3; margin-top: 25px; /* Clean layout separation for mobile screens padding */ }
+}

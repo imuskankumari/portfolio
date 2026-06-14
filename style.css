@@ -1,9 +1,10 @@
+/* 2026 MINIMALIST RESUME WHITE & ORANGE ARCHITECTURE */
 :root {
     --bg-deep-void: #fbfbfd;     
     --bg-card-slate: #ffffff;    
     --primary-slate: #111827;    
     --slate-muted: #4b5563;      
-    --neon-orange: #ff9900;      
+    --neon-orange: #ff9900;      /* Amazon & Resume Premium Branding Orange Accent */
     --pill-bg: #f3f4f6;          
     --border-mesh: #e5e7eb;      
     --success-green: #16a34a;    
@@ -24,8 +25,10 @@ body {
     background-color: var(--bg-deep-void);
     color: var(--primary-slate);
     font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
     overflow-x: hidden;
     width: 100%;
+    position: relative;
 }
 
 img, video {
@@ -44,21 +47,21 @@ img, video {
 .circle-one { width: 140px; height: 140px; top: 15px; left: 20px; }
 .circle-two { width: 110px; height: 110px; top: 110px; right: 20px; }
 
-/* NAVBAR SYSTEM */
+/* FIXED NAVBAR (NO SEARCH BOX - NO ICONS) */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 70px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.96);
     border-bottom: 1px solid var(--border-mesh);
     z-index: 1000;
 }
 
 .nav-container {
     width: 100%;
-    padding: 0 30px;
+    padding: 0 40px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -74,9 +77,10 @@ img, video {
 }
 
 .nav-menus { display: flex; gap: 35px; }
-.nav-link { color: var(--slate-muted); text-decoration: none; font-size: 0.95rem; font-weight: 700; }
+.nav-link { color: var(--slate-muted); text-decoration: none; font-size: 0.95rem; font-weight: 700; transition: color 0.2s; }
 .nav-link:hover, .nav-link.active { color: var(--neon-orange); }
 
+/* CONTENT WRAPPER */
 .main-wrapper {
     width: 100%;
     margin-top: 70px;
@@ -84,9 +88,10 @@ img, video {
 
 .page-section {
     width: 100%;
-    padding: 40px 30px;
+    padding: 60px 40px;
 }
 
+/* HERO INITIAL LAYOUT */
 .hero-center-layout {
     display: flex;
     flex-direction: column;
@@ -95,26 +100,27 @@ img, video {
 }
 
 .avatar-wrapper-frame {
-    margin-bottom: 15px;
+    margin-bottom: 24px;
     width: 120px;
 }
 
 .avatar-glow-ring {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     border: 2px solid var(--neon-orange);
-    padding: 2px;
+    padding: 3px;
     background-color: var(--bg-card-slate);
+    box-shadow: 0 4px 15px rgba(255, 153, 0, 0.12);
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
 }
 
-.profile-avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.profile-avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
 
-/* ACCURATE RESUME TYPOGRAPHY & SHORT UNDERLINE MATCH */
+/* RESUME HIGH-END TYPOGRAPHY ALIGNMENT MATCHED (IMAGE 13690) */
 .resume-header-block {
     text-align: right; 
     width: 100%;
@@ -123,7 +129,7 @@ img, video {
 }
 
 .resume-main-name {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     font-weight: 900;
     color: var(--primary-slate);
     letter-spacing: -0.5px;
@@ -139,31 +145,33 @@ img, video {
 }
 
 .resume-sub-designation {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--neon-orange);
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    margin-top: -2px;
 }
 
-.hero-subtitle { color: var(--slate-muted); font-size: 0.95rem; max-width: 900px; margin-bottom: 30px; text-align: center; margin-top: 15px; }
+.hero-subtitle { color: var(--slate-muted); font-size: 0.98rem; max-width: 900px; margin-bottom: 35px; text-align: center; margin-top: 15px; }
 
-/* 16:5 BANNER HOLDING THE 12-REEL STRIP VIEWPORT UNIFORMLY */
+/* TRUE AMAZON HORIZONTAL VIDEO SLIDER STREAM */
 .master-stream-container {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.global-slider-mask {
+.global-slider-mask.vertical-reel-viewport {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 5; 
+    aspect-ratio: 16 / 5; /* Forces full screen landscape banner aspect ratio */
     background-color: #000000;
     overflow: hidden;
-    border-radius: 8px;
-    border: 2px solid var(--border-mesh);
-    outline: 2px solid var(--neon-orange);
+    border-radius: 12px;
+    border: 3px solid var(--border-mesh); /* Grey Metallic Outside line */
+    outline: 2px solid var(--neon-orange); /* Orange Double Outline layer requested */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
 }
 
 .slider-stream-track {
@@ -181,25 +189,25 @@ img, video {
 .stream-slide video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Spans full horizontal face smoothly like a panoramic reel strip */
+    object-fit: cover; /* Centers the long 9:16 visual core safely */
 }
 
 .sound-toggle-btn {
     position: absolute;
     top: 15px;
     right: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.92);
     border: 1px solid var(--border-mesh);
     color: var(--primary-slate);
-    padding: 5px 10px;
+    padding: 6px 14px;
     border-radius: 20px;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
     cursor: pointer;
     z-index: 100;
 }
 
-/* WIDE LANDSCAPE CARD ARCHITECTURE */
+/* 100% WIDE BENTO SHEET FLOW LAYOUT */
 .landscape-box-flow {
     width: 100%;
     display: flex;
@@ -214,81 +222,84 @@ img, video {
     background-color: var(--bg-card-slate);
     border: 1px solid var(--border-mesh);
     border-radius: 12px;
-    padding: 30px;
+    padding: 35px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.01);
 }
 
 .card-heading { 
-    font-size: 1.25rem; 
+    font-size: 1.3rem; 
     color: var(--neon-orange); 
-    margin-bottom: 20px; 
+    margin-bottom: 24px; 
     font-weight: 800;
 }
 
 .education-bullet-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 }
 
 .edu-list-item {
     display: flex;
     align-items: start;
-    gap: 10px;
-    font-size: 1rem;
+    gap: 12px;
+    font-size: 1.05rem;
     font-weight: 600;
+    color: var(--primary-slate);
 }
 
 .bullet-dot-node {
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
     background-color: var(--neon-orange);
     border-radius: 50%;
     margin-top: 10px;
     flex-shrink: 0;
 }
 
+/* Parallel 2 Columns Branch Setup Engine */
 .skills-split-layout-engine {
     display: grid;
     grid-template-columns: 1fr 1fr; 
-    gap: 24px;
+    gap: 30px;
     width: 100%;
 }
 
 .skills-column-branch { display: flex; flex-direction: column; }
-.skill-category-set { display: flex; flex-direction: column; gap: 10px; }
-.category-label { font-size: 1rem; font-weight: 700; color: var(--primary-slate); }
+.skill-category-set { display: flex; flex-direction: column; gap: 12px; }
+.category-label { font-size: 1.05rem; font-weight: 700; color: var(--primary-slate); }
 
+/* FIX: Forces exact symmetrical 2-by-2 grid rows mapping from screenshot 13565 */
 .capsules-matrix-grid-2x2 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, max-content); /* Exactly 2 button elements side-by-side per horizontal row */
+    gap: 12px 16px;
     width: 100%;
 }
 
-/* SNUG SLEEK BUTTON CAPSULES (BORDER RADIUS 50PX) */
+/* Soft Rounded Capsules Button Custom Node Shapes */
 .clean-pill-capsule {
     background-color: var(--pill-bg);
     border: 1px solid var(--border-mesh);
-    padding: 6px 14px; 
-    border-radius: 50px; /* Snug button outline edges match */
-    font-size: 0.88rem;
+    padding: 10px 24px;
+    border-radius: 50px; /* Precise circular curve symmetry */
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--primary-slate);
     display: inline-block;
-    width: max-content;
 }
 
 .mt-24 { margin-top: 24px; }
 .section-divider-gap { width: 100%; height: 20px; }
 
-.section-title-node { text-align: center; margin-bottom: 25px; }
-.section-title-node h2 { font-size: 1.6rem; color: var(--neon-orange); font-weight: 800; }
+/* SERVICES DYNAMIC GRID (REMOVES TEXT STRINGS CORES) */
+.section-title-node { text-align: center; margin-bottom: 30px; }
+.section-title-node h2 { font-size: 1.8rem; color: var(--neon-orange); font-weight: 800; }
 
-/* DYNAMIC 3-COLUMN PRODUCT GRIDS (THIN ORANGE LINES LAYER MATCH) */
 .amazon-true-grid-layout-3col {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* 3 Columns Layout matching Amazon product display pages specs */
+    gap: 24px;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -296,17 +307,18 @@ img, video {
 
 .amazon-product-card-node {
     background-color: var(--bg-card-slate);
-    border: 1px solid var(--neon-orange); /* Slitted Orange Line Bounds requested */
+    border: 1px solid var(--neon-orange); /* Snug thin orange border line injected */
     border-radius: 6px;
-    padding: 8px;
+    padding: 16px;
     cursor: pointer;
 }
+.amazon-product-card-node:hover { border-color: var(--neon-orange); }
 
 .card-image-box-frame {
     width: 100%;
     aspect-ratio: 1 / 1; 
     background-color: #f8fafc;
-    border-radius: 4px;
+    border-radius: 6px;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -314,21 +326,24 @@ img, video {
 }
 .card-image-box-frame img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
+/* LIGHTBOX INTERFACES */
 .lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 2500; justify-content: center; align-items: center; }
 .lightbox-content-wrapper { position: relative; max-width: 90%; max-height: 85%; display: flex; flex-direction: column; align-items: center; }
 .lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; }
 .lightbox-close-btn { position: absolute; top: 20px; right: 25px; color: #ffffff; font-size: 2.2rem; cursor: pointer; }
 
+/* CONTACT GRID HOVERS COMPONENTS */
 .contact-structural-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; width: 100%; max-width: 1200px; margin: 0 auto; }
-.input-form-card, .trust-gateway-card { background-color: var(--bg-card-slate); border: 1px solid var(--border-mesh); padding: 25px; border-radius: 12px; }
+.input-form-card, .trust-gateway-card { background-color: var(--bg-card-slate); border: 1px solid var(--border-mesh); padding: 30px; border-radius: 12px; }
 
 .form-row { margin-bottom: 14px; }
-.form-row input, .form-row textarea { width: 100%; padding: 12px; background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 6px; color: var(--primary-slate); font-size: 0.9rem; outline: none; }
+.form-row input, .form-row textarea { width: 100%; padding: 14px; background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 6px; color: var(--primary-slate); font-size: 0.9rem; outline: none; }
 .form-row input:focus, .form-row textarea:focus { border-color: var(--neon-orange); }
-.form-action-button { width: 100%; padding: 12px; background-color: var(--neon-orange); color: #ffffff; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
+.form-action-button { width: 100%; padding: 14px; background-color: var(--neon-orange); color: #ffffff; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
 
+.gateway-explainer { color: var(--slate-muted); font-size: 0.85rem; margin-bottom: 18px; }
 .bhim-widget-box { background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 10px; padding: 20px; text-align: center; }
-.shield-vector-icon { font-size: 2rem; color: var(--neon-orange); margin-bottom: 6px; position: relative; display: inline-block; }
+.shield-vector-icon { font-size: 2.2rem; color: var(--neon-orange); margin-bottom: 6px; position: relative; display: inline-block; }
 .secure-checkmark { position: absolute; font-size: 0.8rem; top: 52%; left: 50%; transform: translate(-50%, -50%); color: var(--bg-deep-void); }
 .bhim-label-text { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 2px; color: var(--primary-slate); }
 .bhim-vpa-string { display: block; color: var(--slate-muted); font-size: 0.82rem; margin-bottom: 16px; }
@@ -336,6 +351,7 @@ img, video {
 
 .corporate-footer { text-align: center; padding: 20px; color: var(--slate-muted); font-size: 0.78rem; border-top: 1px solid var(--border-mesh); margin-top: 40px; }
 
+/* RESPONSIVE SCALERS */
 @media (max-width: 950px) {
     .amazon-true-grid-layout-3col { grid-template-columns: repeat(2, 1fr); }
     .skills-split-layout-engine { grid-template-columns: 1fr; gap: 20px; }
@@ -344,5 +360,6 @@ img, video {
     .contact-structural-grid, .amazon-true-grid-layout-3col { grid-template-columns: 1fr; }
     .global-slider-mask { aspect-ratio: 16 / 9; }
     .nav-container { padding: 0 20px; }
-    .hero-title { font-size: 1.8rem; margin-top: 25px; }
+    .hero-title { font-size: 2rem; margin-top: 25px; }
 }
+

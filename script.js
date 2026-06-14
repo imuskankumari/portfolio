@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-    buildAmazonTrueGrid();
+    buildBehanceStyleGrid();
     startAutomatedIntervals();
 });
 
-function buildAmazonTrueGrid() {
+function buildBehanceStyleGrid() {
     const gridContainer = document.getElementById("amazonGridEngine");
     let domBuffer = "";
 
+    // G1 to G50 total asset items looped dynamically
     for (let count = 1; count <= 50; count++) {
         domBuffer += `
             <div class="amazon-product-card-node" id="card-node-${count}" onclick="openLightbox('g${count}.jpg')">

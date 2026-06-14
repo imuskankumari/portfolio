@@ -1,4 +1,3 @@
-// MULTI-STREAM DYNAMIC INTEL INTEGRATOR
 document.addEventListener("DOMContentLoaded", () => {
     initSmoothScrollSpy();
     buildAmazonTrueGrid();
@@ -46,7 +45,7 @@ function initSmoothScrollSpy() {
     });
 }
 
-// FIXED: INJECTS CLEAN GALLERY IMAGES UP TO EXACTLY 50 ITEMS (NO LABEL TEXT)
+// INJECTS DYNAMIC 50 IMAGES INTO THE 3-COLUMN GRID WITHOUT ANY TEXT STRINGS
 function buildAmazonTrueGrid() {
     const gridContainer = document.getElementById("amazonGridEngine");
     let domBuffer = "";
@@ -55,7 +54,7 @@ function buildAmazonTrueGrid() {
         domBuffer += `
             <div class="amazon-product-card-node" id="card-node-${count}" onclick="openLightbox('g${count}.jpg', '')">
                 <div class="card-image-box-frame">
-                    <img src="g${count}.jpg" alt="Production Artwork Item ${count}" draggable="false" onerror="this.parentNode.style.backgroundColor='#f1f5f9'">
+                    <img src="g${count}.jpg" alt="Artwork Unit ${count}" draggable="false" onerror="this.parentNode.style.backgroundColor='#f1f5f9'">
                 </div>
             </div>
         `;
@@ -91,7 +90,7 @@ function startAutomatedIntervals() {
             activeSlideIndex = 0;
         }
         executeTrackShift();
-    }, 4000); // Swipes and turns automatically every 4 seconds
+    }, 4000); // Transitions video sliders channels exactly every 4 seconds loop
 }
 
 function executeTrackShift() {
@@ -113,7 +112,7 @@ function playVideoAtCurrentIndex() {
     const currentVideo = allVideos[activeSlideIndex];
     if (currentVideo) {
         currentVideo.muted = globalMuteState;
-        currentVideo.play().catch(() => console.log("Holding context loop..."));
+        currentVideo.play().catch(() => console.log("Awaiting core media stream layer..."));
     }
 }
 
@@ -150,4 +149,3 @@ function armSystemSecurity() {
         if (e.target.nodeName === "IMG" || e.target.nodeName === "VIDEO") { e.preventDefault(); }
     });
 }
-

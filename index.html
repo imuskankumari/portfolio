@@ -9,8 +9,8 @@
 </head>
 <body oncontextmenu="return false;">
 
-    <div class="resume-orange-circle circle-one"></div>
-    <div class="resume-orange-circle circle-two"></div>
+    <div class="glow-orb orb-one"></div>
+    <div class="glow-orb orb-two"></div>
 
     <header class="navbar">
         <div class="nav-container">
@@ -138,23 +138,71 @@
 
                 <div class="motion-graphics-section-block">
                     <h3 class="motion-heading">Motion Graphics Project</h3>
-                    <div class="reels-two-column-grid">
-                        <div class="reel-card-cell"><video src="v1.mp4" autoplay muted loop playsinline></video></div>
-                        <div class="reel-card-cell"><video src="v2.mp4" autoplay muted loop playsinline></video></div>
-                        <div class="reel-card-cell"><video src="v3.mp4" autoplay muted loop playsinline></video></div>
-                        <div class="reel-card-cell"><video src="v4.mp4" autoplay muted loop playsinline></video></div>
-                        <div class="reel-card-cell"><video src="v5.mp4" autoplay muted loop playsinline></video></div>
-                        <div class="reel-card-cell"><video src="v6.mp4" autoplay muted loop playsinline></video></div>
-                        <div class="reel-card-cell"><video src="v7.mp4" autoplay muted loop playsinline></video></div>
-                        <div class="reel-card-cell"><video src="v8.mp4" autoplay muted loop playsinline></video></div>
-                        <div class="reel-card-cell"><video src="v9.mp4" autoplay muted loop playsinline></video></div>
-                        <div class="reel-card-cell"><video src="v10.mp4" autoplay muted loop playsinline></video></div>
-                        <div class="reel-card-cell"><video src="v11.mp4" autoplay muted loop playsinline></video></div>
-                        <div class="reel-card-cell"><video src="v12.mp4" autoplay muted loop playsinline></video></div>
+                    <div class="video-carousel-viewport">
+                        <div class="video-carousel-track" id="videoTrackEngine">
+                            <div class="video-slide-item"><video src="v1.mp4" autoplay muted loop playsinline></video></div>
+                            <div class="video-slide-item"><video src="v2.mp4" autoplay muted loop playsinline></video></div>
+                            <div class="video-slide-item"><video src="v3.mp4" autoplay muted loop playsinline></video></div>
+                            <div class="video-slide-item"><video src="v4.mp4" autoplay muted loop playsinline></video></div>
+                            <div class="video-slide-item"><video src="v5.mp4" autoplay muted loop playsinline></video></div>
+                            <div class="video-slide-item"><video src="v6.mp4" autoplay muted loop playsinline></video></div>
+                            <div class="video-slide-item"><video src="v7.mp4" autoplay muted loop playsinline></video></div>
+                            <div class="video-slide-item"><video src="v8.mp4" autoplay muted loop playsinline></video></div>
+                            <div class="video-slide-item"><video src="v9.mp4" autoplay muted loop playsinline></video></div>
+                            <div class="video-slide-item"><video src="v10.mp4" autoplay muted loop playsinline></video></div>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <section id="services" class="
+        <section id="services" class="page-section">
+            <div class="section-title-node">
+                <h2>Graphic Design Showcase</h2>
+            </div>
+            <div class="behance-style-grid-layout-2col" id="amazonGridEngine"></div>
+        </section>
+
+        <section id="contact" class="page-section">
+            <div class="contact-structural-grid">
+                <div class="input-form-card">
+                    <form id="corporateForm" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                        <div class="form-row"><input type="text" placeholder="Your Name" required autocomplete="off"></div>
+                        <div class="form-row"><input type="email" placeholder="Your Email" required autocomplete="off"></div>
+                        <div class="form-row"><textarea placeholder="Message Requirements..." rows="4" required></textarea></div>
+                        <button type="submit" class="form-action-button">Submit Message</button>
+                    </form>
+                </div>
+
+                <div class="trust-gateway-card">
+                    <div class="bhim-widget-box">
+                        <div class="shield-vector-icon">
+                            <i class="fas fa-shield-blank"></i>
+                            <i class="fas fa-check secure-checkmark"></i>
+                        </div>
+                        <span class="bhim-label-text">BHIM UPI Payment Network</span>
+                        <span class="bhim-vpa-string">UPI ID: <strong>muskan@upi</strong></span>
+                        <a href="upi://pay?pa=muskan@upi&pn=Muskan%20Kumari&cu=INR" class="live-upi-trigger"><i class="fas fa-lock"></i> Pay Securely Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="imageLightboxModal" class="lightbox-modal" onclick="closeLightbox()">
+        <span class="lightbox-close-btn">&times;</span>
+        <div class="lightbox-content-wrapper" onclick="event.stopPropagation()">
+            <img id="lightboxMainImage" src="" alt="" draggable="false">
+        </div>
+    </div>
+
+    <footer class="corporate-footer">
+        <p>&copy; 2026 Muskan Kumari | Graphic & Web Designer | New Delhi, India</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

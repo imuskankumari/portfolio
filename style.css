@@ -1,10 +1,10 @@
-/* 2026 MINIMALIST RESUME WHITE & ORANGE ARCHITECTURE */
+/* 2026 RESUME CORE WHITE & ORANGE LIQUID ENGINE */
 :root {
-    --bg-deep-void: #fbfbfd;     
+    --bg-deep-void: #fcfcfd;     
     --bg-card-slate: #ffffff;    
-    --primary-slate: #111827;    /* Bold Intense Dark Text From Resume */
+    --primary-slate: #111827;    
     --slate-muted: #4b5563;      
-    --neon-orange: #ff9900;      /* Amazon & Resume Premium Branding Orange */
+    --neon-orange: #ff9900;      /* Amazon & Resume Branding Orange Accent */
     --pill-bg: #f3f4f6;          
     --border-mesh: #e5e7eb;      
     --success-green: #16a34a;    
@@ -36,7 +36,7 @@ img, video {
     -webkit-user-drag: none;
 }
 
-/* BACKGROUND DECORATIVE ORANGE CIRCLES SYSTEM FROM RESUME */
+/* DECORATIVE ORANGE AMBIENT CIRCLES GENERATION VECTORS */
 .resume-orange-circle {
     position: absolute;
     border-radius: 50%;
@@ -47,7 +47,7 @@ img, video {
 .circle-one { width: 280px; height: 280px; top: -40px; left: -60px; }
 .circle-two { width: 180px; height: 180px; top: 120px; right: -30px; background-color: rgba(255, 153, 0, 0.04); }
 
-/* CLEAN NAVBAR (NO ICONS) */
+/* CLEAN NAVBAR (NO EXTRA CHIPS ICONS) */
 .navbar {
     position: fixed;
     top: 0;
@@ -74,7 +74,7 @@ img, video {
 .nav-link { color: var(--slate-muted); text-decoration: none; font-size: 0.95rem; font-weight: 700; transition: color 0.2s; }
 .nav-link:hover, .nav-link.active { color: var(--neon-orange); }
 
-/* CONTENT WRAPPER */
+/* MAIN wrapper SHEET */
 .main-wrapper {
     width: 100%;
     margin-top: 70px;
@@ -85,7 +85,7 @@ img, video {
     padding: 60px 40px;
 }
 
-/* HERO INITIAL COMPONENT */
+/* HERO AVATAR ALIGNMENT FRAME */
 .hero-center-layout {
     display: flex;
     flex-direction: column;
@@ -114,44 +114,52 @@ img, video {
 
 .profile-avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
 
-/* RESUME EXACT BRANDING TYPOGRAPHY MATCH */
+/* TYPOGRAPHY ARCHITECTURE MATCHED EXACTLY TO IMAGE 13690 */
+.resume-header-block {
+    text-align: right; /* Aligned to Right Side precisely as requested */
+    width: 100%;
+    max-width: 900px;
+    margin: 10px auto;
+    border-bottom: 2px solid var(--primary-slate); /* Signature line overlay rule from document */
+    padding-bottom: 6px;
+}
+
 .resume-main-name {
-    font-size: 3rem;
+    font-size: 2.6rem;
     font-weight: 900;
     color: var(--primary-slate);
     letter-spacing: -0.5px;
-    margin-bottom: 4px;
-    text-align: center;
 }
 
 .resume-sub-designation {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--neon-orange);
     letter-spacing: 0.5px;
-    margin-bottom: 24px;
     text-transform: uppercase;
+    margin-top: -2px;
 }
 
-.hero-subtitle { color: var(--slate-muted); font-size: 0.98rem; max-width: 850px; margin-bottom: 35px; text-align: center; }
+.hero-subtitle { color: var(--slate-muted); font-size: 0.98rem; max-width: 900px; margin-bottom: 35px; text-align: center; margin-top: 15px; }
 
-/* AMAZON WIDE SCREEN SLIDER FRAME */
+/* 9:16 LONG VERTICAL BANNER STYLING (BOX REMOVED) */
 .master-stream-container {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.global-slider-mask {
+.global-slider-mask.vertical-reel-viewport {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 5; /* Full horizontal screen wide span layout banner */
+    max-width: 290px; /* Precise narrow viewport boundary width scale */
+    aspect-ratio: 9 / 16; /* True Long vertical format requested */
     background-color: #000000;
     overflow: hidden;
     border-radius: 12px;
-    border: 1px solid var(--border-mesh);
-    outline: 2px solid var(--neon-orange); /* Double outside Orange Ring effect requested */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    border: 3px solid var(--border-mesh); /* Grey Outline */
+    outline: 2px solid var(--neon-orange); /* Orange Outline effect matching image */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
 .slider-stream-track {
@@ -169,25 +177,25 @@ img, video {
 .stream-slide video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Protects 9:16 content centered safely */
+    object-fit: cover; 
 }
 
 .sound-toggle-btn {
     position: absolute;
     top: 15px;
-    right: 20px;
+    right: 15px;
     background-color: rgba(255, 255, 255, 0.92);
     border: 1px solid var(--border-mesh);
     color: var(--primary-slate);
     padding: 6px 14px;
     border-radius: 20px;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
     cursor: pointer;
     z-index: 100;
 }
 
-/* 100% WIDE BENTO SHEET LAYOUT FLOW */
+/* WIDE LANDSCAPE BENTO DESIGN FLOW */
 .landscape-box-flow {
     width: 100%;
     display: flex;
@@ -237,44 +245,32 @@ img, video {
     flex-shrink: 0;
 }
 
-/* Side-by-Side 2 Columns Layout Matrix Engine */
+/* 2 Column Parallel Branch Alignment Core */
 .skills-split-layout-engine {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Mapped side-by-side columns alignment requested */
+    grid-template-columns: 1fr 1fr; /* Renders sections side-by-side cleanly over box */
     gap: 30px;
     width: 100%;
 }
 
-.skills-column-branch {
-    display: flex;
-    flex-direction: column;
-}
+.skills-column-branch { display: flex; flex-direction: column; }
+.skill-category-set { display: flex; flex-direction: column; gap: 12px; }
+.category-label { font-size: 1.05rem; font-weight: 700; color: var(--primary-slate); }
 
-.skill-category-set {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.category-label {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--primary-slate);
-}
-
-/* FIX: Mapped precise 2-by-2 capsule grid array layout from 13565.jpg */
+/* FIX: Forces exact symmetrical 2-by-2 cluster grids mapping from image 13565 */
 .capsules-matrix-grid-2x2 {
     display: grid;
-    grid-template-columns: repeat(2, max-content); /* 2 Columns side-by-side perfectly balanced */
+    grid-template-columns: repeat(2, max-content); /* Locks exactly 2 buttons per horizontal line */
     gap: 12px 16px;
     width: 100%;
 }
 
+/* Complete Rounded Capsule Shapes */
 .clean-pill-capsule {
     background-color: var(--pill-bg);
     border: 1px solid var(--border-mesh);
     padding: 10px 24px;
-    border-radius: 50px; /* Soft round capsule buttons */
+    border-radius: 50px; /* Circular boundary edges match */
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--primary-slate);
@@ -284,13 +280,13 @@ img, video {
 .mt-24 { margin-top: 24px; }
 .section-divider-gap { width: 100%; height: 20px; }
 
-/* SERVICES AMAZON 3-COLUMN PRODUCT GRID ENGINE (NO THICK BORDERS) */
+/* SERVICES PREMIUM 3-COLUMN LAYOUT ENGINE (REMOVES EXTRA TEXT LABELS) */
 .section-title-node { text-align: center; margin-bottom: 30px; }
 .section-title-node h2 { font-size: 1.8rem; color: var(--neon-orange); font-weight: 800; }
 
 .amazon-true-grid-layout-3col {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* FORCES STRUCTURAL CLEAN 3-COLUMNS MATCHING AMAZON GRAPHICS */
+    grid-template-columns: repeat(3, 1fr); /* 3 Columns Matrix array config cleanly matches Amazon views */
     gap: 24px;
     width: 100%;
     max-width: 1200px;
@@ -299,7 +295,7 @@ img, video {
 
 .amazon-product-card-node {
     background-color: var(--bg-card-slate);
-    border: 1px solid var(--border-mesh); /* Razor thin clean edge */
+    border: 1px solid var(--border-mesh); 
     border-radius: 8px;
     padding: 16px;
     display: flex;
@@ -321,20 +317,14 @@ img, video {
 }
 .card-image-box-frame img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-.card-title-string { font-size: 0.9rem; font-weight: 600; color: var(--primary-slate); }
-.card-badge-row { display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; color: var(--slate-muted); }
-.verified-tag { color: var(--neon-orange); font-weight: 600; }
-
-.amazon-product-card-node.filtered-out { display: none !important; }
-
-/* LIGHTBOX WINDOWS */
+/* LIGHTBOX MODE */
 .lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 2500; justify-content: center; align-items: center; }
 .lightbox-content-wrapper { position: relative; max-width: 90%; max-height: 85%; display: flex; flex-direction: column; align-items: center; }
 .lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; }
 .lightbox-caption { margin-top: 12px; color: #ffffff; font-size: 0.95rem; }
 .lightbox-close-btn { position: absolute; top: 20px; right: 25px; color: #ffffff; font-size: 2.2rem; cursor: pointer; }
 
-/* CONTACT CONTEXT BLOCKS */
+/* CONTACT AND COMPACT LAYOUT SETUPS */
 .contact-structural-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; width: 100%; max-width: 1200px; margin: 0 auto; }
 .input-form-card, .trust-gateway-card { background-color: var(--bg-card-slate); border: 1px solid var(--border-mesh); padding: 30px; border-radius: 12px; }
 
@@ -344,7 +334,7 @@ img, video {
 .form-action-button { width: 100%; padding: 14px; background-color: var(--neon-orange); color: #ffffff; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
 
 .gateway-explainer { color: var(--slate-muted); font-size: 0.85rem; margin-bottom: 18px; }
-.bhim-widget-box { background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 10px; padding: 24px; text-align: center; }
+.bhim-widget-box { background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 10px; padding: 20px; text-align: center; }
 .shield-vector-icon { font-size: 2.2rem; color: var(--neon-orange); margin-bottom: 6px; position: relative; display: inline-block; }
 .secure-checkmark { position: absolute; font-size: 0.8rem; top: 52%; left: 50%; transform: translate(-50%, -50%); color: var(--bg-deep-void); }
 .bhim-label-text { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 2px; color: var(--primary-slate); }
@@ -353,7 +343,7 @@ img, video {
 
 .corporate-footer { text-align: center; padding: 20px; color: var(--slate-muted); font-size: 0.78rem; border-top: 1px solid var(--border-mesh); margin-top: 40px; }
 
-/* RESPONSIVE SCALERS DEPLOYMENT */
+/* RESPONSIVE SCALERS */
 @media (max-width: 950px) {
     .amazon-true-grid-layout-3col { grid-template-columns: repeat(2, 1fr); }
     .skills-split-layout-engine { grid-template-columns: 1fr; gap: 20px; }
@@ -364,3 +354,4 @@ img, video {
     .nav-container { padding: 0 20px; }
     .hero-title { font-size: 2rem; margin-top: 25px; }
 }
+

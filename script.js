@@ -7,7 +7,7 @@ function buildBehanceStyleGrid() {
     const gridContainer = document.getElementById("amazonGridEngine");
     let domBuffer = "";
 
-    // Dynamic generation of 50 portfolio gallery items underneath
+    // Dynamic generation of 50 portfolio slots
     for (let count = 1; count <= 50; count++) {
         domBuffer += `
             <div class="amazon-product-card-node" id="card-node-${count}" onclick="openLightbox('g${count}.jpg')">
@@ -36,7 +36,7 @@ let activePhotoIndex = 0;
 const totalPhotosCount = 10;
 
 function startAutomatedIntervals() {
-    // Top Photo Carousel Auto Slide (4:5 Ratio Box) Loop Engine Every 4 seconds
+    // Top Panoramic Photo Slider Auto Play (Every 4 seconds loop)
     setInterval(() => {
         activePhotoIndex++;
         if (activePhotoIndex >= totalPhotosCount) {

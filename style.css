@@ -1,9 +1,9 @@
 :root {
-    --bg-deep-void: #0b0f19;     /* Deep Premium Dark Background */
-    --bg-card-slate: #131a26;    /* Sleek Dark Cards */
-    --primary-slate: #ffffff;    /* White text for contrast */
-    --slate-muted: #9ca3af;      /* Muted text */
-    --neon-orange: #ff6600;      /* Vibrant Neon Orange Accent */
+    --bg-deep-void: #0b0f19;     /* Deep Royal Charcoal Black */
+    --bg-card-slate: #131a26;    /* Glowing Symmetrical Card Slate */
+    --primary-slate: #ffffff;    
+    --slate-muted: #9ca3af;      
+    --neon-orange: #ff6600;      /* Pure Vibrant Neon Orange Theme */
     --pill-bg: #1f2937;          
     --border-mesh: #2d3748;      
     --success-green: #10b981;    
@@ -33,11 +33,11 @@ img, video {
     -webkit-user-drag: none;
 }
 
-/* ORANGE NEON GLOW ORBS */
+/* BACKGROUND ORANGE SHINING EFFECT */
 .glow-orb {
     position: absolute;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,102,0,0.25) 0%, rgba(0,0,0,0) 70%);
+    background: radial-gradient(circle, rgba(255,102,0,0.22) 0%, rgba(0,0,0,0) 70%);
     z-index: -1;
     pointer-events: none;
     filter: blur(40px);
@@ -45,7 +45,7 @@ img, video {
 .orb-one { width: 350px; height: 350px; top: -50px; left: -50px; }
 .orb-two { width: 300px; height: 300px; top: 120px; right: -50px; }
 
-/* NAVBAR WITH ORANGE HIGHLIGHT */
+/* FIXED NAVIGATION */
 .navbar {
     position: fixed;
     top: 0;
@@ -77,7 +77,7 @@ img, video {
 }
 
 .nav-menus { display: flex; gap: 35px; }
-.nav-link { color: var(--slate-muted); text-decoration: none; font-size: 0.95rem; font-weight: 700; transition: color 0.2s; }
+.nav-link { color: var(--slate-muted); text-decoration: none; font-size: 0.95rem; font-weight: 700; }
 .nav-link:hover, .nav-link.active { color: var(--neon-orange); }
 
 .main-wrapper {
@@ -118,7 +118,7 @@ img, video {
 
 .profile-avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
 
-/* TYPOGRAPHY WITH ORANGE TOUCH */
+/* RESUME TYPOGRAPHY ELEMENTS */
 .resume-header-block {
     text-align: right; 
     width: 100%;
@@ -167,20 +167,71 @@ img, video {
 
 .hero-subtitle { color: var(--slate-muted); font-size: 0.98rem; line-height: 1.6; }
 
-/* BURGER CAROUSEL BOX SETUP */
-.top-photo-carousel-container {
+/* MOTION GRAPHICS - PERFECT COMPACT REELS SWIPER INTERFACE */
+.motion-graphics-section-block {
     width: 100%;
     max-width: 900px;
-    margin: 20px auto 30px auto;
+    margin: 25px auto 10px auto;
+    text-align: left;
+}
+
+.motion-heading {
+    font-size: 1.3rem;
+    color: var(--neon-orange);
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+/* Beautiful small elegant slider container for Reels */
+.reels-slider-viewport {
+    width: 100%;
+    overflow-x: auto; /* Enables seamless touch swipe and desktop horizontal scroll */
+    scrollbar-width: none; /* Hides default ugly scrollbar on Firefox */
+    padding: 10px 5px;
+}
+.reels-slider-viewport::-webkit-scrollbar {
+    display: none; /* Hides default ugly scrollbar on Chrome/Safari */
+}
+
+.reels-slider-track {
+    display: flex;
+    gap: 15px; /* Spaces out individual reels */
+    width: max-content;
+}
+
+/* Tiny compact elegant size for each video - looks professional, not screen-bursting */
+.reel-slide-card {
+    width: 140px; 
+    aspect-ratio: 9 / 16;
+    background-color: #000000;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1.5px solid var(--neon-orange);
+    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.15);
+    flex-shrink: 0;
+}
+
+.reel-slide-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* BURGER SLIDER BOX SETUP WITH HARD-LOCKED 4:5 PORTRAIT RATIO */
+.top-photo-carousel-container {
+    width: 100%;
+    max-width: 380px; /* Small compact size so it stays clean and beautiful */
+    margin: 15px auto 25px auto;
 }
 
 .carousel-viewport {
     width: 100%;
-    aspect-ratio: 16 / 6; 
+    aspect-ratio: 4 / 5; /* Exact 4:5 Portrait Ratio requested */
     background-color: #05070c;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
-    border: 1px solid var(--border-mesh);
+    border: 2px solid var(--neon-orange);
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.35);
 }
 
 .carousel-track {
@@ -201,14 +252,14 @@ img, video {
     object-fit: cover;
 }
 
-/* DATA CARDS WITH PREMIUM BORDERS */
+/* DATA LAYOUT STRUCTURE */
 .landscape-box-flow {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 24px;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
 }
 
 .landscape-corporate-card {
@@ -219,34 +270,16 @@ img, video {
     padding: 30px;
 }
 
-.card-heading { 
-    font-size: 1.25rem; 
-    color: var(--neon-orange); 
-    margin-bottom: 20px; 
-    font-weight: 800;
-}
-
+.card-heading { font-size: 1.25rem; color: var(--neon-orange); margin-bottom: 20px; font-weight: 800; }
 .education-bullet-list { display: flex; flex-direction: column; gap: 12px; }
 .edu-list-item { display: flex; align-items: start; gap: 10px; font-size: 1rem; font-weight: 600; }
 .bullet-dot-node { width: 6px; height: 6px; background-color: var(--neon-orange); border-radius: 50%; margin-top: 8px; flex-shrink: 0; box-shadow: 0 0 6px var(--neon-orange); }
 
-.skills-split-layout-engine {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 24px;
-    width: 100%;
-}
-
+.skills-split-layout-engine { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%; }
 .skills-column-branch { display: flex; flex-direction: column; }
 .skill-category-set { display: flex; flex-direction: column; gap: 10px; }
 .category-label { font-size: 1rem; font-weight: 700; color: var(--primary-slate); }
-
-.capsules-matrix-grid-2x2 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    width: 100%;
-}
+.capsules-matrix-grid-2x2 { display: flex; flex-wrap: wrap; gap: 10px; width: 100%; }
 
 .clean-pill-capsule {
     background-color: var(--pill-bg);
@@ -257,63 +290,17 @@ img, video {
     font-weight: 600;
     color: var(--primary-slate);
     display: inline-block;
-    width: max-content;
-}
-
-/* FIXED MOTION GRAPHICS - PERFECT SWIPING CAROUSEL (BURGER STYLE COUSIN) */
-.motion-graphics-section-block {
-    width: 100%;
-    max-width: 900px;
-    margin: 30px auto 10px auto;
-    text-align: left;
-}
-
-.motion-heading {
-    font-size: 1.3rem;
-    color: var(--neon-orange);
-    font-weight: 800;
-    margin-bottom: 20px;
-}
-
-.video-carousel-viewport {
-    width: 100%;
-    aspect-ratio: 16 / 9; /* Sleek cinematic landscape box */
-    background-color: #000000;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 2px solid var(--neon-orange);
-    box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
-}
-
-.video-carousel-track {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.video-slide-item {
-    min-width: 100%;
-    height: 100%;
-    background-color: #000;
-}
-
-.video-slide-item video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 .mt-24 { margin-top: 24px; }
-.section-divider-gap { width: 100%; height: 20px; }
-
+.section-divider-gap { width: 100%; height: 25px; }
 .section-title-node { text-align: center; margin-bottom: 25px; }
 .section-title-node h2 { font-size: 1.6rem; color: var(--neon-orange); font-weight: 800; }
 
-/* HARD LOCKED BEHANCE STYLE 2-COLUMN SYMMETRICAL GALLERY */
+/* HARDFIX 2-COLUMN SYMMETRICAL GALLERY GRID UNDERNEATH SLIDER */
 .behance-style-grid-layout-2col {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* Forces 2 items per row strictly */
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; 
     gap: 20px;
     width: 100%;
     max-width: 900px;
@@ -347,13 +334,13 @@ img, video {
 }
 .card-image-box-frame img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-/* LIGHTBOX MODAL */
+/* LIGHTBOX DESIGN */
 .lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 2500; justify-content: center; align-items: center; }
 .lightbox-content-wrapper { position: relative; max-width: 90%; max-height: 85%; display: flex; flex-direction: column; align-items: center; }
 .lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; }
 .lightbox-close-btn { position: absolute; top: 20px; right: 25px; color: #ffffff; font-size: 2.2rem; cursor: pointer; }
 
-/* DARK SYSTEM FORM DETAILS */
+/* CONTACT STRUCTURAL SETUP */
 .contact-structural-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; width: 100%; max-width: 900px; margin: 0 auto; }
 .input-form-card, .trust-gateway-card { background-color: var(--bg-card-slate); border: 1px solid var(--border-mesh); padding: 25px; border-radius: 12px; }
 
@@ -375,8 +362,8 @@ img, video {
     .contact-structural-grid { grid-template-columns: 1fr; }
     .skills-split-layout-engine { grid-template-columns: 1fr; gap: 20px; }
     .nav-container { padding: 0 20px; }
-    .carousel-viewport { aspect-ratio: 16 / 9; }
-    .video-carousel-viewport { aspect-ratio: 16 / 9; }
     .behance-style-grid-layout-2col { gap: 12px; }
+    .reel-slide-card { width: 115px; } /* Slightly more compact on mobile viewports */
+    .top-photo-carousel-container { max-width: 290px; }
 }
 

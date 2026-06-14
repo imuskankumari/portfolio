@@ -1,12 +1,12 @@
 :root {
-    --bg-deep-void: #fbfbfd;     
-    --bg-card-slate: #ffffff;    
-    --primary-slate: #111827;    
-    --slate-muted: #4b5563;      
-    --neon-orange: #ff9900;      
-    --pill-bg: #f3f4f6;          
-    --border-mesh: #e5e7eb;      
-    --success-green: #16a34a;    
+    --bg-deep-void: #0b0f19;     /* Deep Premium Dark Background */
+    --bg-card-slate: #131a26;    /* Sleek Dark Cards */
+    --primary-slate: #ffffff;    /* White text for contrast */
+    --slate-muted: #9ca3af;      /* Muted text */
+    --neon-orange: #ff6600;      /* Vibrant Neon Orange Accent */
+    --pill-bg: #1f2937;          
+    --border-mesh: #2d3748;      
+    --success-green: #10b981;    
 }
 
 * {
@@ -33,26 +33,27 @@ img, video {
     -webkit-user-drag: none;
 }
 
-/* VIBRANT ORANGE BACKGROUND CIRCLES */
-.resume-orange-circle {
+/* ORANGE NEON GLOW ORBS */
+.glow-orb {
     position: absolute;
     border-radius: 50%;
-    background-color: #ff9900; 
-    opacity: 0.18; 
+    background: radial-gradient(circle, rgba(255,102,0,0.25) 0%, rgba(0,0,0,0) 70%);
     z-index: -1;
     pointer-events: none;
+    filter: blur(40px);
 }
-.circle-one { width: 140px; height: 140px; top: 15px; left: 20px; }
-.circle-two { width: 110px; height: 110px; top: 110px; right: 20px; }
+.orb-one { width: 350px; height: 350px; top: -50px; left: -50px; }
+.orb-two { width: 300px; height: 300px; top: 120px; right: -50px; }
 
-/* FIXED NAVBAR */
+/* NAVBAR WITH ORANGE HIGHLIGHT */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 70px;
-    background-color: #ffffff;
+    background-color: rgba(19, 26, 38, 0.95);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-mesh);
     z-index: 1000;
 }
@@ -70,12 +71,13 @@ img, video {
     height: 45px;
     width: 45px;
     border-radius: 50%;
-    border: 1.5px solid var(--neon-orange);
+    border: 2px solid var(--neon-orange);
     object-fit: cover;
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.4);
 }
 
 .nav-menus { display: flex; gap: 35px; }
-.nav-link { color: var(--slate-muted); text-decoration: none; font-size: 0.95rem; font-weight: 700; }
+.nav-link { color: var(--slate-muted); text-decoration: none; font-size: 0.95rem; font-weight: 700; transition: color 0.2s; }
 .nav-link:hover, .nav-link.active { color: var(--neon-orange); }
 
 .main-wrapper {
@@ -104,18 +106,19 @@ img, video {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 2px solid var(--neon-orange);
+    border: 2.5px solid var(--neon-orange);
     padding: 2px;
     background-color: var(--bg-card-slate);
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
 }
 
 .profile-avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
 
-/* ACCURATE RESUME TYPOGRAPHY */
+/* TYPOGRAPHY WITH ORANGE TOUCH */
 .resume-header-block {
     text-align: right; 
     width: 100%;
@@ -133,10 +136,11 @@ img, video {
 .short-underline {
     width: 80px;
     height: 3px;
-    background-color: var(--primary-slate);
+    background-color: var(--neon-orange);
     margin-left: auto; 
     margin-top: 4px;
     margin-bottom: 6px;
+    box-shadow: 0 0 8px var(--neon-orange);
 }
 
 .resume-sub-designation {
@@ -147,7 +151,6 @@ img, video {
     text-transform: uppercase;
 }
 
-/* ABOUT ME TEXT BLOCK */
 .about-me-text-block {
     text-align: left;
     width: 100%;
@@ -164,7 +167,7 @@ img, video {
 
 .hero-subtitle { color: var(--slate-muted); font-size: 0.98rem; line-height: 1.6; }
 
-/* PHOTO CAROUSEL */
+/* BURGER CAROUSEL BOX SETUP */
 .top-photo-carousel-container {
     width: 100%;
     max-width: 900px;
@@ -174,7 +177,7 @@ img, video {
 .carousel-viewport {
     width: 100%;
     aspect-ratio: 16 / 6; 
-    background-color: #111;
+    background-color: #05070c;
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid var(--border-mesh);
@@ -198,7 +201,7 @@ img, video {
     object-fit: cover;
 }
 
-/* LANDSCAPE DATA FLOW LAYOUT */
+/* DATA CARDS WITH PREMIUM BORDERS */
 .landscape-box-flow {
     width: 100%;
     display: flex;
@@ -225,7 +228,7 @@ img, video {
 
 .education-bullet-list { display: flex; flex-direction: column; gap: 12px; }
 .edu-list-item { display: flex; align-items: start; gap: 10px; font-size: 1rem; font-weight: 600; }
-.bullet-dot-node { width: 5px; height: 5px; background-color: var(--neon-orange); border-radius: 50%; margin-top: 10px; flex-shrink: 0; }
+.bullet-dot-node { width: 6px; height: 6px; background-color: var(--neon-orange); border-radius: 50%; margin-top: 8px; flex-shrink: 0; box-shadow: 0 0 6px var(--neon-orange); }
 
 .skills-split-layout-engine {
     display: grid;
@@ -257,7 +260,7 @@ img, video {
     width: max-content;
 }
 
-/* HARD LOCKED 2-COLUMN REELS GRID ENGINE (CRITICAL FIX FOR 13822/13820) */
+/* FIXED MOTION GRAPHICS - PERFECT SWIPING CAROUSEL (BURGER STYLE COUSIN) */
 .motion-graphics-section-block {
     width: 100%;
     max-width: 900px;
@@ -272,25 +275,30 @@ img, video {
     margin-bottom: 20px;
 }
 
-.reels-two-column-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* Force EXACTLY 2 boxes side-by-side on all screens */
-    gap: 20px;
+.video-carousel-viewport {
     width: 100%;
-}
-
-.reel-card-cell {
-    width: 100%;
-    aspect-ratio: 9 / 16; /* True Locked Vertical Reels scale */
-    background-color: #000;
+    aspect-ratio: 16 / 9; /* Sleek cinematic landscape box */
+    background-color: #000000;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid var(--border-mesh);
-    outline: 2px solid var(--neon-orange); 
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border: 2px solid var(--neon-orange);
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
 }
 
-.reel-card-cell video {
+.video-carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.video-slide-item {
+    min-width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+.video-slide-item video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -302,10 +310,10 @@ img, video {
 .section-title-node { text-align: center; margin-bottom: 25px; }
 .section-title-node h2 { font-size: 1.6rem; color: var(--neon-orange); font-weight: 800; }
 
-/* HARD LOCKED BEHANCE STYLE 2-COLUMN GALLERY GRID */
+/* HARD LOCKED BEHANCE STYLE 2-COLUMN SYMMETRICAL GALLERY */
 .behance-style-grid-layout-2col {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* Force EXACTLY 2 images side-by-side on all screens */
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* Forces 2 items per row strictly */
     gap: 20px;
     width: 100%;
     max-width: 900px;
@@ -318,18 +326,19 @@ img, video {
     border-radius: 8px;
     padding: 8px;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s, box-shadow 0.2s;
     width: 100%;
 }
 
 .amazon-product-card-node:hover {
     transform: scale(1.01);
+    box-shadow: 0 0 12px rgba(255, 102, 0, 0.4);
 }
 
 .card-image-box-frame {
     width: 100%;
     aspect-ratio: 1 / 1; 
-    background-color: #f8fafc;
+    background-color: #1a2333;
     border-radius: 6px;
     overflow: hidden;
     display: flex;
@@ -344,14 +353,14 @@ img, video {
 .lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; }
 .lightbox-close-btn { position: absolute; top: 20px; right: 25px; color: #ffffff; font-size: 2.2rem; cursor: pointer; }
 
-/* CONTACT SECTION STRUCTURE */
+/* DARK SYSTEM FORM DETAILS */
 .contact-structural-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; width: 100%; max-width: 900px; margin: 0 auto; }
 .input-form-card, .trust-gateway-card { background-color: var(--bg-card-slate); border: 1px solid var(--border-mesh); padding: 25px; border-radius: 12px; }
 
 .form-row { margin-bottom: 14px; }
 .form-row input, .form-row textarea { width: 100%; padding: 12px; background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 6px; color: var(--primary-slate); font-size: 0.9rem; outline: none; }
 .form-row input:focus, .form-row textarea:focus { border-color: var(--neon-orange); }
-.form-action-button { width: 100%; padding: 12px; background-color: var(--neon-orange); color: #ffffff; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
+.form-action-button { width: 100%; padding: 12px; background-color: var(--neon-orange); color: #ffffff; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 700; cursor: pointer; box-shadow: 0 0 10px rgba(255, 102, 0, 0.3); }
 
 .bhim-widget-box { background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 10px; padding: 20px; text-align: center; }
 .shield-vector-icon { font-size: 2rem; color: var(--neon-orange); margin-bottom: 6px; position: relative; display: inline-block; }
@@ -363,11 +372,11 @@ img, video {
 .corporate-footer { text-align: center; padding: 20px; color: var(--slate-muted); font-size: 0.78rem; border-top: 1px solid var(--border-mesh); margin-top: 40px; }
 
 @media (max-width: 768px) {
-    /* Retain 2 columns layout on mobile viewports for clean visual symmetry */
     .contact-structural-grid { grid-template-columns: 1fr; }
     .skills-split-layout-engine { grid-template-columns: 1fr; gap: 20px; }
     .nav-container { padding: 0 20px; }
     .carousel-viewport { aspect-ratio: 16 / 9; }
-    .reels-two-column-grid, .behance-style-grid-layout-2col { gap: 10px; } /* Slightly tighter gap on smaller screens */
+    .video-carousel-viewport { aspect-ratio: 16 / 9; }
+    .behance-style-grid-layout-2col { gap: 12px; }
 }
 

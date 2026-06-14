@@ -2,7 +2,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     initSmoothScrollSpy();
     buildAmazonTrueGrid();
-    buildCombinedWideSlider();
     startAutomatedIntervals();
     armSystemSecurity();
 });
@@ -87,11 +86,10 @@ const totalSlidesCount = 12;
 let sliderThreadTimer = null;
 let globalMuteState = true; 
 
-function buildCombinedWideSlider() {
-    setTimeout(() => { playVideoAtCurrentIndex(); }, 250);
-}
-
 function startAutomatedIntervals() {
+    // Fire initial play instantly
+    setTimeout(() => { playVideoAtCurrentIndex(); }, 300);
+
     sliderThreadTimer = setInterval(() => {
         activeSlideIndex++;
         if (activeSlideIndex >= totalSlidesCount) {
@@ -120,7 +118,7 @@ function playVideoAtCurrentIndex() {
     const currentVideo = allVideos[activeSlideIndex];
     if (currentVideo) {
         currentVideo.muted = globalMuteState;
-        currentVideo.play().catch(() => console.log("Holding media context..."));
+        currentVideo.play().catch(() => console.log("Holding video stream context channel..."));
     }
 }
 
@@ -180,3 +178,4 @@ function armSystemSecurity() {
         if (e.target.nodeName === "IMG" || e.target.nodeName === "VIDEO") { e.preventDefault(); }
     });
 }
+

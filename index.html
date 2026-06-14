@@ -9,21 +9,14 @@
 </head>
 <body oncontextmenu="return false;">
 
-    <div class="resume-circle circle-top-left"></div>
-    <div class="resume-circle circle-top-right"></div>
-    <div class="resume-circle circle-mid-left"></div>
+    <div class="resume-orange-circle circle-one"></div>
+    <div class="resume-orange-circle circle-two"></div>
 
     <header class="navbar">
         <div class="nav-container">
             <div class="logo-area">
                 <span class="logo-text">Portfolio</span>
             </div>
-            
-            <div class="search-box-container">
-                <i class="fas fa-search search-icon"></i>
-                <input type="text" id="gallerySearch" placeholder="Search my production designs..." onkeyup="searchAndFocusGallery()">
-            </div>
-
             <nav class="nav-menus">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#services" class="nav-link">Services</a>
@@ -43,13 +36,13 @@
                     </div>
                 </div>
 
-                <h1 class="hero-title">MUSKAN KUMARI</h1>
-                <p class="hero-designation-sub">GRAPHIC & WEB DESIGNER</p>
+                <h1 class="resume-main-name">MUSKAN KUMARI</h1>
+                <p class="resume-sub-designation">GRAPHIC & WEB DESIGNER</p>
                 
                 <p class="hero-subtitle">I am Muskan Kumari and I am from Delhi, an aspiring professional graphic & Web designer. I specialize in Graphics Designs & Websites Design.</p>
 
                 <div class="master-stream-container">
-                    <div class="global-slider-mask vertical-reel-viewport">
+                    <div class="global-slider-mask">
                         <button class="sound-toggle-btn" onclick="toggleGlobalAudio()"><i id="soundIcon" class="fas fa-volume-mute"></i> Toggle Audio</button>
                         <div class="slider-stream-track" id="masterVideoTrack">
                             <div class="stream-slide"><video class="portfolio-video-node" src="v1.mp4" loop playsinline muted></video></div>
@@ -88,44 +81,49 @@
 
                     <div class="landscape-corporate-card">
                         <h3 class="card-heading">My Technical Skills</h3>
-                        <div class="skills-wrapper-block">
+                        
+                        <div class="skills-split-layout-engine">
                             
-                            <div class="skill-category-set">
-                                <span class="category-label">Graphic Designing</span>
-                                <div class="capsules-matrix-grid">
-                                    <span class="clean-pill-capsule">Adobe Photoshop</span>
-                                    <span class="clean-pill-capsule">Adobe Illustrator</span>
-                                    <span class="clean-pill-capsule">Adobe InDesign</span>
-                                    <span class="clean-pill-capsule">CorelDraw</span>
-                                    <span class="clean-pill-capsule">Canva</span>
+                            <div class="skills-column-branch">
+                                <div class="skill-category-set">
+                                    <span class="category-label">Graphic Designing</span>
+                                    <div class="capsules-matrix-grid-2x2">
+                                        <span class="clean-pill-capsule">Adobe Photoshop</span>
+                                        <span class="clean-pill-capsule">Adobe Illustrator</span>
+                                        <span class="clean-pill-capsule">Adobe InDesign</span>
+                                        <span class="clean-pill-capsule">CorelDraw</span>
+                                        <span class="clean-pill-capsule">Canva</span>
+                                    </div>
+                                </div>
+
+                                <div class="skill-category-set mt-24">
+                                    <span class="category-label">Video Editing</span>
+                                    <div class="capsules-matrix-grid-2x2">
+                                        <span class="clean-pill-capsule">Filmora</span>
+                                        <span class="clean-pill-capsule">Vn</span>
+                                        <span class="clean-pill-capsule">Inshot</span>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="skill-category-set">
-                                <span class="category-label">Web Designing</span>
-                                <div class="capsules-matrix-grid">
-                                    <span class="clean-pill-capsule">HTML</span>
-                                    <span class="clean-pill-capsule">CSS</span>
-                                    <span class="clean-pill-capsule">Javascript</span>
-                                    <span class="clean-pill-capsule">WordPress</span>
+                            <div class="skills-column-branch">
+                                <div class="skill-category-set">
+                                    <span class="category-label">Web Designing</span>
+                                    <div class="capsules-matrix-grid-2x2">
+                                        <span class="clean-pill-capsule">HTML</span>
+                                        <span class="clean-pill-capsule">CSS</span>
+                                        <span class="clean-pill-capsule">Javascript</span>
+                                        <span class="clean-pill-capsule">WordPress</span>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="skill-category-set">
-                                <span class="category-label">Video Editing</span>
-                                <div class="capsules-matrix-grid">
-                                    <span class="clean-pill-capsule">Filmora</span>
-                                    <span class="clean-pill-capsule">Vn</span>
-                                    <span class="clean-pill-capsule">Inshot</span>
-                                </div>
-                            </div>
-
-                            <div class="skill-category-set">
-                                <span class="category-label">Microsoft Office</span>
-                                <div class="capsules-matrix-grid">
-                                    <span class="clean-pill-capsule">MS Word</span>
-                                    <span class="clean-pill-capsule">MS Excel</span>
-                                    <span class="clean-pill-capsule">MS PowerPoint</span>
+                                <div class="skill-category-set mt-24">
+                                    <span class="category-label">Microsoft Office</span>
+                                    <div class="capsules-matrix-grid-2x2">
+                                        <span class="clean-pill-capsule">MS Word</span>
+                                        <span class="clean-pill-capsule">MS Excel</span>
+                                        <span class="clean-pill-capsule">MS PowerPoint</span>
+                                    </div>
                                 </div>
                             </div>
 
@@ -141,13 +139,14 @@
             <div class="section-title-node">
                 <h2>Portfolio Showcase</h2>
             </div>
-            <div class="amazon-true-grid-layout" id="amazonGridEngine"></div>
+            <div class="amazon-true-grid-layout-3col" id="amazonGridEngine">
+                </div>
         </section>
 
         <section id="contact" class="page-section">
             <div class="contact-structural-grid">
                 <div class="input-form-card">
-                    <form id="corporateForm" onsubmit="event.preventDefault(); alert('Message transmitted successfully!');">
+                    <form id="corporateForm" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
                         <div class="form-row"><input type="text" placeholder="Your Name" required autocomplete="off"></div>
                         <div class="form-row"><input type="email" placeholder="Your Email" required autocomplete="off"></div>
                         <div class="form-row"><textarea placeholder="Message Requirements..." rows="4" required></textarea></div>

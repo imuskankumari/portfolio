@@ -1,12 +1,12 @@
-/* 2026 RESUME THEME LUXURY MINIMALIST LIGHT LAYOUT */
+/* 2026 MINIMALIST RESUME WHITE & ORANGE ARCHITECTURE */
 :root {
-    --bg-deep-void: #fcfcfd;     /* Pure Clean Bright Surface */
-    --bg-card-slate: #ffffff;    /* Bento Box Surfaces */
-    --primary-slate: #1e293b;    /* Sharp Charcoal Text From Resume */
-    --slate-muted: #64748b;      /* Elegant Slate Details */
-    --neon-orange: #f59e0b;      /* Premium Resume Gold Orange */
-    --pill-bg: #f8fafc;          /* Velvet Grey Caps */
-    --border-mesh: #e2e8f0;      
+    --bg-deep-void: #fbfbfd;     
+    --bg-card-slate: #ffffff;    
+    --primary-slate: #111827;    /* Bold Intense Dark Text From Resume */
+    --slate-muted: #4b5563;      
+    --neon-orange: #ff9900;      /* Amazon & Resume Premium Branding Orange */
+    --pill-bg: #f3f4f6;          
+    --border-mesh: #e5e7eb;      
     --success-green: #16a34a;    
 }
 
@@ -24,7 +24,7 @@ html {
 body {
     background-color: var(--bg-deep-void);
     color: var(--primary-slate);
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
     width: 100%;
@@ -36,26 +36,25 @@ img, video {
     -webkit-user-drag: none;
 }
 
-/* RESUME DECORATIVE BACKGROUND CIRCLES ENGINE */
-.resume-circle {
+/* BACKGROUND DECORATIVE ORANGE CIRCLES SYSTEM FROM RESUME */
+.resume-orange-circle {
     position: absolute;
     border-radius: 50%;
-    background-color: rgba(245, 158, 11, 0.04); /* Light Orange Ambient Vector */
+    background-color: rgba(255, 153, 0, 0.05);
     z-index: -1;
     pointer-events: none;
 }
-.circle-top-left { width: 300px; height: 300px; top: -50px; left: -50px; }
-.circle-top-right { width: 200px; height: 200px; top: 100px; right: -40px; background-color: rgba(245, 158, 11, 0.03); }
-.circle-mid-left { width: 400px; height: 400px; top: 600px; left: -150px; }
+.circle-one { width: 280px; height: 280px; top: -40px; left: -60px; }
+.circle-two { width: 180px; height: 180px; top: 120px; right: -30px; background-color: rgba(255, 153, 0, 0.04); }
 
-/* FIXED NAVBAR */
+/* CLEAN NAVBAR (NO ICONS) */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 70px;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.96);
     border-bottom: 1px solid var(--border-mesh);
     z-index: 1000;
 }
@@ -66,34 +65,16 @@ img, video {
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
-.logo-area { display: flex; align-items: center; }
-.logo-text { font-size: 1.3rem; font-weight: 800; tracking: -0.5px; color: var(--primary-slate); }
+.logo-text { font-size: 1.3rem; font-weight: 800; color: var(--primary-slate); }
 
-/* BALANCED SEARCH BAR */
-.search-box-container { 
-    position: relative; 
-    width: 320px; 
-    margin-left: 40px;
-}
-.search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--slate-muted); }
-#gallerySearch {
-    width: 100%;
-    padding: 9px 14px 9px 40px;
-    background-color: #f1f5f9;
-    border: 1px solid var(--border-mesh);
-    border-radius: 20px;
-    color: var(--primary-slate);
-    font-size: 0.85rem;
-    outline: none;
-}
-
-.nav-menus { display: flex; gap: 32px; margin-left: auto; }
+.nav-menus { display: flex; gap: 35px; }
 .nav-link { color: var(--slate-muted); text-decoration: none; font-size: 0.95rem; font-weight: 700; transition: color 0.2s; }
 .nav-link:hover, .nav-link.active { color: var(--neon-orange); }
 
-/* CONTENT MAIN BLOCK */
+/* CONTENT WRAPPER */
 .main-wrapper {
     width: 100%;
     margin-top: 70px;
@@ -104,7 +85,7 @@ img, video {
     padding: 60px 40px;
 }
 
-/* AVATAR STRUCTURAL STYLE */
+/* HERO INITIAL COMPONENT */
 .hero-center-layout {
     display: flex;
     flex-direction: column;
@@ -113,7 +94,7 @@ img, video {
 }
 
 .avatar-wrapper-frame {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     width: 120px;
 }
 
@@ -124,7 +105,7 @@ img, video {
     border: 2px solid var(--neon-orange);
     padding: 3px;
     background-color: var(--bg-card-slate);
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.15);
+    box-shadow: 0 4px 15px rgba(255, 153, 0, 0.12);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,45 +114,44 @@ img, video {
 
 .profile-avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
 
-/* Resume Exact Typography Layout Match */
-.hero-title { 
-    font-size: 2.8rem; 
-    font-weight: 900; 
-    margin-bottom: 2px; 
-    text-align: center; 
-    color: var(--primary-slate); 
+/* RESUME EXACT BRANDING TYPOGRAPHY MATCH */
+.resume-main-name {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--primary-slate);
     letter-spacing: -0.5px;
+    margin-bottom: 4px;
+    text-align: center;
 }
 
-.hero-designation-sub {
-    font-size: 1.15rem;
+.resume-sub-designation {
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--neon-orange);
-    letter-spacing: 1px;
-    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
     text-transform: uppercase;
 }
 
-.hero-subtitle { color: var(--slate-muted); font-size: 1rem; max-width: 800px; margin-bottom: 35px; text-align: center; }
+.hero-subtitle { color: var(--slate-muted); font-size: 0.98rem; max-width: 850px; margin-bottom: 35px; text-align: center; }
 
-/* 9:16 VERTICAL TRACK SHIFT CORE */
+/* AMAZON WIDE SCREEN SLIDER FRAME */
 .master-stream-container {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.global-slider-mask.vertical-reel-viewport {
+.global-slider-mask {
     position: relative;
     width: 100%;
-    max-width: 280px; /* Aligns narrow vertical phone viewport size bounds */
-    aspect-ratio: 9 / 16; 
+    aspect-ratio: 16 / 5; /* Full horizontal screen wide span layout banner */
     background-color: #000000;
     overflow: hidden;
     border-radius: 12px;
-    border: 3px solid var(--border-mesh); /* Grey Outline */
-    outline: 2px solid var(--neon-orange); /* Orange Double Outline layer effect requested */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid var(--border-mesh);
+    outline: 2px solid var(--neon-orange); /* Double outside Orange Ring effect requested */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
 }
 
 .slider-stream-track {
@@ -189,31 +169,31 @@ img, video {
 .stream-slide video {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover; /* Protects 9:16 content centered safely */
 }
 
 .sound-toggle-btn {
     position: absolute;
     top: 15px;
-    right: 15px;
-    background-color: rgba(255, 255, 255, 0.9);
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.92);
     border: 1px solid var(--border-mesh);
     color: var(--primary-slate);
-    padding: 6px 12px;
+    padding: 6px 14px;
     border-radius: 20px;
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 700;
     cursor: pointer;
     z-index: 100;
 }
 
-/* 100% WIDE HORIZONTAL LANDSCAPE BENTO SHEET FLOW */
+/* 100% WIDE BENTO SHEET LAYOUT FLOW */
 .landscape-box-flow {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 24px;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -223,13 +203,12 @@ img, video {
     border: 1px solid var(--border-mesh);
     border-radius: 12px;
     padding: 35px;
-    text-align: left;
     box-shadow: 0 4px 20px rgba(0,0,0,0.01);
 }
 
 .card-heading { 
     font-size: 1.3rem; 
-    color: var(--neon-orange); /* Orange Heading Style Fixed */
+    color: var(--neon-orange); 
     margin-bottom: 24px; 
     font-weight: 800;
 }
@@ -237,7 +216,7 @@ img, video {
 .education-bullet-list {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
 }
 
 .edu-list-item {
@@ -258,74 +237,74 @@ img, video {
     flex-shrink: 0;
 }
 
-/* Skills Cluster Structural Layout Match */
-.skills-wrapper-block {
+/* Side-by-Side 2 Columns Layout Matrix Engine */
+.skills-split-layout-engine {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Mapped side-by-side columns alignment requested */
+    gap: 30px;
+    width: 100%;
+}
+
+.skills-column-branch {
     display: flex;
     flex-direction: column;
-    gap: 28px;
 }
 
 .skill-category-set {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 }
 
-/* Silver Soft Subheading Mapped */
 .category-label {
-    font-size: 1.02rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    color: var(--slate-muted);
+    color: var(--primary-slate);
 }
 
-/* FIX: Mapped 2x2 symmetry capsule matrix format from 13565.jpg */
-.capsules-flex-wrap, .capsules-matrix-grid {
+/* FIX: Mapped precise 2-by-2 capsule grid array layout from 13565.jpg */
+.capsules-matrix-grid-2x2 {
     display: grid;
-    grid-template-columns: repeat(2, max-content); /* Forces exact 2 items side-by-side per row horizontally */
+    grid-template-columns: repeat(2, max-content); /* 2 Columns side-by-side perfectly balanced */
     gap: 12px 16px;
     width: 100%;
 }
 
-/* Rounded Buttons Capsules Pill Shapes Mode */
 .clean-pill-capsule {
     background-color: var(--pill-bg);
     border: 1px solid var(--border-mesh);
     padding: 10px 24px;
-    border-radius: 50px; /* Enforces completely round soft button caps requested */
+    border-radius: 50px; /* Soft round capsule buttons */
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--primary-slate);
     display: inline-block;
-    transition: all 0.2s ease;
-}
-.clean-pill-capsule:hover {
-    border-color: var(--neon-orange);
-    background-color: rgba(245, 158, 11, 0.04);
 }
 
+.mt-24 { margin-top: 24px; }
 .section-divider-gap { width: 100%; height: 20px; }
 
-/* SERVICES AMAZON SHAPE MATRIX */
+/* SERVICES AMAZON 3-COLUMN PRODUCT GRID ENGINE (NO THICK BORDERS) */
 .section-title-node { text-align: center; margin-bottom: 30px; }
 .section-title-node h2 { font-size: 1.8rem; color: var(--neon-orange); font-weight: 800; }
 
-.amazon-true-grid-layout {
+.amazon-true-grid-layout-3col {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* FORCES STRUCTURAL CLEAN 3-COLUMNS MATCHING AMAZON GRAPHICS */
+    gap: 24px;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .amazon-product-card-node {
     background-color: var(--bg-card-slate);
-    border: 1px solid var(--border-mesh);
+    border: 1px solid var(--border-mesh); /* Razor thin clean edge */
     border-radius: 8px;
-    padding: 14px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     cursor: pointer;
 }
 .amazon-product-card-node:hover { border-color: var(--neon-orange); }
@@ -334,7 +313,7 @@ img, video {
     width: 100%;
     aspect-ratio: 1 / 1; 
     background-color: #f8fafc;
-    border-radius: 4px;
+    border-radius: 6px;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -342,27 +321,30 @@ img, video {
 }
 .card-image-box-frame img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-.card-title-string { font-size: 0.85rem; font-weight: 600; color: var(--primary-slate); text-align: left; }
+.card-title-string { font-size: 0.9rem; font-weight: 600; color: var(--primary-slate); }
 .card-badge-row { display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; color: var(--slate-muted); }
 .verified-tag { color: var(--neon-orange); font-weight: 600; }
 
-/* LIGHTBOX INTERFACES & CONTACT CONTAINER */
+.amazon-product-card-node.filtered-out { display: none !important; }
+
+/* LIGHTBOX WINDOWS */
 .lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 2500; justify-content: center; align-items: center; }
 .lightbox-content-wrapper { position: relative; max-width: 90%; max-height: 85%; display: flex; flex-direction: column; align-items: center; }
 .lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; }
 .lightbox-caption { margin-top: 12px; color: #ffffff; font-size: 0.95rem; }
 .lightbox-close-btn { position: absolute; top: 20px; right: 25px; color: #ffffff; font-size: 2.2rem; cursor: pointer; }
 
-.contact-structural-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; width: 100%; max-width: 1100px; margin: 0 auto; }
-.input-form-card, .trust-gateway-card { background-color: var(--bg-card-slate); border: 1px solid var(--border-mesh); padding: 24px; border-radius: 12px; }
+/* CONTACT CONTEXT BLOCKS */
+.contact-structural-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; width: 100%; max-width: 1200px; margin: 0 auto; }
+.input-form-card, .trust-gateway-card { background-color: var(--bg-card-slate); border: 1px solid var(--border-mesh); padding: 30px; border-radius: 12px; }
 
 .form-row { margin-bottom: 14px; }
-.form-row input, .form-row textarea { width: 100%; padding: 12px; background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 6px; color: var(--primary-slate); font-size: 0.9rem; outline: none; }
+.form-row input, .form-row textarea { width: 100%; padding: 14px; background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 6px; color: var(--primary-slate); font-size: 0.9rem; outline: none; }
 .form-row input:focus, .form-row textarea:focus { border-color: var(--neon-orange); }
-.form-action-button { width: 100%; padding: 12px; background-color: var(--neon-orange); color: #ffffff; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
+.form-action-button { width: 100%; padding: 14px; background-color: var(--neon-orange); color: #ffffff; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
 
 .gateway-explainer { color: var(--slate-muted); font-size: 0.85rem; margin-bottom: 18px; }
-.bhim-widget-box { background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 10px; padding: 20px; text-align: center; }
+.bhim-widget-box { background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 10px; padding: 24px; text-align: center; }
 .shield-vector-icon { font-size: 2.2rem; color: var(--neon-orange); margin-bottom: 6px; position: relative; display: inline-block; }
 .secure-checkmark { position: absolute; font-size: 0.8rem; top: 52%; left: 50%; transform: translate(-50%, -50%); color: var(--bg-deep-void); }
 .bhim-label-text { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 2px; color: var(--primary-slate); }
@@ -371,14 +353,14 @@ img, video {
 
 .corporate-footer { text-align: center; padding: 20px; color: var(--slate-muted); font-size: 0.78rem; border-top: 1px solid var(--border-mesh); margin-top: 40px; }
 
-/* HIGH DEFINITION SCALERS INTERFACE RULES */
-@media (max-width: 1100px) {
-    .amazon-true-grid-layout { grid-template-columns: repeat(2, 1fr); }
+/* RESPONSIVE SCALERS DEPLOYMENT */
+@media (max-width: 950px) {
+    .amazon-true-grid-layout-3col { grid-template-columns: repeat(2, 1fr); }
+    .skills-split-layout-engine { grid-template-columns: 1fr; gap: 20px; }
 }
-@media (max-width: 850px) {
-    .contact-structural-grid, .amazon-true-grid-layout, .capsules-matrix-grid { grid-template-columns: 1fr; }
-    .nav-container { padding: 0 15px; }
-    .search-box-container { display: none; }
-    .hero-title { font-size: 2.2rem; margin-top: 25px; }
+@media (max-width: 768px) {
+    .contact-structural-grid, .amazon-true-grid-layout-3col, .capsules-matrix-grid-2x2 { grid-template-columns: 1fr; }
+    .global-slider-mask { aspect-ratio: 16 / 9; }
+    .nav-container { padding: 0 20px; }
+    .hero-title { font-size: 2rem; margin-top: 25px; }
 }
-

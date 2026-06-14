@@ -7,7 +7,7 @@ function buildBehanceStyleGrid() {
     const gridContainer = document.getElementById("amazonGridEngine");
     let domBuffer = "";
 
-    // Dynamic generation of 50 portfolio slots
+    // Dynamic generation of 50 portfolio gallery items underneath
     for (let count = 1; count <= 50; count++) {
         domBuffer += `
             <div class="amazon-product-card-node" id="card-node-${count}" onclick="openLightbox('g${count}.jpg')">
@@ -33,12 +33,10 @@ function closeLightbox() {
 }
 
 let activePhotoIndex = 0;
-let activeVideoIndex = 0;
 const totalPhotosCount = 10;
-const totalVideosCount = 10;
 
 function startAutomatedIntervals() {
-    // 1. Top Panoramic Burger Photo Slider Auto Play (Every 4 seconds)
+    // Top Photo Carousel Auto Slide (4:5 Ratio Box) Loop Engine Every 4 seconds
     setInterval(() => {
         activePhotoIndex++;
         if (activePhotoIndex >= totalPhotosCount) {
@@ -49,16 +47,4 @@ function startAutomatedIntervals() {
             photoTrack.style.transform = `translateX(-${activePhotoIndex * 100}%)`;
         }
     }, 4000);
-
-    // 2. Motion Graphics Video Slider Auto Play - Swipes Left to Right perfectly!
-    setInterval(() => {
-        activeVideoIndex++;
-        if (activeVideoIndex >= totalVideosCount) {
-            activeVideoIndex = 0;
-        }
-        const videoTrack = document.getElementById("videoTrackEngine");
-        if(videoTrack) {
-            videoTrack.style.transform = `translateX(-${activeVideoIndex * 100}%)`;
-        }
-    }, 4500);
 }

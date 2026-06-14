@@ -33,7 +33,7 @@ img, video {
     -webkit-user-drag: none;
 }
 
-/* VIBRANT ORANGE CIRCLES BACKGROUND */
+/* VIBRANT ORANGE BACKGROUND CIRCLES */
 .resume-orange-circle {
     position: absolute;
     border-radius: 50%;
@@ -45,7 +45,7 @@ img, video {
 .circle-one { width: 140px; height: 140px; top: 15px; left: 20px; }
 .circle-two { width: 110px; height: 110px; top: 110px; right: 20px; }
 
-/* FIXED NAVBAR WITH LOGO */
+/* FIXED NAVBAR */
 .navbar {
     position: fixed;
     top: 0;
@@ -147,7 +147,7 @@ img, video {
     text-transform: uppercase;
 }
 
-/* ABOUT ME TEXT SECTION */
+/* ABOUT ME TEXT BLOCK */
 .about-me-text-block {
     text-align: left;
     width: 100%;
@@ -164,7 +164,7 @@ img, video {
 
 .hero-subtitle { color: var(--slate-muted); font-size: 0.98rem; line-height: 1.6; }
 
-/* PHOTO CAROUSEL BOX Setup */
+/* PHOTO CAROUSEL */
 .top-photo-carousel-container {
     width: 100%;
     max-width: 900px;
@@ -257,7 +257,7 @@ img, video {
     width: max-content;
 }
 
-/* MOTION GRAPHICS - PERFECT 2-COLUMN REELS SCROLLABLE VISUAL */
+/* HARD LOCKED 2-COLUMN REELS GRID ENGINE (CRITICAL FIX FOR 13822/13820) */
 .motion-graphics-section-block {
     width: 100%;
     max-width: 900px;
@@ -274,19 +274,19 @@ img, video {
 
 .reels-two-column-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two boxes side by side perfectly */
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* Force EXACTLY 2 boxes side-by-side on all screens */
     gap: 20px;
     width: 100%;
 }
 
 .reel-card-cell {
     width: 100%;
-    aspect-ratio: 9 / 16; /* Locked vertical Reels size */
+    aspect-ratio: 9 / 16; /* True Locked Vertical Reels scale */
     background-color: #000;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--border-mesh);
-    outline: 2px solid var(--neon-orange); /* Snug Orange Outline */
+    outline: 2px solid var(--neon-orange); 
     box-shadow: 0 4px 20px rgba(0,0,0,0.06);
 }
 
@@ -302,10 +302,10 @@ img, video {
 .section-title-node { text-align: center; margin-bottom: 25px; }
 .section-title-node h2 { font-size: 1.6rem; color: var(--neon-orange); font-weight: 800; }
 
-/* BEHANCE STYLE 2-COLUMN SIDE-BY-SIDE IMAGE ONLY GRID */
+/* HARD LOCKED BEHANCE STYLE 2-COLUMN GALLERY GRID */
 .behance-style-grid-layout-2col {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two big images side-by-side */
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* Force EXACTLY 2 images side-by-side on all screens */
     gap: 20px;
     width: 100%;
     max-width: 900px;
@@ -319,6 +319,7 @@ img, video {
     padding: 8px;
     cursor: pointer;
     transition: transform 0.2s ease;
+    width: 100%;
 }
 
 .amazon-product-card-node:hover {
@@ -362,9 +363,11 @@ img, video {
 .corporate-footer { text-align: center; padding: 20px; color: var(--slate-muted); font-size: 0.78rem; border-top: 1px solid var(--border-mesh); margin-top: 40px; }
 
 @media (max-width: 768px) {
-    .reels-two-column-grid, .behance-style-grid-layout-2col { grid-template-columns: 1fr; } /* Stack safely on narrow mobile screens */
+    /* Retain 2 columns layout on mobile viewports for clean visual symmetry */
     .contact-structural-grid { grid-template-columns: 1fr; }
     .skills-split-layout-engine { grid-template-columns: 1fr; gap: 20px; }
     .nav-container { padding: 0 20px; }
     .carousel-viewport { aspect-ratio: 16 / 9; }
+    .reels-two-column-grid, .behance-style-grid-layout-2col { gap: 10px; } /* Slightly tighter gap on smaller screens */
 }
+

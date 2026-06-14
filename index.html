@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Professional Portfolio</title>
+    <title>Muskan Kumari | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -15,7 +15,7 @@
     <header class="navbar">
         <div class="nav-container">
             <div class="logo-area">
-                <span class="logo-text">Portfolio</span>
+                <img src="l.png" alt="Logo" class="nav-circle-logo" draggable="false">
             </div>
             <nav class="nav-menus">
                 <a href="#home" class="nav-link active">Home</a>
@@ -32,20 +32,21 @@
                 
                 <div class="avatar-wrapper-frame">
                     <div class="avatar-glow-ring">
-                        <img src="l.png" alt="Muskan Kumari Logo" class="profile-avatar" draggable="false">
+                        <img src="l.png" alt="Muskan Kumari" class="profile-avatar" draggable="false">
                     </div>
                 </div>
 
                 <div class="resume-header-block">
                     <h1 class="resume-main-name">MUSKAN KUMARI</h1>
+                    <div class="short-underline"></div>
                     <p class="resume-sub-designation">GRAPHIC & WEB DESIGNER</p>
                 </div>
                 
                 <p class="hero-subtitle">I am Muskan Kumari and I am from Delhi, an aspiring professional graphic & Web designer. I specialize in Graphics Designs & Websites Design.</p>
 
                 <div class="master-stream-container">
-                    <div class="global-slider-mask vertical-reel-viewport">
-                        <button class="sound-toggle-btn" onclick="toggleGlobalAudio()"><i id="soundIcon" class="fas fa-volume-mute"></i> Toggle Audio</button>
+                    <div class="global-slider-mask">
+                        <button class="sound-toggle-btn" onclick="toggleGlobalAudio()"><i id="soundIcon" class="fas fa-volume-mute"></i></button>
                         <div class="slider-stream-track" id="masterVideoTrack">
                             <div class="stream-slide"><video class="portfolio-video-node" src="v1.mp4" loop playsinline muted></video></div>
                             <div class="stream-slide"><video class="portfolio-video-node" src="v2.mp4" loop playsinline muted></video></div>
@@ -83,7 +84,6 @@
 
                     <div class="landscape-corporate-card">
                         <h3 class="card-heading">My Technical Skills</h3>
-                        
                         <div class="skills-split-layout-engine">
                             
                             <div class="skills-column-branch">
@@ -126,6 +126,7 @@
                                         <span class="clean-pill-capsule">MS Excel</span>
                                         <span class="clean-pill-capsule">MS PowerPoint</span>
                                     </div>
+                                end text layout
                                 </div>
                             </div>
 
@@ -139,10 +140,9 @@
 
         <section id="services" class="page-section">
             <div class="section-title-node">
-                <h2>Portfolio Showcase</h2>
+                <h2>Graphic Design Showcase</h2>
             </div>
-            <div class="amazon-true-grid-layout-3col" id="amazonGridEngine">
-                </div>
+            <div class="amazon-true-grid-layout-3col" id="amazonGridEngine"></div>
         </section>
 
         <section id="contact" class="page-section">
@@ -176,7 +176,6 @@
         <span class="lightbox-close-btn">&times;</span>
         <div class="lightbox-content-wrapper" onclick="event.stopPropagation()">
             <img id="lightboxMainImage" src="" alt="HD View" draggable="false">
-            <div id="lightboxCaption" class="lightbox-caption"></div>
         </div>
     </div>
 
@@ -187,4 +186,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-

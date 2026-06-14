@@ -1,10 +1,10 @@
-/* 2026 RESUME CORE WHITE & ORANGE LIQUID ENGINE */
+/* 2026 ACCURATE RESUME THEME INDUSTRIAL ENGINE */
 :root {
-    --bg-deep-void: #fcfcfd;     
+    --bg-deep-void: #fbfbfd;     
     --bg-card-slate: #ffffff;    
     --primary-slate: #111827;    
     --slate-muted: #4b5563;      
-    --neon-orange: #ff9900;      /* Amazon & Resume Branding Orange Accent */
+    --neon-orange: #ff9900;      /* Amazon & Resume Premium Branding Orange Accent */
     --pill-bg: #f3f4f6;          
     --border-mesh: #e5e7eb;      
     --success-green: #16a34a;    
@@ -36,7 +36,7 @@ img, video {
     -webkit-user-drag: none;
 }
 
-/* DECORATIVE ORANGE AMBIENT CIRCLES GENERATION VECTORS */
+/* BACKGROUND ORANGE DECORATIVE RESUME VECTORS */
 .resume-orange-circle {
     position: absolute;
     border-radius: 50%;
@@ -47,7 +47,7 @@ img, video {
 .circle-one { width: 280px; height: 280px; top: -40px; left: -60px; }
 .circle-two { width: 180px; height: 180px; top: 120px; right: -30px; background-color: rgba(255, 153, 0, 0.04); }
 
-/* CLEAN NAVBAR (NO EXTRA CHIPS ICONS) */
+/* CLEAN NAVBAR (NO SEARCH BOX - NO ICONS) */
 .navbar {
     position: fixed;
     top: 0;
@@ -74,7 +74,7 @@ img, video {
 .nav-link { color: var(--slate-muted); text-decoration: none; font-size: 0.95rem; font-weight: 700; transition: color 0.2s; }
 .nav-link:hover, .nav-link.active { color: var(--neon-orange); }
 
-/* MAIN wrapper SHEET */
+/* CONTENT WRAPPER */
 .main-wrapper {
     width: 100%;
     margin-top: 70px;
@@ -85,7 +85,7 @@ img, video {
     padding: 60px 40px;
 }
 
-/* HERO AVATAR ALIGNMENT FRAME */
+/* HERO INITIAL LAYOUT */
 .hero-center-layout {
     display: flex;
     flex-direction: column;
@@ -114,13 +114,13 @@ img, video {
 
 .profile-avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
 
-/* TYPOGRAPHY ARCHITECTURE MATCHED EXACTLY TO IMAGE 13690 */
+/* RESUME HIGH-END TYPOGRAPHY ALIGNMENT MATCHED (IMAGE 13690) */
 .resume-header-block {
-    text-align: right; /* Aligned to Right Side precisely as requested */
+    text-align: right; /* Enforces exact right side alignment layout */
     width: 100%;
     max-width: 900px;
     margin: 10px auto;
-    border-bottom: 2px solid var(--primary-slate); /* Signature line overlay rule from document */
+    border-bottom: 2px solid var(--primary-slate); /* Signature line divider beneath titles */
     padding-bottom: 6px;
 }
 
@@ -142,7 +142,7 @@ img, video {
 
 .hero-subtitle { color: var(--slate-muted); font-size: 0.98rem; max-width: 900px; margin-bottom: 35px; text-align: center; margin-top: 15px; }
 
-/* 9:16 LONG VERTICAL BANNER STYLING (BOX REMOVED) */
+/* TRUE AMAZON HORIZONTAL VIDEO SLIDER STREAM */
 .master-stream-container {
     width: 100%;
     display: flex;
@@ -152,14 +152,13 @@ img, video {
 .global-slider-mask.vertical-reel-viewport {
     position: relative;
     width: 100%;
-    max-width: 290px; /* Precise narrow viewport boundary width scale */
-    aspect-ratio: 9 / 16; /* True Long vertical format requested */
+    aspect-ratio: 16 / 5; /* Forces full screen landscape banner aspect ratio */
     background-color: #000000;
     overflow: hidden;
     border-radius: 12px;
-    border: 3px solid var(--border-mesh); /* Grey Outline */
-    outline: 2px solid var(--neon-orange); /* Orange Outline effect matching image */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    border: 3px solid var(--border-mesh); /* Grey Metallic Outside line */
+    outline: 2px solid var(--neon-orange); /* Orange Double Outline layer requested */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
 }
 
 .slider-stream-track {
@@ -177,25 +176,25 @@ img, video {
 .stream-slide video {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover; /* Centers the long 9:16 visual core safely */
 }
 
 .sound-toggle-btn {
     position: absolute;
     top: 15px;
-    right: 15px;
+    right: 20px;
     background-color: rgba(255, 255, 255, 0.92);
     border: 1px solid var(--border-mesh);
     color: var(--primary-slate);
     padding: 6px 14px;
     border-radius: 20px;
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 700;
     cursor: pointer;
     z-index: 100;
 }
 
-/* WIDE LANDSCAPE BENTO DESIGN FLOW */
+/* 100% WIDE BENTO SHEET FLOW LAYOUT */
 .landscape-box-flow {
     width: 100%;
     display: flex;
@@ -245,10 +244,10 @@ img, video {
     flex-shrink: 0;
 }
 
-/* 2 Column Parallel Branch Alignment Core */
+/* Parallel 2 Columns Branch Setup Engine */
 .skills-split-layout-engine {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Renders sections side-by-side cleanly over box */
+    grid-template-columns: 1fr 1fr; 
     gap: 30px;
     width: 100%;
 }
@@ -257,20 +256,20 @@ img, video {
 .skill-category-set { display: flex; flex-direction: column; gap: 12px; }
 .category-label { font-size: 1.05rem; font-weight: 700; color: var(--primary-slate); }
 
-/* FIX: Forces exact symmetrical 2-by-2 cluster grids mapping from image 13565 */
+/* FIX: Forces exact symmetrical 2-by-2 grid rows mapping from screenshot 13565 */
 .capsules-matrix-grid-2x2 {
     display: grid;
-    grid-template-columns: repeat(2, max-content); /* Locks exactly 2 buttons per horizontal line */
+    grid-template-columns: repeat(2, max-content); /* Exactly 2 button elements side-by-side per horizontal row */
     gap: 12px 16px;
     width: 100%;
 }
 
-/* Complete Rounded Capsule Shapes */
+/* Soft Rounded Capsules Button Custom Node Shapes */
 .clean-pill-capsule {
     background-color: var(--pill-bg);
     border: 1px solid var(--border-mesh);
     padding: 10px 24px;
-    border-radius: 50px; /* Circular boundary edges match */
+    border-radius: 50px; /* Precise circular curve symmetry */
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--primary-slate);
@@ -280,13 +279,13 @@ img, video {
 .mt-24 { margin-top: 24px; }
 .section-divider-gap { width: 100%; height: 20px; }
 
-/* SERVICES PREMIUM 3-COLUMN LAYOUT ENGINE (REMOVES EXTRA TEXT LABELS) */
+/* SERVICES DYNAMIC GRID (REMOVES TEXT STRINGS CORES) */
 .section-title-node { text-align: center; margin-bottom: 30px; }
 .section-title-node h2 { font-size: 1.8rem; color: var(--neon-orange); font-weight: 800; }
 
 .amazon-true-grid-layout-3col {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 Columns Matrix array config cleanly matches Amazon views */
+    grid-template-columns: repeat(3, 1fr); /* 3 Columns Layout matching Amazon product display pages specs */
     gap: 24px;
     width: 100%;
     max-width: 1200px;
@@ -317,14 +316,16 @@ img, video {
 }
 .card-image-box-frame img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-/* LIGHTBOX MODE */
+.amazon-product-card-node.filtered-out { display: none !important; }
+
+/* LIGHTBOX INTERFACES */
 .lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 2500; justify-content: center; align-items: center; }
 .lightbox-content-wrapper { position: relative; max-width: 90%; max-height: 85%; display: flex; flex-direction: column; align-items: center; }
 .lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; }
 .lightbox-caption { margin-top: 12px; color: #ffffff; font-size: 0.95rem; }
 .lightbox-close-btn { position: absolute; top: 20px; right: 25px; color: #ffffff; font-size: 2.2rem; cursor: pointer; }
 
-/* CONTACT AND COMPACT LAYOUT SETUPS */
+/* CONTACT GRID HOVERS COMPONENTS */
 .contact-structural-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; width: 100%; max-width: 1200px; margin: 0 auto; }
 .input-form-card, .trust-gateway-card { background-color: var(--bg-card-slate); border: 1px solid var(--border-mesh); padding: 30px; border-radius: 12px; }
 
@@ -334,7 +335,7 @@ img, video {
 .form-action-button { width: 100%; padding: 14px; background-color: var(--neon-orange); color: #ffffff; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
 
 .gateway-explainer { color: var(--slate-muted); font-size: 0.85rem; margin-bottom: 18px; }
-.bhim-widget-box { background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 10px; padding: 20px; text-align: center; }
+.bhim-widget-box { background-color: var(--bg-deep-void); border: 1px solid var(--border-mesh); border-radius: 10px; padding: 24px; text-align: center; }
 .shield-vector-icon { font-size: 2.2rem; color: var(--neon-orange); margin-bottom: 6px; position: relative; display: inline-block; }
 .secure-checkmark { position: absolute; font-size: 0.8rem; top: 52%; left: 50%; transform: translate(-50%, -50%); color: var(--bg-deep-void); }
 .bhim-label-text { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 2px; color: var(--primary-slate); }
@@ -343,7 +344,7 @@ img, video {
 
 .corporate-footer { text-align: center; padding: 20px; color: var(--slate-muted); font-size: 0.78rem; border-top: 1px solid var(--border-mesh); margin-top: 40px; }
 
-/* RESPONSIVE SCALERS */
+/* MEDIA RESPONSIVE SCALE BREAKPOINTS */
 @media (max-width: 950px) {
     .amazon-true-grid-layout-3col { grid-template-columns: repeat(2, 1fr); }
     .skills-split-layout-engine { grid-template-columns: 1fr; gap: 20px; }

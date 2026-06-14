@@ -46,20 +46,16 @@ function initSmoothScrollSpy() {
     });
 }
 
+// FIXED: INJECTS CLEAN GALLERY IMAGES UP TO EXACTLY 50 ITEMS (NO LABEL TEXT)
 function buildAmazonTrueGrid() {
     const gridContainer = document.getElementById("amazonGridEngine");
     let domBuffer = "";
 
-    for (let count = 1; count <= 100; count++) {
+    for (let count = 1; count <= 50; count++) {
         domBuffer += `
-            <div class="amazon-product-card-node" id="card-node-${count}" onclick="openLightbox('g${count}.jpg', 'Graphic Production Layout Template #${count}')">
+            <div class="amazon-product-card-node" id="card-node-${count}" onclick="openLightbox('g${count}.jpg', '')">
                 <div class="card-image-box-frame">
                     <img src="g${count}.jpg" alt="Production Artwork Item ${count}" draggable="false" onerror="this.parentNode.style.backgroundColor='#f1f5f9'">
-                </div>
-                <div class="card-title-string">Graphic Production Layout Template #${count}</div>
-                <div class="card-badge-row">
-                    <span>Identity Suite</span>
-                    <span class="verified-tag"><i class="fas fa-check-circle"></i> Active</span>
                 </div>
             </div>
         `;
@@ -87,7 +83,6 @@ let sliderThreadTimer = null;
 let globalMuteState = true; 
 
 function startAutomatedIntervals() {
-    // Fire initial play instantly
     setTimeout(() => { playVideoAtCurrentIndex(); }, 300);
 
     sliderThreadTimer = setInterval(() => {
@@ -96,7 +91,7 @@ function startAutomatedIntervals() {
             activeSlideIndex = 0;
         }
         executeTrackShift();
-    }, 4000);
+    }, 4000); // Swipes and turns automatically every 4 seconds
 }
 
 function executeTrackShift() {
@@ -118,7 +113,7 @@ function playVideoAtCurrentIndex() {
     const currentVideo = allVideos[activeSlideIndex];
     if (currentVideo) {
         currentVideo.muted = globalMuteState;
-        currentVideo.play().catch(() => console.log("Holding video stream context channel..."));
+        currentVideo.play().catch(() => console.log("Holding context loop..."));
     }
 }
 
@@ -136,29 +131,6 @@ function toggleGlobalAudio() {
     } else {
         soundIcon.className = "fas fa-volume-up";
     }
-}
-
-function searchAndFocusGallery() {
-    const inputQuery = document.getElementById("gallerySearch").value.toLowerCase();
-    const cards = document.querySelectorAll(".amazon-product-card-node");
-    const servicesSection = document.getElementById("services");
-
-    if(inputQuery !== "") {
-        const navOffset = 70;
-        const targetCoords = servicesSection.getBoundingClientRect().top + window.pageYOffset - navOffset;
-        window.scrollTo({ top: targetCoords, behavior: "smooth" });
-    }
-
-    cards.forEach((card, index) => {
-        const itemNum = index + 1;
-        const metadataString = `g${itemNum} burger template post logo banner item design visual layout showcase product illustration identity production`;
-        
-        if (metadataString.includes(inputQuery) || inputQuery === "") {
-            card.classList.remove("filtered-out");
-        } else {
-            card.classList.add("filtered-out");
-        }
-    });
 }
 
 function armSystemSecurity() {

@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Portfolio</title>
+    <title>Muskan Kumari | Professional Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body oncontextmenu="return false;">
 
-    <!-- TOP NAV HEADER -->
+    <!-- TOP FIXED NAVBAR (IMAGE ALIGNMENT) -->
     <header class="navbar">
         <div class="nav-container">
             <div class="logo-area">
-                <img src="mk.png" alt="" class="brand-logo-img" draggable="false">
+                <img src="mk.png" alt="MK Logo" class="brand-logo-img" draggable="false">
             </div>
+            
+            <div class="center-brand-title">
+                <h1 class="resume-main-name">MUSKAN KUMARI</h1>
+                <p class="resume-sub-designation">Graphic & Web Designer</p>
+                <div class="resume-short-underline"></div>
+            </div>
+
             <nav class="nav-menus">
                 <a href="#home" class="nav-link active">Home</a>
-                <a href="#projects" class="nav-link">Services</a>
+                <a href="#projects" class="nav-link">Projects</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
         </div>
@@ -25,21 +32,15 @@
 
     <main class="main-wrapper" id="home">
 
-        <!-- RESUME EXACT CENTER BRANDING HEADING -->
-        <section class="hero-branding-center">
-            <h1 class="resume-main-name">MUSKAN KUMARI</h1>
-            <p class="resume-sub-designation">Graphic & Web Designer</p>
-            <div class="resume-short-underline"></div>
-        </section>
-
-        <!-- EXACT RESUME DETAILS PARAGRAPHS -->
+        <!-- INTRO PARAGRAPH SECTION (PURE WHITE & PROFESSIONAL TEXT) -->
         <section class="page-section standard-text-flow">
-            <div class="resume-text-block text-center">
-                <p class="resume-paragraph-text">I am Muskan Kumari and I am from Delhi, I am Skilled in MS Office, Graphic Designing Web Designing and Video Editing, an aspiring Professional Graphic & Web Designer. I specialize in graphic design, vector illustration tracing and functional website design.</p>
+            <div class="resume-text-block text-center-professional">
+                <p class="resume-paragraph-text">I am Muskan Kumari and I am from Delhi, Skilled in MS Office, Graphic Designing Web Designing and Video Editing, an aspiring Professional Graphic & Web Designer. I specialize in graphic design, vector illustration tracing and functional website design.</p>
             </div>
 
+            <!-- ACADEMIC EDUCATION SECTION (RE-TITLED) -->
             <div class="resume-text-block">
-                <h3 class="resume-section-title">Academic Education & Qualification</h3>
+                <h3 class="resume-section-title">Academic Education</h3>
                 <ul class="custom-orange-list">
                     <li>Senior Secondary Education From CBSE</li>
                     <li>Basic Computer Course (BCC) Certified</li>
@@ -47,9 +48,20 @@
                 </ul>
             </div>
 
+            <!-- TECHNICAL SKILLS MATRIX (NEW COLUMN ORDER & ADDED MS OFFICE) -->
             <div class="resume-text-block">
-                <h3 class="resume-section-title">Technical Skills</h3>
+                <h3 class="resume-section-title">Technical Skills Matrix</h3>
                 <div class="clean-skills-columns">
+                    <!-- Column 1: Microsoft Office Tools -->
+                    <div class="skill-column-node">
+                        <h4>Microsoft Office Tools</h4>
+                        <ul>
+                            <li>MS Word</li>
+                            <li>MS Excel</li>
+                            <li>MS PowerPoint</li>
+                        </ul>
+                    </div>
+                    <!-- Column 2: Graphic Designing Tools -->
                     <div class="skill-column-node">
                         <h4>Graphic Designing</h4>
                         <ul>
@@ -60,15 +72,16 @@
                             <li>Canva</li>
                         </ul>
                     </div>
+                    <!-- Column 3: Web Designing Tools -->
                     <div class="skill-column-node">
                         <h4>Web Designing</h4>
                         <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
+                            <li>HTML5 / CSS3</li>
+                            <li>JavaScript UI</li>
                             <li>WordPress</li>
                         </ul>
                     </div>
+                    <!-- Column 4: Video Editing Tools -->
                     <div class="skill-column-node">
                         <h4>Video Editing</h4>
                         <ul>
@@ -81,16 +94,16 @@
             </div>
         </section>
 
-        <!-- PROJECTS PLATFORM -->
+        <!-- PROJECTS PLATFORM (CENTER ALIGNED HEADINGS) -->
         <section id="projects" class="page-section">
             
-            <!-- 1. AI GENERATED VISUALS (PLACED FIRST & ENLARGED) -->
+            <!-- 1. AI GENERATED VISUALS (CENTER ALIGNED) -->
             <div class="project-segment-container">
-                <div class="section-title-node-left">
+                <div class="section-title-node-center">
                     <h2>AI Generated Visuals</h2>
                 </div>
                 <div class="wide-ai-carousel-wrapper">
-                    <div class="carousel-viewport-4to5-box">
+                    <div class="carousel-viewport-wide-box">
                         <div class="carousel-track" id="burgerPhotoTrack">
                             <div class="carousel-slide-item"><img src="b1.png" alt="" draggable="false"></div>
                             <div class="carousel-slide-item"><img src="b2.png" alt="" draggable="false"></div>
@@ -109,10 +122,10 @@
 
             <div class="section-divider-gap"></div>
 
-            <!-- 2. MOTION GRAPHICS PROJECT (TINY PIDDI 5-5 SYMMETRY GRID) -->
+            <!-- 2. MOTION GRAPHICS PROJECT (TINY PIDDI GRID, CENTER ALIGNED) -->
             <div class="project-segment-container">
-                <div class="section-title-node-left">
-                    <h2>Motion Graphics Project</h2>
+                <div class="section-title-node-center">
+                    <h2>Motion Graphics</h2>
                 </div>
                 <div class="reels-piddi-symmetric-grid">
                     <div class="reel-item-card"><video src="v1.mp4" autoplay muted loop playsinline></video></div>
@@ -130,10 +143,10 @@
 
             <div class="section-divider-gap"></div>
 
-            <!-- 3. GRAPHIC DESIGNING VISUALS (2-COLUMN GRID) -->
+            <!-- 3. GRAPHIC DESIGNING VISUALS (CENTER ALIGNED HEADINGS, G1-G100) -->
             <div class="project-segment-container">
-                <div class="section-title-node-left">
-                    <h2>Graphic Designing Visuals</h2>
+                <div class="section-title-node-center">
+                    <h2>Graphic Designing</h2>
                 </div>
                 <div class="clean-cards-grid-layout" id="graphicDynamicGrid"></div>
             </div>
@@ -168,7 +181,7 @@
 
     </main>
 
-    <!-- SYSTEM LIGHTBOX -->
+    <!-- SYSTEM LIGHTBOX (BOLD ORANGE-YELLOW BORDER) -->
     <div id="imageLightboxModal" class="lightbox-modal" onclick="closeLightbox()">
         <span class="lightbox-close-btn">&times;</span>
         <div class="lightbox-content-wrapper" onclick="event.stopPropagation()">

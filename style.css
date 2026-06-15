@@ -1,4 +1,4 @@
-/* DESIGN VARIABLES */
+/* DESIGN CORE ROOT SYSTEM */
 :root {
     --bg-clean-light: #fafafa;
     --surface-white: #ffffff;
@@ -28,7 +28,7 @@ body {
     width: 100%;
 }
 
-/* NAVBAR STRUCTURE */
+/* NAVBAR DESIGN ARCHITECTURE */
 .navbar {
     position: fixed;
     top: 0;
@@ -98,12 +98,13 @@ body {
     gap: 20px;
 }
 
+/* Updated case styling: First letter Capital, rest small as requested */
 .nav-link {
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: capitalize; 
 }
 
 .nav-link:hover, .nav-link.active {
@@ -121,7 +122,7 @@ body {
     padding: 30px 20px;
 }
 
-/* CLEAN RESUME TEXT LAYOUT (NO BOXES) */
+/* NO BOX TEXT FLOW ARCHITECTURE */
 .standard-text-flow {
     display: flex;
     flex-direction: column;
@@ -175,7 +176,6 @@ body {
     margin-bottom: 4px;
 }
 
-/* HEADINGS FOR SECTIONS */
 .section-title-node-left {
     margin-bottom: 20px;
 }
@@ -190,11 +190,11 @@ body {
     padding-bottom: 4px;
 }
 
-/* PERFECT 4-4-3 REELS GRID WITH LAST ROW CENTERED */
-.reels-perfect-symmetric-grid {
+/* TINY PIDDI REELS GRID (5 COLS EXACTLY - NO MARGIN WASTE) */
+.reels-piddi-symmetric-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
     width: 100%;
 }
 
@@ -202,7 +202,7 @@ body {
     width: 100%;
     aspect-ratio: 9 / 16;
     background-color: #000;
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
     border: 2px solid var(--brand-orange);
 }
@@ -213,15 +213,7 @@ body {
     object-fit: cover;
 }
 
-/* Push and center the 9th, 10th, and 11th items into a beautifully centered row */
-.reels-perfect-symmetric-grid .centered-last-row {
-    grid-column: span 1;
-}
-.reels-perfect-symmetric-grid .reel-item-card:nth-child(9) {
-    grid-column: 2 / span 1;
-}
-
-/* WIDE AI SLIDER FRAME */
+/* WIDE AI SLIDER STYLES */
 .wide-slider-outer-container {
     width: 100%;
     position: relative;
@@ -229,8 +221,8 @@ body {
 
 .wide-slider-viewport {
     width: 100%;
-    max-width: 800px; /* Made Wide instead of narrow portrait box */
-    height: 450px;
+    max-width: 850px;
+    height: 460px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 12px;
@@ -275,14 +267,13 @@ body {
     border-radius: 50%;
     background-color: #cbd5e1;
     cursor: pointer;
-    transition: background-color 0.2s;
 }
 
 .dot-node.active {
     background-color: var(--brand-orange);
 }
 
-/* CLEAN PRODUCT CARDS GRID STYLE */
+/* 2-COLUMN AMAZON PRODUCT GRID */
 .clean-cards-grid-layout {
     display: grid;
     grid-template-columns: repeat(2, 1fr) !important;
@@ -332,7 +323,7 @@ body {
     margin-top: 2px;
 }
 
-/* LIGHTBOX */
+/* LIGHTBOX INTERFACES */
 .lightbox-modal {
     display: none;
     position: fixed;
@@ -363,7 +354,7 @@ body {
     cursor: pointer;
 }
 
-/* CONTACT ELEMENTS */
+/* CONTACT SEGMENTS */
 .contact-structural-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -398,22 +389,22 @@ body {
 .corporate-footer { text-align: center; padding: 20px; color: var(--text-muted); font-size: 0.8rem; border-top: var(--thin-slate-border); margin-top: 30px; }
 .section-divider-gap { height: 30px; }
 
-/* RESPONSIVE LAYOUT OPTIMIZATION */
-@media (max-width: 900px) {
+/* STRICT RESPONSIVE DOWNGRADES */
+@media (max-width: 950px) {
     .navbar { height: 110px; }
     .nav-container { flex-direction: column; justify-content: center; gap: 8px; }
     .center-brand-title { position: static; transform: none; }
     .logo-area { position: absolute; left: 15px; top: 15px; width: 45px; height: 45px; }
     .main-wrapper { margin-top: 130px; }
     .clean-skills-columns { grid-template-columns: 1fr; gap: 15px; }
-    .reels-perfect-symmetric-grid { grid-template-columns: repeat(3, 1fr); }
-    .reels-perfect-symmetric-grid .reel-item-card:nth-child(9) { grid-column: auto; }
+    .reels-piddi-symmetric-grid { grid-template-columns: repeat(3, 1fr); }
     .wide-slider-viewport { height: 320px; }
 }
 
 @media (max-width: 600px) {
     .resume-main-name { font-size: 1.4rem; }
-    .reels-perfect-symmetric-grid { grid-template-columns: repeat(2, 1fr); }
+    .reels-piddi-symmetric-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
     .clean-cards-grid-layout { grid-template-columns: repeat(2, 1fr) !important; gap: 12px; }
     .contact-structural-grid { grid-template-columns: 1fr; }
 }
+

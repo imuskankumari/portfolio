@@ -4,16 +4,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function buildBehanceStyleGrid() {
-    const gridContainer = document.getElementById("amazonGridEngine");
+    const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;
     let domBuffer = "";
 
-    // Automatically structures 50 slots dynamically maps g1.jpg to g50.jpg
-    for (let count = 1; count <= 50; count++) {
+    // Safely injects exactly 100 items from g1.jpg to g100.jpg with name and requested Price TAG
+    for (let count = 1; count <= 100; count++) {
         domBuffer += `
             <div class="amazon-product-card-node" id="card-node-${count}" onclick="openLightbox('g${count}.jpg')">
                 <div class="card-image-box-frame">
-                    <img src="g${count}.jpg" alt="" draggable="false" onerror="this.parentNode.style.backgroundColor='#f8f9fa'">
+                    <img src="g${count}.jpg" alt="Graphic Design Project G${count}" draggable="false" onerror="this.parentNode.style.backgroundColor='#f1f5f9'">
+                </div>
+                <div class="card-details-area">
+                    <div class="product-title-string">Project G${count}</div>
+                    <div class="product-price-string">₹89</div>
                 </div>
             </div>
         `;
@@ -42,7 +46,7 @@ let activePhotoIndex = 0;
 const totalPhotosCount = 10;
 
 function startAutomatedIntervals() {
-    // Automated Engine for wide AI Project Image Loop Slider (Every 4 seconds auto changes)
+    // Automated Engine for 4:5 Portrait AI Carousel Viewport Track (Moves seamlessly every 4 seconds)
     setInterval(() => {
         activePhotoIndex++;
         if (activePhotoIndex >= totalPhotosCount) {

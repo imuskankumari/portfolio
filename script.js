@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupWideSlider();
 });
 
-// Dynamic Card Builder for Exactly 100 items with Name & Price Tag
+// Dynamic Card Grid Builder (G1 to G100)
 function generateGraphicGrid() {
     const targetGrid = document.getElementById("graphicDynamicGrid");
     if (!targetGrid) return;
@@ -17,7 +17,7 @@ function generateGraphicGrid() {
         htmlBuffer += `
             <div class="simple-product-card" onclick="openLightbox('g${index}.jpg')">
                 <div class="card-media-wrapper">
-                    <img src="g${index}.jpg" alt="Project G${index}" draggable="false" onerror="this.parentNode.style.backgroundColor='#e2e8f0'">
+                    <img src="g${index}.jpg" alt="Project G${index}" draggable="false" onerror="this.parentNode.style.backgroundColor='#cbd5e1'">
                 </div>
                 <div class="card-info-pane">
                     <div class="card-title-text">Project G${index}</div>
@@ -29,7 +29,7 @@ function generateGraphicGrid() {
     targetGrid.innerHTML = htmlBuffer;
 }
 
-// Wide Slider Touch and Automations
+// Wide Swipable Slider Execution Logics
 function setupWideSlider() {
     const viewport = document.getElementById("burgerSliderViewport");
     const track = document.getElementById("burgerTrack");
@@ -74,7 +74,7 @@ function setupWideSlider() {
         }
     });
 
-    // Touch Support for Mobile
+    // Touch Support for Smooth Mobile Scrolling
     viewport.addEventListener("touchstart", (e) => {
         startX = e.touches[0].clientX;
         clearInterval(autoSliderTimer);
@@ -137,3 +137,4 @@ function closeLightbox() {
     const modal = document.getElementById("imageLightboxModal");
     if (modal) modal.style.display = "none";
 }
+

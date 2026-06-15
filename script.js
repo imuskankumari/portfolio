@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupWideSlider();
 });
 
-// Dynamic Card Grid Builder (G1 to G100)
+// Dynamic Card Grid Builder Core Engine (G1 to G100)
 function generateGraphicGrid() {
     const targetGrid = document.getElementById("graphicDynamicGrid");
     if (!targetGrid) return;
@@ -17,7 +17,7 @@ function generateGraphicGrid() {
         htmlBuffer += `
             <div class="simple-product-card" onclick="openLightbox('g${index}.jpg')">
                 <div class="card-media-wrapper">
-                    <img src="g${index}.jpg" alt="Project G${index}" draggable="false" onerror="this.parentNode.style.backgroundColor='#cbd5e1'">
+                    <img src="g${index}.jpg" alt="Artwork Unit G${index}" draggable="false" onerror="this.parentNode.style.backgroundColor='#e2e8f0'">
                 </div>
                 <div class="card-info-pane">
                     <div class="card-title-text">Project G${index}</div>
@@ -29,73 +29,7 @@ function generateGraphicGrid() {
     targetGrid.innerHTML = htmlBuffer;
 }
 
-// Wide Swipable Slider Execution Logics
 function setupWideSlider() {
-    const viewport = document.getElementById("burgerSliderViewport");
-    const track = document.getElementById("burgerTrack");
-    const dotsContainer = document.getElementById("sliderDotsContainer");
-    if (!viewport || !track) return;
-
-    for (let i = 0; i < maxSlidesCount; i++) {
-        const dot = document.createElement("div");
-        dot.classList.add("dot-node");
-        if (i === 0) dot.classList.add("active");
-        dot.addEventListener("click", () => shiftToSlide(i));
-        dotsContainer.appendChild(dot);
-    }
-
-    let startX = 0;
-    let isDragging = false;
-
-    viewport.addEventListener("mousedown", (e) => {
-        isDragging = true;
-        startX = e.clientX;
-        clearInterval(autoSliderTimer);
-    });
-
-    viewport.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-        const currentX = e.clientX;
-        const diffX = currentX - startX;
-        if (Math.abs(diffX) > 50) {
-            if (diffX > 0) {
-                shiftToSlide(currentSlideIndex - 1);
-            } else {
-                shiftToSlide(currentSlideIndex + 1);
-            }
-            isDragging = false;
-        }
-    });
-
-    window.addEventListener("mouseup", () => {
-        if (isDragging) {
-            isDragging = false;
-            runAutoCycle();
-        }
-    });
-
-    // Touch Support for Smooth Mobile Scrolling
-    viewport.addEventListener("touchstart", (e) => {
-        startX = e.touches[0].clientX;
-        clearInterval(autoSliderTimer);
-    });
-
-    viewport.addEventListener("touchmove", (e) => {
-        const diffX = e.touches[0].clientX - startX;
-        if (Math.abs(diffX) > 40) {
-            if (diffX > 0) {
-                shiftToSlide(currentSlideIndex - 1);
-            } else {
-                shiftToSlide(currentSlideIndex + 1);
-            }
-            startX = e.touches[0].clientX;
-        }
-    });
-
-    viewport.addEventListener("touchend", () => {
-        runAutoCycle();
-    });
-
     runAutoCycle();
 }
 
@@ -105,16 +39,10 @@ function shiftToSlide(targetIndex) {
     if (index >= maxSlidesCount) index = 0;
 
     currentSlideIndex = index;
-    const track = document.getElementById("burgerTrack");
+    const track = document.getElementById("burgerPhotoTrack");
     if (track) {
         track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
     }
-
-    const dots = document.querySelectorAll(".dot-node");
-    dots.forEach((dot, idx) => {
-        if (idx === currentSlideIndex) dot.classList.add("active");
-        else dot.classList.remove("active");
-    });
 }
 
 function runAutoCycle() {
@@ -137,4 +65,3 @@ function closeLightbox() {
     const modal = document.getElementById("imageLightboxModal");
     if (modal) modal.style.display = "none";
 }
-

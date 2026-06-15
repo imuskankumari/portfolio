@@ -1,11 +1,12 @@
-/* PURE WHITE THEME DESIGN SYSTEM (PROFESSIONAL ORANGE ACCENTS) */
+/* PURE WHITE WEB FRAMEWORK WITH BOLD ORANGE-YELLOW BOUNDS */
 :root {
-    --bg-light-pure: #ffffff;      /* Enforced pure white background */
+    --bg-light-pure: #ffffff;      
     --surface-white: #ffffff;
-    --text-slate-dark: #1e293b;
+    --text-slate-dark: #6b7280;     /* Muted Premium Grey for Muskan Title */
+    --text-charcoal: #1e293b;
     --text-muted: #64748b;
-    --brand-orange-yellow: #ff9900; /* Bold orange-yellow ACCENTS */
-    --bolder-orange-outline: 3.5px solid #ff9900; /* Bolder professional outlines for visual boxes */
+    --brand-orange-yellow: #ff9900; /* Beautiful Target Orange-Yellow Element */
+    --bolder-orange-outline: 4px solid #ff9900; /* Strong Bold Border requested */
     --thin-slate-border: 1px solid #cbd5e1;
     --success-green: #10b981;
 }
@@ -23,7 +24,7 @@ html {
 
 body {
     background-color: var(--bg-light-pure);
-    color: var(--text-slate-dark);
+    color: var(--text-charcoal);
     font-family: Arial, sans-serif;
     overflow-x: hidden;
     width: 100%;
@@ -34,23 +35,22 @@ img, video {
     -webkit-user-drag: none;
 }
 
-/* NAVBAR DESIGN (ALIGNED PER IMAGE 14248) */
+/* NAVBAR LOGO LEFT & NAV RIGHT ONLY */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 90px;
+    height: 70px;
     background-color: rgba(255, 255, 255, 0.98);
     border-bottom: 2px solid #e2e8f0;
     z-index: 1000;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.03);
 }
 
 .nav-container {
-    max-width: 1140px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 20px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -58,8 +58,8 @@ img, video {
 }
 
 .logo-area {
-    width: 65px;
-    height: 65px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid var(--brand-orange-yellow);
@@ -71,85 +71,87 @@ img, video {
     object-fit: cover;
 }
 
-/* SYMMETRICAL HEADER TITLE LAYOUT */
-.center-brand-title {
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.resume-main-name {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--brand-orange-yellow);
-    letter-spacing: 0.5px;
-    line-height: 1.1;
-}
-
-.resume-sub-designation {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--text-slate-dark);
-    letter-spacing: 1px;
-    margin-top: 3px;
-    text-transform: uppercase;
-}
-
-.resume-short-underline {
-    width: 100%;
-    height: 3px;
-    background-color: var(--text-slate-dark);
-    margin: 4px auto 0 auto;
-}
-
 .nav-menus {
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 .nav-link {
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
-
 .nav-link:hover, .nav-link.active {
     color: var(--brand-orange-yellow);
 }
 
 .main-wrapper {
-    margin-top: 110px;
+    margin-top: 70px;
+    width: 100%;
 }
 
+/* PYRAMID BRANDING DISPLAY SYSTEM (EXACT ALIGNMENT 14248) */
+.hero-branding-pyramid {
+    text-align: center;
+    padding: 60px 20px 30px 20px;
+    background: var(--bg-light-pure);
+}
+
+.resume-main-name {
+    font-size: 3.4rem;
+    font-weight: 800;
+    color: var(--text-slate-dark); 
+    letter-spacing: -0.5px;
+}
+
+.resume-sub-designation {
+    font-size: 1.65rem; 
+    font-weight: 700;
+    color: var(--brand-orange-yellow); 
+    letter-spacing: 0.5px;
+    margin-top: 5px;
+}
+
+.resume-short-underline {
+    width: 320px; 
+    height: 3.5px;
+    background-color: var(--brand-orange-yellow);
+    margin: 14px auto 0 auto;
+}
+
+.pyramid-paragraph-container {
+    max-width: 820px; 
+    margin: 25px auto 0 auto;
+}
+
+.resume-paragraph-text {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: #334155;
+    text-align: center; /* True Pyramid symmetry core mapping */
+}
+
+/* RESUME SEGMENTS */
 .page-section {
-    max-width: 1140px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 30px 24px;
+    padding: 35px 20px;
 }
 
-/* PURE WHITE TEXT LAYOUT FRAMEWORK */
 .standard-text-flow {
     display: flex;
     flex-direction: column;
     gap: 35px;
-    background: #ffffff;
 }
 
 .resume-text-block {
     width: 100%;
 }
 
-.text-center-professional {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 .resume-section-title {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: var(--brand-orange-yellow);
     text-transform: uppercase;
     font-weight: 800;
@@ -159,29 +161,20 @@ img, video {
     padding-bottom: 4px;
 }
 
-.resume-paragraph-text {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: #334155;
-    text-align: justify;
-}
-
 .custom-orange-list {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
-
 .custom-orange-list li {
     font-size: 0.98rem;
     font-weight: 600;
     line-height: 1.5;
     position: relative;
     padding-left: 20px;
-    color: var(--text-slate-dark);
+    color: #334155;
 }
-
 .custom-orange-list li::before {
     content: '■';
     position: absolute;
@@ -191,7 +184,6 @@ img, video {
     top: 1px;
 }
 
-/* CLEAN 4-COLUMN SKILLS ARRAY */
 .clean-skills-columns {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -201,7 +193,7 @@ img, video {
 
 .skill-column-node h4 {
     font-size: 0.95rem;
-    color: var(--text-slate-dark);
+    color: #1e293b;
     margin-bottom: 8px;
     font-weight: 700;
     text-transform: uppercase;
@@ -213,28 +205,24 @@ img, video {
     color: var(--text-muted);
     font-size: 0.88rem;
 }
+.skill-column-node ul li { margin-bottom: 4px; }
 
-.skill-column-node ul li {
-    margin-bottom: 4px;
-}
-
-/* HEADINGS FRAMEWORK (CENTER ALIGNED PER INSTRUCTIONS) */
+/* HEADINGS FOR SECTIONS (CENTER ALIGNED) */
 .section-title-node-center {
     text-align: center;
     margin-bottom: 25px;
 }
-
 .section-title-node-center h2 {
     font-size: 1.3rem;
     font-weight: 800;
     text-transform: uppercase;
-    color: var(--text-slate-dark);
+    color: var(--brand-orange-yellow); /* Enforced Orange-Yellow requested */
     border-bottom: 3px solid var(--brand-orange-yellow);
     display: inline-block;
     padding-bottom: 4px;
 }
 
-/* TINY PIDDI REELS CORES (5-5 PACKED MATRIX) */
+/* REELS CORES (5-5 PIDDI GRID SYSTEMS) */
 .reels-piddi-symmetric-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -248,17 +236,12 @@ img, video {
     background-color: #000;
     border-radius: 6px;
     overflow: hidden;
-    border: var(--bolder-orange-outline); /* Bold Orange outlines for professionalism */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: var(--bolder-orange-outline); /* Bold Outline configuration */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 }
+.reel-item-card video { width: 100%; height: 100%; object-fit: cover; }
 
-.reel-item-card video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* SYMMETRICAL DYNAMIC CAROUSEL LAYOUT */
+/* ENLARGED ORIGINAL SLIDER LAYOUT PRESERVING SPEC PROPORTIONS */
 .wide-ai-carousel-wrapper {
     width: 100%;
     display: flex;
@@ -267,36 +250,23 @@ img, video {
 
 .carousel-viewport-wide-box {
     width: 100%;
-    max-width: 800px;
-    aspect-ratio: 16 / 9;
+    max-width: 900px; /* Restored back to large scale width specs */
+    aspect-ratio: 16 / 9; /* Perfect wide presentation banner scale */
     background-color: #ffffff;
     border-radius: 12px;
     overflow: hidden;
-    border: var(--bolder-orange-outline); /* Bold Orange outlines for visuals */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: var(--bolder-orange-outline); /* Bold Outline framework applied */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
-.carousel-track {
-    display: flex;
-    width: 100%;
-    height: 100%;
-}
+.carousel-track { display: flex; width: 100%; height: 100%; }
+.carousel-slide-item { min-width: 100%; height: 100%; }
+.carousel-slide-item img { width: 100%; height: 100%; object-fit: cover; }
 
-.carousel-slide-item {
-    min-width: 100%;
-    height: 100%;
-}
-
-.carousel-slide-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-}
-
-/* CLEAN 2-COLUMN AMAZON/PRODUCT CARD GRID STRUCTURE */
+/* 2 COLUMN PRODUCT GALLERY GRID */
 .clean-cards-grid-layout {
     display: grid;
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 20px;
     width: 100%;
 }
@@ -307,7 +277,6 @@ img, video {
     border-radius: 8px;
     padding: 12px;
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
 }
 
 .card-media-wrapper {
@@ -320,197 +289,56 @@ img, video {
     justify-content: center;
     align-items: center;
 }
+.card-media-wrapper img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-.card-media-wrapper img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-.card-info-pane {
-    padding-top: 10px;
-    text-align: left;
-}
-
-.card-title-text {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--text-slate-dark);
-    text-transform: uppercase;
-}
-
-.card-price-tag {
-    font-size: 1rem;
-    font-weight: 800;
-    color: var(--brand-orange-yellow);
-    margin-top: 3px;
-}
+.card-info-pane { padding-top: 10px; text-align: left; }
+.card-title-text { font-size: 0.9rem; font-weight: 700; color: #1e293b; text-transform: uppercase; }
+.card-price-tag { font-size: 1rem; font-weight: 800; color: var(--brand-orange-yellow); margin-top: 3px; }
 
 /* LIGHTBOX DESIGN INTERFACE */
-.lightbox-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    z-index: 2500;
-    justify-content: center;
-    align-items: center;
-}
+.lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 2500; justify-content: center; align-items: center; }
+.lightbox-content-wrapper { position: relative; max-width: 90%; max-height: 85%; }
+.lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; border: var(--bolder-orange-outline); background-color: #ffffff; }
+.lightbox-close-btn { position: absolute; top: 20px; right: 25px; color: #ffffff; font-size: 2.5rem; cursor: pointer; }
 
-.lightbox-content-wrapper {
-    position: relative;
-    max-width: 90%;
-    max-height: 85%;
-}
+/* CONTACT STRUCTURAL COLUMNS */
+.contact-structural-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; }
+.input-form-card, .trust-gateway-card { background: var(--surface-white); border: var(--thin-slate-border); padding: 30px; border-radius: 12px; }
 
-.lightbox-content-wrapper img {
-    max-width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
-    border-radius: 8px;
-    border: var(--bolder-orange-outline); /* Bold orange outline sits snugly inside trending box system */
-    background-color: #ffffff;
-}
+.form-row { margin-bottom: 14px; }
+.form-row input, .form-row textarea { width: 100%; padding: 12px; background-color: var(--bg-light-pure); border: var(--thin-slate-border); border-radius: 6px; color: var(--text-charcoal); font-size: 0.9rem; outline: none; }
+.form-row input:focus, .form-row textarea:focus { border-color: var(--brand-orange-yellow); }
+.form-action-button { width: 100%; padding: 12px; background-color: var(--brand-orange-yellow); color: #ffffff; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
 
-.lightbox-close-btn {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    color: #ffffff;
-    font-size: 2.5rem;
-    cursor: pointer;
-}
+.bhim-widget-box { background-color: var(--bg-light-pure); border: var(--thin-slate-border); border-radius: 10px; padding: 20px; text-align: center; }
+.shield-vector-icon { font-size: 2rem; color: var(--brand-orange-yellow); margin-bottom: 6px; position: relative; display: inline-block; }
+.secure-checkmark { position: absolute; font-size: 0.8rem; top: 52%; left: 50%; transform: translate(-50%, -50%); color: #ffffff; }
+.bhim-label-text { display: block; font-weight: 700; font-size: 0.95rem; }
+.bhim-vpa-string { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 15px; }
+.live-upi-trigger { display: inline-flex; align-items: center; gap: 8px; background-color: var(--success-green); color: #ffffff; text-decoration: none; padding: 10px 24px; border-radius: 6px; font-weight: 700; }
 
-/* CONTACT ARRANGEMENT PANELS */
-.contact-structural-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 24px;
-}
-
-.input-form-card, .trust-gateway-card {
-    background: var(--surface-white);
-    border: var(--thin-slate-border);
-    padding: 30px;
-    border-radius: 12px;
-}
-
-.form-row {
-    margin-bottom: 14px;
-}
-
-.form-row input, .form-row textarea {
-    width: 100%;
-    padding: 12px;
-    background-color: var(--bg-light-pure);
-    border: var(--thin-slate-border);
-    border-radius: 6px;
-    color: var(--text-slate-dark);
-    font-size: 0.9rem;
-    outline: none;
-}
-
-.form-row input:focus, .form-row textarea:focus {
-    border-color: var(--brand-orange-yellow);
-}
-
-.form-action-button {
-    width: 100%;
-    padding: 12px;
-    background-color: var(--brand-orange-yellow);
-    color: #ffffff;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.bhim-widget-box {
-    background-color: var(--bg-light-pure);
-    border: var(--thin-slate-border);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-}
-
-.shield-vector-icon {
-    font-size: 2rem;
-    color: var(--brand-orange-yellow);
-    margin-bottom: 6px;
-    position: relative;
-    display: inline-block;
-}
-
-.secure-checkmark {
-    position: absolute;
-    font-size: 0.8rem;
-    top: 52%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ffffff;
-}
-
-.bhim-label-text {
-    display: block;
-    font-weight: 700;
-    font-size: 0.95rem;
-    color: var(--text-slate-dark);
-}
-
-.bhim-vpa-string {
-    display: block;
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    margin-bottom: 15px;
-}
-
-.live-upi-trigger {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background-color: var(--success-green);
-    color: #ffffff;
-    text-decoration: none;
-    padding: 10px 24px;
-    border-radius: 6px;
-    font-weight: 700;
-    font-size: 0.85rem;
-}
-
-.corporate-footer {
-    text-align: center;
-    padding: 25px;
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    border-top: 1px solid #e2e8f0;
-    margin-top: 40px;
-}
-
+.corporate-footer { text-align: center; padding: 25px; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid #e2e8f0; margin-top: 40px; }
 .project-segment-container { width: 100%; }
 .section-divider-gap { width: 100%; height: 25px; }
 
-/* STRICT MOBILE LAYER RESPONSIVENESS CORES */
+/* RESPONSIVE SCALERS */
 @media (max-width: 950px) {
     .navbar { height: 110px; }
     .nav-container { flex-direction: column; justify-content: center; gap: 8px; padding: 10px; }
-    .center-brand-title { position: static; transform: none; }
-    .nav-menus { gap: 20px; }
+    .logo-area { position: absolute; left: 15px; top: 15px; width: 42px; height: 42px; }
     .main-wrapper { margin-top: 130px; }
     .reels-piddi-symmetric-grid { grid-template-columns: repeat(3, 1fr); }
-    .about-details-grid { grid-template-columns: 1fr; gap: 25px; }
     .clean-skills-columns { grid-template-columns: 1fr 1fr; gap: 15px; }
 }
 
 @media (max-width: 600px) {
-    .resume-main-name { font-size: 1.4rem; }
-    .resume-sub-designation { font-size: 0.7rem; letter-spacing: 1px; }
+    .resume-main-name { font-size: 1.8rem; }
+    .resume-sub-designation { font-size: 0.9rem; }
+    .resume-short-underline { width: 100%; max-width: 200px; }
     .reels-piddi-symmetric-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
     .clean-cards-grid-layout { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
     .contact-structural-grid { grid-template-columns: 1fr; }
-    .about-master-card { padding: 20px; }
     .clean-skills-columns { grid-template-columns: 1fr; }
+    .carousel-viewport-wide-box { aspect-ratio: 4 / 3; }
 }
+

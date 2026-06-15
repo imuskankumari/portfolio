@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupWideSlider();
 });
 
-// Dynamic Clean Card Grid Injection
+// Dynamic Card Builder for Exactly 100 items with Name & Price Tag
 function generateGraphicGrid() {
     const targetGrid = document.getElementById("graphicDynamicGrid");
     if (!targetGrid) return;
@@ -29,14 +29,13 @@ function generateGraphicGrid() {
     targetGrid.innerHTML = htmlBuffer;
 }
 
-// Wide Swipable Slider Logics with Touch/Drag Support
+// Wide Slider Touch and Automations
 function setupWideSlider() {
     const viewport = document.getElementById("burgerSliderViewport");
     const track = document.getElementById("burgerTrack");
     const dotsContainer = document.getElementById("sliderDotsContainer");
     if (!viewport || !track) return;
 
-    // Create Navigation Dots dynamically
     for (let i = 0; i < maxSlidesCount; i++) {
         const dot = document.createElement("div");
         dot.classList.add("dot-node");
@@ -45,9 +44,7 @@ function setupWideSlider() {
         dotsContainer.appendChild(dot);
     }
 
-    // Touch and Drag Mechanism
     let startX = 0;
-    let currentTranslate = 0;
     let isDragging = false;
 
     viewport.addEventListener("mousedown", (e) => {
@@ -77,7 +74,7 @@ function setupWideSlider() {
         }
     });
 
-    // Mobile Touch Supports
+    // Touch Support for Mobile
     viewport.addEventListener("touchstart", (e) => {
         startX = e.touches[0].clientX;
         clearInterval(autoSliderTimer);
@@ -113,7 +110,6 @@ function shiftToSlide(targetIndex) {
         track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
     }
 
-    // Update Dots UI
     const dots = document.querySelectorAll(".dot-node");
     dots.forEach((dot, idx) => {
         if (idx === currentSlideIndex) dot.classList.add("active");
@@ -128,7 +124,6 @@ function runAutoCycle() {
     }, 4000);
 }
 
-// Lightbox Logics
 function openLightbox(source) {
     const modal = document.getElementById("imageLightboxModal");
     const targetImg = document.getElementById("lightboxMainImage");

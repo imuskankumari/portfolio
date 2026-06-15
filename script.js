@@ -1,67 +1,60 @@
-let currentSlideIndex = 0;
-const maxSlidesCount = 10;
-let autoSliderTimer = null;
-
 document.addEventListener("DOMContentLoaded", () => {
-    generateGraphicGrid();
-    setupWideSlider();
+    buildBehanceStyleGrid();
+    startAutomatedIntervals();
 });
 
-// Dynamic Card Grid Builder Core Engine (G1 to G100)
-function generateGraphicGrid() {
-    const targetGrid = document.getElementById("graphicDynamicGrid");
-    if (!targetGrid) return;
-    let htmlBuffer = "";
+function buildBehanceStyleGrid() {
+    const gridContainer = document.getElementById("graphicDynamicGrid");
+    if (!gridContainer) return;
+    let domBuffer = "";
 
-    for (let index = 1; index <= 100; index++) {
-        htmlBuffer += `
-            <div class="simple-product-card" onclick="openLightbox('g${index}.jpg')">
+    // Automatically structures 100 slots dynamically maps g1.jpg to g100.jpg with pricing
+    for (let count = 1; count <= 100; count++) {
+        domBuffer += `
+            <div class="simple-product-card" id="card-node-${count}" onclick="openLightbox('g${count}.jpg')">
                 <div class="card-media-wrapper">
-                    <img src="g${index}.jpg" alt="Artwork Unit G${index}" draggable="false" onerror="this.parentNode.style.backgroundColor='#e2e8f0'">
+                    <img src="g${count}.jpg" alt="Art Unit G${count}" draggable="false" onerror="this.parentNode.style.backgroundColor='#f1f5f9'">
                 </div>
                 <div class="card-info-pane">
-                    <div class="card-title-text">Project G${index}</div>
+                    <div class="card-title-text">Project G${count}</div>
                     <div class="card-price-tag">₹89</div>
                 </div>
             </div>
         `;
     }
-    targetGrid.innerHTML = htmlBuffer;
+    gridContainer.innerHTML = domBuffer;
 }
 
-function setupWideSlider() {
-    runAutoCycle();
-}
-
-function shiftToSlide(targetIndex) {
-    let index = targetIndex;
-    if (index < 0) index = maxSlidesCount - 1;
-    if (index >= maxSlidesCount) index = 0;
-
-    currentSlideIndex = index;
-    const track = document.getElementById("burgerPhotoTrack");
-    if (track) {
-        track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
-    }
-}
-
-function runAutoCycle() {
-    clearInterval(autoSliderTimer);
-    autoSliderTimer = setInterval(() => {
-        shiftToSlide(currentSlideIndex + 1);
-    }, 4000);
-}
-
-function openLightbox(source) {
+function openLightbox(imgSrc) {
     const modal = document.getElementById("imageLightboxModal");
-    const targetImg = document.getElementById("lightboxMainImage");
-    if (modal && targetImg) {
+    const modalImg = document.getElementById("lightboxMainImage");
+
+    if (modal && modalImg) {
         modal.style.display = "flex";
-        targetImg.src = source;
+        modalImg.src = imgSrc;
     }
 }
 
 function closeLightbox() {
     const modal = document.getElementById("imageLightboxModal");
-    if (modal) modal.style.display = "none";
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+let activePhotoIndex = 0;
+const totalPhotosCount = 10;
+
+function startAutomatedIntervals() {
+    // Automated Engine for wide AI generated visuals (Carousel, b1-b10)
+    setInterval(() => {
+        activePhotoIndex++;
+        if (activePhotoIndex >= totalPhotosCount) {
+            activePhotoIndex = 0;
+        }
+        const photoTrack = document.getElementById("burgerPhotoTrack");
+        if (photoTrack) {
+            photoTrack.style.transform = `translateX(-${activePhotoIndex * 100}%)`;
+        }
+    }, 4000);
 }

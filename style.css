@@ -1,4 +1,4 @@
-/* PREMIUM DEEP DARK BLUE THEME WITH BRIGHT CYAN BRAND ACCENTS */
+/* PREMIUM DEEP DARK BLUE THEME WITH BRIGHT NEON CYAN LINES */
 :root {
     --bg-dark-core: #090d16;        
     --surface-dark-card: #111827;   
@@ -7,7 +7,6 @@
     --brand-neon-cyan: #00bacf;     
     --bolder-slate-outline: 4px solid #1e293b; 
     --pure-white-border: 2px solid #ffffff; 
-    --thin-dark-border: 1px solid #1f2937;
     --success-green: #10b981;
 }
 
@@ -35,7 +34,7 @@ img, video {
     -webkit-user-drag: none;
 }
 
-/* NAVBAR (Logo Left, Links Right) */
+/* NAVBAR */
 .navbar {
     position: fixed;
     top: 0;
@@ -80,15 +79,14 @@ img, video {
     width: 100%;
 }
 
-/* SCROLL OFFSET TARGET PROTOCOL */
 .scroll-target-padding {
     scroll-margin-top: 90px;
 }
 
-/* HERO BRANDING PROFILE HEADINGS */
+/* BRANDING PROFILES */
 .hero-branding-center {
     text-align: center;
-    padding: 60px 20px 20px 20px;
+    padding: 80px 20px 40px 20px;
     background: var(--bg-dark-core);
     display: flex;
     flex-direction: column;
@@ -125,7 +123,7 @@ img, video {
 }
 
 .trending-hook-box {
-    margin: 24px auto 10px auto;
+    margin: 30px auto 15px auto;
     max-width: 650px;
 }
 .hook-badge {
@@ -141,12 +139,12 @@ img, video {
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--text-muted-cyan);
-    margin-top: 8px;
+    margin-top: 10px;
 }
 
 .pyramid-paragraph-container {
     max-width: 820px; 
-    margin: 20px auto 0 auto;
+    margin: 25px auto 0 auto;
 }
 
 .resume-paragraph-text {
@@ -156,14 +154,22 @@ img, video {
     text-align: center;
 }
 
-/* GLOBAL SECTIONS */
+/* SECTION PADDINGS AND NEON SEPARATORS */
 .page-section {
     max-width: 1140px;
-    margin: 0 auto;
-    padding: 30px 24px;
+    margin: 60px auto; /* Increased global gap between sections */
+    padding: 0 24px;
 }
 
-/* SOFTWARE & SKILLS CONTROLS */
+.neon-page-divider {
+    max-width: 1140px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--brand-neon-cyan), transparent);
+    margin: 40px auto;
+    opacity: 0.6;
+}
+
+/* SKILLS CHIPS */
 .software-skills-chips-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -183,13 +189,12 @@ img, video {
     align-items: center;
     gap: 8px;
     border: 1px solid #374151;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 .skill-chip-node i {
     color: var(--brand-neon-cyan);
 }
 
-/* ACADEMIC CARD */
+/* EDUCATION CARD */
 .education-master-corporate-card {
     background-color: var(--surface-dark-card); 
     border: 3px solid #1f2937; 
@@ -233,15 +238,14 @@ img, video {
     color: var(--text-muted-cyan);
 }
 
-/* DUAL-TONE HEADERS WITH DYNAMIC TRENDING SUB-TITLES */
+/* HEADER SUBTITLE DESIGN PATTERNS */
 .section-title-node-center {
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 45px;
 }
 .section-title-node-center h2 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     font-weight: 800;
-    text-transform: uppercase;
     color: var(--text-white-pure); 
     display: inline-block;
     letter-spacing: -0.5px;
@@ -249,15 +253,21 @@ img, video {
 .section-title-node-center h2 .cyan-text {
     color: var(--brand-neon-cyan); 
 }
+.title-sub-separator {
+    width: 45px;
+    height: 2px;
+    background-color: var(--brand-neon-cyan);
+    margin: 6px auto 0 auto; /* Small precise line gap */
+}
 .section-sub-heading-text {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--text-muted-cyan);
-    margin-top: 8px;
+    margin-top: 10px; /* Perfect spacing gap */
     font-weight: 500;
     letter-spacing: 0.3px;
 }
 
-/* MOTION GRAPHICS REELS */
+/* REELS PLATFORMS */
 .reels-single-row-fluid-viewport {
     width: 100%;
     overflow-x: auto;
@@ -280,14 +290,13 @@ img, video {
     border-radius: 8px;
     overflow: hidden;
     border: var(--bolder-slate-outline); 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 .reel-item-piddi-card video { width: 100%; height: 100%; object-fit: cover; }
 
-/* 14339.jpg की तरह परफेक्ट एज-टू-एज कॉम्पैक्ट और बड़ा विज़ुअल स्लाइडर स्ट्रक्चर */
-.slider-master-wrapper-node {
+/* 14347.jpg की तरह फुल-साइज़ पोर्ट्रेट कैरोसल मास्टर फ्रेम */
+.slider-full-frame-wrapper {
     width: 100%;
-    max-width: 440px; /* Snug tight bounding box width */
+    max-width: 460px; /* ओरिजिनल सबसे बड़ा आनुपातिक साइज */
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -301,7 +310,7 @@ img, video {
     border-radius: 24px; 
     overflow: hidden;
     border: var(--bolder-slate-outline);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.6);
     display: flex;
     flex-direction: column;
 }
@@ -315,13 +324,13 @@ img, video {
 .carousel-slide-item { min-width: 100%; height: 100%; flex-shrink: 0; }
 .carousel-slide-item img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Arrow buttons placed far apart at the precise outer bounds layout */
+/* Arrows controls aligned perfectly outside on desktop bounds */
 .slider-nav-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background-color: rgba(30, 41, 59, 0.95);
     border: 2px solid var(--brand-neon-cyan);
@@ -332,11 +341,11 @@ img, video {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.5);
 }
 .slider-nav-btn:hover { background-color: var(--brand-neon-cyan); color: #ffffff; }
-.prev-btn { left: -55px; } 
-.next-btn { right: -55px; }
+.prev-btn { left: -60px; } 
+.next-btn { right: -60px; }
 
 .slider-bottom-label {
     height: 45px;
@@ -352,10 +361,10 @@ img, video {
     border-top: 1px solid #1e293b;
 }
 
-/* CLEAN RESPONSIVE GRAPHIC DESIGN TILES WITH SPECIFIC MOBILE-FIRST OVERRIDES */
+/* PRODUCTS GALLERY CONFIGURATIONS */
 .clean-cards-grid-layout {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Desktop mode shows double cards layout */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
     gap: 24px;
     width: 100%;
 }
@@ -384,14 +393,14 @@ img, video {
 .card-title-text { font-size: 0.9rem; font-weight: 700; color: #ffffff; text-transform: uppercase; }
 .card-price-tag { font-size: 1rem; font-weight: 800; color: var(--brand-neon-cyan); margin-top: 2px; }
 
-/* LIGHTBOX */
+/* LIGHTBOX VIEWER */
 .lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.94); z-index: 2500; justify-content: center; align-items: center; }
 .lightbox-content-wrapper { position: relative; max-width: 90%; max-height: 85%; }
 .lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; border: var(--bolder-slate-outline); background-color: #ffffff; }
 .lightbox-close-btn { position: absolute; top: 20px; right: 25px; color: #ffffff; font-size: 2.5rem; cursor: pointer; }
 
 /* CONTACT CONTEXT FLOW */
-.contact-corporate-wrapper { background-color: var(--bg-dark-core); border-top: 2px solid #111827; margin-top: 20px; }
+.contact-corporate-wrapper { background-color: var(--bg-dark-core); border-top: 2px solid #111827; }
 .contact-structural-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .input-form-card, .trust-gateway-card { background: var(--surface-dark-card); border: 1px solid #1f2937; padding: 30px; border-radius: 12px; }
 
@@ -416,7 +425,7 @@ img, video {
 .corporate-footer { text-align: center; padding: 25px; color: var(--text-muted-cyan); font-size: 0.85rem; border-top: 1px solid #111827; margin-top: 40px; background-color: var(--bg-dark-core); }
 .section-divider-gap { height: 35px; }
 
-/* RESPONSIVE SCALERS BREAKPOINTS */
+/* RESPONSIVE SCALERS */
 @media (max-width: 950px) {
     .navbar { height: 110px; }
     .nav-container { flex-direction: column; justify-content: center; gap: 8px; padding: 10px; }
@@ -433,13 +442,13 @@ img, video {
     .reels-single-row-track { overflow-x: auto; width: max-content; }
     .reel-item-piddi-card { width: 100px; }
     
-    /* CRITICAL SPECIFICATION MANDATED BY USER: SHOW ONLY 1 CARD PER ROW FOR PHONE VIEWS */
     .clean-cards-grid-layout { 
         grid-template-columns: repeat(1, minmax(0, 1fr)) !important; 
         gap: 16px; 
     }
     
-    .interactive-slider-outer-frame { max-width: 82%; }
+    .slider-full-frame-wrapper { max-width: 82%; }
     .prev-btn { left: -35px; width: 34px; height: 34px; }
     .next-btn { right: -35px; width: 34px; height: 34px; }
 }
+

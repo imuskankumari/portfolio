@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-    initBurgerSlider();
+    initAutoBurgerSlider();
     buildMotionGraphics();
     buildPortfolioGrid();
     protectMyContent();
 });
 
-function initBurgerSlider() {
+// 1. ऑटोमैटिक चेंज (Auto-Play) होने वाला कैरोसेल स्लाइडर लॉजिक
+function initAutoBurgerSlider() {
     const totalSlides = 10;
     let currentSlide = 1;
+    let autoPlayTimer;
 
     const imgElement = document.getElementById("sliderImage");
     const titleElement = document.getElementById("sliderTitle");
@@ -17,7 +19,8 @@ function initBurgerSlider() {
     if (!imgElement || !titleElement || !prevBtn || !nextBtn) return;
 
     function updateSlider(index) {
-        imgElement.style.opacity = "0.2";
+        // इमेज चेंज होते समय स्मूथ फेड इफ़ेक्ट
+        imgElement.style.opacity = "0.3";
         imgElement.style.transform = "scale(0.98)";
         
         setTimeout(() => {
@@ -28,17 +31,38 @@ function initBurgerSlider() {
         }, 120);
     }
 
+    function startAutoPlay() {
+        // हर 3 सेकंड (3000ms) में इमेज अपने आप बदलेगी
+        autoPlayTimer = setInterval(() => {
+            currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
+            updateSlider(currentSlide);
+        }, 3000);
+    }
+
+    function resetAutoPlay() {
+        clearInterval(autoPlayTimer);
+        startAutoPlay();
+    }
+
+    // राइट बटन क्लिक
     nextBtn.addEventListener("click", () => {
         currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
         updateSlider(currentSlide);
+        resetAutoPlay(); // मैन्युअल क्लिक करने पर टाइमर रीसेट होगा
     });
 
+    // लेफ्ट बटन क्लिक
     prevBtn.addEventListener("click", () => {
         currentSlide = currentSlide <= 1 ? totalSlides : currentSlide - 1;
         updateSlider(currentSlide);
+        resetAutoPlay();
     });
+
+    // ऑटो-प्ले टाइमर शुरू करें
+    startAutoPlay();
 }
 
+// 2. Motion Graphics - 11 रील्स लोड करना
 function buildMotionGraphics() {
     const motionContainer = document.getElementById("motionGraphicsContainer");
     if (!motionContainer) return;
@@ -54,6 +78,7 @@ function buildMotionGraphics() {
     motionContainer.innerHTML = htmlBuffer;
 }
 
+// 3. Graphic Designing - 50 ओरिजिनल फ्रेम्स ग्रिड (g1.jpg से g50.jpg)
 function buildPortfolioGrid() {
     const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;
@@ -73,6 +98,7 @@ function buildPortfolioGrid() {
     gridContainer.innerHTML = htmlBuffer;
 }
 
+// 4. सिक्योर इमेज एंटी-डाउनलोड लॉकिंग प्रोटेक्शन
 function protectMyContent() {
     document.addEventListener('contextmenu', event => event.preventDefault());
     document.addEventListener('dragstart', (e) => {

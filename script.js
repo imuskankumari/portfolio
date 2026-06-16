@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
     initInteractiveSlider();
 });
 
-// Dynamic Card Grid Builder Core Engine (G1 to G100)
 function buildBehanceStyleGrid() {
     const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;
     let domBuffer = "";
 
+    // Automatically structures 100 slots dynamically maps g1.jpg to g100.jpg with price tags
     for (let count = 1; count <= 100; count++) {
         domBuffer += `
             <div class="simple-product-card" id="card-node-${count}" onclick="openLightbox('g${count}.jpg')">
@@ -29,7 +29,6 @@ function buildBehanceStyleGrid() {
     gridContainer.innerHTML = domBuffer;
 }
 
-// Interactive Slider Controller with Button Click & Autoplay Fusion
 function initInteractiveSlider() {
     runSliderAutoCycle();
 }
@@ -68,10 +67,9 @@ function runSliderAutoCycle() {
             activeVisualIndex = 0;
         }
         renderSliderTransform();
-    }, 4000); // Transitions seamlessly every 4 seconds loop
+    }, 4000); 
 }
 
-// Lightbox Logics
 function openLightbox(imgSrc) {
     const modal = document.getElementById("imageLightboxModal");
     const modalImg = document.getElementById("lightboxMainImage");

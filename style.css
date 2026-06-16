@@ -1,13 +1,13 @@
-/* LIGHT GRAY, PURE WHITE AND NEON ORANGE DYNAMIC SYSTEM */
+/* PURE WHITE PRESENTATION THEME WITH INTENSE SLATE CONTRASTS */
 :root {
-    --bg-light-pure: #ffffff;      
+    --bg-light-pure: #ffffff;       /* Pure white background as requested */
     --surface-white: #ffffff;
-    --bg-grey-panel: #f8fafc;       /* Grey panel coloring theme */
-    --text-slate-title: #4b5563;    
-    --text-charcoal: #1e293b;
+    --bg-grey-panel: #f1f5f9;       
+    --text-slate-dark: #334155;     /* Professional Dark Grey for Designation Header */
+    --text-charcoal: #0f172a;       
     --text-muted: #64748b;
-    --brand-orange-yellow: #ff9900; 
-    --thick-white-outline: 4px solid #ffffff; /* Requested crisp white outlines layout */
+    --brand-orange-yellow: #ff9900; /* Pure Orange-Yellow Accent */
+    --bolder-slate-outline: 4px solid #1e293b; /* Heavy High Contrast Dark Borders */
     --thin-slate-border: 1px solid #cbd5e1;
     --success-green: #10b981;
 }
@@ -36,7 +36,7 @@ img, video {
     -webkit-user-drag: none;
 }
 
-/* NAVBAR STRIP (LOGO LEFT, LINKS RIGHT ONLY) */
+/* NAVBAR PLATFORM */
 .navbar {
     position: fixed;
     top: 0;
@@ -81,38 +81,44 @@ img, video {
     width: 100%;
 }
 
-/* PYRAMID BRANDING DISPLAY CORE CODES */
+/* PYRAMID CORE STRUCTURE (CLEAN HEADLINE REMOVED FROM STRIP HEADER) */
 .hero-branding-center {
     text-align: center;
     padding: 60px 20px 20px 20px;
     background: var(--bg-light-pure);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .title-underline-wrapper {
-    display: inline-block;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
 }
 
 .resume-main-name {
     font-size: 3.4rem;
     font-weight: 800;
-    color: var(--text-slate-title); 
+    color: var(--brand-orange-yellow); /* Muskan Kumari in Orange-Yellow requested */
     letter-spacing: -0.5px;
 }
 
+/* Underline matches length of text perfectly */
 .resume-short-underline {
     width: 100%; 
     height: 4px;
     background-color: var(--brand-orange-yellow);
-    margin-top: 8px;
+    margin-top: 6px;
 }
 
 .resume-sub-designation {
     font-size: 1.65rem; 
     font-weight: 700;
-    color: var(--brand-orange-yellow); 
+    color: var(--text-slate-dark); /* Graphic Designer in Grey requested */
     letter-spacing: 0.5px;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
 .trending-hook-box {
@@ -147,24 +153,68 @@ img, video {
     text-align: center;
 }
 
+/* SECTIONS WRAPPERS */
 .page-section {
     max-width: 1140px;
     margin: 0 auto;
     padding: 30px 24px;
 }
 
-/* SOFTWARE & SKILLS CHIPS MATRIX (IMAGE 14292 COPIED LOOK) */
+.standard-text-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.resume-text-block {
+    width: 100%;
+}
+
+.resume-section-title {
+    font-size: 1.15rem;
+    color: var(--brand-orange-yellow);
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--brand-orange-yellow);
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.custom-orange-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.custom-orange-list li {
+    font-size: 0.98rem;
+    font-weight: 600;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 20px;
+    color: #334155;
+}
+.custom-orange-list li::before {
+    content: '■';
+    position: absolute;
+    left: 0;
+    color: var(--brand-orange-yellow);
+    font-size: 0.8rem;
+    top: 1px;
+}
+
+/* SOFTWARE & SKILLS CAPSULES (EXACT LOOK FROM IMAGE 14292) */
 .software-skills-chips-wrapper {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
     justify-content: center;
     width: 100%;
-    padding: 10px 0;
 }
 
 .skill-chip-node {
-    background-color: #1e293b; /* Dark Slate look from your exact image link */
+    background-color: #1e293b; /* Hard solid dark background from image */
     color: #ffffff;
     padding: 10px 18px;
     border-radius: 6px;
@@ -180,13 +230,14 @@ img, video {
     color: var(--brand-orange-yellow);
 }
 
-/* ACADEMIC EDUCATION BOX COMPONENT (IMAGE 14292 SETUP) */
+/* EDUCATION DOUBLE COLUMN BOX SYSTEM (IMAGE 14292 LOOK) */
 .education-master-corporate-card {
-    background-color: var(--bg-grey-panel); /* Grey element background requested */
-    border: var(--thin-slate-border);
+    background-color: var(--surface-white); 
+    border: var(--bolder-slate-outline); /* Strong high-end dark border boundary line */
     border-radius: 12px;
     padding: 35px;
     width: 100%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
 }
 
 .edu-card-main-title {
@@ -202,7 +253,7 @@ img, video {
 
 .edu-split-columns-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Strict 2 columns division split */
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
 }
 
@@ -224,7 +275,7 @@ img, video {
     color: var(--text-muted);
 }
 
-/* HEADINGS PLATFORMS (CENTER ALIGNED) */
+/* CENTER TITLES HEADER PROTOCOLS */
 .section-title-node-center {
     text-align: center;
     margin-bottom: 30px;
@@ -239,7 +290,7 @@ img, video {
     padding-bottom: 4px;
 }
 
-/* MOTION GRAPHICS: HARD LOCKED SINGLE FLUID ROW MATRIX SETUP */
+/* REELS CORES (1 FLUID FLAT ROW WITH STRONG DARK OUTLINE) */
 .reels-single-row-fluid-viewport {
     width: 100%;
     overflow-x: auto;
@@ -261,15 +312,15 @@ img, video {
     background-color: #000;
     border-radius: 8px;
     overflow: hidden;
-    border: var(--thick-white-outline); /* White Outline system enforced */
+    border: var(--bolder-slate-outline); /* High contrast dark border outline */
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
 }
 .reel-item-piddi-card video { width: 100%; height: 100%; object-fit: cover; }
 
-/* INTERACTIVE CAROUSEL ARCHITECTURE (4:5 RATIO EMBEDDED SHIFT BUTTONS) */
+/* INTERACTIVE SLIDER CONTAINER (PERFECT 4:5 HIGH FOOTPRINT MATRIX FRAME) */
 .interactive-slider-outer-frame {
     width: 100%;
-    max-width: 500px; /* Highly enlarged core dimension boundaries */
+    max-width: 480px; /* Highly enlarged core dimensions mapping */
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -278,11 +329,11 @@ img, video {
 
 .carousel-viewport-4to5-box {
     width: 100%;
-    aspect-ratio: 4 / 5; /* Exact 4:5 Symmetrical Portrait box locks */
+    aspect-ratio: 4 / 5; /* Exact 4:5 Portrait specification locked securely */
     background-color: #ffffff;
     border-radius: 12px;
     overflow: hidden;
-    border: var(--thick-white-outline); /* Enforced requested white trending outlines */
+    border: var(--bolder-slate-outline); /* High-Contrast Dark Outline */
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
@@ -290,14 +341,14 @@ img, video {
 .carousel-slide-item { min-width: 100%; height: 100%; flex-shrink: 0; }
 .carousel-slide-item img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Interactive Arrow Navigation Controls */
+/* Slide Navigation Arrows Buttons Controls */
 .slider-nav-btn {
     position: absolute;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid #cbd5e1;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 2px solid #1e293b;
     color: var(--brand-orange-yellow);
     font-size: 1rem;
     cursor: pointer;
@@ -307,11 +358,11 @@ img, video {
     align-items: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-.slider-nav-btn:hover { background-color: var(--brand-orange-yellow); color: #ffffff; }
+.slider-nav-btn:hover { background-color: var(--brand-orange-yellow); color: #ffffff; border-color: var(--brand-orange-yellow); }
 .prev-btn { left: -20px; }
 .next-btn { right: -20px; }
 
-/* BEHANCE CARD GRID CORES */
+/* GALLERY GRID CARDS SETTINGS */
 .clean-cards-grid-layout {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -330,13 +381,13 @@ img, video {
 .card-media-wrapper {
     width: 100%;
     aspect-ratio: 1 / 1;
-    background-color: var(--bg-grey-panel);
+    background-color: #f8fafc;
     border-radius: 6px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: var(--thick-white-outline); /* White outlines framework */
+    border: var(--bolder-slate-outline); /* Snug Dark Borders Injected */
 }
 .card-media-wrapper img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
@@ -344,13 +395,13 @@ img, video {
 .card-title-text { font-size: 0.9rem; font-weight: 700; color: #1e293b; text-transform: uppercase; }
 .card-price-tag { font-size: 1rem; font-weight: 800; color: var(--brand-orange-yellow); margin-top: 2px; }
 
-/* SYSTEM LIGHTBOX */
+/* LIGHTBOX DESIGN INTERFACE */
 .lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.94); z-index: 2500; justify-content: center; align-items: center; }
 .lightbox-content-wrapper { position: relative; max-width: 90%; max-height: 85%; }
-.lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; border: var(--thick-white-outline); background-color: #ffffff; }
+.lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; border: var(--bolder-slate-outline); background-color: #ffffff; }
 .lightbox-close-btn { position: absolute; top: 20px; right: 25px; color: #ffffff; font-size: 2.5rem; cursor: pointer; }
 
-/* CONTACT ARRANGEMENT HOVERS MATRIX (BURGER CONTACT SYSTEM DISLAY) */
+/* CONTACT CONTEXT BLOCKS */
 .contact-corporate-wrapper { background-color: #ffffff; border-top: 2px solid #e2e8f0; margin-top: 20px; }
 .contact-sub-hook-text { color: var(--text-muted); font-size: 0.92rem; margin-top: 4px; font-weight: 600; }
 
@@ -378,7 +429,7 @@ img, video {
 .corporate-footer { text-align: center; padding: 25px; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid #e2e8f0; margin-top: 40px; background-color: #ffffff; }
 .section-divider-gap { height: 35px; }
 
-/* SYSTEM RESPONSIVE DOWNGRADES */
+/* RESPONSIVE SCALERS */
 @media (max-width: 950px) {
     .navbar { height: 110px; }
     .nav-container { flex-direction: column; justify-content: center; gap: 8px; padding: 10px; }
@@ -400,4 +451,3 @@ img, video {
     .prev-btn { left: -10px; }
     .next-btn { right: -10px; }
 }
-

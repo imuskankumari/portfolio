@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     protectMyContent();
 });
 
-// 1. बर्गर फ्लिप स्लाइडर (b1.png से b10.png)
+// 1. बर्गर फ्लिप स्लाइडर लॉजिक (b1.png से b10.png)
 function initBurgerSlider() {
     const totalSlides = 10;
     let currentSlide = 1;
@@ -26,7 +26,7 @@ function initBurgerSlider() {
             titleElement.innerText = `Burger Advertisement (b${index}.png)`;
             imgElement.style.opacity = "1";
             imgElement.style.transform = "scale(1)";
-        }, 150);
+        }, 120);
     }
 
     nextBtn.addEventListener("click", () => {
@@ -40,7 +40,7 @@ function initBurgerSlider() {
     });
 }
 
-// 2. Motion Graphics - 11 हॉरिजॉन्टल रील्स लोड करना
+// 2. Motion Graphics - 11 हॉरिजॉन्टल रील्स रेंडर करना
 function buildMotionGraphics() {
     const motionContainer = document.getElementById("motionGraphicsContainer");
     if (!motionContainer) return;
@@ -76,7 +76,7 @@ function buildPortfolioGrid() {
     gridContainer.innerHTML = htmlBuffer;
 }
 
-// 4. सिक्योर इमेज एंटी-डाउनलोड प्रोटेक्शन
+// 4. एंटी-डाउनलोड इमेज लॉकिंग प्रोटेक्शन स्क्रिप्ट
 function protectMyContent() {
     document.addEventListener('contextmenu', event => event.preventDefault());
 

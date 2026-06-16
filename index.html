@@ -30,7 +30,6 @@
             <div class="title-underline-wrapper">
                 <h1 class="resume-main-name">Muskan Kumari</h1>
                 <p class="resume-sub-designation">Graphic & Web Designer</p>
-                <div class="resume-short-underline"></div>
             </div>
             
             <div class="trending-hook-box">
@@ -43,22 +42,21 @@
             </div>
         </section>
 
-        <!-- सॉफ़्टवेयर और स्किल्स -->
+        <!-- सॉफ्टवेयर और स्किल्स (फिल्टर्ड लिस्ट) -->
         <section class="page-section">
             <div class="section-title-node-center">
                 <h2>Software & <span class="cyan-text">Skills</span></h2>
             </div>
             <div class="software-skills-chips-wrapper">
-                <div class="skill-chip-node"><i class="fas fa-palette"></i> Graphic Design</div>
-                <div class="skill-chip-node"><i class="fas fa-laptop-code"></i> Web Design</div>
-                <div class="skill-chip-node"><i class="fab fa-html5"></i> HTML</div>
-                <div class="skill-chip-node"><i class="fab fa-css3-alt"></i> CSS</div>
-                <div class="skill-chip-node"><i class="fab fa-js"></i> JavaScript</div>
-                <div class="skill-chip-node"><i class="fab fa-wordpress"></i> WordPress</div>
                 <div class="skill-chip-node"><i class="fas fa-image"></i> Adobe Photoshop</div>
                 <div class="skill-chip-node"><i class="fas fa-vector-square"></i> Adobe Illustrator</div>
                 <div class="skill-chip-node"><i class="fas fa-book-open"></i> Adobe InDesign</div>
                 <div class="skill-chip-node"><i class="fas fa-pen-nib"></i> CorelDraw</div>
+                <div class="skill-chip-node"><i class="fas fa-wand-magic-sparkles"></i> Canva</div>
+                <div class="skill-chip-node"><i class="fab fa-html5"></i> HTML</div>
+                <div class="skill-chip-node"><i class="fab fa-css3-alt"></i> CSS</div>
+                <div class="skill-chip-node"><i class="fab fa-js"></i> JavaScript</div>
+                <div class="skill-chip-node"><i class="fab fa-wordpress"></i> WordPress</div>
                 <div class="skill-chip-node"><i class="fas fa-video"></i> Filmora</div>
                 <div class="skill-chip-node"><i class="fas fa-file-word"></i> MS Word</div>
                 <div class="skill-chip-node"><i class="fas fa-file-excel"></i> MS Excel</div>
@@ -86,18 +84,17 @@
         <!-- पोर्टफोलियो मुख्य सर्विसेज सेक्शन -->
         <section id="services" class="page-section scroll-target-padding">
             
-            <!-- AI Generated Visuals: 14347_3.jpg वाले वाइटिश फ्रेम लुक में ट्रांसफॉर्म किया गया -->
+            <!-- AI Generated Visuals: 14292_11.jpg के ओरिजिनल चौड़े फ्रेम में बदला गया -->
             <div class="project-segment-container">
                 <div class="section-title-node-center">
                     <h2>Ai generated <span class="cyan-text">Visuals</span></h2>
                 </div>
                 
-                <div class="slider-master-wrapper-node">
+                <div class="original-slider-outer-container">
                     <button class="slider-nav-btn prev-btn" onclick="shiftSliderLeft()"><i class="fas fa-chevron-left"></i></button>
                     
-                    <div class="carousel-viewport-4to5-box food-white-card-style">
-                        <div class="slider-top-badge-tag">Bestseller</div>
-                        <div class="carousel-image-frame-inner">
+                    <div class="original-viewport-box-frame">
+                        <div class="carousel-image-scroll-track">
                             <div class="carousel-track" id="burgerPhotoTrack">
                                 <div class="carousel-slide-item"><img src="b1.png" alt="" draggable="false"></div>
                                 <div class="carousel-slide-item"><img src="b2.png" alt="" draggable="false"></div>
@@ -111,14 +108,7 @@
                                 <div class="carousel-slide-item"><img src="b10.png" alt="" draggable="false"></div>
                             </div>
                         </div>
-                        <div class="slider-card-bottom-metadata">
-                            <span class="food-category-pill-span">🎨 Concept Art</span>
-                            <h4 class="food-item-title-heading">Burger Advertisement</h4>
-                            <div class="food-price-action-row">
-                                <span class="food-card-price-value">₹89</span>
-                                <div class="food-card-plus-btn-node"><i class="fas fa-plus"></i></div>
-                            </div>
-                        </div>
+                        <div class="original-slider-bottom-label">Burger Advertisement</div>
                     </div>
 
                     <button class="slider-nav-btn next-btn" onclick="shiftSliderRight()"><i class="fas fa-chevron-right"></i></button>
@@ -127,7 +117,7 @@
 
             <div class="section-divider-gap"></div>
 
-            <!-- Motion Graphics Section (बिना किसी वाइट फ्रेम छेड़छाड़ के ओरिजिनल) -->
+            <!-- Motion Graphics Section -->
             <div class="project-segment-container">
                 <div class="section-title-node-center">
                     <h2>Motion <span class="cyan-text">Graphics</span></h2>
@@ -150,7 +140,7 @@
 
             <div class="section-divider-gap"></div>
 
-            <!-- Graphic Designing: 100% वाइट फ़ूड कार्ड लुक ग्रिड -->
+            <!-- Graphic Designing: बैकग्राउंड से मैच करता हुआ डार्क फ़ूड फ़्रेम ग्रिड (g1.jpg से g50.jpg) -->
             <div class="project-segment-container">
                 <div class="section-title-node-center">
                     <h2>Graphic <span class="cyan-text">Designing</span></h2>
@@ -167,7 +157,7 @@
             </div>
             
             <div class="contact-structural-grid">
-                <!-- फॉर्म भरने वाला डिब्बा ऊपर रहेगा मोबाइल पर -->
+                <!-- फॉर्म भरने वाला डिब्बा (ऊपर मोबाइल पर) -->
                 <div class="input-form-card">
                     <form id="corporateForm" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
                         <div class="form-row"><input type="text" placeholder="Your Name" required></div>
@@ -177,7 +167,7 @@
                     </form>
                 </div>
 
-                <!-- कांटेक्ट डिटेल्स और UPI सिक्योर डिब्बा नीचे रहेगा मोबाइल पर -->
+                <!-- कांटेक्ट डिटेल्स और UPI सिक्योर डिब्बा (नीचे मोबाइल पर) -->
                 <div class="trust-gateway-card food-footer-style">
                     <div class="food-contact-details-box">
                         <h4>Quick Contact Details</h4>
@@ -224,3 +214,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+

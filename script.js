@@ -1,90 +1,24 @@
-let activeVisualIndex = 0;
-const totalVisualsCount = 10;
-let visualSliderTimer = null;
-
 document.addEventListener("DOMContentLoaded", () => {
-    buildBehanceStyleGrid();
-    initInteractiveSlider();
+    buildPortfolioGrid();
 });
 
-// ग्रिड रेंडरिंग बिना सफ़ेद आउटलाइन के, सटीक g1.jpg से g50.jpg पाथ एक्सटेंशन के साथ फिक्स है
-function buildBehanceStyleGrid() {
+// g1.jpg से g50.jpg तक इमेज लोड करने के लिए फंक्शन
+function buildPortfolioGrid() {
     const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;
     let domBuffer = "";
 
-    for (let count = 1; count <= 50; count++) {
+    // g1 से g50 तक 50 आइटम
+    for (let i = 1; i <= 50; i++) {
         domBuffer += `
-            <div class="simple-product-card" id="card-node-${count}" onclick="openLightbox('g${count}.jpg')">
-                <div class="original-portfolio-dark-frame">
-                    <div class="grid-card-image-inner-wrapper">
-                        <img src="g${count}.jpg" alt="Art G${count}" style="width:100%; height:100%; object-fit:cover;" draggable="false" onerror="this.style.display='none'">
-                    </div>
-                    <div class="grid-card-bottom-metadata-pane">
-                        <h4 class="grid-card-title-text-heading">Graphic Design</h4>
-                        <div class="grid-card-price-value-tag">₹89</div>
-                    </div>
+            <div class="original-portfolio-dark-frame">
+                <div class="grid-card-image-wrapper">
+                    <img src="g${i}.jpg" alt="Graphic Design g${i}" onerror="this.src='default_graphic.jpg'">
                 </div>
+                <h4 class="grid-card-title">Graphic Design g${i}</h4>
+                <div class="grid-card-price">₹89</div>
             </div>
         `;
     }
     gridContainer.innerHTML = domBuffer;
-}
-
-function initInteractiveSlider() {
-    runSliderAutoCycle();
-}
-
-function renderSliderTransform() {
-    const track = document.getElementById("burgerPhotoTrack");
-    if (track) {
-        track.style.transform = `translateX(-${activeVisualIndex * 100}%)`;
-    }
-}
-
-function shiftSliderLeft() {
-    clearInterval(visualSliderTimer);
-    activeVisualIndex--;
-    if (activeVisualIndex < 0) {
-        activeVisualIndex = totalVisualsCount - 1;
-    }
-    renderSliderTransform();
-    runSliderAutoCycle();
-}
-
-function shiftSliderRight() {
-    clearInterval(visualSliderTimer);
-    activeVisualIndex++;
-    if (activeVisualIndex >= totalVisualsCount) {
-        activeVisualIndex = 0;
-    }
-    renderSliderTransform();
-    runSliderAutoCycle();
-}
-
-function runSliderAutoCycle() {
-    visualSliderTimer = setInterval(() => {
-        activeVisualIndex++;
-        if (activeVisualIndex >= totalVisualsCount) {
-            activeVisualIndex = 0;
-        }
-        renderSliderTransform();
-    }, 4000); 
-}
-
-function openLightbox(imgSrc) {
-    const modal = document.getElementById("imageLightboxModal");
-    const modalImg = document.getElementById("lightboxMainImage");
-
-    if (modal && modalImg) {
-        modal.style.display = "flex";
-        modalImg.src = imgSrc;
-    }
-}
-
-function closeLightbox() {
-    const modal = document.getElementById("imageLightboxModal");
-    if (modal) {
-        modal.style.display = "none";
-    }
 }

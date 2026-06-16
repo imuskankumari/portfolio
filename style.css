@@ -1,12 +1,11 @@
-/* DEEP DARK BLUE CANVAS WITH INTEGRATED HARMONIOUS MATCHING FRMAES */
+/* PREMIUM DEEP DARK BLUE CORE ARCHITECTURE - ALL TEMPORARY OVERLAYS REMOVED */
 :root {
-    --bg-dark-core: #090d16;        /* ओरिजिनल डार्क बैकग्राउंड */
+    --bg-dark-core: #090d16;        
     --surface-dark-panel: #111827;   
     --text-white-pure: #ffffff;     
     --text-muted-cyan: #94a3b8;
-    --brand-neon-cyan: #00bacf;     /* नियान स्यान ब्लू */
+    --brand-neon-cyan: #00bacf;     
     --bolder-slate-outline: 4px solid #1e293b; 
-    --pure-white-border: 2px solid #ffffff; 
     --success-green: #10b981;
 }
 
@@ -83,7 +82,7 @@ img, video {
     scroll-margin-top: 90px;
 }
 
-/* HERO BRANDING PROFILE */
+/* HERO BRANDING WITH EXTENDED UNDERLINE */
 .hero-branding-center {
     text-align: center;
     padding: 80px 20px 40px 20px;
@@ -107,23 +106,34 @@ img, video {
     letter-spacing: 1px;
 }
 
+.designation-extended-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin-top: 5px;
+}
+
 .resume-sub-designation {
     font-size: 2.8rem; 
     font-weight: 800;
     color: var(--brand-neon-cyan); 
     letter-spacing: -0.5px;
-    margin-top: 5px;
+    padding: 0 10px;
+    z-index: 2;
 }
 
-.resume-short-underline {
-    width: 100%; 
-    height: 3px; 
+/* Long extended underline line slightly wider than text bounds */
+.resume-long-extended-line {
+    width: calc(100% + 40px); 
+    height: 3.5px; 
     background-color: var(--brand-neon-cyan);
-    margin-top: 8px;
+    margin-top: 6px;
 }
 
 .trending-hook-box {
-    margin: 30px auto 15px auto;
+    margin: 35px auto 15px auto;
     max-width: 650px;
 }
 .hook-badge {
@@ -154,33 +164,47 @@ img, video {
     text-align: center;
 }
 
-/* GLOBAL SECTIONS AND MARGINS */
+/* SECTIONS STRUCTURE */
 .page-section {
     max-width: 1140px;
-    margin: 120px auto; /* पर्याप्त खुला-खुला स्पेस मार्जिन */
+    margin: 110px auto; 
     padding: 0 24px;
 }
 
-/* SKILLS CHIPS */
-.software-skills-chips-wrapper {
+/* SKILLS PYRAMID SPECIFIC BOX */
+.master-skills-pyramid-box {
+    background-color: var(--surface-dark-panel);
+    border: var(--bolder-slate-outline);
+    border-radius: 16px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.pyramid-skills-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 15px;
     justify-content: center;
     width: 100%;
 }
 
 .skill-chip-node {
-    background-color: var(--surface-dark-panel); 
+    background-color: #090d16; 
     color: #ffffff;
-    padding: 10px 18px;
-    border-radius: 6px;
-    font-size: 0.88rem;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 0.9rem;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    border: 1px solid #374151;
+    gap: 10px;
+    border: 1px solid #1f2937;
 }
 .skill-chip-node i {
     color: var(--brand-neon-cyan);
@@ -189,7 +213,7 @@ img, video {
 /* ACADEMIC BOX TIMELINE */
 .education-master-corporate-card {
     background-color: var(--surface-dark-panel); 
-    border: 3px solid #1f2937; 
+    border: var(--bolder-slate-outline); 
     border-radius: 12px;
     padding: 35px;
     width: 100%;
@@ -230,24 +254,24 @@ img, video {
     color: var(--text-muted-cyan);
 }
 
-/* BIG EXTRA-SPACED HEADINGS WITHOUT ANY UNDERLINES */
+/* EXPANDED SYSTEM HEADERS WITHOUT EXTRA GRAPHIC STRIPS */
 .section-title-node-center {
     text-align: center;
-    margin-bottom: 60px; /* खुला गैप */
+    margin-bottom: 55px;
 }
 .section-title-node-center h2 {
-    font-size: 2.3rem; /* बड़ा साइज */
+    font-size: 2.2rem;
     font-weight: 800;
     color: var(--text-white-pure); 
     display: inline-block;
-    letter-spacing: 2px; /* लेटर्स के बीच खुला ट्रेंडी स्पेस */
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 .section-title-node-center h2 .cyan-text {
     color: var(--brand-neon-cyan); 
 }
 
-/* REELS PLATFORM */
+/* MOTION GRAPHICS REELS */
 .reels-single-row-fluid-viewport {
     width: 100%;
     overflow-x: auto;
@@ -285,7 +309,7 @@ img, video {
 
 .original-viewport-box-frame {
     width: 100%;
-    background-color: #0c111a; /* डार्क मैचिंग बैकग्राउंड कलर */
+    background-color: #0c111a; 
     border-radius: 12px; 
     overflow: hidden;
     border: var(--bolder-slate-outline);
@@ -309,7 +333,7 @@ img, video {
 .carousel-slide-item { min-width: 100%; height: 100%; flex-shrink: 0; }
 .carousel-slide-item img { width: 100%; height: 100%; object-fit: cover; }
 
-/* नेविगेशन एरो बटन जो इमेज के दोनों तरफ दूर-दूर रहेंगे */
+/* एरो बटन्स */
 .slider-nav-btn {
     position: absolute;
     top: 50%;
@@ -317,7 +341,7 @@ img, video {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background-color: rgba(15, 23, 42, 0.9);
+    background-color: rgba(15, 23, 42, 0.95);
     border: 2px solid var(--brand-neon-cyan);
     color: var(--brand-neon-cyan);
     font-size: 1.1rem;
@@ -344,7 +368,7 @@ img, video {
     border-top: 1px solid #141b29;
 }
 
-/* MATCHING DARK FRAMES GALLERY GRID (g1.jpg से g50.jpg) */
+/* बर्गर हेवन फ्रेम की तरह मैचिंग डार्क डिब्बे (वाइट आउटलाइन हटाई गई) */
 .clean-cards-grid-layout {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr)); 
@@ -359,26 +383,25 @@ img, video {
     cursor: pointer;
 }
 
-/* बर्गर हेवन की तरह डार्क मैचिंग फ्रेम */
 .original-portfolio-dark-frame {
-    background-color: #0c111a;
+    background-color: #0c111a; /* डार्क मैचिंग बॉक्स */
     border-radius: 12px;
     padding: 16px;
-    border: var(--bolder-slate-outline);
+    border: var(--bolder-slate-outline); /* क्लीन हेवी आउटलाइन */
     display: flex;
     flex-direction: column;
 }
 
 .grid-card-image-inner-wrapper {
     width: 100%;
-    aspect-ratio: 1.2 / 1; /* चौड़ा और बड़ा फ्रेम बर्गर लुक का */
+    aspect-ratio: 1.2 / 1; /* चौड़ा और बड़ा फोटो फ्रेम */
     border-radius: 8px;
     overflow: hidden;
-    border: var(--pure-white-border); /* मांग के अनुसार केवल प्योर वाइट आउटलाइन */
+    border: none; /* वाइट आउटलाइन पूरी तरह हटा दी गई */
 }
 
 .grid-card-bottom-metadata-pane {
-    padding-top: 12px;
+    padding-top: 14px;
     text-align: left;
 }
 .grid-card-title-text-heading {
@@ -395,13 +418,13 @@ img, video {
     margin-top: 4px;
 }
 
-/* LIGHTBOX VIEWER */
+/* LIGHTBOX */
 .lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.94); z-index: 2500; justify-content: center; align-items: center; }
 .lightbox-content-wrapper { position: relative; max-width: 90%; max-height: 85%; }
 .lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; border: var(--bolder-slate-outline); background-color: #ffffff; }
 .lightbox-close-btn { position: absolute; top: 20px; right: 25px; color: #ffffff; font-size: 2.5rem; cursor: pointer; }
 
-/* CONTACT CONTEXT FLOW */
+/* CONTACT FLOW BLOCKS */
 .contact-corporate-wrapper { background-color: var(--bg-dark-core); border-top: 2px solid #111827; }
 .contact-structural-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .input-form-card, .trust-gateway-card { background: var(--surface-dark-panel); border: 1px solid #1f2937; padding: 30px; border-radius: 12px; }
@@ -441,21 +464,22 @@ img, video {
 @media (max-width: 650px) {
     .resume-main-name { font-size: 1.6rem; }
     .resume-sub-designation { font-size: 1.8rem; }
+    .resume-long-extended-line { width: calc(100% + 20px); }
     .reels-single-row-track { overflow-x: auto; width: max-content; }
     .reel-item-piddi-card { width: 100px; }
     
-    /* मोबाइल व्यू फ़ोर्स: प्रति पंक्ति केवल 1 कार्ड */
+    /* मोबाइल व्यू: 1 फोटो प्रति पंक्ति */
     .clean-cards-grid-layout { 
         grid-template-columns: repeat(1, minmax(0, 1fr)) !important; 
         gap: 20px; 
     }
     
-    /* मोबाइल फॉर्म-ऊपर UPI-नीचे अलाइनमेंट */
     .contact-structural-grid {
         grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
         gap: 20px;
     }
     
+    .master-skills-pyramid-box { padding: 25px 15px; }
     .original-slider-outer-container { max-width: 82%; }
     .prev-btn { left: -35px; width: 34px; height: 34px; }
     .next-btn { right: -35px; width: 34px; height: 34px; }

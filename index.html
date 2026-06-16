@@ -12,7 +12,7 @@
     <header class="navbar">
         <div class="nav-container">
             <div class="logo-area">
-                <img src="mk.png" alt="Logo">
+                <img src="mk.png" alt="Logo" class="nav-logo">
             </div>
             <nav class="nav-menus">
                 <a href="#home">Home</a>
@@ -23,10 +23,13 @@
     </header>
 
     <main class="main-wrapper" id="home">
+        
         <section class="hero-branding-center">
             <h1>Muskan Kumari</h1>
             <div class="line"></div>
             <p class="designation">Graphic & Web Designer</p>
+            <span class="sub-badge">CRAFTING PIXELS, SHAPING IDEAS – DESIGN THAT SPEAKS!</span>
+            <p class="bio-text">I am Muskan Kumari, an artist from Delhi. I am skilled in MS Office, Graphic Designing, Web Designing, and Video Editing. I am aspiring to professional Graphic & Web Designer. I specialize in graphic design, vector illustration, branding, and functional website design.</p>
         </section>
 
         <section class="page-section">
@@ -35,9 +38,9 @@
             </div>
             <div class="master-skills-pyramid-box">
                 <div class="pyramid-skills-row row-1">
-                    <div class="skill-chip"><i class="fas fa-image"></i> Photoshop</div>
-                    <div class="skill-chip"><i class="fas fa-vector-square"></i> Illustrator</div>
-                    <div class="skill-chip"><i class="fas fa-book-open"></i> InDesign</div>
+                    <div class="skill-chip"><i class="fas fa-image"></i> Adobe Photoshop</div>
+                    <div class="skill-chip"><i class="fas fa-vector-square"></i> Adobe Illustrator</div>
+                    <div class="skill-chip"><i class="fas fa-book-open"></i> Adobe InDesign</div>
                 </div>
                 <div class="pyramid-skills-row row-2">
                     <div class="skill-chip"><i class="fas fa-pen-nib"></i> CorelDraw</div>
@@ -58,18 +61,78 @@
             </div>
         </section>
 
+        <section class="page-section education-section">
+            <div class="education-grid">
+                <div class="edu-box">
+                    <h3><i class="fas fa-graduation-cap"></i> ACADEMIC & PROFESSIONAL EDUCATION</h3>
+                    <p><strong>Central Board of Secondary Education (CBSE)</strong></p>
+                    <p>Passed Secondary Education Exam From CBSE</p>
+                </div>
+                <div class="edu-box">
+                    <h3><i class="fas fa-laptop-code"></i> Computer Education</h3>
+                    <p>Basic Computer Course (BCC), Architecture and Industrial Applications (DGA), Certified Web Office Specialist, Graphic Designing, Web Designing, Video Editing.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="section-title">
+                <h2>AI Generated <span class="cyan-text">Visuals</span></h2>
+            </div>
+            <div class="behance-style-grid" id="aiVisualsGrid">
+                </div>
+        </section>
+
+        <section class="page-section">
+            <div class="section-title">
+                <h2>Motion <span class="cyan-text">Graphics</span></h2>
+            </div>
+            <div class="motion-grid" id="motionGraphicsGrid">
+                </div>
+        </section>
+
         <section id="services" class="page-section portfolio-section">
             <div class="section-title">
                 <h2>Graphic <span class="cyan-text">Designing</span></h2>
             </div>
-            <div class="behance-style-grid" id="graphicDynamicGrid"></div>
+            <div class="behance-style-grid" id="graphicDynamicGrid">
+                </div>
         </section>
 
         <section id="contact" class="page-section contact-section">
             <div class="section-title">
-                <h2>Let's work <span class="cyan-text">Together</span></h2>
+                <h2>LET'S WORK <span class="cyan-text">TOGETHER</span></h2>
             </div>
-            </section>
+            
+            <div class="contact-container">
+                <div class="contact-form-box">
+                    <form action="#" method="POST">
+                        <input type="text" placeholder="Your Name" required class="form-input">
+                        <input type="email" placeholder="Your Email" required class="form-input">
+                        <textarea placeholder="Message Requirements..." rows="5" required class="form-input"></textarea>
+                        <button type="submit" class="submit-btn">Submit Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info-box">
+                    <h4 class="info-title">QUICK CONTACT DETAILS</h4>
+                    <p><i class="fas fa-phone cyan-text"></i> +91 8810682518</p>
+                    <p><i class="fas fa-envelope cyan-text"></i> muskankumar3330@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt cyan-text"></i> New Delhi, India</p>
+
+                    <div class="upi-secure-box">
+                        <div class="upi-header">
+                            <i class="fas fa-shield-alt secure-icon"></i>
+                            <div>
+                                <strong>BHIM UPI Secure Network</strong>
+                                <p class="upi-id">UPI ID: muskan@upi</p>
+                            </div>
+                        </div>
+                        <button class="pay-btn"><i class="fas fa-lock"></i> Pay Securely</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="corporate-footer">

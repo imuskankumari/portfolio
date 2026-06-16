@@ -1,12 +1,13 @@
-/* PURE WHITE PRESENTATION SYSTEM WITH THICK TRENDING BORDERS */
+/* LIGHT GRAY, PURE WHITE AND NEON ORANGE DYNAMIC SYSTEM */
 :root {
     --bg-light-pure: #ffffff;      
     --surface-white: #ffffff;
+    --bg-grey-panel: #f8fafc;       /* Grey panel coloring theme */
     --text-slate-title: #4b5563;    
     --text-charcoal: #1e293b;
     --text-muted: #64748b;
     --brand-orange-yellow: #ff9900; 
-    --bolder-orange-outline: 4px solid #ff9900; /* Thick modern border spec */
+    --thick-white-outline: 4px solid #ffffff; /* Requested crisp white outlines layout */
     --thin-slate-border: 1px solid #cbd5e1;
     --success-green: #10b981;
 }
@@ -35,7 +36,7 @@ img, video {
     -webkit-user-drag: none;
 }
 
-/* NAVBAR HEADERS CORES */
+/* NAVBAR STRIP (LOGO LEFT, LINKS RIGHT ONLY) */
 .navbar {
     position: fixed;
     top: 0;
@@ -80,7 +81,7 @@ img, video {
     width: 100%;
 }
 
-/* PYRAMID BRANDING DISPLAY SYSTEM IN THE MAIN PAGE (IMAGE 14248) */
+/* PYRAMID BRANDING DISPLAY CORE CODES */
 .hero-branding-center {
     text-align: center;
     padding: 60px 20px 20px 20px;
@@ -88,7 +89,7 @@ img, video {
 }
 
 .title-underline-wrapper {
-    display: inline-block; /* Locks the elements together tightly */
+    display: inline-block;
     position: relative;
 }
 
@@ -99,7 +100,6 @@ img, video {
     letter-spacing: -0.5px;
 }
 
-/* Underline matches length of text seamlessly */
 .resume-short-underline {
     width: 100%; 
     height: 4px;
@@ -115,7 +115,6 @@ img, video {
     margin-top: 12px;
 }
 
-/* EXCLUSIVE TRENDING BRAND BADGING COMPONENT HOOK BOX */
 .trending-hook-box {
     margin: 24px auto 10px auto;
     max-width: 650px;
@@ -145,103 +144,84 @@ img, video {
     font-size: 1.05rem;
     line-height: 1.7;
     color: #334155;
-    text-align: center; /* Enforces clean pyramid text look */
+    text-align: center;
 }
 
-/* TEXT CONTENT ARRAYS */
 .page-section {
     max-width: 1140px;
     margin: 0 auto;
-    padding: 35px 24px;
+    padding: 30px 24px;
 }
 
-.standard-text-flow {
+/* SOFTWARE & SKILLS CHIPS MATRIX (IMAGE 14292 COPIED LOOK) */
+.software-skills-chips-wrapper {
     display: flex;
-    flex-direction: column;
-    gap: 35px;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0;
 }
 
-.resume-text-block {
+.skill-chip-node {
+    background-color: #1e293b; /* Dark Slate look from your exact image link */
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.skill-chip-node i {
+    color: var(--brand-orange-yellow);
+}
+
+/* ACADEMIC EDUCATION BOX COMPONENT (IMAGE 14292 SETUP) */
+.education-master-corporate-card {
+    background-color: var(--bg-grey-panel); /* Grey element background requested */
+    border: var(--thin-slate-border);
+    border-radius: 12px;
+    padding: 35px;
     width: 100%;
 }
 
-.resume-section-title {
-    font-size: 1.15rem;
+.edu-card-main-title {
+    font-size: 1.2rem;
     color: var(--brand-orange-yellow);
-    text-transform: uppercase;
     font-weight: 800;
-    margin-bottom: 15px;
-    border-bottom: 2px solid var(--brand-orange-yellow);
-    display: inline-block;
-    padding-bottom: 4px;
-}
-
-.custom-orange-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-.custom-orange-list li {
-    font-size: 0.98rem;
-    font-weight: 600;
-    line-height: 1.5;
-    position: relative;
-    padding-left: 20px;
-    color: #334155;
-}
-.custom-orange-list li::before {
-    content: '■';
-    position: absolute;
-    left: 0;
-    color: var(--brand-orange-yellow);
-    font-size: 0.8rem;
-    top: 1px;
-}
-
-/* 4 COLUMNS MATRIX WITH LARGE CUSTOM ICON SPACES PREPARED */
-.clean-skills-columns {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin-top: 15px;
-}
-
-.skill-column-node {
-    display: flex;
-    flex-direction: column;
-}
-
-.skill-header-flex {
+    text-transform: uppercase;
+    margin-bottom: 25px;
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 12px;
 }
 
-/* Prepared placeholder class to scale your uploaded custom icons cleanly */
-.skill-custom-icon {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-    flex-shrink: 0;
+.edu-split-columns-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Strict 2 columns division split */
+    gap: 40px;
 }
 
-.skill-column-node h4 {
-    font-size: 0.95rem;
-    color: #1e293b;
+.edu-column-branch {
+    border-left: 3px solid var(--brand-orange-yellow);
+    padding-left: 15px;
+}
+
+.edu-column-branch h4 {
+    font-size: 1.05rem;
     font-weight: 700;
-    text-transform: uppercase;
+    color: var(--text-charcoal);
+    margin-bottom: 8px;
 }
 
-.skill-column-node ul {
-    list-style-type: square;
-    padding-left: 18px;
+.edu-sub-text-p {
+    font-size: 0.95rem;
+    line-height: 1.5;
     color: var(--text-muted);
-    font-size: 0.9rem;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
 }
 
 /* HEADINGS PLATFORMS (CENTER ALIGNED) */
@@ -259,10 +239,10 @@ img, video {
     padding-bottom: 4px;
 }
 
-/* MOTION GRAPHICS: HARD LOCKED SINGLE FLUID ROW DISPLAY CORES */
+/* MOTION GRAPHICS: HARD LOCKED SINGLE FLUID ROW MATRIX SETUP */
 .reels-single-row-fluid-viewport {
     width: 100%;
-    overflow-x: auto; /* Fluid swipe on mobile viewports */
+    overflow-x: auto;
     scrollbar-width: none; 
 }
 .reels-single-row-fluid-viewport::-webkit-scrollbar { display: none; }
@@ -271,10 +251,9 @@ img, video {
     display: flex;
     gap: 12px;
     width: 100%;
-    justify-content: space-between; /* Spans neatly across desktop row width bounds */
+    justify-content: space-between;
 }
 
-/* Compact neat box shapes as requested */
 .reel-item-piddi-card {
     flex: 1;
     min-width: 0;
@@ -282,34 +261,57 @@ img, video {
     background-color: #000;
     border-radius: 8px;
     overflow: hidden;
-    border: var(--bolder-orange-outline); /* Bold Orange Outlines Layer */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    border: var(--thick-white-outline); /* White Outline system enforced */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
 }
 .reel-item-piddi-card video { width: 100%; height: 100%; object-fit: cover; }
 
-/* AI PORTRAIT CAROUSEL CORE MATRIX (4:5 BOX SIZE RATIO HARD LOCK) */
-.wide-ai-carousel-wrapper {
+/* INTERACTIVE CAROUSEL ARCHITECTURE (4:5 RATIO EMBEDDED SHIFT BUTTONS) */
+.interactive-slider-outer-frame {
     width: 100%;
+    max-width: 500px; /* Highly enlarged core dimension boundaries */
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .carousel-viewport-4to5-box {
     width: 100%;
-    max-width: 520px; /* Large footprint width */
-    aspect-ratio: 4 / 5; /* Exact 4:5 Symmetrical Portrait block ratio */
+    aspect-ratio: 4 / 5; /* Exact 4:5 Symmetrical Portrait box locks */
     background-color: #ffffff;
     border-radius: 12px;
     overflow: hidden;
-    border: var(--bolder-orange-outline); /* Enforced Bold Border */
+    border: var(--thick-white-outline); /* Enforced requested white trending outlines */
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
-.carousel-track { display: flex; width: 100%; height: 100%; }
-.carousel-slide-item { min-width: 100%; height: 100%; }
+.carousel-track { display: flex; width: 100%; height: 100%; transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+.carousel-slide-item { min-width: 100%; height: 100%; flex-shrink: 0; }
 .carousel-slide-item img { width: 100%; height: 100%; object-fit: cover; }
 
-/* BEHANCE STYLE GALLERY 2-COLUMNS ARRANGEMENT */
+/* Interactive Arrow Navigation Controls */
+.slider-nav-btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #cbd5e1;
+    color: var(--brand-orange-yellow);
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.slider-nav-btn:hover { background-color: var(--brand-orange-yellow); color: #ffffff; }
+.prev-btn { left: -20px; }
+.next-btn { right: -20px; }
+
+/* BEHANCE CARD GRID CORES */
 .clean-cards-grid-layout {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -328,13 +330,13 @@ img, video {
 .card-media-wrapper {
     width: 100%;
     aspect-ratio: 1 / 1;
-    background-color: #f8fafc;
+    background-color: var(--bg-grey-panel);
     border-radius: 6px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: var(--bolder-orange-outline); /* Snug Thick Borders Injected */
+    border: var(--thick-white-outline); /* White outlines framework */
 }
 .card-media-wrapper img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
@@ -342,24 +344,19 @@ img, video {
 .card-title-text { font-size: 0.9rem; font-weight: 700; color: #1e293b; text-transform: uppercase; }
 .card-price-tag { font-size: 1rem; font-weight: 800; color: var(--brand-orange-yellow); margin-top: 2px; }
 
-/* LIGHTBOX DESIGN INTERFACE */
+/* SYSTEM LIGHTBOX */
 .lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.94); z-index: 2500; justify-content: center; align-items: center; }
 .lightbox-content-wrapper { position: relative; max-width: 90%; max-height: 85%; }
-.lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; border: var(--bolder-orange-outline); background-color: #ffffff; }
+.lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; border: var(--thick-white-outline); background-color: #ffffff; }
 .lightbox-close-btn { position: absolute; top: 20px; right: 25px; color: #ffffff; font-size: 2.5rem; cursor: pointer; }
 
-/* BURGER HEAVEN STYLE CONTACT COMPONENT SECTION STRUCTURE (IMAGE 14285) */
-.contact-corporate-wrapper {
-    background-color: #ffffff;
-    border-top: 2px solid #e2e8f0;
-    margin-top: 20px;
-}
+/* CONTACT ARRANGEMENT HOVERS MATRIX (BURGER CONTACT SYSTEM DISLAY) */
+.contact-corporate-wrapper { background-color: #ffffff; border-top: 2px solid #e2e8f0; margin-top: 20px; }
 .contact-sub-hook-text { color: var(--text-muted); font-size: 0.92rem; margin-top: 4px; font-weight: 600; }
 
 .contact-structural-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .input-form-card, .trust-gateway-card { background: var(--surface-white); border: var(--thin-slate-border); padding: 30px; border-radius: 12px; }
 
-/* Food Footer Style Box Layout components */
 .food-footer-style { display: flex; flex-direction: column; gap: 20px; justify-content: space-between; }
 .food-contact-details-box h4 { font-size: 1.05rem; font-weight: 800; color: var(--brand-orange-yellow); text-transform: uppercase; margin-bottom: 15px; }
 .contact-info-row-node { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
@@ -381,11 +378,15 @@ img, video {
 .corporate-footer { text-align: center; padding: 25px; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid #e2e8f0; margin-top: 40px; background-color: #ffffff; }
 .section-divider-gap { height: 35px; }
 
-/* BALANCED SPY CONTAINER RESPONSIVENESS CORES */
+/* SYSTEM RESPONSIVE DOWNGRADES */
 @media (max-width: 950px) {
-    .clean-skills-columns { grid-template-columns: 1fr 1fr; gap: 15px; }
+    .navbar { height: 110px; }
+    .nav-container { flex-direction: column; justify-content: center; gap: 8px; padding: 10px; }
+    .logo-area { position: absolute; left: 15px; top: 15px; width: 42px; height: 42px; }
+    .main-wrapper { margin-top: 130px; }
+    .edu-split-columns-layout { grid-template-columns: 1fr; gap: 20px; }
     .reels-single-row-track { overflow-x: auto; width: max-content; gap: 10px; }
-    .reel-item-piddi-card { width: 110px; flex-shrink: 0; } /* Retains micro shapes securely on swipe grids */
+    .reel-item-piddi-card { width: 110px; flex-shrink: 0; }
 }
 
 @media (max-width: 650px) {
@@ -395,5 +396,8 @@ img, video {
     .reel-item-piddi-card { width: 100px; }
     .clean-cards-grid-layout { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
     .contact-structural-grid { grid-template-columns: 1fr; }
-    .clean-skills-columns { grid-template-columns: 1fr; }
+    .interactive-slider-outer-frame { max-width: 90%; }
+    .prev-btn { left: -10px; }
+    .next-btn { right: -10px; }
 }
+

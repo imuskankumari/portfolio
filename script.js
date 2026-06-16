@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initInteractiveSlider();
 });
 
-// ग्रिड को g1.png से g50.png तक स्मॉल लेटर्स में मैप करना
+// ग्रिड को g1.png से g50.png तक बिना किसी फालतू टेक्स्ट के रेंडर करना (सिर्फ "Graphic Design")
 function buildBehanceStyleGrid() {
     const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;
@@ -20,7 +20,7 @@ function buildBehanceStyleGrid() {
                     <img src="g${count}.png" alt="Art G${count}" draggable="false" onerror="this.parentNode.style.backgroundColor='transparent'">
                 </div>
                 <div class="card-info-pane">
-                    <div class="card-title-text">Project g${count}</div>
+                    <div class="card-title-text">Graphic Design</div>
                     <div class="card-price-tag">₹89</div>
                 </div>
             </div>

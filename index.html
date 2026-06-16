@@ -11,14 +11,14 @@
 
     <header class="navbar">
         <div class="nav-container">
-            <div class="logo-area">
-                <img src="mk.png" alt="" class="brand-logo-img" draggable="false">
-            </div>
             <nav class="nav-menus">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#projects" class="nav-link">Services</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
+            <div class="logo-area">
+                <img src="mk.png" alt="Logo" class="brand-logo-img" draggable="false">
+            </div>
         </div>
     </header>
 
@@ -90,29 +90,27 @@
                     <h2>AI Generated <span class="orange-text">Visuals</span></h2>
                 </div>
                 
-                <!-- 14292_3.jpg की तरह चौड़ाई में बड़ा बॉक्स फ्रेम जिसके बीच में स्लाइडर है -->
-                <div class="wide-slider-container-frame">
-                    <div class="interactive-slider-outer-frame">
-                        <button class="slider-nav-btn prev-btn" onclick="shiftSliderLeft()"><i class="fas fa-chevron-left"></i></button>
-                        
-                        <div class="carousel-viewport-4to5-box">
-                            <div class="carousel-track" id="burgerPhotoTrack">
-                                <div class="carousel-slide-item"><img src="b1.png" alt="" draggable="false"></div>
-                                <div class="carousel-slide-item"><img src="b2.png" alt="" draggable="false"></div>
-                                <div class="carousel-slide-item"><img src="b3.png" alt="" draggable="false"></div>
-                                <div class="carousel-slide-item"><img src="b4.png" alt="" draggable="false"></div>
-                                <div class="carousel-slide-item"><img src="b5.png" alt="" draggable="false"></div>
-                                <div class="carousel-slide-item"><img src="b6.png" alt="" draggable="false"></div>
-                                <div class="carousel-slide-item"><img src="b7.png" alt="" draggable="false"></div>
-                                <div class="carousel-slide-item"><img src="b8.png" alt="" draggable="false"></div>
-                                <div class="carousel-slide-item"><img src="b9.png" alt="" draggable="false"></div>
-                                <div class="carousel-slide-item"><img src="b10.png" alt="" draggable="false"></div>
-                            </div>
+                <!-- ओरिजिनल परफेक्ट ट्रेंडी राउंडेड कैरोसल फ्रेम -->
+                <div class="interactive-slider-outer-frame">
+                    <button class="slider-nav-btn prev-btn" onclick="shiftSliderLeft()"><i class="fas fa-chevron-left"></i></button>
+                    
+                    <div class="carousel-viewport-4to5-box">
+                        <div class="carousel-track" id="burgerPhotoTrack">
+                            <div class="carousel-slide-item"><img src="b1.png" alt="" draggable="false"></div>
+                            <div class="carousel-slide-item"><img src="b2.png" alt="" draggable="false"></div>
+                            <div class="carousel-slide-item"><img src="b3.png" alt="" draggable="false"></div>
+                            <div class="carousel-slide-item"><img src="b4.png" alt="" draggable="false"></div>
+                            <div class="carousel-slide-item"><img src="b5.png" alt="" draggable="false"></div>
+                            <div class="carousel-slide-item"><img src="b6.png" alt="" draggable="false"></div>
+                            <div class="carousel-slide-item"><img src="b7.png" alt="" draggable="false"></div>
+                            <div class="carousel-slide-item"><img src="b8.png" alt="" draggable="false"></div>
+                            <div class="carousel-slide-item"><img src="b9.png" alt="" draggable="false"></div>
+                            <div class="carousel-slide-item"><img src="b10.png" alt="" draggable="false"></div>
                         </div>
-
-                        <button class="slider-nav-btn next-btn" onclick="shiftSliderRight()"><i class="fas fa-chevron-right"></i></button>
+                        <div class="slider-bottom-label">Burger Advertisement (Photoshop)</div>
                     </div>
-                    <div class="slider-bottom-label">AI Visual Art Showcase (Photoshop)</div>
+
+                    <button class="slider-nav-btn next-btn" onclick="shiftSliderRight()"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
 
@@ -149,7 +147,7 @@
 
         </section>
 
-        <!-- कांटेक्ट सेक्शन / लेट्स वर्क टुगेदर -->
+        <!-- कांटेक्ट सेक्शन -->
         <section id="contact" class="page-section contact-corporate-wrapper">
             <div class="section-title-node-center">
                 <h2>Let's Work <span class="orange-text">Together</span></h2>
@@ -198,7 +196,6 @@
 
     </main>
 
-    <!-- इमेज लाइटबॉक्स मॉडल पॉपअप -->
     <div id="imageLightboxModal" class="lightbox-modal" onclick="closeLightbox()">
         <span class="lightbox-close-btn">&times;</span>
         <div class="lightbox-content-wrapper" onclick="event.stopPropagation()">
@@ -213,3 +210,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+

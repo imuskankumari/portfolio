@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initInteractiveSlider();
 });
 
-// ग्रिड को हूबहू g1.jpg से g50.jpg (स्मॉल लेटर और .jpg एक्सटेंशन) में रेंडर करना बिना किसी फालतू टेक्स्ट के
+// ग्रिड रेंडरिंग बिना सफ़ेद आउटलाइन के, सटीक g1.jpg से g50.jpg पाथ एक्सटेंशन के साथ फिक्स है
 function buildBehanceStyleGrid() {
     const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;

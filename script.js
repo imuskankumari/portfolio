@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initInteractiveSlider();
 });
 
-// 14347_3.jpg वाइट फ़ूड कार्ड डिज़ाइन के अनुसार 50 ग्राफिक डिज़ाइन कार्ड्स का डायनामिक रेंडरिंग
+// ग्रिड को हूबहू g1.jpg से g50.jpg (स्मॉल लेटर और .jpg एक्सटेंशन) में रेंडर करना बिना किसी फालतू टेक्स्ट के
 function buildBehanceStyleGrid() {
     const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;
@@ -15,18 +15,14 @@ function buildBehanceStyleGrid() {
 
     for (let count = 1; count <= 50; count++) {
         domBuffer += `
-            <div class="simple-product-card" id="card-node-${count}" onclick="openLightbox('g${count}.png')">
-                <div class="food-white-card-style">
-                    <div class="carousel-image-frame-inner">
-                        <img src="g${count}.png" alt="Art G${count}" style="width:100%; height:100%; object-fit:cover;" draggable="false" onerror="this.style.display='none'">
+            <div class="simple-product-card" id="card-node-${count}" onclick="openLightbox('g${count}.jpg')">
+                <div class="original-portfolio-dark-frame">
+                    <div class="grid-card-image-inner-wrapper">
+                        <img src="g${count}.jpg" alt="Art G${count}" style="width:100%; height:100%; object-fit:cover;" draggable="false" onerror="this.style.display='none'">
                     </div>
-                    <div class="slider-card-bottom-metadata">
-                        <span class="food-category-pill-span">🥦 Graphic Design</span>
-                        <h4 class="food-item-title-heading">Graphic Design</h4>
-                        <div class="food-price-action-row">
-                            <span class="food-card-price-value">₹89</span>
-                            <div class="food-card-plus-btn-node"><i class="fas fa-plus"></i></div>
-                        </div>
+                    <div class="grid-card-bottom-metadata-pane">
+                        <h4 class="grid-card-title-text-heading">Graphic Design</h4>
+                        <div class="grid-card-price-value-tag">₹89</div>
                     </div>
                 </div>
             </div>

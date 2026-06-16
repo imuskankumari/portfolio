@@ -19,7 +19,7 @@ function initBurgerSlider() {
 
     function updateSlider(index) {
         imgElement.style.opacity = "0.2";
-        imgElement.style.transform = "scale(0.97)";
+        imgElement.style.transform = "scale(0.98)";
         
         setTimeout(() => {
             imgElement.src = `b${index}.png`;

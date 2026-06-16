@@ -57,17 +57,17 @@ function initAutoBurgerSlider() {
     startAutoPlay();
 }
 
-// 2. Motion Graphics - v1.png से v10.png तक वीडियो रेंडरिंग लॉजिक (साउंड म्यूट और कंट्रोल्स के साथ)
+// 2. Motion Graphics - v1.mp4 से v10.mp4 वीडियो रेंडरिंग (म्यूट और साउंड कंट्रोल्स के साथ)
 function buildMotionGraphics() {
     const motionContainer = document.getElementById("motionGraphicsContainer");
     if (!motionContainer) return;
     let htmlBuffer = "";
 
-    // v1.png से v10.png तक की फ़ाइलों को रेंडर करना
+    // v1.mp4 से v10.mp4 तक की फाइलों को रेंडर करना
     for (let i = 1; i <= 10; i++) {
         htmlBuffer += `
             <div class="motion-video-frame">
-                <video src="v${i}.png" autoplay loop muted playsinline controls preload="metadata"></video>
+                <video src="v${i}.mp4" autoplay loop muted playsinline controls preload="metadata"></video>
             </div>
         `;
     }
@@ -94,7 +94,7 @@ function buildPortfolioGrid() {
     gridContainer.innerHTML = htmlBuffer;
 }
 
-// 4. सिक्योर इमेज एंटी-डाउनलोड प्रोटेक्शन
+// 4. सिक्योर इमेज एंटी-डाउनलोड लॉकिंग प्रोटेक्शन
 function protectMyContent() {
     document.addEventListener('contextmenu', event => event.preventDefault());
     document.addEventListener('dragstart', (e) => {

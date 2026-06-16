@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initInteractiveSlider();
 });
 
-// structures 50 slots dynamically maps g1.png to g50.png (all small letters) with clean border look
+// structures 50 slots dynamically maps g1.png to g50.png (all small letters) with pure white border
 function buildBehanceStyleGrid() {
     const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;
@@ -17,7 +17,7 @@ function buildBehanceStyleGrid() {
         domBuffer += `
             <div class="simple-product-card" id="card-node-${count}" onclick="openLightbox('g${count}.png')">
                 <div class="card-media-wrapper">
-                    <img src="g${count}.png" alt="Art G${count}" draggable="false" onerror="this.parentNode.style.backgroundColor='#ffffff'">
+                    <img src="g${count}.png" alt="Art G${count}" draggable="false" onerror="this.parentNode.style.backgroundColor='transparent'">
                 </div>
                 <div class="card-info-pane">
                     <div class="card-title-text">Project g${count}</div>

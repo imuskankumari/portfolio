@@ -7,12 +7,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-
-    <header class="navbar">
+<body oncontextmenu="return false;"> <header class="navbar">
         <div class="nav-container">
             <div class="logo-area">
-                <img src="mk.png" alt="Logo" class="nav-logo">
+                <img src="mk.png" alt="Logo" class="nav-logo" oncontextmenu="return false;" ondragstart="return false;">
             </div>
             <nav class="nav-menus">
                 <a href="#home">Home</a>
@@ -65,7 +63,7 @@
             <div class="education-grid">
                 <div class="edu-box">
                     <h3><i class="fas fa-graduation-cap"></i> ACADEMIC & PROFESSIONAL EDUCATION</h3>
-                    <p><strong>Central Board of Secondary Education (CBSE)</strong></p>
+                    <p class="edu-sub">Central Board of Secondary Education (CBSE)</p>
                     <p>Passed Secondary Education Exam From CBSE</p>
                 </div>
                 <div class="edu-box">
@@ -75,29 +73,32 @@
             </div>
         </section>
 
-        <section class="page-section">
-            <div class="section-title">
-                <h2>AI Generated <span class="cyan-text">Visuals</span></h2>
-            </div>
-            <div class="behance-style-grid" id="aiVisualsGrid">
+        <div id="services">
+            
+            <section class="page-section">
+                <div class="section-title">
+                    <h2>AI Generated <span class="cyan-text">Visuals</span></h2>
                 </div>
-        </section>
+                <div class="horizontal-scroll-container" id="aiVisualsContainer">
+                    </div>
+            </section>
 
-        <section class="page-section">
-            <div class="section-title">
-                <h2>Motion <span class="cyan-text">Graphics</span></h2>
-            </div>
-            <div class="motion-grid" id="motionGraphicsGrid">
+            <section class="page-section">
+                <div class="section-title">
+                    <h2>Motion <span class="cyan-text">Graphics</span></h2>
                 </div>
-        </section>
+                <div class="horizontal-scroll-container" id="motionGraphicsContainer">
+                    </div>
+            </section>
 
-        <section id="services" class="page-section portfolio-section">
-            <div class="section-title">
-                <h2>Graphic <span class="cyan-text">Designing</span></h2>
-            </div>
-            <div class="behance-style-grid" id="graphicDynamicGrid">
+            <section class="page-section portfolio-section">
+                <div class="section-title">
+                    <h2>Graphic <span class="cyan-text">Designing</span></h2>
                 </div>
-        </section>
+                <div class="behance-style-grid" id="graphicDynamicGrid">
+                    </div>
+            </section>
+        </div>
 
         <section id="contact" class="page-section contact-section">
             <div class="section-title">
@@ -105,26 +106,26 @@
             </div>
             
             <div class="contact-container">
-                <div class="contact-form-box">
-                    <form action="#" method="POST">
+                <div class="contact-card-table">
+                    <form action="#" method="POST" onsubmit="event.preventDefault();">
                         <input type="text" placeholder="Your Name" required class="form-input">
                         <input type="email" placeholder="Your Email" required class="form-input">
-                        <textarea placeholder="Message Requirements..." rows="5" required class="form-input"></textarea>
+                        <textarea placeholder="Message Requirements..." rows="4" required class="form-input"></textarea>
                         <button type="submit" class="submit-btn">Submit Message</button>
                     </form>
                 </div>
 
-                <div class="contact-info-box">
+                <div class="contact-card-table info-table-box">
                     <h4 class="info-title">QUICK CONTACT DETAILS</h4>
-                    <p><i class="fas fa-phone cyan-text"></i> +91 8810682518</p>
-                    <p><i class="fas fa-envelope cyan-text"></i> muskankumar3330@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt cyan-text"></i> New Delhi, India</p>
+                    <p class="info-row"><i class="fas fa-phone cyan-text"></i> +91 8810682518</p>
+                    <p class="info-row"><i class="fas fa-envelope cyan-text"></i> muskankumar3330@gmail.com</p>
+                    <p class="info-row"><i class="fas fa-map-marker-alt cyan-text"></i> New Delhi, India</p>
 
                     <div class="upi-secure-box">
                         <div class="upi-header">
                             <i class="fas fa-shield-alt secure-icon"></i>
-                            <div>
-                                <strong>BHIM UPI Secure Network</strong>
+                            <div class="upi-text-left">
+                                <strong class="bhim-title">BHIM UPI Secure Network</strong>
                                 <p class="upi-id">UPI ID: muskan@upi</p>
                             </div>
                         </div>

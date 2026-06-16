@@ -1,12 +1,12 @@
-/* PREMIUM DEEP DARK BLUE THEME WITH SHINING NEON CYAN ACCENTS */
+/* PREMIUM DEEP DARK BLUE THEME WITH BRIGHT CYAN BRAND ACCENTS */
 :root {
-    --bg-dark-core: #090d16;        /* Deep dark background from 14337.jpg */
-    --surface-dark-card: #111827;   /* Elevated panels */
+    --bg-dark-core: #090d16;        /* Original dark base from 14337_2.jpg */
+    --surface-dark-card: #111827;   
     --text-white-pure: #ffffff;     
     --text-muted-cyan: #94a3b8;
-    --brand-neon-cyan: #00bacf;     /* Glowing neon cyan text & border brand accent */
+    --brand-neon-cyan: #00bacf;     /* Brilliant Cyan Accent */
     --bolder-slate-outline: 4px solid #1e293b; 
-    --pure-white-border: 2px solid #ffffff; /* G1-G50 के लिए क्लीन वाइट बॉर्डर */
+    --pure-white-border: 2px solid #ffffff; 
     --thin-dark-border: 1px solid #1f2937;
     --success-green: #10b981;
 }
@@ -35,7 +35,7 @@ img, video {
     -webkit-user-drag: none;
 }
 
-/* NAVBAR (Logo Left, Menus Right) */
+/* NAVBAR (Logo Left, Links Right) */
 .navbar {
     position: fixed;
     top: 0;
@@ -80,7 +80,7 @@ img, video {
     width: 100%;
 }
 
-/* HERO BRANDING PROFILE HEADINGS ARRANGEMENT */
+/* PYRAMID STYLE BRANDING HEADERS BLOCK (FROM WHITE VARIANT) */
 .hero-branding-center {
     text-align: center;
     padding: 60px 20px 20px 20px;
@@ -147,11 +147,11 @@ img, video {
 .resume-paragraph-text {
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #e2e8f0;
+    color: #cbd5e1;
     text-align: center;
 }
 
-/* GLOBAL SECTION SPACING */
+/* SECTION STRUCTURES */
 .page-section {
     max-width: 1140px;
     margin: 0 auto;
@@ -228,7 +228,7 @@ img, video {
     color: var(--text-muted-cyan);
 }
 
-/* DUAL-TONE NEON TITLES CONFIGURATIONS */
+/* DUAL-TONE NEON HEADERS STYLE */
 .section-title-node-center {
     text-align: center;
     margin-bottom: 35px;
@@ -272,10 +272,10 @@ img, video {
 }
 .reel-item-piddi-card video { width: 100%; height: 100%; object-fit: cover; }
 
-/* 14315.jpg की तरह परफेक्ट आनुपातिक ट्रेंडी कैरोसल फ्रेम */
+/* 14337_2.jpg की तरह परफेक्ट पोर्ट्रेट आनुपातिक कैरोसल फ्रेम */
 .interactive-slider-outer-frame {
     width: 100%;
-    max-width: 460px; /* Snug edge to edge look */
+    max-width: 440px; /* Snug tight bounding width layout secure */
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -284,9 +284,9 @@ img, video {
 
 .carousel-viewport-4to5-box {
     width: 100%;
-    aspect-ratio: 4 / 5; /* Exact Portrait 4:5 */
+    aspect-ratio: 4 / 5; /* Exact 4:5 */
     background-color: var(--surface-dark-card); 
-    border-radius: 24px; /* Professional rounded corners */
+    border-radius: 24px; 
     overflow: hidden;
     border: var(--bolder-slate-outline);
     box-shadow: 0 16px 40px rgba(0,0,0,0.6);
@@ -303,7 +303,7 @@ img, video {
 .carousel-slide-item { min-width: 100%; height: 100%; flex-shrink: 0; }
 .carousel-slide-item img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Original navigation arrow buttons style & placement */
+/* Navigation buttons placement far apart precisely matching 14337_2 */
 .slider-nav-btn {
     position: absolute;
     top: 50%;
@@ -311,7 +311,7 @@ img, video {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: rgba(30, 41, 59, 0.9);
+    background-color: rgba(30, 41, 59, 0.95);
     border: 2px solid var(--brand-neon-cyan);
     color: var(--brand-neon-cyan);
     font-size: 1rem;
@@ -323,7 +323,7 @@ img, video {
     box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 .slider-nav-btn:hover { background-color: var(--brand-neon-cyan); color: #ffffff; }
-.prev-btn { left: -55px; } /* Placed far apart at the sides */
+.prev-btn { left: -55px; } 
 .next-btn { right: -55px; }
 
 .slider-bottom-label {
@@ -340,7 +340,7 @@ img, video {
     border-top: 1px solid #1e293b;
 }
 
-/* CLEAN PRODUCT CARD GALLERY GRID (G1 TO G50) */
+/* CLEAN PRODUCT CARD GALLERY GRID (g1.png to g50.png) */
 .clean-cards-grid-layout {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -364,7 +364,7 @@ img, video {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: var(--pure-white-border); /* Pure white clean borders, no extra outlines */
+    border: var(--pure-white-border); /* Clear pure white outline */
 }
 .card-media-wrapper img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
@@ -378,7 +378,7 @@ img, video {
 .lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; border: var(--bolder-slate-outline); background-color: #ffffff; }
 .lightbox-close-btn { position: absolute; top: 20px; right: 25px; color: #ffffff; font-size: 2.5rem; cursor: pointer; }
 
-/* CONTACT FLOW BLOCKS */
+/* CONTACT CONTEXT FLOWS */
 .contact-corporate-wrapper { background-color: var(--bg-dark-core); border-top: 2px solid #111827; margin-top: 20px; }
 .contact-sub-hook-text { color: var(--text-muted-cyan); font-size: 0.92rem; margin-top: 4px; font-weight: 600; }
 
@@ -392,7 +392,7 @@ img, video {
 .contact-info-row-node p { font-size: 0.95rem; font-weight: 600; color: #cbd5e1; }
 
 .form-row { margin-bottom: 14px; }
-.form-row input, .form-row textarea { width: 100%; padding: 12px; background-color: var(--bg-dark-core); border: 1px solid #374151; rounded: 6px; color: #ffffff; font-size: 0.9rem; outline: none; }
+.form-row input, .form-row textarea { width: 100%; padding: 12px; background-color: var(--bg-dark-core); border: 1px solid #374151; border-radius: 6px; color: #ffffff; font-size: 0.9rem; outline: none; }
 .form-row input:focus, .form-row textarea:focus { border-color: var(--brand-neon-cyan); }
 .form-action-button { width: 100%; padding: 12px; background-color: var(--brand-neon-cyan); color: #090d16; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
 
@@ -406,7 +406,7 @@ img, video {
 .corporate-footer { text-align: center; padding: 25px; color: var(--text-muted-cyan); font-size: 0.85rem; border-top: 1px solid #111827; margin-top: 40px; background-color: var(--bg-dark-core); }
 .section-divider-gap { height: 35px; }
 
-/* RESPONSIVE BREAKPOINTS */
+/* RESPONSIVE SCALERS */
 @media (max-width: 950px) {
     .navbar { height: 110px; }
     .nav-container { flex-direction: column; justify-content: center; gap: 8px; padding: 10px; }

@@ -24,17 +24,8 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
 .sky-neon-glow { color: #00bacf; text-shadow: 0 0 10px #00bacf, 0 0 20px rgba(0, 186, 207, 0.6); }
 .exact-text-line { position: absolute; bottom: -6px; left: 0; right: 0; height: 3px; background: #00bacf; box-shadow: 0 0 8px #00bacf; border-radius: 2px; }
 
-/* परफेक्ट सिमेट्रिकल पिरामिड स्टाइल पैराग्राफ */
-.bio-text-pyramid { 
-    color: #94a3b8; 
-    max-width: 700px; 
-    margin: 25px auto; 
-    font-size: 1rem; 
-    line-height: 1.7; 
-    text-align: center; 
-    text-align-last: center; 
-    font-weight: 500;
-}
+/* पिरामिड स्टाइल पैराग्राफ */
+.bio-text-pyramid { color: #94a3b8; max-width: 700px; margin: 25px auto; font-size: 1rem; line-height: 1.7; text-align: center; text-align-last: center; font-weight: 500; }
 
 /* एजुकेशन बॉक्स */
 .unified-education-card { background-color: #0c111a; border-radius: 12px; max-width: 900px; margin: 0 auto; padding: 25px; text-align: left; }
@@ -43,35 +34,114 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
 .edu-bullet-row { display: flex; align-items: flex-start; gap: 12px; font-size: 0.92rem; color: #ffffff; line-height: 1.5; }
 .theme-bullet { color: #00bacf; font-size: 0.55rem; margin-top: 6px; box-shadow: 0 0 4px #00bacf; border-radius: 50%; }
 
-/* सॉफ्टवेयर स्किल्स बॉक्स (भरा-भरा गिटहब लुक) */
+/* सॉफ़्टवेयर स्किल्स बॉक्स */
 .github-skills-card { background-color: #0c111a; border-radius: 12px; max-width: 900px; margin: 0 auto; padding: 25px; text-align: left; }
 .skills-white-title { margin: 0 0 15px 0; font-size: 1.1rem; color: #ffffff !important; font-weight: 700; letter-spacing: 0.5px; border-bottom: 1px solid #1e293b; padding-bottom: 10px; }
 .skills-tag-container-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-start; }
 .git-skill-tag { background-color: #161f30; border: 1px solid #23324a; padding: 8px 14px; border-radius: 6px; font-size: 0.88rem; color: #ffffff; font-weight: 500; display: inline-block; }
 
-/* एआई विजुअल्स स्लाइडर */
-.thin-slider-border { border: 1.5px solid #1e293b; }
-.desktop-large-slider-wrapper { display: flex; align-items: center; justify-content: center; max-width: 760px; margin: 30px auto; background-color: #0c111a; border-radius: 20px; position: relative; padding: 0; box-sizing: border-box; }
-.desktop-slider-inner-box { background-color: #05080f; border-radius: 20px; width: 100%; overflow: hidden; display: flex; flex-direction: column; border: 4px solid #1e293b; margin: 0 45px; }
-.desktop-img-frame { width: 100%; aspect-ratio: 16 / 14; padding: 25px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; background-color: #05080f; }
-.desktop-img-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; display: block; }
-.desktop-slider-full-strip { background-color: #0c111a; border-top: 4px solid #1e293b; padding: 14px 20px; text-align: center; width: 100%; box-sizing: border-box; border-bottom-left-radius: 16px; border-bottom-right-radius: 16px; }
-.desktop-slider-full-strip span { font-size: 0.9rem; color: #94a3b8; font-weight: 600; }
+/* सुधरा हुआ क्लीन कैरोसेल कंटेनर (बिना डबल बॉर्डर के - सिमेट्रिकल स्पेस) */
+.clean-professional-slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 550px;
+    margin: 30px auto;
+    position: relative;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* स्लीक बटन */
-.nav-slider-btn { background: none; border: none; color: #00bacf; width: 30px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; }
-.btn-left { left: 10px; }
-.btn-right { right: 10px; }
+/* मुख्य इमेज फ्रेम - कोनों को राउंडेड (16px) और क्लीन करने के लिए */
+.clean-image-display-frame {
+    background-color: #0c111a;
+    border-radius: 16px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 0 35px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+.clean-img-content-box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    padding: 20px; /* चारों तरफ बिल्कुल एक बराबर स्पेस */
+    box-sizing: border-box;
+    background-color: #0c111a;
+}
+.clean-img-content-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
 
-/* मोशन ग्राफिक्स रील्स (कवर बॉक्स विथ रेस्पॉन्सिव 1-रील व्यू) */
+/* इमेज से बिल्कुल सटीक नीचे चिपकी हुई राउंडेड पट्टी */
+.clean-slider-attached-strip {
+    background-color: #05080f;
+    border-top: 1px solid #1e293b;
+    padding: 12px 15px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+.clean-slider-attached-strip span {
+    font-size: 0.88rem;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+/* बिना किसी बैकग्राउंड के स्लीक छोटे बटन्स जो सिर्फ किनारों पर रहेंगे */
+.clean-slider-arrow {
+    background: none;
+    border: none;
+    color: #00bacf;
+    width: 25px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+.clean-slider-arrow:hover { color: #ffffff; text-shadow: 0 0 5px #00bacf; }
+.arrow-left { left: 0; }
+.arrow-right { right: 0; }
+
+/* मोशन ग्राफिक्स रील्स (फुल स्क्रीन आउटलाइन कस्टमाइजेशन फिक्स) */
 .master-reel-cover-container { background-color: #0c111a; border: 1px solid #1e293b; border-radius: 16px; padding: 20px; max-width: 1200px; margin: 0 auto; box-sizing: border-box; }
-.horizontal-reel-container { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+.horizontal-reel-container { 
+    display: flex; 
+    gap: 15px; 
+    overflow-x: auto; 
+    padding: 5px 5px 15px 5px; /* आउटलाइन कटने से रोकने के लिए हल्की पैडिंग */
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    box-sizing: border-box;
+}
 .horizontal-reel-container::-webkit-scrollbar { height: 6px; }
 .horizontal-reel-container::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
-.motion-video-frame { flex: 0 0 165px; background-color: #05080f; border: 1px solid #00bacf !important; box-shadow: 0 0 8px rgba(0, 186, 207, 0.35); border-radius: 10px; overflow: hidden; scroll-snap-align: start; }
+
+/* व्यक्तिगत रील कार्ड - पतली नियॉन आउटलाइन जो मोबाइल पर पूरी दिखेगी */
+.motion-video-frame { 
+    flex: 0 0 165px; 
+    background-color: #05080f; 
+    border: 1px solid #00bacf !important; /* पतली स्काई ब्लू बॉर्डर */
+    box-shadow: 0 0 6px rgba(0, 186, 207, 0.3); 
+    border-radius: 10px; 
+    overflow: hidden; 
+    scroll-snap-align: start;
+    box-sizing: border-box; /* विड्थ के अंदर ही बॉर्डर को रखने के लिए */
+}
 .motion-video-frame video { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; display: block; }
 
-/* पोर्टफोलियो 50 ग्रिड फ्रेम्स */
+/* पोर्टफोलियो 50 ग्रिड फ्रेम्स (बिना नियॉन आउटलाइन के) */
 .behance-style-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px; }
 .original-portfolio-dark-frame { background-color: #0c111a; border-radius: 20px; padding: 20px; border: 6px solid #1e293b; display: flex; flex-direction: column; text-align: left; }
 .grid-card-image-wrapper { width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
@@ -98,16 +168,16 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
 
 .corporate-footer { background: #0c111a; padding: 25px; border-top: 1px solid #1e293b; font-size: 0.85rem; color: #94a3b8; margin-top: 40px; }
 
-/* मोबाइल स्क्रीन रेस्पॉन्सिवनेस */
+/* मोबाइल मीडिया कस्टमाइजेशन */
 @media (max-width: 768px) {
     .contact-container, .behance-style-grid { grid-template-columns: 1fr; gap: 20px; }
-    .desktop-large-slider-wrapper { margin: 20px auto; padding: 0; }
-    .desktop-slider-inner-box { margin: 0 35px; }
+    .clean-professional-slider-container { max-width: 100%; padding: 0 5px; }
+    .clean-image-display-frame { margin: 0 30px; }
     .navbar { padding: 12px 20px; }
     .nav-menus a { margin-left: 14px; font-size: 0.85rem; }
     .huge-designation { font-size: 1.8rem; }
     
-    /* मोबाइल स्क्रीन पर एक समय में केवल 1 रील पूरा दिखने का लॉजिक */
+    /* मोबाइल स्क्रीन पर पूरी 1 रील आउटलाइन के साथ लॉक करने का लॉजिक */
     .motion-video-frame { flex: 0 0 100%; }
 }
 

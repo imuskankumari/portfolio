@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initInteractiveSlider();
 });
 
-// ग्रिड को g1.png से g50.png तक बिना किसी फालतू टेक्स्ट के रेंडर करना (सिर्फ "Graphic Design")
+// ग्रिड रेंडरिंग बिना किसी कैप्शन टेक्सटिंग के, पाथ पूरी तरह g1.png से g50.png स्मॉल में फिक्स है
 function buildBehanceStyleGrid() {
     const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;

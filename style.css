@@ -1,70 +1,74 @@
-/* मुख्य लेआउट */
-body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; text-align: center; margin: 0; }
-.main-wrapper { margin-top: 80px; }
+/* मुख्य ग्लोबल लेआउट */
+body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; }
+.main-wrapper { margin-top: 100px; }
+.page-section { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
 .line { width: 150px; height: 3px; background: #00bacf; margin: 10px auto; }
-.designation { font-size: 1.2rem; color: #94a3b8; }
 .cyan-text { color: #00bacf; }
 
-/* स्किल्स पिरामिड बॉक्स (मोटा फ्रेम) */
-.master-skills-pyramid-box {
-    background-color: #0c111a;
-    border: 4px solid #1e293b; /* मोटा फ्रेम */
-    border-radius: 16px;
-    padding: 30px;
-    max-width: 800px;
-    margin: 20px auto;
-}
-.pyramid-skills-row { display: flex; justify-content: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
-.skill-chip { background-color: #111827; padding: 10px 20px; border-radius: 8px; font-size: 0.9rem; color: #fff; }
-.skill-chip i { margin-right: 5px; color: #00bacf; }
+/* हेडर नैवबार स्टाइल्स (फिक्स्ड) */
+.navbar { background: #0c111a; padding: 15px 40px; border-bottom: 1px solid #1e293b; position: fixed; top: 0; left: 0; width: 100%; box-sizing: border-box; z-index: 1000; }
+.nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+.logo-area { display: flex; align-items: center; }
+.nav-logo { height: 40px; width: auto; object-fit: contain; } /* लोगो को छोटा और एक साइड रखने के लिए */
+.nav-menus a { color: #94a3b8; text-decoration: none; margin-left: 25px; font-weight: bold; font-size: 0.95rem; }
+.nav-menus a:hover { color: #00bacf; }
 
-/* पोर्टफोलियो ग्रिड */
-.portfolio-section { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
-.behance-style-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2-कॉलम ग्रिड */
-    gap: 30px; /* फ्रेम्स के बीच की जगह */
-}
+/* हीरो टेक्स्ट ब्रांडिंग */
+.hero-branding-center h1 { font-size: 2.5rem; margin-bottom: 5px; }
+.designation { font-size: 1.4rem; color: #94a3b8; margin-top: 5px; font-weight: bold; }
+.sub-badge { background-color: #00bacf; color: #090d16; padding: 4px 12px; font-size: 0.75rem; font-weight: 800; border-radius: 4px; display: inline-block; margin: 10px 0; }
+.bio-text { color: #94a3b8; max-width: 800px; margin: 15px auto; font-size: 0.95rem; line-height: 1.6; }
 
-/* वह मोटा डार्क फ्रेम (image_7.png जैसा) */
-.original-portfolio-dark-frame {
-    background-color: #0c111a; /* गहरा काला/नीला */
-    border-radius: 20px; /* गोलाकार कोने */
-    padding: 20px; /* फ्रेम की मोटाई */
-    border: 6px solid #1e293b; /* मोटा बॉर्डर */
-    display: flex;
-    flex-direction: column;
-    text-align: left; /* टेक्स्ट बाईं ओर */
-}
+/* स्किल्स पिरामिड बॉक्स */
+.master-skills-pyramid-box { background-color: #0c111a; border: 4px solid #1e293b; border-radius: 16px; padding: 25px; max-width: 800px; margin: 30px auto; }
+.pyramid-skills-row { display: flex; justify-content: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+.skill-chip { background-color: #111827; padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; color: #fff; border: 1px solid #1e293b; }
+.skill-chip i { margin-right: 6px; color: #00bacf; }
 
-/* इमेज कंटेनर */
-.grid-card-image-wrapper {
-    width: 100%;
-    aspect-ratio: 1 / 1; /* इमेज को वर्गाकार बनाता है */
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 15px;
-}
+/* एकेडमिक बॉक्स */
+.education-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 800px; margin: 0 auto; text-align: left; }
+.edu-box { background-color: #0c111a; border-left: 4px solid #00bacf; padding: 20px; border-radius: 8px; border-top: 1px solid #1e293b; border-right: 1px solid #1e293b; border-bottom: 1px solid #1e293b; }
+.edu-box h3 { margin-top: 0; font-size: 1rem; color: #fff; }
+.edu-box p { color: #94a3b8; font-size: 0.85rem; line-height: 1.5; }
+
+/* Behance स्टाइल सिंगल-सिंगल डार्क फ्रेम ग्रिड */
+.behance-style-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; }
+.original-portfolio-dark-frame { background-color: #0c111a; border-radius: 20px; padding: 20px; border: 6px solid #1e293b; display: flex; flex-direction: column; text-align: left; }
+.grid-card-image-wrapper { width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; margin-bottom: 15px; }
 .grid-card-image-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-/* टेक्स्ट स्टाइल */
 .grid-card-title { font-size: 1.1rem; color: #ffffff; margin: 0; font-weight: 700; }
 .grid-card-price { font-size: 1.3rem; color: #00bacf; font-weight: 800; margin-top: 5px; }
 
-/* कांटेक्ट सेक्शन */
-.contact-section .section-title { position: relative; display: inline-block; }
-h2 span { color: #00bacf; }
+/* मोशन ग्राफिक्स ग्रिड (वीडियो) */
+.motion-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.motion-card { background: #0c111a; border: 2px solid #1e293b; border-radius: 8px; overflow: hidden; }
+.motion-card video { width: 100%; display: block; object-fit: cover; aspect-ratio: 9 / 16; }
 
-/* फुटर और नैवबार के सामान्य स्टाइल */
-.navbar { background: #0c111a; padding: 20px; border-bottom: 1px solid #1e293b; }
-.nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
-.nav-menus a { color: #94a3b8; text-decoration: none; margin-left: 20px; }
-.nav-menus a:hover { color: #00bacf; }
-.corporate-footer { background: #0c111a; padding: 20px; margin-top: 5px; border-top: 1px solid #1e293b; font-size: 0.9rem; color: #94a3b8; }
+/* कांटेक्ट और यूपीआई लेआउट */
+.contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 900px; margin: 40px auto; text-align: left; }
+.contact-form-box, .contact-info-box { background-color: #0c111a; border: 1px solid #1e293b; padding: 30px; border-radius: 12px; }
+.form-input { width: 100%; background: #090d16; border: 1px solid #1e293b; color: #fff; padding: 12px; margin-bottom: 15px; border-radius: 6px; box-sizing: border-box; font-family: Arial, sans-serif; }
+.submit-btn { background-color: #00bacf; color: #090d16; border: none; width: 100%; padding: 12px; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 1rem; }
 
-/* मोबाइल स्क्रीन के लिए ग्रिड को 1 कॉलम करना (Optional लेकिन ज़रूरी) */
-@media (max-width: 768px) {
-    .behance-style-grid {
-        grid-template-columns: 1fr;
-    }
+/* UPI सुरक्षित नेटवर्क कार्ड बॉक्स */
+.info-title { margin-top: 0; font-size: 1.1rem; border-bottom: 1px solid #1e293b; padding-bottom: 10px; }
+.contact-info-box p { font-size: 0.95rem; color: #fff; margin: 15px 0; }
+.contact-info-box p i { margin-right: 10px; }
+.upi-secure-box { background: #05080f; border: 1px solid #1e293b; padding: 15px; border-radius: 10px; margin-top: 25px; }
+.upi-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+.secure-icon { color: #00bacf; font-size: 2rem; }
+.upi-id { margin: 2px 0 0 0; color: #94a3b8; font-size: 0.85rem; }
+.pay-btn { background-color: #10b981; color: white; border: none; width: 100%; padding: 10px; font-weight: bold; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
+
+/* कॉर्पोरेट फुटर */
+.corporate-footer { background: #0c111a; padding: 20px; border-top: 1px solid #1e293b; font-size: 0.85rem; color: #94a3b8; margin-top: 60px; }
+
+/* मोबाइल फ्रेंडली रिस्पॉन्सिवनेस */
+@media (max-width: 900px) {
+    .behance-style-grid, .contact-container, .education-grid { grid-template-columns: 1fr; }
+    .motion-grid { grid-template-columns: repeat(3, 1fr); }
+    .main-wrapper { margin-top: 140px; }
+}
+@media (max-width: 480px) {
+    .motion-grid { grid-template-columns: repeat(2, 1fr); }
 }

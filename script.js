@@ -1,14 +1,18 @@
+let activeVisualIndex = 0;
+const totalVisualsCount = 10;
+let visualSliderTimer = null;
+
 document.addEventListener("DOMContentLoaded", () => {
     buildBehanceStyleGrid();
-    startAutomatedIntervals();
+    initInteractiveSlider();
 });
 
+// Dynamic Card Grid Builder Core Engine (G1 to G100)
 function buildBehanceStyleGrid() {
     const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;
     let domBuffer = "";
 
-    // Automatically structures 100 items slot elements mapping g1.jpg to g100.jpg with price labels below
     for (let count = 1; count <= 100; count++) {
         domBuffer += `
             <div class="simple-product-card" id="card-node-${count}" onclick="openLightbox('g${count}.jpg')">
@@ -25,6 +29,49 @@ function buildBehanceStyleGrid() {
     gridContainer.innerHTML = domBuffer;
 }
 
+// Interactive Slider Controller with Button Click & Autoplay Fusion
+function initInteractiveSlider() {
+    runSliderAutoCycle();
+}
+
+function renderSliderTransform() {
+    const track = document.getElementById("burgerPhotoTrack");
+    if (track) {
+        track.style.transform = `translateX(-${activeVisualIndex * 100}%)`;
+    }
+}
+
+function shiftSliderLeft() {
+    clearInterval(visualSliderTimer);
+    activeVisualIndex--;
+    if (activeVisualIndex < 0) {
+        activeVisualIndex = totalVisualsCount - 1;
+    }
+    renderSliderTransform();
+    runSliderAutoCycle();
+}
+
+function shiftSliderRight() {
+    clearInterval(visualSliderTimer);
+    activeVisualIndex++;
+    if (activeVisualIndex >= totalVisualsCount) {
+        activeVisualIndex = 0;
+    }
+    renderSliderTransform();
+    runSliderAutoCycle();
+}
+
+function runSliderAutoCycle() {
+    visualSliderTimer = setInterval(() => {
+        activeVisualIndex++;
+        if (activeVisualIndex >= totalVisualsCount) {
+            activeVisualIndex = 0;
+        }
+        renderSliderTransform();
+    }, 4000); // Transitions seamlessly every 4 seconds loop
+}
+
+// Lightbox Logics
 function openLightbox(imgSrc) {
     const modal = document.getElementById("imageLightboxModal");
     const modalImg = document.getElementById("lightboxMainImage");
@@ -40,21 +87,4 @@ function closeLightbox() {
     if (modal) {
         modal.style.display = "none";
     }
-}
-
-let activePhotoIndex = 0;
-const totalPhotosCount = 10;
-
-function startAutomatedIntervals() {
-    // Automated loop track logic for large 4:5 AI visuals carousel slider (b1 - b10)
-    setInterval(() => {
-        activePhotoIndex++;
-        if (activePhotoIndex >= totalPhotosCount) {
-            activePhotoIndex = 0;
-        }
-        const photoTrack = document.getElementById("burgerPhotoTrack");
-        if (photoTrack) {
-            photoTrack.style.transform = `translateX(-${activePhotoIndex * 100}%)`;
-        }
-    }, 4000);
 }

@@ -1,4 +1,4 @@
-/* PREMIUM DEEP DARK BLUE THEME WITH BRIGHT NEON CYAN LINES */
+/* PREMIUM DEEP DARK BLUE THEME WITH BRIGHT CYAN BRAND ACCENTS */
 :root {
     --bg-dark-core: #090d16;        
     --surface-dark-card: #111827;   
@@ -7,6 +7,7 @@
     --brand-neon-cyan: #00bacf;     
     --bolder-slate-outline: 4px solid #1e293b; 
     --pure-white-border: 2px solid #ffffff; 
+    --thin-dark-border: 1px solid #1f2937;
     --success-green: #10b981;
 }
 
@@ -34,7 +35,7 @@ img, video {
     -webkit-user-drag: none;
 }
 
-/* NAVBAR */
+/* NAVBAR (Logo Left, Links Right) */
 .navbar {
     position: fixed;
     top: 0;
@@ -83,7 +84,7 @@ img, video {
     scroll-margin-top: 90px;
 }
 
-/* BRANDING PROFILES */
+/* HERO BRANDING PROFILE */
 .hero-branding-center {
     text-align: center;
     padding: 80px 20px 40px 20px;
@@ -154,22 +155,14 @@ img, video {
     text-align: center;
 }
 
-/* SECTION PADDINGS AND NEON SEPARATORS */
+/* GLOBAL SECTIONS AND GAPS */
 .page-section {
     max-width: 1140px;
-    margin: 60px auto; /* Increased global gap between sections */
+    margin: 80px auto; /* Generous clean spacing gap between pages */
     padding: 0 24px;
 }
 
-.neon-page-divider {
-    max-width: 1140px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--brand-neon-cyan), transparent);
-    margin: 40px auto;
-    opacity: 0.6;
-}
-
-/* SKILLS CHIPS */
+/* SKILLS CAPSULES */
 .software-skills-chips-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -194,7 +187,7 @@ img, video {
     color: var(--brand-neon-cyan);
 }
 
-/* EDUCATION CARD */
+/* ACADEMIC BOX CARD */
 .education-master-corporate-card {
     background-color: var(--surface-dark-card); 
     border: 3px solid #1f2937; 
@@ -238,13 +231,13 @@ img, video {
     color: var(--text-muted-cyan);
 }
 
-/* HEADER SUBTITLE DESIGN PATTERNS */
+/* CLEAN LOGICAL HEADERS (ALL INNER UNDERLINES REMOVED COMPLETELY) */
 .section-title-node-center {
     text-align: center;
-    margin-bottom: 45px;
+    margin-bottom: 50px;
 }
 .section-title-node-center h2 {
-    font-size: 1.9rem;
+    font-size: 2rem;
     font-weight: 800;
     color: var(--text-white-pure); 
     display: inline-block;
@@ -253,21 +246,18 @@ img, video {
 .section-title-node-center h2 .cyan-text {
     color: var(--brand-neon-cyan); 
 }
-.title-sub-separator {
-    width: 45px;
-    height: 2px;
-    background-color: var(--brand-neon-cyan);
-    margin: 6px auto 0 auto; /* Small precise line gap */
+
+/* Let's Work Together Spaced Alignment Setup */
+.contact-main-title-heading {
+    margin-bottom: 18px; /* Clean gap below heading before subtitle starts */
 }
-.section-sub-heading-text {
-    font-size: 0.9rem;
+.contact-clean-spaced-subtitle {
+    font-size: 1.05rem;
     color: var(--text-muted-cyan);
-    margin-top: 10px; /* Perfect spacing gap */
     font-weight: 500;
-    letter-spacing: 0.3px;
 }
 
-/* REELS PLATFORMS */
+/* MOTION GRAPHICS REELS */
 .reels-single-row-fluid-viewport {
     width: 100%;
     overflow-x: auto;
@@ -293,10 +283,10 @@ img, video {
 }
 .reel-item-piddi-card video { width: 100%; height: 100%; object-fit: cover; }
 
-/* 14347.jpg की तरह फुल-साइज़ पोर्ट्रेट कैरोसल मास्टर फ्रेम */
+/* 14357.jpg की तरह परफेक्ट आनुपातिक विशालकाय ट्रेंडी कैरोसल फ्रेम */
 .slider-full-frame-wrapper {
     width: 100%;
-    max-width: 460px; /* ओरिजिनल सबसे बड़ा आनुपातिक साइज */
+    max-width: 480px; /* Highly enlarged core footprint mapping */
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -305,12 +295,12 @@ img, video {
 
 .carousel-viewport-4to5-box {
     width: 100%;
-    aspect-ratio: 4 / 5; /* Exact 4:5 Portrait specification */
+    aspect-ratio: 4 / 5; /* Exact 4:5 Portrait constraint */
     background-color: var(--surface-dark-card); 
     border-radius: 24px; 
     overflow: hidden;
-    border: var(--bolder-slate-outline);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+    border: var(--bolder-slate-outline); /* Snug heavy slate boundary line outline */
+    box-shadow: 0 25px 55px rgba(0,0,0,0.65);
     display: flex;
     flex-direction: column;
 }
@@ -324,7 +314,7 @@ img, video {
 .carousel-slide-item { min-width: 100%; height: 100%; flex-shrink: 0; }
 .carousel-slide-item img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Arrows controls aligned perfectly outside on desktop bounds */
+/* Navigation buttons placed far apart at the precise outer desktop bounds layout */
 .slider-nav-btn {
     position: absolute;
     top: 50%;
@@ -335,7 +325,7 @@ img, video {
     background-color: rgba(30, 41, 59, 0.95);
     border: 2px solid var(--brand-neon-cyan);
     color: var(--brand-neon-cyan);
-    font-size: 1rem;
+    font-size: 1.1rem;
     cursor: pointer;
     z-index: 100;
     display: flex;
@@ -344,8 +334,8 @@ img, video {
     box-shadow: 0 4px 14px rgba(0,0,0,0.5);
 }
 .slider-nav-btn:hover { background-color: var(--brand-neon-cyan); color: #ffffff; }
-.prev-btn { left: -60px; } 
-.next-btn { right: -60px; }
+.prev-btn { left: -65px; } 
+.next-btn { right: -65px; }
 
 .slider-bottom-label {
     height: 45px;
@@ -361,7 +351,7 @@ img, video {
     border-top: 1px solid #1e293b;
 }
 
-/* PRODUCTS GALLERY CONFIGURATIONS */
+/* CLEAN PRODUCT CARD GALLERY GRID (g1.png to g50.png) */
 .clean-cards-grid-layout {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr)); 
@@ -385,7 +375,7 @@ img, video {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: var(--pure-white-border); 
+    border: var(--pure-white-border); /* Clear crisp white outline requested */
 }
 .card-media-wrapper img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
@@ -399,7 +389,7 @@ img, video {
 .lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; border: var(--bolder-slate-outline); background-color: #ffffff; }
 .lightbox-close-btn { position: absolute; top: 20px; right: 25px; color: #ffffff; font-size: 2.5rem; cursor: pointer; }
 
-/* CONTACT CONTEXT FLOW */
+/* CONTACT FLOW BLOCKS */
 .contact-corporate-wrapper { background-color: var(--bg-dark-core); border-top: 2px solid #111827; }
 .contact-structural-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .input-form-card, .trust-gateway-card { background: var(--surface-dark-card); border: 1px solid #1f2937; padding: 30px; border-radius: 12px; }
@@ -442,6 +432,7 @@ img, video {
     .reels-single-row-track { overflow-x: auto; width: max-content; }
     .reel-item-piddi-card { width: 100px; }
     
+    /* Mobile Override Protocol: 1 card row constraint mapping */
     .clean-cards-grid-layout { 
         grid-template-columns: repeat(1, minmax(0, 1fr)) !important; 
         gap: 16px; 

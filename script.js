@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initInteractiveSlider();
 });
 
-// 100 प्रोडक्ट्स ग्रिड को रेंडर करना प्योर वाइट कार्ड्स के साथ
+// 100 प्रोजेक्ट्स ग्रिड को प्योर वाइट बैकग्राउंड कार्ड्स के साथ बिल्ड करना
 function buildBehanceStyleGrid() {
     const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;

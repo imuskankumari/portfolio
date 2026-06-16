@@ -1,76 +1,105 @@
-/* ग्लोबल कोर सेटअप */
+/* ग्लोबल कोर डिज़ाइन */
 html { scroll-behavior: smooth; }
 body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; -webkit-user-select: none; user-select: none; }
 .main-wrapper { margin-top: 110px; }
-.page-section { max-width: 1200px; margin: 55px auto; padding: 0 20px; box-sizing: border-box; }
+.page-section { max-width: 1200px; margin: 50px auto; padding: 0 20px; box-sizing: border-box; }
 .cyan-text { color: #00bacf; }
 
-/* पतली चमकदार नियॉन स्काई ब्लू आउटलाइन बॉर्डर क्लास */
-.thin-neon-sky {
-    border: 1.5px solid #00bacf !important;
-    box-shadow: 0 0 10px rgba(0, 186, 207, 0.35);
+/* विशेष रूप से पतली चमकदार नियॉन आउटलाइन बॉर्डर क्लास */
+.thin-neon-outline {
+    border: 1px solid #00bacf !important;
+    box-shadow: 0 0 8px rgba(0, 186, 207, 0.4);
 }
 
-/* नैवबार (क्लीन लुक - कोई आइकॉन नहीं) */
+/* नैवबार (बिना आइकॉन के क्लीन स्टाइल) */
 .navbar { background: #0c111a; padding: 12px 40px; border-bottom: 1px solid #1e293b; position: fixed; top: 0; left: 0; width: 100%; box-sizing: border-box; z-index: 1000; }
 .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
 .nav-logo-circle { height: 44px; width: 44px; border-radius: 50%; object-fit: cover; border: 2px solid #00bacf; box-shadow: 0 0 8px #00bacf; }
-.nav-menus a { color: #94a3b8; text-decoration: none; margin-left: 24px; font-weight: 600; font-size: 0.95rem; transition: 0.2s; }
+.nav-menus a { color: #94a3b8; text-decoration: none; margin-left: 24px; font-weight: 600; font-size: 0.95rem; }
 .nav-menus a:hover { color: #00bacf; }
 
-/* वाइट ग्लो नाम और नियॉन स्यान डेजिग्नेशन */
-.white-glow-name {
-    font-size: 2.8rem;
-    margin-bottom: 2px;
+/* नाम नॉर्मल और डेजिग्नेशन नाम से बड़ा */
+.normal-white-name {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
     color: #ffffff;
-    font-weight: 800;
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+    font-weight: 500; /* नॉर्मल रखने के लिए बोल्डनेस हटाई गई */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
-.custom-under-wrapper { position: relative; display: inline-block; margin-bottom: 15px; }
-.designation { font-size: 1.3rem; margin: 0; font-weight: 700; letter-spacing: 0.5px; }
-.neon-cyan-text { color: #00bacf; text-shadow: 0 0 8px #00bacf; }
-.precise-line { position: absolute; bottom: -6px; left: -15px; right: -15px; height: 3px; background: #00bacf; box-shadow: 0 0 6px #00bacf; border-radius: 2px; }
-.bio-text { color: #94a3b8; max-width: 850px; margin: 20px auto; font-size: 0.95rem; line-height: 1.6; }
+.designation-neon-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.huge-designation {
+    font-size: 2.5rem; /* नाम से बड़ा साइज */
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+.sky-neon-glow {
+    color: #00bacf;
+    text-shadow: 0 0 10px #00bacf, 0 0 20px rgba(0, 186, 207, 0.6);
+}
 
-/* सिंगल यूनिफाइड स्किल्स बॉक्स टेबल (वाइट हेडिंग थीम) */
-.unified-skills-card { background-color: #0c111a; border-radius: 12px; max-width: 900px; margin: 0 auto; padding: 25px; text-align: left; }
-.unified-skills-title { margin: 0 0 20px 0; font-size: 1.1rem; color: #ffffff !important; letter-spacing: 0.5px; font-weight: 700; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1e293b; padding-bottom: 10px; }
-.skills-grid-layout { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-.skill-column h5 { margin: 0 0 10px 0; color: #00bacf; font-size: 0.95rem; font-weight: 700; }
-.skill-column ul { list-style: none; padding: 0; margin: 0; }
-.skill-column ul li { font-size: 0.88rem; color: #ffffff; margin: 8px 0; display: flex; align-items: center; gap: 6px; }
-.skill-column ul li i { color: #94a3b8; font-size: 0.8rem; }
+/* बिल्कुल टेक्स्ट के सटीक बराबर वाली पतली नियॉन लाइन */
+.exact-text-line {
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #00bacf;
+    box-shadow: 0 0 8px #00bacf;
+    border-radius: 2px;
+}
 
-/* सिंगल यूनिफाइड एजुकेशन बॉक्स (स्क्रीनशॉट जैसा) */
+/* पिरामिड स्टाइल इंट्रो पैराग्राफ */
+.bio-text-pyramid {
+    color: #94a3b8;
+    max-width: 750px;
+    margin: 25px auto;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center;
+    text-align-last: center;
+}
+
+/* सिंगल यूनिफाइड एजुकेशन बॉक्स */
 .unified-education-card { background-color: #0c111a; border-radius: 12px; max-width: 900px; margin: 0 auto; padding: 25px; text-align: left; }
-.edu-box-white-title { margin: 0 0 15px 0; font-size: 1.1rem; color: #ffffff !important; font-weight: 800; letter-spacing: 0.5px; }
+.edu-box-white-title { margin: 0 0 15px 0; font-size: 1.1rem; color: #ffffff !important; font-weight: 700; letter-spacing: 0.5px; }
 .edu-two-column-split { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; border-top: 1px solid #1e293b; padding-top: 15px; }
-.edu-left-pane { border-left: 3px solid #00bacf; padding-left: 15px; }
-.edu-right-pane { border-left: 3px solid #00bacf; padding-left: 15px; }
+.edu-left-pane, .edu-right-pane { border-left: 3px solid #00bacf; padding-left: 15px; }
 .edu-two-column-split h3 { margin: 0 0 8px 0; font-size: 0.95rem; color: #00bacf; font-weight: 700; }
 .inst-name { color: #ffffff; font-weight: bold; margin: 4px 0; font-size: 0.9rem; }
 .inst-desc { color: #94a3b8; font-size: 0.85rem; margin: 0; line-height: 1.5; }
 
-/* डेस्कटॉप मोड के लिए बड़ा परफेक्ट ऑरेंज बर्गर स्लाइडर फ्रेम */
-.desktop-large-slider-wrapper { display: flex; align-items: center; justify-content: center; gap: 25px; max-width: 780px; margin: 30px auto; background-color: #0c111a; padding: 20px; border-radius: 16px; }
+/* गिटहब इनलाइन ओरिजिनल स्किल्स कंटेनर */
+.github-skills-card { background-color: #0c111a; border-radius: 12px; max-width: 900px; margin: 0 auto; padding: 25px; text-align: left; }
+.skills-white-title { margin: 0 0 15px 0; font-size: 1.1rem; color: #ffffff !important; font-weight: 700; letter-spacing: 0.5px; border-bottom: 1px solid #1e293b; padding-bottom: 10px; }
+.skills-horizontal-flow { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-start; }
+.git-skill-tag { background-color: #161f30; border: 1px solid #23324a; padding: 8px 14px; border-radius: 6px; font-size: 0.88rem; color: #ffffff; font-weight: 500; display: inline-block; transition: 0.15s; }
+.git-skill-tag:hover { border-color: #00bacf; color: #00bacf; }
+
+/* एआई विजुअल्स स्लाइडर (चारों तरफ सिमेट्रिक स्पेस और एंड-टू-एंड पट्टी) */
+.thin-slider-border { border: 1px solid #1e293b; }
+.desktop-large-slider-wrapper { display: flex; align-items: center; justify-content: center; gap: 20px; max-width: 760px; margin: 30px auto; background-color: #0c111a; padding: 25px; border-radius: 16px; box-sizing: border-box; }
 .desktop-slider-inner-box { background-color: #05080f; border: 1px solid #1e293b; border-radius: 12px; width: 100%; overflow: hidden; display: flex; flex-direction: column; }
-.desktop-img-frame { width: 100%; aspect-ratio: 16 / 14; overflow: hidden; background-color: #090d16; }
-.desktop-img-frame img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.25s, opacity 0.25s; }
+.desktop-img-frame { width: 100%; aspect-ratio: 16 / 14; padding: 20px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; background-color: #05080f; }
+.desktop-img-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; }
+.desktop-slider-full-strip { background-color: #0c111a; border-top: 1px solid #1e293b; padding: 14px 20px; text-align: center; width: 100%; box-sizing: border-box; margin-top: auto; }
+.desktop-slider-full-strip span { font-size: 0.9rem; color: #94a3b8; font-weight: 600; }
+.nav-slider-btn { background-color: #05080f; border: 1px solid #1e293b; color: #00bacf; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
 
-/* फुल-विड्थ एंड-टू-एंड नीचे की पट्टी बार (स्क्रीनशॉट की तरह) */
-.desktop-slider-full-strip { background-color: #0c111a; border-top: 1px solid #1e293b; padding: 12px 20px; text-align: center; width: 100%; box-sizing: border-box; }
-.desktop-slider-full-strip span { font-size: 0.9rem; color: #94a3b8; font-weight: 600; letter-spacing: 0.5px; }
-.nav-slider-btn { background-color: #05080f; border: 1px solid #1e293b; color: #00bacf; width: 46px; height: 46px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: 0.2s; }
-.nav-slider-btn:hover { background-color: #00bacf; color: #090d16; }
-
-/* मोशन ग्राफिक्स रील्स स्क्रॉल */
-.horizontal-reel-container { display: flex; gap: 15px; overflow-x: auto; padding: 15px; background-color: #0c111a; border-radius: 14px; }
+/* मोशन ग्राफिक्स रैपर कवर बॉक्स और थिन नियॉन रील बॉर्डर्स */
+.master-reel-cover-container { background-color: #0c111a; border: 1px solid #1e293b; border-radius: 16px; padding: 20px; max-width: 1200px; margin: 0 auto; }
+.horizontal-reel-container { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; }
 .horizontal-reel-container::-webkit-scrollbar { height: 6px; }
 .horizontal-reel-container::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
-.motion-video-frame { flex: 0 0 165px; background-color: #05080f; border: 1px solid #1e293b; border-radius: 10px; overflow: hidden; }
+.motion-video-frame { flex: 0 0 165px; background-color: #05080f; border: 1px solid #00bacf !important; box-shadow: 0 0 8px rgba(0, 186, 207, 0.35); border-radius: 10px; overflow: hidden; }
 .motion-video-frame video { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; display: block; }
 
-/* पोर्टफोलियो ग्रिड (50 ओरिजिनल मोटे डार्क फ्रेम्स) */
+/* पोर्टफोलियो ग्रिड (50 ओरिजिनल डार्क फ्रेम्स - बिना किसी नियॉन आउटलाइन के) */
 .behance-style-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px; }
 .original-portfolio-dark-frame { background-color: #0c111a; border-radius: 20px; padding: 20px; border: 6px solid #1e293b; display: flex; flex-direction: column; text-align: left; }
 .grid-card-image-wrapper { width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
@@ -78,10 +107,17 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
 .grid-card-title { font-size: 1rem; color: #ffffff; margin: 0; font-weight: 700; }
 .grid-card-price { font-size: 1.2rem; color: #00bacf; font-weight: 800; margin-top: 4px; }
 
-/* कांटेक्ट कंटेनर टेबल्स */
+/* कांटेक्ट लेआउट टेबल्स और इनपुट ग्लोइंग इफेक्ट्स */
 .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; max-width: 950px; margin: 30px auto; text-align: left; }
 .contact-card-table { background-color: #0c111a; padding: 25px; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; }
-.form-input { width: 100%; background: #090d16; border: 1px solid #1e293b; color: #fff; padding: 12px; margin-bottom: 12px; border-radius: 6px; box-sizing: border-box; font-size: 0.9rem; }
+.form-input { width: 100%; background: #090d16; border: 1px solid #1e293b; color: #fff; padding: 12px; margin-bottom: 12px; border-radius: 6px; box-sizing: border-box; font-size: 0.9rem; transition: all 0.2s ease; }
+
+/* गिटहब स्टाइल इनपुट ग्लोइंग आउटलाइन */
+.glowing-input:focus {
+    outline: none;
+    border-color: #00bacf !important;
+    box-shadow: 0 0 8px rgba(0, 186, 207, 0.5);
+}
 .submit-btn { background-color: #00bacf; color: #090d16; border: none; width: 100%; padding: 12px; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 0.95rem; }
 .info-title { margin: 0; font-size: 1rem; color: #ffffff; font-weight: 700; }
 .contact-divider-line { height: 1px; background-color: #1e293b; margin: 10px 0; }
@@ -96,13 +132,11 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
 
 .corporate-footer { background: #0c111a; padding: 25px; border-top: 1px solid #1e293b; font-size: 0.85rem; color: #94a3b8; margin-top: 40px; }
 
-/* मोबाइल कस्टमाइजेशन रेस्पॉन्सिव */
-@media (max-width: 992px) {
-    .skills-grid-layout { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-}
+/* मोबाइल फ्रेंडली मीडिया क्वेरी */
 @media (max-width: 768px) {
-    .skills-grid-layout, .edu-two-column-split, .contact-container, .behance-style-grid { grid-template-columns: 1fr; gap: 20px; }
+    .edu-two-column-split, .contact-container, .behance-style-grid { grid-template-columns: 1fr; gap: 20px; }
     .desktop-large-slider-wrapper { padding: 10px; gap: 10px; }
     .navbar { padding: 12px 20px; }
     .nav-menus a { margin-left: 14px; font-size: 0.85rem; }
+    .huge-designation { font-size: 1.8rem; }
 }

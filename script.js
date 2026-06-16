@@ -7,17 +7,17 @@ document.addEventListener("DOMContentLoaded", () => {
     initInteractiveSlider();
 });
 
+// 100 प्रोडक्ट्स ग्रिड को रेंडर करना प्योर वाइट कार्ड्स के साथ
 function buildBehanceStyleGrid() {
     const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;
     let domBuffer = "";
 
-    // Automatically structures 100 slots dynamically maps g1.jpg to g100.jpg with price tags
     for (let count = 1; count <= 100; count++) {
         domBuffer += `
             <div class="simple-product-card" id="card-node-${count}" onclick="openLightbox('g${count}.jpg')">
                 <div class="card-media-wrapper">
-                    <img src="g${count}.jpg" alt="Art Unit G${count}" draggable="false" onerror="this.parentNode.style.backgroundColor='#f1f5f9'">
+                    <img src="g${count}.jpg" alt="Art Unit G${count}" draggable="false" onerror="this.parentNode.style.backgroundColor='#ffffff'">
                 </div>
                 <div class="card-info-pane">
                     <div class="card-title-text">Project G${count}</div>

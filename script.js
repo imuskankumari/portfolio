@@ -8,7 +8,7 @@ function buildBehanceStyleGrid() {
     if (!gridContainer) return;
     let domBuffer = "";
 
-    // Automatically structures 100 slots dynamically maps g1.jpg to g100.jpg with pricing
+    // Automatically structures 100 items slot elements mapping g1.jpg to g100.jpg with price labels below
     for (let count = 1; count <= 100; count++) {
         domBuffer += `
             <div class="simple-product-card" id="card-node-${count}" onclick="openLightbox('g${count}.jpg')">
@@ -46,7 +46,7 @@ let activePhotoIndex = 0;
 const totalPhotosCount = 10;
 
 function startAutomatedIntervals() {
-    // Automated Engine for wide AI generated visuals (Carousel, b1-b10)
+    // Automated loop track logic for large 4:5 AI visuals carousel slider (b1 - b10)
     setInterval(() => {
         activePhotoIndex++;
         if (activePhotoIndex >= totalPhotosCount) {

@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initInteractiveSlider();
 });
 
-// structures 50 slots dynamically maps g1.png to g50.png (all small letters) with pure white border
+// ग्रिड को g1.png से g50.png तक स्मॉल लेटर्स में मैप करना
 function buildBehanceStyleGrid() {
     const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;

@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Portfolio</title>
+    <title>Muskan Kumari | Professional Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body oncontextmenu="return false;">
 
-    <!-- TOP NAV HEADER: STRICTLY LOGO LEFT & 3 MENUS RIGHT -->
+    <!-- TOP MINIMALIST HEADER SYSTEM -->
     <header class="navbar">
         <div class="nav-container">
             <div class="logo-area">
-                <img src="mk.png" alt="" class="brand-logo-img" draggable="false">
+                <img src="mk.png" alt="MK" class="brand-logo-img" draggable="false">
             </div>
             <nav class="nav-menus">
                 <a href="#home" class="nav-link active">Home</a>
@@ -25,18 +25,27 @@
 
     <main class="main-wrapper" id="home">
 
-        <!-- EXACT PYRAMID BRANDING DISPLAY AT TOP OF BODY -->
-        <section class="hero-branding-pyramid">
-            <h1 class="resume-main-name">MUSKAN KUMARI</h1>
+        <!-- HERO CORE: BRANDING HEADING CENTERED WITH PERFECT UNDERLINE BOUNDS -->
+        <section class="hero-branding-center">
+            <div class="title-underline-wrapper">
+                <h1 class="resume-main-name">MUSKAN KUMARI</h1>
+                <div class="resume-short-underline"></div>
+            </div>
             <p class="resume-sub-designation">Graphic & Web Designer</p>
-            <div class="resume-short-underline"></div>
             
+            <!-- EXCLUSIVE CATCHY PROFESSIONAL HOOK LINE -->
+            <div class="trending-hook-box">
+                <span class="hook-badge">Top Rated Talent</span>
+                <h2 class="hook-text-line">Crafting Pixels, Shaping Ideas — Design That Speaks!</h2>
+            </div>
+
+            <!-- PYRAMID STYLE PROFILE PARAGRAPH -->
             <div class="pyramid-paragraph-container">
                 <p class="resume-paragraph-text">I am Muskan Kumari and I am from Delhi, I am Skilled in MS Office, Graphic Designing Web Designing and Video Editing, an aspiring Professional Graphic & Web Designer. I specialize in graphic design, vector illustration tracing and functional website design.</p>
             </div>
         </section>
 
-        <!-- DATA MATRIX REGION -->
+        <!-- ABOUT SECTION WITH PLACEMENT FOR REAL IMAGE ICONS -->
         <section class="page-section standard-text-flow">
             <div class="resume-text-block">
                 <h3 class="resume-section-title">Academic Education & Qualification</h3>
@@ -47,11 +56,15 @@
                 </ul>
             </div>
 
+            <!-- SKILLS MATRIX PREPARED TO RENDER YOUR REAL UPLOADED IMAGES -->
             <div class="resume-text-block">
                 <h3 class="resume-section-title">Technical Skills</h3>
                 <div class="clean-skills-columns">
                     <div class="skill-column-node">
-                        <h4>Microsoft Office Tools</h4>
+                        <div class="skill-header-flex">
+                            <img src="office-icon.png" alt="Icon" class="skill-custom-icon" onerror="this.style.display='none'">
+                            <h4>Microsoft Office Tools</h4>
+                        </div>
                         <ul>
                             <li>MS Word</li>
                             <li>MS Excel</li>
@@ -59,7 +72,10 @@
                         </ul>
                     </div>
                     <div class="skill-column-node">
-                        <h4>Graphic Designing</h4>
+                        <div class="skill-header-flex">
+                            <img src="graphic-icon.png" alt="Icon" class="skill-custom-icon" onerror="this.style.display='none'">
+                            <h4>Graphic Designing</h4>
+                        </div>
                         <ul>
                             <li>Adobe Photoshop</li>
                             <li>Adobe Illustrator</li>
@@ -69,16 +85,21 @@
                         </ul>
                     </div>
                     <div class="skill-column-node">
-                        <h4>Web Designing</h4>
+                        <div class="skill-header-flex">
+                            <img src="web-icon.png" alt="Icon" class="skill-custom-icon" onerror="this.style.display='none'">
+                            <h4>Web Designing</h4>
+                        </div>
                         <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
+                            <li>HTML & CSS</li>
                             <li>JavaScript</li>
                             <li>WordPress</li>
                         </ul>
                     </div>
                     <div class="skill-column-node">
-                        <h4>Video Editing</h4>
+                        <div class="skill-header-flex">
+                            <img src="video-icon.png" alt="Icon" class="skill-custom-icon" onerror="this.style.display='none'">
+                            <h4>Video Editing</h4>
+                        </div>
                         <ul>
                             <li>Filmora</li>
                             <li>Vn</li>
@@ -89,16 +110,16 @@
             </div>
         </section>
 
-        <!-- PROJECTS PLATFORM -->
+        <!-- PROJECTS MATRIX -->
         <section id="projects" class="page-section">
             
-            <!-- 1. AI GENERATED VISUALS (CORRECT ORIGINAL BIG SIZE FIRST) -->
+            <!-- 1. AI GENERATED VISUALS (CORRECT ORIGINAL BIG 4:5 SIZE WITH THICK BORDER) -->
             <div class="project-segment-container">
                 <div class="section-title-node-center">
                     <h2>AI Generated Visuals</h2>
                 </div>
                 <div class="wide-ai-carousel-wrapper">
-                    <div class="carousel-viewport-wide-box">
+                    <div class="carousel-viewport-4to5-box">
                         <div class="carousel-track" id="burgerPhotoTrack">
                             <div class="carousel-slide-item"><img src="b1.png" alt="" draggable="false"></div>
                             <div class="carousel-slide-item"><img src="b2.png" alt="" draggable="false"></div>
@@ -117,28 +138,30 @@
 
             <div class="section-divider-gap"></div>
 
-            <!-- 2. MOTION GRAPHICS PROJECT (TINY PIDDI 5-5 DISPLAY GRID) -->
+            <!-- 2. MOTION GRAPHICS PROJECT (STRICTLY HARD-LOCKED 1 SINGLE ROW ROW REELS) -->
             <div class="project-segment-container">
                 <div class="section-title-node-center">
                     <h2>Motion Graphics</h2>
                 </div>
-                <div class="reels-piddi-symmetric-grid">
-                    <div class="reel-item-card"><video src="v1.mp4" autoplay muted loop playsinline></video></div>
-                    <div class="reel-item-card"><video src="v2.mp4" autoplay muted loop playsinline></video></div>
-                    <div class="reel-item-card"><video src="v4.mp4" autoplay muted loop playsinline></video></div>
-                    <div class="reel-item-card"><video src="v5.mp4" autoplay muted loop playsinline></video></div>
-                    <div class="reel-item-card"><video src="v6.mp4" autoplay muted loop playsinline></video></div>
-                    <div class="reel-item-card"><video src="v7.mp4" autoplay muted loop playsinline></video></div>
-                    <div class="reel-item-card"><video src="v8.mp4" autoplay muted loop playsinline></video></div>
-                    <div class="reel-item-card"><video src="v9.mp4" autoplay muted loop playsinline></video></div>
-                    <div class="reel-item-card"><video src="v10.mp4" autoplay muted loop playsinline></video></div>
-                    <div class="reel-item-card"><video src="v11.mp4" autoplay muted loop playsinline></video></div>
+                <div class="reels-single-row-fluid-viewport">
+                    <div class="reels-single-row-track">
+                        <div class="reel-item-piddi-card"><video src="v1.mp4" autoplay muted loop playsinline></video></div>
+                        <div class="reel-item-piddi-card"><video src="v2.mp4" autoplay muted loop playsinline></video></div>
+                        <div class="reel-item-piddi-card"><video src="v4.mp4" autoplay muted loop playsinline></video></div>
+                        <div class="reel-item-piddi-card"><video src="v5.mp4" autoplay muted loop playsinline></video></div>
+                        <div class="reel-item-piddi-card"><video src="v6.mp4" autoplay muted loop playsinline></video></div>
+                        <div class="reel-item-piddi-card"><video src="v7.mp4" autoplay muted loop playsinline></video></div>
+                        <div class="reel-item-piddi-card"><video src="v8.mp4" autoplay muted loop playsinline></video></div>
+                        <div class="reel-item-piddi-card"><video src="v9.mp4" autoplay muted loop playsinline></video></div>
+                        <div class="reel-item-piddi-card"><video src="v10.mp4" autoplay muted loop playsinline></video></div>
+                        <div class="reel-item-piddi-card"><video src="v11.mp4" autoplay muted loop playsinline></video></div>
+                    </div>
                 </div>
             </div>
 
             <div class="section-divider-gap"></div>
 
-            <!-- 3. GRAPHIC DESIGNING VISUALS (2-COLUMN GRID) -->
+            <!-- 3. GRAPHIC DESIGNING GRID (2-COLUMN SETUP) -->
             <div class="project-segment-container">
                 <div class="section-title-node-center">
                     <h2>Graphic Designing</h2>
@@ -148,8 +171,13 @@
 
         </section>
 
-        <!-- CONTACT INTERFACES -->
-        <section id="contact" class="page-section">
+        <!-- BURGER HEAVEN STYLE APPETIZING CONTACT CORNER SECTION -->
+        <section id="contact" class="page-section contact-corporate-wrapper">
+            <div class="section-title-node-center">
+                <h2>Connect With Me</h2>
+                <p class="contact-sub-hook-text">Let's create something legendary together!</p>
+            </div>
+            
             <div class="contact-structural-grid">
                 <div class="input-form-card">
                     <form id="corporateForm" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
@@ -160,15 +188,32 @@
                     </form>
                 </div>
 
-                <div class="trust-gateway-card">
+                <!-- BURGER HEAVEN SPEC METRICS FOR DISLAYING DETAILS -->
+                <div class="trust-gateway-card food-footer-style">
+                    <div class="food-contact-details-box">
+                        <h4>Quick Contact Details</h4>
+                        <div class="contact-info-row-node">
+                            <i class="fas fa-phone-alt"></i>
+                            <p>+91 8810682518</p>
+                        </div>
+                        <div class="contact-info-row-node">
+                            <i class="fas fa-envelope"></i>
+                            <p>muskankumar3330@gmail.com</p>
+                        </div>
+                        <div class="contact-info-row-node">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>New Delhi, India</p>
+                        </div>
+                    </div>
+                    
                     <div class="bhim-widget-box">
                         <div class="shield-vector-icon">
                             <i class="fas fa-shield-blank"></i>
                             <i class="fas fa-check secure-checkmark"></i>
                         </div>
-                        <span class="bhim-label-text">BHIM UPI Payment Network</span>
+                        <span class="bhim-label-text">BHIM UPI Secure Network</span>
                         <span class="bhim-vpa-string">UPI ID: <strong>muskan@upi</strong></span>
-                        <a href="upi://pay?pa=muskan@upi&pn=Muskan%20Kumari&cu=INR" class="live-upi-trigger"><i class="fas fa-lock"></i> Pay Securely Now</a>
+                        <a href="upi://pay?pa=muskan@upi&pn=Muskan%20Kumari&cu=INR" class="live-upi-trigger"><i class="fas fa-lock"></i> Pay Securely</a>
                     </div>
                 </div>
             </div>
@@ -176,7 +221,7 @@
 
     </main>
 
-    <!-- LIGHTBOX SYSTEM -->
+    <!-- BOX LIGHTBOX -->
     <div id="imageLightboxModal" class="lightbox-modal" onclick="closeLightbox()">
         <span class="lightbox-close-btn">&times;</span>
         <div class="lightbox-content-wrapper" onclick="event.stopPropagation()">

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     protectMyContent();
 });
 
-// 1. बर्गर फ्लिप स्लाइडर लॉजिक (b1.png से b10.png)
+// 1. डेस्कटॉप फ्लिप स्लाइडर लॉजिक (b1.png से b10.png)
 function initBurgerSlider() {
     const totalSlides = 10;
     let currentSlide = 1;
@@ -18,8 +18,8 @@ function initBurgerSlider() {
     if (!imgElement || !titleElement || !prevBtn || !nextBtn) return;
 
     function updateSlider(index) {
-        imgElement.style.opacity = "0.3";
-        imgElement.style.transform = "scale(0.96)";
+        imgElement.style.opacity = "0.2";
+        imgElement.style.transform = "scale(0.97)";
         
         setTimeout(() => {
             imgElement.src = `b${index}.png`;
@@ -40,7 +40,7 @@ function initBurgerSlider() {
     });
 }
 
-// 2. Motion Graphics - 11 हॉरिजॉन्टल रील्स रेंडर करना
+// 2. Motion Graphics - 11 हॉरिजॉन्टल रील वीडियोज़ लोड करना
 function buildMotionGraphics() {
     const motionContainer = document.getElementById("motionGraphicsContainer");
     if (!motionContainer) return;
@@ -56,7 +56,7 @@ function buildMotionGraphics() {
     motionContainer.innerHTML = htmlBuffer;
 }
 
-// 3. Graphic Designing - 50 फ्रेम्स ग्रिड (g1.jpg से g50.jpg)
+// 3. Graphic Designing - 50 ओरिजिनल फ्रेम्स ग्रिड (g1.jpg से g50.jpg)
 function buildPortfolioGrid() {
     const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;
@@ -76,7 +76,7 @@ function buildPortfolioGrid() {
     gridContainer.innerHTML = htmlBuffer;
 }
 
-// 4. एंटी-डाउनलोड इमेज लॉकिंग प्रोटेक्शन स्क्रिप्ट
+// 4. सिक्योर इमेज डाउनलोड लॉकिंग स्क्रिप्ट
 function protectMyContent() {
     document.addEventListener('contextmenu', event => event.preventDefault());
 

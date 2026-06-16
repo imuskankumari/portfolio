@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     protectMyContent();
 });
 
-// 1. ऑटोमैटिक चेंज (Auto-Play) होने वाला कैरोसेल स्लाइडर लॉजिक
+// 1. ऑटो-प्ले कैरोसेल स्लाइडर लॉजिक
 function initAutoBurgerSlider() {
     const totalSlides = 10;
     let currentSlide = 1;
@@ -19,7 +19,6 @@ function initAutoBurgerSlider() {
     if (!imgElement || !titleElement || !prevBtn || !nextBtn) return;
 
     function updateSlider(index) {
-        // इमेज चेंज होते समय स्मूथ फेड इफ़ेक्ट
         imgElement.style.opacity = "0.3";
         imgElement.style.transform = "scale(0.98)";
         
@@ -32,7 +31,6 @@ function initAutoBurgerSlider() {
     }
 
     function startAutoPlay() {
-        // हर 3 सेकंड (3000ms) में इमेज अपने आप बदलेगी
         autoPlayTimer = setInterval(() => {
             currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
             updateSlider(currentSlide);
@@ -44,41 +42,39 @@ function initAutoBurgerSlider() {
         startAutoPlay();
     }
 
-    // राइट बटन क्लिक
     nextBtn.addEventListener("click", () => {
         currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
         updateSlider(currentSlide);
-        resetAutoPlay(); // मैन्युअल क्लिक करने पर टाइमर रीसेट होगा
+        resetAutoPlay();
     });
 
-    // लेफ्ट बटन क्लिक
     prevBtn.addEventListener("click", () => {
         currentSlide = currentSlide <= 1 ? totalSlides : currentSlide - 1;
         updateSlider(currentSlide);
         resetAutoPlay();
     });
 
-    // ऑटो-प्ले टाइमर शुरू करें
     startAutoPlay();
 }
 
-// 2. Motion Graphics - 11 रील्स लोड करना
+// 2. Motion Graphics - v1.png से v10.png तक वीडियो रेंडरिंग लॉजिक (साउंड म्यूट और कंट्रोल्स के साथ)
 function buildMotionGraphics() {
     const motionContainer = document.getElementById("motionGraphicsContainer");
     if (!motionContainer) return;
     let htmlBuffer = "";
 
-    for (let i = 1; i <= 11; i++) {
+    // v1.png से v10.png तक की फ़ाइलों को रेंडर करना
+    for (let i = 1; i <= 10; i++) {
         htmlBuffer += `
             <div class="motion-video-frame">
-                <video src="v${i}.mp4" autoplay loop muted playsinline preload="metadata"></video>
+                <video src="v${i}.png" autoplay loop muted playsinline controls preload="metadata"></video>
             </div>
         `;
     }
     motionContainer.innerHTML = htmlBuffer;
 }
 
-// 3. Graphic Designing - 50 ओरिजिनल फ्रेम्स ग्रिड (g1.jpg से g50.jpg)
+// 3. Graphic Designing - 50 ओरिजिनल फ्रेम्स ग्रिड
 function buildPortfolioGrid() {
     const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;
@@ -98,7 +94,7 @@ function buildPortfolioGrid() {
     gridContainer.innerHTML = htmlBuffer;
 }
 
-// 4. सिक्योर इमेज एंटी-डाउनलोड लॉकिंग प्रोटेक्शन
+// 4. सिक्योर इमेज एंटी-डाउनलोड प्रोटेक्शन
 function protectMyContent() {
     document.addEventListener('contextmenu', event => event.preventDefault());
     document.addEventListener('dragstart', (e) => {

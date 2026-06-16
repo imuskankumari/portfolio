@@ -1,10 +1,10 @@
 /* PREMIUM DEEP DARK BLUE THEME WITH BRIGHT CYAN BRAND ACCENTS */
 :root {
-    --bg-dark-core: #090d16;        /* Original dark base from 14337_2.jpg */
+    --bg-dark-core: #090d16;        
     --surface-dark-card: #111827;   
     --text-white-pure: #ffffff;     
     --text-muted-cyan: #94a3b8;
-    --brand-neon-cyan: #00bacf;     /* Brilliant Cyan Accent */
+    --brand-neon-cyan: #00bacf;     
     --bolder-slate-outline: 4px solid #1e293b; 
     --pure-white-border: 2px solid #ffffff; 
     --thin-dark-border: 1px solid #1f2937;
@@ -80,7 +80,12 @@ img, video {
     width: 100%;
 }
 
-/* PYRAMID STYLE BRANDING HEADERS BLOCK (FROM WHITE VARIANT) */
+/* SCROLL OFFSET TARGET PROTOCOL */
+.scroll-target-padding {
+    scroll-margin-top: 90px;
+}
+
+/* HERO BRANDING PROFILE HEADINGS */
 .hero-branding-center {
     text-align: center;
     padding: 60px 20px 20px 20px;
@@ -151,14 +156,14 @@ img, video {
     text-align: center;
 }
 
-/* SECTION STRUCTURES */
+/* GLOBAL SECTIONS */
 .page-section {
     max-width: 1140px;
     margin: 0 auto;
     padding: 30px 24px;
 }
 
-/* SOFTWARE & SKILLS CAPSULES */
+/* SOFTWARE & SKILLS CONTROLS */
 .software-skills-chips-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -184,7 +189,7 @@ img, video {
     color: var(--brand-neon-cyan);
 }
 
-/* ACADEMIC TIMELINE CARD */
+/* ACADEMIC CARD */
 .education-master-corporate-card {
     background-color: var(--surface-dark-card); 
     border: 3px solid #1f2937; 
@@ -228,7 +233,7 @@ img, video {
     color: var(--text-muted-cyan);
 }
 
-/* DUAL-TONE NEON HEADERS STYLE */
+/* DUAL-TONE HEADERS WITH DYNAMIC TRENDING SUB-TITLES */
 .section-title-node-center {
     text-align: center;
     margin-bottom: 35px;
@@ -243,6 +248,13 @@ img, video {
 }
 .section-title-node-center h2 .cyan-text {
     color: var(--brand-neon-cyan); 
+}
+.section-sub-heading-text {
+    font-size: 0.95rem;
+    color: var(--text-muted-cyan);
+    margin-top: 8px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
 }
 
 /* MOTION GRAPHICS REELS */
@@ -272,10 +284,10 @@ img, video {
 }
 .reel-item-piddi-card video { width: 100%; height: 100%; object-fit: cover; }
 
-/* 14337_2.jpg की तरह परफेक्ट पोर्ट्रेट आनुपातिक कैरोसल फ्रेम */
-.interactive-slider-outer-frame {
+/* 14339.jpg की तरह परफेक्ट एज-टू-एज कॉम्पैक्ट और बड़ा विज़ुअल स्लाइडर स्ट्रक्चर */
+.slider-master-wrapper-node {
     width: 100%;
-    max-width: 440px; /* Snug tight bounding width layout secure */
+    max-width: 440px; /* Snug tight bounding box width */
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -284,7 +296,7 @@ img, video {
 
 .carousel-viewport-4to5-box {
     width: 100%;
-    aspect-ratio: 4 / 5; /* Exact 4:5 */
+    aspect-ratio: 4 / 5; /* Exact 4:5 Portrait specification */
     background-color: var(--surface-dark-card); 
     border-radius: 24px; 
     overflow: hidden;
@@ -303,7 +315,7 @@ img, video {
 .carousel-slide-item { min-width: 100%; height: 100%; flex-shrink: 0; }
 .carousel-slide-item img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Navigation buttons placement far apart precisely matching 14337_2 */
+/* Arrow buttons placed far apart at the precise outer bounds layout */
 .slider-nav-btn {
     position: absolute;
     top: 50%;
@@ -340,10 +352,10 @@ img, video {
     border-top: 1px solid #1e293b;
 }
 
-/* CLEAN PRODUCT CARD GALLERY GRID (g1.png to g50.png) */
+/* CLEAN RESPONSIVE GRAPHIC DESIGN TILES WITH SPECIFIC MOBILE-FIRST OVERRIDES */
 .clean-cards-grid-layout {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Desktop mode shows double cards layout */
     gap: 24px;
     width: 100%;
 }
@@ -364,7 +376,7 @@ img, video {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: var(--pure-white-border); /* Clear pure white outline */
+    border: var(--pure-white-border); 
 }
 .card-media-wrapper img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
@@ -372,16 +384,14 @@ img, video {
 .card-title-text { font-size: 0.9rem; font-weight: 700; color: #ffffff; text-transform: uppercase; }
 .card-price-tag { font-size: 1rem; font-weight: 800; color: var(--brand-neon-cyan); margin-top: 2px; }
 
-/* LIGHTBOX VIEWER */
+/* LIGHTBOX */
 .lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.94); z-index: 2500; justify-content: center; align-items: center; }
 .lightbox-content-wrapper { position: relative; max-width: 90%; max-height: 85%; }
 .lightbox-content-wrapper img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; border: var(--bolder-slate-outline); background-color: #ffffff; }
 .lightbox-close-btn { position: absolute; top: 20px; right: 25px; color: #ffffff; font-size: 2.5rem; cursor: pointer; }
 
-/* CONTACT CONTEXT FLOWS */
+/* CONTACT CONTEXT FLOW */
 .contact-corporate-wrapper { background-color: var(--bg-dark-core); border-top: 2px solid #111827; margin-top: 20px; }
-.contact-sub-hook-text { color: var(--text-muted-cyan); font-size: 0.92rem; margin-top: 4px; font-weight: 600; }
-
 .contact-structural-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .input-form-card, .trust-gateway-card { background: var(--surface-dark-card); border: 1px solid #1f2937; padding: 30px; border-radius: 12px; }
 
@@ -406,7 +416,7 @@ img, video {
 .corporate-footer { text-align: center; padding: 25px; color: var(--text-muted-cyan); font-size: 0.85rem; border-top: 1px solid #111827; margin-top: 40px; background-color: var(--bg-dark-core); }
 .section-divider-gap { height: 35px; }
 
-/* RESPONSIVE SCALERS */
+/* RESPONSIVE SCALERS BREAKPOINTS */
 @media (max-width: 950px) {
     .navbar { height: 110px; }
     .nav-container { flex-direction: column; justify-content: center; gap: 8px; padding: 10px; }
@@ -422,10 +432,14 @@ img, video {
     .resume-sub-designation { font-size: 1.8rem; }
     .reels-single-row-track { overflow-x: auto; width: max-content; }
     .reel-item-piddi-card { width: 100px; }
-    .clean-cards-grid-layout { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
-    .contact-structural-grid { grid-template-columns: 1fr; }
+    
+    /* CRITICAL SPECIFICATION MANDATED BY USER: SHOW ONLY 1 CARD PER ROW FOR PHONE VIEWS */
+    .clean-cards-grid-layout { 
+        grid-template-columns: repeat(1, minmax(0, 1fr)) !important; 
+        gap: 16px; 
+    }
+    
     .interactive-slider-outer-frame { max-width: 82%; }
     .prev-btn { left: -35px; width: 34px; height: 34px; }
     .next-btn { right: -35px; width: 34px; height: 34px; }
 }
-

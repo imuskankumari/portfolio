@@ -43,7 +43,7 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
 .instagram-thick-card-frame {
     position: relative;
     background-color: #0c111a;
-    border-radius: 50px;
+    border-radius: 32px;
     border: 1px solid #1e293b;
     width: 100%;
     max-width: 860px;
@@ -80,30 +80,30 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
     margin-left: -160px;
     margin-right: -160px;
     box-sizing: border-box;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
 }
 .desktop-slider-full-strip span { font-size: 0.9rem; color: #94a3b8; font-weight: 600; letter-spacing: 0.5px; }
 
 .embed-slider-arrow {
-    background: none;
-    border: none;
+    background: #05080f;
+    border: 1px solid #1e293b;
     color: #00bacf;
-    width: 40px;
-    height: 60px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.6rem;
+    font-size: 1.1rem;
     position: absolute;
-    top: calc(50% - 30px);
+    top: calc(50% - 22px);
     transform: translateY(-50%);
     z-index: 15;
 }
-.embed-slider-arrow:hover { color: #ffffff; text-shadow: 0 0 5px #00bacf; }
-.btn-left { left: 45px; }
-.btn-right { right: 45px; }
+.btn-left { left: 58px; }
+.btn-right { right: 58px; }
 
 .master-reel-cover-container { background-color: #0c111a; border: 1px solid #1e293b; border-radius: 16px; padding: 20px; max-width: 1200px; margin: 0 auto; box-sizing: border-box; }
 .horizontal-reel-container { display: flex; gap: 15px; overflow-x: auto; padding: 15px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; box-sizing: border-box; }
@@ -149,9 +149,9 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
 
 @media (max-width: 768px) {
     .edu-two-column-layout, .contact-container, .behance-style-grid { grid-template-columns: 1fr; gap: 20px; }
-    .instagram-thick-card-frame { padding: 40px 45px 0 45px; border-radius: 25px; }
-    .desktop-slider-full-strip { width: calc(100% + 90px); margin-left: -45px; margin-right: -45px; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; }
-    .embed-slider-arrow { top: calc(50% - 20px); }
+    .instagram-thick-card-frame { padding: 40px 45px 0 45px; border-radius: 20px; }
+    .desktop-slider-full-strip { width: calc(100% + 90px); margin-left: -45px; margin-right: -45px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
+    .embed-slider-arrow { top: calc(50% - 20px); width: 36px; height: 46px; }
     .btn-left { left: 5px; }
     .btn-right { right: 5px; }
     .navbar { padding: 12px 20px; }

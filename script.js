@@ -57,13 +57,13 @@ function initAutoBurgerSlider() {
     startAutoPlay();
 }
 
-// 2. Motion Graphics - v1.mp4 से v10.mp4 वीडियो रेंडरिंग (म्यूट और साउंड कंट्रोल्स के साथ)
+// 2. Motion Graphics - स्मॉलकेस v1.mp4 से v10.mp4 फ़िक्स लॉजिक (रील्स तुरंत लोड होंगी)
 function buildMotionGraphics() {
     const motionContainer = document.getElementById("motionGraphicsContainer");
     if (!motionContainer) return;
     let htmlBuffer = "";
 
-    // v1.mp4 से v10.mp4 तक की फाइलों को रेंडर करना
+    // स्मॉलकेस अक्षरों में v1.mp4 से v10.mp4 फ़ाइल लोड करना
     for (let i = 1; i <= 10; i++) {
         htmlBuffer += `
             <div class="motion-video-frame">
@@ -104,4 +104,5 @@ function protectMyContent() {
         e.preventDefault();
         return false;
     }, { passive: false });
+}
 }

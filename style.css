@@ -26,7 +26,7 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
 
 .bio-text-pyramid { color: #94a3b8; max-width: 700px; margin: 25px auto; font-size: 1rem; line-height: 1.7; text-align: center; text-align-last: center; font-weight: 500; }
 
-/* ओरिजिनल वर्टिकल एजुकेशन बॉक्स (डेस्कटॉप पर आमने-सामने) */
+/* एजुकेशन बॉक्स (डेस्कटॉप पर अगल-बगल लेआउट) */
 .unified-education-card { background-color: #0c111a; border-radius: 12px; max-width: 900px; margin: 0 auto; padding: 25px; text-align: left; }
 .edu-box-white-title { margin: 0 0 20px 0; font-size: 1.1rem; color: #ffffff !important; font-weight: 700; letter-spacing: 0.5px; }
 .edu-two-column-layout { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; border-top: 1px solid #1e293b; padding-top: 20px; }
@@ -34,15 +34,15 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
 .edu-two-column-layout h3 { margin: 0 0 8px 0; font-size: 0.95rem; color: #00bacf; font-weight: 700; }
 .inst-desc { color: #ffffff; font-size: 0.9rem; margin: 0; line-height: 1.6; font-weight: 500; }
 
-/* ओरिजिनल सॉफ्टवेयर स्किल्स पिरामिड स्टाइल */
+/* सॉफ्टवेयर स्किल्स पिरामिड डिज़ाइन */
 .master-skills-pyramid-box { background-color: #0c111a; border-radius: 12px; max-width: 900px; margin: 0 auto; padding: 25px; text-align: left; }
 .skills-box-header-row { font-size: 1.1rem; font-weight: 700; color: #00bacf; margin-bottom: 20px; border-bottom: 1px solid #1e293b; padding-bottom: 10px; display: flex; align-items: center; gap: 8px; }
 .pyramid-skills-grid-center { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; text-align: center; }
 .skill-chip { background-color: #161f30; border: 1px solid #23324a; padding: 10px 16px; border-radius: 8px; font-size: 0.88rem; color: #ffffff; display: flex; align-items: center; gap: 8px; font-weight: 500; }
 .skill-chip i { color: #00bacf; font-size: 0.9rem; }
 
-/* परफेक्ट चौड़ा डार्क राउंडेड कैरोसेल फ्रेम */
-.clean-professional-slider-container { display: flex; align-items: center; justify-content: center; max-width: 660px; margin: 30px auto; position: relative; padding: 0; box-sizing: border-box; }
+/* स्केच के अनुसार परफेक्ट चौड़ा डार्क राउंडेड कैरोसेल फ्रेम */
+.clean-professional-slider-container { display: flex; align-items: center; justify-content: center; max-width: 680px; margin: 30px auto; position: relative; padding: 0; box-sizing: border-box; }
 .thick-portfolio-border {
     background-color: #0c111a;
     border-radius: 20px;
@@ -57,19 +57,19 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
 .clean-img-content-box {
     width: 100%;
     aspect-ratio: 1 / 1;
-    padding: 60px; /* राइट, लेफ्ट, टॉप, बॉटम से एकदम परफेक्ट चौड़ा स्पेस */
+    padding: 60px; /* स्केच के अनुसार चारों तरफ का परफेक्ट चौड़ा स्पेस */
     box-sizing: border-box;
     background-color: #0c111a;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.clean-img-content-box img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; display: block; }
+.clean-img-content-box img { width: 100%; height: 100%; object-fit: cover; border-radius: 0px; display: block; } /* चकोर (Square) इमेज रखने के लिए 0px */
 
-/* नीचे से चिपकी और पूरी फैली हुई पट्टी */
+/* इमेज से सटीक चिपकी और कोनों तक पूरी फैली हुई राउंडेड पट्टी */
 .desktop-slider-full-strip {
     background-color: #05080f;
-    border-top: 4px solid #1e293b;
+    border-top: 6px solid #1e293b; /* इमेज बॉर्डर से मैचिंग पट्टी */
     padding: 14px 20px;
     text-align: center;
     width: 100%;
@@ -84,7 +84,7 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
 
 /* मोशन ग्राफिक्स रील्स */
 .master-reel-cover-container { background-color: #0c111a; border: 1px solid #1e293b; border-radius: 16px; padding: 20px; max-width: 1200px; margin: 0 auto; box-sizing: border-box; }
-.horizontal-reel-container { display: flex; gap: 15px; overflow-x: auto; padding: 10px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; box-sizing: border-box; }
+.horizontal-reel-container { display: flex; gap: 15px; overflow-x: auto; padding: 15px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; box-sizing: border-box; }
 .horizontal-reel-container::-webkit-scrollbar { height: 6px; }
 .horizontal-reel-container::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
 
@@ -127,11 +127,11 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
 
 .corporate-footer { background: #0c111a; padding: 25px; border-top: 1px solid #1e293b; font-size: 0.85rem; color: #94a3b8; margin-top: 40px; }
 
-/* मोबाइल रेस्पॉन्सिवनेस */
+/* मोबाइल मीडिया कस्टमाइजेशन */
 @media (max-width: 768px) {
     .edu-two-column-layout, .contact-container, .behance-style-grid { grid-template-columns: 1fr; gap: 20px; }
     .clean-professional-slider-container { max-width: 100%; padding: 0 5px; }
-    .clean-img-content-box { padding: 25px; } /* मोबाइल पर थोड़ा नॉर्मल विड्थ */
+    .clean-img-content-box { padding: 25px; } 
     .thick-portfolio-border { margin: 0 30px; }
     .navbar { padding: 12px 20px; }
     .nav-menus a { margin-left: 14px; font-size: 0.85rem; }

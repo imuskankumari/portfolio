@@ -105,4 +105,3 @@ function protectMyContent() {
         return false;
     }, { passive: false });
 }
-}

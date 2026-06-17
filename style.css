@@ -5,8 +5,8 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
 .cyan-text { color: #00bacf; }
 
 .thin-neon-outline {
-    border: 1px solid #00bacf !important;
-    box-shadow: 0 0 6px rgba(0, 186, 207, 0.35);
+    border: 1px solid #1e293b !important;
+    box-shadow: 0 0 6px rgba(0, 186, 207, 0.2);
 }
 
 .navbar { background: #0c111a; padding: 12px 40px; border-bottom: 1px solid #1e293b; position: fixed; top: 0; left: 0; width: 100%; box-sizing: border-box; z-index: 1000; }
@@ -36,48 +36,57 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
 .skill-chip { background-color: #161f30; border: 1px solid #23324a; padding: 10px 16px; border-radius: 8px; font-size: 0.88rem; color: #ffffff; display: flex; align-items: center; gap: 8px; font-weight: 500; }
 .skill-chip i { color: #00bacf; font-size: 0.9rem; }
 
-.clean-professional-slider-container { display: flex; align-items: center; justify-content: center; max-width: 680px; margin: 30px auto; position: relative; padding: 0; box-sizing: border-box; }
+/* रेड/ग्रीन स्केच के अनुसार इंस्टाग्राम स्टाइल आउटर बॉक्स */
+.clean-professional-slider-container { display: flex; align-items: center; justify-content: center; max-width: 720px; margin: 30px auto; position: relative; padding: 0; box-sizing: border-box; }
 
-.thick-portfolio-border {
+.instagram-icon-thick-box {
     background-color: #0c111a;
-    border-radius: 35px;
+    border-radius: 45px; /* इंस्टाग्राम आइकॉन की तरह डीप राउंडेड */
     border: 1px solid #1e293b;
     width: 100%;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    margin: 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    margin: 0 50px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.65);
 }
 
 .clean-img-content-box {
     width: 100%;
     aspect-ratio: 1 / 1;
-    padding: 65px 65px 0px 65px;
+    padding: 80px 80px 0px 80px; /* स्केच के अनुसार टॉप और साइड्स से विशाल चौड़ा बॉर्डर स्पेस */
     box-sizing: border-box;
     background-color: #0c111a;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.clean-img-content-box img { width: 100%; height: 100%; object-fit: cover; border-radius: 0px; display: block; }
+.clean-img-content-box img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 0px; /* बीच की फोटो स्क्वायर (चकोर) रहेगी */
+    display: block; 
+}
 
+/* इमेज से सटीक नीचे चिपकी और आउटर फ्रेम के कोनों तक फैली निचली पट्टी */
 .desktop-slider-full-strip {
     background-color: #05080f;
     border-top: 1px solid #1e293b;
-    padding: 16px 20px;
+    padding: 18px 20px;
     text-align: center;
     width: 100%;
     box-sizing: border-box;
-    border-bottom-left-radius: 35px;
-    border-bottom-right-radius: 35px;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
 }
 .desktop-slider-full-strip span { font-size: 0.9rem; color: #94a3b8; font-weight: 600; letter-spacing: 0.5px; }
 
+/* स्लीक एरो बटन्स जो बिना एक्स्ट्रा स्पेस के किनारों पर दिखेंगे */
 .clean-slider-arrow { background: none; border: none; color: #00bacf; width: 25px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; }
 .clean-slider-arrow:hover { color: #ffffff; text-shadow: 0 0 5px #00bacf; }
-.arrow-left { left: -35px; }
-.arrow-right { right: -35px; }
+.arrow-left { left: 5px; }
+.arrow-right { right: 5px; }
 
 .master-reel-cover-container { background-color: #0c111a; border: 1px solid #1e293b; border-radius: 16px; padding: 20px; max-width: 1200px; margin: 0 auto; box-sizing: border-box; }
 .horizontal-reel-container { display: flex; gap: 15px; overflow-x: auto; padding: 15px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; box-sizing: border-box; }
@@ -123,13 +132,12 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
 
 @media (max-width: 768px) {
     .edu-two-column-layout, .contact-container, .behance-style-grid { grid-template-columns: 1fr; gap: 20px; }
-    .clean-professional-slider-container { max-width: 100%; padding: 0 40px; }
-    .clean-img-content-box { padding: 25px 25px 0 25px; } 
-    .thick-portfolio-border { margin: 0; border-radius: 20px; }
-    .desktop-slider-full-strip { border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
+    .clean-professional-slider-container { max-width: 100%; padding: 0 45px; }
+    .clean-img-content-box { padding: 30px 30px 0 30px; } 
+    .instagram-icon-thick-box { margin: 0; border-radius: 25px; }
+    .desktop-slider-full-strip { border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; }
     .navbar { padding: 12px 20px; }
     .nav-menus a { margin-left: 14px; font-size: 0.85rem; }
     .huge-designation { font-size: 1.8rem; }
     .motion-video-frame { flex: 0 0 100%; }
 }
-

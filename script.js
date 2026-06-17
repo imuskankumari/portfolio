@@ -71,7 +71,6 @@ function buildMotionGraphics() {
     motionContainer.innerHTML = htmlBuffer;
 }
 
-// 50 ग्रिड इमेजेस को सही ढंग से लोड करने का लॉजिक
 function buildPortfolioGrid() {
     const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;

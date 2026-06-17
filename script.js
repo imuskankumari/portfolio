@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     protectMyContent();
 });
 
-// 1. ऑटो-प्ले कैरोसेल स्लाइडर लॉजिक
 function initAutoBurgerSlider() {
     const totalSlides = 10;
     let currentSlide = 1;
@@ -57,13 +56,11 @@ function initAutoBurgerSlider() {
     startAutoPlay();
 }
 
-// 2. Motion Graphics - स्मॉलकेस v1.mp4 से v10.mp4 फ़िक्स लॉजिक (रील्स तुरंत लोड होंगी)
 function buildMotionGraphics() {
     const motionContainer = document.getElementById("motionGraphicsContainer");
     if (!motionContainer) return;
     let htmlBuffer = "";
 
-    // स्मॉलकेस अक्षरों में v1.mp4 से v10.mp4 फ़ाइल लोड करना
     for (let i = 1; i <= 10; i++) {
         htmlBuffer += `
             <div class="motion-video-frame">
@@ -74,7 +71,6 @@ function buildMotionGraphics() {
     motionContainer.innerHTML = htmlBuffer;
 }
 
-// 3. Graphic Designing - 50 ओरिजिनल फ्रेम्स ग्रिड
 function buildPortfolioGrid() {
     const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;
@@ -94,7 +90,6 @@ function buildPortfolioGrid() {
     gridContainer.innerHTML = htmlBuffer;
 }
 
-// 4. सिक्योर इमेज एंटी-डाउनलोड लॉकिंग प्रोटेक्शन
 function protectMyContent() {
     document.addEventListener('contextmenu', event => event.preventDefault());
     document.addEventListener('dragstart', (e) => {
@@ -105,3 +100,4 @@ function protectMyContent() {
         return false;
     }, { passive: false });
 }
+

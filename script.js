@@ -71,6 +71,7 @@ function buildMotionGraphics() {
     motionContainer.innerHTML = htmlBuffer;
 }
 
+// बिहान्स स्टाइल ग्रिड - फुल फोटो व्यू + निचली बार कस्टमाइजेशन लॉजिक
 function buildPortfolioGrid() {
     const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;
@@ -82,8 +83,10 @@ function buildPortfolioGrid() {
                 <div class="grid-card-image-wrapper">
                     <img src="g${i}.jpg" alt="Graphic Design g${i}">
                 </div>
-                <h4 class="grid-card-title">Graphic Design g${i}</h4>
-                <div class="grid-card-price">₹89</div>
+                <div class="grid-card-meta-bar">
+                    <h4 class="grid-card-title">Graphic Design g${i}</h4>
+                    <div class="grid-card-price">₹89</div>
+                </div>
             </div>
         `;
     }

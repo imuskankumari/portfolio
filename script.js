@@ -1,191 +1,104 @@
-/* 2026 बिहान्स मेगा-सेंटर्ड लेआउट आर्किटेक्चर */
-html { scroll-behavior: smooth; }
-body { background-color: #05080f; color: #fff; font-family: Arial, sans-serif; margin: 0; padding: 0; -webkit-user-select: none; user-select: none; width: 100%; overflow-x: hidden; display: flex; flex-direction: column; align-items: center; }
+document.addEventListener("DOMContentLoaded", () => {
+    initAutoBurgerSlider();
+    buildMotionGraphics();
+    buildPortfolioGrid();
+    protectMyContent();
+});
 
-/* वह कोर फिक्स जो लेफ्ट अलाइनमेंट को रोककर दोनों तरफ बराबर स्पेस देगा */
-.main-wrapper { 
-    margin: 160px auto 0 auto; 
-    width: 100%; 
-    max-width: 1200px; 
-    padding: 0 20px; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
-    box-sizing: border-box; 
+function initAutoBurgerSlider() {
+    const totalSlides = 10;
+    let currentSlide = 1;
+    let autoPlayTimer;
+
+    const imgElement = document.getElementById("sliderImage");
+    const titleElement = document.getElementById("sliderTitle");
+    const prevBtn = document.getElementById("prevSlide");
+    const nextBtn = document.getElementById("nextSlide");
+
+    if (!imgElement || !titleElement || !prevBtn || !nextBtn) return;
+
+    function updateSlider(index) {
+        imgElement.style.opacity = "0.3";
+        imgElement.style.transform = "scale(0.98)";
+        
+        setTimeout(() => {
+            imgElement.src = `b${index}.png`;
+            titleElement.innerText = `Burger Advertisement (b${index}.png)`;
+            imgElement.style.opacity = "1";
+            imgElement.style.transform = "scale(1)";
+        }, 120);
+    }
+
+    function startAutoPlay() {
+        autoPlayTimer = setInterval(() => {
+            currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
+            updateSlider(currentSlide);
+        }, 3000);
+    }
+
+    function resetAutoPlay() {
+        clearInterval(autoPlayTimer);
+        startAutoPlay();
+    }
+
+    nextBtn.addEventListener("click", () => {
+        currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
+        updateSlider(currentSlide);
+        resetAutoPlay();
+    });
+
+    prevBtn.addEventListener("click", () => {
+        currentSlide = currentSlide <= 1 ? totalSlides : currentSlide - 1;
+        updateSlider(currentSlide);
+        resetAutoPlay();
+    });
+
+    startAutoPlay();
 }
 
-.page-section { 
-    width: 100%; 
-    margin: 50px auto; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
-    box-sizing: border-box; 
+function buildMotionGraphics() {
+    const motionContainer = document.getElementById("motionGraphicsContainer");
+    if (!motionContainer) return;
+    let htmlBuffer = "";
+
+    for (let i = 1; i <= 10; i++) {
+        htmlBuffer += `
+            <div class="motion-video-frame">
+                <video src="v${i}.mp4" autoplay loop muted playsinline controls preload="metadata"></video>
+            </div>
+        `;
+    }
+    motionContainer.innerHTML = htmlBuffer;
 }
 
-.neon-green-text { color: #a3ff00 !important; }
+function buildPortfolioGrid() {
+    const gridContainer = document.getElementById("graphicDynamicGrid");
+    if (!gridContainer) return;
+    let htmlBuffer = "";
 
-.thin-neon-outline {
-    border: 1px solid #1e293b !important;
-    box-shadow: 0 0 12px rgba(163, 255, 0, 0.08);
+    for (let i = 1; i <= 50; i++) {
+        htmlBuffer += `
+            <div class="original-portfolio-dark-frame">
+                <div class="grid-card-image-wrapper">
+                    <img src="g${i}.jpg" alt="Graphic Design g${i}">
+                </div>
+                <div class="grid-card-meta-bar">
+                    <h4 class="grid-card-title">Graphic Design g${i}</h4>
+                    <div class="grid-card-price">₹89</div>
+                </div>
+            </div>
+        `;
+    }
+    gridContainer.innerHTML = htmlBuffer;
 }
 
-/* लॉन्ग प्रीमियम वर्टिकल हेडर नैवबार (120px) */
-.navbar { 
-    background: #0c111a; 
-    border-bottom: 1px solid #1e293b; 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 120px; 
-    box-sizing: border-box; 
-    z-index: 1000; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-}
-.nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; padding: 0 20px; box-sizing: border-box; }
-.logo-area { display: flex; align-items: center; }
-.nav-logo-circle { height: 52px; width: 52px; border-radius: 50%; object-fit: cover; border: 2px solid #a3ff00; box-shadow: 0 0 12px #a3ff00; }
-.nav-menus { display: flex; gap: 36px; }
-.nav-menus a { color: #94a3b8; text-decoration: none; font-weight: 600; font-size: 1.05rem; transition: 0.2s ease; }
-.nav-menus a:hover { color: #a3ff00; }
-
-/* मेगा हीरो टेक्स्ट स्टाइल्स (प्योर वाइट + नियॉन ग्रीन) */
-.normal-white-name { font-size: 3rem; margin: 0 0 8px 0; color: #ffffff !important; font-weight: 500; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); text-align: center; }
-.designation-neon-container { position: relative; display: inline-block; margin-bottom: 30px; text-align: center; }
-.huge-designation { font-size: 3.2rem; margin: 0; font-weight: 800; letter-spacing: 0.5px; }
-.sky-neon-glow { color: #a3ff00 !important; text-shadow: 0 0 15px #a3ff00, 0 0 30px rgba(163, 255, 0, 0.4); }
-.exact-text-line { position: absolute; bottom: -8px; left: 0; right: 0; height: 4px; background: #a3ff00; box-shadow: 0 0 12px #a3ff00; border-radius: 2px; }
-
-.bio-text-pyramid { color: #ffffff !important; max-width: 820px; margin: 20px auto; font-size: 1.08rem; line-height: 1.8; text-align: center; text-align-last: center; font-weight: 500; }
-
-.section-main-heading { margin: 0 0 20px 0; font-size: 1.3rem; font-weight: 700; color: #ffffff !important; text-align: left; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #1e293b; padding-bottom: 12px; width: 100%; }
-.section-title { width: 100%; text-align: center; }
-.section-title h2 { font-size: 2.2rem; color: #ffffff !important; margin-bottom: 30px; font-weight: 700; }
-
-/* एजुकेशन बॉक्स */
-.unified-education-card { background-color: #0c111a; border-radius: 16px; padding: 35px; text-align: left; width: 100%; box-sizing: border-box; }
-.edu-two-column-layout { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; width: 100%; }
-.edu-left-pane, .edu-right-pane { border-left: 3px solid #a3ff00; padding-left: 20px; }
-.edu-two-column-layout h3 { margin: 0 0 10px 0; font-size: 1.05rem; color: #a3ff00 !important; font-weight: 700; }
-.inst-desc { color: #ffffff !important; font-size: 0.98rem; margin: 0; line-height: 1.65; font-weight: 500; }
-
-/* सॉफ्टवेयर एवं कोर एक्सपर्टीज स्किल्स */
-.master-skills-pyramid-box { background-color: #0c111a; border-radius: 16px; padding: 35px; text-align: left; width: 100%; box-sizing: border-box; }
-.skills-category-wrapper { display: flex; flex-direction: column; gap: 28px; width: 100%; }
-.skill-group-row h4 { margin: 0 0 12px 0; font-size: 1rem; color: #a3ff00 !important; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-.chips-horizontal-flow { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-start; }
-.skill-chip { background-color: #161f30; border: 1px solid #23324a; padding: 10px 18px; border-radius: 8px; font-size: 0.9rem; color: #ffffff !important; display: inline-flex; align-items: center; gap: 8px; font-weight: 500; }
-.skill-chip i { color: #a3ff00 !important; font-size: 0.9rem; }
-.expertise-highlight-row { border-top: 1px solid #1e293b; padding-top: 25px; margin-top: 10px; }
-
-/* इंस्टाग्राम आइकॉन मेगा कस्टमाइज्ड कैरोसेल फ्रेम (परफेक्टली सेंटर्ड) */
-.trending-carousel-outer { display: flex; justify-content: center; width: 100%; box-sizing: border-box; }
-.trending-instagram-frame {
-    position: relative;
-    background-color: #0c111a;
-    border-radius: 45px;
-    border: 1px solid #1e293b;
-    width: 100%;
-    max-width: 860px;
-    padding: 120px 160px 0px 160px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.7);
-}
-.carousel-inner-graphics-box { width: 100%; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; background-color: #0c111a; }
-.carousel-inner-graphics-box img { width: 100%; height: 100%; object-fit: cover; border-radius: 0px; display: block; }
-
-.desktop-slider-full-strip {
-    background-color: #05080f;
-    border-top: 1px solid #1e293b;
-    padding: 18px 20px;
-    text-align: center;
-    width: calc(100% + 320px);
-    margin-left: -160px;
-    margin-right: -160px;
-    box-sizing: border-box;
-    border-bottom-left-radius: 45px;
-    border-bottom-right-radius: 45px;
-}
-.desktop-slider-full-strip span { font-size: 0.9rem; color: #94a3b8; font-weight: 600; letter-spacing: 0.5px; }
-
-.original-arrow-btn {
-    background: #05080f;
-    border: 1px solid #1e293b;
-    color: #a3ff00;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    position: absolute;
-    top: calc(50% - 22px);
-    transform: translateY(-50%);
-    z-index: 15;
-    box-shadow: 0 0 10px rgba(163, 255, 0, 0.3);
-}
-.positioning-left { left: 58px; }
-.positioning-right { right: 58px; }
-
-/* मोशन ग्राफिक्स और गैलरी ग्रिड अनुभाग */
-.full-viewport-section { width: 100%; display: flex; flex-direction: column; align-items: center; }
-.master-reel-cover-container { background-color: #0c111a; border: 1px solid #1e293b; border-radius: 16px; padding: 20px; width: 100%; box-sizing: border-box; }
-.horizontal-reel-container { display: flex; gap: 15px; overflow-x: auto; padding: 15px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; box-sizing: border-box; }
-.horizontal-reel-container::-webkit-scrollbar { height: 6px; }
-.horizontal-reel-container::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
-.motion-video-frame { flex: 0 0 165px; background-color: #05080f; border: 1px solid #a3ff00 !important; box-shadow: 0 0 8px rgba(163, 255, 0, 0.25); border-radius: 10px; overflow: hidden; scroll-snap-align: start; box-sizing: border-box; }
-.motion-video-frame video { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; display: block; }
-
-/* बिहान्स स्टाइल ग्रिड - फुल फोटो व्यू (बिना कतरन के) */
-.behance-style-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; width: 100%; box-sizing: border-box; }
-.original-portfolio-dark-frame { background-color: #0c111a; border-radius: 20px; padding: 20px; border: 6px solid #1e293b; display: flex; flex-direction: column; text-align: left; box-sizing: border-box; }
-.grid-card-image-wrapper { width: 100%; border-radius: 12px; overflow: hidden; background-color: #05080f; }
-.grid-card-image-wrapper img { width: 100%; height: auto; max-height: 100%; object-fit: contain; display: block; }
-.grid-card-meta-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; border-top: 1px solid #1e293b; padding-top: 12px; }
-.grid-card-title { font-size: 0.95rem; color: #ffffff !important; margin: 0; font-weight: 700; }
-.grid-card-price { font-size: 1.15rem; color: #a3ff00; font-weight: 800; margin: 0; }
-
-/* कांटेक्ट लेआउट */
-.contact-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; width: 100%; text-align: left; box-sizing: border-box; }
-.contact-card-table { background-color: #0c111a; border: 1px solid #1e293b; padding: 30px; border-radius: 14px; display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; width: 100%; }
-.form-input { width: 100%; background: #05080f; border: 1px solid #1e293b; color: #fff; padding: 12px; margin-bottom: 12px; border-radius: 6px; box-sizing: border-box; font-size: 0.95rem; transition: all 0.2s ease; font-family: Arial, sans-serif; }
-.glowing-input:focus { outline: none; border-color: #a3ff00 !important; box-shadow: 0 0 8px rgba(163, 255, 0, 0.4); }
-.submit-btn { background-color: #a3ff00; color: #090d16; border: none; width: 100%; padding: 14px; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 1rem; }
-.info-title { margin: 0; font-size: 1.05rem; color: #ffffff !important; font-weight: 700; }
-.contact-divider-line { height: 1px; background-color: #1e293b; margin: 10px 0; }
-.info-row { font-size: 0.95rem; margin: 14px 0; display: flex; align-items: center; gap: 10px; color: #ffffff !important; }
-.upi-secure-box { background: #05080f; border: 1px solid #1e293b; padding: 14px; border-radius: 8px; margin-top: 15px; }
-.upi-header { display: flex; align-items: center; gap: 12px; }
-.secure-icon { color: #a3ff00; font-size: 1.6rem; }
-.upi-text-left { text-align: left; }
-.bhim-title { font-size: 0.9rem; color: #fff; display: block; }
-.upi-id { margin: 1px 0 0 0; color: #94a3b8; font-size: 0.8rem; }
-.pay-btn { background-color: #10b981; color: white; border: none; width: 100%; padding: 11px; font-weight: bold; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 12px; }
-
-.corporate-footer { background: #0c111a; padding: 25px; border-top: 1px solid #1e293b; font-size: 0.85rem; color: #94a3b8; margin-top: 40px; width: 100%; box-sizing: border-box; text-align: center; }
-
-/* मोबाइल फ्रेंडली 100% सेंटर अलाइन फिक्स */
-@media (max-width: 768px) {
-    .main-wrapper { padding: 0 15px; margin-top: 115px; }
-    .edu-two-column-layout, .contact-container, .behance-style-grid { grid-template-columns: 1fr; gap: 20px; }
-    .trending-instagram-frame { padding: 40px 45px 0 45px; border-radius: 20px; }
-    .desktop-slider-full-strip { width: calc(100% + 90px); margin-left: -45px; margin-right: -45px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
-    .original-arrow-btn { top: calc(50% - 20px); width: 36px; height: 46px; }
-    .positioning-left { left: 5px; }
-    .positioning-right { right: 5px; }
-    .navbar { padding: 12px 20px; height: 85px; }
-    .nav-menus { gap: 16px; }
-    .nav-menus a { font-size: 0.9rem; margin: 0; }
-    .huge-designation { font-size: 1.8rem; }
-    .motion-video-frame { flex: 0 0 100%; }
+function protectMyContent() {
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('dragstart', (e) => {
+        if (e.target.nodeName === 'IMG') e.preventDefault();
+    });
+    window.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+        return false;
+    }, { passive: false });
 }

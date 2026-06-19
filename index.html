@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Creative Motion Portfolio</title>
+    <title>Muskan Kumari | Creative Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@800;900&family=Playfair+Display:ital,wght@1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body oncontextmenu="return false;">
 
-    <!-- बियांश-इंस्पायर्ड प्रीमियम नैवबार -->
+    <!-- हेडर नैवबार -->
     <header class="navbar">
         <div class="nav-container">
             <div class="logo-area">
                 <img src="mk.png" alt="Logo" class="nav-logo-circle" oncontextmenu="return false;" ondragstart="return false;">
-                <span class="brand-logo-text">MUSKAN</span>
+                <span class="brand-logo-text">Muskan</span>
             </div>
             <nav class="nav-menus">
                 <a href="#home">Home</a>
@@ -26,14 +26,13 @@
         </div>
     </header>
 
-    <!-- मुख्य सेंटर-अलाइन्ड ग्रिड आवरण -->
+    <!-- मुख्य सेंटर्ड आवरण -->
     <main class="main-wrapper" id="home">
         
-        <!-- इनशॉर्ट स्केच आर्किटेक्चर: लेफ्ट में नेम, राइट में बायो पैराग्राफ -->
+        <!-- इनशॉर्ट स्प्लिट हीरो लेआउट -->
         <section class="behance-hero-split">
             <div class="hero-left-branding">
-                <!-- एक अक्षर कलर, बाकी वाइट - डिज़ाइनर लोगो स्टाइल टाइपोग्राफी -->
-                <h1 class="mega-bold-title"><span class="purple-accent">M</span>USKAN<br>KUMARI</h1>
+                <h1 class="mega-bold-title">Muskan Kumari</h1>
                 <p class="italic-serif-sub">Graphic & Web Designer</p>
                 
                 <div class="home-direct-contact">
@@ -44,16 +43,16 @@
             </div>
             
             <div class="hero-right-bio" id="about">
-                <div class="heading-badge">ABOUT ME</div>
+                <div class="heading-badge">About me</div>
                 <p class="clean-modern-paragraph">
                     I am Muskan Kumari and I am from Delhi. I am an aspiring and professional Graphic & Web Designer.
                 </p>
             </div>
         </section>
 
-        <!-- एजुकेशन प्रोफाइल - थिन फॉन्ट वेट मिक्सचर -->
+        <!-- Education Profile -->
         <section class="page-section">
-            <h2 class="section-main-heading">Education <span class="thin-font-weight">Profile</span></h2>
+            <h2 class="section-main-heading">Education profile</h2>
             <div class="edu-two-column-layout">
                 <div class="edu-left-pane">
                     <h3>Academic & Professional Education</h3>
@@ -66,9 +65,9 @@
             </div>
         </section>
 
-        <!-- सर्विसेज सेक्शन: नाम नहीं, सीधे इमेज आइकन्स दिखेंगे -->
+        <!-- Tools & Services Section -->
         <section class="page-section" id="services">
-            <h2 class="section-main-heading">Our <span class="thin-font-weight">Services & Tools</span></h2>
+            <h2 class="section-main-heading">Our services</h2>
             <div class="services-boxes-grid">
                 
                 <div class="service-minimal-box">
@@ -108,63 +107,44 @@
             </div>
         </section>
 
-        <!-- रील्स एवं विजुअल्स वर्क्स एरिया -->
+        <!-- वर्क्स एरिया -->
         <div class="full-viewport-section">
             
-            <!-- मोशन ग्राफिक्स - लगातार दोनों तरफ स्क्रॉल होने वाला मारकी लूप -->
+            <!-- AI Generated Visuals - मारकी लूप -->
             <section class="page-section-fluid">
-                <h2 class="section-main-heading pad-left">Motion <span class="thin-font-weight">Graphics Reels</span></h2>
-                
+                <h2 class="section-main-heading">Ai generated visuals</h2>
                 <div class="infinite-marquee-wrapper">
-                    <!-- लेफ्ट से राइट जाने वाली कतार -->
-                    <div class="marquee-track direction-left" id="marqueeTrack1">
+                    <div class="marquee-track visuals-track-speed" id="visualsMarqueeTrack">
+                        <!-- जावास्क्रिप्ट से b1.png से b10.png लोड होंगे -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Motion Graphics - मारकी लूप -->
+            <section class="page-section-fluid">
+                <h2 class="section-main-heading">Motion graphics</h2>
+                <div class="infinite-marquee-wrapper">
+                    <div class="marquee-track reels-track-speed" id="motionMarqueeTrack">
                         <!-- जावास्क्रिप्ट से v1.mp4 से v12.mp4 लोड होंगे -->
                     </div>
                 </div>
             </section>
 
-            <!-- एआई जनरेटेड विजुअल्स - हाथ से टच करने पर पलटने वाला कैरोसल -->
+            <!-- Latest Designs Grid (g1 से g50) -->
             <section class="page-section">
-                <h2 class="section-main-heading">AI Generated <span class="thin-font-weight">Visuals</span></h2>
-                
-                <div class="premium-touch-slider-box">
-                    <div class="slider-touch-track" id="visualsTrack">
-                        <!-- b1.png से b10.png लोड होंगे -->
-                        <div class="touch-slide-item"><img src="b1.png" alt="Visual 1"></div>
-                        <div class="touch-slide-item"><img src="b2.png" alt="Visual 2"></div>
-                        <div class="touch-slide-item"><img src="b3.png" alt="Visual 3"></div>
-                        <div class="touch-slide-item"><img src="b4.png" alt="Visual 4"></div>
-                        <div class="touch-slide-item"><img src="b5.png" alt="Visual 5"></div>
-                        <div class="touch-slide-item"><img src="b6.png" alt="Visual 6"></div>
-                        <div class="touch-slide-item"><img src="b7.png" alt="Visual 7"></div>
-                        <div class="touch-slide-item"><img src="b8.png" alt="Visual 8"></div>
-                        <div class="touch-slide-item"><img src="b9.png" alt="Visual 9"></div>
-                        <div class="touch-slide-item"><img src="b10.png" alt="Visual 10"></div>
-                    </div>
-                    
-                    <div class="slider-pill-controls">
-                        <button class="pill-arrow" id="slideLeftBtn"><i class="fas fa-arrow-left"></i></button>
-                        <span class="pill-counter" id="slideCounterDisplay">1 / 10</span>
-                        <button class="pill-arrow" id="slideRightBtn"><i class="fas fa-arrow-right"></i></button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- लेटेस्ट डिज़ाइन ग्रिड (g1 से g50) -->
-            <section class="page-section">
-                <h2 class="section-main-heading">Latest <span class="thin-font-weight">Designs Portfolio</span></h2>
+                <h2 class="section-main-heading">Latest designs</h2>
                 <div class="behance-style-grid" id="graphicDynamicGrid">
                     <!-- जावास्क्रिप्ट से लोड होंगे -->
                 </div>
             </section>
         </div>
 
-        <!-- कांटेक्ट सेक्शन - आपका पसंदीदा ओरिजिनल डिब्बा लुक वापस -->
+        <!-- कांटेक्ट सेक्शन -->
         <section id="contact" class="page-section contact-section">
-            <h2 class="section-main-heading">Contact <span class="thin-font-weight">Me!</span></h2>
+            <h2 class="section-main-heading">Contact me!</h2>
             
             <div class="contact-container">
-                <!-- बायाँ ओरिजिनल मैसेज बॉक्स टेबल -->
+                <!-- मैसेज फॉर्म -->
                 <div class="contact-card-table original-box-style">
                     <form action="#" method="POST" onsubmit="alert('Message Sent Successfully!'); this.reset(); return false;">
                         <input type="text" placeholder="Your Name" required class="form-input glowing-input">
@@ -174,7 +154,7 @@
                     </form>
                 </div>
 
-                <!-- दायाँ ओरिजिनल सुरक्षित भीम यूपीआई बॉक्स टेबल -->
+                <!-- भीम यूपीआई बॉक्स -->
                 <div class="contact-card-table original-box-style">
                     <div class="upi-secure-box">
                         <div class="upi-header">

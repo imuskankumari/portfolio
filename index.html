@@ -3,53 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Creative Portfolio</title>
+    <title>Muskan Kumari | Creative Motion Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700;900&family=Playfair+Display:ital,wght@1,500&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@800;900&family=Playfair+Display:ital,wght@1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body oncontextmenu="return false;">
 
-    <!-- बड़ा और बड़ा प्रीमियम हेडर -->
+    <!-- बियांश-इंस्पायर्ड प्रीमियम नैवबार -->
     <header class="navbar">
         <div class="nav-container">
             <div class="logo-area">
-                <span class="brand-logo-text">MK DESIGNS</span>
+                <img src="mk.png" alt="Logo" class="nav-logo-circle" oncontextmenu="return false;" ondragstart="return false;">
+                <span class="brand-logo-text">MUSKAN</span>
             </div>
             <nav class="nav-menus">
                 <a href="#home">Home</a>
-                <a href="#portfolio">Portfolio</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- मुख्य सेंटर-अलाइन्ड व्हाइट रैपर -->
+    <!-- मुख्य सेंटर-अलाइन्ड ग्रिड आवरण -->
     <main class="main-wrapper" id="home">
         
-        <!-- नया "Sanjay Menon" स्टाइल हीरो सेक्शन -->
-        <section class="behance-hero-white">
-            <div class="hero-space-badge">CHECK OUT MY WORK</div>
-            <h1 class="mega-bold-title">MUSKAN KUMARI</h1>
-            <p class="italic-serif-sub">Graphic & Web Designer</p>
-            
-            <div class="behance-bio-container">
-                <p class="behance-bio-text">
-                    I am Muskan Kumari and I am from Delhi. I am an aspiring and professional Graphic & Web Designer, specializing in creating high-impact visual identities, modern websites, and trending digital assets.
-                </p>
+        <!-- इनशॉर्ट स्केच आर्किटेक्चर: लेफ्ट में नेम, राइट में बायो पैराग्राफ -->
+        <section class="behance-hero-split">
+            <div class="hero-left-branding">
+                <!-- एक अक्षर कलर, बाकी वाइट - डिज़ाइनर लोगो स्टाइल टाइपोग्राफी -->
+                <h1 class="mega-bold-title"><span class="purple-accent">M</span>USKAN<br>KUMARI</h1>
+                <p class="italic-serif-sub">Graphic & Web Designer</p>
+                
+                <div class="home-direct-contact">
+                    <p><i class="fas fa-phone"></i> +91 8810682518</p>
+                    <p><i class="fas fa-envelope"></i> muskankumar3330@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+                </div>
             </div>
-
-            <!-- कॉन्टैक्ट बार -->
-            <div class="hero-contact-details-bar">
-                <span><i class="fas fa-phone"></i> +91 8810682518</span>
-                <span><i class="fas fa-envelope"></i> muskankumar3330@gmail.com</span>
-                <span><i class="fas fa-map-marker-alt"></i> New Delhi, India</span>
+            
+            <div class="hero-right-bio" id="about">
+                <div class="heading-badge">ABOUT ME</div>
+                <p class="clean-modern-paragraph">
+                    I am Muskan Kumari and I am from Delhi. I am an aspiring and professional Graphic & Web Designer.
+                </p>
             </div>
         </section>
 
-        <!-- एजुकेशन सेक्शन (क्लीन स्पेस लेआउट) -->
+        <!-- एजुकेशन प्रोफाइल - थिन फॉन्ट वेट मिक्सचर -->
         <section class="page-section">
-            <h2 class="section-main-heading">EDUCATION PROFILE</h2>
+            <h2 class="section-main-heading">Education <span class="thin-font-weight">Profile</span></h2>
             <div class="edu-two-column-layout">
                 <div class="edu-left-pane">
                     <h3>Academic & Professional Education</h3>
@@ -62,122 +66,125 @@
             </div>
         </section>
 
-        <!-- सॉफ्टवेयर और स्किल्स सेक्शन -->
-        <section class="page-section">
-            <h2 class="section-main-heading">SOFTWARE & SKILLS</h2>
-            <div class="skills-category-wrapper">
+        <!-- सर्विसेज सेक्शन: नाम नहीं, सीधे इमेज आइकन्स दिखेंगे -->
+        <section class="page-section" id="services">
+            <h2 class="section-main-heading">Our <span class="thin-font-weight">Services & Tools</span></h2>
+            <div class="services-boxes-grid">
                 
-                <div class="skill-group-row">
-                    <h4>Graphic Designing</h4>
-                    <div class="chips-horizontal-flow">
-                        <span class="skill-chip"><i class="fas fa-image"></i> Adobe Photoshop</span>
-                        <span class="skill-chip"><i class="fas fa-vector-square"></i> Adobe Illustrator</span>
-                        <span class="skill-chip"><i class="fas fa-book-open"></i> Adobe InDesign</span>
-                        <span class="skill-chip"><i class="fas fa-pen-nib"></i> CorelDraw</span>
-                        <span class="skill-chip"><i class="fas fa-wand-magic-sparkles"></i> Canva</span>
+                <div class="service-minimal-box">
+                    <div class="icon-rename-container">
+                        <img src="photoshop.png" alt="PS" class="tool-png-icon">
+                        <img src="illustrator.png" alt="AI" class="tool-png-icon">
+                        <img src="indesign.png" alt="ID" class="tool-png-icon">
                     </div>
+                    <h4>Graphic Designing Tools</h4>
                 </div>
 
-                <div class="skill-group-row">
-                    <h4>Web Designing</h4>
-                    <div class="chips-horizontal-flow">
-                        <span class="skill-chip"><i class="fab fa-html5"></i> HTML</span>
-                        <span class="skill-chip"><i class="fab fa-css3-alt"></i> CSS</span>
-                        <span class="skill-chip"><i class="fab fa-js"></i> JavaScript</span>
-                        <span class="skill-chip"><i class="fab fa-wordpress"></i> WordPress</span>
+                <div class="service-minimal-box">
+                    <div class="icon-rename-container">
+                        <img src="coreldraw.png" alt="CD" class="tool-png-icon">
+                        <img src="canva.png" alt="CV" class="tool-png-icon">
                     </div>
+                    <h4>Vector & Illustration Tracing</h4>
                 </div>
 
-                <div class="skill-group-rowexpertise-highlight-row">
-                    <h4>Core Expertise & Deliverables</h4>
-                    <div class="chips-horizontal-flow">
-                        <span class="skill-chip"><i class="fas fa-vector-square"></i> Vector Illustration Tracing</span>
-                        <span class="skill-chip"><i class="fas fa-ad"></i> Social Media Posts & Posters</span>
-                        <span class="skill-chip"><i class="fas fa-book-open"></i> Magazine Newspaper Design</span>
-                        <span class="skill-chip"><i class="fas fa-film"></i> Motion Graphics</span>
-                        <span class="skill-chip"><i class="fas fa-magic"></i> AI Generated Visuals</span>
-                        <span class="skill-chip"><i class="fas fa-video"></i> AI Generated Advertising Videos</span>
-                        <span class="skill-chip"><i class="fas fa-id-card"></i> Brand Identity</span>
+                <div class="service-minimal-box">
+                    <div class="icon-rename-container">
+                        <img src="html.png" alt="HTML" class="tool-png-icon">
+                        <img src="css.png" alt="CSS" class="tool-png-icon">
+                        <img src="javascript.png" alt="JS" class="tool-png-icon">
+                        <img src="wordpress.png" alt="WP" class="tool-png-icon">
                     </div>
+                    <h4>Web Designing Frameworks</h4>
                 </div>
+
+                <div class="service-minimal-box">
+                    <div class="icon-rename-container">
+                        <img src="filmora.png" alt="FL" class="tool-png-icon">
+                    </div>
+                    <h4>Video Editing & Motion Graphics</h4>
+                </div>
+
             </div>
         </section>
 
-        <!-- वर्क्स और विजुअल्स एरिया -->
-        <div id="portfolio" class="full-viewport-section">
+        <!-- रील्स एवं विजुअल्स वर्क्स एरिया -->
+        <div class="full-viewport-section">
             
-            <!-- AI GENERATED VISUALS (ट्रेंडिंग कैरोसल लुक) -->
-            <section class="page-section">
-                <div class="section-title">
-                    <h2>AI Generated Visuals</h2>
-                </div>
+            <!-- मोशन ग्राफिक्स - लगातार दोनों तरफ स्क्रॉल होने वाला मारकी लूप -->
+            <section class="page-section-fluid">
+                <h2 class="section-main-heading pad-left">Motion <span class="thin-font-weight">Graphics Reels</span></h2>
                 
-                <div class="trending-carousel-outer">
-                    <div class="trending-instagram-frame">
-                        <button class="arrow-btn pos-left" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
-                        
-                        <div class="carousel-inner-white">
-                            <img id="sliderImage" src="b1.png" alt="Visual Artwork">
-                        </div>
-                        
-                        <button class="arrow-btn pos-right" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
-                        
-                        <div class="desktop-slider-meta">
-                            <span id="sliderTitle">Burger Advertisement (b1.png)</span>
-                        </div>
+                <div class="infinite-marquee-wrapper">
+                    <!-- लेफ्ट से राइट जाने वाली कतार -->
+                    <div class="marquee-track direction-left" id="marqueeTrack1">
+                        <!-- जावास्क्रिप्ट से v1.mp4 से v12.mp4 लोड होंगे -->
                     </div>
                 </div>
             </section>
 
-            <!-- मोशन ग्राफिक्स - बिल्कुल सीधी आड़ी लाइन में (v1.mp4 से v11.mp4) -->
+            <!-- एआई जनरेटेड विजुअल्स - हाथ से टच करने पर पलटने वाला कैरोसल -->
             <section class="page-section">
-                <div class="section-title">
-                    <h2>Motion Graphics</h2>
-                </div>
-                <div class="master-reel-cover-white">
-                    <div class="horizontal-reel-container" id="motionGraphicsContainer">
-                        <!-- जावास्क्रिप्ट से यहां v1 से v11 तक रील्स लोड होंगी -->
+                <h2 class="section-main-heading">AI Generated <span class="thin-font-weight">Visuals</span></h2>
+                
+                <div class="premium-touch-slider-box">
+                    <div class="slider-touch-track" id="visualsTrack">
+                        <!-- b1.png से b10.png लोड होंगे -->
+                        <div class="touch-slide-item"><img src="b1.png" alt="Visual 1"></div>
+                        <div class="touch-slide-item"><img src="b2.png" alt="Visual 2"></div>
+                        <div class="touch-slide-item"><img src="b3.png" alt="Visual 3"></div>
+                        <div class="touch-slide-item"><img src="b4.png" alt="Visual 4"></div>
+                        <div class="touch-slide-item"><img src="b5.png" alt="Visual 5"></div>
+                        <div class="touch-slide-item"><img src="b6.png" alt="Visual 6"></div>
+                        <div class="touch-slide-item"><img src="b7.png" alt="Visual 7"></div>
+                        <div class="touch-slide-item"><img src="b8.png" alt="Visual 8"></div>
+                        <div class="touch-slide-item"><img src="b9.png" alt="Visual 9"></div>
+                        <div class="touch-slide-item"><img src="b10.png" alt="Visual 10"></div>
+                    </div>
+                    
+                    <div class="slider-pill-controls">
+                        <button class="pill-arrow" id="slideLeftBtn"><i class="fas fa-arrow-left"></i></button>
+                        <span class="pill-counter" id="slideCounterDisplay">1 / 10</span>
+                        <button class="pill-arrow" id="slideRightBtn"><i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
             </section>
 
-            <!-- ग्राफिक डिजाइनिंग 50 इमेजेस का प्रीमियम ग्रिड -->
-            <section class="page-section portfolio-section">
-                <div class="section-title">
-                    <h2>Graphic Designing</h2>
-                </div>
-                <div class="behance-style-white-grid" id="graphicDynamicGrid">
-                    <!-- जावास्क्रिप्ट से g1 से g50 इमेजेस लोड होंगी -->
+            <!-- लेटेस्ट डिज़ाइन ग्रिड (g1 से g50) -->
+            <section class="page-section">
+                <h2 class="section-main-heading">Latest <span class="thin-font-weight">Designs Portfolio</span></h2>
+                <div class="behance-style-grid" id="graphicDynamicGrid">
+                    <!-- जावास्क्रिप्ट से लोड होंगे -->
                 </div>
             </section>
         </div>
 
-        <!-- कांटेक्ट सेक्शन (सबसे लास्ट में) -->
+        <!-- कांटेक्ट सेक्शन - आपका पसंदीदा ओरिजिनल डिब्बा लुक वापस -->
         <section id="contact" class="page-section contact-section">
-            <div class="section-title">
-                <h2>LET'S WORK TOGETHER</h2>
-            </div>
+            <h2 class="section-main-heading">Contact <span class="thin-font-weight">Me!</span></h2>
             
             <div class="contact-container">
-                <div class="contact-white-card original-box-style">
-                    <form action="#" method="POST" onsubmit="alert('Message Sent!'); this.reset(); return false;">
-                        <input type="text" placeholder="Your Name" required class="white-form-input">
-                        <input type="email" placeholder="Your Email Address" required class="white-form-input">
-                        <textarea placeholder="Message Requirements..." rows="5" required class="white-form-input"></textarea>
-                        <button type="submit" class="white-submit-btn">Send Message</button>
+                <!-- बायाँ ओरिजिनल मैसेज बॉक्स टेबल -->
+                <div class="contact-card-table original-box-style">
+                    <form action="#" method="POST" onsubmit="alert('Message Sent Successfully!'); this.reset(); return false;">
+                        <input type="text" placeholder="Your Name" required class="form-input glowing-input">
+                        <input type="email" placeholder="Your Email Address" required class="form-input glowing-input">
+                        <textarea placeholder="Message Requirements..." rows="4" required class="form-input glowing-input"></textarea>
+                        <button type="submit" class="submit-btn">Submit Message</button>
                     </form>
                 </div>
 
-                <div class="contact-white-card original-box-style">
-                    <div class="upi-secure-white-box">
-                        <div class="upi-header-row">
-                            <i class="fas fa-shield-alt secure-white-icon"></i>
-                            <div class="upi-text-block">
+                <!-- दायाँ ओरिजिनल सुरक्षित भीम यूपीआई बॉक्स टेबल -->
+                <div class="contact-card-table original-box-style">
+                    <div class="upi-secure-box">
+                        <div class="upi-header">
+                            <i class="fas fa-shield-alt secure-icon"></i>
+                            <div class="upi-text-left">
                                 <strong class="bhim-title">BHIM UPI Secure Network</strong>
                                 <p class="upi-id">UPI ID: muskan@upi</p>
                             </div>
                         </div>
-                        <button class="pay-secure-btn" type="button" onclick="alert('Opening secure UPI window...');">
+                        <button class="pay-btn" type="button" onclick="alert('Opening secure UPI link...');">
                             <i class="fas fa-lock"></i> Pay Securely
                         </button>
                     </div>
@@ -186,11 +193,11 @@
         </section>
     </main>
 
-    <!-- फुटर -->
-    <footer class="corporate-footer-white">
+    <footer class="corporate-footer">
         <p>&copy; 2026 Muskan Kumari | Graphic & Web Designer | All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+

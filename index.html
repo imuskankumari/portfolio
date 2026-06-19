@@ -3,182 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Creative Portfolio</title>
+    <title>Muskan Kumari | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;700;900&family=Playfair+Display:ital,wght@1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body oncontextmenu="return false;">
-
+<body>
     <header class="navbar">
         <div class="nav-container">
-            <div class="logo-area">
-                <span class="brand-logo-text">MK DESIGNS</span>
-            </div>
-            <nav class="nav-menus">
-                <a href="#home">Home</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            <div class="logo">MK DESIGNS</div>
+            <nav><a href="#home">Home</a><a href="#services">Services</a><a href="#contact">Contact</a></nav>
         </div>
     </header>
 
-    <main class="main-wrapper" id="home">
-        
-        <section class="pyramid-hero-section">
-            <h1 class="mega-bold-title">MUSKAN KUMARI</h1>
-            <p class="italic-serif-sub">Graphic & Web Designer</p>
-            
-            <div class="pyramid-bio-container">
-                <p class="pyramid-bio-text">
-                    I am Muskan Kumari and I am from Delhi. I am an aspiring and professional Graphic & Web Designer, specializing in creating high-impact visual identities, modern websites, and trending digital assets.
-                </p>
-            </div>
-
-            <div class="hero-contact-details-bar">
-                <span><i class="fas fa-phone"></i> +91 8810682518</span>
-                <span><i class="fas fa-envelope"></i> muskankumar3330@gmail.com</span>
-                <span><i class="fas fa-map-marker-alt"></i> New Delhi, India</span>
-            </div>
+    <main class="main-wrapper">
+        <section id="home" class="hero-section">
+            <h1 class="hero-title">MUSKAN KUMARI<br><span class="hero-subtitle">GRAPHIC & WEB DESIGNER</span></h1>
+            <p class="hero-bio">I am Muskan Kumari and I am from Delhi. I am an aspiring and professional Graphic & Web Designer.</p>
         </section>
 
+        <!-- Education & Skills -->
         <section class="page-section">
-            <h2 class="section-main-heading">EDUCATION <span class="thin-green-text">PROFILE</span></h2>
-            <div class="edu-two-column-layout">
-                <div class="edu-left-pane">
-                    <h3>Academic & Professional Education</h3>
-                    <p class="inst-desc">Senior Secondary Education From CBSE</p>
-                </div>
-                <div class="edu-right-pane">
-                    <h3>Technical Qualification</h3>
-                    <p class="inst-desc">Basic Computer Course (BCC) & Diploma in Computer Application (DCA) (MS Office, Graphic Designing, Web Designing, Video Editing)</p>
+            <h2>EDUCATION</h2>
+            <div class="edu-grid">
+                <div><h3>Academic</h3><p>Senior Secondary Education From CBSE</p></div>
+                <div><h3>Technical</h3><p>DCA (MS Office, Graphic Designing, Web Designing, Video Editing)</p></div>
+            </div>
+        </section>
+
+        <!-- AI Visuals: Trending Carousel (बिना फ्रेम के, इमेज पर टच/स्वाइप इफ़ेक्ट) -->
+        <section id="services">
+            <h2>AI GENERATED VISUALS</h2>
+            <div class="trending-carousel">
+                <img id="sliderImage" src="b1.png">
+                <div class="slider-controls">
+                    <button id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+                    <span id="sliderTitle">Burger Advertisement (b1.png)</span>
+                    <button id="nextSlide"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </section>
 
-        <section class="page-section">
-            <h2 class="section-main-heading">SOFTWARE & <span class="thin-green-text">SKILLS</span></h2>
-            <div class="skills-category-wrapper">
-                
-                <div class="skill-group-row">
-                    <h4>Graphic Designing</h4>
-                    <div class="chips-horizontal-flow">
-                        <span class="skill-chip"><i class="fas fa-image"></i> Adobe Photoshop</span>
-                        <span class="skill-chip"><i class="fas fa-vector-square"></i> Adobe Illustrator</span>
-                        <span class="skill-chip"><i class="fas fa-book-open"></i> Adobe InDesign</span>
-                        <span class="skill-chip"><i class="fas fa-pen-nib"></i> CorelDraw</span>
-                        <span class="skill-chip"><i class="fas fa-wand-magic-sparkles"></i> Canva</span>
-                    </div>
-                </div>
-
-                <div class="skill-group-row">
-                    <h4>Web Designing</h4>
-                    <div class="chips-horizontal-flow">
-                        <span class="skill-chip"><i class="fab fa-html5"></i> HTML</span>
-                        <span class="skill-chip"><i class="fab fa-css3-alt"></i> CSS</span>
-                        <span class="skill-chip"><i class="fab fa-js"></i> JavaScript</span>
-                        <span class="skill-chip"><i class="fab fa-wordpress"></i> WordPress</span>
-                    </div>
-                </div>
-
-                <div class="skill-group-row">
-                    <h4>Microsoft Office</h4>
-                    <div class="chips-horizontal-flow">
-                        <span class="skill-chip"><i class="fas fa-file-word"></i> MS Word</span>
-                        <span class="skill-chip"><i class="fas fa-file-excel"></i> MS Excel</span>
-                        <span class="skill-chip"><i class="fas fa-file-powerpoint"></i> MS PowerPoint</span>
-                    </div>
-                </div>
-
-                <div class="skill-group-row">
-                    <h4>Video Editing</h4>
-                    <div class="chips-horizontal-flow">
-                        <span class="skill-chip"><i class="fas fa-video"></i> Filmora</span>
-                    </div>
-                </div>
-
-                <div class="skill-group-row expertise-highlight-row">
-                    <h4>Core Expertise & Deliverables</h4>
-                    <div class="chips-horizontal-flow">
-                        <span class="skill-chip"><i class="fas fa-vector-square"></i> Vector Illustration Tracing</span>
-                        <span class="skill-chip"><i class="fas fa-ad"></i> Social Media Posts & Posters</span>
-                        <span class="skill-chip"><i class="fas fa-book-open"></i> Magazine Newspaper Design</span>
-                        <span class="skill-chip"><i class="fas fa-film"></i> Motion Graphics</span>
-                        <span class="skill-chip"><i class="fas fa-magic"></i> AI Generated Visuals</span>
-                        <span class="skill-chip"><i class="fas fa-video"></i> AI Generated Advertising Videos</span>
-                        <span class="skill-chip"><i class="fas fa-id-card"></i> Brand Identity</span>
-                    </div>
-                </div>
-            </div>
+        <!-- Motion Graphics: 11 रील्स (बिना स्क्रॉल, एक साथ सामने) -->
+        <section>
+            <h2>MOTION GRAPHICS</h2>
+            <div class="reels-grid" id="reelContainer"></div>
         </section>
 
-        <div id="portfolio" class="full-viewport-section">
-            
-            <section class="page-section">
-                <h2 class="section-main-heading">AI GENERATED <span class="thin-green-text">VISUALS</span></h2>
-                
-                <div class="trending-modern-slider-container">
-                    <div class="slider-image-view">
-                        <img id="sliderImage" src="b1.png" alt="AI Creative Visuals">
-                        
-                        <div class="floating-slider-controls">
-                            <button class="nav-arrow-pill" id="prevSlide"><i class="fas fa-arrow-left"></i></button>
-                            <span id="sliderTitle" class="floating-title-pill">Burger Advertisement (b1.png)</span>
-                            <button class="nav-arrow-pill" id="nextSlide"><i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <!-- Portfolio Grid: g1 से g50 -->
+        <section>
+            <h2>GRAPHIC DESIGNING</h2>
+            <div class="portfolio-grid" id="portfolioGrid"></div>
+        </section>
 
-            <section class="page-section">
-                <h2 class="section-main-heading">MOTION <span class="thin-green-text">GRAPHICS</span></h2>
-                <div class="reels-static-grid-layout" id="motionGraphicsContainer">
-                    </div>
-            </section>
-
-            <section class="page-section">
-                <h2 class="section-main-heading">GRAPHIC <span class="thin-green-text">DESIGNING</span></h2>
-                <div class="behance-style-grid" id="graphicDynamicGrid">
-                    </div>
-            </section>
-        </div>
-
-        <section id="contact" class="page-section contact-section">
-            <h2 class="section-main-heading">LET'S WORK <span class="thin-green-text">TOGETHER</span></h2>
-            
-            <div class="contact-container">
-                <div class="contact-card-table original-box-style">
-                    <form action="#" method="POST" onsubmit="alert('Message Sent Successfully!'); this.reset(); return false;">
-                        <input type="text" placeholder="Your Name" required class="form-input glowing-input">
-                        <input type="email" placeholder="Your Email" required class="form-input glowing-input">
-                        <textarea placeholder="Message Requirements..." rows="4" required class="form-input glowing-input"></textarea>
-                        <button type="submit" class="submit-btn">Submit Message</button>
-                    </form>
-                </div>
-
-                <div class="contact-card-table original-box-style">
-                    <div class="upi-secure-box">
-                        <div class="upi-header">
-                            <i class="fas fa-shield-alt secure-icon"></i>
-                            <div class="upi-text-left">
-                                <strong class="bhim-title">BHIM UPI Secure Network</strong>
-                                <p class="upi-id">UPI ID: muskan@upi</p>
-                            </div>
-                        </div>
-                        <button class="pay-btn" type="button" onclick="alert('Opening secure UPI window...');">
-                            <i class="fas fa-lock"></i> Pay Securely
-                        </button>
-                    </div>
+        <!-- कांटेक्ट सेक्शन (ओरिजिनल स्टाइल) -->
+        <section id="contact" class="contact-section">
+            <h2>LET'S WORK TOGETHER</h2>
+            <div class="contact-box">
+                <form onsubmit="alert('Message Sent!'); return false;">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Message Requirements..."></textarea>
+                    <button type="submit">SUBMIT MESSAGE</button>
+                </form>
+                <div class="contact-details">
+                    <p><i class="fas fa-phone"></i> +91 8810682518</p>
+                    <p><i class="fas fa-envelope"></i> muskankumar3330@gmail.com</p>
+                    <div class="upi-box"><strong>BHIM UPI:</strong> muskan@upi</div>
                 </div>
             </div>
         </section>
     </main>
-
-    <footer class="corporate-footer">
-        <p>&copy; 2026 Muskan Kumari | Graphic & Web Designer | All Rights Reserved.</p>
-    </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
-

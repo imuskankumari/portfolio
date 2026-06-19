@@ -6,10 +6,11 @@
     <title>Muskan Kumari | Creative Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;700;900&family=Playfair+Display:ital,wght@1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700;900&family=Playfair+Display:ital,wght@1,500&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body oncontextmenu="return false;">
 
+    <!-- बड़ा और बड़ा प्रीमियम हेडर -->
     <header class="navbar">
         <div class="nav-container">
             <div class="logo-area">
@@ -23,19 +24,22 @@
         </div>
     </header>
 
+    <!-- मुख्य सेंटर-अलाइन्ड व्हाइट रैपर -->
     <main class="main-wrapper" id="home">
         
-        <section class="pyramid-hero-section">
-            <div class="space-badge">CHECK OUT MY WORK</div>
+        <!-- नया "Sanjay Menon" स्टाइल हीरो सेक्शन -->
+        <section class="behance-hero-white">
+            <div class="hero-space-badge">CHECK OUT MY WORK</div>
             <h1 class="mega-bold-title">MUSKAN KUMARI</h1>
             <p class="italic-serif-sub">Graphic & Web Designer</p>
             
-            <div class="pyramid-bio-container">
-                <p class="pyramid-bio-text">
+            <div class="behance-bio-container">
+                <p class="behance-bio-text">
                     I am Muskan Kumari and I am from Delhi. I am an aspiring and professional Graphic & Web Designer, specializing in creating high-impact visual identities, modern websites, and trending digital assets.
                 </p>
             </div>
 
+            <!-- कॉन्टैक्ट बार -->
             <div class="hero-contact-details-bar">
                 <span><i class="fas fa-phone"></i> +91 8810682518</span>
                 <span><i class="fas fa-envelope"></i> muskankumar3330@gmail.com</span>
@@ -43,8 +47,9 @@
             </div>
         </section>
 
+        <!-- एजुकेशन सेक्शन (क्लीन स्पेस लेआउट) -->
         <section class="page-section">
-            <h2 class="section-main-heading">EDUCATION <span class="thin-green-text">PROFILE</span></h2>
+            <h2 class="section-main-heading">EDUCATION PROFILE</h2>
             <div class="edu-two-column-layout">
                 <div class="edu-left-pane">
                     <h3>Academic & Professional Education</h3>
@@ -57,8 +62,9 @@
             </div>
         </section>
 
+        <!-- सॉफ्टवेयर और स्किल्स सेक्शन -->
         <section class="page-section">
-            <h2 class="section-main-heading">SOFTWARE & <span class="thin-green-text">SKILLS</span></h2>
+            <h2 class="section-main-heading">SOFTWARE & SKILLS</h2>
             <div class="skills-category-wrapper">
                 
                 <div class="skill-group-row">
@@ -82,23 +88,7 @@
                     </div>
                 </div>
 
-                <div class="skill-group-row">
-                    <h4>Microsoft Office</h4>
-                    <div class="chips-horizontal-flow">
-                        <span class="skill-chip"><i class="fas fa-file-word"></i> MS Word</span>
-                        <span class="skill-chip"><i class="fas fa-file-excel"></i> MS Excel</span>
-                        <span class="skill-chip"><i class="fas fa-file-powerpoint"></i> MS PowerPoint</span>
-                    </div>
-                </div>
-
-                <div class="skill-group-row">
-                    <h4>Video Editing</h4>
-                    <div class="chips-horizontal-flow">
-                        <span class="skill-chip"><i class="fas fa-video"></i> Filmora</span>
-                    </div>
-                </div>
-
-                <div class="skill-group-row expertise-highlight-row">
+                <div class="skill-group-rowexpertise-highlight-row">
                     <h4>Core Expertise & Deliverables</h4>
                     <div class="chips-horizontal-flow">
                         <span class="skill-chip"><i class="fas fa-vector-square"></i> Vector Illustration Tracing</span>
@@ -113,66 +103,78 @@
             </div>
         </section>
 
+        <!-- वर्क्स और विजुअल्स एरिया -->
         <div id="portfolio" class="full-viewport-section">
             
+            <!-- AI GENERATED VISUALS (ट्रेंडिंग कैरोसल लुक) -->
             <section class="page-section">
-                <h2 class="section-main-heading">AI GENERATED <span class="thin-green-text">VISUALS</span></h2>
+                <div class="section-title">
+                    <h2>AI Generated Visuals</h2>
+                </div>
                 
-                <div class="trending-touch-slider-container">
-                    <div class="slider-touch-track" id="sliderTrack">
-                        <div class="touch-slide"><img src="b1.png" alt="Visual 1"></div>
-                        <div class="touch-slide"><img src="b2.png" alt="Visual 2"></div>
-                        <div class="touch-slide"><img src="b3.png" alt="Visual 3"></div>
-                        <div class="touch-slide"><img src="b4.png" alt="Visual 4"></div>
-                        <div class="touch-slide"><img src="b5.png" alt="Visual 5"></div>
-                        <div class="touch-slide"><img src="b6.png" alt="Visual 6"></div>
-                        <div class="touch-slide"><img src="b7.png" alt="Visual 7"></div>
-                        <div class="touch-slide"><img src="b8.png" alt="Visual 8"></div>
-                        <div class="touch-slide"><img src="b9.png" alt="Visual 9"></div>
-                        <div class="touch-slide"><img src="b10.png" alt="Visual 10"></div>
-                    </div>
-                    
-                    <div class="slider-navigation-bar">
-                        <button class="nav-btn-circle" id="slidePrevBtn"><i class="fas fa-chevron-left"></i></button>
-                        <span class="slide-indicator" id="slideIndicatorNum">1 / 10</span>
-                        <button class="nav-btn-circle" id="slideNextBtn"><i class="fas fa-chevron-right"></i></button>
+                <div class="trending-carousel-outer">
+                    <div class="trending-instagram-frame">
+                        <button class="arrow-btn pos-left" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+                        
+                        <div class="carousel-inner-white">
+                            <img id="sliderImage" src="b1.png" alt="Visual Artwork">
+                        </div>
+                        
+                        <button class="arrow-btn pos-right" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+                        
+                        <div class="desktop-slider-meta">
+                            <span id="sliderTitle">Burger Advertisement (b1.png)</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
+            <!-- मोशन ग्राफिक्स - बिल्कुल सीधी आड़ी लाइन में (v1.mp4 से v11.mp4) -->
             <section class="page-section">
-                <h2 class="section-main-heading">MOTION <span class="thin-green-text">GRAPHICS</span></h2>
-                <div class="reels-white-clean-grid" id="motionGraphicsContainer">
+                <div class="section-title">
+                    <h2>Motion Graphics</h2>
+                </div>
+                <div class="master-reel-cover-white">
+                    <div class="horizontal-reel-container" id="motionGraphicsContainer">
+                        <!-- जावास्क्रिप्ट से यहां v1 से v11 तक रील्स लोड होंगी -->
                     </div>
+                </div>
             </section>
 
-            <section class="page-section">
-                <h2 class="section-main-heading">GRAPHIC <span class="thin-green-text">DESIGNING</span></h2>
-                <div class="clean-behance-white-grid" id="graphicDynamicGrid">
-                    </div>
+            <!-- ग्राफिक डिजाइनिंग 50 इमेजेस का प्रीमियम ग्रिड -->
+            <section class="page-section portfolio-section">
+                <div class="section-title">
+                    <h2>Graphic Designing</h2>
+                </div>
+                <div class="behance-style-white-grid" id="graphicDynamicGrid">
+                    <!-- जावास्क्रिप्ट से g1 से g50 इमेजेस लोड होंगी -->
+                </div>
             </section>
         </div>
 
+        <!-- कांटेक्ट सेक्शन (सबसे लास्ट में) -->
         <section id="contact" class="page-section contact-section">
-            <h2 class="section-main-heading">LET'S WORK <span class="thin-green-text">TOGETHER</span></h2>
+            <div class="section-title">
+                <h2>LET'S WORK TOGETHER</h2>
+            </div>
             
             <div class="contact-container">
-                <div class="contact-white-card-style">
-                    <form action="#" method="POST" onsubmit="alert('Message Sent Successfully!'); this.reset(); return false;">
+                <div class="contact-white-card original-box-style">
+                    <form action="#" method="POST" onsubmit="alert('Message Sent!'); this.reset(); return false;">
                         <input type="text" placeholder="Your Name" required class="white-form-input">
-                        <input type="email" placeholder="Your Email" required class="white-form-input">
-                        <textarea placeholder="Message Requirements..." rows="4" required class="white-form-input"></textarea>
-                        <button type="submit" class="white-submit-btn">Submit Message</button>
+                        <input type="email" placeholder="Your Email Address" required class="white-form-input">
+                        <textarea placeholder="Message Requirements..." rows="5" required class="white-form-input"></textarea>
+                        <button type="submit" class="white-submit-btn">Send Message</button>
                     </form>
                 </div>
 
-                <div class="contact-white-card-style">
+                <div class="contact-white-card original-box-style">
                     <div class="upi-secure-white-box">
                         <div class="upi-header-row">
-                            <i class="fas fa-shield-check secure-white-icon"></i>
+                            <i class="fas fa-shield-alt secure-white-icon"></i>
                             <div class="upi-text-block">
-                                <strong class="bhim-title-black">BHIM UPI Secure Network</strong>
-                                <p class="upi-id-grey">UPI ID: muskan@upi</p>
+                                <strong class="bhim-title">BHIM UPI Secure Network</strong>
+                                <p class="upi-id">UPI ID: muskan@upi</p>
                             </div>
                         </div>
                         <button class="pay-secure-btn" type="button" onclick="alert('Opening secure UPI window...');">
@@ -184,6 +186,7 @@
         </section>
     </main>
 
+    <!-- फुटर -->
     <footer class="corporate-footer-white">
         <p>&copy; 2026 Muskan Kumari | Graphic & Web Designer | All Rights Reserved.</p>
     </footer>

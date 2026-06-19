@@ -1,29 +1,23 @@
-/* ट्रेंडिंग रिस्पॉन्सिव ग्लोबल कोर सेटअप */
+/* पूर्ण रूप से फैला हुआ सिमेट्रिकल फ्लेक्सबॉक्स लेआउट */
 html { scroll-behavior: smooth; }
 body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; -webkit-user-select: none; user-select: none; width: 100%; overflow-x: hidden; }
 .main-wrapper { margin-top: 110px; width: 100%; display: flex; flex-direction: column; align-items: center; box-sizing: border-box; }
 .page-section { width: 100%; max-width: 1200px; margin: 40px auto; padding: 0 20px; box-sizing: border-box; }
 .cyan-text { color: #00bacf !important; }
 
-/* आधुनिक ट्रेंडिंग कार्ड्स */
-.modern-portfolio-card {
-    background-color: #0c111a;
-    border-radius: 16px;
-    border: 1px solid #1e293b;
-    padding: 30px;
-    text-align: left;
-    width: 100%;
-    box-sizing: border-box;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+/* थिन स्काई-ब्लू आउटलाइन बॉर्डर */
+.thin-neon-outline {
+    border: 1px solid #1e293b !important;
+    box-shadow: 0 0 8px rgba(0, 186, 207, 0.2);
 }
 
-/* नैवबार (बाईं तरफ लोगो, दाईं तरफ मेनू) */
+/* हेडर नैवबार (बाईं तरफ लोगो, दाईं तरफ मेनू) */
 .navbar { background: #0c111a; padding: 12px 40px; border-bottom: 1px solid #1e293b; position: fixed; top: 0; left: 0; width: 100%; box-sizing: border-box; z-index: 1000; display: flex; align-items: center; }
 .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; width: 100%; }
 .logo-area { display: flex; align-items: center; justify-content: flex-start; }
 .nav-logo-circle { height: 44px; width: 44px; border-radius: 50%; object-fit: cover; border: 2px solid #00bacf; box-shadow: 0 0 8px #00bacf; }
-.nav-menus { display: flex; gap: 28px; justify-content: flex-end; align-items: center; }
-.nav-menus a { color: #94a3b8; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.2s; }
+.nav-menus { display: flex; gap: 28px; }
+.nav-menus a { color: #94a3b8; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
 .nav-menus a:hover { color: #00bacf; }
 
 /* ब्रांडिंग टाइटल्स (प्योर वाइट) */
@@ -33,45 +27,46 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
 .sky-neon-glow { color: #00bacf !important; text-shadow: 0 0 10px #00bacf, 0 0 20px rgba(0, 186, 207, 0.6); }
 .exact-text-line { position: absolute; bottom: -6px; left: 0; right: 0; height: 3px; background: #00bacf; box-shadow: 0 0 8px #00bacf; border-radius: 2px; }
 
-/* पिरामिड बायो पैराग्राफ (प्योर वाइट) */
+/* बायो पैराग्राफ (प्योर वाइट) */
 .bio-text-pyramid { color: #ffffff !important; max-width: 750px; margin: 25px auto; font-size: 1rem; line-height: 1.7; text-align: center; text-align-last: center; font-weight: 500; }
 
 /* यूनिफाइड हेडिंग स्टाइल्स */
-.section-main-heading { margin: 0 0 20px 0; font-size: 1.3rem; font-weight: 700; color: #ffffff !important; letter-spacing: 0.5px; border-bottom: 1px solid #1e293b; padding-bottom: 12px; }
+.section-main-heading { margin: 0 0 20px 0; font-size: 1.3rem; font-weight: 700; color: #ffffff !important; text-align: left; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #1e293b; padding-bottom: 12px; }
 .section-title h2 { font-size: 1.8rem; color: #ffffff !important; margin-bottom: 25px; font-weight: 700; }
 
 /* एजुकेशन लेआउट (अगल-बगल) */
+.unified-education-card { background-color: #0c111a; border-radius: 12px; max-width: 1200px; margin: 0 auto; padding: 25px; text-align: left; }
 .edu-two-column-layout { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
 .edu-left-pane, .edu-right-pane { border-left: 3px solid #00bacf; padding-left: 15px; }
-.edu-two-column-layout h3 { margin: 0 0 8px 0; font-size: 0.98rem; color: #00bacf !important; font-weight: 700; text-transform: uppercase; }
-.inst-desc { color: #ffffff !important; font-size: 0.92rem; margin: 0; line-height: 1.6; font-weight: 500; }
+.edu-two-column-layout h3 { margin: 0 0 8px 0; font-size: 0.95rem; color: #00bacf !important; font-weight: 700; }
+.inst-desc { color: #ffffff !important; font-size: 0.9rem; margin: 0; line-height: 1.6; font-weight: 500; }
 
 /* सॉफ्टवेयर स्किल्स (हॉरिजॉन्टल कतारें) */
-.skills-horizontal-container { display: flex; flex-direction: column; gap: 20px; }
-.skills-row-block h4 { margin: 0 0 10px 0; font-size: 0.95rem; color: #00bacf !important; font-weight: 700; text-transform: uppercase; }
-.chips-flex-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-start; }
-.skill-chip { background-color: #161f30; border: 1px solid #23324a; padding: 9px 14px; border-radius: 6px; font-size: 0.85rem; color: #ffffff !important; display: inline-flex; align-items: center; gap: 8px; font-weight: 500; transition: 0.2s; }
+.master-skills-pyramid-box { background-color: #0c111a; border-radius: 12px; max-width: 1200px; margin: 0 auto; padding: 25px; text-align: left; }
+.skills-category-wrapper { display: flex; flex-direction: column; gap: 24px; }
+.skill-group-row h4 { margin: 0 0 10px 0; font-size: 0.95rem; color: #00bacf !important; font-weight: 700; text-transform: uppercase; }
+.chips-horizontal-flow { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-start; }
+.skill-chip { background-color: #161f30; border: 1px solid #23324a; padding: 9px 15px; border-radius: 8px; font-size: 0.88rem; color: #ffffff !important; display: inline-flex; align-items: center; gap: 8px; font-weight: 500; }
 .skill-chip i { color: #00bacf !important; font-size: 0.85rem; }
-.skill-chip:hover { border-color: #00bacf; box-shadow: 0 0 6px rgba(0, 186, 207, 0.3); }
 
-/* एआई विजुअल्स - मेगा इंस्टाग्राम आइकॉन कार्ड थीम */
-.mega-instagram-outer-wrapper { display: flex; justify-content: center; width: 100%; box-sizing: border-box; }
-.instagram-icon-trending-frame {
+/* कैरोसेल - इंस्टाग्राम आइकॉन मेगा कार्ड थीम विथ सिमेट्रिकल विड्थ */
+.trending-carousel-outer { display: flex; justify-content: center; width: 100%; box-sizing: border-box; padding: 0 20px; }
+.trending-instagram-frame {
     position: relative;
     background-color: #0c111a;
-    border-radius: 40px; /* इंस्टाग्राम आइकॉन कोनों की तरह */
+    border-radius: 45px; /* डीप राउंडेड कॉर्नर्स */
     border: 1px solid #1e293b;
     width: 100%;
     max-width: 860px;
-    padding: 120px 160px 0px 160px; /* फोटो छोटी रखने के लिए बहुत चौड़ी विड्थ स्पेस */
+    padding: 120px 160px 0px 160px; /* फोटो छोटी रखने के लिए बहुत चौड़ी स्पेसिंग */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-shadow: 0 25px 50px rgba(0,0,0,0.75);
 }
-.clean-img-content-box { width: 100%; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; background-color: #0c111a; }
-.clean-img-content-box img { width: 100%; height: 100%; object-fit: cover; border-radius: 0px; display: block; }
+.carousel-inner-graphics-box { width: 100%; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; background-color: #0c111a; }
+.carousel-inner-graphics-box img { width: 100%; height: 100%; object-fit: cover; border-radius: 0px; display: block; }
 
 /* इमेज से सटीक चिपकी और आउटर फ्रेम के कोनों तक फैली निचली पट्टी */
 .desktop-slider-full-strip {
@@ -83,13 +78,13 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
     margin-left: -160px;
     margin-right: -160px;
     box-sizing: border-box;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
 }
 .desktop-slider-full-strip span { font-size: 0.9rem; color: #94a3b8; font-weight: 600; letter-spacing: 0.5px; }
 
-/* स्लीक और सटीक पोजीशन किए गए तीर बटन */
-.embed-slider-arrow {
+/* गोल और सटीक पोजीशन किए गए बटन */
+.original-arrow-btn {
     background: #05080f;
     border: 1px solid #1e293b;
     color: #00bacf;
@@ -108,19 +103,19 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
     box-shadow: 0 0 10px rgba(0, 186, 207, 0.4);
     transition: 0.2s ease;
 }
-.embed-slider-arrow:hover { color: #ffffff; border-color: #00bacf; }
-.btn-left { left: 58px; }
-.btn-right { right: 58px; }
+.original-arrow-btn:hover { color: #ffffff; border-color: #00bacf; }
+.positioning-left { left: 58px; }
+.positioning-right { right: 58px; }
 
 /* मोशन ग्राफिक्स */
 .master-reel-cover-container { background-color: #0c111a; border: 1px solid #1e293b; border-radius: 16px; padding: 20px; width: 100%; box-sizing: border-box; }
-.horizontal-reel-container { display: flex; gap: 15px; overflow-x: auto; padding: 10px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; box-sizing: border-box; }
+.horizontal-reel-container { display: flex; gap: 15px; overflow-x: auto; padding: 15px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; box-sizing: border-box; }
 .horizontal-reel-container::-webkit-scrollbar { height: 6px; }
 .horizontal-reel-container::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
 .motion-video-frame { flex: 0 0 165px; background-color: #05080f; border: 1px solid #00bacf !important; box-shadow: 0 0 8px rgba(0, 186, 207, 0.35); border-radius: 10px; overflow: hidden; scroll-snap-align: start; box-sizing: border-box; }
 .motion-video-frame video { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; display: block; }
 
-/* पोर्टफोलियो 50 डार्क ग्रिड फ्रेम्स */
+/* पोर्टफोलियो ग्रिड (50 डार्क फ्रेम्स) */
 .behance-style-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px; width: 100%; }
 .original-portfolio-dark-frame { background-color: #0c111a; border-radius: 20px; padding: 20px; border: 6px solid #1e293b; display: flex; flex-direction: column; text-align: left; box-sizing: border-box; }
 .grid-card-image-wrapper { width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
@@ -128,8 +123,8 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
 .grid-card-title { font-size: 1rem; color: #ffffff !important; margin: 0; font-weight: 700; }
 .grid-card-price { font-size: 1.2rem; color: #00bacf; font-weight: 800; margin-top: 4px; }
 
-/* कांटेक्ट कंटेनर टेबल्स (पूरी चौड़ाई में फैला हुआ फ्लेक्स ग्रिड) */
-.contact-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; width: 100%; margin: 30px auto; text-align: left; }
+/* कांटेक्ट बॉक्स (पूर्ण रूप से फैला हुआ) */
+.contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; width: 100%; margin: 30px auto; text-align: left; }
 .contact-card-table { background-color: #0c111a; border: 1px solid #1e293b; padding: 25px; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; }
 .form-input { width: 100%; background: #090d16; border: 1px solid #1e293b; color: #fff; padding: 12px; margin-bottom: 12px; border-radius: 6px; box-sizing: border-box; font-size: 0.9rem; transition: all 0.2s ease; font-family: Arial, sans-serif; }
 .glowing-input:focus { outline: none; border-color: #00bacf !important; box-shadow: 0 0 8px rgba(0, 186, 207, 0.5); }
@@ -147,17 +142,18 @@ body { background-color: #090d16; color: #fff; font-family: Arial, sans-serif; t
 
 .corporate-footer { background: #0c111a; padding: 25px; border-top: 1px solid #1e293b; font-size: 0.85rem; color: #94a3b8; margin-top: 40px; width: 100%; box-sizing: border-box; }
 
-/* मोबाइल कस्टमाइजेशन (पूर्ण रूप से फैला हुआ लेआउट) */
+/* मोबाइल कस्टमाइजेशन व्यू */
 @media (max-width: 768px) {
     .edu-two-column-layout, .contact-container, .behance-style-grid { grid-template-columns: 1fr; gap: 20px; }
-    .instagram-icon-trending-frame { padding: 40px 45px 0 45px; border-radius: 20px; }
+    .trending-instagram-frame { padding: 40px 45px 0 45px; border-radius: 20px; }
     .desktop-slider-full-strip { width: calc(100% + 90px); margin-left: -45px; margin-right: -45px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
-    .embed-slider-arrow { top: calc(50% - 20px); width: 36px; height: 46px; }
-    .btn-left { left: 5px; }
-    .btn-right { right: 5px; }
+    .original-arrow-btn { top: calc(50% - 20px); width: 36px; height: 46px; }
+    .positioning-left { left: 5px; }
+    .positioning-right { right: 5px; }
     .navbar { padding: 12px 20px; }
     .nav-container { justify-content: space-between; }
     .nav-menus a { margin-left: 14px; font-size: 0.85rem; }
     .huge-designation { font-size: 1.8rem; }
     .motion-video-frame { flex: 0 0 100%; }
 }
+

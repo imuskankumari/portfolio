@@ -1,84 +1,84 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // चारों कोर फंक्शन्स को बिना किसी रुकावट के एक साथ एक्टिवेट करें
-    startAutomaticVisualsSlider();
-    generateHorizontalReels();
-    generateFiftyPortfolioCards();
-    activateAntiTheftProtection();
+    initModernTrendingSlider();
+    renderStaticReelsGrid();
+    renderFiftyGraphicCards();
+    applyPortfolioSecurity();
 });
 
-// 1. AI Visuals (b1.png से b10.png) ऑटोमैटिक स्लाइडर इंजन
-function startAutomaticVisualsSlider() {
-    const totalImages = 10;
+// 1. अल्ट्रा-ट्रेंडिंग AI Generated Visuals कैरोसल इंजन
+function initModernTrendingSlider() {
+    const maxSlides = 10;
     let activeIndex = 1;
-    let intervalTimer;
+    let autoRotateTimer;
 
-    const imgNode = document.getElementById("sliderImage");
-    const titleNode = document.getElementById("sliderTitle");
-    const prevControl = document.getElementById("prevSlide");
-    const nextControl = document.getElementById("nextSlide");
+    const imgElement = document.getElementById("sliderImage");
+    const titleElement = document.getElementById("sliderTitle");
+    const prevElement = document.getElementById("prevSlide");
+    const nextElement = document.getElementById("nextSlide");
 
-    if (!imgNode || !titleNode || !prevControl || !nextControl) return;
+    if (!imgElement || !titleElement || !prevElement || !nextElement) return;
 
-    function renderSlide(slideNum) {
-        imgNode.style.opacity = "0.2";
-        imgNode.style.transform = "scale(0.97)";
+    function changeSlide(targetIndex) {
+        // प्रीमियम फेड ट्रांजिशन इफेक्ट
+        imgElement.style.opacity = "0.1";
+        imgElement.style.transform = "scale(0.99)";
         
         setTimeout(() => {
-            imgNode.src = `b${slideNum}.png`;
-            titleNode.innerText = `Burger Advertisement (b${slideNum}.png)`;
-            imgNode.style.opacity = "1";
-            imgNode.style.transform = "scale(1)";
+            imgElement.src = `b${targetIndex}.png`;
+            titleElement.innerText = `Burger Advertisement (b${targetIndex}.png)`;
+            imgElement.style.opacity = "1";
+            imgElement.style.transform = "scale(1)";
         }, 150);
     }
 
-    function triggerAutoPlay() {
-        intervalTimer = setInterval(() => {
-            activeIndex = activeIndex >= totalImages ? 1 : activeIndex + 1;
-            renderSlide(activeIndex);
-        }, 3000); // हर 3 सेकंड में इमेज ऑटोमैटिक बदलेगी
+    function startTimer() {
+        autoRotateTimer = setInterval(() => {
+            activeIndex = activeIndex >= maxSlides ? 1 : activeIndex + 1;
+            changeSlide(activeIndex);
+        }, 3000);
     }
 
-    function clearAndRestartClock() {
-        clearInterval(intervalTimer);
-        triggerAutoPlay();
+    function resetTimer() {
+        clearInterval(autoRotateTimer);
+        startTimer();
     }
 
-    nextControl.addEventListener("click", () => {
-        activeIndex = activeIndex >= totalImages ? 1 : activeIndex + 1;
-        renderSlide(activeIndex);
-        clearAndRestartClock();
+    nextElement.addEventListener("click", () => {
+        activeIndex = activeIndex >= maxSlides ? 1 : activeIndex + 1;
+        changeSlide(activeIndex);
+        resetTimer();
     });
 
-    prevControl.addEventListener("click", () => {
-        activeIndex = activeIndex <= 1 ? totalImages : activeIndex - 1;
-        renderSlide(activeIndex);
-        clearAndRestartClock();
+    prevElement.addEventListener("click", () => {
+        activeIndex = activeIndex <= 1 ? maxSlides : activeIndex - 1;
+        changeSlide(activeIndex);
+        resetTimer();
     });
 
-    // टाइमर चालू करें
-    triggerAutoPlay();
+    startTimer();
 }
 
-// 2. मोशन ग्राफिक्स रील्स (v1.mp4 से v10.mp4) हॉरिजॉन्टल रेंडरर
-function generateHorizontalReels() {
-    const reelWrapper = document.getElementById("motionGraphicsContainer");
-    if (!reelWrapper) return;
-    let listMarkup = "";
+// 2. मोशन ग्राफिक्स - बिना स्क्रॉल के स्क्रीन पर लाइव ग्रिड रेंडरर
+function renderStaticReelsGrid() {
+    const container = document.getElementById("motionGraphicsContainer");
+    if (!container) return;
+    let markupBuffer = "";
 
-    for (let i = 1; i <= 10; i++) {
-        listMarkup += `
+    // v1.mp4 से v11.mp4 तक सभी रील्स बिना स्क्रॉल बार के एक साथ रेंडर होंगे
+    for (let i = 1; i <= 11; i++) {
+        markupBuffer += `
             <div class="motion-video-frame">
                 <video src="v${i}.mp4" autoplay loop muted playsinline controls preload="metadata"></video>
             </div>
         `;
     }
-    reelWrapper.innerHTML = listMarkup;
+    container.innerHTML = markupBuffer;
 }
 
-// 3. ग्राफिक डिजाइनिंग 50 इमेजेस (g1.jpg से g50.jpg) का कम्प्लीट लूप ग्रिड
-function generateFiftyPortfolioCards() {
-    const gridWrapper = document.getElementById("graphicDynamicGrid");
-    if (!gridWrapper) return;
+// 3. ग्राफिक डिजाइनिंग 50 फाइल्स का ओरिजिनल कार्ड लूप
+function renderFiftyGraphicCards() {
+    const gridContainer = document.getElementById("graphicDynamicGrid");
+    if (!gridContainer) return;
     let gridMarkup = "";
 
     for (let i = 1; i <= 50; i++) {
@@ -94,17 +94,13 @@ function generateFiftyPortfolioCards() {
             </div>
         `;
     }
-    gridWrapper.innerHTML = gridMarkup;
+    gridContainer.innerHTML = gridMarkup;
 }
 
-// 4. एंटी-कॉपी एंटी-राइटक्लिक प्रोटेक्शन सिस्टम (ताकि कोई आपकी इमेजेस या कोड चुरा न सके)
-function activateAntiTheftProtection() {
-    // राइट-क्लिक ब्लॉक करें
+// 4. एंटी-राइटक्लिक और एंटी-ड्रैग कंटेंट प्रोटेक्शन
+function applyPortfolioSecurity() {
     document.addEventListener('contextmenu', e => e.preventDefault());
-    
-    // इमेजेस को ड्रैग करके सेव करना ब्लॉक करें
     document.addEventListener('dragstart', (e) => {
         if (e.target.nodeName === 'IMG') e.preventDefault();
     });
 }
-

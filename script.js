@@ -1,93 +1,98 @@
 document.addEventListener("DOMContentLoaded", () => {
-    startVisualsSlider();
-    renderVideosHorizontal();
+    initInfiniteVideoMarquee();
+    initTouchVisualsSlider();
     renderFiftyGraphicCards();
+    applyPortfolioSecurity();
 });
 
-// 1. AI Visuals - ऑटो स्लाइडर (b1.png से b10.png)
-function startVisualsSlider() {
-    const totalSlides = 10;
-    let currentIndex = 1;
-    let autoInterval;
-
-    const imgElement = document.getElementById("sliderImage");
-    const titleElement = document.getElementById("sliderTitle");
-    const prevBtn = document.getElementById("prevSlide");
-    const nextBtn = document.getElementById("nextSlide");
-
-    if (!imgElement) return;
-
-    function renderSlide(index) {
-        // फेड-इन इफेक्ट
-        imgElement.style.opacity = "0.2";
-        imgElement.style.transform = "scale(0.98)";
-        
-        setTimeout(() => {
-            imgElement.src = `b${index}.png`;
-            if (titleElement) titleElement.innerText = `Burger Advertisement (b${index}.png)`;
-            imgElement.style.opacity = "1";
-            imgElement.style.transform = "scale(1)";
-        }, 150);
-    }
-
-    function startAutoSlide() {
-        autoInterval = setInterval(() => {
-            currentIndex = currentIndex >= totalSlides ? 1 : currentIndex + 1;
-            renderSlide(currentIndex);
-        }, 3000); // हर 3 सेकंड में बदलेगा
-    }
-
-    function clearTimer() {
-        clearInterval(autoInterval);
-        startAutoSlide();
-    }
-
-    if (nextBtn) {
-        nextBtn.addEventListener("click", () => {
-            currentIndex = currentIndex >= totalSlides ? 1 : currentIndex + 1;
-            renderSlide(currentIndex);
-            clearTimer();
-        });
-    }
-
-    if (prevBtn) {
-        prevBtn.addEventListener("click", () => {
-            currentIndex = currentIndex <= 1 ? totalSlides : currentIndex - 1;
-            renderSlide(currentIndex);
-            clearTimer();
-        });
-    }
-
-    // ऑटो-प्ले चालू करें
-    startAutoSlide();
-}
-
-// 2. मोशन ग्राफिक्स रील्स (v1.mp4 से v11.mp4) - हॉरिजॉन्टल रेंडरर
-function renderVideosHorizontal() {
-    const reelWrapper = document.getElementById("motionGraphicsContainer");
-    if (!reelWrapper) return;
+// 1. मोशन ग्राफिक्स - इन्फिनिट मारकी स्क्रॉल (v1.mp4 से v12.mp4)
+function initInfiniteVideoMarquee() {
+    const track = document.getElementById("marqueeTrack1");
+    if (!track) return;
     
-    let listMarkup = "";
-    // v1.mp4 से v11.mp4 तक रील्स आड़ी कतार में लगेंगी
-    for (let i = 1; i <= 11; i++) {
-        listMarkup += `
-            <video src="v${i}.mp4" muted loop autoplay preload="metadata"></video>
-        `;
+    let htmlBuffer = "";
+    // कतार को लगातार चलाने के लिए 1 से 12 तक के वीडियो का डबल सेट (Loop Clone) बनाएंगे
+    const totalVideos = 12;
+
+    for (let currentLoop = 0; currentLoop < 2; currentLoop++) {
+        for (let i = 1; i <= totalVideos; i++) {
+            htmlBuffer += `
+                <div class="marquee-video-card">
+                    <video src="v${i}.mp4" autoplay loop muted playsinline preload="metadata"></video>
+                </div>
+            `;
+        }
     }
-    reelWrapper.innerHTML = listMarkup;
+    track.innerHTML = htmlBuffer;
 }
 
-// 3. ग्राफिक डिजाइनिंग 50 इमेजेस (g1.jpg से g50.jpg) का लूप ग्रिड
+// 2. एआई विजुअल्स - हाथ से टच/स्वाइप करने पर आगे-पीछे होने वाला स्लाइडर
+function initTouchVisualsSlider() {
+    const track = document.getElementById("visualsTrack");
+    const slides = document.querySelectorAll(".touch-slide-item");
+    const leftBtn = document.getElementById("slideLeftBtn");
+    const rightBtn = document.getElementById("slideRightBtn");
+    const displayNum = document.getElementById("slideCounterDisplay");
+
+    if (!track || slides.length === 0) return;
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    function moveSlider() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        if (displayNum) {
+            displayNum.innerText = `${currentIndex + 1} / ${totalSlides}`;
+        }
+    }
+
+    if (rightBtn) {
+        rightBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            moveSlider();
+        });
+    }
+
+    if (leftBtn) {
+        leftBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            moveSlider();
+        });
+    }
+
+    // मोबाइल स्वाइप जेस्चर डिटेक्शन
+    let startX = 0;
+    let endX = 0;
+
+    track.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    track.addEventListener("touchend", (e) => {
+        endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                currentIndex = (currentIndex + 1) % totalSlides;
+            } else {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            }
+            moveSlider();
+        }
+    }, { passive: true });
+}
+
+// 3. ग्राफिक डिजाइनिंग 50 ओरिजिनल फ्रेम्स
 function renderFiftyGraphicCards() {
-    const gridWrapper = document.getElementById("graphicDynamicGrid");
-    if (!gridWrapper) return;
-    
+    const gridContainer = document.getElementById("graphicDynamicGrid");
+    if (!gridContainer) return;
     let gridMarkup = "";
+
     for (let i = 1; i <= 50; i++) {
         gridMarkup += `
-            <div class="portfolio-white-frame">
+            <div class="original-portfolio-dark-frame">
                 <div class="grid-card-image-wrapper">
-                    <img src="g${i}.jpg" alt="Graphic artwork g${i}" loading="lazy">
+                    <img src="g${i}.jpg" alt="Artwork g${i}" loading="lazy">
                 </div>
                 <div class="grid-card-meta-bar">
                     <h4 class="grid-card-title">Graphic Design Project #${i}</h4>
@@ -96,5 +101,12 @@ function renderFiftyGraphicCards() {
             </div>
         `;
     }
-    gridWrapper.innerHTML = gridMarkup;
+    gridContainer.innerHTML = gridMarkup;
+}
+
+function applyPortfolioSecurity() {
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('dragstart', (e) => {
+        if (e.target.nodeName === 'IMG') e.preventDefault();
+    });
 }

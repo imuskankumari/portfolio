@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Portfolio</title>
+    <title>Muskan Kumari | Creative Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@800;900&family=Playfair+Display:ital,wght@1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;700;900&family=Playfair+Display:ital,wght@1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body oncontextmenu="return false;">
 
@@ -17,7 +17,7 @@
             </div>
             <nav class="nav-menus">
                 <a href="#home">Home</a>
-                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -25,26 +25,25 @@
 
     <main class="main-wrapper" id="home">
         
-        <section class="behance-hero-split">
-            <div class="hero-left-branding">
-                <h1 class="mega-bold-title">MUSKAN<br>KUMARI</h1>
-                <p class="italic-serif-sub">Graphic & Web Designer</p>
-                
-                <div class="home-direct-contact">
-                    <p><i class="fas fa-phone"></i> +91 8810682518</p>
-                    <p><i class="fas fa-envelope"></i> muskankumar3330@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
-                </div>
-            </div>
-            <div class="hero-right-bio">
-                <p class="clean-modern-paragraph">
-                    I am Muskan Kumari and I am from Delhi. I am an aspiring and professional Graphic & Web Designer.
+        <section class="pyramid-hero-section">
+            <h1 class="mega-bold-title">MUSKAN KUMARI</h1>
+            <p class="italic-serif-sub">Graphic & Web Designer</p>
+            
+            <div class="pyramid-bio-container">
+                <p class="pyramid-bio-text">
+                    I am Muskan Kumari and I am from Delhi. I am an aspiring and professional Graphic & Web Designer, specializing in creating high-impact visual identities, modern websites, and trending digital assets.
                 </p>
+            </div>
+
+            <div class="hero-contact-details-bar">
+                <span><i class="fas fa-phone"></i> +91 8810682518</span>
+                <span><i class="fas fa-envelope"></i> muskankumar3330@gmail.com</span>
+                <span><i class="fas fa-map-marker-alt"></i> New Delhi, India</span>
             </div>
         </section>
 
         <section class="page-section">
-            <h2 class="section-main-heading">EDUCATION</h2>
+            <h2 class="section-main-heading">EDUCATION <span class="thin-green-text">PROFILE</span></h2>
             <div class="edu-two-column-layout">
                 <div class="edu-left-pane">
                     <h3>Academic & Professional Education</h3>
@@ -58,7 +57,7 @@
         </section>
 
         <section class="page-section">
-            <h2 class="section-main-heading">SOFTWARE & SKILLS</h2>
+            <h2 class="section-main-heading">SOFTWARE & <span class="thin-green-text">SKILLS</span></h2>
             <div class="skills-category-wrapper">
                 
                 <div class="skill-group-row">
@@ -113,8 +112,39 @@
             </div>
         </section>
 
+        <div id="portfolio" class="full-viewport-section">
+            
+            <section class="page-section">
+                <h2 class="section-main-heading">AI GENERATED <span class="thin-green-text">VISUALS</span></h2>
+                
+                <div class="trending-modern-slider-container">
+                    <div class="slider-image-view">
+                        <img id="sliderImage" src="b1.png" alt="AI Creative Visuals">
+                        
+                        <div class="floating-slider-controls">
+                            <button class="nav-arrow-pill" id="prevSlide"><i class="fas fa-arrow-left"></i></button>
+                            <span id="sliderTitle" class="floating-title-pill">Burger Advertisement (b1.png)</span>
+                            <button class="nav-arrow-pill" id="nextSlide"><i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-section">
+                <h2 class="section-main-heading">MOTION <span class="thin-green-text">GRAPHICS</span></h2>
+                <div class="reels-static-grid-layout" id="motionGraphicsContainer">
+                    </div>
+            </section>
+
+            <section class="page-section">
+                <h2 class="section-main-heading">GRAPHIC <span class="thin-green-text">DESIGNING</span></h2>
+                <div class="behance-style-grid" id="graphicDynamicGrid">
+                    </div>
+            </section>
+        </div>
+
         <section id="contact" class="page-section contact-section">
-            <h2 class="section-main-heading">LET'S WORK TOGETHER</h2>
+            <h2 class="section-main-heading">LET'S WORK <span class="thin-green-text">TOGETHER</span></h2>
             
             <div class="contact-container">
                 <div class="contact-card-table original-box-style">
@@ -142,43 +172,6 @@
                 </div>
             </div>
         </section>
-
-        <div id="services" class="full-viewport-section">
-            
-            <section class="page-section">
-                <div class="section-title">
-                    <h2>AI Generated <span class="neon-green-text">Visuals</span></h2>
-                </div>
-                
-                <div class="trending-modern-slider-container">
-                    <div class="slider-image-view">
-                        <img id="sliderImage" src="b1.png" alt="Visuals Layout">
-                        
-                        <div class="floating-slider-controls">
-                            <button class="nav-arrow-pill" id="prevSlide"><i class="fas fa-arrow-left"></i></button>
-                            <span id="sliderTitle" class="floating-title-pill">Burger Advertisement (b1.png)</span>
-                            <button class="nav-arrow-pill" id="nextSlide"><i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="page-section">
-                <div class="section-title">
-                    <h2>Motion <span class="neon-green-text">Graphics</span></h2>
-                </div>
-                <div class="reels-static-grid-layout" id="motionGraphicsContainer">
-                    </div>
-            </section>
-
-            <section class="page-section portfolio-section">
-                <div class="section-title">
-                    <h2>Graphic <span class="neon-green-text">Designing</span></h2>
-                </div>
-                <div class="behance-style-grid" id="graphicDynamicGrid">
-                    </div>
-            </section>
-        </div>
     </main>
 
     <footer class="corporate-footer">

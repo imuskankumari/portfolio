@@ -1,17 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
-    initInfiniteVideoMarquee();
-    initTouchVisualsSlider();
+    renderInfiniteVisualsMarquee();
+    renderInfiniteVideoMarquee();
     renderFiftyGraphicCards();
     applyPortfolioSecurity();
 });
 
-// 1. मोशन ग्राफिक्स - इन्फिनिट मारकी स्क्रॉल (v1.mp4 से v12.mp4)
-function initInfiniteVideoMarquee() {
-    const track = document.getElementById("marqueeTrack1");
+// 1. AI Generated Visuals - मारकी लूप इंजन (b1.png से b10.png)
+function renderInfiniteVisualsMarquee() {
+    const track = document.getElementById("visualsMarqueeTrack");
     if (!track) return;
     
     let htmlBuffer = "";
-    // कतार को लगातार चलाने के लिए 1 से 12 तक के वीडियो का डबल सेट (Loop Clone) बनाएंगे
+    const totalVisuals = 10;
+
+    for (let currentLoop = 0; currentLoop < 2; currentLoop++) {
+        for (let i = 1; i <= totalVisuals; i++) {
+            htmlBuffer += `
+                <div class="marquee-img-card">
+                    <img src="b${i}.png" alt="Ai Visual ${i}" loading="lazy">
+                </div>
+            `;
+        }
+    }
+    track.innerHTML = htmlBuffer;
+}
+
+// 2. मोशन ग्राफिक्स रील्स - मारकी लूप इंजन (v1.mp4 से v12.mp4)
+function renderInfiniteVideoMarquee() {
+    const track = document.getElementById("motionMarqueeTrack");
+    if (!track) return;
+    
+    let htmlBuffer = "";
     const totalVideos = 12;
 
     for (let currentLoop = 0; currentLoop < 2; currentLoop++) {
@@ -26,63 +45,7 @@ function initInfiniteVideoMarquee() {
     track.innerHTML = htmlBuffer;
 }
 
-// 2. एआई विजुअल्स - हाथ से टच/स्वाइप करने पर आगे-पीछे होने वाला स्लाइडर
-function initTouchVisualsSlider() {
-    const track = document.getElementById("visualsTrack");
-    const slides = document.querySelectorAll(".touch-slide-item");
-    const leftBtn = document.getElementById("slideLeftBtn");
-    const rightBtn = document.getElementById("slideRightBtn");
-    const displayNum = document.getElementById("slideCounterDisplay");
-
-    if (!track || slides.length === 0) return;
-
-    let currentIndex = 0;
-    const totalSlides = slides.length;
-
-    function moveSlider() {
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        if (displayNum) {
-            displayNum.innerText = `${currentIndex + 1} / ${totalSlides}`;
-        }
-    }
-
-    if (rightBtn) {
-        rightBtn.addEventListener("click", () => {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            moveSlider();
-        });
-    }
-
-    if (leftBtn) {
-        leftBtn.addEventListener("click", () => {
-            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            moveSlider();
-        });
-    }
-
-    // मोबाइल स्वाइप जेस्चर डिटेक्शन
-    let startX = 0;
-    let endX = 0;
-
-    track.addEventListener("touchstart", (e) => {
-        startX = e.touches[0].clientX;
-    }, { passive: true });
-
-    track.addEventListener("touchend", (e) => {
-        endX = e.changedTouches[0].clientX;
-        const diff = startX - endX;
-        if (Math.abs(diff) > 50) {
-            if (diff > 0) {
-                currentIndex = (currentIndex + 1) % totalSlides;
-            } else {
-                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            }
-            moveSlider();
-        }
-    }, { passive: true });
-}
-
-// 3. ग्राफिक डिजाइनिंग 50 ओरिजिनल फ्रेम्स
+// 3. ग्राफिक डिजाइनिंग 50 फाइल्स का ग्रिड लूप
 function renderFiftyGraphicCards() {
     const gridContainer = document.getElementById("graphicDynamicGrid");
     if (!gridContainer) return;
@@ -110,3 +73,4 @@ function applyPortfolioSecurity() {
         if (e.target.nodeName === 'IMG') e.preventDefault();
     });
 }
+

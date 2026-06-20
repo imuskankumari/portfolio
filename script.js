@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     protectContentTheft();
 });
 
-// 1. एआई विजुअल्स - नो फ्रेम्स मारकी लूप (b1.png से b10.png)
 function buildFreeMarqueeVisuals() {
     const track = document.getElementById("aiVisualsTrack");
     if (!track) return;
@@ -25,7 +24,6 @@ function buildFreeMarqueeVisuals() {
     track.innerHTML = contentMarkup;
 }
 
-// 2. मोशन रील्स - बड़ा एकॉर्डियन टच एक्सपैंड रेंडरर (r1.mp4 से r12.mp4)
 function buildMotionAccordionReels() {
     const track = document.getElementById("reelsAccordionTrack");
     if (!track) return;
@@ -36,7 +34,7 @@ function buildMotionAccordionReels() {
     for (let i = 1; i <= maxReels; i++) {
         contentMarkup += `
             <div class="reel-item-frame">
-                <video src="r1.mp4" data-src="r${i}.mp4" loop muted playsinline preload="none"></video>
+                <video src="r${i}.mp4" loop muted playsinline poster="b${i <= 10 ? i : 1}.png"></video>
                 <div class="reel-static-badge">Reel ${i < 10 ? '0' + i : i}</div>
             </div>
         `;
@@ -48,9 +46,6 @@ function buildMotionAccordionReels() {
         
         frame.addEventListener('mouseenter', () => {
             if (video) {
-                if (!video.src.includes(video.getAttribute('data-src'))) {
-                    video.src = video.getAttribute('data-src');
-                }
                 video.play().catch(() => {});
             }
         });
@@ -64,7 +59,6 @@ function buildMotionAccordionReels() {
     });
 }
 
-// 3. ग्राफिक डिजाइनिंग 50 फाइल्स का ओरिजिनल बियांश ग्रिड लूप (g1.jpg से g50.jpg)
 function buildFiftyGraphicGrid() {
     const grid = document.getElementById("graphicPortfolioGrid");
     if (!grid) return;
@@ -86,7 +80,6 @@ function buildFiftyGraphicGrid() {
     grid.innerHTML = gridMarkup;
 }
 
-// 4. सिक्योर कंटेंट प्रोटेक्शन (एंटी-ड्रैग और एंटी-राइटक्लिक लॉक)
 function protectContentTheft() {
     document.addEventListener('contextmenu', e => e.preventDefault());
     document.addEventListener('dragstart', e => {

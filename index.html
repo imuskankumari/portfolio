@@ -3,171 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Premium Portfolio</title>
+    <title>Muskan Kumari | Creative Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
 </head>
 <body oncontextmenu="return false;">
 
-    <!-- SECTION 1: Alpha Identity (Hero Screen) -->
-    <section class="hero-section">
-        <div class="hero-container">
-            <div class="hero-left">
-                <h1 class="hero-brand">Muskan Kumari</h1>
-                <h2 class="hero-tagline">Graphic designer & visual artist</h2>
-                <p class="hero-desc">
-                    Crafting futuristic brand visual architectures, premium motion layouts, and cutting-edge digital experiences. Specializing in high-end aesthetic designs engineered perfectly for desktop scaling and international trends.
+    <!-- मैचिंग डीप ब्लैक हेडर -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="mk.png" alt="Logo" class="nav-logo-image" onerror="this.style.display='none';">
+                <span class="brand-logo-text">Muskan <span class="orange-accent">Kumari</span></span>
+            </div>
+            <nav class="nav-menus">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- मुख्य सेंटर्ड कंटेनर (नो लेफ्ट-साइड चिपकाव) -->
+    <main class="main-wrapper" id="home">
+        
+        <!-- फर्स्ट स्क्रीन: अल्फा आइडेंटिटी लेआउट -->
+        <section class="behance-hero-split">
+            <div class="hero-left-branding">
+                <div class="meta-year-badge">Portfolio 2026</div>
+                <h1 class="mega-bold-title">Muskan Kumari</h1>
+                <p class="italic-serif-sub">Graphic & <span class="orange-text-glow">Web Designer</span></p>
+                <p class="clean-modern-paragraph">
+                    I am Muskan Kumari and I am from Delhi. I am an aspiring and professional Graphic & Web Designer dedicated to high-end visual scaling and digital experiences.
                 </p>
                 
-                <!-- Software and Tools Row -->
-                <div class="software-tools">
-                    <div class="tool-icon-wrapper">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg" alt="Photoshop">
-                        <span class="tool-name">Ps</span>
-                    </div>
-                    <div class="tool-icon-wrapper">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="Illustrator">
-                        <span class="tool-name">Ai</span>
-                    </div>
-                    <div class="tool-icon-wrapper">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Adobe_InDesign_CC_icon.svg" alt="InDesign">
-                        <span class="tool-name">Id</span>
-                    </div>
-                    <div class="tool-icon-wrapper">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Corel_Draw_2024_Icon.png" alt="CorelDraw" onerror="this.src='https://cdn-icons-png.flaticon.com/512/6124/6124997.png'">
-                        <span class="tool-name">Cdr</span>
-                    </div>
+                <div class="hero-action-row">
+                    <a href="resume.pdf" download class="resume-download-btn"><i class="fas fa-file-download"></i> Download Resume</a>
                 </div>
             </div>
             
-            <div class="hero-right">
-                <!-- 3D Outer-Circle Frame with Customizable Glow -->
+            <div class="hero-right-avatar-zone">
                 <div class="avatar-outer-frame">
                     <div class="avatar-glow-layer"></div>
                     <div class="avatar-circle-holder">
-                        <!-- Photo Placeholder (Add src="me.png" later and change display in CSS) -->
-                        <img src="me.png" alt="Muskan Kumari" class="profile-identity-media">
+                        <img src="me.png" alt="Muskan Kumari" class="profile-identity-media" onerror="this.style.display='none';">
                         <div class="mk-placeholder-logo">MK</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SECTION 2: Profile, Education & Skills Page -->
-    <section class="profile-page">
-        <div class="profile-grid">
-            <div>
-                <h3 class="profile-block-heading">Education profile</h3>
-                <div class="timeline-item">
-                    <div class="timeline-meta">Aptitude Qualification</div>
-                    <h4 class="timeline-title">Graphic & Web Designing Architecture</h4>
-                    <p class="timeline-desc">Specialized training in advanced desktop interface compositions, vector processing, layout dynamics, and commercial print mechanics.</p>
+        <!-- एजुकेशन प्रोफाइल पन्ना -->
+        <section class="page-section">
+            <h2 class="section-main-heading">Education <span class="orange-accent">Profile</span></h2>
+            <div class="edu-two-column-layout">
+                <div class="edu-left-pane">
+                    <h3>Academic & Professional Education</h3>
+                    <p class="inst-desc">Senior Secondary Education From CBSE</p>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-meta">Technical Credentials</div>
-                    <h4 class="timeline-title">BCC & DCA (MS Office)</h4>
-                    <p class="timeline-desc">Comprehensive certification in computational foundations, document automation systems, and database workflows.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-meta">Academic Foundation</div>
-                    <h4 class="timeline-title">CBSE Senior Secondary Certification</h4>
-                    <p class="timeline-desc">Core educational disciplines providing an analytical approach towards problem-solving and corporate execution frameworks.</p>
+                <div class="edu-right-pane">
+                    <h3>Technical Qualification</h3>
+                    <p class="inst-desc">Basic Computer Course (BCC) & Diploma in Computer Application (DCA) (MS Office, Graphic Designing, Web Designing, Video Editing)</p>
                 </div>
             </div>
+        </section>
 
-            <div>
-                <h3 class="profile-block-heading">Software & skills</h3>
-                <div class="skills-tag-container">
-                    <span class="skill-tag">Vector Tracing</span>
-                    <span class="skill-tag">Logo Branding</span>
-                    <span class="skill-tag">Typography Architecture</span>
-                    <span class="skill-tag">Motion Graphics</span>
-                    <span class="skill-tag">Cinematic Reels Design</span>
-                    <span class="skill-tag">AI Visual Synthesis</span>
-                    <span class="skill-tag">Commercial Print Layouts</span>
-                    <span class="skill-tag">WordPress Frameworks</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 3: Latest Designs Portfolio Grid -->
-    <section class="portfolio-section">
-        <h2 class="section-title">Latest designs</h2>
-        <div class="portfolio-grid" id="portfolioGridContainer">
-            <!-- Dynamic Cards g1 to g50 will load here from script.js -->
-        </div>
-    </section>
-
-    <!-- SECTION 4: Interactive Accordion Reels & AI Marquee Section -->
-    <section class="media-showcase-section">
-        <div class="reels-layout-grid">
-            <div class="reels-accordion-container" id="reelsAccordionContainer">
-                <!-- 12 Expandable items will load here from script.js -->
-            </div>
-            <div class="reels-right-content">
-                <h3>Motion graphics & cinematic reels</h3>
-                <p>An elite, high-tempo compilation of video compositions, trending cinematic transitions, and customized motion elements engineered to maximize audience retention and cross-platform visibility.</p>
-            </div>
-        </div>
-
-        <!-- AI Generated Visuals: Free-flowing with enhanced 4/5 sizing and zero black boxes -->
-        <div class="ai-visuals-wrapper">
-            <h2 class="section-title">Ai generated visuals</h2>
-            <div class="marquee-container">
-                <div class="marquee-track" id="aiMarqueeTrack">
-                    <!-- b1.png to b10.png marquee items will load here from script.js -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 5: Signature Contact Page -->
-    <section class="contact-page">
-        <div class="contact-bg-glow-1"></div>
-        <div class="contact-bg-glow-2"></div>
-        
-        <div class="contact-grid">
-            <div class="contact-left">
-                <h2 class="section-title">Contact me</h2>
-                <div class="personal-info-list">
-                    <div class="info-row"><span class="info-label">Phone:</span><span>+91 8810682518</span></div>
-                    <div class="info-row"><span class="info-label">Email:</span><span>musankumar3330@gmail.com</span></div>
-                    <div class="info-row"><span class="info-label">Location:</span><span>New Delhi, India</span></div>
-                </div>
-
-                <div class="social-links-container">
-                    <a href="https://share.google/lwfZrlcP1cvxQQtrM" target="_blank" class="social-link-item">Behance Portfolio</a>
-                    <a href="https://www.instagram.com/i.muskankumari?igsh=MWdoeHk2ODYzMTZpdg==" target="_blank" class="social-link-item">Instagram Profile</a>
-                    <a href="https://www.youtube.com/@I.MuskanKumari" target="_blank" class="social-link-item">YouTube Channel</a>
-                </div>
-            </div>
-
-            <div class="contact-right">
-                <form class="original-contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Message dispatched safely!');">
-                    <div class="form-group"><input type="text" class="form-control" placeholder="Your Name" required></div>
-                    <div class="form-group"><input type="email" class="form-control" placeholder="Email Address" required></div>
-                    <div class="form-group"><textarea class="form-control" placeholder="Your Message Content..." required></textarea></div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-
-                <div class="bhim-upi-payment-box">
-                    <div class="upi-qr-placeholder">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=8810682518@paytm&pn=Muskan%20Kumari" alt="UPI QR">
-                    </div>
-                    <div class="upi-details">
-                        <span class="upi-title">BHIM UPI Network</span>
-                        <span class="upi-id-string">8810682518@paytm</span>
-                        <span class="upi-secure-badge">🔒 100% Secure Gateway</span>
+        <!-- टूल्स एवं स्किल्स पन्ना: 100% असली रंगीन वर्किंग CDN आइकन्स -->
+        <section class="page-section">
+            <h2 class="section-main-heading">Software & <span class="orange-accent">Skills</span></h2>
+            <div class="skills-master-grid">
+                
+                <div class="skill-category-card">
+                    <h4>Graphic Designing Tools</h4>
+                    <div class="tools-icon-row">
+                        <div class="tool-unit"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg" alt="PS"><span>Photoshop</span></div>
+                        <div class="tool-unit"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="AI"><span>Illustrator</span></div>
+                        <div class="tool-unit"><img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Adobe_InDesign_CC_icon.svg" alt="ID"><span>InDesign</span></div>
+                        <div class="tool-unit"><img src="https://cdn-icons-png.flaticon.com/512/6124/6124997.png" alt="CDR"><span>CorelDraw</span></div>
+                        <div class="tool-unit"><img src="https://cdn-icons-png.flaticon.com/512/10473/10473347.png" alt="Canva"><span>Canva</span></div>
                     </div>
                 </div>
+
+                <div class="skill-category-card">
+                    <h4>Web Designing Frameworks</h4>
+                    <div class="tools-icon-row">
+                        <div class="tool-unit"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><span>HTML5</span></div>
+                        <div class="tool-unit"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><span>CSS3</span></div>
+                        <div class="tool-unit"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"><span>JavaScript</span></div>
+                        <div class="tool-unit"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" alt="WP"><span>WordPress</span></div>
+                    </div>
+                </div>
+
+                <div class="skill-category-card">
+                    <h4>Microsoft Office Automation</h4>
+                    <div class="tools-icon-row">
+                        <div class="tool-unit"><img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Word"><span>Word</span></div>
+                        <div class="tool-unit"><img src="https://cdn-icons-png.flaticon.com/512/732/732221.png" alt="Excel"><span>Excel</span></div>
+                        <div class="tool-unit"><img src="https://cdn-icons-png.flaticon.com/512/732/732224.png" alt="PPT"><span>PowerPoint</span></div>
+                    </div>
+                </div>
+
+                <div class="skill-category-card">
+                    <h4>Video Editing Suite</h4>
+                    <div class="tools-icon-row">
+                        <div class="tool-unit"><img src="https://cdn-icons-png.flaticon.com/512/5064/5064943.png" alt="Filmora"><span>Filmora</span></div>
+                    </div>
+                </div>
+
             </div>
+        </section>
+
+        <!-- वर्क्स एंड सर्विसेज आर्किटेक्चर -->
+        <div id="services" class="full-viewport-section">
+            
+            <!-- एआई विजुअल्स अब सबसे ऊपर (नो फ्रेम्स, फ्री फ्लो) -->
+            <section class="page-section-fluid">
+                <h2 class="section-main-heading">Ai Generated <span class="orange-accent">Visuals</span></h2>
+                <div class="infinite-marquee-wrapper">
+                    <div class="marquee-track visuals-speed" id="aiVisualsTrack">
+                        <!-- b1.png से b10.png लोड होंगे -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- मोशन ग्राफिक्स - रील्स अब राइट साइड में सेट हैं (जैसा आपने कहा था) -->
+            <section class="page-section">
+                <div class="reels-layout-split">
+                    <div class="reels-left-context">
+                        <h2 class="large-section-title">Motion <span class="orange-accent">Graphics</span></h2>
+                        <p class="short-desc-para">An elite compilation of video compositions, trending transitions, and customized motion elements engineered perfectly for modern layout scaling.</p>
+                    </div>
+                    <div class="reels-accordion-container" id="reelsAccordionTrack">
+                        <!-- r1.mp4 से r12.mp4 लोड होंगे -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- ग्राफिक डिज़ाइन पोर्टफोलियो (g1 से g50) -->
+            <section class="page-section" id="portfolio">
+                <h2 class="section-main-heading">Latest <span class="orange-accent">Designs</span></h2>
+                <div class="clean-behance-grid" id="graphicPortfolioGrid">
+                    <!-- g1 से g50 लोड होंगे -->
+                </div>
+            </section>
         </div>
-    </section>
+
+        <!-- कांटेक्ट सेक्शन - आपका पसंदीदा ओरिजिनल बॉर्डर्ड लेआउट -->
+        <section id="contact" class="page-section contact-master-zone">
+            <h2 class="section-main-heading text-white">Contact <span class="orange-accent">Me</span></h2>
+            
+            <div class="contact-split-layout">
+                <!-- बायाँ फॉर्म बॉक्स -->
+                <div class="contact-box-card original-border-style">
+                    <h3 class="box-card-title">Send Message</h3>
+                    <form action="#" method="POST" onsubmit="alert('Message Sent Successfully!'); this.reset(); return false;">
+                        <input type="text" placeholder="Your Name" required class="original-input-field">
+                        <input type="email" placeholder="Your Email Address" required class="original-input-field">
+                        <textarea placeholder="Message Requirements..." rows="4" required class="original-input-field"></textarea>
+                        <button type="submit" class="original-submit-btn">Submit Message</button>
+                    </form>
+                </div>
+
+                <!-- दाईं ओर आपकी सारी डिटेल्स और पेमेंट नेटवर्क -->
+                <div class="contact-box-card original-border-style info-panel-black">
+                    <h3 class="box-card-title">Quick Contact Details</h3>
+                    
+                    <div class="classic-info-rows">
+                        <div class="info-unit"><i class="fas fa-phone-alt"></i> <span>+91 8810682518</span></div>
+                        <div class="info-unit"><i class="fas fa-envelope"></i> <span>muskankumar3330@gmail.com</span></div>
+                        <div class="info-unit"><i class="fas fa-map-marker-alt"></i> <span>New Delhi, India</span></div>
+                    </div>
+
+                    <div class="footer-social-anchor-bar">
+                        <a href="https://share.google/lwfZrlcP1cvxQQtrM" target="_blank"><i class="fab fa-behance"></i> Behance</a>
+                        <a href="https://www.instagram.com/i.muskankumari?igsh=MWdoeHk2ODYzMTZpdg==" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                        <a href="https://www.youtube.com/@I.MuskanKumari" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+                    </div>
+
+                    <!-- भीम यूपीआई बॉक्स -->
+                    <div class="bhim-upi-secure-box">
+                        <div class="bhim-header-row">
+                            <i class="fas fa-shield-alt secure-shield-icon"></i>
+                            <div class="bhim-meta-text">
+                                <strong class="bhim-title-text">BHIM UPI Secure Network</strong>
+                                <p class="bhim-id-text">UPI ID: muskan@upi</p>
+                            </div>
+                        </div>
+                        <button class="bhim-pay-btn" type="button" onclick="alert('Opening secure UPI link...');">
+                            <i class="fas fa-lock"></i> Pay Securely
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- मैचिंग डीप ब्लैक फुटर -->
+    <footer class="corporate-footer">
+        <p>&copy; 2026 Muskan Kumari | Graphic & Web Designer | All Rights Reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

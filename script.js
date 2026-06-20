@@ -1,12 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
-    renderInfiniteVisualsMarquee();
-    renderInfiniteVideoMarquee();
+    renderAsymmetricReelsMarquee();
+    renderHorizontalVisualsMarquee();
     renderFiftyGraphicCards();
     applyPortfolioSecurity();
 });
 
-// 1. AI Generated Visuals - मारकी लूप इंजन (b1.png से b10.png)
-function renderInfiniteVisualsMarquee() {
+// 1. मोशन ग्राफिक्स रील्स - वर्टिकल मारकी इंजन (v1.mp4 से v12.mp4)
+function renderAsymmetricReelsMarquee() {
+    const track = document.getElementById("motionMarqueeTrack");
+    if (!track) return;
+    
+    let htmlBuffer = "";
+    const totalVideos = 12;
+
+    // सतत अनंत वर्टिकल लूप के लिए क्लोनिंग प्रक्रिया
+    for (let currentLoop = 0; currentLoop < 2; currentLoop++) {
+        for (let i = 1; i <= totalVideos; i++) {
+            htmlBuffer += `
+                <div class="vertical-reel-card">
+                    <video src="v${i}.mp4" autoplay loop muted playsinline preload="metadata"></video>
+                </div>
+            `;
+        }
+    }
+    track.innerHTML = htmlBuffer;
+}
+
+// 2. AI Generated Visuals - हॉरिजॉन्टल मारकी इंजन (b1.png से b10.png)
+function renderHorizontalVisualsMarquee() {
     const track = document.getElementById("visualsMarqueeTrack");
     if (!track) return;
     
@@ -17,27 +38,7 @@ function renderInfiniteVisualsMarquee() {
         for (let i = 1; i <= totalVisuals; i++) {
             htmlBuffer += `
                 <div class="marquee-img-card">
-                    <img src="b${i}.png" alt="Ai Visual ${i}" loading="lazy">
-                </div>
-            `;
-        }
-    }
-    track.innerHTML = htmlBuffer;
-}
-
-// 2. मोशन ग्राफिक्स रील्स - मारकी लूप इंजन (v1.mp4 से v12.mp4)
-function renderInfiniteVideoMarquee() {
-    const track = document.getElementById("motionMarqueeTrack");
-    if (!track) return;
-    
-    let htmlBuffer = "";
-    const totalVideos = 12;
-
-    for (let currentLoop = 0; currentLoop < 2; currentLoop++) {
-        for (let i = 1; i <= totalVideos; i++) {
-            htmlBuffer += `
-                <div class="marquee-video-card">
-                    <video src="v${i}.mp4" autoplay loop muted playsinline preload="metadata"></video>
+                    <img src="b${i}.png" alt="Ai Artwork ${i}" loading="lazy">
                 </div>
             `;
         }
@@ -55,10 +56,10 @@ function renderFiftyGraphicCards() {
         gridMarkup += `
             <div class="original-portfolio-dark-frame">
                 <div class="grid-card-image-wrapper">
-                    <img src="g${i}.jpg" alt="Artwork g${i}" loading="lazy">
+                    <img src="g${i}.jpg" alt="Design g${i}" loading="lazy">
                 </div>
                 <div class="grid-card-meta-bar">
-                    <h4 class="grid-card-title">Graphic Design Project #${i}</h4>
+                    <h4 class="grid-card-title">Graphic Project #${i}</h4>
                     <div class="grid-card-price">₹89</div>
                 </div>
             </div>
@@ -67,10 +68,10 @@ function renderFiftyGraphicCards() {
     gridContainer.innerHTML = gridMarkup;
 }
 
+// सुरक्षा नियम
 function applyPortfolioSecurity() {
     document.addEventListener('contextmenu', e => e.preventDefault());
     document.addEventListener('dragstart', (e) => {
         if (e.target.nodeName === 'IMG') e.preventDefault();
     });
 }
-

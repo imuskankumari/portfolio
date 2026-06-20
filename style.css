@@ -10,7 +10,7 @@ body {
     width: 100%;
 }
 
-/* मुख्य आवरण - पूरी स्क्रीन पर बराबर डिस्ट्रीब्यूशन */
+/* मुख्य आवरण - पूरी स्क्रीन पर बराबर डिस्ट्रीब्यूशन और परफेक्ट स्टैंडर्ड गैप */
 .main-wrapper { 
     margin: 140px auto 0 auto; 
     width: 100%; 
@@ -24,12 +24,13 @@ body {
 
 .page-section { 
     width: 100%; 
-    margin: 70px auto; 
+    padding: 100px 0; /* परफेक्ट वाइट स्पेसिंग का नियम */
+    margin: 0 auto;
     display: flex; 
     flex-direction: column; 
     box-sizing: border-box; 
 }
-.page-section-fluid { width: 100%; margin: 60px 0; box-sizing: border-box; }
+.page-section-fluid { width: 100%; padding: 80px 0; box-sizing: border-box; }
 
 /* कलर्स */
 .orange-accent { color: #ff6b00 !important; }
@@ -56,20 +57,21 @@ body {
     grid-template-columns: 1.1fr 0.9fr;
     width: 100%;
     gap: 60px;
-    margin: 40px auto 80px auto;
+    padding: 100px 0;
+    margin: 0 auto;
     align-items: center;
     box-sizing: border-box;
 }
 .hero-left-branding { text-align: left; }
 .meta-year-badge { background: rgba(255, 107, 0, 0.06); color: #ff6b00; padding: 6px 14px; font-size: 0.78rem; font-weight: 700; border-radius: 30px; display: inline-block; letter-spacing: 1px; margin-bottom: 20px; border: 1px solid rgba(255, 107, 0, 0.12); }
-.mega-bold-title { font-size: 4.5rem; line-height: 1.05; font-weight: 300; color: #111111; margin: 0 0 12px 0; letter-spacing: -2px; }
-.italic-serif-sub { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-style: italic; color: #444444; margin: 0 0 25px 0; }
-.clean-modern-paragraph { color: #555555 !important; font-size: 1.08rem; line-height: 1.8; margin: 0 0 35px 0; font-weight: 300; letter-spacing: 0.2px; }
+.mega-bold-title { font-size: 4.8rem; line-height: 1.05; font-weight: 300; color: #111111; margin: 0 0 12px 0; letter-spacing: -2px; }
+.italic-serif-sub { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-style: italic; color: #444444; margin: 0 0 25px 0; }
+.clean-modern-paragraph { color: #555555 !important; font-size: 1.1rem; line-height: 1.8; margin: 0 0 35px 0; font-weight: 300; letter-spacing: 0.2px; }
 
 .resume-download-btn { background: #111111; color: #ffffff; text-decoration: none; padding: 13px 26px; font-weight: 500; font-size: 0.95rem; border-radius: 6px; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s ease; }
 .resume-download-btn:hover { background: #ff6b00; transform: translateY(-2px); }
 
-/* 3D आवरण विद पर्पल नियॉन ग्लो रिंग */
+/* 3D आवरण विद पर्पल नियॉन Glow */
 .hero-right-avatar-zone { display: flex; justify-content: center; align-items: center; }
 .avatar-outer-frame { width: 360px; height: 340px; border-radius: 50%; background: #ffffff; position: relative; display: flex; justify-content: center; align-items: center; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04); border: 1px solid rgba(0, 0, 0, 0.02); }
 .avatar-glow-layer { position: absolute; width: 100%; height: 100%; border-radius: 50%; background: radial-gradient(circle, rgba(138, 43, 226, 0.2) 0%, rgba(138, 43, 226, 0) 70%); filter: blur(12px); }
@@ -77,19 +79,19 @@ body {
 .profile-identity-media { width: 100%; height: 115%; object-fit: cover; position: absolute; bottom: 0; z-index: 5; }
 .mk-placeholder-logo { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 600; background: linear-gradient(45deg, #111111, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; z-index: 2; }
 
-/* हेडिंग प्रणाली (एलीट थिन स्टिल) */
-.section-main-heading { margin: 0 0 45px 0; font-size: 2.3rem; font-weight: 300; color: #111111 !important; text-align: center; letter-spacing: -0.5px; }
+/* हेडिंग प्रणाली (आलीशान थिन स्टाइल) */
+.section-main-heading { margin: 0 0 45px 0; font-size: 2.5rem; font-weight: 300; color: #111111 !important; text-align: center; letter-spacing: -0.5px; }
 
 /* एजुकेशन */
 .edu-two-column-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; width: 100%; }
 .edu-left-pane, .edu-right-pane { border-left: 2px solid #ff6b00; padding-left: 25px; text-align: left; }
-.edu-two-column-layout h3 { margin: 0 0 12px 0; font-size: 1.2rem; color: #111111 !important; font-weight: 500; }
-.inst-desc { color: #555555 !important; font-size: 0.98rem; margin: 0; line-height: 1.7; font-weight: 300; }
+.edu-two-column-layout h3 { margin: 0 0 12px 0; font-size: 1.25rem; color: #111111 !important; font-weight: 400; letter-spacing: -0.2px; }
+.inst-desc { color: #555555 !important; font-size: 1rem; margin: 0; line-height: 1.7; font-weight: 300; }
 
 /* सॉफ्टवेयर स्किल्स मास्टर ग्रिड */
 .skills-master-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; width: 100%; box-sizing: border-box; }
 .skill-category-card { background: #fafafa; border: 1px solid #f0f0f3; padding: 30px; border-radius: 12px; text-align: left; }
-.skill-category-card h4 { margin: 0 0 25px 0; font-size: 1rem; color: #ff6b00; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+.skill-category-card h4 { margin: 0 0 25px 0; font-size: 1.05rem; color: #ff6b00; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
 .tools-icon-row { display: flex; gap: 25px; flex-wrap: wrap; }
 .tool-unit { display: flex; flex-direction: column; align-items: center; gap: 8px; }
 .tool-unit img { height: 38px; width: auto; object-fit: contain; }
@@ -105,18 +107,18 @@ body {
 .marquee-img-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* रील्स - राइट साइड अलाइन्ड विद ट्रू रील रेशियो */
-.reels-layout-split { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 50px; width: 100%; align-items: center; box-sizing: border-box; margin: 30px 0; }
+.reels-layout-split { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 50px; width: 100%; align-items: center; box-sizing: border-box; }
 .reels-accordion-container { display: flex; height: 520px; width: 100%; gap: 12px; }
 .reel-item-frame { flex: 1; height: 100%; border-radius: 16px; overflow: hidden; position: relative; background: #000; transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1); cursor: pointer; }
 .reel-item-frame video { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; }
 .reel-static-badge { position: absolute; bottom: 18px; left: 18px; background: #ffffff; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: #000; z-index: 10; }
 
-/* टच एक्सपैंड होने पर असली मोबाइल रील डायमेंशन (कटिंग रोकने के लिए) */
+/* टच एक्सपैंड होने पर असली मोबाइल रील डायमेंशन (9:16 Aspect Ratio) */
 .reel-item-frame:hover { flex: 3.5; aspect-ratio: 9 / 16 !important; }
 
 .reels-left-context { text-align: left; }
-.large-section-title { font-size: 3.2rem; margin: 0 0 15px 0; font-weight: 300; line-height: 1.1; letter-spacing: -1.5px; }
-.short-desc-para { color: #555555; font-size: 1.02rem; line-height: 1.7; font-weight: 300; }
+.large-section-title { font-size: 3.5rem; margin: 0 0 15px 0; font-weight: 300; line-height: 1.1; letter-spacing: -1.5px; }
+.short-desc-para { color: #555555; font-size: 1.05rem; line-height: 1.7; font-weight: 300; }
 
 /* 50 फाइल्स का ग्राफिक ग्रिड */
 .clean-behance-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; width: 100%; box-sizing: border-box; }
@@ -128,11 +130,11 @@ body {
 .portfolio-meta-row span { font-size: 1.15rem; color: #ff6b00; font-weight: 600; }
 
 /* कांटेक्ट स्प्लिट डार्क मास्टर ज़ोन */
-.contact-master-zone { background-color: #0b0c10; padding: 70px 50px; border-radius: 24px; position: relative; overflow: hidden; width: 100%; box-sizing: border-box; margin-top: 40px; }
-.contact-master-zone .section-main-heading { color: #ffffff !important; }
+.contact-master-zone { background-color: #0b0c10; padding: 80px 50px; border-radius: 24px; position: relative; overflow: hidden; width: 100%; box-sizing: border-box; margin-top: 40px; }
+.contact-master-zone .section-main-heading { color: #ffffff !important; font-weight: 300; font-size: 2.5rem; }
 .contact-split-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; width: 100%; box-sizing: border-box; position: relative; z-index: 5; }
 
-/* लेफ्ट साइड: आपकी क्रेडेंशियल्स और लिंक्स */
+/* लेफ्ट साइड: क्रेडेंशियल्स और लिंक्स */
 .info-panel-black { text-align: left; display: flex; flex-direction: column; justify-content: flex-start; }
 .classic-info-rows { display: flex; flex-direction: column; gap: 20px; margin-bottom: 35px; }
 .info-unit { display: flex; align-items: center; gap: 15px; color: #cccccc; font-size: 1.05rem; font-weight: 300; }
@@ -141,7 +143,7 @@ body {
 .footer-social-anchor-bar a { color: #ff6b00; text-decoration: none; font-size: 1.05rem; font-weight: 400; display: inline-flex; align-items: center; gap: 10px; transition: 0.2s ease; }
 .footer-social-anchor-bar a:hover { color: #ffffff; padding-left: 6px; }
 
-/* राइट साइड: थिक ओरिजिनल पुराना फॉर्म बॉक्स */
+/* राइट साइड: पुराना मूल फॉर्म बॉक्स */
 .contact-box-card.original-border-style { 
     background-color: #111217; 
     border: 1px solid #1e2029; 

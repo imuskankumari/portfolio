@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Creative Portfolio</title>
+    <title>Muskan Kumari | Professional Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 </head>
 <body oncontextmenu="return false;">
 
-    <!-- हेडर नैवबार -->
     <header class="navbar">
         <div class="nav-container">
             <div class="logo-area">
@@ -26,33 +25,48 @@
         </div>
     </header>
 
-    <!-- मुख्य सेंटर्ड आवरण -->
     <main class="main-wrapper" id="home">
         
-        <!-- इनशॉर्ट स्प्लिट हीरो लेआउट -->
-        <section class="behance-hero-split">
-            <div class="hero-left-branding">
-                <h1 class="mega-bold-title">Muskan Kumari</h1>
-                <p class="italic-serif-sub">Graphic & Web Designer</p>
+        <section class="asymmetric-hero-block">
+            
+            <div class="hero-left-content-zone">
+                <div class="meta-year-badge">Portfolio 2026</div>
                 
-                <div class="home-direct-contact">
-                    <p><i class="fas fa-phone"></i> +91 8810682518</p>
-                    <p><i class="fas fa-envelope"></i> muskankumar3330@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+                <div class="stacked-3d-identity">
+                    <h1 class="main-name-heading">Muskan Kumari</h1>
+                    <div class="text-3d-layer" data-text="PORTFOLIO">PORTFOLIO</div>
+                </div>
+                
+                <p class="role-subtitle">Graphic & Web Designer</p>
+                
+                <div class="hero-about-box" id="about">
+                    <h3 class="mini-block-title">About Me</h3>
+                    <p class="clean-modern-paragraph">
+                        I am Muskan Kumari and I am from Delhi. I am an aspiring and professional Graphic & Web Designer dedicated to creating high-end digital experiences.
+                    </p>
                 </div>
             </div>
             
-            <div class="hero-right-bio" id="about">
-                <div class="heading-badge">About me</div>
-                <p class="clean-modern-paragraph">
-                    I am Muskan Kumari and I am from Delhi. I am an aspiring and professional Graphic & Web Designer.
-                </p>
+            <div class="hero-right-reels-zone">
+                <h3 class="side-panel-title"><i class="fas fa-film"></i> Motion Graphics Reels</h3>
+                <div class="vertical-carousel-container">
+                    <div class="marquee-track-vertical" id="motionMarqueeTrack">
+                        </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="page-section-fluid">
+            <h2 class="section-main-heading">AI Generated Visuals</h2>
+            <div class="infinite-marquee-wrapper">
+                <div class="marquee-track visuals-track-speed" id="visualsMarqueeTrack">
+                    </div>
             </div>
         </section>
 
-        <!-- Education Profile -->
         <section class="page-section">
-            <h2 class="section-main-heading">Education profile</h2>
+            <h2 class="section-main-heading">Education Profile</h2>
             <div class="edu-two-column-layout">
                 <div class="edu-left-pane">
                     <h3>Academic & Professional Education</h3>
@@ -65,11 +79,9 @@
             </div>
         </section>
 
-        <!-- Tools & Services Section -->
         <section class="page-section" id="services">
-            <h2 class="section-main-heading">Our services</h2>
+            <h2 class="section-main-heading">Our Services</h2>
             <div class="services-boxes-grid">
-                
                 <div class="service-minimal-box">
                     <div class="icon-rename-container">
                         <img src="photoshop.png" alt="PS" class="tool-png-icon">
@@ -78,7 +90,6 @@
                     </div>
                     <h4>Graphic Designing Tools</h4>
                 </div>
-
                 <div class="service-minimal-box">
                     <div class="icon-rename-container">
                         <img src="coreldraw.png" alt="CD" class="tool-png-icon">
@@ -86,7 +97,6 @@
                     </div>
                     <h4>Vector & Illustration Tracing</h4>
                 </div>
-
                 <div class="service-minimal-box">
                     <div class="icon-rename-container">
                         <img src="html.png" alt="HTML" class="tool-png-icon">
@@ -96,56 +106,27 @@
                     </div>
                     <h4>Web Designing Frameworks</h4>
                 </div>
-
                 <div class="service-minimal-box">
                     <div class="icon-rename-container">
                         <img src="filmora.png" alt="FL" class="tool-png-icon">
                     </div>
                     <h4>Video Editing & Motion Graphics</h4>
                 </div>
-
             </div>
         </section>
 
-        <!-- वर्क्स एरिया -->
-        <div class="full-viewport-section">
+        <section class="page-section">
+            <h2 class="section-main-heading">Latest Designs</h2>
+            <div class="behance-style-grid" id="graphicDynamicGrid">
+                </div>
+        </section>
+
+        <section id="contact" class="page-section">
+            <h2 class="section-main-heading">Get In Touch</h2>
             
-            <!-- AI Generated Visuals - मारकी लूप -->
-            <section class="page-section-fluid">
-                <h2 class="section-main-heading">Ai generated visuals</h2>
-                <div class="infinite-marquee-wrapper">
-                    <div class="marquee-track visuals-track-speed" id="visualsMarqueeTrack">
-                        <!-- जावास्क्रिप्ट से b1.png से b10.png लोड होंगे -->
-                    </div>
-                </div>
-            </section>
-
-            <!-- Motion Graphics - मारकी लूप -->
-            <section class="page-section-fluid">
-                <h2 class="section-main-heading">Motion graphics</h2>
-                <div class="infinite-marquee-wrapper">
-                    <div class="marquee-track reels-track-speed" id="motionMarqueeTrack">
-                        <!-- जावास्क्रिप्ट से v1.mp4 से v12.mp4 लोड होंगे -->
-                    </div>
-                </div>
-            </section>
-
-            <!-- Latest Designs Grid (g1 से g50) -->
-            <section class="page-section">
-                <h2 class="section-main-heading">Latest designs</h2>
-                <div class="behance-style-grid" id="graphicDynamicGrid">
-                    <!-- जावास्क्रिप्ट से लोड होंगे -->
-                </div>
-            </section>
-        </div>
-
-        <!-- कांटेक्ट सेक्शन -->
-        <section id="contact" class="page-section contact-section">
-            <h2 class="section-main-heading">Contact me!</h2>
-            
-            <div class="contact-container">
-                <!-- मैसेज फॉर्म -->
-                <div class="contact-card-table original-box-style">
+            <div class="contact-split-container">
+                <div class="contact-card-table">
+                    <h3 class="box-inner-title">Send Message</h3>
                     <form action="#" method="POST" onsubmit="alert('Message Sent Successfully!'); this.reset(); return false;">
                         <input type="text" placeholder="Your Name" required class="form-input glowing-input">
                         <input type="email" placeholder="Your Email Address" required class="form-input glowing-input">
@@ -154,8 +135,33 @@
                     </form>
                 </div>
 
-                <!-- भीम यूपीआई बॉक्स -->
-                <div class="contact-card-table original-box-style">
+                <div class="contact-card-table info-right-box">
+                    <h3 class="box-inner-title">Personal Contact Details</h3>
+                    
+                    <div class="personal-details-list">
+                        <div class="detail-item">
+                            <i class="fas fa-phone-alt detail-icon"></i>
+                            <div>
+                                <span>Phone Number</span>
+                                <strong>+91 8810682518</strong>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-envelope detail-icon"></i>
+                            <div>
+                                <span>Email Address</span>
+                                <strong>muskankumar3330@gmail.com</strong>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt detail-icon"></i>
+                            <div>
+                                <span>Location</span>
+                                <strong>New Delhi, India</strong>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="upi-secure-box">
                         <div class="upi-header">
                             <i class="fas fa-shield-alt secure-icon"></i>
@@ -180,4 +186,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-

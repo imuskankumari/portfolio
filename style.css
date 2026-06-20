@@ -1,288 +1,357 @@
-/* वैश्विक नियम और स्क्रीनशॉट इंस्पायर्ड एलीट पर्पल-ब्लैक थीम */
-html { scroll-behavior: smooth; }
-body { 
-    margin: 0; 
-    padding: 0; 
-    background-color: #030305;
-    background-image: 
-        radial-gradient(circle at 10% 20%, rgba(90, 24, 154, 0.35) 0%, transparent 45%),
-        radial-gradient(circle at 90% 80%, rgba(60, 9, 108, 0.3) 0%, transparent 50%),
-        linear-gradient(160deg, #040407 0%, #0a0812 60%, #020204 100%);
-    background-attachment: fixed;
-    color: #ffffff; 
-    font-family: 'Plus Jakarta Sans', sans-serif; 
-    -webkit-user-select: none; 
-    user-select: none; 
-    width: 100%; 
-    overflow-x: hidden; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
+/* Premium Portfolio Style Sheets */
+html {
+    scroll-behavior: smooth;
+    background-color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #111111;
 }
 
-/* मुख्य सेंटर्ड कंटेनर - नो बिखराव */
-.main-wrapper { 
-    margin: 130px auto 0 auto; 
-    width: 100%; 
-    max-width: 1200px; 
-    padding: 0 40px; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    box-sizing: border-box; 
+body {
+    overflow-x: hidden;
 }
 
-.page-section { 
-    width: 100%; 
-    margin: 60px auto; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    box-sizing: border-box; 
-}
-.page-section-fluid { width: 100%; margin: 60px 0; box-sizing: border-box; }
-
-/* हेडर नैवबार */
-.navbar { 
-    background: rgba(3, 3, 5, 0.8); 
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.02); 
-    position: fixed; top: 0; left: 0; width: 100%; height: 85px; 
-    z-index: 1000; display: flex; align-items: center; justify-content: center; 
-}
-.nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; padding: 0 40px; box-sizing: border-box; }
-.nav-logo-circle { height: 40px; width: 40px; border-radius: 50%; object-fit: cover; border: 2px solid #9d4edd; }
-.logo-area { display: flex; align-items: center; }
-.brand-logo-text { font-size: 1.1rem; font-weight: 700; color: #ffffff; letter-spacing: 0.5px; margin-left: 10px; }
-.nav-menus { display: flex; gap: 35px; }
-.nav-menus a { color: #94a3b8; text-decoration: none; font-weight: 600; font-size: 0.98rem; transition: 0.2s; }
-.nav-menus a:hover { color: #c77dff; }
-
-/* मास्टर स्प्लिट हीरो लेआउट (Left Content, Right Reels) */
-.asymmetric-hero-block {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 50px;
-    margin: 20px auto 70px auto;
-    box-sizing: border-box;
-}
-
-.hero-left-content-zone {
-    flex: 1.1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-}
-
-.meta-year-badge {
-    background: rgba(157, 78, 221, 0.15);
-    color: #e0aaff;
-    padding: 6px 16px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    border-radius: 30px;
-    display: inline-block;
-    align-self: flex-start;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 25px;
-    border: 1px solid rgba(157, 78, 221, 0.25);
-}
-
-/* 3D टाइपोग्राफी इफेक्ट - नो ओवर-बोल्डनेस */
-.main-name-heading {
-    font-size: 3.8rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0;
-    letter-spacing: -1px;
-    line-height: 1.1;
-}
-
-.text-3d-layer {
-    font-size: 4.8rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.03);
-    text-shadow: 
-        1px 1px 0px rgba(157, 78, 221, 0.2),
-        2px 2px 0px rgba(157, 78, 221, 0.15),
-        3px 3px 0px rgba(157, 78, 221, 0.1);
-    letter-spacing: 4px;
-    line-height: 1.0;
-    margin-top: 5px;
-}
-
-.role-subtitle {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-style: italic;
-    color: #c77dff;
-    margin: 20px 0 35px 0;
-}
-
-/* क्लीन अबाउट ब्लॉक */
-.hero-about-box {
-    margin-top: 10px;
-    padding-top: 25px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-.mini-block-title {
-    font-size: 1rem;
-    text-transform: uppercase;
-    color: #94a3b8;
-    letter-spacing: 2px;
-    margin: 0 0 12px 0;
-}
-.clean-modern-paragraph {
-    color: #cbd5e1 !important;
-    font-size: 1.1rem;
-    line-height: 1.75;
-    margin: 0;
+.section-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2.2rem;
     font-weight: 400;
+    letter-spacing: -0.03em;
+    color: #111111;
+    margin-bottom: 2.5rem;
+    text-transform: capitalize;
 }
 
-/* राइट साइड: वर्टिकल मारकी रील्स कैरोसल */
-.hero-right-reels-zone {
-    flex: 0.9;
-    background: rgba(15, 13, 25, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    border-radius: 24px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-}
-.side-panel-title {
-    margin: 0 0 20px 0;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #ffffff;
+/* SECTION 1: Hero Screen */
+.hero-section {
+    min-height: 100vh;
+    width: 100%;
+    background: #ffffff;
     display: flex;
     align-items: center;
-    gap: 10px;
-}
-.side-panel-title i { color: #c77dff; }
-
-.vertical-carousel-container {
-    width: 100%;
-    height: 480px;
-    overflow: hidden;
+    padding: 0 10%;
     position: relative;
-    border-radius: 16px;
-    background: #020204;
 }
 
-/* ऑटोमैटिक वर्टिकल मारकी लूप */
-.marquee-track-vertical {
+.hero-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 5rem;
+}
+
+.hero-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #000000;
+    margin-bottom: 1.5rem;
+}
+
+.hero-tagline {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #555555;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+}
+
+.hero-desc {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #666666;
+    max-width: 580px;
+    margin-bottom: 3.5rem;
+}
+
+.software-tools {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.tool-icon-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    padding: 10px 0;
-    animation: scrollVertical 35s linear infinite;
-}
-@keyframes scrollVertical {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-50%); }
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.vertical-reel-card {
-    width: 100%;
-    padding: 0 15px;
-    box-sizing: border-box;
+.tool-icon-wrapper img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
-.vertical-reel-card video {
+
+.tool-icon-wrapper:hover img {
+    transform: translateY(-5px);
+}
+
+.tool-name {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #888888;
+}
+
+.avatar-outer-frame {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: #ffffff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.avatar-glow-layer {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.25) 0%, rgba(138, 43, 226, 0) 70%);
+    filter: blur(10px);
+}
+
+.avatar-circle-holder {
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fbfbfd 0%, #f1f1f6 100%);
+    border: 2px solid rgba(138, 43, 226, 0.15);
+    position: relative;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-identity-media {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 120%; /* 3D pop out scaling layout */
     object-fit: cover;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    display: block;
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+    display: none; /* Change to block when me.png is ready */
 }
 
-/* हेडिंग्स - नो अंडरलाइन, परफेक्ट सेंटर */
-.section-main-heading { 
-    margin: 0 0 40px 0; 
-    font-size: 2.1rem; 
-    font-weight: 700; 
-    color: #ffffff !important; 
-    text-align: center; 
-    letter-spacing: 0.5px; 
+.mk-placeholder-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 5.5rem;
+    font-weight: 600;
+    background: linear-gradient(45deg, #111111, #8a2be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* SECTION 2: Profile Page */
+.profile-page {
+    padding: 8rem 10%;
+    background: #ffffff;
+    border-top: 1px solid #f0f0f5;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+}
+
+.profile-block-heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    border-left: 3px solid #8a2be2;
+    padding-left: 1rem;
+}
+
+.timeline-item {
+    margin-bottom: 2.5rem;
+}
+
+.timeline-meta {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #8a2be2;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.timeline-desc {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: #666666;
+}
+
+.skills-tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skill-tag {
+    background: #f5f5f7;
+    padding: 0.8rem 1.4rem;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* SECTION 3: Portfolio Grid */
+.portfolio-section {
+    padding: 8rem 10%;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.portfolio-card {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-img-box {
     width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #f7f7f9;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.2rem;
+    border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
-/* हॉरिजॉन्टल मारकी (AI Generated Visuals) */
-.infinite-marquee-wrapper { 
-    width: 100%; 
-    overflow: hidden; 
-    display: flex; 
-    background: rgba(10, 8, 18, 0.4); 
-    padding: 25px 0; 
-    border-top: 1px solid rgba(255, 255, 255, 0.03); 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03); 
+.portfolio-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-.marquee-track { display: flex; gap: 20px; width: max-content; }
-.visuals-track-speed { animation: scrollHorizontal 28s linear infinite; }
-@keyframes scrollHorizontal { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-.marquee-img-card { width: 220px; aspect-ratio: 1 / 1; background-color: #020204; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.04); }
-.marquee-img-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-/* एजुकेशन लेआउट */
-.edu-two-column-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; width: 100%; }
-.edu-left-pane, .edu-right-pane { border-left: 2px solid #9d4edd; padding-left: 20px; text-align: left; }
-.edu-two-column-layout h3 { margin: 0 0 12px 0; font-size: 1.1rem; color: #c77dff !important; font-weight: 600; }
-.inst-desc { color: #94a3b8 !important; font-size: 0.98rem; margin: 0; line-height: 1.65; }
-
-/* सर्विसेज टूल्स ग्रिड */
-.services-boxes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; width: 100%; }
-.service-minimal-box { background: rgba(15, 13, 25, 0.4); border: 1px solid rgba(255, 255, 255, 0.03); padding: 30px; border-radius: 16px; text-align: left; box-sizing: border-box; }
-.icon-rename-container { display: flex; gap: 15px; margin-bottom: 18px; flex-wrap: wrap; }
-.tool-png-icon { height: 38px; width: auto; object-fit: contain; display: block; }
-.service-minimal-box h4 { margin: 0; font-size: 1.05rem; color: #ffffff; font-weight: 600; }
-
-/* ग्राफिक ग्रिड */
-.behance-style-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 35px; width: 100%; box-sizing: border-box; }
-.original-portfolio-dark-frame { background-color: rgba(15, 13, 25, 0.4); border-radius: 16px; padding: 20px; border: 6px solid #110f1c; display: flex; flex-direction: column; box-sizing: border-box; text-align: left; }
-.grid-card-image-wrapper { width: 100%; border-radius: 10px; overflow: hidden; background-color: #020204; }
-.grid-card-image-wrapper img { width: 100%; height: auto; display: block; }
-.grid-card-meta-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.04); padding-top: 12px; }
-.grid-card-title { font-size: 0.95rem; color: #ffffff !important; margin: 0; font-weight: 600; }
-.grid-card-price { font-size: 1.1rem; color: #c77dff; font-weight: 700; margin: 0; }
-
-/* कॉन्टैक्ट स्प्लिट ग्रिड - फॉर्म के बगल में डिटेल्स */
-.contact-split-container { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; width: 100%; box-sizing: border-box; }
-.contact-card-table { background-color: rgba(15, 13, 25, 0.4); border: 1px solid rgba(255, 255, 255, 0.03); padding: 35px; border-radius: 20px; display: flex; flex-direction: column; box-sizing: border-box; width: 100%; text-align: left; }
-.box-inner-title { margin: 0 0 25px 0; font-size: 1.15rem; font-weight: 600; color: #ffffff; letter-spacing: 0.5px; }
-
-.form-input { width: 100%; background: #020204; border: 1px solid rgba(255, 255, 255, 0.04); color: #fff; padding: 14px; margin-bottom: 15px; border-radius: 8px; box-sizing: border-box; font-size: 0.95rem; font-family: Arial, sans-serif; }
-.glowing-input:focus { outline: none; border-color: #9d4edd !important; box-shadow: 0 0 8px rgba(157, 78, 221, 0.2); }
-.submit-btn { background-color: #9d4edd; color: #020204; border: none; width: 100%; padding: 15px; font-weight: 700; border-radius: 8px; cursor: pointer; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; }
-
-/* दाहिनी ओर का पर्सनल डिटेल्स डिज़ाइन बॉक्स */
-.info-right-box { justify-content: space-between; gap: 20px; }
-.personal-details-list { display: flex; flex-direction: column; gap: 20px; }
-.detail-item { display: flex; align-items: center; gap: 15px; background: rgba(2, 2, 4, 0.4); padding: 12px 18px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.02); }
-.detail-icon { color: #c77dff; font-size: 1.2rem; width: 25px; text-align: center; }
-.detail-item span { display: block; font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
-.detail-item strong { display: block; font-size: 1rem; color: #ffffff; font-weight: 500; }
-
-.upi-secure-box { background: #020204; border: 1px solid rgba(255, 255, 255, 0.04); padding: 18px; border-radius: 12px; width: 100%; box-sizing: border-box; margin-top: 10px; }
-.upi-header { display: flex; align-items: center; gap: 12px; }
-.secure-icon { color: #10b981; font-size: 1.6rem; }
-.bhim-title { font-size: 0.95rem; color: #fff; display: block; font-weight: 700; }
-.upi-id { margin: 2px 0 0 0; color: #94a3b8; font-size: 0.85rem; }
-.pay-btn { background-color: #10b981; color: white; border: none; width: 100%; padding: 12px; font-weight: bold; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 15px; font-size: 0.95rem; }
-
-.corporate-footer { background: #030305; padding: 30px; border-top: 1px solid rgba(255, 255, 255, 0.02); font-size: 0.9rem; color: #52525b; width: 100%; text-align: center; }
-
-@media (max-width: 992px) {
-    .asymmetric-hero-block, .contact-split-container { flex-direction: column; gap: 35px; }
-    .hero-right-reels-zone { flex: none; width: 100%; }
-    .edu-two-column-layout, .behance-style-grid, .services-boxes-grid, .contact-split-container { grid-template-columns: 1fr; }
-    .main-name-heading { font-size: 2.8rem; }
-    .text-3d-layer { font-size: 3.5rem; }
-    .main-wrapper { padding: 0 20px; }
+.portfolio-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.project-title { font-weight: 500; }
+.project-price { color: #8a2be2; font-weight: 600; }
+
+.portfolio-card:hover { transform: translateY(-6px); }
+
+/* SECTION 4: Accordion & AI Marquee */
+.media-showcase-section {
+    padding: 8rem 10%;
+}
+
+.reels-layout-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.reels-accordion-container {
+    display: flex;
+    height: 480px;
+    width: 100%;
+    gap: 0.8rem;
+}
+
+.reel-accordion-item {
+    flex: 1;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background: #111111;
+    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reel-accordion-item video, .reel-placeholder-thumb {
+    width: 100%; height: 100%; object-fit: cover; position: absolute;
+}
+
+.reel-placeholder-thumb {
+    background: linear-gradient(180deg, #333333 0%, #111111 100%);
+    display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4);
+}
+
+.reel-overlay-badge {
+    position: absolute; bottom: 20px; left: 20px; background: white;
+    padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;
+}
+
+.reel-accordion-item:hover { flex: 5; }
+.reels-right-content h3 { font-size: 2.2rem; margin-bottom: 1.5rem; font-weight: 400; }
+.reels-right-content p { color: #666666; line-height: 1.6; }
+
+.marquee-container { width: 100%; overflow: hidden; padding: 1.5rem 0; }
+.marquee-track { display: flex; width: max-content; gap: 2rem; animation: infiniteScroll 35s linear infinite; }
+
+.ai-image-item {
+    width: 240px; aspect-ratio: 4 / 5; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); border: 1px solid rgba(0, 0, 0, 0.03);
+}
+.ai-image-item img { width: 100%; height: 100%; object-fit: cover; }
+
+@keyframes infiniteScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* SECTION 5: Matte Black Contact Section */
+.contact-page {
+    background-color: #0a0b10;
+    padding: 8rem 10%;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-bg-glow-1 {
+    position: absolute; top: -10%; left: -10%; width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.18) 0%, rgba(138, 43, 226, 0) 70%); filter: blur(50px);
+}
+
+.contact-bg-glow-2 {
+    position: absolute; bottom: -10%; right: -10%; width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, rgba(138, 43, 226, 0) 70%); filter: blur(50px);
+}
+
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; position: relative; z-index: 2; }
+.contact-left .section-title { color: #ffffff; }
+.info-row { display: flex; gap: 1.2rem; margin-bottom: 1.8rem; color: #bbbbbb; }
+.info-row span.info-label { font-weight: 500; color: #ffffff; width: 90px; }
+
+.social-links-container { display: flex; flex-direction: column; gap: 1.2rem; }
+.social-link-item { color: #8a2be2; text-decoration: none; font-size: 1.1rem; font-weight: 500; transition: 0.3s; }
+.social-link-item:hover { color: #ffffff; transform: translateX(6px); }
+
+.original-contact-form { width: 100%; max-width: 460px; }
+.form-group { margin-bottom: 1.5rem; }
+.form-control {
+    width: 100%; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px; padding: 1rem; color: #ffffff; outline: none;
+}
+.form-control:focus { border-color: #8a2be2; box-shadow: 0 0 15px rgba(138, 43, 226, 0.2); }
+textarea.form-control { height: 110px; }
+.submit-btn { width: 100%; background: #8a2be2; color: white; border: none; padding: 1rem; font-weight: 600; border-radius: 8px; cursor: pointer; }
+
+.bhim-upi-payment-box {
+    width: 100%; max-width: 460px; background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem;
+}
+.upi-qr-placeholder { width: 80px; height: 80px; background: white; border-radius: 8px; padding: 0.4rem; }
+.upi-qr-placeholder img { width: 100%; height: 100%; object-fit: contain; }
+.upi-id-string { font-weight: 700; color: #8a2be2; }
+

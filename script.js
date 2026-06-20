@@ -64,7 +64,7 @@ function buildMotionAccordionReels() {
     });
 }
 
-// 3. ग्राफिक डिजाइनिंग 50 फाइल्स का ओरिजिनल ग्रिड लूप (g1.jpg से g50.jpg)
+// 3. ग्राफिक डिजाइनिंग 50 फाइल्स का ओरिजिनल बियांश ग्रिड लूप (g1.jpg से g50.jpg)
 function buildFiftyGraphicGrid() {
     const grid = document.getElementById("graphicPortfolioGrid");
     if (!grid) return;
@@ -86,7 +86,7 @@ function buildFiftyGraphicGrid() {
     grid.innerHTML = gridMarkup;
 }
 
-// 4. सिक्योर कंटेंट प्रोटेक्शन (एंटी-ड्रैग और एंटी-राइटक्लिक लॉक)
+// 4. सिक्योर कंटेंट प्रोटेक्शन (एंटी-ड्रैग और एंटी-RIGHT CLICK)
 function protectContentTheft() {
     document.addEventListener('contextmenu', e => e.preventDefault());
     document.addEventListener('dragstart', e => {

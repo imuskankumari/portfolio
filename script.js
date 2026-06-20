@@ -86,7 +86,7 @@ function buildFiftyGraphicGrid() {
     grid.innerHTML = gridMarkup;
 }
 
-// 4. सिक्योर कंटेंट प्रोटेक्शन (एंटी-ड्रैग और एंटी-RIGHT CLICK)
+// 4. सिक्योर कंटेंट प्रोटेक्शन (एंटी-ड्रैग और एंटी-राइटक्लिक लॉक)
 function protectContentTheft() {
     document.addEventListener('contextmenu', e => e.preventDefault());
     document.addEventListener('dragstart', e => {

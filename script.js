@@ -1,77 +1,92 @@
 document.addEventListener("DOMContentLoaded", () => {
-    renderAsymmetricReelsMarquee();
-    renderHorizontalVisualsMarquee();
-    renderFiftyGraphicCards();
-    applyPortfolioSecurity();
+    generatePortfolioGrid();
+    generateReelsAccordion();
+    generateAIMarquee();
+    applyProtection();
 });
 
-// 1. मोशन ग्राफिक्स रील्स - वर्टिकल मारकी इंजन (v1.mp4 से v12.mp4)
-function renderAsymmetricReelsMarquee() {
-    const track = document.getElementById("motionMarqueeTrack");
-    if (!track) return;
+// 1. g1 से g50 तक ग्राफिक डिज़ाइन कार्ड्स बनाना
+function generatePortfolioGrid() {
+    const container = document.getElementById("portfolioGridContainer");
+    if (!container) return;
     
-    let htmlBuffer = "";
-    const totalVideos = 12;
-
-    // सतत अनंत वर्टिकल लूप के लिए क्लोनिंग प्रक्रिया
-    for (let currentLoop = 0; currentLoop < 2; currentLoop++) {
-        for (let i = 1; i <= totalVideos; i++) {
-            htmlBuffer += `
-                <div class="vertical-reel-card">
-                    <video src="v${i}.mp4" autoplay loop muted playsinline preload="metadata"></video>
-                </div>
-            `;
-        }
-    }
-    track.innerHTML = htmlBuffer;
-}
-
-// 2. AI Generated Visuals - हॉरिजॉन्टल मारकी इंजन (b1.png से b10.png)
-function renderHorizontalVisualsMarquee() {
-    const track = document.getElementById("visualsMarqueeTrack");
-    if (!track) return;
-    
-    let htmlBuffer = "";
-    const totalVisuals = 10;
-
-    for (let currentLoop = 0; currentLoop < 2; currentLoop++) {
-        for (let i = 1; i <= totalVisuals; i++) {
-            htmlBuffer += `
-                <div class="marquee-img-card">
-                    <img src="b${i}.png" alt="Ai Artwork ${i}" loading="lazy">
-                </div>
-            `;
-        }
-    }
-    track.innerHTML = htmlBuffer;
-}
-
-// 3. ग्राफिक डिजाइनिंग 50 फाइल्स का ग्रिड लूप
-function renderFiftyGraphicCards() {
-    const gridContainer = document.getElementById("graphicDynamicGrid");
-    if (!gridContainer) return;
-    let gridMarkup = "";
-
+    let html = "";
     for (let i = 1; i <= 50; i++) {
-        gridMarkup += `
-            <div class="original-portfolio-dark-frame">
-                <div class="grid-card-image-wrapper">
-                    <img src="g${i}.jpg" alt="Design g${i}" loading="lazy">
+        html += `
+            <div class="portfolio-card">
+                <div class="portfolio-img-box">
+                    <img src="g${i}.jpg" alt="Design ${i}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&auto=format&fit=crop&q=60'">
                 </div>
-                <div class="grid-card-meta-bar">
-                    <h4 class="grid-card-title">Graphic Project #${i}</h4>
-                    <div class="grid-card-price">₹89</div>
+                <div class="portfolio-meta">
+                    <span class="project-title">Project ${i < 10 ? '0' + i : i}</span>
+                    <span class="project-price">₹89</span>
                 </div>
             </div>
         `;
     }
-    gridContainer.innerHTML = gridMarkup;
+    container.innerHTML = html;
 }
 
-// सुरक्षा नियम
-function applyPortfolioSecurity() {
+// 2. v1 से v12 तक की 12 मोशन रील्स एकॉर्डियन बनाना
+function generateReelsAccordion() {
+    const container = document.getElementById("reelsAccordionContainer");
+    if (!container) return;
+    
+    let html = "";
+    for (let i = 1; i <= 12; i++) {
+        html += `
+            <div class="reel-accordion-item">
+                <video src="v${i}.mp4" loop muted playsinline preload="none"></video>
+                <div class="reel-placeholder-thumb"><span>R${i}</span></div>
+                <div class="reel-overlay-badge">Reel ${i < 10 ? '0' + i : i}</div>
+            </div>
+        `;
+    }
+    container.innerHTML = html;
+
+    // एकॉर्डियन इंटरैक्शन इवेंट्स
+    document.querySelectorAll('.reel-accordion-item').forEach(item => {
+        const video = item.querySelector('video');
+        
+        item.addEventListener('mouseenter', () => {
+            if(video) {
+                video.removeAttribute('preload');
+                video.play().catch(() => {});
+            }
+        });
+
+        item.addEventListener('mouseleave', () => {
+            if(video) {
+                video.pause();
+                video.currentTime = 0;
+            }
+        });
+    });
+}
+
+// 3. b1 से b10 तक की AI इमेजेस मारकी बनाना (डबल सेट लूप क्लोनिंग के साथ)
+function generateAIMarquee() {
+    const track = document.getElementById("aiMarqueeTrack");
+    if (!track) return;
+    
+    let html = "";
+    // अनंत लूप के लिए 2 बार इमेजेस का सेट रेंडर होगा
+    for (let loop = 0; loop < 2; loop++) {
+        for (let i = 1; i <= 10; i++) {
+            html += `
+                <div class="ai-image-item">
+                    <img src="b${i}.png" alt="AI Visual ${i}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=400&auto=format&fit=crop&q=60'">
+                </div>
+            `;
+        }
+    }
+    track.innerHTML = html;
+}
+
+// 4. राइट क्लिक और इमेज ड्रैगिंग लॉक प्रोटेक्शन
+function applyProtection() {
     document.addEventListener('contextmenu', e => e.preventDefault());
-    document.addEventListener('dragstart', (e) => {
-        if (e.target.nodeName === 'IMG') e.preventDefault();
+    document.addEventListener('dragstart', e => {
+        if (e.target.nodeName === 'IMG' || e.target.nodeName === 'VIDEO') e.preventDefault();
     });
 }

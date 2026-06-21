@@ -59,9 +59,9 @@ body {
 }
 .hero-left-branding { text-align: left; }
 .meta-year-badge { background: rgba(255, 107, 0, 0.06); color: #ff6b00; padding: 6px 14px; font-size: 0.78rem; font-weight: 700; border-radius: 30px; display: inline-block; letter-spacing: 1px; margin-bottom: 20px; border: 1px solid rgba(255, 107, 0, 0.12); }
-.mega-bold-title { font-size: 4.8rem; line-height: 1.05; font-weight: 300; color: #111111; margin: 0 0 12px 0; letter-spacing: -2px; }
+.mega-bold-title { font-size: 5rem; line-height: 1.05; font-weight: 300; color: #111111; margin: 0 0 12px 0; letter-spacing: -2px; }
 .italic-serif-sub { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-style: italic; color: #444444; margin: 0 0 25px 0; }
-.clean-modern-paragraph { color: #555555 !important; font-size: 1.1rem; line-height: 1.8; margin: 0 0 35px 0; font-weight: 300; letter-spacing: 0.2px; }
+.clean-modern-paragraph { color: #555555 !important; font-size: 1.15rem; line-height: 1.8; margin: 0 0 35px 0; font-weight: 300; letter-spacing: 0.2px; text-align: justify; }
 
 .resume-download-btn { background: #111111; color: #ffffff; text-decoration: none; padding: 13px 26px; font-weight: 500; font-size: 0.95rem; border-radius: 6px; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s ease; }
 .resume-download-btn:hover { background: #ff6b00; transform: translateY(-2px); }
@@ -90,7 +90,7 @@ body {
 
 .full-viewport-section { width: 100%; display: flex; flex-direction: column; align-items: center; }
 .infinite-marquee-wrapper { width: 100%; overflow: hidden; display: flex; background: #fafafa; padding: 25px 0; border-top: 1px solid #eeeeee; border-bottom: 1px solid #eeeeee; }
-.marquee-track { display: flex; gap: 20px; width: max-content; }
+.marquee-track { display: flex; width: max-content; gap: 20px; }
 .visuals-speed { animation: scrollLeft 28s linear infinite; }
 @keyframes scrollLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 .marquee-img-card { width: 240px; aspect-ratio: 4 / 5; border-radius: 12px; overflow: hidden; background: #ffffff; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
@@ -161,3 +161,4 @@ body {
     .navbar { height: 75px; }
     .main-wrapper { padding: 0 25px; margin-top: 110px; }
 }
+

@@ -41,7 +41,7 @@ body {
 }
 .nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1240px; padding: 0 50px; box-sizing: border-box; }
 .logo-area { display: flex; align-items: center; gap: 12px; }
-.nav-logo-image { height: 38px; width: auto; object-fit: contain; border-radius: 50%; }
+.nav-logo-image { height: 42px; width: 42px; object-fit: contain; border-radius: 50%; background: #ffffff; padding: 2px; }
 .brand-logo-text { font-size: 1.3rem; font-weight: 600; color: #ffffff; letter-spacing: 0.5px; }
 .nav-menus { display: flex; gap: 40px; }
 .nav-menus a { color: #94a3b8; text-decoration: none; font-weight: 500; font-size: 0.98rem; transition: 0.2s ease; }
@@ -75,11 +75,10 @@ body {
 .resume-download-btn:hover { background: #ff6b00; transform: translateY(-2px); }
 
 .hero-right-avatar-zone { display: flex; justify-content: center; align-items: center; }
-.avatar-outer-frame { width: 360px; height: 340px; border-radius: 50%; background: #ffffff; position: relative; display: flex; justify-content: center; align-items: center; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.05); border: 1px solid rgba(0, 0, 0, 0.02); }
-.avatar-glow-layer { position: absolute; width: 100%; height: 100%; border-radius: 50%; background: radial-gradient(circle, rgba(26, 0, 51, 0.4) 0%, rgba(26, 0, 51, 0) 70%); filter: blur(12px); }
-.avatar-circle-holder { width: 300px; height: 340px; border-radius: 50%; background: linear-gradient(135deg, #fbfbfd 0%, #f3f3f6 100%); position: relative; overflow: hidden; display: flex; justify-content: center; align-items: center; border: 1px solid rgba(26, 0, 51, 0.08); }
-.profile-identity-media { width: 85%; height: 85%; object-fit: contain; z-index: 5; }
-.mk-placeholder-logo { font-family: 'Playfair Display', serif; font-size: 5.5rem; font-weight: 700; background: linear-gradient(45deg, #111111, #1a0033); -webkit-background-clip: text; -webkit-text-fill-color: transparent; z-index: 2; }
+.avatar-outer-frame { width: 360px; height: 360px; border-radius: 50%; background: #ffffff; position: relative; display: flex; justify-content: center; align-items: center; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.05); border: 1px solid rgba(0, 0, 0, 0.02); }
+.avatar-glow-layer { position: absolute; width: 100%; height: 100%; border-radius: 50%; background: radial-gradient(circle, rgba(26, 0, 51, 0.35) 0%, rgba(26, 0, 51, 0) 70%); filter: blur(12px); }
+.avatar-circle-holder { width: 320px; height: 360px; border-radius: 50%; background: #ffffff; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(26, 0, 51, 0.08); box-shadow: inset 0 4px 20px rgba(0,0,0,0.02); }
+.profile-identity-media { width: 90%; height: 90%; object-fit: contain; z-index: 5; }
 
 .section-main-heading { margin: 0 0 45px 0; font-size: 3rem; font-weight: 800; color: #111111 !important; text-align: center; letter-spacing: -1px; }
 
@@ -116,10 +115,34 @@ body {
 .large-section-title { font-size: 3.8rem; margin: 0 0 15px 0; font-weight: 800; line-height: 1.1; letter-spacing: -1.5px; }
 .short-desc-para { color: #333333; font-size: 1.1rem; line-height: 1.7; font-weight: 400; }
 
-.clean-behance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; width: 100%; box-sizing: border-box; }
+/* ड्रिबल इंस्पायर्ड 3-कॉलम ऑटो-फिट ग्रिड संरचना */
+.clean-behance-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
+    width: 100%; 
+    box-sizing: border-box; 
+}
 .behance-portfolio-card { background: #ffffff; border-radius: 12px; display: flex; flex-direction: column; box-sizing: border-box; }
-.portfolio-img-bound { width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; background: #fafafa; border: 1px solid #eeeeee; display: flex; align-items: center; justify-content: center; }
-.portfolio-img-bound img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* स्क्वायर बॉक्स कंटेनर जो हर डाइमेंशन की इमेज को ऑटो-फिट कर देगा */
+.portfolio-img-bound { 
+    width: 100%; 
+    aspect-ratio: 1 / 1; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    background: #fafafa; 
+    border: 1px solid #eeeeee; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+.portfolio-img-bound img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+}
 .portfolio-meta-row { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; padding: 0 5px; }
 .portfolio-meta-row strong { font-size: 1.05rem; color: #111111; font-weight: 600; }
 .portfolio-meta-row span { font-size: 1.2rem; color: #ff6b00; font-weight: 800; }

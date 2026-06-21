@@ -199,4 +199,3 @@ body {
 @media (max-width: 576px) {
     .clean-behance-grid { grid-template-columns: 1fr !important; }
 }
-

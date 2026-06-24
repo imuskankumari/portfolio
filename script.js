@@ -35,7 +35,7 @@ function buildMotionAccordionReels() {
         contentMarkup += `
             <div class="reel-item-frame">
                 <video src="r${i}.mp4" loop muted playsinline poster="b${i <= 10 ? i : 1}.png"></video>
-                <div class="reel-static-badge">Reel ${i < 10 ? '0' + i : i}</div>
+                <button class="reel-audio-control-btn"><i class="fas fa-volume-mute"></i></button>
             </div>
         `;
     }
@@ -43,6 +43,8 @@ function buildMotionAccordionReels() {
 
     document.querySelectorAll('.reel-item-frame').forEach(frame => {
         const video = frame.querySelector('video');
+        const audioBtn = frame.querySelector('.reel-audio-control-btn');
+        const audioIcon = audioBtn.querySelector('i');
         
         frame.addEventListener('mouseenter', () => {
             if (video) {
@@ -54,6 +56,17 @@ function buildMotionAccordionReels() {
             if (video) {
                 video.pause();
                 video.currentTime = 0;
+            }
+        });
+
+        audioBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (video.muted) {
+                video.muted = false;
+                audioIcon.className = "fas fa-volume-up";
+            } else {
+                video.muted = true;
+                audioIcon.className = "fas fa-volume-mute";
             }
         });
     });

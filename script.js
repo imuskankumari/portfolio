@@ -1,14 +1,13 @@
-// Data Repositories
+// Exact media streams linked directly from repository folder structures
 const portfolioAssets = {
-    ai: Array.from({length: 11}, (_, index) => ({ src: `b${index+1}.png`, name: `AI Digital Visual ${index+1}` })),
-    graphic: Array.from({length: 20}, (_, index) => ({ src: `g${index+1}.jpg`, name: `Graphic Asset Design ${index+1}` })),
-    web: [{ src: 'w1.png', name: 'Premium UI Web Framework Layout' }]
+    graphic: Array.from({length: 20}, (_, i) => ({ src: `g${i+1}.jpg`, name: `Graphic Project ${i+1}` })),
+    web: [{ src: 'w1.png', name: 'Premium Live UI Platform Architecture' }],
+    ai: Array.from({length: 11}, (_, i) => ({ src: `b${i+1}.png`, name: `AI Digital Visual ${i+1}` }))
 };
 
 let currentCategoryArray = [];
 let activeIndex = 0;
 
-// 1. Dynamic Gallery Filter with Global Image Reference Links
 function filterGallery(category, event) {
     const targetGrid = document.getElementById('main-portfolio-gallery');
     if (!targetGrid) return;
@@ -27,6 +26,7 @@ function filterGallery(category, event) {
         return;
     }
 
+    // Maps out items clean on grid streams
     currentCategoryArray.forEach((item, idx) => {
         const itemNode = document.createElement('div');
         itemNode.className = 'gallery-item';
@@ -39,7 +39,7 @@ function filterGallery(category, event) {
     });
 }
 
-// 2. Advanced Image Lightbox Overlay Slider (Click to Slide/भगाना Logic)
+// Lightbox Slider Mechanics (Click to slide images one-by-one seamlessly)
 function openGallerySlider(index) {
     activeIndex = index;
     const lightbox = document.getElementById('galleryLightbox');
@@ -55,8 +55,6 @@ function openGallerySlider(index) {
 
 function changeSlide(direction) {
     activeIndex += direction;
-    
-    // Looping back mechanics if sliders cross edges
     if (activeIndex >= currentCategoryArray.length) activeIndex = 0;
     if (activeIndex < 0) activeIndex = currentCategoryArray.length - 1;
 
@@ -73,7 +71,7 @@ function closeGallerySlider() {
     document.getElementById('galleryLightbox').style.display = 'none';
 }
 
-// 3. Video Popup Mechanics
+// Video overlay control handling
 function openReelPopup(videoSrc) {
     const lightbox = document.getElementById('reelLightbox');
     const lightboxVideo = document.getElementById('lightboxVideo');
@@ -94,16 +92,13 @@ function closeReelPopup() {
     }
 }
 
-// 4. Working UPI Payments
 function triggerUPIPayment() {
     window.location.href = "upi://pay?pa=8810682518@paytm&pn=Muskan%20Kumari&cu=INR";
 }
 
-// Initialize Elements
 document.addEventListener('DOMContentLoaded', () => {
-    filterGallery('ai', null); // Initialise AI visuals
+    filterGallery('graphic', null); // Default Tab Hook Initialization set to Graphic Designing
 
-    // Build Reels Container
     const reelsContainer = document.getElementById('reels-wrapper');
     if(reelsContainer) {
         for(let r = 1; r <= 12; r++) {
@@ -130,4 +125,3 @@ function toggleLocalMute(btnElement) {
         if(!videoNode.muted) videoNode.play();
     }
 }
-

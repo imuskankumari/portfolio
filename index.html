@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Professional Portfolio</title>
+    <title>Muskan Kumari | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,8 +13,16 @@
     <header class="navbar">
         <div class="nav-container">
             <div class="logo-area">
-                <span class="custom-header-title">2026 Muskan Kumari Graphic & Web Designer</span>
+                <img src="mk.png" alt="MK" class="main-header-logo">
             </div>
+            <nav class="nav-menu-links">
+                <a href="#home" class="menu-item">Home</a>
+                <a href="#education-section" class="menu-item">Education</a>
+                <a href="#services" class="menu-item">Skills</a>
+                <a href="#reels-section" class="menu-item">Motion Graphics</a>
+                <a href="#gallery-section" class="menu-item">Gallery</a>
+                <a href="#contact" class="menu-item">Contact</a>
+            </nav>
             <nav class="nav-social-menus">
                 <a href="https://share.google/lwfZrlcP1cvxQQtrM" target="_blank"><i class="fab fa-behance"></i></a>
                 <a href="https://www.youtube.com/@I.MuskanKumari" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -26,45 +34,49 @@
     <main class="main-wrapper">
         
         <section class="master-hero-banner" id="home">
-            <img src="hero.png" alt="Muskan Kumari Visual Masterpiece" class="hero-full-display-media" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1600&auto=format&fit=crop&q=80'">
+            <img src="hero.png" alt="Muskan Kumari Banner" class="hero-full-display-media">
         </section>
 
         <div class="global-inner-container">
 
-            <section class="page-section content-split-row">
+            <section class="page-section content-split-row" id="education-section">
                 <div class="split-left-text">
+                    <span class="purple-badge-tag">Academic Profile</span>
                     <h2 class="large-section-title">Academic Education</h2>
-                    <p class="short-desc-para">Senior Secondary Education completed successfully from Central Board of Secondary Education (CBSE).</p>
+                    <p class="short-desc-para">Senior Secondary Education completed successfully from Central Board of Secondary Education (CBSE), establishing a robust baseline for professional and digital arts progression.</p>
                 </div>
                 <div class="split-right-media">
-                    <img src="mk.png" alt="Education Profile Block" class="split-display-logo" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500'">
+                    <img src="education.jpg" alt="Education Details" class="split-display-media-box">
                 </div>
             </section>
 
             <section class="page-section content-split-row invert-order">
                 <div class="split-left-text">
+                    <span class="purple-badge-tag">Certifications</span>
                     <h2 class="large-section-title">Technical Qualification</h2>
-                    <p class="short-desc-para">Basic Computer Course (BCC) & Diploma in Computer Application (DCA) certified from NIELIT including high-end comprehensive technical skills in MS Office, Graphic Designing, Web Designing, and Video Editing Suite.</p>
+                    <p class="short-desc-para">Basic Computer Course (BCC) & Diploma in Computer Application (DCA) certified from NIELIT, delivering advanced structural workflows across multi-platform creative ecosystems.</p>
                 </div>
                 <div class="split-right-media">
-                    <img src="mk.png" alt="Technical Credentials Block" class="split-display-logo" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500'">
+                    <img src="qualification.jpg" alt="Qualifications Details" class="split-display-media-box">
                 </div>
             </section>
 
-            <section class="page-section content-split-row">
+            <section class="page-section content-split-row" id="services">
                 <div class="split-left-text">
+                    <span class="purple-badge-tag">Expertise Suite</span>
                     <h2 class="large-section-title">Skills & Expertise</h2>
-                    <p class="short-desc-para">Production level mastery in industry standard digital creation platforms: Adobe Photoshop, Adobe Illustrator, Adobe InDesign, CorelDraw, Canva, HTML5, CSS3, JavaScript, WordPress, and Filmora Editing Suite.</p>
+                    <p class="short-desc-para">High-tier production proficiency across Adobe Photoshop, Adobe Illustrator, Adobe InDesign, CorelDraw, Canva layouts, responsive modern HTML5/CSS3 rendering architectures, and production video editing workflows.</p>
                 </div>
                 <div class="split-right-media">
-                    <img src="icons.png" alt="Skills Map Suite" class="split-display-logo" onerror="this.src='mk.png'">
+                    <img src="icons.png" alt="Skills Architecture" class="split-display-media-box">
                 </div>
             </section>
 
-            <section class="page-section content-split-row" id="reels-section">
+            <section class="page-section content-split-row invert-order" id="reels-section">
                 <div class="split-left-text">
+                    <span class="purple-badge-tag">Video Production</span>
                     <h2 class="large-section-title">Motion Graphics</h2>
-                    <p class="short-desc-para">Advanced cinematic motion graphics engineered with high-tempo visual elements, precise framing control, custom keyframing, and interactive responsive playback behaviors.</p>
+                    <p class="short-desc-para">High-impact cinematic video sequences engineered with advanced modular layers, sync-driven custom keyframes, responsive cross-device aspect containment, and interactive player panels.</p>
                 </div>
                 <div class="split-right-media-wide">
                     <div class="reels-accordion-container" id="reelsAccordionTrack"></div>
@@ -75,16 +87,16 @@
                 <h2 class="section-main-heading">Creative Portfolio Gallery</h2>
                 
                 <div class="filter-tabs-wrapper">
-                    <button class="filter-tab-btn active" data-filter="all">All Projects</button>
-                    <button class="filter-tab-btn" data-filter="photoshop">Photoshop</button>
-                    <button class="filter-tab-btn" data-filter="illustrator">Illustrator</button>
-                    <button class="filter-tab-btn" data-filter="indesign">InDesign</button>
-                    <button class="filter-tab-btn" data-filter="coreldraw">CorelDraw</button>
-                    <button class="filter-tab-btn" data-filter="canva">Canva</button>
-                    <button class="filter-tab-btn" data-filter="ai">AI Generated</button>
+                    <button class="filter-tab-btn active" data-filter="all">All Works</button>
+                    <button class="filter-tab-btn" data-filter="graphic">Graphic Designing</button>
+                    <button class="filter-tab-btn" data-filter="web">Website Designing</button>
+                    <button class="filter-tab-btn" data-filter="social">Social Media Post</button>
+                    <button class="filter-tab-btn" data-filter="ai">AI Generated Visuals</button>
                 </div>
 
-                <div class="clean-filterable-grid" id="wordpressFilterGrid"></div>
+                <div class="gallery-centered-bounder">
+                    <div class="clean-filterable-grid-3col" id="wordpressFilterGrid"></div>
+                </div>
             </section>
 
             <section id="contact" class="contact-master-zone">
@@ -100,10 +112,10 @@
 
                     <div class="tables-right-container">
                         <div class="contact-box-card table-box-style">
-                            <form action="#" method="POST" onsubmit="alert('Message Submitted Successfully!'); this.reset(); return false;">
+                            <form action="#" method="POST" onsubmit="alert('Message Sent Successfully!'); this.reset(); return false;">
                                 <input type="text" placeholder="Your Name" required class="original-input-field">
                                 <input type="email" placeholder="Email Address" required class="original-input-field">
-                                <textarea placeholder="Write your project requirements here..." rows="4" required class="original-input-field"></textarea>
+                                <textarea placeholder="Describe your creative requirements..." rows="4" required class="original-input-field"></textarea>
                                 <button type="submit" class="original-submit-btn">Send Message</button>
                             </form>
                         </div>

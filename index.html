@@ -1,134 +1,173 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MK Spiritual | Muskan Kumari Portfolio</title>
+    <title>Muskan Kumari | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body oncontextmenu="return false;">
+<body>
 
-    <header class="navbar">
-        <div class="nav-container">
-            <div class="logo-area">
-                <img src="mk.png" alt="MK Spiritual Logo" class="main-header-logo">
-            </div>
-            <nav class="nav-menu-links">
-                <a href="#home" class="menu-item">Home</a>
-                <a href="#education-section" class="menu-item">Education</a>
-                <a href="#services" class="menu-item">Services</a>
-                <a href="#reels-section" class="menu-item">Motion Graphics</a>
-                <a href="#gallery-section" class="menu-item">Gallery</a>
-                <a href="#contact" class="menu-item">Contact</a>
-            </nav>
+    <!-- HEADER SECTION -->
+    <header class="main-header">
+        <div class="logo-area">
+            <img src="mk.png" alt="MK Logo" class="site-logo">
         </div>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <main class="main-wrapper">
-        
-        <section class="master-hero-banner" id="home">
-            <img src="hero.png" alt="Adiyogi MK Spiritual Banner" class="hero-full-display-media">
-        </section>
-
-        <div class="global-inner-container">
-
-            <section class="page-section content-split-row" id="education-section">
-                <div class="split-left-text">
-                    <span class="purple-badge-tag">Academic Profile</span>
-                    <h2 class="large-section-title">Academic Education</h2>
-                    <p class="short-desc-para">Senior Secondary Education completed successfully from Central Board of Secondary Education (CBSE), establishing a robust baseline for professional and digital arts progression.</p>
-                </div>
-                <div class="split-right-media">
-                    <img src="education.jpg" alt="Education Details" class="split-display-media-box">
-                </div>
-            </section>
-
-            <section class="page-section content-split-row invert-order">
-                <div class="split-left-text">
-                    <span class="purple-badge-tag">Certifications</span>
-                    <h2 class="large-section-title">Technical Qualification</h2>
-                    <p class="short-desc-para">Basic Computer Course (BCC) & Diploma in Computer Application (DCA) certified from NIELIT, delivering advanced structural workflows across multi-platform creative ecosystems.</p>
-                </div>
-                <div class="split-right-media">
-                    <img src="qualification.jpg" alt="Qualifications Details" class="split-display-media-box">
-                </div>
-            </section>
-
-            <section class="page-section content-split-row" id="services">
-                <div class="split-left-text">
-                    <span class="purple-badge-tag">Expertise Suite</span>
-                    <h2 class="large-section-title">Skills & Expertise</h2>
-                    <p class="short-desc-para">High-tier production proficiency across Adobe Photoshop, Adobe Illustrator, Adobe InDesign, CorelDraw, Canva layouts, responsive modern HTML5/CSS3 rendering architectures, and production video editing workflows.</p>
-                </div>
-                <div class="split-right-media">
-                    <img src="icons.png" alt="Skills Architecture" class="split-display-media-box">
-                </div>
-            </section>
-
-            <section class="page-section content-split-row invert-order" id="reels-section">
-                <div class="split-left-text">
-                    <span class="purple-badge-tag">Video Production</span>
-                    <h2 class="large-section-title">Motion Graphics</h2>
-                    <p class="short-desc-para">High-impact cinematic video sequences engineered with advanced modular layers, sync-driven custom keyframes, responsive cross-device aspect containment, and interactive player panels.</p>
-                </div>
-                <div class="split-right-media-wide">
-                    <div class="reels-accordion-container" id="reelsAccordionTrack"></div>
-                </div>
-            </section>
-
-            <section class="page-section" id="gallery-section">
-                <h2 class="section-main-heading">Creative Portfolio Gallery</h2>
-                
-                <div class="filter-tabs-wrapper">
-                    <button class="filter-tab-btn active" data-filter="all">All Works</button>
-                    <button class="filter-tab-btn" data-filter="graphic">Graphic Designing</button>
-                    <button class="filter-tab-btn" data-filter="web">Website Designing</button>
-                    <button class="filter-tab-btn" data-filter="social">Social Media Post</button>
-                    <button class="filter-tab-btn" data-filter="ai">AI Generated Visuals</button>
-                </div>
-
-                <div class="gallery-centered-bounder">
-                    <div class="clean-filterable-grid-3col" id="wordpressFilterGrid"></div>
-                </div>
-            </section>
-
-            <section id="contact" class="contact-master-zone">
-                <div class="contact-split-layout">
-                    <div class="info-panel-black">
-                        <h2 class="contact-section-title">Contact Information</h2>
-                        <div class="classic-info-rows">
-                            <div class="info-unit"><i class="fas fa-phone-alt"></i> <span>Phone: &nbsp;&nbsp;&nbsp;&nbsp;+91 8810682518</span></div>
-                            <div class="info-unit"><i class="fas fa-envelope"></i> <span>Email: &nbsp;&nbsp;&nbsp;&nbsp;musankumar3330@gmail.com</span></div>
-                            <div class="info-unit"><i class="fas fa-map-marker-alt"></i> <span>Location: &nbsp;&nbsp;New Delhi, India</span></div>
-                        </div>
-                    </div>
-
-                    <div class="tables-right-container">
-                        <div class="contact-box-card table-box-style">
-                            <form action="#" method="POST" onsubmit="alert('Message Sent Successfully!'); this.reset(); return false;">
-                                <input type="text" placeholder="Your Name" required class="original-input-field">
-                                <input type="email" placeholder="Email Address" required class="original-input-field">
-                                <textarea placeholder="Describe your creative requirements..." rows="4" required class="original-input-field"></textarea>
-                                <button type="submit" class="original-submit-btn">Send Message</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </div>
-    </main>
-
-    <footer class="footer-classic-gray">
-        <div class="footer-inner-content">
-            <div class="footer-social-icons">
-                <a href="https://share.google/lwfZrlcP1cvxQQtrM" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
-                <a href="https://www.youtube.com/@I.MuskanKumari" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.instagram.com/i.muskankumari?igsh=MWdoeHk2ODYzMTZpdg==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>Graphic & Web Designer</h1>
+                <p>I am Muskan Kumari and I am from Delhi an aspiring Professional Graphic & Web Designer.</p>
             </div>
-            <p class="footer-copyright-text">&copy; 2026 Muskan Kumari | MK Spiritual | All Rights Reserved.</p>
+        </div>
+    </section>
+
+    <!-- ABOUT ME & SERVICES SECTION -->
+    <section id="services" class="about-services-section">
+        <div class="container">
+            <h2 class="section-title">About Me & Services</h2>
+            
+            <!-- Hamza Style Swag Dialogue Box -->
+            <div class="about-dialogue-box">
+                <p class="dialogue-line highlight">Designing में सबसे मशहूर सबसे ताकतवर</p>
+                <p class="dialogue-line">Creativity मेरे रग-रग में है।</p>
+                <p class="dialogue-line">डिजाइनिंग में 5 सालों का तजुर्बा</p>
+                <p class="dialogue-line">मुश्किल कोडिंग ने भी मेरे लिए रास्ता निकाला है</p>
+                <p class="dialogue-line highlight">कला में सबसे कलात्मक</p>
+                <p class="dialogue-line">Photoshop से दिन को रात कर सकती हूँ</p>
+                <p class="dialogue-line">Creativity की बरसात कर सकती हूँ</p>
+                <p class="dialogue-line">जो भी clients हुक्म करें वो पूरा कर सकती हूँ</p>
+                <p class="dialogue-line finale">or clearly मैं और मेरे डिज़ाइन्स बेहद क्रिएटिव हैं।</p>
+            </div>
+
+            <!-- Muskan's Real Details Grid -->
+            <div class="details-grid">
+                <div class="info-card">
+                    <h3>Academic Education</h3>
+                    <ul>
+                        <li>Senior Secondary Education From CBSE</li>
+                        <li>Course on Computer Concepts CCC Certified</li>
+                        <li>Basic Computer Course BCC Certified</li>
+                        <li>Diploma In Computer Applications DCA Certified</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>Technical Skills</h3>
+                    <p><strong>Graphic Designing:</strong> Adobe Photoshop | Adobe Illustrator | Adobe InDesign | CorelDraw | Canva</p>
+                    <p><strong>Web Designing:</strong> HTML | CSS | JS | WordPress</p>
+                    <p><strong>Video Editing:</strong> Filmora | VN | InShot</p>
+                    <p><strong>AI Tools:</strong> All AI used</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Personal Traits & Hobbies</h3>
+                    <p><strong>Strength:</strong> Hardworking and smartworking, Quick learner</p>
+                    <p><strong>Weakness:</strong> Taking extra time for good work</p>
+                    <p><strong>Hobbies:</strong> Reading books, watching films and listening to music.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOTION GRAPHICS SECTION (Left Text, Right Reels/Videos Layout) -->
+    <section class="motion-graphics-section">
+        <div class="container motion-grid">
+            <div class="motion-left">
+                <h2>Motion Graphics</h2>
+                <p>Crafting stunning visual transitions and high-impact motion clips that bring static designs to life.</p>
+            </div>
+            <div class="motion-right">
+                <!-- Horizontally stacked video/reels mock placeholders -->
+                <div class="reel-box"><span class="play-icon">▶</span><p>Reel 1</p></div>
+                <div class="reel-box"><span class="play-icon">▶</span><p>Reel 2</p></div>
+                <div class="reel-box"><span class="play-icon">▶</span><p>Reel 3</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI VISUALS GALLERY SECTION (4-Column Horizontal Grid) -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">AI Visuals Gallery</h2>
+            <div class="gallery-grid-4col">
+                <div class="gallery-item"><img src="b1.png" alt="AI Visual 1"><p>AI Digital Art 1</p></div>
+                <div class="gallery-item"><img src="b2.png" alt="AI Visual 2"><p>AI Digital Art 2</p></div>
+                <div class="gallery-item"><img src="b3.png" alt="AI Visual 3"><p>AI Digital Art 3</p></div>
+                <div class="gallery-item"><img src="b4.png" alt="AI Visual 4"><p>AI Digital Art 4</p></div>
+                <div class="gallery-item"><img src="b5.png" alt="AI Visual 5"><p>AI Digital Art 5</p></div>
+                <div class="gallery-item"><img src="b6.png" alt="AI Visual 6"><p>AI Digital Art 6</p></div>
+                <div class="gallery-item"><img src="b7.png" alt="AI Visual 7"><p>AI Digital Art 7</p></div>
+                <div class="gallery-item"><img src="b8.png" alt="AI Visual 8"><p>AI Digital Art 8</p></div>
+                <div class="gallery-item"><img src="b9.png" alt="AI Visual 9"><p>AI Digital Art 9</p></div>
+                <div class="gallery-item"><img src="b10.png" alt="AI Visual 10"><p>AI Digital Art 10</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION (As per Image 16730_2.jpg Form Left, Info Right Layout) -->
+    <section id="contact" class="contact-section">
+        <div class="container contact-grid-reverse">
+            <!-- Left Side: Form Area -->
+            <div class="contact-form-block">
+                <h2>Let's work together</h2>
+                <p class="form-subtext">I design and code beautifully simple things, and I love what I do. Just simple like that!</p>
+                <form id="contact-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="First Name" required>
+                        <input type="text" placeholder="Last Name" required>
+                    </div>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="text" placeholder="Phone Number" required>
+                    <textarea placeholder="Message" rows="4" required></textarea>
+                    <button type="submit" class="send-message-btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Right Side: Contact Info Details -->
+            <div class="contact-details-block">
+                <div class="detail-item">
+                    <span class="icon-circle">📞</span>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+91 8810682518</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <span class="icon-circle">📧</span>
+                    <div>
+                        <h4>Email</h4>
+                        <p>musankumari3330@gmail.com</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <span class="icon-circle">📍</span>
+                    <div>
+                        <h4>Address</h4>
+                        <p>New Delhi, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION (Gray Theme with Clickable Profile Icons) -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Muskan Kumari | Graphic & Web Designer | All Rights Reserved.</p>
+            <div class="footer-social-icons">
+                <a href="https://behance.net/musankumari143/info" target="_blank" aria-label="Behance">Behance</a>
+                <a href="https://youtube.com/@I.MuskanKumari" target="_blank" aria-label="YouTube">YouTube</a>
+                <a href="https://instagram.com/i.musankumari" target="_blank" aria-label="Instagram">Instagram</a>
+            </div>
         </div>
     </footer>
 

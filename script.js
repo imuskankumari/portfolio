@@ -4,36 +4,35 @@ document.addEventListener("DOMContentLoaded", () => {
     applyStrictAssetProtection();
 });
 
-// 3-कॉलम क्लीन ग्रिड रेंडर मैकेनिज्म
+// گیلری آئٹمز رینڈر کرنے کا فنکشن (3 کالم گرڈ)
 function buildWordPressFilterableGallery() {
     const targetGrid = document.getElementById("wordpressFilterGrid");
     if (!targetGrid) return;
 
     let totalGridHTML = "";
 
-    // 1. Graphic Designing (g1.jpg से g50.jpg)
+    // 1. Graphic Designing (g1.jpg سے g50.jpg)
     for (let i = 1; i <= 50; i++) {
         totalGridHTML += generateItemCardMarkup('graphic', `g${i}.jpg`, `Graphic Project ${i}`);
     }
 
-    // 2. Website Designing (w1.jpg से w10.jpg)
+    // 2. Website Designing (w1.jpg سے w10.jpg)
     for (let i = 1; i <= 10; i++) {
         totalGridHTML += generateItemCardMarkup('web', `w${i}.jpg`, `Website Design ${i}`);
     }
 
-    // 3. Social Media Post (s1.jpg से s10.jpg)
+    // 3. Social Media Post (s1.jpg سے s10.jpg)
     for (let i = 1; i <= 10; i++) {
         totalGridHTML += generateItemCardMarkup('social', `s${i}.jpg`, `Social Graphics ${i}`);
     }
 
-    // 4. AI Generated Visuals (a1.jpg से a10.jpg)
+    // 4. AI Generated Visuals (a1.jpg سے a10.jpg)
     for (let i = 1; i <= 10; i++) {
         totalGridHTML += generateItemCardMarkup('ai', `a${i}.jpg`, `AI Digital Art ${i}`);
     }
 
     targetGrid.innerHTML = totalGridHTML;
 
-    // फ़िल्टर टैब ट्रिगर लॉजिक
     const filterTabs = document.querySelectorAll(".filter-tab-btn");
     const structuralCards = document.querySelectorAll(".gallery-card-unit");
 
@@ -75,7 +74,7 @@ function generateItemCardMarkup(categoryKey, imagePath, displayTitle) {
     `;
 }
 
-// 12 रील्स का इंटरएक्टिव एकॉर्डियन प्लेयर
+// 12 ویڈیوز کے لیے انٹرایکٹو ایکورڈین ٹریک
 function buildInteractiveAudioReels() {
     const accordionContainer = document.getElementById("reelsAccordionTrack");
     if (!accordionContainer) return;
@@ -135,7 +134,7 @@ function buildInteractiveAudioReels() {
     });
 }
 
-// राइट-क्लिक और इमेज प्रोटेक्शन
+// پروٹیکشن لیئر (رائٹ کلک بلاک)
 function applyStrictAssetProtection() {
     document.addEventListener('contextmenu', e => e.preventDefault());
     document.addEventListener('dragstart', e => {

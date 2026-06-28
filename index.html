@@ -8,9 +8,8 @@
 </head>
 <body>
 
-    <!-- SLEEK HEADER (Matched with Image 16831_2.png) -->
     <header class="main-header">
-        <div class="header-container-box">
+        <div class="header-container">
             <img src="mk.png" alt="MK Logo" class="site-logo">
             <nav class="nav-links">
                 <a href="#home">Home</a>
@@ -18,19 +17,18 @@
                 <a href="#contact">Contact</a>
             </nav>
         </div>
+        <div class="header-deco-line"></div>
     </header>
 
-    <!-- CLEAN HERO SECTION -->
     <section id="home" class="hero-section"></section>
 
-    <!-- ABOUT ME SECTION -->
     <section id="about" class="about-section">
         <div class="container">
             <div class="about-dialogue-box">
                 <p class="dialogue-line highlight">Designers में सबसे मशहूर... सबसे ताकतवर।</p>
                 <p class="dialogue-line">सालों का तजुर्बा</p>
                 <p class="dialogue-line">Creativity मेरे रग-रग में है।</p>
-                <p class="dialogue-line-break"></p>
+                <div class="dialogue-spacer"></div>
                 <p class="dialogue-line">Photoshop, Illustrator, InDesign और CorelDraw & Canva मेरे साथ चलते हैं।</p>
                 <p class="dialogue-line">HTML, CSS, JavaScript और WordPress से Creative Website बना सकती हूँ।</p>
                 <p class="dialogue-line">Photoshop से दिन को रात कर सकती हूँ।</p>
@@ -40,9 +38,8 @@
                 <p class="dialogue-line finale">Aur clearly... बहुत Creative भी हूँ....</p>
             </div>
 
-            <!-- Professional Resume Data -->
-            <div class="details-grid">
-                <div class="info-card">
+            <div class="resume-grid">
+                <div class="resume-card">
                     <h3>Academic Education</h3>
                     <ul>
                         <li>Senior Secondary Education From CBSE</li>
@@ -51,14 +48,14 @@
                         <li>Diploma In Computer Applications DCA Certified</li>
                     </ul>
                 </div>
-                <div class="info-card">
+                <div class="resume-card">
                     <h3>Technical Skills</h3>
                     <p><strong>Graphic Designing:</strong> Adobe Photoshop | Adobe Illustrator | Adobe InDesign | CorelDraw | Canva</p>
                     <p><strong>Web Designing:</strong> HTML | CSS | JS | WordPress</p>
                     <p><strong>Video Editing:</strong> Filmora | VN | InShot</p>
                     <p><strong>AI Tools:</strong> All AI used</p>
                 </div>
-                <div class="info-card">
+                <div class="resume-card">
                     <h3>Traits & Hobbies</h3>
                     <p><strong>Strength:</strong> Hardworking and smartworking, Quick learner</p>
                     <p><strong>Weakness:</strong> Taking extra time for good work</p>
@@ -68,91 +65,93 @@
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
     <section id="services" class="services-section">
         
-        <!-- Part A: Latest Gallery Collection (4-Column Layout with Tabs) -->
-        <div class="container gallery-wrapper">
-            <h2 class="section-title">Latest Gallery Collection</h2>
-            <div class="gallery-tabs">
-                <button class="tab-btn active" onclick="filterGallery('ai')">AI Generated Visuals</button>
-                <button class="tab-btn" onclick="filterGallery('graphic')">Graphic Designing</button>
-                <button class="tab-btn" onclick="filterGallery('web')">Web Designing</button>
+        <div class="container">
+            <h2 class="section-heading">Latest Gallery Collection</h2>
+            <div class="filter-tabs">
+                <button class="tab-btn active" onclick="filterGallery('ai', event)">AI Generated Visuals</button>
+                <button class="tab-btn" onclick="filterGallery('graphic', event)">Graphic Designing</button>
+                <button class="tab-btn" onclick="filterGallery('web', event)">Web Designing</button>
             </div>
-            
-            <div class="gallery-grid-4col" id="gallery-grid">
-                <!-- AI Visuals b1 to b11 loaded dynamically or statically via script -->
-            </div>
+            <div class="gallery-4col-grid" id="main-portfolio-gallery">
+                </div>
         </div>
 
-        <!-- Part B: Motion Graphics Section (At the Bottom of Services) -->
-        <div class="motion-graphics-block">
-            <div class="container motion-grid">
-                <div class="motion-left">
+        <div class="motion-graphics-container">
+            <div class="container motion-flex-layout">
+                <div class="motion-left-text">
                     <h2>Motion Graphics</h2>
                     <p>Crafting stunning visual transitions and high-impact motion clips that bring static designs to life.</p>
                 </div>
-                <div class="motion-right" id="reels-container">
-                    <!-- Reels loaded dynamically r1 to r12 -->
-                </div>
+                <div class="motion-right-scroll" id="reels-wrapper">
+                    </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT SECTION (As per Image 16730_3.jpg Form Left, Info Right) -->
     <section id="contact" class="contact-section">
-        <div class="container contact-grid">
+        <div class="container contact-split-grid">
             <div class="contact-form-block">
                 <h2>Let's work together</h2>
                 <p class="form-subtext">I design and code beautifully simple things, and I love what I do. Just simple like that!</p>
-                <form id="contact-form">
-                    <div class="form-row">
+                <form id="portfolio-action-form">
+                    <div class="input-inline-row">
                         <input type="text" placeholder="First Name" required>
                         <input type="text" placeholder="Last Name" required>
                     </div>
                     <input type="email" placeholder="Email Address" required>
                     <input type="text" placeholder="Phone Number" required>
-                    <textarea placeholder="Message" rows="4" required></textarea>
-                    <button type="submit" class="send-message-btn">Send Message</button>
+                    <textarea placeholder="Describe your requirements..." rows="4" required></textarea>
+                    <button type="submit" class="form-submit-btn">Send Message</button>
                 </form>
             </div>
 
             <div class="contact-details-block">
                 <h2>Contact Information</h2>
-                <div class="detail-item">
-                    <span class="icon-circle">📞</span>
+                <div class="detail-row-item">
+                    <span class="circle-icon">Option 📞</span>
                     <div>
                         <h4>Phone</h4>
                         <p>+91 8810682518</p>
                     </div>
                 </div>
-                <div class="detail-item">
-                    <span class="icon-circle">📧</span>
+                <div class="detail-row-item">
+                    <span class="circle-icon">Option 📧</span>
                     <div>
                         <h4>Email</h4>
                         <p>musankumari3330@gmail.com</p>
                     </div>
                 </div>
-                <div class="detail-item">
-                    <span class="icon-circle">📍</span>
+                <div class="detail-row-item">
+                    <span class="circle-icon">Option 📍</span>
                     <div>
                         <h4>Address</h4>
                         <p>New Delhi, India</p>
                     </div>
                 </div>
-                <div class="payment-widget">
-                    <img src="qr.png" alt="Paytm QR" class="qr-code-img">
-                    <span class="upi-id">8810682518@paytm 🛡️</span>
+                <div class="payment-gateway-trigger" onclick="triggerUPIPayment()">
+                    <img src="qr.png" alt="Paytm BHIM QR" class="bhim-qr-img">
+                    <div class="upi-meta">
+                        <span class="upi-id-label">8810682518@paytm</span>
+                        <small class="secure-tag">🛡️ Click to Pay via BHIM UPI</small>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ULTRA SLIM GRAY FOOTER -->
-    <footer class="slim-footer">
-        <div class="footer-container">
+    <div class="reel-lightbox" id="reelLightbox">
+        <span class="close-lightbox" onclick="closeReelPopup()">&times;</span>
+        <div class="lightbox-content">
+            <video id="lightboxVideo" controls autoplay></video>
+        </div>
+    </div>
+
+    <footer class="mk-slim-footer">
+        <div class="footer-wrap">
             <p>&copy; 2026 Muskan Kumari | Graphic & Web Designer | All Rights Reserved.</p>
-            <div class="footer-social-icons">
+            <div class="footer-socials">
                 <a href="https://behance.net/musankumari143/info" target="_blank">Behance</a>
                 <a href="https://youtube.com/@I.MuskanKumari" target="_blank">YouTube</a>
                 <a href="https://instagram.com/i.musankumari" target="_blank">Instagram</a>

@@ -1,60 +1,51 @@
 document.addEventListener("DOMContentLoaded", () => {
-    initializeWordpressGallery();
-    initializeMotionReels();
-    preventContentTheft();
+    buildWordPressFilterableGallery();
+    buildInteractiveAudioReels();
+    applyStrictAssetProtection();
 });
 
-function initializeWordpressGallery() {
-    const gridContainer = document.getElementById("wordpressFilterGrid");
-    if (!gridContainer) return;
+// 3-कॉलम क्लीन ग्रिड रेंडर मैकेनिज्म
+function buildWordPressFilterableGallery() {
+    const targetGrid = document.getElementById("wordpressFilterGrid");
+    if (!targetGrid) return;
 
-    let galleryHTML = "";
+    let totalGridHTML = "";
 
-    // 1. Photoshop Category Assets (10 Files)
-    for (let i = 1; i <= 10; i++) {
-        galleryHTML += createGalleryItemHTML('photoshop', `p${i}.jpg`, `Photoshop Artwork ${i}`);
+    // 1. Graphic Designing (g1.jpg से g50.jpg)
+    for (let i = 1; i <= 50; i++) {
+        totalGridHTML += generateItemCardMarkup('graphic', `g${i}.jpg`, `Graphic Project ${i}`);
     }
 
-    // 2. Illustrator Category Assets (10 Files)
+    // 2. Website Designing (w1.jpg से w10.jpg)
     for (let i = 1; i <= 10; i++) {
-        galleryHTML += createGalleryItemHTML('illustrator', `i${i}.jpg`, `Vector Asset ${i}`);
+        totalGridHTML += generateItemCardMarkup('web', `w${i}.jpg`, `Website Design ${i}`);
     }
 
-    // 3. InDesign Category Assets (10 Files)
+    // 3. Social Media Post (s1.jpg से s10.jpg)
     for (let i = 1; i <= 10; i++) {
-        galleryHTML += createGalleryItemHTML('indesign', `id${i}.jpg`, `Layout Print ${i}`);
+        totalGridHTML += generateItemCardMarkup('social', `s${i}.jpg`, `Social Graphics ${i}`);
     }
 
-    // 4. CorelDraw Category Assets (10 Files)
+    // 4. AI Generated Visuals (a1.jpg से a10.jpg)
     for (let i = 1; i <= 10; i++) {
-        galleryHTML += createGalleryItemHTML('coreldraw', `c${i}.jpg`, `Corel Artwork ${i}`);
+        totalGridHTML += generateItemCardMarkup('ai', `a${i}.jpg`, `AI Digital Art ${i}`);
     }
 
-    // 5. Canva Category Assets (10 Files)
-    for (let i = 1; i <= 10; i++) {
-        galleryHTML += createGalleryItemHTML('canva', `ca${i}.jpg`, `Canva Graphics ${i}`);
-    }
+    targetGrid.innerHTML = totalGridHTML;
 
-    // 6. AI Generated Category Assets (10 Files, Extension: .png)
-    for (let i = 1; i <= 10; i++) {
-        galleryHTML += createGalleryItemHTML('ai', `g${i}.png`, `AI Generated Visual ${i}`);
-    }
+    // फ़िल्टर टैब ट्रिगर लॉजिक
+    const filterTabs = document.querySelectorAll(".filter-tab-btn");
+    const structuralCards = document.querySelectorAll(".gallery-card-unit");
 
-    gridContainer.innerHTML = galleryHTML;
+    filterTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            filterTabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
 
-    // Filter Buttons Logics
-    const filterButtons = document.querySelectorAll(".filter-tab-btn");
-    const galleryCards = document.querySelectorAll(".gallery-card-unit");
+            const targetedCategory = tab.getAttribute("data-filter");
 
-    filterButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            filterButtons.forEach(btn => btn.classList.remove("active"));
-            button.classList.add("active");
-
-            const targetedFilter = button.getAttribute("data-filter");
-
-            galleryCards.forEach(card => {
-                if (targetedFilter === "all" || card.getAttribute("data-category") === targetedFilter) {
+            structuralCards.forEach(card => {
+                if (targetedCategory === "all" || card.getAttribute("data-category") === targetedCategory) {
                     card.classList.remove("hidden");
                 } else {
                     card.classList.add("hidden");
@@ -64,51 +55,57 @@ function initializeWordpressGallery() {
     });
 }
 
-function createGalleryItemHTML(category, sourceFile, titleText) {
+function generateItemCardMarkup(categoryKey, imagePath, displayTitle) {
+    let tagText = categoryKey;
+    if (categoryKey === 'graphic') tagText = 'Graphic';
+    if (categoryKey === 'web') tagText = 'Web Design';
+    if (categoryKey === 'social') tagText = 'Social Post';
+    if (categoryKey === 'ai') tagText = 'AI Visual';
+
     return `
-        <div class="gallery-card-unit" data-category="${category}">
+        <div class="gallery-card-unit" data-category="${categoryKey}">
             <div class="portfolio-img-bound">
-                <img src="${sourceFile}" alt="${titleText}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&auto=format&fit=crop&q=60'">
+                <img src="${imagePath}" alt="${displayTitle}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&auto=format&fit=crop&q=60'">
             </div>
             <div class="portfolio-meta-row">
-                <strong>${titleText}</strong>
-                <span>${category}</span>
+                <strong>${displayTitle}</strong>
+                <span>${tagText}</span>
             </div>
         </div>
     `;
 }
 
-function initializeMotionReels() {
-    const track = document.getElementById("reelsAccordionTrack");
-    if (!track) return;
+// 12 रील्स का इंटरएक्टिव एकॉर्डियन प्लेयर
+function buildInteractiveAudioReels() {
+    const accordionContainer = document.getElementById("reelsAccordionTrack");
+    if (!accordionContainer) return;
 
-    let accordionHTML = "";
-    const totalReelsCount = 12;
+    let accordionMarkup = "";
+    const activeReelsTotal = 12;
 
-    for (let i = 1; i <= totalReelsCount; i++) {
-        accordionHTML += `
+    for (let i = 1; i <= activeReelsTotal; i++) {
+        accordionMarkup += `
             <div class="reel-item-frame ${i === 1 ? 'expanded' : ''}">
                 <video src="r${i}.mp4" loop muted playsinline></video>
                 <button class="reel-audio-control-btn"><i class="fas fa-volume-mute"></i></button>
             </div>
         `;
     }
-    track.innerHTML = accordionHTML;
+    accordionContainer.innerHTML = accordionMarkup;
 
-    const allReelFrames = document.querySelectorAll('.reel-item-frame');
+    const allActiveFrames = document.querySelectorAll('.reel-item-frame');
 
-    allReelFrames.forEach(frame => {
-        const videoElement = frame.querySelector('video');
-        const muteButton = frame.querySelector('.reel-audio-control-btn');
-        const muteIcon = muteButton.querySelector('i');
+    allActiveFrames.forEach(frame => {
+        const structuralVideo = frame.querySelector('video');
+        const muteTrigger = frame.querySelector('.reel-audio-control-btn');
+        const controlIcon = muteTrigger.querySelector('i');
 
-        // Auto play first frame video initially
-        if (frame.classList.contains('expanded') && videoElement) {
-            videoElement.play().catch(() => {});
+        if (frame.classList.contains('expanded') && structuralVideo) {
+            structuralVideo.play().catch(() => {});
         }
 
         frame.addEventListener('mouseenter', () => {
-            allReelFrames.forEach(f => {
+            allActiveFrames.forEach(f => {
                 f.classList.remove('expanded');
                 const v = f.querySelector('video');
                 if (v) {
@@ -118,29 +115,31 @@ function initializeMotionReels() {
             });
 
             frame.classList.add('expanded');
-            if (videoElement) {
-                videoElement.play().catch(() => {});
+            if (structuralVideo) {
+                structuralVideo.play().catch(() => {});
             }
         });
 
-        muteButton.addEventListener('click', (event) => {
-            event.stopPropagation();
-            if (!videoElement) return;
+        muteTrigger.addEventListener('click', (clickEvent) => {
+            clickEvent.stopPropagation();
+            if (!structuralVideo) return;
 
-            if (videoElement.muted) {
-                videoElement.muted = false;
-                muteIcon.className = "fas fa-volume-up";
+            if (structuralVideo.muted) {
+                structuralVideo.muted = false;
+                controlIcon.className = "fas fa-volume-up";
             } else {
-                videoElement.muted = true;
-                muteIcon.className = "fas fa-volume-mute";
+                structuralVideo.muted = true;
+                controlIcon.className = "fas fa-volume-mute";
             }
         });
     });
 }
 
-function preventContentTheft() {
+// राइट-क्लिक और इमेज प्रोटेक्शन
+function applyStrictAssetProtection() {
     document.addEventListener('contextmenu', e => e.preventDefault());
     document.addEventListener('dragstart', e => {
         if (e.target.nodeName === 'IMG' || e.target.nodeName === 'VIDEO') e.preventDefault();
     });
 }
+

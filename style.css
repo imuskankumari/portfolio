@@ -1,14 +1,14 @@
-/* RESET & STRUCTURAL TIMING */
+/* PURE WHITE THEME RESET & LAYOUT TIMINGS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Playfair Display', 'Segoe UI', serif;
+    font-family: 'Playfair Display', Arial, sans-serif;
 }
 
 body {
-    background-color: #ffffff;
-    color: #333;
+    background-color: #ffffff; /* Explicitly White across the whole stack */
+    color: #222222;
     scroll-behavior: smooth;
 }
 
@@ -19,33 +19,32 @@ body {
     padding: 50px 0;
 }
 
-/* SLIM DESIGN HEADER (Matched to Image 16831_2.png) */
+/* MK SPIRITUAL HUB EXACT SLIM HEADER COPY */
 .main-header {
     width: 100%;
-    background: #ffffff;
-    border-bottom: 1px solid #eaeaea;
+    background: #fdfdfd; /* Sleek Off-White/Gray tint tint */
     position: sticky;
     top: 0;
     z-index: 2000;
 }
 
-.header-container-box {
+.header-container {
     max-width: 1200px;
     width: 90%;
     margin: 0 auto;
-    height: 60px; /* Perfectly Slim */
+    height: 55px; /* Extremely Slim */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .site-logo {
-    height: 35px;
+    height: 32px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #111;
+    color: #333333;
     margin-left: 35px;
     font-size: 0.95rem;
     font-weight: 600;
@@ -56,41 +55,49 @@ body {
     color: #ff6600;
 }
 
-/* HERO SECTION - CLEAN IMAGE RESPONSIVENESS */
-.hero-section {
-    background: url('hero.png') no-repeat center center/cover;
+/* Ornamental line under header matching the reference design */
+.header-deco-line {
     width: 100%;
-    height: 90vh;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #ff6600, transparent);
+}
+
+/* FIXED WORDPRESS FRAME HEIGHT FOR HERO SECTION */
+.hero-section {
+    background: url('hero.png') no-repeat center center;
+    background-size: contain;
+    width: 100%;
+    height: 550px; /* Locked between 500px - 600px size */
+    background-color: #ffffff;
 }
 
 @media (max-width: 768px) {
     .hero-section {
-        height: 50vh; /* Scaled down perfectly for Mobile View */
+        height: 350px; /* Correct scale on all smartphones without cropping */
     }
 }
 
-/* ABOUT SECTION & DIALOGUES */
+/* ABOUT SECTION & SWAG STYLE */
 .about-section {
     background: #ffffff;
-    padding: 40px 0;
 }
 
 .about-dialogue-box {
-    background: #fafafa;
+    background: #ffffff;
     border-left: 4px solid #ff6600;
-    padding: 35px;
-    margin-bottom: 45px;
-    border-radius: 2px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
 
 .dialogue-line {
     font-size: 1.2rem;
     margin-bottom: 8px;
     line-height: 1.6;
-    color: #222;
+    color: #333;
 }
 
-.dialogue-line-break {
+.dialogue-spacer {
     height: 15px;
 }
 
@@ -101,25 +108,26 @@ body {
 
 .dialogue-line.finale {
     font-weight: 700;
-    color: #000;
     font-size: 1.3rem;
+    color: #000;
     margin-top: 10px;
 }
 
-.details-grid {
+.resume-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
+    margin-top: 30px;
 }
 
-.info-card {
+.resume-card {
     background: #ffffff;
-    border: 1px solid #eeeeee;
+    border: 1px solid #eaeaea;
     padding: 25px;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
-.info-card h3 {
+.resume-card h3 {
     font-size: 1.2rem;
     margin-bottom: 15px;
     border-bottom: 2px solid #ff6600;
@@ -127,28 +135,28 @@ body {
     display: inline-block;
 }
 
-.info-card ul {
+.resume-card ul {
     list-style-position: inside;
 }
 
-.info-card li, .info-card p {
+.resume-card li, .resume-card p {
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 8px;
 }
 
-/* TABS AND 4-GRID GALLERY LAYOUT */
-.gallery-wrapper {
-    padding-bottom: 20px;
+/* FILTER TABS & 4-COLUMN IMAGE GRID WITH TITLES */
+.services-section {
+    background: #ffffff;
 }
 
-.section-title {
+.section-heading {
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 30px;
 }
 
-.gallery-tabs {
+.filter-tabs {
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -156,39 +164,41 @@ body {
 }
 
 .tab-btn {
-    padding: 10px 20px;
-    background: #f0f0f0;
-    border: none;
+    padding: 10px 22px;
+    background: #f7f7f7;
+    border: 1px solid #eee;
     cursor: pointer;
     font-weight: 600;
     border-radius: 4px;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .tab-btn.active, .tab-btn:hover {
     background: #ff6600;
-    color: #fff;
+    color: #ffffff;
+    border-color: #ff6600;
 }
 
-.gallery-grid-4col {
+.gallery-4col-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
 @media(max-width: 992px) {
-    .gallery-grid-4col { grid-template-columns: repeat(2, 1fr); }
+    .gallery-4col-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media(max-width: 576px) {
-    .gallery-grid-4col { grid-template-columns: 1fr; }
+    .gallery-4col-grid { grid-template-columns: 1fr; }
 }
 
 .gallery-item {
-    background: #fff;
-    border: 1px solid #eee;
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
     overflow: hidden;
-    border-radius: 6px;
     text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
 }
 
 .gallery-item img {
@@ -198,60 +208,122 @@ body {
 }
 
 .gallery-item p {
-    padding: 10px;
+    padding: 12px;
     font-size: 0.85rem;
     font-weight: 600;
+    color: #444444;
+    border-top: 1px solid #f9f9f9;
 }
 
-/* MOTION GRAPHICS (Horizontal Horizontal Reels Grid) */
-.motion-graphics-block {
-    background: #fbfbfb;
+/* VERTICAL REELS CONTAINER (Image 16730_5.jpg style) */
+.motion-graphics-container {
+    background: #ffffff;
     padding: 60px 0;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #f5f5f5;
 }
 
-.motion-grid {
+.motion-flex-layout {
     display: flex;
     gap: 40px;
     align-items: center;
 }
 
-.motion-left {
+.motion-left-text {
     flex: 1;
 }
 
-.motion-left h2 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+.motion-left-text h2 {
+    font-size: 2.6rem;
+    font-weight: 800;
 }
 
-.motion-right {
+.motion-right-scroll {
     flex: 2;
     display: flex;
     gap: 15px;
     overflow-x: auto;
-    padding: 10px;
+    padding: 15px 5px;
 }
 
-.video-reel-card {
-    min-width: 170px;
-    height: 270px;
-    background: #111;
-    border-radius: 8px;
-    display: flex;
+.vertical-reel-wrapper {
+    position: relative;
+    min-width: 150px;
+    height: 260px; /* Precise phone ratio format */
+    background: #000000;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+}
+
+.vertical-reel-wrapper:hover {
+    transform: scale(1.03);
+}
+
+.vertical-reel-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Audio control overlays for individual reels */
+.reel-audio-toggle {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* INTERACTIVE LIGHTBOX FOR FULL SCREEN POPUP VIDEO */
+.reel-lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 5000;
     justify-content: center;
     align-items: center;
+}
+
+.lightbox-content {
+    width: 90%;
+    max-width: 400px;
+    height: 80vh;
+}
+
+.lightbox-content video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
     color: #fff;
-    position: relative;
+    font-size: 2.5rem;
+    cursor: pointer;
 }
 
-/* CONTACT SECTION WITH REVERSE COLOR LAYOUT */
+/* CONTACT SECTION WITH EXPANDED PURPLE LAYOUT */
 .contact-section {
-    background: #0d0d0d;
-    color: #ffffff;
+    background: #ffffff;
+    border-top: 1px solid #f5f5f5;
 }
 
-.contact-grid {
+.contact-split-grid {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -259,93 +331,147 @@ body {
 }
 
 .contact-form-block {
-    flex: 1.3;
+    flex: 1.4;
     min-width: 320px;
-    background: #1a1a1a;
+    background: #180f2b; /* Gorgeous dark purple from image 16730_5 */
     padding: 40px;
-    border-radius: 12px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    color: #ffffff;
 }
 
 .contact-form-block h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 10px;
 }
 
 .form-subtext {
-    color: #aaa;
-    margin-bottom: 20px;
-    font-size: 0.9rem;
+    color: #bfa5db;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
 }
 
-.form-row {
+.input-inline-row {
     display: flex;
     gap: 15px;
 }
 
 .contact-form-block input, .contact-form-block textarea {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     margin-bottom: 15px;
-    background: #000;
-    border: 1px solid #333;
-    color: #fff;
-    border-radius: 4px;
+    background: #090514;
+    border: 1px solid #362259;
+    color: #ffffff;
+    border-radius: 6px;
+    outline: none;
 }
 
-.send-message-btn {
-    background: #ff6600;
-    color: #fff;
-    padding: 12px 30px;
+.form-submit-btn {
+    background: #9b59b6;
+    color: #ffffff;
+    padding: 14px 35px;
     border: none;
     font-weight: 700;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 6px;
+    transition: 0.2s;
 }
 
+.form-submit-btn:hover {
+    background: #ffffff;
+    color: #180f2b;
+}
+
+/* Right Contact Details Elements */
 .contact-details-block {
     flex: 1;
-    min-width: 280px;
+    min-width: 290px;
+    padding-top: 10px;
 }
 
-.detail-item {
+.contact-details-block h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.detail-row-item {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-bottom: 20px;
 }
 
-.icon-circle {
+.circle-icon {
     width: 45px;
     height: 45px;
-    background: #222;
+    background: #fdfdfd;
+    border: 1px solid #eee;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.payment-widget {
-    margin-top: 30px;
+.contact-details-block h4 {
+    color: #777777;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.contact-details-block p {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* PAYMENT COMPONENT */
+.payment-gateway-trigger {
+    margin-top: 35px;
     display: flex;
     align-items: center;
     gap: 15px;
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px dashed #ccc;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
-.qr-code-img {
-    width: 75px;
-    height: 75px;
+.payment-gateway-trigger:hover {
+    background: #f0fff4;
+    border-color: #2ecc71;
 }
 
-/* ULTRA SLIM FOOTER (Matched to Image 16831_2.png) */
-.slim-footer {
-    background: #1a1a1a;
+.bhim-qr-img {
+    width: 70px;
+    height: 70px;
+}
+
+.upi-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.upi-id-label {
+    font-weight: 700;
+    color: #27ae60;
+}
+
+.secure-tag {
     color: #777;
+}
+
+/* MK SPIRITUAL HUB EXACT SLIM FOOTER COPY */
+.mk-slim-footer {
+    background: #fcfcfc;
+    color: #666666;
     padding: 15px 0;
     font-size: 0.85rem;
-    border-top: 1px solid #222;
+    border-top: 1px solid #eaeaea;
 }
 
-.footer-container {
+.footer-wrap {
     max-width: 1200px;
     width: 90%;
     margin: 0 auto;
@@ -354,14 +480,13 @@ body {
     align-items: center;
 }
 
-.footer-social-icons a {
-    color: #777;
+.footer-socials a {
+    color: #666666;
     text-decoration: none;
     margin-left: 20px;
-    transition: color 0.2s;
+    font-weight: 500;
 }
 
-.footer-social-icons a:hover {
-    color: #fff;
+.footer-socials a:hover {
+    color: #ff6600;
 }
-

@@ -1,4 +1,4 @@
-/* PURE WHITE THEME RESET & LAYOUT TIMINGS */
+/* PURE WHITE THEME MASTER STRUCTURAL INTERFACE */
 * {
     margin: 0;
     padding: 0;
@@ -7,9 +7,10 @@
 }
 
 body {
-    background-color: #ffffff; /* Explicitly White across the whole stack */
+    background-color: #ffffff; /* Explicitly White Everywhere */
     color: #222222;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .container {
@@ -19,10 +20,10 @@ body {
     padding: 50px 0;
 }
 
-/* MK SPIRITUAL HUB EXACT SLIM HEADER COPY */
+/* SLIM HEADER DESIGN */
 .main-header {
     width: 100%;
-    background: #fdfdfd; /* Sleek Off-White/Gray tint tint */
+    background: #fdfdfd;
     position: sticky;
     top: 0;
     z-index: 2000;
@@ -32,7 +33,7 @@ body {
     max-width: 1200px;
     width: 90%;
     margin: 0 auto;
-    height: 55px; /* Extremely Slim */
+    height: 55px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,29 +56,29 @@ body {
     color: #ff6600;
 }
 
-/* Ornamental line under header matching the reference design */
 .header-deco-line {
     width: 100%;
     height: 2px;
     background: linear-gradient(to right, transparent, #ff6600, transparent);
 }
 
-/* FIXED WORDPRESS FRAME HEIGHT FOR HERO SECTION */
+/* 100% FLUSH HERO BANNER - NO PADDING, NO MARGIN, FULL TOUCH */
 .hero-section {
-    background: url('hero.png') no-repeat center center;
-    background-size: contain;
     width: 100%;
-    height: 550px; /* Locked between 500px - 600px size */
-    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    line-height: 0; /* Extra safety step to clear any baseline image spaces */
 }
 
-@media (max-width: 768px) {
-    .hero-section {
-        height: 350px; /* Correct scale on all smartphones without cropping */
-    }
+.hero-fluid-img {
+    width: 100%;
+    height: auto;
+    max-height: 600px; /* Locked under your WordPress constraints */
+    object-fit: cover;
+    display: block;
 }
 
-/* ABOUT SECTION & SWAG STYLE */
+/* ABOUT SECTION SETUP */
 .about-section {
     background: #ffffff;
 }
@@ -117,7 +118,6 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
-    margin-top: 30px;
 }
 
 .resume-card {
@@ -135,17 +135,7 @@ body {
     display: inline-block;
 }
 
-.resume-card ul {
-    list-style-position: inside;
-}
-
-.resume-card li, .resume-card p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 8px;
-}
-
-/* FILTER TABS & 4-COLUMN IMAGE GRID WITH TITLES */
+/* GALLERY WORKSPACE GRID (4 COLUMNS) */
 .services-section {
     background: #ffffff;
 }
@@ -198,7 +188,13 @@ body {
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
 .gallery-item img {
@@ -212,10 +208,86 @@ body {
     font-size: 0.85rem;
     font-weight: 600;
     color: #444444;
-    border-top: 1px solid #f9f9f9;
 }
 
-/* VERTICAL REELS CONTAINER (Image 16730_5.jpg style) */
+/* ADVANCED LIGHTBOX MODAL OVERLAY (IMAGE SLIDER) */
+.gallery-lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.96); /* Elegant Light/Blur Overlay matching modern styles */
+    backdrop-filter: blur(12px);
+    z-index: 5000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-img-wrap {
+    max-width: 80%;
+    max-height: 80vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-img-wrap img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    animation: slideFade 0.3s ease-in-out;
+}
+
+@keyframes slideFade {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.lightbox-caption {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111;
+}
+
+/* SLIDER CONTROLS ARROWS */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #111;
+    color: #fff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-arrow:hover { background: #ff6600; }
+.prev-arrow { left: 40px; }
+.next-arrow { right: 40px; }
+
+.lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #111;
+}
+
+/* VERTICAL REELS CONTAINER */
 .motion-graphics-container {
     background: #ffffff;
     padding: 60px 0;
@@ -228,14 +300,8 @@ body {
     align-items: center;
 }
 
-.motion-left-text {
-    flex: 1;
-}
-
-.motion-left-text h2 {
-    font-size: 2.6rem;
-    font-weight: 800;
-}
+.motion-left-text { flex: 1; }
+.motion-left-text h2 { font-size: 2.6rem; font-weight: 800; }
 
 .motion-right-scroll {
     flex: 2;
@@ -248,26 +314,15 @@ body {
 .vertical-reel-wrapper {
     position: relative;
     min-width: 150px;
-    height: 260px; /* Precise phone ratio format */
+    height: 260px;
     background: #000000;
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-    transition: transform 0.2s;
 }
 
-.vertical-reel-wrapper:hover {
-    transform: scale(1.03);
-}
+.vertical-reel-wrapper video { width: 100%; height: 100%; object-fit: cover; }
 
-.vertical-reel-wrapper video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Audio control overlays for individual reels */
 .reel-audio-toggle {
     position: absolute;
     bottom: 10px;
@@ -282,7 +337,7 @@ body {
     z-index: 10;
 }
 
-/* INTERACTIVE LIGHTBOX FOR FULL SCREEN POPUP VIDEO */
+/* REEL LIGHTBOX POPUP */
 .reel-lightbox {
     display: none;
     position: fixed;
@@ -291,33 +346,16 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.9);
-    z-index: 5000;
+    z-index: 5100;
     justify-content: center;
     align-items: center;
 }
 
-.lightbox-content {
-    width: 90%;
-    max-width: 400px;
-    height: 80vh;
-}
+.lightbox-content { width: 90%; max-width: 400px; height: 80vh; }
+.lightbox-content video { width: 100%; height: 100%; object-fit: contain; }
+.close-lightbox { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 2.5rem; cursor: pointer; }
 
-.lightbox-content video {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.close-lightbox {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #fff;
-    font-size: 2.5rem;
-    cursor: pointer;
-}
-
-/* CONTACT SECTION WITH EXPANDED PURPLE LAYOUT */
+/* CONTACT SECTION WITH EXPANDED PURPLE CARD */
 .contact-section {
     background: #ffffff;
     border-top: 1px solid #f5f5f5;
@@ -333,28 +371,15 @@ body {
 .contact-form-block {
     flex: 1.4;
     min-width: 320px;
-    background: #180f2b; /* Gorgeous dark purple from image 16730_5 */
+    background: #180f2b; /* Purple card match */
     padding: 40px;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     color: #ffffff;
 }
 
-.contact-form-block h2 {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-}
-
-.form-subtext {
-    color: #bfa5db;
-    margin-bottom: 25px;
-    font-size: 0.95rem;
-}
-
-.input-inline-row {
-    display: flex;
-    gap: 15px;
-}
+.contact-form-block h2 { font-size: 2.2rem; margin-bottom: 10px; }
+.form-subtext { color: #bfa5db; margin-bottom: 25px; font-size: 0.95rem; }
+.form-row { display: flex; gap: 15px; }
 
 .contact-form-block input, .contact-form-block textarea {
     width: 100%;
@@ -364,7 +389,6 @@ body {
     border: 1px solid #362259;
     color: #ffffff;
     border-radius: 6px;
-    outline: none;
 }
 
 .form-submit-btn {
@@ -375,32 +399,11 @@ body {
     font-weight: 700;
     cursor: pointer;
     border-radius: 6px;
-    transition: 0.2s;
 }
 
-.form-submit-btn:hover {
-    background: #ffffff;
-    color: #180f2b;
-}
-
-/* Right Contact Details Elements */
-.contact-details-block {
-    flex: 1;
-    min-width: 290px;
-    padding-top: 10px;
-}
-
-.contact-details-block h2 {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-}
-
-.detail-row-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-}
+.contact-details-block { flex: 1; min-width: 290px; }
+.contact-details-block h2 { font-size: 1.8rem; margin-bottom: 25px; }
+.detail-row-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
 
 .circle-icon {
     width: 45px;
@@ -413,18 +416,6 @@ body {
     justify-content: center;
 }
 
-.contact-details-block h4 {
-    color: #777777;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-}
-
-.contact-details-block p {
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-/* PAYMENT COMPONENT */
 .payment-gateway-trigger {
     margin-top: 35px;
     display: flex;
@@ -435,34 +426,12 @@ body {
     border-radius: 8px;
     border: 1px dashed #ccc;
     cursor: pointer;
-    transition: background 0.2s;
 }
 
-.payment-gateway-trigger:hover {
-    background: #f0fff4;
-    border-color: #2ecc71;
-}
+.bhim-qr-img { width: 70px; height: 70px; }
+.upi-id-label { font-weight: 700; color: #27ae60; }
 
-.bhim-qr-img {
-    width: 70px;
-    height: 70px;
-}
-
-.upi-meta {
-    display: flex;
-    flex-direction: column;
-}
-
-.upi-id-label {
-    font-weight: 700;
-    color: #27ae60;
-}
-
-.secure-tag {
-    color: #777;
-}
-
-/* MK SPIRITUAL HUB EXACT SLIM FOOTER COPY */
+/* SLIM FOOTER */
 .mk-slim-footer {
     background: #fcfcfc;
     color: #666666;
@@ -480,13 +449,6 @@ body {
     align-items: center;
 }
 
-.footer-socials a {
-    color: #666666;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: 500;
-}
+.footer-socials a { color: #666666; text-decoration: none; margin-left: 20px; font-weight: 500; }
+.footer-socials a:hover { color: #ff6600; }
 
-.footer-socials a:hover {
-    color: #ff6600;
-}

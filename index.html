@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,28 +52,41 @@
                     </ul>
                 </div>
                 <div class="profile-card">
-                    <h3>Technical Skills</h3>
-                    <p><strong>Graphic Designing:</strong> Adobe Photoshop | Adobe Illustrator | Adobe InDesign | CorelDraw | Canva</p>
-                    <p><strong>Web Designing:</strong> HTML | CSS | JS | WordPress</p>
-                    <p><strong>Video Editing:</strong> Filmora | VN | InShot</p>
-                    <p><strong>AI Tools:</strong> All AI used</p>
+                    <h3>Technical Qualifications</h3>
+                    <p>Basic Computer Course (BCC) & Diploma in Computer Application (DCA) certified from NIELIT, delivering advanced structural workflows across multi-platform creative ecosystems.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="services" class="services-section">
+        
         <div class="container">
             <h2 class="section-heading">Latest Gallery Collection</h2>
-            
             <div class="filter-tabs">
                 <button class="tab-btn active" onclick="filterGallery('graphic', event)">Graphic Designing</button>
                 <button class="tab-btn" onclick="filterGallery('web', event)">Web Designing</button>
                 <button class="tab-btn" onclick="filterGallery('ai', event)">AI Generated Visuals</button>
             </div>
-            
             <div class="gallery-grid-layout" id="main-portfolio-gallery">
                 </div>
+        </div>
+
+        <div class="skills-tech-stack-block">
+            <div class="container">
+                <h2 class="section-heading">Skills & Tech Stack</h2>
+                <div class="tech-stack-grid">
+                    <div class="tech-card"><img src="ps-icon.png" alt="Photoshop"><span>Photoshop</span></div>
+                    <div class="tech-card"><img src="ai-icon.png" alt="Illustrator"><span>Illustrator</span></div>
+                    <div class="tech-card"><img src="id-icon.png" alt="InDesign"><span>InDesign</span></div>
+                    <div class="tech-card"><img src="corel-icon.png" alt="CorelDraw"><span>CorelDraw</span></div>
+                    <div class="tech-card"><img src="canva-icon.png" alt="Canva"><span>Canva</span></div>
+                    <div class="tech-card"><img src="html-icon.png" alt="HTML5"><span>HTML5</span></div>
+                    <div class="tech-card"><img src="css-icon.png" alt="CSS3"><span>CSS3</span></div>
+                    <div class="tech-card"><img src="js-icon.png" alt="JavaScript"><span>JavaScript</span></div>
+                    <div class="tech-card"><img src="wp-icon.png" alt="WordPress"><span>WordPress</span></div>
+                </div>
+            </div>
         </div>
 
         <div class="motion-graphics-container">
@@ -107,21 +121,21 @@
             <div class="contact-details-block">
                 <h2>Contact Information</h2>
                 <div class="detail-row-item">
-                    <span class="circle-icon">📞</span>
+                    <span class="circle-icon">Option 📞</span>
                     <div>
                         <h4>Phone</h4>
                         <p>+91 8810682518</p>
                     </div>
                 </div>
                 <div class="detail-row-item">
-                    <span class="circle-icon">📧</span>
+                    <span class="circle-icon">Option 📧</span>
                     <div>
                         <h4>Email</h4>
                         <p>musankumari3330@gmail.com</p>
                     </div>
                 </div>
                 <div class="detail-row-item">
-                    <span class="circle-icon">📍</span>
+                    <span class="circle-icon">Option 📍</span>
                     <div>
                         <h4>Address</h4>
                         <p>New Delhi, India</p>
@@ -142,7 +156,7 @@
         <span class="lightbox-close" onclick="closeGallerySlider()">&times;</span>
         <button class="slider-arrow prev-arrow" onclick="changeSlide(-1)">&#10094;</button>
         <div class="lightbox-img-wrap">
-            <img id="lightboxActiveImg" src="" alt="Active Visual">
+            <img id="lightboxActiveImg" src="" alt="Active Content">
             <p id="lightboxImgCaption" class="lightbox-caption"></p>
         </div>
         <button class="slider-arrow next-arrow" onclick="changeSlide(1)">&#10095;</button>
@@ -166,5 +180,6 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

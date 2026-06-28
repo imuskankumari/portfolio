@@ -1,45 +1,79 @@
-// Data Repositories for 2026 Latest Standard Framework Execution
+// Data Repositories
 const portfolioAssets = {
     ai: Array.from({length: 11}, (_, index) => ({ src: `b${index+1}.png`, name: `AI Digital Visual ${index+1}` })),
     graphic: Array.from({length: 20}, (_, index) => ({ src: `g${index+1}.jpg`, name: `Graphic Asset Design ${index+1}` })),
-    web: [
-        { src: 'w1.png', name: 'Premium UI Web Framework Layout' }
-    ]
+    web: [{ src: 'w1.png', name: 'Premium UI Web Framework Layout' }]
 };
 
-// 1. Dynamic Gallery Filter and Name Label Injector
+let currentCategoryArray = [];
+let activeIndex = 0;
+
+// 1. Dynamic Gallery Filter with Global Image Reference Links
 function filterGallery(category, event) {
     const targetGrid = document.getElementById('main-portfolio-gallery');
     if (!targetGrid) return;
     
     targetGrid.innerHTML = '';
 
-    // Update Tab Selection CSS
     if(event) {
         const buttons = document.querySelectorAll('.tab-btn');
         buttons.forEach(btn => btn.classList.remove('active'));
         event.target.classList.add('active');
     }
 
-    const matchedItems = portfolioAssets[category];
-    if(matchedItems.length === 0) {
-        targetGrid.innerHTML = '<p style="grid-column: span 4; text-align:center; padding:30px; color:#999;">Web Engineering Modules Loading...</p>';
+    currentCategoryArray = portfolioAssets[category];
+    if(currentCategoryArray.length === 0) {
+        targetGrid.innerHTML = '<p style="grid-column: span 4; text-align:center; padding:30px; color:#999;">Web Modules Coming Soon...</p>';
         return;
     }
 
-    // Render Exactly 4 Columns Grid Structure with Titles at Bottom
-    matchedItems.forEach(item => {
-        const structuralNode = document.createElement('div');
-        structuralNode.className = 'gallery-item';
-        structuralNode.innerHTML = `
+    currentCategoryArray.forEach((item, idx) => {
+        const itemNode = document.createElement('div');
+        itemNode.className = 'gallery-item';
+        itemNode.onclick = () => openGallerySlider(idx);
+        itemNode.innerHTML = `
             <img src="${item.src}" alt="${item.name}" onerror="this.src='placeholder.png'">
             <p>${item.name}</p>
         `;
-        targetGrid.appendChild(structuralNode);
+        targetGrid.appendChild(itemNode);
     });
 }
 
-// 2. Full-Screen Interactive Lightbox Pop-up for Vertical Videos
+// 2. Advanced Image Lightbox Overlay Slider (Click to Slide/भगाना Logic)
+function openGallerySlider(index) {
+    activeIndex = index;
+    const lightbox = document.getElementById('galleryLightbox');
+    const activeImg = document.getElementById('lightboxActiveImg');
+    const caption = document.getElementById('lightboxImgCaption');
+
+    if(lightbox && activeImg && caption) {
+        activeImg.src = currentCategoryArray[activeIndex].src;
+        caption.innerText = currentCategoryArray[activeIndex].name;
+        lightbox.style.display = 'flex';
+    }
+}
+
+function changeSlide(direction) {
+    activeIndex += direction;
+    
+    // Looping back mechanics if sliders cross edges
+    if (activeIndex >= currentCategoryArray.length) activeIndex = 0;
+    if (activeIndex < 0) activeIndex = currentCategoryArray.length - 1;
+
+    const activeImg = document.getElementById('lightboxActiveImg');
+    const caption = document.getElementById('lightboxImgCaption');
+    
+    if(activeImg && caption) {
+        activeImg.src = currentCategoryArray[activeIndex].src;
+        caption.innerText = currentCategoryArray[activeIndex].name;
+    }
+}
+
+function closeGallerySlider() {
+    document.getElementById('galleryLightbox').style.display = 'none';
+}
+
+// 3. Video Popup Mechanics
 function openReelPopup(videoSrc) {
     const lightbox = document.getElementById('reelLightbox');
     const lightboxVideo = document.getElementById('lightboxVideo');
@@ -60,25 +94,21 @@ function closeReelPopup() {
     }
 }
 
-// 3. Smart UPI Redirection Intent Trigger
+// 4. Working UPI Payments
 function triggerUPIPayment() {
-    const upiIntentUrl = "upi://pay?pa=8810682518@paytm&pn=Muskan%20Kumari&cu=INR";
-    window.location.href = upiIntentUrl;
+    window.location.href = "upi://pay?pa=8810682518@paytm&pn=Muskan%20Kumari&cu=INR";
 }
 
-// 4. Dom Load Execution Hooks
+// Initialize Elements
 document.addEventListener('DOMContentLoaded', () => {
-    // Render default AI Tab
-    filterGallery('ai', null);
+    filterGallery('ai', null); // Initialise AI visuals
 
-    // Render 12 Reels with Sound Configurations & Pop-up Handlers
+    // Build Reels Container
     const reelsContainer = document.getElementById('reels-wrapper');
     if(reelsContainer) {
         for(let r = 1; r <= 12; r++) {
             const reelCard = document.createElement('div');
             reelCard.className = 'vertical-reel-wrapper';
-            
-            // First reel plays muted automatically as context master setup
             const autoPlayConfig = (r === 1) ? 'autoplay muted loop' : 'loop';
             
             reelCard.innerHTML = `
@@ -90,26 +120,14 @@ document.addEventListener('DOMContentLoaded', () => {
             reelsContainer.appendChild(reelCard);
         }
     }
-
-    // Single-Page Form Handler
-    const formElement = document.getElementById('portfolio-action-form');
-    if(formElement) {
-        formElement.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Your creative vision has been submitted! Muskan Kumari will connect with you shortly.');
-            formElement.reset();
-        });
-    }
 });
 
-// Inline Sound Control Logic Helper
 function toggleLocalMute(btnElement) {
     const videoNode = btnElement.parentElement.querySelector('video');
     if(videoNode) {
         videoNode.muted = !videoNode.muted;
         btnElement.innerText = videoNode.muted ? '🔇 Unmute' : '🔊 Mute';
-        if(!videoNode.muted) {
-            videoNode.play();
-        }
+        if(!videoNode.muted) videoNode.play();
     }
 }
+

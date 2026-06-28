@@ -1,4 +1,4 @@
-// Exact media streams linked directly from repository folder structures
+// Data Array Stores with Precise Filtering Framework Links
 const portfolioAssets = {
     graphic: Array.from({length: 20}, (_, i) => ({ src: `g${i+1}.jpg`, name: `Graphic Project ${i+1}` })),
     web: [{ src: 'w1.png', name: 'Premium Live UI Platform Architecture' }],
@@ -22,11 +22,10 @@ function filterGallery(category, event) {
 
     currentCategoryArray = portfolioAssets[category];
     if(currentCategoryArray.length === 0) {
-        targetGrid.innerHTML = '<p style="grid-column: span 4; text-align:center; padding:30px; color:#999;">Web Modules Coming Soon...</p>';
+        targetGrid.innerHTML = '<p style="grid-column: span 4; text-align:center; padding:30px; color:#999;">Web Modules Loading...</p>';
         return;
     }
 
-    // Maps out items clean on grid streams
     currentCategoryArray.forEach((item, idx) => {
         const itemNode = document.createElement('div');
         itemNode.className = 'gallery-item';
@@ -39,7 +38,7 @@ function filterGallery(category, event) {
     });
 }
 
-// Lightbox Slider Mechanics (Click to slide images one-by-one seamlessly)
+// Lightbox Slider Mechanics (Seamless Slide/भगाना Logic)
 function openGallerySlider(index) {
     activeIndex = index;
     const lightbox = document.getElementById('galleryLightbox');
@@ -71,7 +70,7 @@ function closeGallerySlider() {
     document.getElementById('galleryLightbox').style.display = 'none';
 }
 
-// Video overlay control handling
+// Interactive Reels Control Overlay Popups
 function openReelPopup(videoSrc) {
     const lightbox = document.getElementById('reelLightbox');
     const lightboxVideo = document.getElementById('lightboxVideo');
@@ -97,7 +96,7 @@ function triggerUPIPayment() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    filterGallery('graphic', null); // Default Tab Hook Initialization set to Graphic Designing
+    filterGallery('graphic', null); // Initialise default Graphics layout
 
     const reelsContainer = document.getElementById('reels-wrapper');
     if(reelsContainer) {

@@ -1,14 +1,14 @@
 // Local Repositories Configurations Mapped Directly
 const portfolioAssets = {
-    graphic: Array.from({length: 20}, (_, i) => ({ src: `g${i+1}.jpg`, name: `Graphic Design Asset ${i+1}` })),
-    web: [{ src: 'w1.png', name: 'Premium Live UI Platform Architecture' }],
-    ai: Array.from({length: 11}, (_, i) => ({ src: `b${i+1}.png`, name: `AI Digital Visual Item ${i+1}` }))
+    graphic: Array.from({length: 20}, (_, i) => ({ src: `g${i+1}.jpg`, name: `Graphic Project Layout ${i+1}`, likes: "154", views: "3.6k" })),
+    web: [{ src: 'w1.png', name: 'Premium Live UI Platform Architecture', likes: "98", views: "1.2k" }],
+    ai: Array.from({length: 11}, (_, i) => ({ src: `b${i+1}.png`, name: `AI Digital Visual ${i+1}`, likes: "210", views: "5.4k" }))
 };
 
 let currentCategoryArray = [];
 let activeIndex = 0;
 
-// About Tab Switching Mechanism
+// About Tab Switching Engine
 function switchAboutTab(tabId, event) {
     const panels = document.querySelectorAll('.about-panel');
     panels.forEach(p => p.classList.remove('active'));
@@ -21,7 +21,7 @@ function switchAboutTab(tabId, event) {
     if (event) event.target.classList.add('active');
 }
 
-// Image Gallery Filtering Framework
+// 3-Column Dribbble Style Gallery Filter Injector (Image 16863_3.jpg match)
 function filterGallery(category, event) {
     const targetGrid = document.getElementById('main-portfolio-gallery');
     if (!targetGrid) return;
@@ -36,23 +36,34 @@ function filterGallery(category, event) {
 
     currentCategoryArray = portfolioAssets[category];
     if(currentCategoryArray.length === 0) {
-        targetGrid.innerHTML = '<p style="grid-column: span 4; text-align:center; padding:30px; color:#999;">Web Projects Loading...</p>';
+        targetGrid.innerHTML = '<p style="grid-column: span 3; text-align:center; padding:30px; color:#999;">Web Modules Loading...</p>';
         return;
     }
 
     currentCategoryArray.forEach((item, idx) => {
         const itemNode = document.createElement('div');
-        itemNode.className = 'gallery-item';
+        itemNode.className = 'dribbble-item-card';
         itemNode.onclick = () => openGallerySlider(idx);
         itemNode.innerHTML = `
-            <img src="${item.src}" alt="${item.name}" onerror="this.src='placeholder.png'">
-            <p>${item.name}</p>
+            <div class="dribbble-img-frame">
+                <img src="${item.src}" alt="${item.name}" onerror="this.src='placeholder.png'">
+            </div>
+            <div class="dribbble-meta-row">
+                <div class="dribbble-user">
+                    <span class="dribbble-avatar">MK</span>
+                    <span class="dribbble-username">Muskan</span>
+                </div>
+                <div class="dribbble-stats">
+                    <span>❤️ ${item.likes}</span>
+                    <span>👁️ ${item.views}</span>
+                </div>
+            </div>
         `;
         targetGrid.appendChild(itemNode);
     });
 }
 
-// Lightbox Image Overlay Slider Controls (ഭगाना Mechanisms)
+// Lightbox Slider Overlay Engine
 function openGallerySlider(index) {
     activeIndex = index;
     const lightbox = document.getElementById('galleryLightbox');
@@ -84,7 +95,7 @@ function closeGallerySlider() {
     document.getElementById('galleryLightbox').style.display = 'none';
 }
 
-// Elementor Playback Video Timer Sliders Logic
+// Elementor Video Track Loop System
 let currentVideoIndex = 1;
 const totalVideosCount = 12;
 
@@ -136,8 +147,8 @@ function triggerUPIPayment() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    filterGallery('graphic', null); // Initialise default graphics grids
-    initializeVideoSliderSystem();  // Initialise timed elementor reels
+    filterGallery('graphic', null); // Initialise Dribbble layout
+    initializeVideoSliderSystem();  
     
     const form = document.getElementById('hub-action-form');
     if(form) {

@@ -1,14 +1,14 @@
-// Assets repositories directly structured for deployment
+// Local Repositories Configurations Mapped Directly
 const portfolioAssets = {
-    graphic: Array.from({length: 20}, (_, i) => ({ src: `g${i+1}.jpg`, name: `Graphic Project Layout ${i+1}` })),
+    graphic: Array.from({length: 20}, (_, i) => ({ src: `g${i+1}.jpg`, name: `Graphic Design Asset ${i+1}` })),
     web: [{ src: 'w1.png', name: 'Premium Live UI Platform Architecture' }],
-    ai: Array.from({length: 11}, (_, i) => ({ src: `b${i+1}.png`, name: `AI Digital Visual ${i+1}` }))
+    ai: Array.from({length: 11}, (_, i) => ({ src: `b${i+1}.png`, name: `AI Digital Visual Item ${i+1}` }))
 };
 
 let currentCategoryArray = [];
 let activeIndex = 0;
 
-// 1. About Tab Switching Engine
+// About Tab Switching Mechanism
 function switchAboutTab(tabId, event) {
     const panels = document.querySelectorAll('.about-panel');
     panels.forEach(p => p.classList.remove('active'));
@@ -21,7 +21,7 @@ function switchAboutTab(tabId, event) {
     if (event) event.target.classList.add('active');
 }
 
-// 2. Image Portfolio Grid Filters Injector
+// Image Gallery Filtering Framework
 function filterGallery(category, event) {
     const targetGrid = document.getElementById('main-portfolio-gallery');
     if (!targetGrid) return;
@@ -36,7 +36,7 @@ function filterGallery(category, event) {
 
     currentCategoryArray = portfolioAssets[category];
     if(currentCategoryArray.length === 0) {
-        targetGrid.innerHTML = '<p style="grid-column: span 4; text-align:center; padding:30px; color:#999;">Web Engineering Modules Loading...</p>';
+        targetGrid.innerHTML = '<p style="grid-column: span 4; text-align:center; padding:30px; color:#999;">Web Projects Loading...</p>';
         return;
     }
 
@@ -52,7 +52,7 @@ function filterGallery(category, event) {
     });
 }
 
-// 3. Lightbox Slider Overlay Controller (ભगाना Loop Mechanics)
+// Lightbox Image Overlay Slider Controls (ഭगाना Mechanisms)
 function openGallerySlider(index) {
     activeIndex = index;
     const lightbox = document.getElementById('galleryLightbox');
@@ -84,7 +84,7 @@ function closeGallerySlider() {
     document.getElementById('galleryLightbox').style.display = 'none';
 }
 
-// 4. Elementor-based Timed Video Track Loop System
+// Elementor Playback Video Timer Sliders Logic
 let currentVideoIndex = 1;
 const totalVideosCount = 12;
 
@@ -97,7 +97,7 @@ function initializeVideoSliderSystem() {
         const tabButton = document.createElement('div');
         tabButton.className = `video-tab-item ${index === 1 ? 'active-tab' : ''}`;
         tabButton.id = `video-tab-node-${index}`;
-        tabButton.innerText = `Motion Clip Reel #${index}`;
+        tabButton.innerText = `Motion Reel #${index}`;
         tabButton.onclick = () => jumpToSpecificVideo(index);
         tabsContainer.appendChild(tabButton);
     }
@@ -136,15 +136,14 @@ function triggerUPIPayment() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    filterGallery('graphic', null); // Initialise default active grid content
-    initializeVideoSliderSystem();  // Run elementor horizontal loop tracks
+    filterGallery('graphic', null); // Initialise default graphics grids
+    initializeVideoSliderSystem();  // Initialise timed elementor reels
     
-    // AJAX Interceptor for Contact Forms submissions
     const form = document.getElementById('hub-action-form');
     if(form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Your message has been channeled safely! Muskan Kumari will respond back shortly.');
+            alert('Form submitted successfully!');
             form.reset();
         });
     }

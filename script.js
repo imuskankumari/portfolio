@@ -1,15 +1,15 @@
-// Dribbble System Data Mapping Modules
+// Local Repositories Storage Architecture Configured for Media Grid Filter
 const portfolioAssets = {
-    graphic: Array.from({length: 20}, (_, i) => ({ type: 'image', src: `g${i+1}.jpg`, name: `Graphic Design Project ${i+1}`, likes: "154", views: "3.6k" })),
+    graphic: Array.from({length: 20}, (_, i) => ({ type: 'image', src: `g${i+1}.jpg`, name: `Graphic Design Asset ${i+1}`, likes: "144", views: "5.3k" })),
     web: [{ type: 'image', src: 'w1.png', name: 'Premium Live UI Platform Architecture', likes: "98", views: "1.2k" }],
-    ai: Array.from({length: 11}, (_, i) => ({ type: 'image', src: `b${i+1}.png`, name: `AI Digital Artwork Visual ${i+1}`, likes: "210", views: "5.4k" })),
-    motion: Array.from({length: 12}, (_, i) => ({ type: 'video', src: `r${i+1}.mp4`, name: `Motion Graphics Reel ${i+1}`, likes: "320", views: "8.9k" }))
+    ai: Array.from({length: 11}, (_, i) => ({ type: 'image', src: `b${i+1}.png`, name: `AI Generated Visual Element ${i+1}`, likes: "200", views: "3.3k" })),
+    motion: Array.from({length: 12}, (_, i) => ({ type: 'video', src: `r${i+1}.mp4`, name: `Motion Graphic Reel Clip ${i+1}`, likes: "172", views: "4.9k" }))
 };
 
 let currentCategoryArray = [];
 let activeIndex = 0;
 
-// Dynamic Image/Video Filter Engine for Dribbble 3-Column Grid
+// Dynamic Image Filter Engine for clean Dribbble layout
 function filterGallery(category, event) {
     const targetGrid = document.getElementById('main-portfolio-gallery');
     if (!targetGrid) return;
@@ -24,7 +24,7 @@ function filterGallery(category, event) {
 
     currentCategoryArray = portfolioAssets[category];
     if(currentCategoryArray.length === 0) {
-        targetGrid.innerHTML = '<p style="grid-column: span 3; text-align:center; padding:30px; color:#999;">Web Layout Modules Loading...</p>';
+        targetGrid.innerHTML = '<p style="grid-column: span 3; text-align:center; padding:30px; color:#999;">Web Modules Loading...</p>';
         return;
     }
 
@@ -33,12 +33,13 @@ function filterGallery(category, event) {
         itemNode.className = 'dribbble-item-card';
         itemNode.onclick = () => openGallerySlider(idx);
         
-        // Conditional indicator rules for horizontal video thumbnails
-        const mediaTag = item.type === 'video' ? `<video src="${item.src}" muted></video><span class="video-reel-indicator">▶ Reel</span>` : `<img src="${item.src}" onerror="this.src='placeholder.png'">`;
+        const mediaContent = item.type === 'video' 
+            ? `<video src="${item.src}" muted loop autoplay playsinline></video><span class="video-reel-tag">▶ Reel</span>` 
+            : `<img src="${item.src}" onerror="this.src='placeholder.png'">`;
 
         itemNode.innerHTML = `
             <div class="dribbble-img-frame">
-                ${mediaTag}
+                ${mediaContent}
             </div>
             <div class="dribbble-meta-row">
                 <div class="dribbble-user">
@@ -55,21 +56,20 @@ function filterGallery(category, event) {
     });
 }
 
-// Universal Image & Video Lightbox Slider Mechanics (Click to Slide Sequence)
+// Universal Gallery Lightbox Slider Mechanics
 function openGallerySlider(index) {
     activeIndex = index;
     const lightbox = document.getElementById('galleryLightbox');
-    const contentWrap = document.getElementById('lightboxMediaContent');
-
-    if(lightbox && contentWrap) {
-        renderLightboxActiveTrack();
+    if(lightbox) {
+        renderLightboxActiveContent();
         lightbox.style.display = 'flex';
     }
 }
 
-function renderLightboxActiveTrack() {
+function renderLightboxActiveContent() {
     const contentWrap = document.getElementById('lightboxMediaContent');
     const currentAsset = currentCategoryArray[activeIndex];
+    if(!contentWrap) return;
     
     contentWrap.innerHTML = '';
 
@@ -90,7 +90,7 @@ function changeSlide(direction) {
     activeIndex += direction;
     if (activeIndex >= currentCategoryArray.length) activeIndex = 0;
     if (activeIndex < 0) activeIndex = currentCategoryArray.length - 1;
-    renderLightboxActiveTrack();
+    renderLightboxActiveContent();
 }
 
 document.addEventListener('keydown', (e) => {
@@ -106,7 +106,7 @@ function closeGallerySlider() {
     const lightbox = document.getElementById('galleryLightbox');
     if(lightbox) lightbox.style.display = 'none';
     const contentWrap = document.getElementById('lightboxMediaContent');
-    if(contentWrap) contentWrap.innerHTML = ''; // Safely teardown streams
+    if(contentWrap) contentWrap.innerHTML = '';
 }
 
 function triggerUPIPayment() {
@@ -114,15 +114,14 @@ function triggerUPIPayment() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    filterGallery('graphic', null); // Default Tab Hook Initialisation
+    filterGallery('graphic', null); // Initialise clean graphic layout default hook
     
     const form = document.getElementById('hub-action-form');
     if(form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Your inquiry was processed securely! Thank you.');
+            alert('Your message was transferred securely!');
             form.reset();
         });
     }
 });
-

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!-- EXACT MK SPIRITUAL HUB STYLE HEADER (80px-100px Size) -->
+    <!-- EXACT MK SPIRITUAL HUB STYLE HEADER -->
     <header class="main-header">
         <div class="header-container">
             <img src="mk.png" alt="MK Logo" class="site-logo">
@@ -26,13 +26,12 @@
         <img src="hero.png" alt="Hero Banner" class="hero-fluid-img">
     </section>
 
-    <!-- ABOUT SECTION WITH HEADER & CENTERED BLACK TABS (NO PHOTO) -->
+    <!-- ABOUT SECTION WITH LEFT BLACK TABS & RIGHT PHOTO -->
     <section id="about" class="about-section">
         <div class="container compact-width">
             <h1 class="welcome-heading">Welcome to My Portfolio</h1>
             <div class="about-deco-separator"></div>
             
-            <!-- Centered Black Tab System Layout -->
             <div class="about-tabs-container">
                 <div class="about-tab-menu">
                     <button class="about-menu-btn active" onclick="switchAboutTab('profile', event)">About Me</button>
@@ -41,7 +40,6 @@
                 </div>
                 
                 <div class="about-tab-content-panel">
-                    <!-- Tab 1: About Me -->
                     <div id="tab-profile" class="about-panel active">
                         <div class="about-dialogue-box">
                             <p class="dialogue-line highlight">Designers में सबसे मशहूर... सबसे ताकतवर।</p>
@@ -58,7 +56,6 @@
                         </div>
                     </div>
 
-                    <!-- Tab 2: Academic Education -->
                     <div id="tab-education" class="about-panel">
                         <div class="info-list-card">
                             <h3>Academic Education</h3>
@@ -71,17 +68,14 @@
                         </div>
                     </div>
 
-                    <!-- Tab 3: Technical Skills -->
                     <div id="tab-skills" class="about-panel">
                         <div class="info-list-card">
                             <h3>Skills & Expertise</h3>
-                            
                             <p><strong>MS Office:</strong> MS Office | MS Word | MS Excel | MS PowerPoint</p>
                             <p><strong>Graphic Designing:</strong> Adobe Photoshop | Adobe Illustrator | Adobe InDesign | Corel Draw | Canva</p>
                             <p><strong>Web Designing:</strong> HTML | CSS | JavaScript | WordPress</p>
                             <p><strong>Video Editing:</strong> Filmora | VN | InShot</p>
                             <p><strong>AI Tools:</strong> All AI used</p>
-                            
                             <div class="dialogue-spacer"></div>
                             <p class="strength-line"><strong>Strength:</strong> I am a quick learner. I always try my best.</p>
                         </div>
@@ -94,7 +88,7 @@
     <!-- SERVICES SECTION -->
     <section id="services" class="services-section">
         
-        <!-- Part A: Latest Gallery Collection (4-Column Layout) -->
+        <!-- Part A: Dribbble Style Clean Gallery Collection (Image 16863_3.jpg layout) -->
         <div class="container">
             <h2 class="section-heading">Latest Gallery Collection</h2>
             <div class="filter-tabs">
@@ -103,12 +97,13 @@
                 <button class="tab-btn" onclick="filterGallery('ai', event)">AI Generated Visuals</button>
             </div>
             
-            <div class="gallery-grid-layout" id="main-portfolio-gallery">
-                <!-- Loaded Dynamically via JS -->
+            <!-- Exactly 3 columns layout matching the Dribbble screenshot row -->
+            <div class="dribbble-grid-layout" id="main-portfolio-gallery">
+                <!-- Injected via JavaScript -->
             </div>
         </div>
 
-        <!-- Part B: Skills & Tech Stack Grid Block (Image 16851.jpg Style Match) -->
+        <!-- Part B: Skills & Tech Stack Grid Block -->
         <div class="skills-tech-stack-block">
             <div class="container">
                 <h2 class="section-heading">Skills & Tech Stack</h2>
@@ -126,21 +121,18 @@
             </div>
         </div>
 
-        <!-- Part C: Clean Slide Motion Graphics Section (White Background Theme) -->
+        <!-- Part C: Elementor Style Video Slider Section -->
         <div class="motion-graphics-container">
-            <div class="container motion-flex-layout">
-                <div class="motion-left-text">
-                    <h2>Motion Graphics</h2>
-                    <p>Crafting stunning visual transitions and high-impact motion clips that bring static designs to life. Elegant, fast-loading, and completely customized formatting structures.</p>
-                </div>
+            <div class="container">
+                <h2 class="section-heading" style="text-align: left; margin-bottom: 10px;">Motion Graphics</h2>
+                <p style="margin-bottom: 35px; color: #555;">High-impact motion transitions and custom video editing clips.</p>
                 
-                <!-- Clean Phone Slider Display (No Black Outer Borders/Boxes) -->
                 <div class="elementor-tabs-layout">
                     <div class="video-display-frame">
                         <video id="sliderVideoPlayer" autoplay muted playsinline></video>
                     </div>
                     <div class="video-tabs-sidebar" id="reels-tabs-list">
-                        <!-- Clickable Selector items injected dynamically via script -->
+                        <!-- Selectors generated via script -->
                     </div>
                 </div>
             </div>
@@ -154,7 +146,6 @@
             <div class="contact-deco-separator"></div>
             
             <div class="contact-hub-grid">
-                <!-- Left: Clean Info Column -->
                 <div class="hub-info-col">
                     <h3>Contact Information</h3>
                     <div class="hub-info-item">
@@ -179,7 +170,6 @@
                         </div>
                     </div>
                     
-                    <!-- Integrated Payment Widget -->
                     <div class="bhim-payment-node" onclick="triggerUPIPayment()">
                         <img src="qr.png" alt="Paytm BHIM QR" class="bhim-qr-thumbnail">
                         <div class="bhim-meta">
@@ -189,7 +179,6 @@
                     </div>
                 </div>
 
-                <!-- Right: Clean Form Input Fields Column -->
                 <div class="hub-form-col">
                     <h3>Send Us a Message</h3>
                     <form id="hub-action-form">
@@ -215,7 +204,7 @@
         </div>
     </section>
 
-    <!-- INTERACTIVE GALLERY LIGHTBOX OVERLAY SLIDER -->
+    <!-- DRIBBBLE STYLE LIGHTBOX OVERLAY ENGINE -->
     <div class="gallery-lightbox" id="galleryLightbox">
         <span class="lightbox-close" onclick="closeGallerySlider()">&times;</span>
         <button class="slider-arrow prev-arrow" onclick="changeSlide(-1)">&#10094;</button>
@@ -226,7 +215,7 @@
         <button class="slider-arrow next-arrow" onclick="changeSlide(1)">&#10095;</button>
     </div>
 
-    <!-- ORNAMENTED FOOTER (MK Spiritual Hub Exact Style Match) -->
+    <!-- ORNAMENTED FOOTER -->
     <footer class="decorated-footer">
         <div class="footer-container-box">
             <p>&copy; 2026 Muskan Kumari | Graphic & Web Designer | All Rights Reserved.</p>
@@ -241,4 +230,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-

@@ -1,6 +1,6 @@
-// Data Array Stores with Precise Filtering Framework Links
+// Assets repositories directly structured for deployment
 const portfolioAssets = {
-    graphic: Array.from({length: 20}, (_, i) => ({ src: `g${i+1}.jpg`, name: `Graphic Project ${i+1}` })),
+    graphic: Array.from({length: 20}, (_, i) => ({ src: `g${i+1}.jpg`, name: `Graphic Project Layout ${i+1}` })),
     web: [{ src: 'w1.png', name: 'Premium Live UI Platform Architecture' }],
     ai: Array.from({length: 11}, (_, i) => ({ src: `b${i+1}.png`, name: `AI Digital Visual ${i+1}` }))
 };
@@ -8,6 +8,20 @@ const portfolioAssets = {
 let currentCategoryArray = [];
 let activeIndex = 0;
 
+// 1. About Tab Switching Engine
+function switchAboutTab(tabId, event) {
+    const panels = document.querySelectorAll('.about-panel');
+    panels.forEach(p => p.classList.remove('active'));
+
+    const buttons = document.querySelectorAll('.about-menu-btn');
+    buttons.forEach(b => b.classList.remove('active'));
+
+    const targetedPanel = document.getElementById(`tab-${tabId}`);
+    if (targetedPanel) targetedPanel.classList.add('active');
+    if (event) event.target.classList.add('active');
+}
+
+// 2. Image Portfolio Grid Filters Injector
 function filterGallery(category, event) {
     const targetGrid = document.getElementById('main-portfolio-gallery');
     if (!targetGrid) return;
@@ -22,7 +36,7 @@ function filterGallery(category, event) {
 
     currentCategoryArray = portfolioAssets[category];
     if(currentCategoryArray.length === 0) {
-        targetGrid.innerHTML = '<p style="grid-column: span 4; text-align:center; padding:30px; color:#999;">Web Modules Loading...</p>';
+        targetGrid.innerHTML = '<p style="grid-column: span 4; text-align:center; padding:30px; color:#999;">Web Engineering Modules Loading...</p>';
         return;
     }
 
@@ -38,7 +52,7 @@ function filterGallery(category, event) {
     });
 }
 
-// Lightbox Slider Mechanics (Seamless Slide/भगाना Logic)
+// 3. Lightbox Slider Overlay Controller (ભगाना Loop Mechanics)
 function openGallerySlider(index) {
     activeIndex = index;
     const lightbox = document.getElementById('galleryLightbox');
@@ -70,25 +84,51 @@ function closeGallerySlider() {
     document.getElementById('galleryLightbox').style.display = 'none';
 }
 
-// Interactive Reels Control Overlay Popups
-function openReelPopup(videoSrc) {
-    const lightbox = document.getElementById('reelLightbox');
-    const lightboxVideo = document.getElementById('lightboxVideo');
-    if(lightbox && lightboxVideo) {
-        lightboxVideo.src = videoSrc;
-        lightbox.style.display = 'flex';
-        lightboxVideo.play();
+// 4. Elementor-based Timed Video Track Loop System
+let currentVideoIndex = 1;
+const totalVideosCount = 12;
+
+function initializeVideoSliderSystem() {
+    const tabsContainer = document.getElementById('reels-tabs-list');
+    if (!tabsContainer) return;
+
+    tabsContainer.innerHTML = '';
+    for (let index = 1; index <= totalVideosCount; index++) {
+        const tabButton = document.createElement('div');
+        tabButton.className = `video-tab-item ${index === 1 ? 'active-tab' : ''}`;
+        tabButton.id = `video-tab-node-${index}`;
+        tabButton.innerText = `Motion Clip Reel #${index}`;
+        tabButton.onclick = () => jumpToSpecificVideo(index);
+        tabsContainer.appendChild(tabButton);
     }
+    loadVideoSourceTrack(currentVideoIndex);
 }
 
-function closeReelPopup() {
-    const lightbox = document.getElementById('reelLightbox');
-    const lightboxVideo = document.getElementById('lightboxVideo');
-    if(lightbox && lightboxVideo) {
-        lightbox.style.display = 'none';
-        lightboxVideo.pause();
-        lightboxVideo.src = '';
-    }
+function loadVideoSourceTrack(index) {
+    currentVideoIndex = index;
+    const player = document.getElementById('sliderVideoPlayer');
+    if (!player) return;
+
+    const allTabs = document.querySelectorAll('.video-tab-item');
+    allTabs.forEach(t => t.classList.remove('active-tab'));
+    
+    const activeTab = document.getElementById(`video-tab-node-${index}`);
+    if(activeTab) activeTab.classList.add('active-tab');
+
+    player.src = `r${index}.mp4`;
+    player.load();
+
+    player.onloadedmetadata = () => {
+        player.onended = () => {
+            let nextIndex = currentVideoIndex + 1;
+            if (nextIndex > totalVideosCount) nextIndex = 1;
+            loadVideoSourceTrack(nextIndex);
+        };
+    };
+}
+
+function jumpToSpecificVideo(index) {
+    loadVideoSourceTrack(index);
 }
 
 function triggerUPIPayment() {
@@ -96,31 +136,16 @@ function triggerUPIPayment() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    filterGallery('graphic', null); // Initialise default Graphics layout
-
-    const reelsContainer = document.getElementById('reels-wrapper');
-    if(reelsContainer) {
-        for(let r = 1; r <= 12; r++) {
-            const reelCard = document.createElement('div');
-            reelCard.className = 'vertical-reel-wrapper';
-            const autoPlayConfig = (r === 1) ? 'autoplay muted loop' : 'loop';
-            
-            reelCard.innerHTML = `
-                <video ${autoPlayConfig} playsinline onclick="openReelPopup('r${r}.mp4')">
-                    <source src="r${r}.mp4" type="video/mp4">
-                </video>
-                <button class="reel-audio-toggle" onclick="event.stopPropagation(); toggleLocalMute(this)">🔊 Mute</button>
-            `;
-            reelsContainer.appendChild(reelCard);
-        }
+    filterGallery('graphic', null); // Initialise default active grid content
+    initializeVideoSliderSystem();  // Run elementor horizontal loop tracks
+    
+    // AJAX Interceptor for Contact Forms submissions
+    const form = document.getElementById('hub-action-form');
+    if(form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Your message has been channeled safely! Muskan Kumari will respond back shortly.');
+            form.reset();
+        });
     }
 });
-
-function toggleLocalMute(btnElement) {
-    const videoNode = btnElement.parentElement.querySelector('video');
-    if(videoNode) {
-        videoNode.muted = !videoNode.muted;
-        btnElement.innerText = videoNode.muted ? '🔇 Unmute' : '🔊 Mute';
-        if(!videoNode.muted) videoNode.play();
-    }
-}

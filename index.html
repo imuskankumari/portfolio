@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,34 +26,60 @@
 
     <section id="about" class="about-section">
         <div class="container">
-            <div class="about-dialogue-box">
-                <p class="dialogue-line highlight">Designers में सबसे मशहूर... सबसे ताकतवर।</p>
-                <p class="dialogue-line">सालों का तजुर्बा</p>
-                <p class="dialogue-line">Creativity मेरे रग-रग में है।</p>
-                <div class="dialogue-spacer"></div>
-                <p class="dialogue-line">Photoshop, Illustrator, InDesign और CorelDraw & Canva मेरे साथ चलते हैं।</p>
-                <p class="dialogue-line">HTML, CSS, JavaScript और WordPress से Creative Website बना सकती हूँ।</p>
-                <p class="dialogue-line">Photoshop से दिन को रात कर सकती हूँ।</p>
-                <p class="dialogue-line">Designing की बेहद बरसात कर सकती हूँ</p>
-                <p class="dialogue-line">जो भी तुम कहो... I mean Vision दो...</p>
-                <p class="dialogue-line">उसे पूरा कर सकती हूँ।</p>
-                <p class="dialogue-line finale">Aur clearly... बहुत Creative भी हूँ....</p>
-            </div>
+            <div class="about-split-layout">
+                
+                <div class="about-tabs-container">
+                    <div class="about-tab-menu">
+                        <button class="about-menu-btn active" onclick="switchAboutTab('profile', event)">About Me</button>
+                        <button class="about-menu-btn" onclick="switchAboutTab('education', event)">Academic Education</button>
+                        <button class="about-menu-btn" onclick="switchAboutTab('skills', event)">Technical Skills</button>
+                    </div>
+                    
+                    <div class="about-tab-content-panel">
+                        <div id="tab-profile" class="about-panel active">
+                            <div class="about-dialogue-box">
+                                <p class="dialogue-line highlight">Designers में सबसे मशहूर... सबसे ताकतवर।</p>
+                                <p class="dialogue-line">सालों का तजुर्बा</p>
+                                <p class="dialogue-line">Creativity मेरे रग-ग में है।</p>
+                                <div class="dialogue-spacer"></div>
+                                <p class="dialogue-line">Photoshop, Illustrator, InDesign और CorelDraw & Canva मेरे साथ चलते हैं।</p>
+                                <p class="dialogue-line">HTML, CSS, JavaScript और WordPress से Creative Website बना सकती हूँ।</p>
+                                <p class="dialogue-line">Photoshop से दिन को रात कर सकती हूँ।</p>
+                                <p class="dialogue-line">Designing की बेहद बरसात कर सकती हूँ</p>
+                                <p class="dialogue-line">जो भी तुम कहो... I mean Vision दो...</p>
+                                <p class="dialogue-line">उसे पूरा कर सकती हूँ।</p>
+                                <p class="dialogue-line finale">Aur clearly... बहुत Creative भी हूँ....</p>
+                            </div>
+                        </div>
 
-            <div class="resume-two-boxes">
-                <div class="profile-card">
-                    <h3>Academic Education</h3>
-                    <ul>
-                        <li>Senior Secondary Education From CBSE</li>
-                        <li>Course on Computer Concepts CCC Certified</li>
-                        <li>Basic Computer Course BCC Certified</li>
-                        <li>Diploma In Computer Applications DCA Certified</li>
-                    </ul>
+                        <div id="tab-education" class="about-panel">
+                            <div class="info-list-card">
+                                <h3>Academic Credentials</h3>
+                                <ul>
+                                    <li>Senior Secondary Education From CBSE</li>
+                                    <li>Course on Computer Concepts CCC Certified</li>
+                                    <li>Basic Computer Course BCC Certified</li>
+                                    <li>Diploma In Computer Applications DCA Certified</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div id="tab-skills" class="about-panel">
+                            <div class="info-list-card">
+                                <h3>Core Tech Competencies</h3>
+                                <p><strong>Graphic Designing:</strong> Adobe Photoshop | Adobe Illustrator | Adobe InDesign | CorelDraw | Canva</p>
+                                <p><strong>Web Designing:</strong> HTML | CSS | JS | WordPress</p>
+                                <p><strong>Video Editing:</strong> Filmora | VN | InShot</p>
+                                <p><strong>AI Tools:</strong> All AI used</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="profile-card">
-                    <h3>Technical Qualifications</h3>
-                    <p>Basic Computer Course (BCC) & Diploma in Computer Application (DCA) certified from NIELIT, delivering advanced structural workflows across multi-platform creative ecosystems.</p>
+
+                <div class="about-photo-wrapper">
+                    <img src="profile-photo.png" alt="Muskan Kumari" class="profile-image">
                 </div>
+
             </div>
         </div>
     </section>
@@ -68,6 +93,7 @@
                 <button class="tab-btn" onclick="filterGallery('web', event)">Web Designing</button>
                 <button class="tab-btn" onclick="filterGallery('ai', event)">AI Generated Visuals</button>
             </div>
+            
             <div class="gallery-grid-layout" id="main-portfolio-gallery">
                 </div>
         </div>
@@ -90,63 +116,80 @@
         </div>
 
         <div class="motion-graphics-container">
-            <div class="container motion-flex-layout">
-                <div class="motion-left-text">
-                    <h2>Motion Graphics</h2>
-                    <p>Crafting stunning visual transitions and high-impact motion clips that bring static designs to life.</p>
-                </div>
-                <div class="motion-right-scroll" id="reels-wrapper">
+            <div class="container">
+                <h2 class="section-heading" style="text-align: left; margin-bottom: 10px;">Motion Graphics</h2>
+                <p style="margin-bottom: 35px; color: #555;">High-impact motion transitions and custom video editing clips.</p>
+                
+                <div class="elementor-tabs-layout">
+                    <div class="video-display-frame">
+                        <video id="sliderVideoPlayer" autoplay muted playsinline></video>
                     </div>
+                    <div class="video-tabs-sidebar" id="reels-tabs-list">
+                        </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact-section">
-        <div class="container contact-split-grid">
-            <div class="purple-form-card">
-                <h2>Let's work together</h2>
-                <p class="form-subtext">I design and code beautifully simple things, and I love what I do. Just simple like that!</p>
-                <form id="portfolio-action-form">
-                    <div class="form-row">
-                        <input type="text" placeholder="First Name" required>
-                        <input type="text" placeholder="Last Name" required>
+        <div class="container">
+            <h2 class="contact-main-title">Connect With Us</h2>
+            <div class="contact-deco-separator"></div>
+            
+            <div class="contact-hub-grid">
+                <div class="hub-info-col">
+                    <h3>Contact Information</h3>
+                    <div class="hub-info-item">
+                        <span class="hub-icon">📍</span>
+                        <div>
+                            <h4>Address</h4>
+                            <p>New Delhi, India</p>
+                        </div>
                     </div>
-                    <input type="email" placeholder="Email Address" required>
-                    <input type="text" placeholder="Phone Number" required>
-                    <textarea placeholder="Describe your requirements..." rows="4" required></textarea>
-                    <button type="submit" class="form-submit-btn">Send Message</button>
-                </form>
-            </div>
+                    <div class="hub-info-item">
+                        <span class="hub-icon">📧</span>
+                        <div>
+                            <h4>Email</h4>
+                            <p>musankumari3330@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="hub-info-item">
+                        <span class="hub-icon">📞</span>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 8810682518</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bhim-payment-node" onclick="triggerUPIPayment()">
+                        <img src="qr.png" alt="Paytm BHIM QR" class="bhim-qr-thumbnail">
+                        <div class="bhim-meta">
+                            <span class="bhim-address">8810682518@paytm</span>
+                            <small>🛡️ Click here to clear transaction via BHIM UPI</small>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="contact-details-block">
-                <h2>Contact Information</h2>
-                <div class="detail-row-item">
-                    <span class="circle-icon">Option 📞</span>
-                    <div>
-                        <h4>Phone</h4>
-                        <p>+91 8810682518</p>
-                    </div>
-                </div>
-                <div class="detail-row-item">
-                    <span class="circle-icon">Option 📧</span>
-                    <div>
-                        <h4>Email</h4>
-                        <p>musankumari3330@gmail.com</p>
-                    </div>
-                </div>
-                <div class="detail-row-item">
-                    <span class="circle-icon">Option 📍</span>
-                    <div>
-                        <h4>Address</h4>
-                        <p>New Delhi, India</p>
-                    </div>
-                </div>
-                <div class="payment-gateway-trigger" onclick="triggerUPIPayment()">
-                    <img src="qr.png" alt="Paytm BHIM QR" class="bhim-qr-img">
-                    <div class="upi-meta">
-                        <span class="upi-id-label">8810682518@paytm</span>
-                        <small class="secure-tag">🛡️ Click to Pay via BHIM UPI</small>
-                    </div>
+                <div class="hub-form-col">
+                    <h3>Send Us a Message</h3>
+                    <form id="hub-action-form">
+                        <div class="field-container">
+                            <span class="field-icon">👤</span>
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="field-container">
+                            <span class="field-icon">📧</span>
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="field-container textarea-container">
+                            <span class="field-icon">📝</span>
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="hub-submit-btn">
+                            <span>Send Message</span>
+                            <span class="btn-arrow">➔</span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -156,17 +199,10 @@
         <span class="lightbox-close" onclick="closeGallerySlider()">&times;</span>
         <button class="slider-arrow prev-arrow" onclick="changeSlide(-1)">&#10094;</button>
         <div class="lightbox-img-wrap">
-            <img id="lightboxActiveImg" src="" alt="Active Content">
+            <img id="lightboxActiveImg" src="" alt="Active Canvas">
             <p id="lightboxImgCaption" class="lightbox-caption"></p>
         </div>
         <button class="slider-arrow next-arrow" onclick="changeSlide(1)">&#10095;</button>
-    </div>
-
-    <div class="reel-lightbox" id="reelLightbox">
-        <span class="close-lightbox" onclick="closeReelPopup()">&times;</span>
-        <div class="lightbox-content">
-            <video id="lightboxVideo" controls autoplay></video>
-        </div>
     </div>
 
     <footer class="decorated-footer">

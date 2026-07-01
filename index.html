@@ -8,6 +8,7 @@
 </head>
 <body>
 
+    <!-- EXACT MK SPIRITUAL HUB STYLE HEADER (80px-100px Size) -->
     <header class="main-header">
         <div class="header-container">
             <img src="mk.png" alt="MK Logo" class="site-logo">
@@ -20,72 +21,80 @@
         <div class="header-deco-line"></div>
     </header>
 
+    <!-- PERFECTLY FLUSH HERO BANNER -->
     <section id="home" class="hero-section">
         <img src="hero.png" alt="Hero Banner" class="hero-fluid-img">
     </section>
 
+    <!-- ABOUT SECTION WITH HEADER & CENTERED BLACK TABS (NO PHOTO) -->
     <section id="about" class="about-section">
-        <div class="container">
-            <div class="about-split-layout">
+        <div class="container compact-width">
+            <h1 class="welcome-heading">Welcome to My Portfolio</h1>
+            <div class="about-deco-separator"></div>
+            
+            <!-- Centered Black Tab System Layout -->
+            <div class="about-tabs-container">
+                <div class="about-tab-menu">
+                    <button class="about-menu-btn active" onclick="switchAboutTab('profile', event)">About Me</button>
+                    <button class="about-menu-btn" onclick="switchAboutTab('education', event)">Academic Education</button>
+                    <button class="about-menu-btn" onclick="switchAboutTab('skills', event)">Technical Skills</button>
+                </div>
                 
-                <div class="about-tabs-container">
-                    <div class="about-tab-menu">
-                        <button class="about-menu-btn active" onclick="switchAboutTab('profile', event)">About Me</button>
-                        <button class="about-menu-btn" onclick="switchAboutTab('education', event)">Academic Education</button>
-                        <button class="about-menu-btn" onclick="switchAboutTab('skills', event)">Technical Skills</button>
+                <div class="about-tab-content-panel">
+                    <!-- Tab 1: About Me -->
+                    <div id="tab-profile" class="about-panel active">
+                        <div class="about-dialogue-box">
+                            <p class="dialogue-line highlight">Designers में सबसे मशहूर... सबसे ताकतवर।</p>
+                            <p class="dialogue-line">Creativity मेरे रग-रग में है।</p>
+                            <p class="dialogue-line">डिजाइनिंग में 5 सालों का तजुर्बा</p>
+                            <p class="dialogue-line">मुश्किल कोडिंग ने भी मेरे लिए रास्ता निकाला है</p>
+                            <p class="dialogue-line highlight">कला में सबसे कलात्मक</p>
+                            <p class="dialogue-line">Photoshop से दिन को रात कर सकती हूँ</p>
+                            <p class="dialogue-line">Creativity की बरसात कर सकती हूँ</p>
+                            <p class="dialogue-line">जो भी clients हुक्म करें वो पूरा कर सकती हूँ</p>
+                            <p class="dialogue-line finale">or clearly मैं और मेरे डिज़ाइन्स बेहद क्रिएटिव हैं।</p>
+                            <div class="dialogue-spacer"></div>
+                            <p class="dialogue-text-body">I am Muskan Kumari and I am from Delhi an aspiring Professional Graphic & Web Designer. I specialize in Graphic and Web Designing and creating Graphic Designs and vector illustration Tracing. I am Skilled in Adobe Photoshop, Adobe Illustrator, Adobe InDesign, CorelDraw, Canva, HTML, CSS, JAVASCRIPT, WORDPRESS, and FILMORA.</p>
+                        </div>
                     </div>
-                    
-                    <div class="about-tab-content-panel">
-                        <div id="tab-profile" class="about-panel active">
-                            <div class="about-dialogue-box">
-                                <p class="dialogue-line highlight">Designers में सबसे मशहूर... सबसे ताकतवर।</p>
-                                <p class="dialogue-line">सालों का तजुर्बा</p>
-                                <p class="dialogue-line">Creativity मेरे रग-ग में है।</p>
-                                <div class="dialogue-spacer"></div>
-                                <p class="dialogue-line">Photoshop, Illustrator, InDesign और CorelDraw & Canva मेरे साथ चलते हैं।</p>
-                                <p class="dialogue-line">HTML, CSS, JavaScript और WordPress से Creative Website बना सकती हूँ।</p>
-                                <p class="dialogue-line">Photoshop से दिन को रात कर सकती हूँ।</p>
-                                <p class="dialogue-line">Designing की बेहद बरसात कर सकती हूँ</p>
-                                <p class="dialogue-line">जो भी तुम कहो... I mean Vision दो...</p>
-                                <p class="dialogue-line">उसे पूरा कर सकती हूँ।</p>
-                                <p class="dialogue-line finale">Aur clearly... बहुत Creative भी हूँ....</p>
-                            </div>
-                        </div>
 
-                        <div id="tab-education" class="about-panel">
-                            <div class="info-list-card">
-                                <h3>Academic Credentials</h3>
-                                <ul>
-                                    <li>Senior Secondary Education From CBSE</li>
-                                    <li>Course on Computer Concepts CCC Certified</li>
-                                    <li>Basic Computer Course BCC Certified</li>
-                                    <li>Diploma In Computer Applications DCA Certified</li>
-                                </ul>
-                            </div>
+                    <!-- Tab 2: Academic Education -->
+                    <div id="tab-education" class="about-panel">
+                        <div class="info-list-card">
+                            <h3>Academic Education</h3>
+                            <ul>
+                                <li>Senior Secondary Education From CBSE</li>
+                                <li>Course on Computer Concepts CCC Certified</li>
+                                <li>Basic Computer Course BCC Certified</li>
+                                <li>Diploma In Computer Applications DCA Certified</li>
+                            </ul>
                         </div>
+                    </div>
 
-                        <div id="tab-skills" class="about-panel">
-                            <div class="info-list-card">
-                                <h3>Core Tech Competencies</h3>
-                                <p><strong>Graphic Designing:</strong> Adobe Photoshop | Adobe Illustrator | Adobe InDesign | CorelDraw | Canva</p>
-                                <p><strong>Web Designing:</strong> HTML | CSS | JS | WordPress</p>
-                                <p><strong>Video Editing:</strong> Filmora | VN | InShot</p>
-                                <p><strong>AI Tools:</strong> All AI used</p>
-                            </div>
+                    <!-- Tab 3: Technical Skills -->
+                    <div id="tab-skills" class="about-panel">
+                        <div class="info-list-card">
+                            <h3>Skills & Expertise</h3>
+                            
+                            <p><strong>MS Office:</strong> MS Office | MS Word | MS Excel | MS PowerPoint</p>
+                            <p><strong>Graphic Designing:</strong> Adobe Photoshop | Adobe Illustrator | Adobe InDesign | Corel Draw | Canva</p>
+                            <p><strong>Web Designing:</strong> HTML | CSS | JavaScript | WordPress</p>
+                            <p><strong>Video Editing:</strong> Filmora | VN | InShot</p>
+                            <p><strong>AI Tools:</strong> All AI used</p>
+                            
+                            <div class="dialogue-spacer"></div>
+                            <p class="strength-line"><strong>Strength:</strong> I am a quick learner. I always try my best.</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="about-photo-wrapper">
-                    <img src="profile-photo.png" alt="Muskan Kumari" class="profile-image">
-                </div>
-
             </div>
         </div>
     </section>
 
+    <!-- SERVICES SECTION -->
     <section id="services" class="services-section">
         
+        <!-- Part A: Latest Gallery Collection (4-Column Layout) -->
         <div class="container">
             <h2 class="section-heading">Latest Gallery Collection</h2>
             <div class="filter-tabs">
@@ -95,9 +104,11 @@
             </div>
             
             <div class="gallery-grid-layout" id="main-portfolio-gallery">
-                </div>
+                <!-- Loaded Dynamically via JS -->
+            </div>
         </div>
 
+        <!-- Part B: Skills & Tech Stack Grid Block (Image 16851.jpg Style Match) -->
         <div class="skills-tech-stack-block">
             <div class="container">
                 <h2 class="section-heading">Skills & Tech Stack</h2>
@@ -115,28 +126,35 @@
             </div>
         </div>
 
+        <!-- Part C: Clean Slide Motion Graphics Section (White Background Theme) -->
         <div class="motion-graphics-container">
-            <div class="container">
-                <h2 class="section-heading" style="text-align: left; margin-bottom: 10px;">Motion Graphics</h2>
-                <p style="margin-bottom: 35px; color: #555;">High-impact motion transitions and custom video editing clips.</p>
+            <div class="container motion-flex-layout">
+                <div class="motion-left-text">
+                    <h2>Motion Graphics</h2>
+                    <p>Crafting stunning visual transitions and high-impact motion clips that bring static designs to life. Elegant, fast-loading, and completely customized formatting structures.</p>
+                </div>
                 
+                <!-- Clean Phone Slider Display (No Black Outer Borders/Boxes) -->
                 <div class="elementor-tabs-layout">
                     <div class="video-display-frame">
                         <video id="sliderVideoPlayer" autoplay muted playsinline></video>
                     </div>
                     <div class="video-tabs-sidebar" id="reels-tabs-list">
-                        </div>
+                        <!-- Clickable Selector items injected dynamically via script -->
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- CONNECT WITH US SECTION (Exact Style Match from Image 17159.png) -->
     <section id="contact" class="contact-section">
         <div class="container">
             <h2 class="contact-main-title">Connect With Us</h2>
             <div class="contact-deco-separator"></div>
             
             <div class="contact-hub-grid">
+                <!-- Left: Clean Info Column -->
                 <div class="hub-info-col">
                     <h3>Contact Information</h3>
                     <div class="hub-info-item">
@@ -161,6 +179,7 @@
                         </div>
                     </div>
                     
+                    <!-- Integrated Payment Widget -->
                     <div class="bhim-payment-node" onclick="triggerUPIPayment()">
                         <img src="qr.png" alt="Paytm BHIM QR" class="bhim-qr-thumbnail">
                         <div class="bhim-meta">
@@ -170,6 +189,7 @@
                     </div>
                 </div>
 
+                <!-- Right: Clean Form Input Fields Column -->
                 <div class="hub-form-col">
                     <h3>Send Us a Message</h3>
                     <form id="hub-action-form">
@@ -195,6 +215,7 @@
         </div>
     </section>
 
+    <!-- INTERACTIVE GALLERY LIGHTBOX OVERLAY SLIDER -->
     <div class="gallery-lightbox" id="galleryLightbox">
         <span class="lightbox-close" onclick="closeGallerySlider()">&times;</span>
         <button class="slider-arrow prev-arrow" onclick="changeSlide(-1)">&#10094;</button>
@@ -205,6 +226,7 @@
         <button class="slider-arrow next-arrow" onclick="changeSlide(1)">&#10095;</button>
     </div>
 
+    <!-- ORNAMENTED FOOTER (MK Spiritual Hub Exact Style Match) -->
     <footer class="decorated-footer">
         <div class="footer-container-box">
             <p>&copy; 2026 Muskan Kumari | Graphic & Web Designer | All Rights Reserved.</p>
@@ -219,3 +241,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+

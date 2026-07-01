@@ -1,27 +1,15 @@
-// Local Repositories Configurations Mapped Directly
+// Dribbble System Data Mapping Modules
 const portfolioAssets = {
-    graphic: Array.from({length: 20}, (_, i) => ({ src: `g${i+1}.jpg`, name: `Graphic Project Layout ${i+1}`, likes: "154", views: "3.6k" })),
-    web: [{ src: 'w1.png', name: 'Premium Live UI Platform Architecture', likes: "98", views: "1.2k" }],
-    ai: Array.from({length: 11}, (_, i) => ({ src: `b${i+1}.png`, name: `AI Digital Visual ${i+1}`, likes: "210", views: "5.4k" }))
+    graphic: Array.from({length: 20}, (_, i) => ({ type: 'image', src: `g${i+1}.jpg`, name: `Graphic Design Project ${i+1}`, likes: "154", views: "3.6k" })),
+    web: [{ type: 'image', src: 'w1.png', name: 'Premium Live UI Platform Architecture', likes: "98", views: "1.2k" }],
+    ai: Array.from({length: 11}, (_, i) => ({ type: 'image', src: `b${i+1}.png`, name: `AI Digital Artwork Visual ${i+1}`, likes: "210", views: "5.4k" })),
+    motion: Array.from({length: 12}, (_, i) => ({ type: 'video', src: `r${i+1}.mp4`, name: `Motion Graphics Reel ${i+1}`, likes: "320", views: "8.9k" }))
 };
 
 let currentCategoryArray = [];
 let activeIndex = 0;
 
-// About Tab Switching Engine
-function switchAboutTab(tabId, event) {
-    const panels = document.querySelectorAll('.about-panel');
-    panels.forEach(p => p.classList.remove('active'));
-
-    const buttons = document.querySelectorAll('.about-menu-btn');
-    buttons.forEach(b => b.classList.remove('active'));
-
-    const targetedPanel = document.getElementById(`tab-${tabId}`);
-    if (targetedPanel) targetedPanel.classList.add('active');
-    if (event) event.target.classList.add('active');
-}
-
-// 3-Column Dribbble Style Gallery Filter Injector (Image 16863_3.jpg match)
+// Dynamic Image/Video Filter Engine for Dribbble 3-Column Grid
 function filterGallery(category, event) {
     const targetGrid = document.getElementById('main-portfolio-gallery');
     if (!targetGrid) return;
@@ -36,7 +24,7 @@ function filterGallery(category, event) {
 
     currentCategoryArray = portfolioAssets[category];
     if(currentCategoryArray.length === 0) {
-        targetGrid.innerHTML = '<p style="grid-column: span 3; text-align:center; padding:30px; color:#999;">Web Modules Loading...</p>';
+        targetGrid.innerHTML = '<p style="grid-column: span 3; text-align:center; padding:30px; color:#999;">Web Layout Modules Loading...</p>';
         return;
     }
 
@@ -44,9 +32,13 @@ function filterGallery(category, event) {
         const itemNode = document.createElement('div');
         itemNode.className = 'dribbble-item-card';
         itemNode.onclick = () => openGallerySlider(idx);
+        
+        // Conditional indicator rules for horizontal video thumbnails
+        const mediaTag = item.type === 'video' ? `<video src="${item.src}" muted></video><span class="video-reel-indicator">▶ Reel</span>` : `<img src="${item.src}" onerror="this.src='placeholder.png'">`;
+
         itemNode.innerHTML = `
             <div class="dribbble-img-frame">
-                <img src="${item.src}" alt="${item.name}" onerror="this.src='placeholder.png'">
+                ${mediaTag}
             </div>
             <div class="dribbble-meta-row">
                 <div class="dribbble-user">
@@ -63,17 +55,34 @@ function filterGallery(category, event) {
     });
 }
 
-// Lightbox Slider Overlay Engine
+// Universal Image & Video Lightbox Slider Mechanics (Click to Slide Sequence)
 function openGallerySlider(index) {
     activeIndex = index;
     const lightbox = document.getElementById('galleryLightbox');
-    const activeImg = document.getElementById('lightboxActiveImg');
-    const caption = document.getElementById('lightboxImgCaption');
+    const contentWrap = document.getElementById('lightboxMediaContent');
 
-    if(lightbox && activeImg && caption) {
-        activeImg.src = currentCategoryArray[activeIndex].src;
-        caption.innerText = currentCategoryArray[activeIndex].name;
+    if(lightbox && contentWrap) {
+        renderLightboxActiveTrack();
         lightbox.style.display = 'flex';
+    }
+}
+
+function renderLightboxActiveTrack() {
+    const contentWrap = document.getElementById('lightboxMediaContent');
+    const currentAsset = currentCategoryArray[activeIndex];
+    
+    contentWrap.innerHTML = '';
+
+    if(currentAsset.type === 'video') {
+        contentWrap.innerHTML = `
+            <video id="lightboxActiveImg" src="${currentAsset.src}" controls autoplay style="width:100%; max-height:70vh; object-fit:contain;"></video>
+            <p class="lightbox-caption">${currentAsset.name}</p>
+        `;
+    } else {
+        contentWrap.innerHTML = `
+            <img id="lightboxActiveImg" src="${currentAsset.src}" alt="${currentAsset.name}">
+            <p class="lightbox-caption">${currentAsset.name}</p>
+        `;
     }
 }
 
@@ -81,65 +90,23 @@ function changeSlide(direction) {
     activeIndex += direction;
     if (activeIndex >= currentCategoryArray.length) activeIndex = 0;
     if (activeIndex < 0) activeIndex = currentCategoryArray.length - 1;
-
-    const activeImg = document.getElementById('lightboxActiveImg');
-    const caption = document.getElementById('lightboxImgCaption');
-    
-    if(activeImg && caption) {
-        activeImg.src = currentCategoryArray[activeIndex].src;
-        caption.innerText = currentCategoryArray[activeIndex].name;
-    }
+    renderLightboxActiveTrack();
 }
+
+document.addEventListener('keydown', (e) => {
+    const lightbox = document.getElementById('galleryLightbox');
+    if (lightbox && lightbox.style.display === 'flex') {
+        if (e.key === 'ArrowRight') changeSlide(1);
+        if (e.key === 'ArrowLeft') changeSlide(-1);
+        if (e.key === 'Escape') closeGallerySlider();
+    }
+});
 
 function closeGallerySlider() {
-    document.getElementById('galleryLightbox').style.display = 'none';
-}
-
-// Elementor Video Track Loop System
-let currentVideoIndex = 1;
-const totalVideosCount = 12;
-
-function initializeVideoSliderSystem() {
-    const tabsContainer = document.getElementById('reels-tabs-list');
-    if (!tabsContainer) return;
-
-    tabsContainer.innerHTML = '';
-    for (let index = 1; index <= totalVideosCount; index++) {
-        const tabButton = document.createElement('div');
-        tabButton.className = `video-tab-item ${index === 1 ? 'active-tab' : ''}`;
-        tabButton.id = `video-tab-node-${index}`;
-        tabButton.innerText = `Motion Reel #${index}`;
-        tabButton.onclick = () => jumpToSpecificVideo(index);
-        tabsContainer.appendChild(tabButton);
-    }
-    loadVideoSourceTrack(currentVideoIndex);
-}
-
-function loadVideoSourceTrack(index) {
-    currentVideoIndex = index;
-    const player = document.getElementById('sliderVideoPlayer');
-    if (!player) return;
-
-    const allTabs = document.querySelectorAll('.video-tab-item');
-    allTabs.forEach(t => t.classList.remove('active-tab'));
-    
-    const activeTab = document.getElementById(`video-tab-node-${index}`);
-    if(activeTab) activeTab.classList.add('active-tab');
-
-    player.src = `r${index}.mp4`;
-    player.load();
-
-    player.onloadedmetadata = () => {
-        player.onended = () => {
-            let nextIndex = currentVideoIndex + 1;
-            if (nextIndex > totalVideosCount) nextIndex = 1;
-            loadVideoSourceTrack(nextIndex);
-        };
-    };
-}
-
-function jumpToSpecificVideo(index) {
-    loadVideoSourceTrack(index);
+    const lightbox = document.getElementById('galleryLightbox');
+    if(lightbox) lightbox.style.display = 'none';
+    const contentWrap = document.getElementById('lightboxMediaContent');
+    if(contentWrap) contentWrap.innerHTML = ''; // Safely teardown streams
 }
 
 function triggerUPIPayment() {
@@ -147,15 +114,15 @@ function triggerUPIPayment() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    filterGallery('graphic', null); // Initialise Dribbble layout
-    initializeVideoSliderSystem();  
+    filterGallery('graphic', null); // Default Tab Hook Initialisation
     
     const form = document.getElementById('hub-action-form');
     if(form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Form submitted successfully!');
+            alert('Your inquiry was processed securely! Thank you.');
             form.reset();
         });
     }
 });
+

@@ -1,15 +1,15 @@
 // Local Repositories Storage Architecture Configured for Media Grid Filter
 const portfolioAssets = {
-    graphic: Array.from({length: 20}, (_, i) => ({ type: 'image', src: `g${i+1}.jpg`, name: `Graphic Design Asset ${i+1}`, likes: "144", views: "5.3k" })),
-    web: [{ type: 'image', src: 'w1.png', name: 'Premium Live UI Platform Architecture', likes: "98", views: "1.2k" }],
-    ai: Array.from({length: 11}, (_, i) => ({ type: 'image', src: `b${i+1}.png`, name: `AI Generated Visual Element ${i+1}`, likes: "200", views: "3.3k" })),
+    graphic: Array.from({length: 20}, (_, i) => ({ type: 'image', src: `g${i+1}.jpg`, name: `Graphic Design Asset ${i+1}`, likes: "172", views: "4.9k" })),
+    web: [{ type: 'image', src: 'w1.png', name: 'Premium Live UI Platform Architecture', likes: "185", views: "5.2k" }],
+    ai: Array.from({length: 11}, (_, i) => ({ type: 'image', src: `b${i+1}.png`, name: `AI Generated Visual Element ${i+1}`, likes: "210", views: "6.1k" })),
     motion: Array.from({length: 12}, (_, i) => ({ type: 'video', src: `r${i+1}.mp4`, name: `Motion Graphic Reel Clip ${i+1}`, likes: "172", views: "4.9k" }))
 };
 
 let currentCategoryArray = [];
 let activeIndex = 0;
 
-// Dynamic Image Filter Engine for clean Dribbble layout
+// Dynamic Image Filter Engine for crisp multi-grid layouts
 function filterGallery(category, event) {
     const targetGrid = document.getElementById('main-portfolio-gallery');
     if (!targetGrid) return;
@@ -19,12 +19,12 @@ function filterGallery(category, event) {
     if(event) {
         const buttons = document.querySelectorAll('.tab-btn');
         buttons.forEach(btn => btn.classList.remove('active'));
-        event.target.classList.add('active');
+        event.currentTarget.classList.add('active');
     }
 
-    currentCategoryArray = portfolioAssets[category];
+    currentCategoryArray = portfolioAssets[category] || [];
     if(currentCategoryArray.length === 0) {
-        targetGrid.innerHTML = '<p style="grid-column: span 3; text-align:center; padding:30px; color:#999;">Web Modules Loading...</p>';
+        targetGrid.innerHTML = '<p style="grid-column: span 4; text-align:center; padding:40px; color:#999; font-weight:bold;">Project Modules Loading...</p>';
         return;
     }
 
@@ -34,7 +34,7 @@ function filterGallery(category, event) {
         itemNode.onclick = () => openGallerySlider(idx);
         
         const mediaContent = item.type === 'video' 
-            ? `<video src="${item.src}" muted loop autoplay playsinline></video><span class="video-reel-tag">▶ Reel</span>` 
+            ? `<video src="${item.src}" muted loop autoplay playsinline></video><span class="video-reel-tag"><i class="fa-solid fa-play"></i> Reel</span>` 
             : `<img src="${item.src}" onerror="this.src='placeholder.png'">`;
 
         itemNode.innerHTML = `
@@ -69,13 +69,13 @@ function openGallerySlider(index) {
 function renderLightboxActiveContent() {
     const contentWrap = document.getElementById('lightboxMediaContent');
     const currentAsset = currentCategoryArray[activeIndex];
-    if(!contentWrap) return;
+    if(!contentWrap || !currentAsset) return;
     
     contentWrap.innerHTML = '';
 
     if(currentAsset.type === 'video') {
         contentWrap.innerHTML = `
-            <video id="lightboxActiveImg" src="${currentAsset.src}" controls autoplay style="width:100%; max-height:70vh; object-fit:contain;"></video>
+            <video id="lightboxActiveImg" src="${currentAsset.src}" controls autoplay style="width:100%; max-height:75vh; object-fit:contain;"></video>
             <p class="lightbox-caption">${currentAsset.name}</p>
         `;
     } else {
@@ -114,7 +114,7 @@ function triggerUPIPayment() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    filterGallery('graphic', null); // Initialise clean graphic layout default hook
+    filterGallery('graphic', null); // Default category init
     
     const form = document.getElementById('hub-action-form');
     if(form) {

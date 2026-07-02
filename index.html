@@ -10,35 +10,37 @@
 </head>
 <body>
 
-    <!-- DECORATED SLIM HEADER (Large 100px Layout) -->
+    <!-- EXACT 17244.JPG STYLE REPLICATED GRAND NAV HEADER -->
     <header class="main-header">
         <div class="header-container">
             <div class="header-logo-group">
                 <img src="mk.png" alt="MK Logo" class="site-logo">
-                <span class="logo-title">Muskan Kumari <span class="pipeline">|</span> Graphic & Web Designer</span>
+                <div class="logo-text-meta">
+                    <span class="logo-main-name">Muskan Kumari</span>
+                    <span class="logo-sub-tag">Graphic & Web Designer <span class="tag-pipe">|</span> Portfolio</span>
+                </div>
             </div>
             <nav class="nav-links">
                 <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
+                <a href="#services">Projects</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
         <div class="header-deco-line"></div>
     </header>
 
-    <!-- HERO REPOSITORY IMAGE BANNER -->
+    <!-- HERO IMAGE CONTAINER -->
     <section id="home" class="hero-section">
         <img src="hero.png" alt="Hero Banner" class="hero-fluid-img">
     </section>
 
-    <!-- WELCOME & ABOUT SECTION (PROFESSIONAL RESUME TEXT) -->
+    <!-- WELCOME & ABOUT SECTION (CENTERED PYRAMID FORMAT) -->
     <section id="about" class="about-section">
         <div class="container compact-width">
             <h1 class="welcome-heading">Welcome to My Portfolio</h1>
             <div class="about-deco-separator"></div>
             
-            <!-- Respected Resume Content Structure in Pyramid Setup -->
+            <!-- Centered Pyramid Typography Array -->
             <div class="pyramid-text-wrapper">
                 <p class="pyramid-l1">I am Muskan Kumari and I am from Delhi, an aspiring professional Graphic & Web Designer.</p>
                 <p class="pyramid-l2">I am skilled in Adobe Photoshop, Adobe Illustrator, Adobe InDesign, CorelDraw, Canva, HTML, CSS, JavaScript, and WordPress.</p>
@@ -46,7 +48,7 @@
                 <p class="pyramid-l4">and Vector Illustration Tracing.</p>
             </div>
 
-            <!-- Side-by-Side Professional Profile Cards -->
+            <!-- Two Side-by-Side Professional Profile Cards -->
             <div class="about-double-grid">
                 <div class="profile-display-card">
                     <h3>Academic Education</h3>
@@ -84,42 +86,65 @@
             </div>
             
             <div class="dribbble-grid-layout" id="main-portfolio-gallery">
-                <!-- Loaded via JavaScript -->
+                <!-- Loaded via JavaScript dynamically -->
             </div>
         </div>
     </section>
 
-    <!-- SKILLS SECTION WITH PRECISE PYRAMID ICON ROWS -->
+    <!-- SKILLS SECTION WITH PRECISE LINE-BY-LINE BRAND MATRIX -->
     <section class="skills-tech-stack-section">
         <div class="container">
             <h2 class="section-heading">Skills & Tech Stack</h2>
             <div class="about-deco-separator"></div>
             
-            <div class="tech-pyramid-container">
-                <!-- Top Row: 6 Items Aligned Balanced -->
-                <div class="tech-row row-top">
-                    <div class="tech-card color-ps"><i class="fa-brands fa-adobe"></i><span>Photoshop</span></div>
-                    <div class="tech-card color-ai"><i class="fa-solid fa-pen-nib"></i><span>Illustrator</span></div>
-                    <div class="tech-card color-id"><i class="fa-solid fa-book-open"></i><span>InDesign</span></div>
-                    <div class="tech-card color-corel"><i class="fa-solid fa-palette"></i><span>CorelDraw</span></div>
-                    <div class="tech-card color-canva"><i class="fa-solid fa-bezier-curve"></i><span>Canva</span></div>
-                    <div class="tech-card color-html"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+            <div class="tech-rows-container">
+                <!-- Line 1: Graphic Designing Softwares -->
+                <div class="skill-category-row">
+                    <span class="row-label">Graphic Designing:</span>
+                    <div class="tech-cards-flex">
+                        <div class="tech-card color-ps"><i class="fa-brands fa-adobe"></i><span>Photoshop</span></div>
+                        <div class="tech-card color-ai"><i class="fa-solid fa-pen-nib"></i><span>Illustrator</span></div>
+                        <div class="tech-card color-id"><i class="fa-solid fa-book-open"></i><span>InDesign</span></div>
+                        <div class="tech-card color-corel"><i class="fa-solid fa-palette"></i><span>CorelDraw</span></div>
+                        <div class="tech-card color-canva"><i class="fa-solid fa-bezier-curve"></i><span>Canva</span></div>
+                    </div>
                 </div>
-                <!-- Bottom Row: 7 Remaining Items Centered Together -->
-                <div class="tech-row row-bottom-centered">
-                    <div class="tech-card color-css"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
-                    <div class="tech-card color-js"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
-                    <div class="tech-card color-wp"><i class="fa-brands fa-wordpress"></i><span>WordPress</span></div>
-                    <div class="tech-card color-filmora"><i class="fa-solid fa-video"></i><span>Filmora</span></div>
-                    <div class="tech-card color-vn"><i class="fa-solid fa-clapperboard"></i><span>VN Editor</span></div>
-                    <div class="tech-card color-inshot"><i class="fa-solid fa-mobile-screen-button"></i><span>InShot</span></div>
-                    <div class="tech-card color-office"><i class="fa-regular fa-file-word"></i><span>MS Office</span></div>
+
+                <!-- Line 2: Web Designing Softwares -->
+                <div class="skill-category-row">
+                    <span class="row-label">Web Designing:</span>
+                    <div class="tech-cards-flex">
+                        <div class="tech-card color-html"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+                        <div class="tech-card color-css"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+                        <div class="tech-card color-js"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+                        <div class="tech-card color-wp"><i class="fa-brands fa-wordpress"></i><span>WordPress</span></div>
+                    </div>
+                </div>
+
+                <!-- Line 3: Video Editing Softwares -->
+                <div class="skill-category-row">
+                    <span class="row-label">Video Editing:</span>
+                    <div class="tech-cards-flex">
+                        <div class="tech-card color-filmora"><i class="fa-solid fa-video"></i><span>Filmora</span></div>
+                        <div class="tech-card color-vn"><i class="fa-solid fa-clapperboard"></i><span>VN Editor</span></div>
+                        <div class="tech-card color-inshot"><i class="fa-solid fa-mobile-screen-button"></i><span>InShot</span></div>
+                    </div>
+                </div>
+
+                <!-- Line 4: MS Office Matrix -->
+                <div class="skill-category-row">
+                    <span class="row-label">MS Office:</span>
+                    <div class="tech-cards-flex">
+                        <div class="tech-card color-word"><i class="fa-regular fa-file-word"></i><span>MS Word</span></div>
+                        <div class="tech-card color-excel"><i class="fa-regular fa-file-excel"></i><span>MS Excel</span></div>
+                        <div class="tech-card color-powerpoint"><i class="fa-regular fa-file-powerpoint"></i><span>MS PowerPoint</span></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONNECT WITH US SECTION -->
+    <!-- CONNECT WITH US SECTION (Exact Style Match from Image 17159.png) -->
     <section id="contact" class="contact-section">
         <div class="container">
             <h2 class="contact-main-title">Connect With Us</h2>
@@ -203,7 +228,7 @@
         <button class="slider-arrow next-arrow" onclick="changeSlide(1)">&#10095;</button>
     </div>
 
-    <!-- CLEAN PROFESSIONAL STRIP GRAY FOOTER (OM Completely Removed) -->
+    <!-- CLEAN PROFESSIONAL STRIP GRAY FOOTER (Om Completely Removed) -->
     <footer class="mk-spiritual-gray-footer">
         <div class="footer-top-row">
             <div class="footer-quote-block">
@@ -237,3 +262,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+

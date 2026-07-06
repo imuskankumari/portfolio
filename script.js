@@ -1,4 +1,4 @@
-// Local Repositories Storage Framework allocations with exact asset parameters rules
+// Local Repositories Storage Framework configurations matching exact specifications rules
 const portfolioAssets = {
     graphic: Array.from({length: 10}, (_, i) => ({ id: `g_${i}`, type: 'image', src: `g${i+1}.jpg`, name: `Graphic Design Asset ${i+1}`, likes: 144, views: "3.6k" })),
     web: Array.from({length: 10}, (_, i) => ({ id: `w_${i}`, type: 'image', src: `w${i+1}.png`, name: `Premium Web Design Concept ${i+1}`, likes: 98, views: "1.2k" })),
@@ -6,13 +6,13 @@ const portfolioAssets = {
     motion: Array.from({length: 10}, (_, i) => ({ id: `m_${i}`, type: 'video', src: `r${i+1}.mp4`, name: `Motion Graphic Reel Clip ${i+1}`, likes: 172, views: "4.9k" }))
 };
 
-// Tracking interaction arrays to maintain red active heart states
+// Array tracking storage sets to persist click liked hearts states natively
 const userLikedItems = new Set();
 
 let currentCategoryArray = [];
 let activeIndex = 0;
 
-// Mobile Menu Navigation Open/Close Control Handlers
+// Mobile Navigation Hamburger Logic Handlers
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggleBtn = document.getElementById('menuToggleBtn');
     const mainNavigation = document.getElementById('mainNavigation');
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Load initial defaults
+    // Initialize with default Graphics filter array streams
     filterGallery('graphic', null);
 });
 
@@ -37,7 +37,7 @@ function closeMobileMenu() {
     }
 }
 
-// Dynamic Filterable Grids Constructor
+// Filterable Portfolio Grids Matrix
 function filterGallery(category, event) {
     const targetGrid = document.getElementById('main-portfolio-gallery');
     if (!targetGrid) return;
@@ -88,9 +88,9 @@ function filterGallery(category, event) {
     });
 }
 
-// REAL ACTIVE LIKING TOGGLE ENGINE
+// DYNAMIC HEART LIKES INCREMENT LOGIC
 function executeRealLiking(assetId, index, event) {
-    event.stopPropagation(); // Shield backdrop popups triggers
+    event.stopPropagation(); // Safe blocks click-through layer popups
     const targetItem = currentCategoryArray[index];
     const triggerBox = event.currentTarget;
     const valueLabel = triggerBox.querySelector('.count-lbl');
@@ -110,7 +110,7 @@ function executeRealLiking(assetId, index, event) {
     valueLabel.textContent = targetItem.likes;
 }
 
-// Magic Cinematic Lightbox Engine with Zoom In & Fade In Transitions
+// Cinematic Magic Overlays Lightbox Mechanics (Fade In + Scale Zoom)
 function openGallerySlider(index) {
     activeIndex = index;
     const lightbox = document.getElementById('galleryLightbox');
@@ -162,7 +162,7 @@ function closeGallerySlider() {
     }
 }
 
-// Hotkey Hooks for Pro Navigation Navigation 
+// Hotkey Navigation Mapping Rules
 document.addEventListener('keydown', (e) => {
     const lightbox = document.getElementById('galleryLightbox');
     if (lightbox && lightbox.style.display === 'flex') {
@@ -186,4 +186,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-

@@ -1,18 +1,43 @@
-// Local Repositories Storage Framework Matrix with exact asset allocations rules
+// Local Repositories Storage Framework allocations with exact asset parameters rules
 const portfolioAssets = {
-    graphic: Array.from({length: 10}, (_, i) => ({ id: `g_${i}`, type: 'image', src: `g${i+1}.jpg`, name: `Graphic Design Asset ${i+1}`, likes: 144, views: "5.3k" })),
+    graphic: Array.from({length: 10}, (_, i) => ({ id: `g_${i}`, type: 'image', src: `g${i+1}.jpg`, name: `Graphic Design Asset ${i+1}`, likes: 144, views: "3.6k" })),
     web: Array.from({length: 10}, (_, i) => ({ id: `w_${i}`, type: 'image', src: `w${i+1}.png`, name: `Premium Web Design Concept ${i+1}`, likes: 98, views: "1.2k" })),
     ai: Array.from({length: 11}, (_, i) => ({ id: `ai_${i}`, type: 'image', src: `b${i+1}.png`, name: `AI Generated Visual Element ${i+1}`, likes: 200, views: "3.3k" })),
     motion: Array.from({length: 10}, (_, i) => ({ id: `m_${i}`, type: 'video', src: `r${i+1}.mp4`, name: `Motion Graphic Reel Clip ${i+1}`, likes: 172, views: "4.9k" }))
 };
 
-// Tracking native storage to remember heart interaction states
+// Tracking interaction arrays to maintain red active heart states
 const userLikedItems = new Set();
 
 let currentCategoryArray = [];
 let activeIndex = 0;
 
-// Dynamic Image Filter Engine for clean Dribbble 3-column layouts
+// Mobile Menu Navigation Open/Close Logic Helper Engines
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggleBtn = document.getElementById('menuToggleBtn');
+    const mainNavigation = document.getElementById('mainNavigation');
+
+    if(menuToggleBtn && mainNavigation) {
+        menuToggleBtn.addEventListener('click', () => {
+            menuToggleBtn.classList.toggle('open');
+            mainNavigation.classList.toggle('mobile-active');
+        });
+    }
+
+    // Load initial defaults
+    filterGallery('graphic', null);
+});
+
+function closeMobileMenu() {
+    const menuToggleBtn = document.getElementById('menuToggleBtn');
+    const mainNavigation = document.getElementById('mainNavigation');
+    if(menuToggleBtn && mainNavigation) {
+        menuToggleBtn.classList.remove('open');
+        mainNavigation.classList.remove('mobile-active');
+    }
+}
+
+// Dynamic Filterable Grids Constructor
 function filterGallery(category, event) {
     const targetGrid = document.getElementById('main-portfolio-gallery');
     if (!targetGrid) return;
@@ -36,7 +61,7 @@ function filterGallery(category, event) {
         itemNode.className = 'dribbble-item-card';
         
         const isLiked = userLikedItems.has(item.id);
-        const heartClass = isLiked ? 'like-trigger liked' : 'like-trigger';
+        const heartStateClass = isLiked ? 'like-click-node activated' : 'like-click-node';
 
         const mediaContent = item.type === 'video' 
             ? `<video src="${item.src}" muted loop autoplay playsinline></video><span class="video-reel-tag">▶ Reel</span>` 
@@ -52,8 +77,8 @@ function filterGallery(category, event) {
                     <span class="dribbble-username">Muskan</span>
                 </div>
                 <div class="dribbble-stats">
-                    <span class="${heartClass}" onclick="toggleRealLike('${item.id}', ${idx}, event)">
-                        <i class="${isLiked ? 'fa-solid' : 'fa-regular'} fa-heart"></i> <span class="count-val">${item.likes}</span>
+                    <span class="${heartStateClass}" onclick="executeRealLiking('${item.id}', ${idx}, event)">
+                        <i class="${isLiked ? 'fa-solid' : 'fa-regular'} fa-heart"></i> <span class="count-lbl">${item.likes}</span>
                     </span>
                     <span>👁️ ${item.views}</span>
                 </div>
@@ -63,35 +88,39 @@ function filterGallery(category, event) {
     });
 }
 
-// REAL ACTIVE LIKING TOGGLE ENGINE
-function toggleRealLike(assetId, index, event) {
-    event.stopPropagation(); // Block backdrop click triggers
-    const currentAsset = currentCategoryArray[index];
-    const cardNode = event.currentTarget;
-    const countLabel = cardNode.querySelector('.count-val');
+// REAL LIKING LOGIC MATRIX (No grey panel bugs)
+function executeRealLiking(assetId, index, event) {
+    event.stopPropagation(); // Shield backdrop popups triggers
+    const targetItem = currentCategoryArray[index];
+    const triggerBox = event.currentTarget;
+    const valueLabel = triggerBox.querySelector('.count-lbl');
+    const heartElement = triggerBox.querySelector('i');
 
     if(userLikedItems.has(assetId)) {
         userLikedItems.delete(assetId);
-        currentAsset.likes = parseInt(currentAsset.likes) - 1;
-        cardNode.classList.remove('liked');
+        targetItem.likes = parseInt(targetItem.likes) - 1;
+        triggerBox.classList.remove('activated');
+        heartElement.className = 'fa-regular fa-heart';
     } else {
         userLikedItems.add(assetId);
-        currentAsset.likes = parseInt(currentAsset.likes) + 1;
-        cardNode.classList.add('liked');
+        targetItem.likes = parseInt(targetItem.likes) + 1;
+        triggerBox.classList.add('activated');
+        heartElement.className = 'fa-solid fa-heart';
     }
-    
-    countLabel.textContent = currentAsset.likes;
-    const heartIcon = cardNode.querySelector('i');
-    heartIcon.className = userLikedItems.has(assetId) ? 'fa-solid fa-heart' : 'fa-regular fa-heart';
+    valueLabel.textContent = targetItem.likes;
 }
 
-// Universal Lightbox Image/Video Popups (Magic Effects)
+// Magic Cinematic Lightbox Engine with Zoom In & Fade In Transitions
 function openGallerySlider(index) {
     activeIndex = index;
     const lightbox = document.getElementById('galleryLightbox');
     if(lightbox) {
         renderLightboxActiveContent();
         lightbox.style.display = 'flex';
+        // Delay addition subtly to let CSS handle fade triggers
+        setTimeout(() => {
+            lightbox.classList.add('active-magic-box');
+        }, 10);
     }
 }
 
@@ -104,12 +133,12 @@ function renderLightboxActiveContent() {
 
     if(currentAsset.type === 'video') {
         contentWrap.innerHTML = `
-            <video id="lightboxActiveImg" src="${currentAsset.src}" controls autoplay style="width:100%; max-height:70vh; object-fit:contain; border-radius:12px;"></video>
+            <video id="lightboxVideoNode" src="${currentAsset.src}" controls autoplay style="width:100%; max-height:70vh; object-fit:contain; border-radius:12px;"></video>
             <p class="lightbox-caption">${currentAsset.name}</p>
         `;
     } else {
         contentWrap.innerHTML = `
-            <img id="lightboxActiveImg" src="${currentAsset.src}" alt="${currentAsset.name}">
+            <img id="lightboxImageNode" src="${currentAsset.src}" alt="${currentAsset.name}">
             <p class="lightbox-caption">${currentAsset.name}</p>
         `;
     }
@@ -122,6 +151,19 @@ function changeSlide(direction) {
     renderLightboxActiveContent();
 }
 
+function closeGallerySlider() {
+    const lightbox = document.getElementById('galleryLightbox');
+    if(lightbox) {
+        lightbox.classList.remove('active-magic-box');
+        setTimeout(() => {
+            lightbox.style.display = 'none';
+            const contentWrap = document.getElementById('lightboxMediaContent');
+            if(contentWrap) contentWrap.innerHTML = ''; // Safely tear down streams
+        }, 300); // Wait for transition fade-out to finish
+    }
+}
+
+// Hotkey Hooks
 document.addEventListener('keydown', (e) => {
     const lightbox = document.getElementById('galleryLightbox');
     if (lightbox && lightbox.style.display === 'flex') {
@@ -131,27 +173,17 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-function closeGallerySlider() {
-    const lightbox = document.getElementById('galleryLightbox');
-    if(lightbox) lightbox.style.display = 'none';
-    const contentWrap = document.getElementById('lightboxMediaContent');
-    if(contentWrap) contentWrap.innerHTML = '';
-}
-
 function triggerUPIPayment() {
     window.location.href = "upi://pay?pa=8810682518@paytm&pn=Muskan%20Kumari&cu=INR";
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    filterGallery('graphic', null); // Initialise default layout hooks
-    
     const form = document.getElementById('hub-action-form');
     if(form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Your message was transferred securely!');
+            alert('Your request was processed successfully!');
             form.reset();
         });
     }
 });
-

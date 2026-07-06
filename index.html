@@ -15,8 +15,10 @@
                 <img src="mk.png" alt="MK Logo" class="site-logo">
             </div>
             
-            <button class="mobile-nav-toggle" id="menuToggleBtn">
-                <span></span><span></span><span></span>
+            <button class="mobile-nav-toggle" id="menuToggleBtn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
 
             <nav class="nav-links" id="mainNavigation">
@@ -34,22 +36,88 @@
 
     <section id="about" class="about-section">
         <div class="container">
-            <h2 class="section-heading">Welcome to My Portfolio</h2>
-            <div class="about-deco-separator"></div>
+            <div class="decorative-ornament">
+                <span class="ornament-line"></span>
+                <span class="ornament-flower">✿</span>
+                <span class="ornament-line"></span>
+            </div>
+            <h1 class="welcome-heading">Welcome to My Portfolio</h1>
+            <div class="title-sub-curve"></div>
             
             <div class="about-split-layout">
-                <div class="about-left-text">
-                    <div class="profile-narrative">
-                        <p class="pyramid-l1">I am Muskan Kumari and I am from Delhi, an aspiring professional Graphic & Web Designer.</p>
-                        <p class="pyramid-l2">I am skilled in Adobe Photoshop, Adobe Illustrator, Adobe InDesign, CorelDraw, Canva, HTML, CSS, JavaScript, and WordPress. I specialize in Graphic Design, Website Design, and Vector Illustration Tracing.</p>
-                        <div class="edu-flow-box">
-                            <p>I have completed my Senior Secondary Education from CBSE. I am also professionally certified in Course on Computer Concepts (CCC), Basic Computer Course (BCC), and Diploma In Computer Applications (DCA).</p>
-                        </div>
+                <div class="about-left-text-block">
+                    <div class="profile-narrative-paragraph">
+                        <p>I am Muskan Kumari and I am from Delhi, an aspiring professional Graphic & Web Designer. I specialize in Graphic Design, Website Design, and Vector Illustration Tracing.</p>
+                        <p>Driven by core dedication to high-end design structures, I have successfully completed my Senior Secondary Education from CBSE. Furthermore, I am professionally certified in Course on Computer Concepts (CCC), Basic Computer Course (BCC), and hold a formal Diploma In Computer Applications (DCA).</p>
                     </div>
                 </div>
+                <div class="about-right-logo-block">
+                    <img src="logo.png" alt="MK Profile Logo" class="about-floating-logo">
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="about-right-image">
-                    <img src="logo.png" alt="Muskan Portrait" class="about-floating-img">
+    <section class="skills-tech-stack-section">
+        <div class="container">
+            <div class="decorative-ornament">
+                <span class="ornament-line"></span>
+                <span class="ornament-flower">✿</span>
+                <span class="ornament-line"></span>
+            </div>
+            <h2 class="section-heading">Skills & Tech Stack</h2>
+            <div class="title-sub-curve"></div>
+            
+            <div class="tech-horizontal-scroll-row">
+                <div class="value-card-item">
+                    <img src="photoshop.png" alt="Photoshop">
+                    <h4>Photoshop</h4>
+                    <p>Image editing, processing & creative manipulation.</p>
+                </div>
+                <div class="value-card-item">
+                    <img src="illustrator.png" alt="Illustrator">
+                    <h4>Illustrator</h4>
+                    <p>Vector artwork, digital tracing & brand vector logos.</p>
+                </div>
+                <div class="value-card-item">
+                    <img src="indesign.png" alt="InDesign">
+                    <h4>InDesign</h4>
+                    <p>Multi-page master layouts, brochures & magazines design.</p>
+                </div>
+                <div class="value-card-item">
+                    <img src="coreldraw.png" alt="CorelDraw">
+                    <h4>CorelDraw</h4>
+                    <p>Vector tracking configurations for print output Medias.</p>
+                </div>
+                <div class="value-card-item">
+                    <img src="canva.png" alt="Canva">
+                    <h4>Canva</h4>
+                    <p>Fast modern social post designs & template systems.</p>
+                </div>
+                <div class="value-card-item">
+                    <img src="html.png" alt="HTML5">
+                    <h4>HTML5</h4>
+                    <p>Semantic cross-platform structural markup deployment.</p>
+                </div>
+                <div class="value-card-item">
+                    <img src="css.png" alt="CSS3">
+                    <h4>CSS3</h4>
+                    <p>Stunning responsive animation systems & page layouts styling.</p>
+                </div>
+                <div class="value-card-item">
+                    <img src="javascript.png" alt="JavaScript">
+                    <h4>JavaScript</h4>
+                    <p>Asynchronous programmatic client logic handling frameworks.</p>
+                </div>
+                <div class="value-card-item">
+                    <img src="wordpress.png" alt="WordPress">
+                    <h4>WordPress</h4>
+                    <p>Corporate platform system builds using premium Elementor blocks.</p>
+                </div>
+                <div class="value-card-item">
+                    <img src="filmora.png" alt="Filmora">
+                    <h4>Filmora</h4>
+                    <p>Timeline editing, multi-track syncing & audio mixing layers.</p>
                 </div>
             </div>
         </div>
@@ -57,8 +125,13 @@
 
     <section id="services" class="services-section">
         <div class="container">
+            <div class="decorative-ornament">
+                <span class="ornament-line"></span>
+                <span class="ornament-flower">✿</span>
+                <span class="ornament-line"></span>
+            </div>
             <h2 class="section-heading">My Projects</h2>
-            <div class="about-deco-separator"></div>
+            <div class="title-sub-curve"></div>
             
             <div class="filter-tabs">
                 <button class="tab-btn active" onclick="filterGallery('graphic', event)">Graphic Designing</button>
@@ -68,98 +141,65 @@
             </div>
             
             <div class="dribbble-grid-layout" id="main-portfolio-gallery"></div>
-        </div>
-    </section>
-
-    <section class="skills-tech-stack-section">
-        <div class="container">
-            <h2 class="section-heading">Skills & Tech Stack</h2>
-            <div class="about-deco-separator"></div>
             
-            <div class="tech-cards-grid-layout">
-                <div class="value-card-item">
-                    <img src="photoshop.png" alt="Photoshop" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5611/5611129.png'">
-                    <h4>Photoshop</h4>
-                    <p>Image editing, manipulation & high-end graphic assets.</p>
-                </div>
-                <div class="value-card-item">
-                    <img src="illustrator.png" alt="Illustrator" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5611/5611117.png'">
-                    <h4>Illustrator</h4>
-                    <p>Vector illustrations, tracing & premium branding logos.</p>
-                </div>
-                <div class="value-card-item">
-                    <img src="indesign.png" alt="InDesign" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5611/5611123.png'">
-                    <h4>InDesign</h4>
-                    <p>Professional print layouts, brochures & digital magazines.</p>
-                </div>
-                <div class="value-card-item">
-                    <img src="coreldraw.png" alt="CorelDraw">
-                    <h4>CorelDraw</h4>
-                    <p>Graphic designing for print media & technical vector tracing.</p>
-                </div>
-                <div class="value-card-item">
-                    <img src="canva.png" alt="Canva">
-                    <h4>Canva</h4>
-                    <p>Fast social media content & modern presentation decks.</p>
-                </div>
-                <div class="value-card-item">
-                    <img src="html.png" alt="HTML5">
-                    <h4>HTML5</h4>
-                    <p>Semantic structuring of responsive modern web platforms.</p>
-                </div>
-                <div class="value-card-item">
-                    <img src="css.png" alt="CSS3">
-                    <h4>CSS3</h4>
-                    <p>Sleek animations, layouts & premium aesthetic styling.</p>
-                </div>
-                <div class="value-card-item">
-                    <img src="javascript.png" alt="JavaScript">
-                    <h4>JavaScript</h4>
-                    <p>Interactive behaviors, logic engines & dynamic scripts.</p>
-                </div>
-                <div class="value-card-item">
-                    <img src="wordpress.png" alt="WordPress">
-                    <h4>WordPress</h4>
-                    <p>Full-scale CMS development & professional Elementor sites.</p>
-                </div>
-                <div class="value-card-item">
-                    <img src="filmora.png" alt="Filmora">
-                    <h4>Filmora</h4>
-                    <p>Cinematic video editing & creative timeline transitions.</p>
-                </div>
-                <div class="value-card-item">
-                    <img src="vn.png" alt="VN Editor">
-                    <h4>VN Editor</h4>
-                    <p>Fast short-form reel editing & mobile-friendly clips.</p>
-                </div>
-                <div class="value-card-item">
-                    <img src="inshot.png" alt="InShot">
-                    <h4>InShot</h4>
-                    <p>Creative filters & video content for social platforms.</p>
-                </div>
+            <div class="view-more-container-block">
+                <button class="hub-view-more-btn" id="galleryViewMoreTrigger" onclick="handleViewMoreAction()">View More</button>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact-section">
         <div class="container">
+            <div class="decorative-ornament">
+                <span class="ornament-line"></span>
+                <span class="ornament-flower">✿</span>
+                <span class="ornament-line"></span>
+            </div>
             <h2 class="contact-main-title">Connect With Us</h2>
-            <div class="contact-deco-separator"></div>
+            <div class="title-sub-curve"></div>
             
             <div class="contact-hub-grid">
                 <div class="hub-info-col">
                     <h3>Contact Information</h3>
                     <div class="hub-info-item">
                         <span class="hub-icon">📍</span>
-                        <div><h4>Address</h4><p>New Delhi, India</p></div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>New Delhi, India</p>
+                        </div>
                     </div>
                     <div class="hub-info-item">
                         <span class="hub-icon">📧</span>
-                        <div><h4>Email</h4><p>musankumari3330@gmail.com</p></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>musankumari3330@gmail.com</p>
+                        </div>
                     </div>
                     <div class="hub-info-item">
                         <span class="hub-icon">📞</span>
-                        <div><h4>Phone</h4><p>+91 8810682518</p></div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 8810682518</p>
+                        </div>
+                    </div>
+                    
+                    <div class="follow-us-block">
+                        <h4>Follow Us</h4>
+                        <div class="follow-icons">
+                            <a href="https://youtube.com/@I.MuskanKumari" target="_blank" class="f-soc-link yt"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="https://instagram.com/i.musankumari" target="_blank" class="f-soc-link ig"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://behance.net/musankumari143/info" target="_blank" class="f-soc-link bh"><i class="fa-brands fa-behance"></i></a>
+                            <a href="https://github.com/musankumari03" target="_blank" class="f-soc-link gh"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank" class="f-soc-link li"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="bhim-payment-node" onclick="triggerUPIPayment()">
+                        <img src="qr.png" alt="UPI QR" class="bhim-qr-thumbnail">
+                        <div class="bhim-meta">
+                            <span class="bhim-address">8810682518@paytm</span>
+                            <small>🛡️ Click here to pay via BHIM UPI</small>
+                        </div>
                     </div>
                 </div>
 
@@ -192,23 +232,32 @@
         <button class="slider-arrow next-arrow" onclick="changeSlide(1)">&#10095;</button>
     </div>
 
-    <footer class="custom-image-matching-footer">
-        <div class="footer-core-wrap">
-            <div class="footer-left-identity">
-                <img src="mk.png" alt="MK Portfolio Logo" class="footer-brand-logo">
-                <div class="footer-identity-divider"></div>
-                <span class="footer-brand-text">Muskan Kumari | Portfolio</span>
+    <footer class="mk-spiritual-gray-footer">
+        <div class="footer-top-row">
+            <div class="footer-quote-block">
+                <img src="mk.png" alt="MK Logo" class="footer-site-logo">
+                <div class="vertical-divider"></div>
+                <p class="quote-text">Muskan Kumari <span class="footer-pipe">|</span> Portfolio</p>
             </div>
-            
-            <div class="footer-right-socials">
-                <a href="https://youtube.com/@I.MuskanKumari" target="_blank" class="f-soc-link yt"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://instagram.com/i.musankumari" target="_blank" class="f-soc-link ig"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://behance.net/musankumari143/info" target="_blank" class="f-soc-link bh"><i class="fa-brands fa-behance"></i></a>
-                <a href="https://github.com/musankumari03" target="_blank" class="f-soc-link gh"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank" class="f-soc-link li"><i class="fa-brands fa-linkedin-in"></i></a>
+            <div class="footer-stay-connected">
+                <h4>Stay Connected</h4>
+                <div class="connected-icons">
+                    <a href="https://youtube.com/@I.MuskanKumari" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://instagram.com/i.musankumari" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://behance.net/musankumari143/info" target="_blank"><i class="fa-brands fa-behance"></i></a>
+                    <a href="https://github.com/musankumari03" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-subscribe-block">
+                <h4>Subscribe for updates</h4>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Your email">
+                    <button class="sub-send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
             </div>
         </div>
-        <div class="footer-copyright-bottom-strip">
+        <div class="footer-bottom-copyright">
             <p>&copy; 2026 Muskan Kumari. All Rights Reserved.</p>
         </div>
     </footer>

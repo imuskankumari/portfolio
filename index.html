@@ -4,43 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muskan Kumari | Portfolio</title>
-    <!-- FontAwesome for Premium Brand Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- EXACT 17244.JPG STYLE REPLICATED GRAND NAV HEADER -->
     <header class="main-header">
         <div class="header-container">
             <div class="header-logo-group">
                 <img src="mk.png" alt="MK Logo" class="site-logo">
-                <div class="logo-text-meta">
-                    <span class="logo-main-name">Muskan Kumari</span>
-                    <span class="logo-sub-tag">Graphic & Web Designer <span class="tag-pipe">|</span> Portfolio</span>
-                </div>
             </div>
-            <nav class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#services">Projects</a>
-                <a href="#contact">Contact</a>
+            
+            <button class="mobile-nav-toggle" id="menuToggleBtn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links" id="mainNavigation">
+                <a href="#home" onclick="closeMobileMenu()">Home</a>
+                <a href="#services" onclick="closeMobileMenu()">Projects</a>
+                <a href="#contact" onclick="closeMobileMenu()">Contact</a>
             </nav>
         </div>
         <div class="header-deco-line"></div>
     </header>
 
-    <!-- HERO IMAGE CONTAINER -->
     <section id="home" class="hero-section">
         <img src="hero.png" alt="Hero Banner" class="hero-fluid-img">
     </section>
 
-    <!-- WELCOME & ABOUT SECTION (CENTERED PYRAMID FORMAT) -->
     <section id="about" class="about-section">
         <div class="container compact-width">
             <h1 class="welcome-heading">Welcome to My Portfolio</h1>
             <div class="about-deco-separator"></div>
             
-            <!-- Centered Pyramid Typography Array -->
             <div class="pyramid-text-wrapper">
                 <p class="pyramid-l1">I am Muskan Kumari and I am from Delhi, an aspiring professional Graphic & Web Designer.</p>
                 <p class="pyramid-l2">I am skilled in Adobe Photoshop, Adobe Illustrator, Adobe InDesign, CorelDraw, Canva, HTML, CSS, JavaScript, and WordPress.</p>
@@ -48,9 +46,8 @@
                 <p class="pyramid-l4">and Vector Illustration Tracing.</p>
             </div>
 
-            <!-- Two Side-by-Side Professional Profile Cards -->
-            <div class="about-double-grid">
-                <div class="profile-display-card">
+            <div class="about-single-grid">
+                <div class="academic-profile-card">
                     <h3>Academic Education</h3>
                     <ul>
                         <li>Senior Secondary Education From CBSE</li>
@@ -59,20 +56,10 @@
                         <li>Diploma In Computer Applications DCA Certified</li>
                     </ul>
                 </div>
-                <div class="profile-display-card">
-                    <h3>Technical Skills</h3>
-                    <ul>
-                        <li><strong>Graphic Designing:</strong> Adobe Photoshop | Adobe Illustrator | Adobe InDesign | CorelDraw | Canva</li>
-                        <li><strong>Web Designing:</strong> HTML | CSS | JavaScript | WordPress</li>
-                        <li><strong>Video Editing:</strong> Filmora | VN | InShot</li>
-                        <li><strong>MS Office:</strong> MS Word | MS Excel | MS PowerPoint</li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- DRIBBBLE STYLE PROJECTS GALLERY SECTION -->
     <section id="services" class="services-section">
         <div class="container">
             <h2 class="section-heading">My Projects</h2>
@@ -86,65 +73,58 @@
             </div>
             
             <div class="dribbble-grid-layout" id="main-portfolio-gallery">
-                <!-- Loaded via JavaScript dynamically -->
-            </div>
+                </div>
         </div>
     </section>
 
-    <!-- SKILLS SECTION WITH PRECISE LINE-BY-LINE BRAND MATRIX -->
     <section class="skills-tech-stack-section">
         <div class="container">
             <h2 class="section-heading">Skills & Tech Stack</h2>
             <div class="about-deco-separator"></div>
             
             <div class="tech-rows-container">
-                <!-- Line 1: Graphic Designing Softwares -->
                 <div class="skill-category-row">
                     <span class="row-label">Graphic Designing:</span>
                     <div class="tech-cards-flex">
-                        <div class="tech-card color-ps"><i class="fa-brands fa-adobe"></i><span>Photoshop</span></div>
-                        <div class="tech-card color-ai"><i class="fa-solid fa-pen-nib"></i><span>Illustrator</span></div>
-                        <div class="tech-card color-id"><i class="fa-solid fa-book-open"></i><span>InDesign</span></div>
-                        <div class="tech-card color-corel"><i class="fa-solid fa-palette"></i><span>CorelDraw</span></div>
-                        <div class="tech-card color-canva"><i class="fa-solid fa-bezier-curve"></i><span>Canva</span></div>
+                        <div class="tech-card-item"><img src="photoshop.png" alt="Photoshop" onerror="this.style.display='none'"><span>Photoshop</span></div>
+                        <div class="tech-card-item"><img src="illustrator.png" alt="Illustrator" onerror="this.style.display='none'"><span>Illustrator</span></div>
+                        <div class="tech-card-item"><img src="indesign.png" alt="InDesign" onerror="this.style.display='none'"><span>InDesign</span></div>
+                        <div class="tech-card-item"><img src="coreldraw.png" alt="CorelDraw" onerror="this.style.display='none'"><span>CorelDraw</span></div>
+                        <div class="tech-card-item"><img src="canva.png" alt="Canva" onerror="this.style.display='none'"><span>Canva</span></div>
                     </div>
                 </div>
 
-                <!-- Line 2: Web Designing Softwares -->
                 <div class="skill-category-row">
                     <span class="row-label">Web Designing:</span>
                     <div class="tech-cards-flex">
-                        <div class="tech-card color-html"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
-                        <div class="tech-card color-css"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
-                        <div class="tech-card color-js"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
-                        <div class="tech-card color-wp"><i class="fa-brands fa-wordpress"></i><span>WordPress</span></div>
+                        <div class="tech-card-item"><img src="html.png" alt="HTML5" onerror="this.style.display='none'"><span>HTML5</span></div>
+                        <div class="tech-card-item"><img src="css.png" alt="CSS3" onerror="this.style.display='none'"><span>CSS3</span></div>
+                        <div class="tech-card-item"><img src="javascript.png" alt="JavaScript" onerror="this.style.display='none'"><span>JavaScript</span></div>
+                        <div class="tech-card-item"><img src="wordpress.png" alt="WordPress" onerror="this.style.display='none'"><span>WordPress</span></div>
                     </div>
                 </div>
 
-                <!-- Line 3: Video Editing Softwares -->
                 <div class="skill-category-row">
                     <span class="row-label">Video Editing:</span>
                     <div class="tech-cards-flex">
-                        <div class="tech-card color-filmora"><i class="fa-solid fa-video"></i><span>Filmora</span></div>
-                        <div class="tech-card color-vn"><i class="fa-solid fa-clapperboard"></i><span>VN Editor</span></div>
-                        <div class="tech-card color-inshot"><i class="fa-solid fa-mobile-screen-button"></i><span>InShot</span></div>
+                        <div class="tech-card-item"><img src="filmora.png" alt="Filmora" onerror="this.style.display='none'"><span>Filmora</span></div>
+                        <div class="tech-card-item"><img src="vn.png" alt="VN Editor" onerror="this.style.display='none'"><span>VN Editor</span></div>
+                        <div class="tech-card-item"><img src="inshot.png" alt="InShot" onerror="this.style.display='none'"><span>InShot</span></div>
                     </div>
                 </div>
 
-                <!-- Line 4: MS Office Matrix -->
                 <div class="skill-category-row">
                     <span class="row-label">MS Office:</span>
                     <div class="tech-cards-flex">
-                        <div class="tech-card color-word"><i class="fa-regular fa-file-word"></i><span>MS Word</span></div>
-                        <div class="tech-card color-excel"><i class="fa-regular fa-file-excel"></i><span>MS Excel</span></div>
-                        <div class="tech-card color-powerpoint"><i class="fa-regular fa-file-powerpoint"></i><span>MS PowerPoint</span></div>
+                        <div class="tech-card-item"><img src="msword.png" alt="MS Word" onerror="this.style.display='none'"><span>MS Word</span></div>
+                        <div class="tech-card-item"><img src="msexcel.png" alt="MS Excel" onerror="this.style.display='none'"><span>MS Excel</span></div>
+                        <div class="tech-card-item"><img src="mspowerpoint.png" alt="MS PowerPoint" onerror="this.style.display='none'"><span>MS PowerPoint</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONNECT WITH US SECTION (Exact Style Match from Image 17159.png) -->
     <section id="contact" class="contact-section">
         <div class="container">
             <h2 class="contact-main-title">Connect With Us</h2>
@@ -220,7 +200,6 @@
         </div>
     </section>
 
-    <!-- INTERACTIVE SLIDER OVERLAY LIGHTBOX -->
     <div class="gallery-lightbox" id="galleryLightbox">
         <span class="lightbox-close" onclick="closeGallerySlider()">&times;</span>
         <button class="slider-arrow prev-arrow" onclick="changeSlide(-1)">&#10094;</button>
@@ -228,7 +207,6 @@
         <button class="slider-arrow next-arrow" onclick="changeSlide(1)">&#10095;</button>
     </div>
 
-    <!-- CLEAN PROFESSIONAL STRIP GRAY FOOTER (Om Completely Removed) -->
     <footer class="mk-spiritual-gray-footer">
         <div class="footer-top-row">
             <div class="footer-quote-block">
@@ -262,4 +240,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-

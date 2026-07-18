@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(menuToggleBtn && mainNavigation) {
         menuToggleBtn.addEventListener('click', () => {
-            menuToggleBtn.classList.toggle('open');
             mainNavigation.classList.toggle('mobile-active');
         });
     }
@@ -26,10 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function closeMobileMenu() {
-    const menuToggleBtn = document.getElementById('menuToggleBtn');
     const mainNavigation = document.getElementById('mainNavigation');
-    if(menuToggleBtn && mainNavigation) {
-        menuToggleBtn.classList.remove('open');
+    if(mainNavigation) {
         mainNavigation.classList.remove('mobile-active');
     }
 }
@@ -43,6 +40,7 @@ function filterGallery(category, event) {
     switchTab(category);
 }
 
+// Minimal program layout controls
 function switchTab(category) {
     activeTabGlobal = category;
     visibleCount = 6; 
@@ -56,7 +54,6 @@ function renderGrid() {
     if (!targetGrid) return;
     
     targetGrid.innerHTML = '';
-    
     const sliceItems = currentCategoryArray.slice(0, visibleCount);
 
     sliceItems.forEach((item, idx) => {
@@ -91,11 +88,7 @@ function renderGrid() {
     });
 
     if (viewMoreBtn) {
-        if (visibleCount >= currentCategoryArray.length) {
-            viewMoreBtn.style.display = 'none';
-        } else {
-            viewMoreBtn.style.display = 'inline-block';
-        }
+        viewMoreBtn.style.display = (visibleCount >= currentCategoryArray.length) ? 'none' : 'inline-block';
     }
 }
 
@@ -131,9 +124,7 @@ function openGallerySlider(index) {
     if(lightbox) {
         renderLightboxActiveContent();
         lightbox.style.display = 'flex';
-        setTimeout(() => {
-            lightbox.classList.add('active-magic-box');
-        }, 10);
+        lightbox.classList.add('active-magic-box');
     }
 }
 
@@ -143,17 +134,10 @@ function renderLightboxActiveContent() {
     if(!contentWrap) return;
     
     contentWrap.innerHTML = '';
-
     if(currentAsset.type === 'video') {
-        contentWrap.innerHTML = `
-            <video id="lightboxVideoNode" src="${currentAsset.src}" controls autoplay style="width:100%; max-height:70vh; object-fit:contain; border-radius:12px;"></video>
-            <p class="lightbox-caption">${currentAsset.name}</p>
-        `;
+        contentWrap.innerHTML = `<video id="lightboxVideoNode" src="${currentAsset.src}" controls autoplay style="width:100%; max-height:70vh; object-fit:contain; border-radius:12px;"></video><p class="lightbox-caption">${currentAsset.name}</p>`;
     } else {
-        contentWrap.innerHTML = `
-            <img id="lightboxImageNode" src="${currentAsset.src}" alt="${currentAsset.name}">
-            <p class="lightbox-caption">${currentAsset.name}</p>
-        `;
+        contentWrap.innerHTML = `<img id="lightboxImageNode" src="${currentAsset.src}" alt="${currentAsset.name}"><p class="lightbox-caption">${currentAsset.name}</p>`;
     }
 }
 
@@ -166,34 +150,10 @@ function closeGallerySlider() {
     const lightbox = document.getElementById('galleryLightbox');
     if(lightbox) {
         lightbox.classList.remove('active-magic-box');
-        setTimeout(() => {
-            lightbox.style.display = 'none';
-            const contentWrap = document.getElementById('lightboxMediaContent');
-            if(contentWrap) contentWrap.innerHTML = ''; 
-        }, 300);
+        lightbox.style.display = 'none';
     }
 }
-
-document.addEventListener('keydown', (e) => {
-    const lightbox = document.getElementById('galleryLightbox');
-    if (lightbox && lightbox.style.display === 'flex') {
-        if (e.key === 'ArrowRight') changeSlide(1);
-        if (e.key === 'ArrowLeft') changeSlide(-1);
-        if (e.key === 'Escape') closeGallerySlider();
-    }
-});
 
 function triggerUPIPayment() {
     window.location.href = "upi://pay?pa=8810682518@paytm&pn=Muskan%20Kumari&cu=INR";
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('hub-action-form');
-    if(form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Your message was transferred securely!');
-            form.reset();
-        });
-    }
-});

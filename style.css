@@ -65,7 +65,6 @@ body {
     align-items: center;
 }
 
-/* Prominent Crisp Header Logo (~70px height) */
 .site-logo {
     height: 70px;
     width: auto;
@@ -154,7 +153,7 @@ body {
 }
 
 /* ==========================================================================
-   ABOUT ME SECTION (GREEN MK FLOATING WHITE CARD)
+   ABOUT ME SECTION (RESTORED CLEAN WHITE FLOATING CARD)
    ========================================================================== */
 .about-section {
     background: #FFFFFF;
@@ -180,19 +179,18 @@ body {
     justify-content: center;
 }
 
-/* Floating White Card with 2px Orange Border & Glow Shadow */
-.mk-floating-card {
+/* Clean White Card with Soft Shadow (No Orange Borders) */
+.clean-white-card {
     padding: 12px;
     background: #FFFFFF;
-    border: 2px solid #FF6B00;
     border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(255, 107, 0, 0.25);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.mk-floating-card:hover {
+.clean-white-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(255, 107, 0, 0.35);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
 .profile-image-styled {
@@ -200,7 +198,7 @@ body {
     max-width: 280px;
     height: auto;
     object-fit: contain;
-    border-radius: 10px;
+    border-radius: 12px;
     display: block;
 }
 
@@ -288,7 +286,7 @@ body {
 }
 
 /* ==========================================================================
-   PROJECTS SECTION (PURE WHITE CARDS & EXACT MK LOGO FOOTER)
+   PROJECTS SECTION (FIXED CARD HEIGHTS & RESTORED MK AVATAR)
    ========================================================================== */
 .services-section {
     background: #FFFFFF;
@@ -337,7 +335,7 @@ body {
     .dribbble-grid-layout { grid-template-columns: 1fr; gap: 20px; }
 }
 
-/* White Cards with Thin Border (NO BLACK CONTAINERS) */
+/* White Cards with Thin Border */
 .dribbble-item-card {
     background: #FFFFFF;
     border-radius: 14px;
@@ -350,7 +348,7 @@ body {
 
 .dribbble-item-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 .dribbble-img-frame {
@@ -360,7 +358,7 @@ body {
     position: relative;
 }
 
-/* Card Ratios */
+/* Card Ratios - Standard Square 1:1 Height */
 .aspect-square {
     aspect-ratio: 1 / 1;
 }
@@ -377,7 +375,7 @@ body {
     display: block;
 }
 
-/* Clean Meta Row: mklogo.png on Left, Interactive Heart on Right */
+/* Restored Card Meta Row: MK Circle + Muskan on Left, Heart on Right */
 .dribbble-meta-row {
     display: flex;
     justify-content: space-between;
@@ -387,11 +385,29 @@ body {
     border-top: 1px solid #F3F4F6;
 }
 
-.card-footer-logo {
-    height: 20px;
-    width: auto;
-    object-fit: contain;
-    display: block;
+.dribbble-user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dribbble-avatar {
+    width: 26px;
+    height: 26px;
+    background: #FF6B00;
+    color: #FFFFFF;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dribbble-username {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #111111;
 }
 
 .dribbble-stats {
@@ -502,20 +518,17 @@ body {
 }
 
 /* ==========================================================================
-   UNIFIED DARK FOOTER & PRIVACY CONTACT SECTION
+   DEDICATED STAND-ALONE CONTACT SECTION
    ========================================================================== */
-.unified-dark-footer {
-    background: #111111;
-    color: #CCCCCC;
-    padding-top: 60px;
-    border-top: 4px solid #FF6B00;
+.contact-section {
+    background: #FFFFFF;
+    border-top: 1px solid #EEEEEE;
 }
 
 .contact-hub-grid {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 50px;
-    padding-bottom: 60px;
 }
 
 @media (max-width: 850px) {
@@ -525,114 +538,47 @@ body {
     }
 }
 
-.location-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #1A1A1A;
-    color: #FFFFFF;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    border: 1px solid #2A2A2A;
-    margin-bottom: 20px;
-}
-
-.location-badge i {
+.hub-info-col h3, 
+.hub-form-col h3 {
+    font-size: 1.4rem;
     color: #FF6B00;
+    margin-bottom: 25px;
+    font-weight: 700;
 }
 
-/* Stylish Total Unique Visitors Card */
-.visitor-widget-card {
+.hub-info-item {
     display: flex;
-    align-items: center;
     gap: 16px;
-    background: #1A1A1A;
-    border: 1px solid #FF6B00;
-    padding: 18px 20px;
-    border-radius: 14px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.15);
+    margin-bottom: 24px;
+    align-items: center;
 }
 
-.widget-icon {
-    width: 46px;
-    height: 46px;
-    background: rgba(255, 107, 0, 0.15);
+.icon-round-bg {
+    width: 48px;
+    height: 48px;
+    background-color: #FFF0E5;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: #FF6B00;
+    flex-shrink: 0;
 }
 
-.widget-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.widget-label {
-    font-size: 0.85rem;
-    color: #AAAAAA;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.widget-count {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: #FFFFFF;
-}
-
-.stay-connected-block h3, 
-.hub-form-col h3 {
-    font-size: 1.4rem;
-    color: #FF6B00;
-    margin-bottom: 20px;
+.hub-info-item h4 {
+    font-size: 1rem;
+    color: #111111;
     font-weight: 700;
+    margin-bottom: 2px;
 }
 
-/* Interactive Social Cards on Left */
-.social-cards-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+.hub-info-item p {
+    font-size: 0.98rem;
+    color: #555555;
 }
 
-.social-card-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: #1A1A1A;
-    border: 1px solid #2A2A2A;
-    padding: 14px 18px;
-    border-radius: 10px;
-    color: #FFFFFF;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.25s ease;
-}
-
-.social-card-item i {
-    font-size: 1.2rem;
-    color: #FF6B00;
-}
-
-.social-card-item:hover {
-    border-color: #FF6B00;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.2);
-}
-
-.social-card-item.yt:hover i { color: #FF0000; }
-.social-card-item.ig:hover i { color: #E1306C; }
-.social-card-item.bh:hover i { color: #1769FF; }
-.social-card-item.li:hover i { color: #0A66C2; }
-
-/* Contact Form with Crisp Orange Input Borders */
+/* Form Styling with Crisp Orange Input Borders */
 #hub-action-form {
     display: flex;
     flex-direction: column;
@@ -643,13 +589,13 @@ body {
     display: flex;
     align-items: center;
     border: 1.5px solid #FF6B00;
-    background: #1A1A1A;
+    background: #FFFFFF;
     border-radius: 8px;
     padding: 4px 16px;
 }
 
 .field-container:focus-within {
-    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.25);
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
 }
 
 .field-icon {
@@ -665,7 +611,7 @@ body {
     outline: none;
     padding: 12px 0;
     font-size: 1rem;
-    color: #FFFFFF;
+    color: #111111;
     background: transparent;
 }
 
@@ -674,22 +620,16 @@ body {
     padding-top: 10px;
 }
 
-.action-buttons-group {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
 .hub-submit-btn {
     background: #FF6B00;
     color: #FFFFFF;
     border: none;
-    padding: 14px 32px;
+    padding: 14px 36px;
     font-size: 1rem;
     font-weight: 700;
     border-radius: 8px;
     cursor: pointer;
+    align-self: flex-start;
     transition: background 0.2s ease;
 }
 
@@ -697,33 +637,183 @@ body {
     background: #E65100;
 }
 
-.whatsapp-chat-btn {
-    display: inline-flex;
+/* ==========================================================================
+   ORIGINAL CLASSIC DARK FOOTER (#111111)
+   ========================================================================== */
+.main-footer {
+    background: #111111;
+    color: #CCCCCC;
+    padding-top: 60px;
+    border-top: 3px solid #FF6B00;
+}
+
+.footer-container-3col {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    gap: 40px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #222222;
+}
+
+@media (max-width: 850px) {
+    .footer-container-3col {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
+
+.footer-brand-row {
+    display: flex;
     align-items: center;
-    gap: 8px;
-    background: #25D366;
-    color: #FFFFFF;
-    padding: 14px 24px;
-    font-size: 1rem;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.footer-blend-logo {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.9;
+}
+
+.footer-brand-title {
+    font-size: 1.1rem;
     font-weight: 700;
-    border-radius: 8px;
+    color: #FFFFFF;
+}
+
+.footer-subtext {
+    font-size: 0.9rem;
+    color: #888888;
+    margin-bottom: 16px;
+}
+
+.footer-pipe {
+    color: #FF6B00;
+}
+
+/* Circular Social Icons ONLY (No Text Labels Underneath) */
+.footer-social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #1A1A1A;
+    border: 1px solid #2A2A2A;
+    color: #FFFFFF;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    transition: all 0.25s ease;
+}
+
+.footer-social-links a:hover {
+    background: #FF6B00;
+    border-color: #FF6B00;
+    transform: translateY(-3px);
+}
+
+.footer-col h4 {
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+.footer-nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-nav-links a {
+    color: #CCCCCC;
+    transition: color 0.2s ease;
+}
+
+.footer-nav-links a:hover {
+    color: #FF6B00;
+}
+
+/* Compact Subscribe Form */
+.footer-subscribe-form {
+    display: flex;
+    background: #1A1A1A;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 2px;
+    max-width: 300px;
+}
+
+.footer-subscribe-form input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    background: transparent;
+}
+
+.footer-subscribe-form button {
+    background: #FF6B00;
+    color: #FFFFFF;
+    border: none;
+    padding: 0 16px;
+    cursor: pointer;
+    font-size: 1rem;
     transition: background 0.2s ease;
 }
 
-.whatsapp-chat-btn:hover {
-    background: #1EBE57;
+.footer-subscribe-form button:hover {
+    background: #E65100;
 }
 
-/* Bottom Bar (NO LOGO) */
+/* Centered Bottom Footer Bar */
 .footer-bottom-bar {
     padding: 24px 0;
-    border-top: 1px solid #1A1A1A;
     background: #0A0A0A;
     text-align: center;
 }
 
+.footer-bottom-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-visitor-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #1A1A1A;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid #282828;
+    color: #BBBBBB;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.footer-visitor-badge i {
+    color: #FF6B00;
+}
+
+.footer-visitor-badge span {
+    color: #FF6B00;
+    font-weight: 700;
+}
+
 .footer-bottom-bar p {
-    font-size: 0.9rem;
-    color: #888888;
+    font-size: 0.85rem;
+    color: #777777;
 }
 

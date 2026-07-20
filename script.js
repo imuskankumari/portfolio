@@ -50,8 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initialize 24-hour Session-based Visitor Counter
-    initVisitorCounter();
+    // Initialize Animated Visitor Counter with Scroll Observer
+    setupAnimatedVisitorCounter();
+
+    // Setup Active Nav Link Highlighting on Scroll
+    setupScrollSpy();
 
     switchTab('graphic');
 });
@@ -99,16 +102,13 @@ function renderGrid() {
             ? `<video src="${item.src}" muted loop autoplay playsinline preload="metadata"></video><span class="video-reel-tag">▶ Reel</span>` 
             : `<img src="${item.src}" loading="lazy" onerror="this.src='placeholder.png'">`;
 
-        // Restored Card footer: MK Circular Badge + Muskan on left, Heart on right
+        // Card footer: Small MK Orange Avatar Badge ONLY on Left (NO Muskan text), Heart on Right
         itemNode.innerHTML = `
             <div class="dribbble-img-frame ${item.aspectClass}" onclick="openGallerySlider(${idx})">
                 ${mediaContent}
             </div>
             <div class="dribbble-meta-row">
-                <div class="dribbble-user">
-                    <span class="dribbble-avatar">MK</span>
-                    <span class="dribbble-username">Muskan</span>
-                </div>
+                <span class="dribbble-avatar-only">MK</span>
                 <div class="dribbble-stats">
                     <span class="${heartStateClass}" onclick="executeRealLiking('${item.id}', ${idx}, event)">
                         <i class="${isLiked ? 'fa-solid' : 'fa-regular'} fa-heart"></i> <span class="count-lbl">${item.likes}</span>
@@ -192,25 +192,79 @@ function handleFormSubmit(event) {
     alert('Thank you for your message! It has been received successfully.');
 }
 
-// 24-Hour Session-Based Unique Visitor Counter logic
-function initVisitorCounter() {
-    const countDisplay = document.getElementById('uniqueVisitorCount');
-    if (!countDisplay) return;
+// --------------------------------------------------------------------------
+// 1-Second Dynamic Counter Animation (Triggers when scrolled into view)
+// --------------------------------------------------------------------------
+function setupAnimatedVisitorCounter() {
+    const countDisplay = document.getElementById('animatedVisitorCount');
+    const container = document.getElementById('visitorCounterContainer');
+    if (!countDisplay || !container) return;
 
+    // Calculate/Retrieve Visitor Count (24-hr session tracking)
     const storageKey = 'mk_unique_visitor_count';
     const timestampKey = 'mk_last_visit_time';
     const now = new Date().getTime();
     const twentyFourHours = 24 * 60 * 60 * 1000;
 
-    let visits = parseInt(localStorage.getItem(storageKey)) || 128;
+    let targetCount = parseInt(localStorage.getItem(storageKey)) || 135;
     const lastVisit = parseInt(localStorage.getItem(timestampKey)) || 0;
 
     if (!lastVisit || (now - lastVisit) > twentyFourHours) {
-        visits += 1;
-        localStorage.setItem(storageKey, visits);
+        targetCount += 1;
+        localStorage.setItem(storageKey, targetCount);
         localStorage.setItem(timestampKey, now);
     }
 
-    countDisplay.textContent = visits;
+    let hasAnimated = false;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entries[0].isIntersecting && !hasAnimated) {
+                hasAnimated = true;
+                animateCounter(countDisplay, 1, targetCount, 1000); // 1-second animation
+            }
+        });
+    }, { threshold: 0.3 });
+
+    observer.observe(container);
+}
+
+function animateCounter(element, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const currentVal = Math.floor(progress * (end - start) + start);
+        element.textContent = currentVal + (progress === 1 ? '+' : '');
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+// --------------------------------------------------------------------------
+// ScrollSpy: Highlights Active Nav Link in Pure White with Bottom Underline
+// --------------------------------------------------------------------------
+function setupScrollSpy() {
+    const sections = document.querySelectorAll('section, footer');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    window.addEventListener('scroll', () => {
+        let current = 'home';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= (sectionTop - 120)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === `#${current}`) {
+                item.classList.add('active');
+            }
+        });
+    });
 }
 

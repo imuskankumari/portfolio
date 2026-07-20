@@ -43,9 +43,9 @@
             <h1 class="section-title">Welcome to Muskan Kumari's Portfolio</h1>
             
             <div class="about-split-layout">
-                <!-- Left Column: Green Logo with Orange Accent Border & Glow Shadow -->
+                <!-- Left Column: Green Logo in Floating Card with Orange Border & Glow Shadow -->
                 <div class="about-left-logo-block">
-                    <div class="orange-glow-card">
+                    <div class="mk-floating-card">
                         <img src="logo.png" alt="MK Green Logo" class="profile-image-styled">
                     </div>
                 </div>
@@ -60,7 +60,7 @@
         </div>
     </section>
 
-    <!-- SKILLS & TECH STACK SECTION (PURE WHITE MARQUEE) -->
+    <!-- SKILLS & TECH STACK SECTION (PURE WHITE & INFINITE MARQUEE) -->
     <section id="skills" class="skills-tech-stack-section">
         <div class="container">
             <h2 class="section-title">Skills & Tech Stack</h2>
@@ -88,7 +88,7 @@
                     <div class="value-card-item"><img src="vn.png" alt="VN"><h4>VN</h4></div>
                     <div class="value-card-item"><img src="inshot.png" alt="InShot"><h4>InShot</h4></div>
 
-                    <!-- Duplicated Set 2 for Seamless Marquee Loop -->
+                    <!-- Duplicated Set 2 for Infinite Loop -->
                     <div class="value-card-item"><img src="photoshop.png" alt="Photoshop"><h4>Adobe Photoshop</h4></div>
                     <div class="value-card-item"><img src="illustrator.png" alt="Illustrator"><h4>Adobe Illustrator</h4></div>
                     <div class="value-card-item"><img src="indesign.png" alt="InDesign"><h4>Adobe InDesign</h4></div>
@@ -141,37 +141,53 @@
         <button class="slider-arrow next-arrow" onclick="changeSlide(1)">&#10095;</button>
     </div>
 
-    <!-- PRIVACY-PROTECTED CONTACT SECTION & FOOTER BLOCK -->
+    <!-- PRIVACY-FIRST CONTACT & UNIFIED FOOTER SECTION -->
     <footer class="unified-dark-footer" id="contact">
         <div class="container">
-            <!-- Contact Block -->
+            <!-- Contact Grid Layout -->
             <div class="contact-hub-grid">
-                <!-- Left: Social Links -->
+                <!-- Left Column: Location, Visitor Counter Widget, & Social Links -->
                 <div class="hub-info-col">
-                    <h3>Follow Us</h3>
-                    <p class="privacy-note">Connect with us on social media for design insights and project updates.</p>
-                    
-                    <div class="social-cards-wrapper">
-                        <a href="https://youtube.com/@I.MuskanKumari" target="_blank" class="social-card-item yt">
-                            <i class="fa-brands fa-youtube"></i>
-                            <span>YouTube</span>
-                        </a>
-                        <a href="https://instagram.com/i.musankumari" target="_blank" class="social-card-item ig">
-                            <i class="fa-brands fa-instagram"></i>
-                            <span>Instagram</span>
-                        </a>
-                        <a href="https://www.behance.net/muskankumari143" target="_blank" class="social-card-item bh">
-                            <i class="fa-brands fa-behance"></i>
-                            <span>Behance</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank" class="social-card-item li">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                            <span>LinkedIn</span>
-                        </a>
+                    <div class="location-badge">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>New Delhi, India</span>
+                    </div>
+
+                    <!-- Unique Visitors Widget (Driven by JS localStorage 24hr session logic) -->
+                    <div class="visitor-widget-card">
+                        <div class="widget-icon">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <div class="widget-details">
+                            <span class="widget-label">Total Unique Visitors</span>
+                            <span class="widget-count" id="uniqueVisitorCount">Loading...</span>
+                        </div>
+                    </div>
+
+                    <div class="stay-connected-block">
+                        <h3>Stay Connected</h3>
+                        <div class="social-cards-wrapper">
+                            <a href="https://youtube.com/@I.MuskanKumari" target="_blank" class="social-card-item yt" aria-label="YouTube">
+                                <i class="fa-brands fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                            <a href="https://instagram.com/i.musankumari" target="_blank" class="social-card-item ig" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://www.behance.net/muskankumari143" target="_blank" class="social-card-item bh" aria-label="Behance">
+                                <i class="fa-brands fa-behance"></i>
+                                <span>Behance</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank" class="social-card-item li" aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Right: Formspree Contact Form + WhatsApp Action -->
+                <!-- Right Column: Contact Form with Formspree & WhatsApp Chat -->
                 <div class="hub-form-col">
                     <h3>Send Us a Message</h3>
                     <form id="hub-action-form" action="https://formspree.io/f/muskankumari3330@gmail.com" method="POST" onsubmit="handleFormSubmit(event)">
@@ -197,51 +213,11 @@
                     </form>
                 </div>
             </div>
-
-            <!-- Footer Columns (NO LOGO) -->
-            <div class="footer-container-3col">
-                <!-- Left Column -->
-                <div class="footer-col footer-col-left">
-                    <p class="footer-brand-title">Muskan Kumari <span class="footer-pipe">|</span> Portfolio</p>
-                    <p class="footer-subtext">Stay Connected</p>
-                    <div class="footer-social-links">
-                        <a href="https://youtube.com/@I.MuskanKumari" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="https://instagram.com/i.musankumari" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.behance.net/muskankumari143" target="_blank" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
-                        <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-
-                <!-- Middle Column -->
-                <div class="footer-col footer-col-middle">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-nav-links">
-                        <li><a href="#top">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Right Column -->
-                <div class="footer-col footer-col-right">
-                    <h4>Subscribe for updates</h4>
-                    <form class="footer-subscribe-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
-                    </form>
-                </div>
-            </div>
         </div>
 
-        <!-- Bottom Bar with Unique Visitor Counter Badge -->
+        <!-- Bottom Bar (Strictly No Logos) -->
         <div class="footer-bottom-bar">
-            <div class="footer-bottom-content">
-                <p>&copy; 2026 Muskan Kumari. All Rights Reserved.</p>
-                <div class="footer-visitor-badge">
-                    <i class="fa-solid fa-eye"></i> Unique Profile Visits: <span id="visitorCountVal">Loading...</span>
-                </div>
-            </div>
+            <p>&copy; 2026 Muskan Kumari. All Rights Reserved.</p>
         </div>
     </footer>
 

@@ -4,69 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muskan Kumari | Portfolio</title>
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- HEADER / NAVIGATION -->
     <header class="main-header">
         <div class="header-container">
-            <div class="header-logo-group">
+            <a href="#home" class="logo-link">
                 <img src="mklogo.png" alt="MK Logo" class="site-logo">
-            </div>
+            </a>
+            
             <button class="mobile-nav-toggle" id="menuToggleBtn" aria-label="Toggle Menu">
-                <span></span><span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
+
             <nav class="nav-links" id="mainNavigation">
                 <a href="#home" onclick="closeMobileMenu()">Home</a>
-                <a href="#services" onclick="closeMobileMenu()">Projects</a>
+                <a href="#about" onclick="closeMobileMenu()">About</a>
+                <a href="#skills" onclick="closeMobileMenu()">Skills</a>
+                <a href="#projects" onclick="closeMobileMenu()">Projects</a>
                 <a href="#contact" onclick="closeMobileMenu()">Contact</a>
             </nav>
         </div>
-        <div class="header-deco-line"></div>
     </header>
 
+    <!-- HERO BANNER SECTION -->
     <section id="home" class="hero-section">
         <img src="hero.png" alt="Hero Banner" class="hero-fluid-img">
     </section>
 
+    <!-- ABOUT ME / WELCOME SECTION -->
     <section id="about" class="about-section">
-        <div class="container-center">
-            <div class="decorative-ornament-top">❧ ~ ❧</div>
-            <h1 class="welcome-heading">Welcome to My Portfolio</h1>
-            <div class="title-sub-curve"></div>
+        <div class="container">
+            <h1 class="section-title">Welcome to My Portfolio</h1>
             
             <div class="about-split-layout">
                 <div class="about-left-text-block">
-                    <div class="profile-narrative-paragraph">
-                        <p>I am Muskan Kumari and I am from Delhi, an aspiring professional Graphic & Web Designer. I specialize in Graphic Design, Website Design, and Vector Illustration Tracing.</p>
-                        <p>I am skilled in Adobe Photoshop, Adobe Illustrator, Adobe InDesign, CorelDraw, Canva, HTML, CSS, JavaScript, WordPress, and Google Sites. Driven by core dedication to high-end design structures, I have successfully completed my Senior Secondary Education from CBSE. Furthermore, I am professionally certified in Course on Computer Concepts (CCC), Basic Computer Course (BCC), and hold a formal Diploma In Computer Applications (DCA).</p>
-                    </div>
+                    <p class="profile-narrative">
+                        Hi, I am Muskan Kumari from Delhi, a passionate Graphic & Web Designer. I work professionally as a Graphic Designer, Web Designer, Video Editor, and AI Creator. I am skilled in Adobe Photoshop, Illustrator, InDesign, CorelDraw, and Canva. I also build clean websites using HTML, CSS, JavaScript, WordPress, and Google Sites. I do video editing using Filmora, VN, and InShot. Additionally, I work as an AI Creator using all AI tools to create AI visuals, AI animation videos, and AI motion graphics.
+                    </p>
                 </div>
                 <div class="about-right-logo-block">
-                    <img src="logo.png" alt="MK Profile Logo" class="about-floating-logo">
+                    <img src="logo.png" alt="Profile Visual" class="profile-image-rounded">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="skills-tech-stack-section">
-        <div class="container-center">
-            <div class="decorative-ornament-top">❧ ~ ❧</div>
-            <h2 class="section-heading">Skills & Tech Stack</h2>
-            <div class="title-sub-curve"></div>
+    <!-- SKILLS & TECH STACK SECTION -->
+    <section id="skills" class="skills-tech-stack-section">
+        <div class="container">
+            <h2 class="section-title">Skills & Tech Stack</h2>
             
             <div class="tech-horizontal-scroll-row">
                 <div class="value-card-item">
-                    <img src="photoshop.png" alt="Adobe Photoshop">
+                    <img src="photoshop.png" alt="Adobe Photoshop" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5611/5611129.png'">
                     <h4>Adobe Photoshop</h4>
                 </div>
                 <div class="value-card-item">
-                    <img src="illustrator.png" alt="Adobe Illustrator">
+                    <img src="illustrator.png" alt="Adobe Illustrator" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5611/5611117.png'">
                     <h4>Adobe Illustrator</h4>
                 </div>
                 <div class="value-card-item">
-                    <img src="indesign.png" alt="Adobe InDesign">
+                    <img src="indesign.png" alt="Adobe InDesign" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5611/5611123.png'">
                     <h4>Adobe InDesign</h4>
                 </div>
                 <div class="value-card-item">
@@ -145,17 +150,16 @@
         </div>
     </section>
 
-    <section id="services" class="services-section">
-        <div class="container-center">
-            <div class="decorative-ornament-top">❧ ~ ❧</div>
-            <h2 class="section-heading">My Projects</h2>
-            <div class="title-sub-curve"></div>
+    <!-- MY PROJECTS SECTION -->
+    <section id="projects" class="services-section">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
             
             <div class="filter-tabs">
-                <button class="tab-btn active" onclick="filterGallery('graphic', event)">Graphic Designing</button>
-                <button class="tab-btn" onclick="filterGallery('web', event)">Web Designing</button>
-                <button class="tab-btn" onclick="filterGallery('ai', event)">AI Generated Visuals</button>
-                <button class="tab-btn" onclick="filterGallery('motion', event)">Motion Graphics</button>
+                <button class="tab-btn active" onclick="filterGallery('graphic', event)">Graphic Design Projects</button>
+                <button class="tab-btn" onclick="filterGallery('web', event)">Web Design Projects</button>
+                <button class="tab-btn" onclick="filterGallery('ai', event)">AI Visuals</button>
+                <button class="tab-btn" onclick="filterGallery('motion', event)">AI Animation Videos</button>
             </div>
             
             <div class="dribbble-grid-layout" id="main-portfolio-gallery"></div>
@@ -166,50 +170,38 @@
         </div>
     </section>
 
+    <!-- CONTACT US SECTION -->
     <section id="contact" class="contact-section">
-        <div class="container-center">
-            <div class="decorative-ornament-top">❧ ~ ❧</div>
-            <h2 class="contact-main-title">Connect With Us</h2>
-            <div class="title-sub-curve"></div>
+        <div class="container">
+            <h2 class="section-title">Connect With Us</h2>
             
             <div class="contact-hub-grid">
                 <div class="hub-info-col">
                     <h3>Contact Information</h3>
                     <div class="hub-info-item">
-                        <div class="icon-round-bg">📍</div>
+                        <div class="icon-round-bg"><i class="fa-solid fa-location-dot"></i></div>
                         <div>
                             <h4>Address</h4>
                             <p>New Delhi, India</p>
                         </div>
                     </div>
                     <div class="hub-info-item">
-                        <div class="icon-round-bg">📧</div>
+                        <div class="icon-round-bg"><i class="fa-solid fa-envelope"></i></div>
                         <div>
                             <h4>Email</h4>
                             <p>musankumari3330@gmail.com</p>
                         </div>
                     </div>
                     <div class="hub-info-item">
-                        <div class="icon-round-bg">📞</div>
+                        <div class="icon-round-bg"><i class="fa-solid fa-phone"></i></div>
                         <div>
                             <h4>Phone</h4>
                             <p>+91 8810682518</p>
                         </div>
                     </div>
-                    
-                    <div class="follow-us-block">
-                        <h4>Follow Us</h4>
-                        <div class="follow-icons">
-                            <a href="https://youtube.com/@I.MuskanKumari" target="_blank" class="f-soc-link yt"><i class="fa-brands fa-youtube"></i></a>
-                            <a href="https://instagram.com/i.musankumari" target="_blank" class="f-soc-link ig"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="https://behance.net/musankumari143/info" target="_blank" class="f-soc-link bh"><i class="fa-brands fa-behance"></i></a>
-                            <a href="https://github.com/musankumari03" target="_blank" class="f-soc-link gh"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank" class="f-soc-link li"><i class="fa-brands fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
 
                     <div class="bhim-payment-node" onclick="triggerUPIPayment()">
-                        <img src="qr.png" alt="UPI QR" class="bhim-qr-thumbnail">
+                        <img src="qr.png" alt="UPI QR" class="bhim-qr-thumbnail" onerror="this.style.display='none'">
                         <div class="bhim-meta">
                             <span class="bhim-address">8810682518@paytm</span>
                             <small>🛡️ Click here to pay via BHIM UPI</small>
@@ -219,7 +211,7 @@
 
                 <div class="hub-form-col">
                     <h3>Send Us a Message</h3>
-                    <form id="hub-action-form">
+                    <form id="hub-action-form" onsubmit="handleFormSubmit(event)">
                         <div class="field-container">
                             <span class="field-icon"><i class="fa-solid fa-user"></i></span>
                             <input type="text" placeholder="Your Name" required>
@@ -239,6 +231,7 @@
         </div>
     </section>
 
+    <!-- LIGHTBOX OVERLAY -->
     <div class="gallery-lightbox" id="galleryLightbox">
         <span class="lightbox-close" onclick="closeGallerySlider()">&times;</span>
         <button class="slider-arrow prev-arrow" onclick="changeSlide(-1)">&#10094;</button>
@@ -246,32 +239,46 @@
         <button class="slider-arrow next-arrow" onclick="changeSlide(1)">&#10095;</button>
     </div>
 
-    <footer class="mk-spiritual-gray-footer">
-        <div class="footer-top-row">
-            <div class="footer-quote-block">
-                <img src="mk.png" alt="MK Logo" class="footer-site-logo">
-                <div class="vertical-divider"></div>
-                <p class="quote-text">Muskan Kumari <span class="footer-pipe">|</span> Portfolio</p>
-            </div>
-            <div class="footer-stay-connected">
-                <h4>Stay Connected</h4>
-                <div class="connected-icons">
-                    <a href="https://youtube.com/@I.MuskanKumari" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://instagram.com/i.musankumari" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://behance.net/musankumari143/info" target="_blank"><i class="fa-brands fa-behance"></i></a>
-                    <a href="https://github.com/musankumari03" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+    <!-- FOOTER SECTION -->
+    <footer class="main-footer">
+        <div class="container footer-container-3col">
+            <!-- Left Column: Branding & Socials -->
+            <div class="footer-col footer-col-left">
+                <a href="#home">
+                    <img src="mklogo.png" alt="MK Logo" class="footer-site-logo">
+                </a>
+                <p class="footer-brand-title">Muskan Kumari <span class="footer-pipe">|</span> Portfolio</p>
+                <div class="footer-social-links">
+                    <a href="https://youtube.com/@I.MuskanKumari" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://instagram.com/i.musankumari" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/musankumari03" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://behance.net/musankumari143/info" target="_blank" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
                 </div>
             </div>
-            <div class="footer-subscribe-block">
+
+            <!-- Middle Column: Quick Nav Links -->
+            <div class="footer-col footer-col-middle">
+                <h4>Quick Links</h4>
+                <ul class="footer-nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Column: Subscribe Box -->
+            <div class="footer-col footer-col-right">
                 <h4>Subscribe for updates</h4>
-                <div class="subscribe-form">
-                    <input type="email" placeholder="Your email">
-                    <button class="sub-send-btn"><i class="fa-solid fa-paper-plane"></i></button>
-                </div>
+                <form class="footer-subscribe-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+                </form>
             </div>
         </div>
-        <div class="footer-bottom-copyright">
+
+        <div class="footer-bottom-bar">
             <p>&copy; 2026 Muskan Kumari. All Rights Reserved.</p>
         </div>
     </footer>

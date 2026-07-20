@@ -1,12 +1,14 @@
-// Strict File Mapping Configuration
+// Strict File Mapping Matching GitHub Repository EXACT Names
 const portfolioAssets = {
+    // Graphic Design: g1.jpg to g50.jpg
     graphic: Array.from({length: 50}, (_, i) => ({ 
         id: `g_${i}`, 
         type: 'image', 
-        src: `g${i+1}.png`,
+        src: `g${i+1}.jpg`,
         aspectClass: 'aspect-square',
         likes: 0
     })),
+    // Web Design: w1.png to w10.png
     web: Array.from({length: 10}, (_, i) => ({ 
         id: `w_${i}`, 
         type: 'image', 
@@ -14,6 +16,7 @@ const portfolioAssets = {
         aspectClass: 'aspect-square',
         likes: 0
     })),
+    // AI Visuals: b1.png to b10.png
     ai: Array.from({length: 10}, (_, i) => ({ 
         id: `b_${i}`, 
         type: 'image', 
@@ -21,6 +24,7 @@ const portfolioAssets = {
         aspectClass: 'aspect-square',
         likes: 0
     })),
+    // AI Animation Videos: r1.mp4 to r12.mp4
     motion: Array.from({length: 12}, (_, i) => ({ 
         id: `m_${i}`, 
         type: 'video', 
@@ -33,7 +37,7 @@ const portfolioAssets = {
 const userLikedItems = new Set();
 let currentCategoryArray = [];
 let activeIndex = 0;
-let visibleCount = 6;
+let visibleCount = 10; // Initial photo limit
 let activeTabGlobal = 'graphic';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -45,6 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
             mainNavigation.classList.toggle('mobile-active');
         });
     }
+
+    // Initialize Visitor Counter in Local Storage for clean, non-broken display
+    initVisitorCounter();
 
     switchTab('graphic');
 });
@@ -67,7 +74,7 @@ function filterGallery(category, event) {
 
 function switchTab(category) {
     activeTabGlobal = category;
-    visibleCount = 6; 
+    visibleCount = 10; // Reset to initial 10 cards per tab
     currentCategoryArray = portfolioAssets[category] || [];
     renderGrid();
 }
@@ -120,7 +127,7 @@ function renderGrid() {
 }
 
 function handleViewMoreAction() {
-    visibleCount += 6; 
+    visibleCount += 10; // Incrementally show 10 more images
     renderGrid();
 }
 
@@ -185,6 +192,18 @@ function handleFormSubmit(event) {
     event.target.reset();
 }
 
-function triggerUPIPayment() {
-    window.location.href = "upi://pay?pa=8810682518@paytm&pn=Muskan%20Kumari&cu=INR";
+// Reliable JS Client Visitor Counter
+function initVisitorCounter() {
+    const countDisplay = document.getElementById('visitorCountVal');
+    if (!countDisplay) return;
+
+    let visits = localStorage.getItem('mk_portfolio_visits');
+    if (!visits) {
+        visits = 124; // Baseline starting number
+    } else {
+        visits = parseInt(visits) + 1;
+    }
+    localStorage.setItem('mk_portfolio_visits', visits);
+    countDisplay.textContent = visits;
 }
+

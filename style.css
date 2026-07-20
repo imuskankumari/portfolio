@@ -1,10 +1,14 @@
 /* ==========================================================================
-   RESET & BASE STYLING
+   RESET & BASE STYLING (NO TEXT DECORATION)
    ========================================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+a, button, input, textarea {
+    text-decoration: none !important;
 }
 
 html {
@@ -61,12 +65,6 @@ body {
     align-items: center;
 }
 
-.logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
 .site-logo {
     height: 48px;
     width: auto;
@@ -81,7 +79,6 @@ body {
 }
 
 .nav-links a {
-    text-decoration: none;
     color: #111111;
     font-size: 1.05rem;
     font-weight: 600;
@@ -101,7 +98,6 @@ body {
     background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 2600;
 }
 
 .mobile-nav-toggle span {
@@ -109,7 +105,6 @@ body {
     height: 3px;
     background-color: #111111;
     border-radius: 2px;
-    transition: all 0.3s ease;
 }
 
 @media (max-width: 768px) {
@@ -183,12 +178,30 @@ body {
     line-height: 1.8;
     color: #333333;
     text-align: justify;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 850px) {
     .profile-narrative {
         text-align: center;
     }
+}
+
+.visitor-counter-block {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555555;
+    background: #FAFAFA;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #EAEAEA;
+}
+
+.visitor-counter-block i {
+    color: #FF6B00;
 }
 
 .about-right-logo-block {
@@ -207,10 +220,10 @@ body {
 }
 
 /* ==========================================================================
-   SKILLS & TECH STACK (INFINITE MARQUEE ANIMATION)
+   SKILLS & TECH STACK (PURE WHITE & INFINITE MARQUEE)
    ========================================================================== */
 .skills-tech-stack-section {
-    background: #FAFAFA;
+    background: #FFFFFF;
     overflow: hidden;
 }
 
@@ -233,12 +246,8 @@ body {
 }
 
 @keyframes marqueeScroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 .value-card-item {
@@ -253,13 +262,13 @@ body {
     justify-content: center;
     min-width: 140px;
     flex-shrink: 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .value-card-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .value-card-item img {
@@ -319,16 +328,11 @@ body {
 }
 
 @media (max-width: 900px) {
-    .dribbble-grid-layout {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .dribbble-grid-layout { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
-    .dribbble-grid-layout {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+    .dribbble-grid-layout { grid-template-columns: 1fr; gap: 20px; }
 }
 
 .dribbble-item-card {
@@ -347,10 +351,19 @@ body {
 
 .dribbble-img-frame {
     width: 100%;
-    aspect-ratio: 9 / 16;
     overflow: hidden;
     background: #111111;
     position: relative;
+}
+
+/* Square 1:1 Aspect Ratio for Graphic Design, Web, & AI Visuals */
+.aspect-square {
+    aspect-ratio: 1 / 1;
+}
+
+/* Vertical 9:16 Aspect Ratio for Animation Videos */
+.aspect-vertical {
+    aspect-ratio: 9 / 16;
 }
 
 .dribbble-item-card img, 
@@ -408,7 +421,7 @@ body {
 }
 
 .like-click-node.activated i {
-    color: #E74C3C !important;
+    color: #FF6B00 !important;
 }
 
 .video-reel-tag {
@@ -444,6 +457,151 @@ body {
 .hub-view-more-btn:hover {
     background-color: #FF6B00;
     color: #FFFFFF;
+}
+
+/* ==========================================================================
+   CONTACT SECTION (STANDOUT BACKGROUND)
+   ========================================================================== */
+.contact-section {
+    background: #FFF8F2;
+    border-top: 1px solid #FFE4D6;
+    border-bottom: 1px solid #FFE4D6;
+}
+
+.contact-hub-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+}
+
+@media (max-width: 850px) {
+    .contact-hub-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+.hub-info-col h3, 
+.hub-form-col h3 {
+    font-size: 1.4rem;
+    color: #FF6B00;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.hub-info-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.icon-round-bg {
+    width: 44px;
+    height: 44px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #FF6B00;
+    box-shadow: 0 2px 8px rgba(255, 107, 0, 0.15);
+    flex-shrink: 0;
+}
+
+.hub-info-item h4 {
+    font-size: 1rem;
+    color: #111111;
+    font-weight: 700;
+}
+
+.hub-info-item p {
+    font-size: 0.95rem;
+    color: #555555;
+}
+
+.bhim-payment-node {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #FFFFFF;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1.5px dashed #FF6B00;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.bhim-qr-thumbnail {
+    width: 65px;
+    height: 65px;
+}
+
+.bhim-address {
+    font-weight: 700;
+    color: #27AE60;
+    font-size: 1rem;
+    display: block;
+}
+
+/* DISTINCT FORM INPUT BORDERS */
+#hub-action-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.field-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid #FF6B00;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 4px 16px;
+}
+
+.field-container:focus-within {
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2);
+}
+
+.field-icon {
+    color: #FF6B00;
+    margin-right: 12px;
+    font-size: 1.05rem;
+}
+
+.field-container input, 
+.field-container textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    font-size: 1rem;
+    color: #111111;
+    background: transparent;
+}
+
+.textarea-container {
+    align-items: flex-start;
+    padding-top: 10px;
+}
+
+.hub-submit-btn {
+    background: #FF6B00;
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 36px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background 0.2s ease;
+}
+
+.hub-submit-btn:hover {
+    background: #E65100;
 }
 
 /* ==========================================================================
@@ -499,161 +657,20 @@ body {
 }
 
 /* ==========================================================================
-   SEAMLESS CONTACT & FOOTER SECTION
+   FOOTER SECTION (3 COLUMNS - NO LOGO)
    ========================================================================== */
-.merged-contact-footer {
+.main-footer {
     background: #111111;
     color: #CCCCCC;
-    padding-top: 60px;
-    border-top: 4px solid #FF6B00;
-}
-
-.merged-contact-footer .container {
-    padding-top: 0;
-}
-
-.contact-hub-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 50px;
-    padding-bottom: 60px;
-    border-bottom: 1px solid #222222;
-}
-
-@media (max-width: 850px) {
-    .contact-hub-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-}
-
-.hub-info-col h3, 
-.hub-form-col h3 {
-    font-size: 1.4rem;
-    color: #FF6B00;
-    margin-bottom: 25px;
-    font-weight: 700;
-}
-
-.hub-info-item {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 20px;
-    align-items: center;
-}
-
-.icon-round-bg {
-    width: 44px;
-    height: 44px;
-    background-color: #222222;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    color: #FF6B00;
-    flex-shrink: 0;
-}
-
-.hub-info-item h4 {
-    font-size: 1rem;
-    color: #FFFFFF;
-    font-weight: 700;
-}
-
-.hub-info-item p {
-    font-size: 0.95rem;
-    color: #AAAAAA;
-}
-
-.bhim-payment-node {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: #1A1A1A;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1.5px dashed #FF6B00;
-    cursor: pointer;
-    margin-top: 30px;
-}
-
-.bhim-qr-thumbnail {
-    width: 65px;
-    height: 65px;
-}
-
-.bhim-address {
-    font-weight: 700;
-    color: #27AE60;
-    font-size: 1rem;
-    display: block;
-}
-
-#hub-action-form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-.field-container {
-    display: flex;
-    align-items: center;
-    border: 2px solid #333333;
-    background: #1A1A1A;
-    border-radius: 8px;
-    padding: 4px 16px;
-    transition: border-color 0.2s ease;
-}
-
-.field-container:focus-within {
-    border-color: #FF6B00;
-}
-
-.field-icon {
-    color: #FF6B00;
-    margin-right: 12px;
-    font-size: 1.05rem;
-}
-
-.field-container input, 
-.field-container textarea {
-    width: 100%;
-    border: none;
-    outline: none;
-    padding: 12px 0;
-    font-size: 1rem;
-    color: #FFFFFF;
-    background: transparent;
-}
-
-.textarea-container {
-    align-items: flex-start;
-    padding-top: 10px;
-}
-
-.hub-submit-btn {
-    background: #FF6B00;
-    color: #FFFFFF;
-    border: none;
-    padding: 14px 36px;
-    font-size: 1rem;
-    font-weight: 700;
-    border-radius: 8px;
-    cursor: pointer;
-    align-self: flex-start;
-    transition: background 0.2s ease;
-}
-
-.hub-submit-btn:hover {
-    background: #E65100;
+    padding-top: 50px;
+    border-top: 3px solid #FF6B00;
 }
 
 .footer-container-3col {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr 1fr;
     gap: 40px;
-    padding: 50px 0 40px 0;
+    padding-bottom: 40px;
     border-bottom: 1px solid #222222;
 }
 
@@ -664,17 +681,16 @@ body {
     }
 }
 
-.footer-site-logo {
-    height: 40px;
-    width: auto;
-    object-fit: contain;
-    margin-bottom: 12px;
-}
-
 .footer-brand-title {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: #FFFFFF;
+    margin-bottom: 6px;
+}
+
+.footer-subtext {
+    font-size: 0.95rem;
+    color: #888888;
     margin-bottom: 16px;
 }
 
@@ -696,7 +712,6 @@ body {
     background: #222222;
     color: #FFFFFF;
     border-radius: 50%;
-    text-decoration: none;
     transition: background 0.2s ease;
 }
 
@@ -720,7 +735,6 @@ body {
 
 .footer-nav-links a {
     color: #CCCCCC;
-    text-decoration: none;
     transition: color 0.2s ease;
 }
 

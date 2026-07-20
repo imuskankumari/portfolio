@@ -1,10 +1,10 @@
 // Strict File Mapping Matching GitHub Repository EXACT Names
 const portfolioAssets = {
-    // Graphic Design: g1.png to g50.png
+    // Graphic Design: g1.jpg to g50.jpg
     graphic: Array.from({length: 50}, (_, i) => ({ 
         id: `g_${i}`, 
         type: 'image', 
-        src: `g${i+1}.png`,
+        src: `g${i+1}.jpg`,
         aspectClass: 'aspect-square',
         likes: 0
     })),
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initialize Unique Visitor Counter (Session Tracked)
+    // Initialize 24-hour Session-based Visitor Counter
     initVisitorCounter();
 
     switchTab('graphic');
@@ -99,15 +99,13 @@ function renderGrid() {
             ? `<video src="${item.src}" muted loop autoplay playsinline preload="metadata"></video><span class="video-reel-tag">▶ Reel</span>` 
             : `<img src="${item.src}" loading="lazy" onerror="this.src='placeholder.png'">`;
 
+        // Card footer: mklogo.png on left, Interactive Heart on right
         itemNode.innerHTML = `
             <div class="dribbble-img-frame ${item.aspectClass}" onclick="openGallerySlider(${idx})">
                 ${mediaContent}
             </div>
             <div class="dribbble-meta-row">
-                <div class="dribbble-user">
-                    <span class="dribbble-avatar">MK</span>
-                    <span class="dribbble-username">Muskan</span>
-                </div>
+                <img src="mklogo.png" alt="MK Logo" class="card-footer-logo">
                 <div class="dribbble-stats">
                     <span class="${heartStateClass}" onclick="executeRealLiking('${item.id}', ${idx}, event)">
                         <i class="${isLiked ? 'fa-solid' : 'fa-regular'} fa-heart"></i> <span class="count-lbl">${item.likes}</span>
@@ -191,9 +189,9 @@ function handleFormSubmit(event) {
     alert('Thank you for your message! It has been received successfully.');
 }
 
-// 24-Hour Session-Based Unique Visitor Counter
+// 24-Hour Session-Based Unique Visitor Counter logic
 function initVisitorCounter() {
-    const countDisplay = document.getElementById('visitorCountVal');
+    const countDisplay = document.getElementById('uniqueVisitorCount');
     if (!countDisplay) return;
 
     const storageKey = 'mk_unique_visitor_count';
@@ -212,4 +210,3 @@ function initVisitorCounter() {
 
     countDisplay.textContent = visits;
 }
-

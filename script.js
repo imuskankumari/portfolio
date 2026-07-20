@@ -94,18 +94,21 @@ function renderGrid() {
         const isLiked = userLikedItems.has(item.id);
         const heartStateClass = isLiked ? 'like-click-node activated' : 'like-click-node';
 
-        // Optimized video reel markup with preload="metadata" for fast performance
+        // Fast video reel markup with preload="metadata"
         const mediaContent = item.type === 'video' 
             ? `<video src="${item.src}" muted loop autoplay playsinline preload="metadata"></video><span class="video-reel-tag">▶ Reel</span>` 
             : `<img src="${item.src}" loading="lazy" onerror="this.src='placeholder.png'">`;
 
-        // Card footer: mklogo.png on left, Interactive Heart on right
+        // Restored Card footer: MK Circular Badge + Muskan on left, Heart on right
         itemNode.innerHTML = `
             <div class="dribbble-img-frame ${item.aspectClass}" onclick="openGallerySlider(${idx})">
                 ${mediaContent}
             </div>
             <div class="dribbble-meta-row">
-                <img src="mklogo.png" alt="MK Logo" class="card-footer-logo">
+                <div class="dribbble-user">
+                    <span class="dribbble-avatar">MK</span>
+                    <span class="dribbble-username">Muskan</span>
+                </div>
                 <div class="dribbble-stats">
                     <span class="${heartStateClass}" onclick="executeRealLiking('${item.id}', ${idx}, event)">
                         <i class="${isLiked ? 'fa-solid' : 'fa-regular'} fa-heart"></i> <span class="count-lbl">${item.likes}</span>
@@ -210,3 +213,4 @@ function initVisitorCounter() {
 
     countDisplay.textContent = visits;
 }
+

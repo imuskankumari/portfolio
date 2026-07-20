@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muskan Kumari | Portfolio</title>
-    <!-- FontAwesome for Icons -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="top">
 
     <!-- HEADER / NAVIGATION -->
     <header class="main-header">
         <div class="header-container">
-            <a href="#home" class="logo-link">
+            <a href="#top" class="logo-link">
                 <img src="mklogo.png" alt="MK Logo" class="site-logo">
             </a>
             
@@ -24,11 +24,9 @@
             </button>
 
             <nav class="nav-links" id="mainNavigation">
-                <a href="#home" onclick="closeMobileMenu()">Home</a>
+                <a href="#top" onclick="closeMobileMenu()">Home</a>
                 <a href="#about" onclick="closeMobileMenu()">About</a>
-                <a href="#skills" onclick="closeMobileMenu()">Skills</a>
                 <a href="#projects" onclick="closeMobileMenu()">Projects</a>
-                <a href="#contact" onclick="closeMobileMenu()">Contact</a>
             </nav>
         </div>
     </header>
@@ -56,95 +54,58 @@
         </div>
     </section>
 
-    <!-- SKILLS & TECH STACK SECTION -->
+    <!-- SKILLS & TECH STACK SECTION (INFINITE AUTO SCROLL) -->
     <section id="skills" class="skills-tech-stack-section">
         <div class="container">
             <h2 class="section-title">Skills & Tech Stack</h2>
             
-            <div class="tech-horizontal-scroll-row">
-                <div class="value-card-item">
-                    <img src="photoshop.png" alt="Adobe Photoshop" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5611/5611129.png'">
-                    <h4>Adobe Photoshop</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="illustrator.png" alt="Adobe Illustrator" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5611/5611117.png'">
-                    <h4>Adobe Illustrator</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="indesign.png" alt="Adobe InDesign" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5611/5611123.png'">
-                    <h4>Adobe InDesign</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="coreldraw.png" alt="CorelDraw">
-                    <h4>CorelDraw</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="canva.png" alt="Canva">
-                    <h4>Canva</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="html.png" alt="HTML">
-                    <h4>HTML</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="css.png" alt="CSS">
-                    <h4>CSS</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="javascript.png" alt="JavaScript">
-                    <h4>JavaScript</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="wordpress.png" alt="WordPress">
-                    <h4>WordPress</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="googlesites.png" alt="Google Sites">
-                    <h4>Google Sites</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="googledocs.png" alt="Google Docs">
-                    <h4>Google Docs</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="googlesheets.png" alt="Google Sheets">
-                    <h4>Google Sheets</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="googleslides.png" alt="Google Slides">
-                    <h4>Google Slides</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="googleforms.png" alt="Google Forms">
-                    <h4>Google Forms</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="googledrive.png" alt="Google Drive">
-                    <h4>Google Drive</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="msword.png" alt="MS Word">
-                    <h4>MS Word</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="msexcel.png" alt="MS Excel">
-                    <h4>MS Excel</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="mspowerpoint.png" alt="MS PowerPoint">
-                    <h4>MS PowerPoint</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="filmora.png" alt="Filmora">
-                    <h4>Filmora</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="vn.png" alt="VN">
-                    <h4>VN</h4>
-                </div>
-                <div class="value-card-item">
-                    <img src="inshot.png" alt="InShot">
-                    <h4>InShot</h4>
+            <div class="marquee-wrapper">
+                <div class="marquee-track">
+                    <!-- Duplicate items for smooth infinite loop -->
+                    <div class="value-card-item"><img src="photoshop.png" alt="Adobe Photoshop" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5611/5611129.png'"><h4>Adobe Photoshop</h4></div>
+                    <div class="value-card-item"><img src="illustrator.png" alt="Adobe Illustrator" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5611/5611117.png'"><h4>Adobe Illustrator</h4></div>
+                    <div class="value-card-item"><img src="indesign.png" alt="Adobe InDesign" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5611/5611123.png'"><h4>Adobe InDesign</h4></div>
+                    <div class="value-card-item"><img src="coreldraw.png" alt="CorelDraw"><h4>CorelDraw</h4></div>
+                    <div class="value-card-item"><img src="canva.png" alt="Canva"><h4>Canva</h4></div>
+                    <div class="value-card-item"><img src="html.png" alt="HTML"><h4>HTML</h4></div>
+                    <div class="value-card-item"><img src="css.png" alt="CSS"><h4>CSS</h4></div>
+                    <div class="value-card-item"><img src="javascript.png" alt="JavaScript"><h4>JavaScript</h4></div>
+                    <div class="value-card-item"><img src="wordpress.png" alt="WordPress"><h4>WordPress</h4></div>
+                    <div class="value-card-item"><img src="googlesites.png" alt="Google Sites"><h4>Google Sites</h4></div>
+                    <div class="value-card-item"><img src="googledocs.png" alt="Google Docs"><h4>Google Docs</h4></div>
+                    <div class="value-card-item"><img src="googlesheets.png" alt="Google Sheets"><h4>Google Sheets</h4></div>
+                    <div class="value-card-item"><img src="googleslides.png" alt="Google Slides"><h4>Google Slides</h4></div>
+                    <div class="value-card-item"><img src="googleforms.png" alt="Google Forms"><h4>Google Forms</h4></div>
+                    <div class="value-card-item"><img src="googledrive.png" alt="Google Drive"><h4>Google Drive</h4></div>
+                    <div class="value-card-item"><img src="msword.png" alt="MS Word"><h4>MS Word</h4></div>
+                    <div class="value-card-item"><img src="msexcel.png" alt="MS Excel"><h4>MS Excel</h4></div>
+                    <div class="value-card-item"><img src="mspowerpoint.png" alt="MS PowerPoint"><h4>MS PowerPoint</h4></div>
+                    <div class="value-card-item"><img src="filmora.png" alt="Filmora"><h4>Filmora</h4></div>
+                    <div class="value-card-item"><img src="vn.png" alt="VN"><h4>VN</h4></div>
+                    <div class="value-card-item"><img src="inshot.png" alt="InShot"><h4>InShot</h4></div>
+
+                    <!-- Duplicated Set for Loop -->
+                    <div class="value-card-item"><img src="photoshop.png" alt="Adobe Photoshop" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5611/5611129.png'"><h4>Adobe Photoshop</h4></div>
+                    <div class="value-card-item"><img src="illustrator.png" alt="Adobe Illustrator" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5611/5611117.png'"><h4>Adobe Illustrator</h4></div>
+                    <div class="value-card-item"><img src="indesign.png" alt="Adobe InDesign" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5611/5611123.png'"><h4>Adobe InDesign</h4></div>
+                    <div class="value-card-item"><img src="coreldraw.png" alt="CorelDraw"><h4>CorelDraw</h4></div>
+                    <div class="value-card-item"><img src="canva.png" alt="Canva"><h4>Canva</h4></div>
+                    <div class="value-card-item"><img src="html.png" alt="HTML"><h4>HTML</h4></div>
+                    <div class="value-card-item"><img src="css.png" alt="CSS"><h4>CSS</h4></div>
+                    <div class="value-card-item"><img src="javascript.png" alt="JavaScript"><h4>JavaScript</h4></div>
+                    <div class="value-card-item"><img src="wordpress.png" alt="WordPress"><h4>WordPress</h4></div>
+                    <div class="value-card-item"><img src="googlesites.png" alt="Google Sites"><h4>Google Sites</h4></div>
+                    <div class="value-card-item"><img src="googledocs.png" alt="Google Docs"><h4>Google Docs</h4></div>
+                    <div class="value-card-item"><img src="googlesheets.png" alt="Google Sheets"><h4>Google Sheets</h4></div>
+                    <div class="value-card-item"><img src="googleslides.png" alt="Google Slides"><h4>Google Slides</h4></div>
+                    <div class="value-card-item"><img src="googleforms.png" alt="Google Forms"><h4>Google Forms</h4></div>
+                    <div class="value-card-item"><img src="googledrive.png" alt="Google Drive"><h4>Google Drive</h4></div>
+                    <div class="value-card-item"><img src="msword.png" alt="MS Word"><h4>MS Word</h4></div>
+                    <div class="value-card-item"><img src="msexcel.png" alt="MS Excel"><h4>MS Excel</h4></div>
+                    <div class="value-card-item"><img src="mspowerpoint.png" alt="MS PowerPoint"><h4>MS PowerPoint</h4></div>
+                    <div class="value-card-item"><img src="filmora.png" alt="Filmora"><h4>Filmora</h4></div>
+                    <div class="value-card-item"><img src="vn.png" alt="VN"><h4>VN</h4></div>
+                    <div class="value-card-item"><img src="inshot.png" alt="InShot"><h4>InShot</h4></div>
                 </div>
             </div>
         </div>
@@ -170,14 +131,21 @@
         </div>
     </section>
 
-    <!-- CONTACT US SECTION -->
-    <section id="contact" class="contact-section">
+    <!-- LIGHTBOX OVERLAY -->
+    <div class="gallery-lightbox" id="galleryLightbox">
+        <span class="lightbox-close" onclick="closeGallerySlider()">&times;</span>
+        <button class="slider-arrow prev-arrow" onclick="changeSlide(-1)">&#10094;</button>
+        <div class="lightbox-img-wrap" id="lightboxMediaContent"></div>
+        <button class="slider-arrow next-arrow" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <!-- SEAMLESS CONTACT & FOOTER SECTION -->
+    <footer class="merged-contact-footer">
         <div class="container">
-            <h2 class="section-title">Connect With Us</h2>
-            
+            <!-- Contact Header & Form Section -->
             <div class="contact-hub-grid">
                 <div class="hub-info-col">
-                    <h3>Contact Information</h3>
+                    <h3>Connect With Us</h3>
                     <div class="hub-info-item">
                         <div class="icon-round-bg"><i class="fa-solid fa-location-dot"></i></div>
                         <div>
@@ -222,59 +190,48 @@
                         </div>
                         <div class="field-container textarea-container">
                             <span class="field-icon"><i class="fa-solid fa-pen"></i></span>
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <textarea placeholder="Your Message" rows="4" required></textarea>
                         </div>
                         <button type="submit" class="hub-submit-btn">Send Message</button>
                     </form>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- LIGHTBOX OVERLAY -->
-    <div class="gallery-lightbox" id="galleryLightbox">
-        <span class="lightbox-close" onclick="closeGallerySlider()">&times;</span>
-        <button class="slider-arrow prev-arrow" onclick="changeSlide(-1)">&#10094;</button>
-        <div class="lightbox-img-wrap" id="lightboxMediaContent"></div>
-        <button class="slider-arrow next-arrow" onclick="changeSlide(1)">&#10095;</button>
-    </div>
-
-    <!-- FOOTER SECTION -->
-    <footer class="main-footer">
-        <div class="container footer-container-3col">
-            <!-- Left Column: Branding & Socials -->
-            <div class="footer-col footer-col-left">
-                <a href="#home">
-                    <img src="mklogo.png" alt="MK Logo" class="footer-site-logo">
-                </a>
-                <p class="footer-brand-title">Muskan Kumari <span class="footer-pipe">|</span> Portfolio</p>
-                <div class="footer-social-links">
-                    <a href="https://youtube.com/@I.MuskanKumari" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://instagram.com/i.musankumari" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://github.com/musankumari03" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://behance.net/musankumari143/info" target="_blank" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+            <!-- Footer Columns -->
+            <div class="footer-container-3col">
+                <!-- Left Column: Branding & Socials -->
+                <div class="footer-col footer-col-left">
+                    <a href="#top">
+                        <img src="mklogo.png" alt="MK Logo" class="footer-site-logo">
+                    </a>
+                    <p class="footer-brand-title">Muskan Kumari <span class="footer-pipe">|</span> Portfolio</p>
+                    <div class="footer-social-links">
+                        <a href="https://youtube.com/@I.MuskanKumari" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://instagram.com/i.musankumari" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://github.com/musankumari03" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.behance.net/muskankumari143" target="_blank" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                        <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Middle Column: Quick Nav Links -->
-            <div class="footer-col footer-col-middle">
-                <h4>Quick Links</h4>
-                <ul class="footer-nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
+                <!-- Middle Column: Quick Nav Links -->
+                <div class="footer-col footer-col-middle">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-nav-links">
+                        <li><a href="#top">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </div>
 
-            <!-- Right Column: Subscribe Box -->
-            <div class="footer-col footer-col-right">
-                <h4>Subscribe for updates</h4>
-                <form class="footer-subscribe-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
-                    <input type="email" placeholder="Your email address" required>
-                    <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
-                </form>
+                <!-- Right Column: Subscribe Box -->
+                <div class="footer-col footer-col-right">
+                    <h4>Subscribe for updates</h4>
+                    <form class="footer-subscribe-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
             </div>
         </div>
 

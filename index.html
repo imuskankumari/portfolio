@@ -24,10 +24,10 @@
             </button>
 
             <nav class="nav-links" id="mainNavigation">
-                <a href="#top" onclick="closeMobileMenu()">Home</a>
-                <a href="#about" onclick="closeMobileMenu()">About</a>
-                <a href="#projects" onclick="closeMobileMenu()">Projects</a>
-                <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+                <a href="#top" class="nav-item active" onclick="closeMobileMenu()">Home</a>
+                <a href="#about" class="nav-item" onclick="closeMobileMenu()">About</a>
+                <a href="#projects" class="nav-item" onclick="closeMobileMenu()">Projects</a>
+                <a href="#contact" class="nav-item" onclick="closeMobileMenu()">Contact</a>
             </nav>
         </div>
     </header>
@@ -43,7 +43,7 @@
             <h1 class="section-title">Welcome to Muskan Kumari's Portfolio</h1>
             
             <div class="about-split-layout">
-                <!-- Left Column: Clean White Floating Card with Soft Shadow (No Orange Borders) -->
+                <!-- Left Column: Clean White Card Container with Soft Shadow (No Orange Outlines) -->
                 <div class="about-left-logo-block">
                     <div class="clean-white-card">
                         <img src="logo.png" alt="MK Green Logo" class="profile-image-styled">
@@ -141,39 +141,35 @@
         <button class="slider-arrow next-arrow" onclick="changeSlide(1)">&#10095;</button>
     </div>
 
-    <!-- DEDICATED CONTACT SECTION (STAND-ALONE) -->
+    <!-- DEDICATED STAND-ALONE CONTACT SECTION (STRICT PRIVACY) -->
     <section id="contact" class="contact-section">
         <div class="container">
             <h2 class="section-title">Connect With Us</h2>
             
             <div class="contact-hub-grid">
-                <!-- Left Column: Contact Information -->
+                <!-- Left Column: Location & Circular Social Icons ONLY -->
                 <div class="hub-info-col">
                     <h3>Contact Information</h3>
                     <div class="hub-info-item">
                         <div class="icon-round-bg"><i class="fa-solid fa-location-dot"></i></div>
                         <div>
-                            <h4>Address</h4>
+                            <h4>Location</h4>
                             <p>New Delhi, India</p>
                         </div>
                     </div>
-                    <div class="hub-info-item">
-                        <div class="icon-round-bg"><i class="fa-solid fa-envelope"></i></div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>muskankumari3330@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="hub-info-item">
-                        <div class="icon-round-bg"><i class="fa-solid fa-phone"></i></div>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+91 8810682518</p>
+
+                    <div class="stay-connected-wrapper">
+                        <h4>Stay Connected</h4>
+                        <div class="contact-social-circles">
+                            <a href="https://youtube.com/@I.MuskanKumari" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="https://instagram.com/i.musankumari" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.behance.net/muskankumari143" target="_blank" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                            <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Column: Send Us a Message Form -->
+                <!-- Right Column: Contact Form via Formspree -->
                 <div class="hub-form-col">
                     <h3>Send Us a Message</h3>
                     <form id="hub-action-form" action="https://formspree.io/f/muskankumari3330@gmail.com" method="POST" onsubmit="handleFormSubmit(event)">
@@ -196,53 +192,36 @@
         </div>
     </section>
 
-    <!-- ORIGINAL CLASSIC DARK FOOTER -->
+    <!-- CLEAN DARK FOOTER (2-COLUMN LAYOUT - NO QUICK LINKS, NO SUBSCRIBE BOX) -->
     <footer class="main-footer">
-        <div class="container footer-container-3col">
-            <!-- Column 1: Branding & Circular Social Icons -->
+        <div class="container footer-container-2col">
+            <!-- Left Side: Branding -->
             <div class="footer-col footer-col-left">
                 <div class="footer-brand-row">
                     <img src="logo.png" alt="MK Logo" class="footer-blend-logo">
                     <p class="footer-brand-title">Muskan Kumari <span class="footer-pipe">|</span> Portfolio</p>
                 </div>
-                <p class="footer-subtext">Stay Connected</p>
-                <div class="footer-social-links">
-                    <a href="https://youtube.com/@I.MuskanKumari" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://instagram.com/i.musankumari" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.behance.net/muskankumari143" target="_blank" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
-                    <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
+                <p class="footer-subtext">Designed & Developed with Passion</p>
             </div>
 
-            <!-- Column 2: Quick Nav Links -->
-            <div class="footer-col footer-col-middle">
-                <h4>Quick Links</h4>
-                <ul class="footer-nav-links">
-                    <li><a href="#top">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 3: Subscribe Box -->
+            <!-- Right Side: Animated Unique Profile Visits Counter Widget -->
             <div class="footer-col footer-col-right">
-                <h4>Subscribe for updates</h4>
-                <form class="footer-subscribe-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-                    <input type="email" placeholder="Your email address" required>
-                    <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
-                </form>
+                <h4>Unique Profile Visits</h4>
+                <div class="counter-animated-card" id="visitorCounterContainer">
+                    <div class="counter-icon-box">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <div class="counter-text-box">
+                        <span class="counter-number" id="animatedVisitorCount">1</span>
+                        <span class="counter-sub-label">Verified Visitors</span>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Bottom Bar with Visitor Count & Copyright -->
+        <!-- Bottom Copyright Bar -->
         <div class="footer-bottom-bar">
-            <div class="footer-bottom-content">
-                <div class="footer-visitor-badge">
-                    <i class="fa-solid fa-eye"></i> Unique Profile Visits: <span id="uniqueVisitorCount">Loading...</span>
-                </div>
-                <p>&copy; 2026 Muskan Kumari. All Rights Reserved.</p>
-            </div>
+            <p>&copy; 2026 Muskan Kumari. All Rights Reserved.</p>
         </div>
     </footer>
 

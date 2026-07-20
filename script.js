@@ -189,4 +189,3 @@ function handleFormSubmit(event) {
 function triggerUPIPayment() {
     window.location.href = "upi://pay?pa=8810682518@paytm&pn=Muskan%20Kumari&cu=INR";
 }
-

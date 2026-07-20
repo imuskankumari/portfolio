@@ -1,9 +1,9 @@
 // Exact Media Mapping Configs
 const portfolioAssets = {
-    graphic: Array.from({length: 50}, (_, i) => ({ 
+    graphic: Array.from({length: 10}, (_, i) => ({ 
         id: `g_${i}`, 
         type: 'image', 
-        src: `g${i+1}.jpg`, 
+        src: `g${i+1}.png`, 
         likes: 144 + i, 
         views: `${(3.2 + (i * 0.1)).toFixed(1)}k` 
     })),
@@ -189,3 +189,4 @@ function handleFormSubmit(event) {
 function triggerUPIPayment() {
     window.location.href = "upi://pay?pa=8810682518@paytm&pn=Muskan%20Kumari&cu=INR";
 }
+

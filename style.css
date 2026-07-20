@@ -7,13 +7,16 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #FFFFFF;
     color: #111111;
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
 .container {
@@ -204,32 +207,38 @@ body {
 }
 
 /* ==========================================================================
-   SKILLS & TECH STACK (SCROLLING / GRID)
+   SKILLS & TECH STACK (INFINITE MARQUEE ANIMATION)
    ========================================================================== */
 .skills-tech-stack-section {
     background: #FAFAFA;
+    overflow: hidden;
 }
 
-.tech-horizontal-scroll-row {
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0 20px 0;
+}
+
+.marquee-track {
     display: flex;
     gap: 20px;
-    overflow-x: auto;
-    padding: 10px 5px 20px 5px;
-    width: 100%;
-    scroll-behavior: smooth;
+    width: max-content;
+    animation: marqueeScroll 28s linear infinite;
 }
 
-.tech-horizontal-scroll-row::-webkit-scrollbar {
-    height: 6px;
+.marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
 }
 
-.tech-horizontal-scroll-row::-webkit-scrollbar-thumb {
-    background-color: #FF6B00;
-    border-radius: 10px;
-}
-
-.tech-horizontal-scroll-row::-webkit-scrollbar-track {
-    background-color: #E0E0E0;
+@keyframes marqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .value-card-item {
@@ -336,7 +345,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* 9:16 Vertical Cards (No side gaps) */
 .dribbble-img-frame {
     width: 100%;
     aspect-ratio: 9 / 16;
@@ -439,149 +447,6 @@ body {
 }
 
 /* ==========================================================================
-   CONTACT US SECTION
-   ========================================================================== */
-.contact-section {
-    background: #FAFAFA;
-    border-top: 1px solid #EEEEEE;
-}
-
-.contact-hub-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 50px;
-}
-
-@media (max-width: 850px) {
-    .contact-hub-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-}
-
-.hub-info-col h3, 
-.hub-form-col h3 {
-    font-size: 1.4rem;
-    color: #FF6B00;
-    margin-bottom: 25px;
-    font-weight: 700;
-}
-
-.hub-info-item {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 20px;
-    align-items: center;
-}
-
-.icon-round-bg {
-    width: 44px;
-    height: 44px;
-    background-color: #FFF0E5;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    color: #FF6B00;
-    flex-shrink: 0;
-}
-
-.hub-info-item h4 {
-    font-size: 1rem;
-    color: #111111;
-    font-weight: 700;
-}
-
-.hub-info-item p {
-    font-size: 0.95rem;
-    color: #555555;
-}
-
-.bhim-payment-node {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: #FFFFFF;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1.5px dashed #FF6B00;
-    cursor: pointer;
-    margin-top: 30px;
-}
-
-.bhim-qr-thumbnail {
-    width: 65px;
-    height: 65px;
-}
-
-.bhim-address {
-    font-weight: 700;
-    color: #27AE60;
-    font-size: 1rem;
-    display: block;
-}
-
-/* CRISP BORDRED CONTACT FORM */
-#hub-action-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.field-container {
-    display: flex;
-    align-items: center;
-    border: 2px solid #FF6B00; /* Distinct Crisp Orange Border */
-    background: #FFFFFF;
-    border-radius: 8px;
-    padding: 4px 16px;
-}
-
-.field-container:focus-within {
-    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
-}
-
-.field-icon {
-    color: #FF6B00;
-    margin-right: 12px;
-    font-size: 1.05rem;
-}
-
-.field-container input, 
-.field-container textarea {
-    width: 100%;
-    border: none;
-    outline: none;
-    padding: 12px 0;
-    font-size: 1rem;
-    color: #111111;
-    background: transparent;
-}
-
-.textarea-container {
-    align-items: flex-start;
-    padding-top: 10px;
-}
-
-.hub-submit-btn {
-    background: #FF6B00;
-    color: #FFFFFF;
-    border: none;
-    padding: 14px 36px;
-    font-size: 1rem;
-    font-weight: 700;
-    border-radius: 8px;
-    cursor: pointer;
-    align-self: flex-start;
-    transition: background 0.2s ease;
-}
-
-.hub-submit-btn:hover {
-    background: #E65100;
-}
-
-/* ==========================================================================
    LIGHTBOX MODAL
    ========================================================================== */
 .gallery-lightbox {
@@ -634,20 +499,161 @@ body {
 }
 
 /* ==========================================================================
-   FOOTER (3-COLUMN LAYOUT)
+   SEAMLESS CONTACT & FOOTER SECTION
    ========================================================================== */
-.main-footer {
+.merged-contact-footer {
     background: #111111;
     color: #CCCCCC;
-    padding-top: 50px;
-    border-top: 3px solid #FF6B00;
+    padding-top: 60px;
+    border-top: 4px solid #FF6B00;
+}
+
+.merged-contact-footer .container {
+    padding-top: 0;
+}
+
+.contact-hub-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #222222;
+}
+
+@media (max-width: 850px) {
+    .contact-hub-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+.hub-info-col h3, 
+.hub-form-col h3 {
+    font-size: 1.4rem;
+    color: #FF6B00;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.hub-info-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.icon-round-bg {
+    width: 44px;
+    height: 44px;
+    background-color: #222222;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #FF6B00;
+    flex-shrink: 0;
+}
+
+.hub-info-item h4 {
+    font-size: 1rem;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.hub-info-item p {
+    font-size: 0.95rem;
+    color: #AAAAAA;
+}
+
+.bhim-payment-node {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #1A1A1A;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1.5px dashed #FF6B00;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.bhim-qr-thumbnail {
+    width: 65px;
+    height: 65px;
+}
+
+.bhim-address {
+    font-weight: 700;
+    color: #27AE60;
+    font-size: 1rem;
+    display: block;
+}
+
+#hub-action-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.field-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid #333333;
+    background: #1A1A1A;
+    border-radius: 8px;
+    padding: 4px 16px;
+    transition: border-color 0.2s ease;
+}
+
+.field-container:focus-within {
+    border-color: #FF6B00;
+}
+
+.field-icon {
+    color: #FF6B00;
+    margin-right: 12px;
+    font-size: 1.05rem;
+}
+
+.field-container input, 
+.field-container textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    font-size: 1rem;
+    color: #FFFFFF;
+    background: transparent;
+}
+
+.textarea-container {
+    align-items: flex-start;
+    padding-top: 10px;
+}
+
+.hub-submit-btn {
+    background: #FF6B00;
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 36px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background 0.2s ease;
+}
+
+.hub-submit-btn:hover {
+    background: #E65100;
 }
 
 .footer-container-3col {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr 1fr;
     gap: 40px;
-    padding-bottom: 40px;
+    padding: 50px 0 40px 0;
     border-bottom: 1px solid #222222;
 }
 

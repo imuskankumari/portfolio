@@ -1,10 +1,10 @@
 // Strict File Mapping Matching GitHub Repository EXACT Names
 const portfolioAssets = {
-    // Graphic Design: g1.jpg to g50.jpg
+    // Graphic Design: g1.png to g50.png
     graphic: Array.from({length: 50}, (_, i) => ({ 
         id: `g_${i}`, 
         type: 'image', 
-        src: `g${i+1}.jpg`,
+        src: `g${i+1}.png`,
         aspectClass: 'aspect-square',
         likes: 0
     })),
@@ -37,7 +37,7 @@ const portfolioAssets = {
 const userLikedItems = new Set();
 let currentCategoryArray = [];
 let activeIndex = 0;
-let visibleCount = 10; // Initial photo limit
+let visibleCount = 10; // Initial limit
 let activeTabGlobal = 'graphic';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initialize Visitor Counter in Local Storage for clean, non-broken display
+    // Initialize Unique Visitor Counter (Session Tracked)
     initVisitorCounter();
 
     switchTab('graphic');
@@ -74,7 +74,7 @@ function filterGallery(category, event) {
 
 function switchTab(category) {
     activeTabGlobal = category;
-    visibleCount = 10; // Reset to initial 10 cards per tab
+    visibleCount = 10; // Reset pagination to initial 10 items
     currentCategoryArray = portfolioAssets[category] || [];
     renderGrid();
 }
@@ -94,9 +94,10 @@ function renderGrid() {
         const isLiked = userLikedItems.has(item.id);
         const heartStateClass = isLiked ? 'like-click-node activated' : 'like-click-node';
 
+        // Optimized video reel markup with preload="metadata" for fast performance
         const mediaContent = item.type === 'video' 
-            ? `<video src="${item.src}" muted loop autoplay playsinline></video><span class="video-reel-tag">▶ Reel</span>` 
-            : `<img src="${item.src}" onerror="this.src='placeholder.png'">`;
+            ? `<video src="${item.src}" muted loop autoplay playsinline preload="metadata"></video><span class="video-reel-tag">▶ Reel</span>` 
+            : `<img src="${item.src}" loading="lazy" onerror="this.src='placeholder.png'">`;
 
         itemNode.innerHTML = `
             <div class="dribbble-img-frame ${item.aspectClass}" onclick="openGallerySlider(${idx})">
@@ -127,7 +128,7 @@ function renderGrid() {
 }
 
 function handleViewMoreAction() {
-    visibleCount += 10; // Incrementally show 10 more images
+    visibleCount += 10;
     renderGrid();
 }
 
@@ -187,23 +188,28 @@ function closeGallerySlider() {
 }
 
 function handleFormSubmit(event) {
-    event.preventDefault();
-    alert('Thank you for reaching out! Your message has been sent successfully.');
-    event.target.reset();
+    alert('Thank you for your message! It has been received successfully.');
 }
 
-// Reliable JS Client Visitor Counter
+// 24-Hour Session-Based Unique Visitor Counter
 function initVisitorCounter() {
     const countDisplay = document.getElementById('visitorCountVal');
     if (!countDisplay) return;
 
-    let visits = localStorage.getItem('mk_portfolio_visits');
-    if (!visits) {
-        visits = 124; // Baseline starting number
-    } else {
-        visits = parseInt(visits) + 1;
+    const storageKey = 'mk_unique_visitor_count';
+    const timestampKey = 'mk_last_visit_time';
+    const now = new Date().getTime();
+    const twentyFourHours = 24 * 60 * 60 * 1000;
+
+    let visits = parseInt(localStorage.getItem(storageKey)) || 128;
+    const lastVisit = parseInt(localStorage.getItem(timestampKey)) || 0;
+
+    if (!lastVisit || (now - lastVisit) > twentyFourHours) {
+        visits += 1;
+        localStorage.setItem(storageKey, visits);
+        localStorage.setItem(timestampKey, now);
     }
-    localStorage.setItem('mk_portfolio_visits', visits);
+
     countDisplay.textContent = visits;
 }
 

@@ -43,9 +43,9 @@
             <h1 class="section-title">Welcome to Muskan Kumari's Portfolio</h1>
             
             <div class="about-split-layout">
-                <!-- Left Column: Green Logo with Modern Glassmorphism Frame -->
+                <!-- Left Column: Green Logo with Orange Accent Border & Glow Shadow -->
                 <div class="about-left-logo-block">
-                    <div class="glass-image-card">
+                    <div class="orange-glow-card">
                         <img src="logo.png" alt="MK Green Logo" class="profile-image-styled">
                     </div>
                 </div>
@@ -60,7 +60,7 @@
         </div>
     </section>
 
-    <!-- SKILLS & TECH STACK SECTION (PURE WHITE & INFINITE MARQUEE) -->
+    <!-- SKILLS & TECH STACK SECTION (PURE WHITE MARQUEE) -->
     <section id="skills" class="skills-tech-stack-section">
         <div class="container">
             <h2 class="section-title">Skills & Tech Stack</h2>
@@ -88,7 +88,7 @@
                     <div class="value-card-item"><img src="vn.png" alt="VN"><h4>VN</h4></div>
                     <div class="value-card-item"><img src="inshot.png" alt="InShot"><h4>InShot</h4></div>
 
-                    <!-- Duplicated Set 2 for Infinite Loop -->
+                    <!-- Duplicated Set 2 for Seamless Marquee Loop -->
                     <div class="value-card-item"><img src="photoshop.png" alt="Photoshop"><h4>Adobe Photoshop</h4></div>
                     <div class="value-card-item"><img src="illustrator.png" alt="Illustrator"><h4>Adobe Illustrator</h4></div>
                     <div class="value-card-item"><img src="indesign.png" alt="InDesign"><h4>Adobe InDesign</h4></div>
@@ -141,61 +141,67 @@
         <button class="slider-arrow next-arrow" onclick="changeSlide(1)">&#10095;</button>
     </div>
 
-    <!-- UNIFIED DARK CONTACT & FOOTER SECTION -->
+    <!-- PRIVACY-PROTECTED CONTACT SECTION & FOOTER BLOCK -->
     <footer class="unified-dark-footer" id="contact">
         <div class="container">
-            <!-- Embedded Contact Us Form Block -->
+            <!-- Contact Block -->
             <div class="contact-hub-grid">
+                <!-- Left: Social Links -->
                 <div class="hub-info-col">
-                    <h3>Contact Information</h3>
-                    <div class="hub-info-item">
-                        <div class="icon-round-bg"><i class="fa-solid fa-location-dot"></i></div>
-                        <div>
-                            <h4>Address</h4>
-                            <p>New Delhi, India</p>
-                        </div>
-                    </div>
-                    <div class="hub-info-item">
-                        <div class="icon-round-bg"><i class="fa-solid fa-envelope"></i></div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>musankumari3330@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="hub-info-item">
-                        <div class="icon-round-bg"><i class="fa-solid fa-phone"></i></div>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+91 8810682518</p>
-                        </div>
+                    <h3>Follow Us</h3>
+                    <p class="privacy-note">Connect with us on social media for design insights and project updates.</p>
+                    
+                    <div class="social-cards-wrapper">
+                        <a href="https://youtube.com/@I.MuskanKumari" target="_blank" class="social-card-item yt">
+                            <i class="fa-brands fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="https://instagram.com/i.musankumari" target="_blank" class="social-card-item ig">
+                            <i class="fa-brands fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.behance.net/muskankumari143" target="_blank" class="social-card-item bh">
+                            <i class="fa-brands fa-behance"></i>
+                            <span>Behance</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank" class="social-card-item li">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
                     </div>
                 </div>
 
+                <!-- Right: Formspree Contact Form + WhatsApp Action -->
                 <div class="hub-form-col">
                     <h3>Send Us a Message</h3>
-                    <form id="hub-action-form" onsubmit="handleFormSubmit(event)">
+                    <form id="hub-action-form" action="https://formspree.io/f/muskankumari3330@gmail.com" method="POST" onsubmit="handleFormSubmit(event)">
                         <div class="field-container">
                             <span class="field-icon"><i class="fa-solid fa-user"></i></span>
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="field-container">
                             <span class="field-icon"><i class="fa-solid fa-envelope"></i></span>
-                            <input type="email" placeholder="Your Email" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="field-container textarea-container">
                             <span class="field-icon"><i class="fa-solid fa-pen"></i></span>
-                            <textarea placeholder="Your Message" rows="4" required></textarea>
+                            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
                         </div>
-                        <button type="submit" class="hub-submit-btn">Send Message</button>
+                        
+                        <div class="action-buttons-group">
+                            <button type="submit" class="hub-submit-btn">Send Message</button>
+                            <a href="https://wa.me/918810682518?text=Hi%20Muskan,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect!" target="_blank" class="whatsapp-chat-btn">
+                                <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                            </a>
+                        </div>
                     </form>
                 </div>
             </div>
 
-            <!-- Footer Columns -->
+            <!-- Footer Columns (NO LOGO) -->
             <div class="footer-container-3col">
                 <!-- Left Column -->
                 <div class="footer-col footer-col-left">
-                    <img src="logo.png" alt="MK Logo" class="footer-blend-logo">
                     <p class="footer-brand-title">Muskan Kumari <span class="footer-pipe">|</span> Portfolio</p>
                     <p class="footer-subtext">Stay Connected</p>
                     <div class="footer-social-links">
@@ -217,7 +223,7 @@
                     </ul>
                 </div>
 
-                <!-- Right Column: Subscribe Form -->
+                <!-- Right Column -->
                 <div class="footer-col footer-col-right">
                     <h4>Subscribe for updates</h4>
                     <form class="footer-subscribe-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
@@ -228,12 +234,12 @@
             </div>
         </div>
 
-        <!-- Bottom Bar with Clean Visitor Counter Badge -->
+        <!-- Bottom Bar with Unique Visitor Counter Badge -->
         <div class="footer-bottom-bar">
             <div class="footer-bottom-content">
                 <p>&copy; 2026 Muskan Kumari. All Rights Reserved.</p>
                 <div class="footer-visitor-badge">
-                    <i class="fa-solid fa-eye"></i> Profile Visitors: <span id="visitorCountVal">Loading...</span>
+                    <i class="fa-solid fa-eye"></i> Unique Profile Visits: <span id="visitorCountVal">Loading...</span>
                 </div>
             </div>
         </div>
@@ -242,4 +248,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-

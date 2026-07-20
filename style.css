@@ -43,30 +43,30 @@ body {
 }
 
 /* ==========================================================================
-   HEADER & NAVIGATION
+   HEADER & NAVIGATION MENU STYLING
    ========================================================================== */
 .main-header {
     width: 100%;
-    background: #FFFFFF;
+    background: #111111;
     position: sticky;
     top: 0;
     z-index: 2500;
-    border-bottom: 1px solid #EEEEEE;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    border-bottom: 2px solid #FF6B00;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .header-container {
     max-width: 1200px;
     width: 86%;
     margin: 0 auto;
-    height: 90px;
+    height: 85px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .site-logo {
-    height: 70px;
+    height: 65px;
     width: auto;
     object-fit: contain;
     display: block;
@@ -75,18 +75,37 @@ body {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 36px;
 }
 
-.nav-links a {
-    color: #111111;
+/* Base state for all header nav links: Vibrant Orange */
+.nav-item {
+    color: #FF6B00 !important;
     font-size: 1.05rem;
-    font-weight: 600;
-    transition: color 0.2s ease;
+    font-weight: 700;
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.25s ease;
 }
 
-.nav-links a:hover {
-    color: #FF6B00;
+.nav-item:hover {
+    color: #FFFFFF !important;
+}
+
+/* Active Section Link: Pure White with Bottom Underline */
+.nav-item.active {
+    color: #FFFFFF !important;
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #FF6B00;
+    border-radius: 2px;
 }
 
 .mobile-nav-toggle {
@@ -103,13 +122,13 @@ body {
 .mobile-nav-toggle span {
     width: 100%;
     height: 3px;
-    background-color: #111111;
+    background-color: #FF6B00;
     border-radius: 2px;
 }
 
 @media (max-width: 768px) {
     .site-logo {
-        height: 60px;
+        height: 55px;
     }
 
     .mobile-nav-toggle {
@@ -118,17 +137,17 @@ body {
     
     .nav-links {
         position: fixed;
-        top: 90px;
+        top: 85px;
         right: -100%;
         width: 100%;
-        height: calc(100vh - 90px);
-        background-color: #FFFFFF;
+        height: calc(100vh - 85px);
+        background-color: #111111;
         flex-direction: column;
         justify-content: flex-start;
         padding-top: 50px;
         gap: 30px;
         transition: right 0.3s ease;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     }
     
     .nav-links.mobile-active {
@@ -153,7 +172,7 @@ body {
 }
 
 /* ==========================================================================
-   ABOUT ME SECTION (RESTORED CLEAN WHITE FLOATING CARD)
+   ABOUT ME SECTION
    ========================================================================== */
 .about-section {
     background: #FFFFFF;
@@ -179,9 +198,9 @@ body {
     justify-content: center;
 }
 
-/* Clean White Card with Soft Shadow (No Orange Borders) */
+/* Clean White Card Container with Soft Shadow (No Orange Outlines) */
 .clean-white-card {
-    padding: 12px;
+    padding: 14px;
     background: #FFFFFF;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -220,7 +239,7 @@ body {
 }
 
 /* ==========================================================================
-   SKILLS & TECH STACK (PURE WHITE & INFINITE MARQUEE)
+   SKILLS & TECH STACK (PURE WHITE MARQUEE)
    ========================================================================== */
 .skills-tech-stack-section {
     background: #FFFFFF;
@@ -286,7 +305,7 @@ body {
 }
 
 /* ==========================================================================
-   PROJECTS SECTION (FIXED CARD HEIGHTS & RESTORED MK AVATAR)
+   MY PROJECTS SECTION
    ========================================================================== */
 .services-section {
     background: #FFFFFF;
@@ -335,7 +354,7 @@ body {
     .dribbble-grid-layout { grid-template-columns: 1fr; gap: 20px; }
 }
 
-/* White Cards with Thin Border */
+/* Clean White Project Cards */
 .dribbble-item-card {
     background: #FFFFFF;
     border-radius: 14px;
@@ -358,7 +377,7 @@ body {
     position: relative;
 }
 
-/* Card Ratios - Standard Square 1:1 Height */
+/* 1:1 Aspect Ratio Square Cards */
 .aspect-square {
     aspect-ratio: 1 / 1;
 }
@@ -375,7 +394,7 @@ body {
     display: block;
 }
 
-/* Restored Card Meta Row: MK Circle + Muskan on Left, Heart on Right */
+/* Card Meta Row: MK Orange Badge ONLY on Left (NO Muskan Text), Heart on Right */
 .dribbble-meta-row {
     display: flex;
     justify-content: space-between;
@@ -385,29 +404,17 @@ body {
     border-top: 1px solid #F3F4F6;
 }
 
-.dribbble-user {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.dribbble-avatar {
-    width: 26px;
-    height: 26px;
+.dribbble-avatar-only {
+    width: 28px;
+    height: 28px;
     background: #FF6B00;
     color: #FFFFFF;
     border-radius: 50%;
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.dribbble-username {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: #111111;
 }
 
 .dribbble-stats {
@@ -578,7 +585,42 @@ body {
     color: #555555;
 }
 
-/* Form Styling with Crisp Orange Input Borders */
+.stay-connected-wrapper {
+    margin-top: 30px;
+}
+
+.stay-connected-wrapper h4 {
+    font-size: 1.1rem;
+    color: #111111;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.contact-social-circles {
+    display: flex;
+    gap: 12px;
+}
+
+.contact-social-circles a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: #FFF0E5;
+    color: #FF6B00;
+    border-radius: 50%;
+    font-size: 1.15rem;
+    transition: all 0.25s ease;
+}
+
+.contact-social-circles a:hover {
+    background: #FF6B00;
+    color: #FFFFFF;
+    transform: translateY(-3px);
+}
+
+/* Contact Form Styling */
 #hub-action-form {
     display: flex;
     flex-direction: column;
@@ -638,27 +680,29 @@ body {
 }
 
 /* ==========================================================================
-   ORIGINAL CLASSIC DARK FOOTER (#111111)
+   CLEAN DARK FOOTER (#111111) WITH ANIMATED COUNTER WIDGET
    ========================================================================== */
 .main-footer {
     background: #111111;
     color: #CCCCCC;
-    padding-top: 60px;
+    padding-top: 50px;
     border-top: 3px solid #FF6B00;
 }
 
-.footer-container-3col {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr 1fr;
+.footer-container-2col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 40px;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
     border-bottom: 1px solid #222222;
 }
 
-@media (max-width: 850px) {
-    .footer-container-3col {
-        grid-template-columns: 1fr;
-        gap: 35px;
+@media (max-width: 768px) {
+    .footer-container-2col {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
     }
 }
 
@@ -666,7 +710,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .footer-blend-logo {
@@ -685,131 +729,67 @@ body {
 .footer-subtext {
     font-size: 0.9rem;
     color: #888888;
-    margin-bottom: 16px;
 }
 
 .footer-pipe {
     color: #FF6B00;
 }
 
-/* Circular Social Icons ONLY (No Text Labels Underneath) */
-.footer-social-links {
-    display: flex;
-    gap: 12px;
-}
-
-.footer-social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: #1A1A1A;
-    border: 1px solid #2A2A2A;
-    color: #FFFFFF;
-    border-radius: 50%;
-    font-size: 1.1rem;
-    transition: all 0.25s ease;
-}
-
-.footer-social-links a:hover {
-    background: #FF6B00;
-    border-color: #FF6B00;
-    transform: translateY(-3px);
-}
-
 .footer-col h4 {
     color: #FFFFFF;
     font-size: 1.1rem;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
     font-weight: 700;
 }
 
-.footer-nav-links {
-    list-style: none;
+/* Animated Unique Visitors Widget (Replaces Subscribe Box / Quick Links) */
+.counter-animated-card {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 16px;
+    background: #1A1A1A;
+    border: 1px solid #282828;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    min-width: 260px;
 }
 
-.footer-nav-links a {
-    color: #CCCCCC;
-    transition: color 0.2s ease;
-}
-
-.footer-nav-links a:hover {
+.counter-icon-box {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 107, 0, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
     color: #FF6B00;
 }
 
-/* Compact Subscribe Form */
-.footer-subscribe-form {
-    display: flex;
-    background: #1A1A1A;
-    border: 1px solid #333333;
-    border-radius: 6px;
-    overflow: hidden;
-    padding: 2px;
-    max-width: 300px;
-}
-
-.footer-subscribe-form input {
-    width: 100%;
-    border: none;
-    outline: none;
-    padding: 10px 12px;
-    font-size: 0.9rem;
-    color: #FFFFFF;
-    background: transparent;
-}
-
-.footer-subscribe-form button {
-    background: #FF6B00;
-    color: #FFFFFF;
-    border: none;
-    padding: 0 16px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.2s ease;
-}
-
-.footer-subscribe-form button:hover {
-    background: #E65100;
-}
-
-/* Centered Bottom Footer Bar */
-.footer-bottom-bar {
-    padding: 24px 0;
-    background: #0A0A0A;
-    text-align: center;
-}
-
-.footer-bottom-content {
+.counter-text-box {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
 }
 
-.footer-visitor-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: #1A1A1A;
-    padding: 6px 16px;
-    border-radius: 20px;
-    border: 1px solid #282828;
-    color: #BBBBBB;
+.counter-number {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1.2;
+}
+
+.counter-sub-label {
     font-size: 0.85rem;
+    color: #AAAAAA;
     font-weight: 600;
 }
 
-.footer-visitor-badge i {
-    color: #FF6B00;
-}
-
-.footer-visitor-badge span {
-    color: #FF6B00;
-    font-weight: 700;
+/* Bottom Footer Copyright Bar */
+.footer-bottom-bar {
+    padding: 20px 0;
+    background: #0A0A0A;
+    text-align: center;
 }
 
 .footer-bottom-bar p {

@@ -1,32 +1,32 @@
-// Exact Media Mapping Configs
+// Strict File Mapping Configuration
 const portfolioAssets = {
-    graphic: Array.from({length: 10}, (_, i) => ({ 
+    graphic: Array.from({length: 50}, (_, i) => ({ 
         id: `g_${i}`, 
         type: 'image', 
-        src: `g${i+1}.png`, 
-        likes: 144 + i, 
-        views: `${(3.2 + (i * 0.1)).toFixed(1)}k` 
+        src: `g${i+1}.png`,
+        aspectClass: 'aspect-square',
+        likes: 0
     })),
     web: Array.from({length: 10}, (_, i) => ({ 
         id: `w_${i}`, 
         type: 'image', 
-        src: `w${i+1}.png`, 
-        likes: 98 + i, 
-        views: `${(1.2 + (i * 0.1)).toFixed(1)}k` 
+        src: `w${i+1}.png`,
+        aspectClass: 'aspect-square',
+        likes: 0
     })),
     ai: Array.from({length: 10}, (_, i) => ({ 
         id: `b_${i}`, 
         type: 'image', 
-        src: `b${i+1}.png`, 
-        likes: 200 + i, 
-        views: `${(3.3 + (i * 0.1)).toFixed(1)}k` 
+        src: `b${i+1}.png`,
+        aspectClass: 'aspect-square',
+        likes: 0
     })),
     motion: Array.from({length: 12}, (_, i) => ({ 
         id: `m_${i}`, 
         type: 'video', 
-        src: `r${i+1}.mp4`, 
-        likes: 172 + i, 
-        views: `${(4.5 + (i * 0.1)).toFixed(1)}k` 
+        src: `r${i+1}.mp4`,
+        aspectClass: 'aspect-vertical',
+        likes: 0
     }))
 };
 
@@ -92,7 +92,7 @@ function renderGrid() {
             : `<img src="${item.src}" onerror="this.src='placeholder.png'">`;
 
         itemNode.innerHTML = `
-            <div class="dribbble-img-frame" onclick="openGallerySlider(${idx})">
+            <div class="dribbble-img-frame ${item.aspectClass}" onclick="openGallerySlider(${idx})">
                 ${mediaContent}
             </div>
             <div class="dribbble-meta-row">
@@ -104,7 +104,6 @@ function renderGrid() {
                     <span class="${heartStateClass}" onclick="executeRealLiking('${item.id}', ${idx}, event)">
                         <i class="${isLiked ? 'fa-solid' : 'fa-regular'} fa-heart"></i> <span class="count-lbl">${item.likes}</span>
                     </span>
-                    <span>👁️ ${item.views}</span>
                 </div>
             </div>
         `;
@@ -134,12 +133,12 @@ function executeRealLiking(assetId, index, event) {
 
     if (userLikedItems.has(assetId)) {
         userLikedItems.delete(assetId);
-        targetItem.likes = parseInt(targetItem.likes) - 1;
+        targetItem.likes = Math.max(0, targetItem.likes - 1);
         triggerBox.classList.remove('activated');
         heartElement.className = 'fa-regular fa-heart';
     } else {
         userLikedItems.add(assetId);
-        targetItem.likes = parseInt(targetItem.likes) + 1;
+        targetItem.likes += 1;
         triggerBox.classList.add('activated');
         heartElement.className = 'fa-solid fa-heart';
     }

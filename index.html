@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari Portfolio</title>
+    <title>Muskan Kumari | Portfolio</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -13,20 +13,19 @@
     <!-- ================= HEADER ================= -->
     <header class="main-header">
         <div class="header-container">
-            <!-- Left Branding -->
+            <!-- Left: ONLY Official Logo -->
             <a href="#top" class="header-branding">
                 <img src="mklogo.png" alt="MK Logo" class="site-logo">
-                <span class="brand-text">Muskan Kumari Portfolio</span>
             </a>
             
-            <!-- Mobile Menu Toggle Button -->
+            <!-- Mobile Menu Hamburger Button -->
             <button class="mobile-nav-toggle" id="menuToggleBtn" aria-label="Toggle Navigation Menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <!-- Navigation Links -->
+            <!-- Right: Navigation Menu Links -->
             <nav class="nav-links" id="mainNavigation">
                 <a href="#top" class="nav-item active" onclick="closeMobileMenu()">Home</a>
                 <a href="#about" class="nav-item" onclick="closeMobileMenu()">About</a>
@@ -38,25 +37,36 @@
 
     <!-- ================= HERO SECTION ================= -->
     <section id="home" class="hero-section">
-        <div class="hero-wrapper">
-            <img src="hero.png" alt="Hero Banner" class="hero-fluid-img">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-tagline">Graphic & Web Designer • AI Creator</span>
+                <h1 class="hero-heading">Crafting Visual Systems & Digital Experiences</h1>
+                <p class="hero-description">Transforming ideas into high-impact graphics, sleek web layouts, and interactive media.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">View Projects <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-banner-wrap">
+                <img src="hero.png" alt="Creative Design Showcase" class="hero-fluid-img">
+            </div>
         </div>
     </section>
 
     <!-- ================= ABOUT ME SECTION ================= -->
     <section id="about" class="about-section">
         <div class="container">
-            <h1 class="section-title">Welcome to Muskan Kumari's Portfolio</h1>
+            <h2 class="section-title">Welcome to My Creative Space</h2>
             
             <div class="about-split-layout">
-                <!-- Left: Profile Logo / Image -->
+                <!-- Left: Profile Logo Box -->
                 <div class="about-left-logo-block">
                     <div class="clean-white-card">
-                        <img src="logo.png" alt="MK Green Logo" class="profile-image-styled">
+                        <img src="logo.png" alt="Profile Visual" class="profile-image-styled">
                     </div>
                 </div>
 
-                <!-- Right: Profile Narrative -->
+                <!-- Right: Bio Content -->
                 <div class="about-right-text-block">
                     <p class="profile-narrative">
                         Hi, I am Muskan Kumari from Delhi, a passionate Graphic & Web Designer. I work professionally as a Graphic Designer, Web Designer, Video Editor, and AI Creator. I am skilled in Adobe Photoshop, Illustrator, InDesign, CorelDraw, and Canva. I also build clean websites using HTML, CSS, JavaScript, WordPress, and Google Sites. I do video editing using Filmora, VN, and InShot. Additionally, I work as an AI Creator using all AI tools to create AI visuals, AI animation videos, and AI motion graphics.
@@ -94,7 +104,7 @@
                     <div class="value-card-item"><img src="vn.png" alt="VN"><h4>VN</h4></div>
                     <div class="value-card-item"><img src="inshot.png" alt="InShot"><h4>InShot</h4></div>
 
-                    <!-- Duplicated Set 2 for Infinite Loop -->
+                    <!-- Duplicated Set 2 for Infinite Scrolling -->
                     <div class="value-card-item"><img src="photoshop.png" alt="Photoshop"><h4>Adobe Photoshop</h4></div>
                     <div class="value-card-item"><img src="illustrator.png" alt="Illustrator"><h4>Adobe Illustrator</h4></div>
                     <div class="value-card-item"><img src="indesign.png" alt="InDesign"><h4>Adobe InDesign</h4></div>
@@ -119,7 +129,7 @@
         </div>
     </section>
 
-    <!-- ================= PROJECTS SECTION ================= -->
+    <!-- ================= PROJECTS / GALLERY SECTION ================= -->
     <section id="projects" class="services-section">
         <div class="container">
             <h2 class="section-title">My Projects</h2>
@@ -132,7 +142,7 @@
                 <button class="tab-btn" onclick="filterGallery('motion', event)">AI Animation Videos</button>
             </div>
             
-            <!-- Gallery Grid -->
+            <!-- Dynamic Grid (Starts with 9 items in 3x3 layout) -->
             <div class="dribbble-grid-layout" id="main-portfolio-gallery"></div>
             
             <!-- View More Action Button -->
@@ -142,7 +152,7 @@
         </div>
     </section>
 
-    <!-- ================= LIGHTBOX OVERLAY ================= -->
+    <!-- ================= LIGHTBOX MODAL ================= -->
     <div class="gallery-lightbox" id="galleryLightbox">
         <span class="lightbox-close" onclick="closeGallerySlider()">&times;</span>
         <button class="slider-arrow prev-arrow" onclick="changeSlide(-1)">&#10094;</button>
@@ -150,117 +160,64 @@
         <button class="slider-arrow next-arrow" onclick="changeSlide(1)">&#10095;</button>
     </div>
 
-    <!-- ================= CONTACT SECTION ================= -->
+    <!-- ================= CONTACT SECTION (FORM ONLY - 100% PRIVATE) ================= -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="section-title">Connect With Us</h2>
-            
-            <div class="contact-hub-grid">
-                <!-- Left: Quick Contact Info -->
-                <div class="hub-info-col">
-                    <h3>Contact Information</h3>
-                    <div class="hub-info-item">
-                        <div class="icon-round-bg"><i class="fa-solid fa-location-dot"></i></div>
-                        <div>
-                            <h4>Location</h4>
-                            <p>New Delhi, India</p>
-                        </div>
-                    </div>
-                    <div class="hub-info-item">
-                        <div class="icon-round-bg"><i class="fa-solid fa-phone"></i></div>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+91 810682518</p>
-                        </div>
-                    </div>
-                    <div class="hub-info-item">
-                        <div class="icon-round-bg"><i class="fa-solid fa-envelope"></i></div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>muskankumari3330@gmail.com</p>
-                        </div>
-                    </div>
+            <div class="contact-card-wrapper">
+                <div class="contact-header-text">
+                    <h2 class="section-title">Send Me a Message</h2>
+                    <p class="contact-subtext">Have a project in mind or want to collaborate? Fill out the form below to get in touch!</p>
                 </div>
-
-                <!-- Right: Interactive Contact Form -->
-                <div class="hub-form-col">
-                    <h3>Send Us a Message</h3>
-                    <form id="hub-action-form" action="https://formspree.io/f/muskankumari3330@gmail.com" method="POST" onsubmit="handleFormSubmit(event)">
+                
+                <form id="hub-action-form" action="https://formspree.io/f/muskankumari3330@gmail.com" method="POST" onsubmit="handleFormSubmit(event)">
+                    <div class="form-row">
                         <div class="field-container">
                             <span class="field-icon"><i class="fa-solid fa-user"></i></span>
-                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="text" name="name" placeholder="Your Full Name" required>
                         </div>
                         <div class="field-container">
                             <span class="field-icon"><i class="fa-solid fa-envelope"></i></span>
-                            <input type="email" name="email" placeholder="Your Email" required>
+                            <input type="email" name="email" placeholder="Your Email Address" required>
                         </div>
-                        <div class="field-container textarea-container">
-                            <span class="field-icon"><i class="fa-solid fa-pen"></i></span>
-                            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="hub-submit-btn">Send Message</button>
-                    </form>
-                </div>
+                    </div>
+                    <div class="field-container textarea-container">
+                        <span class="field-icon"><i class="fa-solid fa-pen"></i></span>
+                        <textarea name="message" placeholder="Write your message here..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="hub-submit-btn">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- ================= COMPACT FOOTER ================= -->
+    <!-- ================= FOOTER (COMPACT CHARCOAL THEME) ================= -->
     <footer class="main-footer">
         <div class="container footer-container-3col">
-            <!-- Left Column -->
+            <!-- Section 1 (Left): Official Logo & Branding Text ONLY -->
             <div class="footer-col footer-col-left">
-                <img src="logo.png" alt="MK Logo" class="footer-blend-logo">
-                <h3 class="footer-brand-title">Muskan Kumari Portfolio</h3>
-                <div class="footer-contact-info">
-                    <p><i class="fa-solid fa-location-dot"></i> New Delhi, India</p>
-                    <p><i class="fa-solid fa-phone"></i> +91 810682518</p>
-                    <p><i class="fa-solid fa-envelope"></i> muskankumari3330@gmail.com</p>
+                <div class="footer-branding-wrap">
+                    <img src="mklogo.png" alt="MK Logo" class="footer-brand-logo">
+                    <span class="footer-brand-title">Muskan Kumari | Portfolio</span>
                 </div>
             </div>
 
-            <!-- Middle Column -->
-            <div class="footer-col footer-col-middle">
-                <div class="stay-connected-block">
-                    <h4>Stay Connected</h4>
-                    <div class="footer-social-links">
-                        <a href="https://youtube.com/@I.MuskanKumari" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="https://instagram.com/i.musankumari" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.behance.net/muskankumari143" target="_blank" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
-                        <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-
-                <div class="quick-links-block">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-nav-links">
-                        <li><a href="#top">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
+            <!-- Section 2 (Middle): Stay Connected -->
+            <div class="footer-col footer-col-center">
+                <h4>Stay Connected</h4>
+                <div class="footer-social-links">
+                    <a href="https://youtube.com/@I.MuskanKumari" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://instagram.com/i.musankumari" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.behance.net/muskankumari143" target="_blank" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                    <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
             </div>
 
-            <!-- Right Column -->
+            <!-- Section 3 (Right): Total Unique Profile Visits Counter -->
             <div class="footer-col footer-col-right">
-                <div class="subscribe-wrapper">
-                    <h4>Subscribe for updates</h4>
-                    <form class="footer-subscribe-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
-                    </form>
-                </div>
-
-                <!-- 24-Hour Unique Visitor Counter -->
-                <div class="visitor-counter-card">
-                    <div class="visitor-icon-box">
-                        <i class="fa-solid fa-eye"></i>
-                    </div>
-                    <div class="visitor-text-box">
-                        <span class="visitor-title">Total Unique Profile Visits</span>
-                        <span class="visitor-count" id="uniqueVisitorCount">--</span>
-                    </div>
+                <h4>Total Unique Profile Visits</h4>
+                <div class="visitor-counter-display">
+                    <i class="fa-solid fa-eye visitor-eye-icon"></i>
+                    <span class="visitor-count-number" id="uniqueVisitorCount">--</span>
                 </div>
             </div>
         </div>

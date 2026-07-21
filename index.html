@@ -1,224 +1,277 @@
-// Strict File Mapping Configuration Matching Repository File Names
-const portfolioAssets = {
-    graphic: Array.from({length: 50}, (_, i) => ({ 
-        id: `g_${i}`, 
-        type: 'image', 
-        src: `g${i+1}.jpg`,
-        aspectClass: 'aspect-square',
-        likes: 0
-    })),
-    web: Array.from({length: 10}, (_, i) => ({ 
-        id: `w_${i}`, 
-        type: 'image', 
-        src: `w${i+1}.png`,
-        aspectClass: 'aspect-square',
-        likes: 0
-    })),
-    ai: Array.from({length: 10}, (_, i) => ({ 
-        id: `b_${i}`, 
-        type: 'image', 
-        src: `b${i+1}.png`,
-        aspectClass: 'aspect-square',
-        likes: 0
-    })),
-    motion: Array.from({length: 12}, (_, i) => ({ 
-        id: `m_${i}`, 
-        type: 'video', 
-        src: `r${i+1}.mp4`,
-        aspectClass: 'aspect-vertical',
-        likes: 0
-    }))
-};
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muskan Kumari Portfolio</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
 
-const userLikedItems = new Set();
-let currentCategoryArray = [];
-let activeIndex = 0;
-let visibleCount = 10;
-let activeTabGlobal = 'graphic';
+    <!-- ================= HEADER ================= -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Left Branding -->
+            <a href="#top" class="header-branding">
+                <img src="mklogo.png" alt="MK Logo" class="site-logo">
+                <span class="brand-text">Muskan Kumari Portfolio</span>
+            </a>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-nav-toggle" id="menuToggleBtn" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Menu Toggle Elements
-    const menuToggleBtn = document.getElementById('menuToggleBtn');
-    const mainNavigation = document.getElementById('mainNavigation');
+            <!-- Navigation Links -->
+            <nav class="nav-links" id="mainNavigation">
+                <a href="#top" class="nav-item active" onclick="closeMobileMenu()">Home</a>
+                <a href="#about" class="nav-item" onclick="closeMobileMenu()">About</a>
+                <a href="#projects" class="nav-item" onclick="closeMobileMenu()">Projects</a>
+                <a href="#contact" class="nav-item" onclick="closeMobileMenu()">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-    if (menuToggleBtn && mainNavigation) {
-        menuToggleBtn.addEventListener('click', () => {
-            mainNavigation.classList.toggle('mobile-active');
-        });
-    }
+    <!-- ================= HERO SECTION ================= -->
+    <section id="home" class="hero-section">
+        <div class="hero-wrapper">
+            <img src="hero.png" alt="Hero Banner" class="hero-fluid-img">
+        </div>
+    </section>
 
-    // Initialize 24-Hour Unique Visitor Counter
-    initUniqueVisitorCounter();
-
-    // Initial Gallery Tab Display
-    switchTab('graphic');
-});
-
-function closeMobileMenu() {
-    const mainNavigation = document.getElementById('mainNavigation');
-    if (mainNavigation) {
-        mainNavigation.classList.remove('mobile-active');
-    }
-}
-
-/* Filter Tab Logic */
-function filterGallery(category, event) {
-    if (event) {
-        const buttons = document.querySelectorAll('.tab-btn');
-        buttons.forEach(btn => btn.classList.remove('active'));
-        event.target.classList.add('active');
-    }
-    switchTab(category);
-}
-
-function switchTab(category) {
-    activeTabGlobal = category;
-    visibleCount = 10;
-    currentCategoryArray = portfolioAssets[category] || [];
-    renderGrid();
-}
-
-function renderGrid() {
-    const targetGrid = document.getElementById('main-portfolio-gallery');
-    const viewMoreBtn = document.getElementById('galleryViewMoreTrigger');
-    if (!targetGrid) return;
-    
-    targetGrid.innerHTML = '';
-    const sliceItems = currentCategoryArray.slice(0, visibleCount);
-
-    sliceItems.forEach((item, idx) => {
-        const itemNode = document.createElement('div');
-        itemNode.className = 'dribbble-item-card';
-        
-        const isLiked = userLikedItems.has(item.id);
-        const heartStateClass = isLiked ? 'like-click-node activated' : 'like-click-node';
-
-        const mediaContent = item.type === 'video' 
-            ? `<video src="${item.src}" muted loop autoplay playsinline preload="metadata"></video><span class="video-reel-tag">▶ Reel</span>` 
-            : `<img src="${item.src}" loading="lazy" onerror="this.src='placeholder.png'">`;
-
-        itemNode.innerHTML = `
-            <div class="dribbble-img-frame ${item.aspectClass}" onclick="openGallerySlider(${idx})">
-                ${mediaContent}
-            </div>
-            <div class="dribbble-meta-row">
-                <div class="dribbble-user">
-                    <span class="dribbble-avatar">MK</span>
-                    <span class="dribbble-username">Muskan</span>
+    <!-- ================= ABOUT ME SECTION ================= -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h1 class="section-title">Welcome to Muskan Kumari's Portfolio</h1>
+            
+            <div class="about-split-layout">
+                <!-- Left: Profile Logo / Image -->
+                <div class="about-left-logo-block">
+                    <div class="clean-white-card">
+                        <img src="logo.png" alt="MK Green Logo" class="profile-image-styled">
+                    </div>
                 </div>
-                <div class="dribbble-stats">
-                    <span class="${heartStateClass}" onclick="executeRealLiking('${item.id}', ${idx}, event)">
-                        <i class="${isLiked ? 'fa-solid' : 'fa-regular'} fa-heart"></i> <span class="count-lbl">${item.likes}</span>
-                    </span>
+
+                <!-- Right: Profile Narrative -->
+                <div class="about-right-text-block">
+                    <p class="profile-narrative">
+                        Hi, I am Muskan Kumari from Delhi, a passionate Graphic & Web Designer. I work professionally as a Graphic Designer, Web Designer, Video Editor, and AI Creator. I am skilled in Adobe Photoshop, Illustrator, InDesign, CorelDraw, and Canva. I also build clean websites using HTML, CSS, JavaScript, WordPress, and Google Sites. I do video editing using Filmora, VN, and InShot. Additionally, I work as an AI Creator using all AI tools to create AI visuals, AI animation videos, and AI motion graphics.
+                    </p>
                 </div>
             </div>
-        `;
-        targetGrid.appendChild(itemNode);
-    });
+        </div>
+    </section>
 
-    if (viewMoreBtn) {
-        if (visibleCount >= currentCategoryArray.length) {
-            viewMoreBtn.style.display = 'none';
-        } else {
-            viewMoreBtn.style.display = 'inline-block';
-        }
-    }
-}
+    <!-- ================= SKILLS & TECH STACK ================= -->
+    <section id="skills" class="skills-tech-stack-section">
+        <div class="container">
+            <h2 class="section-title">Skills & Tech Stack</h2>
+            
+            <div class="marquee-wrapper">
+                <div class="marquee-track">
+                    <!-- Set 1 -->
+                    <div class="value-card-item"><img src="photoshop.png" alt="Photoshop"><h4>Adobe Photoshop</h4></div>
+                    <div class="value-card-item"><img src="illustrator.png" alt="Illustrator"><h4>Adobe Illustrator</h4></div>
+                    <div class="value-card-item"><img src="indesign.png" alt="InDesign"><h4>Adobe InDesign</h4></div>
+                    <div class="value-card-item"><img src="canva.png" alt="Canva"><h4>Canva</h4></div>
+                    <div class="value-card-item"><img src="coreldraw.png" alt="CorelDraw"><h4>CorelDraw</h4></div>
+                    <div class="value-card-item"><img src="html.png" alt="HTML"><h4>HTML</h4></div>
+                    <div class="value-card-item"><img src="css.png" alt="CSS"><h4>CSS</h4></div>
+                    <div class="value-card-item"><img src="javascript.png" alt="JavaScript"><h4>JavaScript</h4></div>
+                    <div class="value-card-item"><img src="wordpress.png" alt="WordPress"><h4>WordPress</h4></div>
+                    <div class="value-card-item"><img src="googledocs.png" alt="Google Docs"><h4>Google Docs</h4></div>
+                    <div class="value-card-item"><img src="googlesheets.png" alt="Google Sheets"><h4>Google Sheets</h4></div>
+                    <div class="value-card-item"><img src="googleslides.png" alt="Google Slides"><h4>Google Slides</h4></div>
+                    <div class="value-card-item"><img src="drive.png" alt="Google Drive"><h4>Google Drive</h4></div>
+                    <div class="value-card-item"><img src="word.png" alt="MS Word"><h4>MS Word</h4></div>
+                    <div class="value-card-item"><img src="excel.png" alt="MS Excel"><h4>MS Excel</h4></div>
+                    <div class="value-card-item"><img src="powerpoint.png" alt="MS PowerPoint"><h4>MS PowerPoint</h4></div>
+                    <div class="value-card-item"><img src="filmora.png" alt="Filmora"><h4>Filmora</h4></div>
+                    <div class="value-card-item"><img src="vn.png" alt="VN"><h4>VN</h4></div>
+                    <div class="value-card-item"><img src="inshot.png" alt="InShot"><h4>InShot</h4></div>
 
-function handleViewMoreAction() {
-    visibleCount += 10;
-    renderGrid();
-}
+                    <!-- Duplicated Set 2 for Infinite Loop -->
+                    <div class="value-card-item"><img src="photoshop.png" alt="Photoshop"><h4>Adobe Photoshop</h4></div>
+                    <div class="value-card-item"><img src="illustrator.png" alt="Illustrator"><h4>Adobe Illustrator</h4></div>
+                    <div class="value-card-item"><img src="indesign.png" alt="InDesign"><h4>Adobe InDesign</h4></div>
+                    <div class="value-card-item"><img src="canva.png" alt="Canva"><h4>Canva</h4></div>
+                    <div class="value-card-item"><img src="coreldraw.png" alt="CorelDraw"><h4>CorelDraw</h4></div>
+                    <div class="value-card-item"><img src="html.png" alt="HTML"><h4>HTML</h4></div>
+                    <div class="value-card-item"><img src="css.png" alt="CSS"><h4>CSS</h4></div>
+                    <div class="value-card-item"><img src="javascript.png" alt="JavaScript"><h4>JavaScript</h4></div>
+                    <div class="value-card-item"><img src="wordpress.png" alt="WordPress"><h4>WordPress</h4></div>
+                    <div class="value-card-item"><img src="googledocs.png" alt="Google Docs"><h4>Google Docs</h4></div>
+                    <div class="value-card-item"><img src="googlesheets.png" alt="Google Sheets"><h4>Google Sheets</h4></div>
+                    <div class="value-card-item"><img src="googleslides.png" alt="Google Slides"><h4>Google Slides</h4></div>
+                    <div class="value-card-item"><img src="drive.png" alt="Google Drive"><h4>Google Drive</h4></div>
+                    <div class="value-card-item"><img src="word.png" alt="MS Word"><h4>MS Word</h4></div>
+                    <div class="value-card-item"><img src="excel.png" alt="MS Excel"><h4>MS Excel</h4></div>
+                    <div class="value-card-item"><img src="powerpoint.png" alt="MS PowerPoint"><h4>MS PowerPoint</h4></div>
+                    <div class="value-card-item"><img src="filmora.png" alt="Filmora"><h4>Filmora</h4></div>
+                    <div class="value-card-item"><img src="vn.png" alt="VN"><h4>VN</h4></div>
+                    <div class="value-card-item"><img src="inshot.png" alt="InShot"><h4>InShot</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-function executeRealLiking(assetId, index, event) {
-    event.stopPropagation();
-    const targetItem = currentCategoryArray[index];
-    const triggerBox = event.currentTarget;
-    const valueLabel = triggerBox.querySelector('.count-lbl');
-    const heartElement = triggerBox.querySelector('i');
+    <!-- ================= PROJECTS SECTION ================= -->
+    <section id="projects" class="services-section">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            
+            <!-- Category Tabs -->
+            <div class="filter-tabs">
+                <button class="tab-btn active" onclick="filterGallery('graphic', event)">Graphic Design Projects</button>
+                <button class="tab-btn" onclick="filterGallery('web', event)">Web Design / UI Layouts</button>
+                <button class="tab-btn" onclick="filterGallery('ai', event)">AI Visuals</button>
+                <button class="tab-btn" onclick="filterGallery('motion', event)">AI Animation Videos</button>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="dribbble-grid-layout" id="main-portfolio-gallery"></div>
+            
+            <!-- View More Action Button -->
+            <div class="view-more-container-block">
+                <button class="hub-view-more-btn" id="galleryViewMoreTrigger" onclick="handleViewMoreAction()">View More</button>
+            </div>
+        </div>
+    </section>
 
-    if (userLikedItems.has(assetId)) {
-        userLikedItems.delete(assetId);
-        targetItem.likes = Math.max(0, targetItem.likes - 1);
-        triggerBox.classList.remove('activated');
-        heartElement.className = 'fa-regular fa-heart';
-    } else {
-        userLikedItems.add(assetId);
-        targetItem.likes += 1;
-        triggerBox.classList.add('activated');
-        heartElement.className = 'fa-solid fa-heart';
-    }
-    valueLabel.textContent = targetItem.likes;
-}
+    <!-- ================= LIGHTBOX OVERLAY ================= -->
+    <div class="gallery-lightbox" id="galleryLightbox">
+        <span class="lightbox-close" onclick="closeGallerySlider()">&times;</span>
+        <button class="slider-arrow prev-arrow" onclick="changeSlide(-1)">&#10094;</button>
+        <div class="lightbox-img-wrap" id="lightboxMediaContent"></div>
+        <button class="slider-arrow next-arrow" onclick="changeSlide(1)">&#10095;</button>
+    </div>
 
-/* Lightbox Modal Slider */
-function openGallerySlider(index) {
-    activeIndex = index;
-    const lightbox = document.getElementById('galleryLightbox');
-    if (lightbox) {
-        renderLightboxActiveContent();
-        lightbox.style.display = 'flex';
-    }
-}
+    <!-- ================= CONTACT SECTION ================= -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Connect With Us</h2>
+            
+            <div class="contact-hub-grid">
+                <!-- Left: Quick Contact Info -->
+                <div class="hub-info-col">
+                    <h3>Contact Information</h3>
+                    <div class="hub-info-item">
+                        <div class="icon-round-bg"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>New Delhi, India</p>
+                        </div>
+                    </div>
+                    <div class="hub-info-item">
+                        <div class="icon-round-bg"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 810682518</p>
+                        </div>
+                    </div>
+                    <div class="hub-info-item">
+                        <div class="icon-round-bg"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>muskankumari3330@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
 
-function renderLightboxActiveContent() {
-    const contentWrap = document.getElementById('lightboxMediaContent');
-    const currentAsset = currentCategoryArray[activeIndex];
-    if (!contentWrap || !currentAsset) return;
-    
-    contentWrap.innerHTML = '';
-    if (currentAsset.type === 'video') {
-        contentWrap.innerHTML = `<video src="${currentAsset.src}" controls autoplay style="width:100%; max-height:80vh; object-fit:contain; border-radius:12px;"></video>`;
-    } else {
-        contentWrap.innerHTML = `<img src="${currentAsset.src}" alt="Visual" style="max-width:100%; max-height:80vh; object-fit:contain; border-radius:12px;">`;
-    }
-}
+                <!-- Right: Interactive Contact Form -->
+                <div class="hub-form-col">
+                    <h3>Send Us a Message</h3>
+                    <form id="hub-action-form" action="https://formspree.io/f/muskankumari3330@gmail.com" method="POST" onsubmit="handleFormSubmit(event)">
+                        <div class="field-container">
+                            <span class="field-icon"><i class="fa-solid fa-user"></i></span>
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="field-container">
+                            <span class="field-icon"><i class="fa-solid fa-envelope"></i></span>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="field-container textarea-container">
+                            <span class="field-icon"><i class="fa-solid fa-pen"></i></span>
+                            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="hub-submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-function changeSlide(direction) {
-    activeIndex = (activeIndex + direction + currentCategoryArray.length) % currentCategoryArray.length;
-    renderLightboxActiveContent();
-}
+    <!-- ================= COMPACT FOOTER ================= -->
+    <footer class="main-footer">
+        <div class="container footer-container-3col">
+            <!-- Left Column -->
+            <div class="footer-col footer-col-left">
+                <img src="logo.png" alt="MK Logo" class="footer-blend-logo">
+                <h3 class="footer-brand-title">Muskan Kumari Portfolio</h3>
+                <div class="footer-contact-info">
+                    <p><i class="fa-solid fa-location-dot"></i> New Delhi, India</p>
+                    <p><i class="fa-solid fa-phone"></i> +91 810682518</p>
+                    <p><i class="fa-solid fa-envelope"></i> muskankumari3330@gmail.com</p>
+                </div>
+            </div>
 
-function closeGallerySlider() {
-    const lightbox = document.getElementById('galleryLightbox');
-    if (lightbox) {
-        lightbox.style.display = 'none';
-    }
-}
+            <!-- Middle Column -->
+            <div class="footer-col footer-col-middle">
+                <div class="stay-connected-block">
+                    <h4>Stay Connected</h4>
+                    <div class="footer-social-links">
+                        <a href="https://youtube.com/@I.MuskanKumari" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://instagram.com/i.musankumari" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.behance.net/muskankumari143" target="_blank" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                        <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
 
-function handleFormSubmit(event) {
-    alert('Thank you for your message! It has been received successfully.');
-}
+                <div class="quick-links-block">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-nav-links">
+                        <li><a href="#top">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
 
-/* ==========================================================================
-   3. ACCURATE VISITOR COUNTER LOGIC (24-HOUR UNIQUE FILTER)
-   ========================================================================== */
-function initUniqueVisitorCounter() {
-    const counterElement = document.getElementById('uniqueVisitorCount');
-    if (!counterElement) return;
+            <!-- Right Column -->
+            <div class="footer-col footer-col-right">
+                <div class="subscribe-wrapper">
+                    <h4>Subscribe for updates</h4>
+                    <form class="footer-subscribe-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
 
-    const STORAGE_COUNT_KEY = 'mk_unique_visitor_total';
-    const STORAGE_TIMESTAMP_KEY = 'mk_visitor_last_timestamp';
+                <!-- 24-Hour Unique Visitor Counter -->
+                <div class="visitor-counter-card">
+                    <div class="visitor-icon-box">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <div class="visitor-text-box">
+                        <span class="visitor-title">Total Unique Profile Visits</span>
+                        <span class="visitor-count" id="uniqueVisitorCount">--</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    const BASELINE_COUNT = 150; // Professional baseline starting number
-    const TWENTY_FOUR_HOURS_MS = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
-    const now = new Date().getTime();
+        <!-- Bottom Copyright Bar -->
+        <div class="footer-bottom-bar">
+            <p>&copy; 2026 Muskan Kumari. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-    let currentTotal = parseInt(localStorage.getItem(STORAGE_COUNT_KEY), 10);
-    const lastVisitTimestamp = parseInt(localStorage.getItem(STORAGE_TIMESTAMP_KEY), 10);
+    <script src="script.js"></script>
+</body>
+</html>
 
-    // Initialize baseline if no count stored yet
-    if (isNaN(currentTotal) || currentTotal < BASELINE_COUNT) {
-        currentTotal = BASELINE_COUNT;
-    }
-
-    // Only increment if user has NOT visited in the last 24 hours
-    if (!lastVisitTimestamp || (now - lastVisitTimestamp) > TWENTY_FOUR_HOURS_MS) {
-        currentTotal += 1;
-        localStorage.setItem(STORAGE_COUNT_KEY, currentTotal.toString());
-        localStorage.setItem(STORAGE_TIMESTAMP_KEY, now.toString());
-    }
-
-    // Render count
-    counterElement.textContent = `${currentTotal}+`;
-}

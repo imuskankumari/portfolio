@@ -222,3 +222,4 @@ function initUniqueVisitorCounter() {
     // Render count
     counterElement.textContent = `${currentTotal}+`;
 }
+

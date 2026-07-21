@@ -1,5 +1,6 @@
-// Strict File Mapping Configuration Matching Repository File Names
+// Strict File Mapping Configuration Matching Repository Assets
 const portfolioAssets = {
+    // Graphic Design: g1.jpg to g50.jpg
     graphic: Array.from({length: 50}, (_, i) => ({ 
         id: `g_${i}`, 
         type: 'image', 
@@ -7,6 +8,7 @@ const portfolioAssets = {
         aspectClass: 'aspect-square',
         likes: 0
     })),
+    // Web Design: w1.png to w10.png
     web: Array.from({length: 10}, (_, i) => ({ 
         id: `w_${i}`, 
         type: 'image', 
@@ -14,6 +16,7 @@ const portfolioAssets = {
         aspectClass: 'aspect-square',
         likes: 0
     })),
+    // AI Visuals: b1.png to b10.png
     ai: Array.from({length: 10}, (_, i) => ({ 
         id: `b_${i}`, 
         type: 'image', 
@@ -21,6 +24,7 @@ const portfolioAssets = {
         aspectClass: 'aspect-square',
         likes: 0
     })),
+    // AI Animation Videos: r1.mp4 to r12.mp4
     motion: Array.from({length: 12}, (_, i) => ({ 
         id: `m_${i}`, 
         type: 'video', 
@@ -33,11 +37,11 @@ const portfolioAssets = {
 const userLikedItems = new Set();
 let currentCategoryArray = [];
 let activeIndex = 0;
-let visibleCount = 10;
+let visibleCount = 9; // INITIAL STATE: 9 photos (3x3 grid)
 let activeTabGlobal = 'graphic';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Menu Toggle Elements
+    // Mobile Navigation Menu Toggle
     const menuToggleBtn = document.getElementById('menuToggleBtn');
     const mainNavigation = document.getElementById('mainNavigation');
 
@@ -50,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize 24-Hour Unique Visitor Counter
     initUniqueVisitorCounter();
 
-    // Initial Gallery Tab Display
+    // Render Initial Gallery Tab (Graphic Design)
     switchTab('graphic');
 });
 
@@ -61,7 +65,7 @@ function closeMobileMenu() {
     }
 }
 
-/* Filter Tab Logic */
+/* Category Filter Switcher */
 function filterGallery(category, event) {
     if (event) {
         const buttons = document.querySelectorAll('.tab-btn');
@@ -73,11 +77,12 @@ function filterGallery(category, event) {
 
 function switchTab(category) {
     activeTabGlobal = category;
-    visibleCount = 10;
+    visibleCount = 9; // Reset to 9 cards when switching tabs
     currentCategoryArray = portfolioAssets[category] || [];
     renderGrid();
 }
 
+/* Render Gallery Grid */
 function renderGrid() {
     const targetGrid = document.getElementById('main-portfolio-gallery');
     const viewMoreBtn = document.getElementById('galleryViewMoreTrigger');
@@ -116,6 +121,7 @@ function renderGrid() {
         targetGrid.appendChild(itemNode);
     });
 
+    // Toggle View More Button Visibility
     if (viewMoreBtn) {
         if (visibleCount >= currentCategoryArray.length) {
             viewMoreBtn.style.display = 'none';
@@ -125,11 +131,13 @@ function renderGrid() {
     }
 }
 
+/* VIEW MORE LOGIC: IMMEDIATELY SHOW ALL REMAINING PHOTOS AT ONCE */
 function handleViewMoreAction() {
-    visibleCount += 10;
+    visibleCount = currentCategoryArray.length; // Show all remaining items instantly
     renderGrid();
 }
 
+/* Interactive Likes */
 function executeRealLiking(assetId, index, event) {
     event.stopPropagation();
     const targetItem = currentCategoryArray[index];
@@ -187,11 +195,11 @@ function closeGallerySlider() {
 }
 
 function handleFormSubmit(event) {
-    alert('Thank you for your message! It has been received successfully.');
+    alert('Thank you for reaching out! Your message has been received successfully.');
 }
 
 /* ==========================================================================
-   3. ACCURATE VISITOR COUNTER LOGIC (24-HOUR UNIQUE FILTER)
+   6. ACCURATE UNIQUE VISITOR COUNTER LOGIC (24-HOUR TIMESTAMP FILTER)
    ========================================================================== */
 function initUniqueVisitorCounter() {
     const counterElement = document.getElementById('uniqueVisitorCount');
@@ -200,19 +208,19 @@ function initUniqueVisitorCounter() {
     const STORAGE_COUNT_KEY = 'mk_unique_visitor_total';
     const STORAGE_TIMESTAMP_KEY = 'mk_visitor_last_timestamp';
 
-    const BASELINE_COUNT = 150; // Professional baseline starting number
+    const BASELINE_COUNT = 150; // Professional baseline initial count
     const TWENTY_FOUR_HOURS_MS = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
     const now = new Date().getTime();
 
     let currentTotal = parseInt(localStorage.getItem(STORAGE_COUNT_KEY), 10);
     const lastVisitTimestamp = parseInt(localStorage.getItem(STORAGE_TIMESTAMP_KEY), 10);
 
-    // Initialize baseline if no count stored yet
+    // Set initial baseline if no counter stored
     if (isNaN(currentTotal) || currentTotal < BASELINE_COUNT) {
         currentTotal = BASELINE_COUNT;
     }
 
-    // Only increment if user has NOT visited in the last 24 hours
+    // Only increment if user has NOT visited within the last 24 hours
     if (!lastVisitTimestamp || (now - lastVisitTimestamp) > TWENTY_FOUR_HOURS_MS) {
         currentTotal += 1;
         localStorage.setItem(STORAGE_COUNT_KEY, currentTotal.toString());

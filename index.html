@@ -1,20 +1,18 @@
-<!-- ================= HEADER ================= -->
+<!-- HEADER / NAVIGATION -->
 <header class="main-header">
     <div class="header-container">
-        <!-- Logo & Branding -->
+        <!-- MK Logo + Text Header Branding -->
         <a href="#top" class="header-branding">
             <img src="mklogo.png" alt="MK Logo" class="site-logo">
             <span class="brand-text">Muskan Kumari Portfolio</span>
         </a>
         
-        <!-- Mobile Menu Toggle -->
         <button class="mobile-nav-toggle" id="menuToggleBtn" aria-label="Toggle Menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
-        <!-- Navigation Links -->
         <nav class="nav-links" id="mainNavigation">
             <a href="#top" class="nav-item active" onclick="closeMobileMenu()">Home</a>
             <a href="#about" class="nav-item" onclick="closeMobileMenu()">About</a>
@@ -24,26 +22,27 @@
     </div>
 </header>
 
+<!-- (YOUR EXISTING BODY CONTENTS & SECTIONS REMAIN UNTOUCHED HERE) -->
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 <footer class="main-footer">
-    <div class="container footer-container">
-        <!-- Left Column: Logo, Branding & Contact Info -->
+    <div class="container footer-container-3col">
+        <!-- Left Column Layout -->
         <div class="footer-col footer-col-left">
-            <img src="logo.png" alt="MK Logo" class="footer-logo">
-            <h3 class="footer-brand-name">Muskan Kumari Portfolio</h3>
-            <div class="footer-contact-details">
+            <img src="logo.png" alt="MK Logo" class="footer-blend-logo">
+            <h3 class="footer-brand-title">Muskan Kumari Portfolio</h3>
+            <div class="footer-contact-info">
                 <p><i class="fa-solid fa-location-dot"></i> New Delhi, India</p>
-                <p><i class="fa-solid fa-phone"></i> +91 8810682518</p>
+                <p><i class="fa-solid fa-phone"></i> +91 810682518</p>
                 <p><i class="fa-solid fa-envelope"></i> muskankumari3330@gmail.com</p>
             </div>
         </div>
 
         <!-- Center Column: Social Links & Quick Links -->
-        <div class="footer-col footer-col-center">
-            <div class="stay-connected-block">
-                <h4>Stay Connected</h4>
-                <div class="footer-social-icons">
+        <div class="footer-col footer-col-middle">
+            <div class="stay-connected-block" style="margin-bottom: 20px;">
+                <h4 style="color:#FFF; font-size:1rem; margin-bottom:10px;">Stay Connected</h4>
+                <div class="footer-social-links" style="display:flex; gap:10px;">
                     <a href="https://youtube.com/@I.MuskanKumari" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                     <a href="https://instagram.com/i.musankumari" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.behance.net/muskankumari143" target="_blank" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
@@ -52,27 +51,25 @@
             </div>
 
             <div class="quick-links-block">
-                <h4>Quick Links</h4>
-                <ul class="footer-nav-links">
-                    <li><a href="#top">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <h4 style="color:#FFF; font-size:1rem; margin-bottom:10px;">Quick Links</h4>
+                <ul class="footer-nav-links" style="list-style:none; display:flex; flex-direction:column; gap:8px;">
+                    <li><a href="#top" style="color:#CCC;">Home</a></li>
+                    <li><a href="#about" style="color:#CCC;">About</a></li>
+                    <li><a href="#projects" style="color:#CCC;">Projects</a></li>
+                    <li><a href="#contact" style="color:#CCC;">Contact</a></li>
                 </ul>
             </div>
         </div>
 
-        <!-- Right Column: Newsletter Subscription & Visitor Counter -->
+        <!-- Right Column: Subscribe Form & Visitor Counter -->
         <div class="footer-col footer-col-right">
-            <div class="subscribe-block">
-                <h4>Subscribe for updates</h4>
-                <form class="footer-subscribe-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-                    <input type="email" placeholder="Your email address" required>
-                    <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
-                </form>
-            </div>
+            <h4 style="color:#FFF; font-size:1rem; margin-bottom:10px;">Subscribe for updates</h4>
+            <form class="footer-subscribe-form" style="display:flex; background:#1A1A1A; border:1px solid #333; border-radius:6px; overflow:hidden; padding:2px; max-width:280px;" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                <input type="email" placeholder="Your email address" required style="width:100%; border:none; outline:none; padding:8px 10px; font-size:0.85rem; color:#FFF; background:transparent;">
+                <button type="submit" aria-label="Subscribe" style="background:#FF6B00; color:#FFF; border:none; padding:0 14px; cursor:pointer;"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
 
-            <!-- Total Unique Visitors Counter -->
+            <!-- Visitor Counter Widget -->
             <div class="visitor-counter-card">
                 <div class="visitor-icon-box">
                     <i class="fa-solid fa-eye"></i>
@@ -90,4 +87,3 @@
         <p>&copy; 2026 Muskan Kumari. All Rights Reserved.</p>
     </div>
 </footer>
-

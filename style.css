@@ -1,13 +1,13 @@
 /* ==========================================================================
-   HEADER STYLING (CLEAN WHITE BACKGROUND)
+   HEADER MODIFICATIONS (Clean White Background & Branding Alignment)
    ========================================================================== */
 .main-header {
     width: 100%;
-    background: #FFFFFF !important; /* Pure White Header */
+    background-color: #FFFFFF !important; /* Forces Clean White Background */
     position: sticky;
     top: 0;
     z-index: 2500;
-    border-bottom: 2px solid #FF6B00;
+    border-bottom: 1px solid #EEEEEE;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -15,12 +15,13 @@
     max-width: 1200px;
     width: 86%;
     margin: 0 auto;
-    height: 75px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* Left-aligned MK Logo + Brand Text Group */
 .header-branding {
     display: flex;
     align-items: center;
@@ -32,24 +33,26 @@
     height: 52px;
     width: auto;
     object-fit: contain;
+    display: block;
 }
 
 .brand-text {
     font-size: 1.15rem;
     font-weight: 700;
-    color: #111111;
+    color: #111111 !important; /* Visible dark text on white header */
     white-space: nowrap;
 }
 
+/* Navigation Link Visibility on White Background */
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 32px;
 }
 
 .nav-item {
     color: #111111 !important;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     position: relative;
     padding: 4px 0;
@@ -67,57 +70,23 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 2px;
+    height: 3px;
     background-color: #FF6B00;
     border-radius: 2px;
 }
 
-/* Hamburger button styling for mobile */
-.mobile-nav-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 26px;
-    height: 18px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
 .mobile-nav-toggle span {
-    width: 100%;
-    height: 3px;
     background-color: #111111;
-    border-radius: 2px;
 }
 
 @media (max-width: 768px) {
-    .mobile-nav-toggle {
-        display: flex;
-    }
-    
     .nav-links {
-        position: fixed;
-        top: 75px;
-        right: -100%;
-        width: 100%;
-        height: calc(100vh - 75px);
         background-color: #FFFFFF;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding-top: 40px;
-        gap: 25px;
-        transition: right 0.3s ease;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
-    }
-    
-    .nav-links.mobile-active {
-        right: 0;
     }
 }
 
 /* ==========================================================================
-   FOOTER STYLING (COMPACT & TIGHT SPACING)
+   FOOTER SPACING & LEFT COLUMN LAYOUT
    ========================================================================== */
 .main-footer {
     background: #111111;
@@ -126,38 +95,38 @@
     border-top: 3px solid #FF6B00;
 }
 
-.footer-container {
+.footer-container-3col {
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1.1fr;
-    gap: 30px;
-    padding-bottom: 25px; /* Reduced bottom padding */
+    grid-template-columns: 1.2fr 0.9fr 1fr;
+    gap: 35px;
+    padding-bottom: 25px; /* Compact bottom whitespace */
     border-bottom: 1px solid #222222;
 }
 
 @media (max-width: 850px) {
-    .footer-container {
+    .footer-container-3col {
         grid-template-columns: 1fr;
         gap: 25px;
     }
 }
 
-/* Left Column */
-.footer-logo {
+.footer-blend-logo {
     height: 42px;
     width: auto;
-    margin-bottom: 8px;
-    opacity: 0.95;
+    object-fit: contain;
+    margin-bottom: 6px;
+    display: block;
 }
 
-.footer-brand-name {
+.footer-brand-title {
     font-size: 1.1rem;
     font-weight: 700;
     color: #FFFFFF;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
-.footer-contact-details p {
-    font-size: 0.88rem;
+.footer-contact-info p {
+    font-size: 0.9rem;
     color: #AAAAAA;
     margin-bottom: 6px;
     display: flex;
@@ -165,105 +134,11 @@
     gap: 8px;
 }
 
-.footer-contact-details i {
+.footer-contact-info i {
     color: #FF6B00;
-    width: 14px;
+    width: 16px;
 }
 
-/* Center Column */
-.stay-connected-block {
-    margin-bottom: 18px;
-}
-
-.footer-col h4 {
-    color: #FFFFFF;
-    font-size: 1rem;
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-.footer-social-icons {
-    display: flex;
-    gap: 10px;
-}
-
-.footer-social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: #1A1A1A;
-    border: 1px solid #2A2A2A;
-    color: #FFFFFF;
-    border-radius: 50%;
-    font-size: 1rem;
-    transition: all 0.2s ease;
-}
-
-.footer-social-icons a:hover {
-    background: #FF6B00;
-    border-color: #FF6B00;
-    transform: translateY(-2px);
-}
-
-.footer-nav-links {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.footer-nav-links a {
-    color: #CCCCCC;
-    font-size: 0.9rem;
-    transition: color 0.2s ease;
-}
-
-.footer-nav-links a:hover {
-    color: #FF6B00;
-}
-
-/* Right Column: Newsletter & Visitor Counter */
-.subscribe-block {
-    margin-bottom: 18px;
-}
-
-.footer-subscribe-form {
-    display: flex;
-    background: #1A1A1A;
-    border: 1px solid #333333;
-    border-radius: 6px;
-    overflow: hidden;
-    padding: 2px;
-    max-width: 280px;
-}
-
-.footer-subscribe-form input {
-    width: 100%;
-    border: none;
-    outline: none;
-    padding: 8px 10px;
-    font-size: 0.85rem;
-    color: #FFFFFF;
-    background: transparent;
-}
-
-.footer-subscribe-form button {
-    background: #FF6B00;
-    color: #FFFFFF;
-    border: none;
-    padding: 0 14px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background 0.2s ease;
-}
-
-.footer-subscribe-form button:hover {
-    background: #E65100;
-}
-
-/* Visitor Counter Card */
 .visitor-counter-card {
     display: flex;
     align-items: center;
@@ -272,6 +147,7 @@
     border: 1px solid #2A2A2A;
     padding: 10px 14px;
     border-radius: 8px;
+    margin-top: 15px;
     max-width: 280px;
 }
 
@@ -293,7 +169,7 @@
 }
 
 .visitor-title {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     color: #999999;
     font-weight: 600;
     text-transform: uppercase;
@@ -307,7 +183,6 @@
     line-height: 1.1;
 }
 
-/* Bottom Bar */
 .footer-bottom-bar {
     padding: 12px 0;
     background: #0A0A0A;

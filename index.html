@@ -3,232 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Portfolio</title>
+    <title>MK Spiritual Hub | The Muskan Kumari</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body id="top">
+<body>
 
-    <!-- ================= HEADER ================= -->
-    <header class="main-header">
+    <!-- ================= HEADER SECTION ================= -->
+    <header class="top-navbar">
         <div class="header-container">
-            <!-- Left: ONLY Official Logo -->
-            <a href="#top" class="header-branding">
-                <img src="mklogo.png" alt="MK Logo" class="site-logo">
+            <a href="#home" class="brand-logo-group">
+                <img src="mklogo.png" alt="MK Logo" class="nav-logo-img" onerror="this.style.display='none'">
+                <div class="brand-text-block">
+                    <span class="brand-title">MK Spiritual Hub</span>
+                    <span class="brand-subtext">The Muskan Kumari</span>
+                    <span class="brand-tagline">Awaken • Align • Transform</span>
+                </div>
             </a>
-            
-            <!-- Mobile Menu Hamburger Button -->
-            <button class="mobile-nav-toggle" id="menuToggleBtn" aria-label="Toggle Navigation Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <button class="mobile-toggle" id="menuToggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
             </button>
 
-            <!-- Right: Navigation Menu Links -->
-            <nav class="nav-links" id="mainNavigation">
-                <a href="#top" class="nav-item active" onclick="closeMobileMenu()">Home</a>
-                <a href="#about" class="nav-item" onclick="closeMobileMenu()">About</a>
-                <a href="#projects" class="nav-item" onclick="closeMobileMenu()">Projects</a>
-                <a href="#contact" class="nav-item" onclick="closeMobileMenu()">Contact</a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#blogs" class="nav-link">Blogs</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#contact" class="nav-link">Contact Us</a>
             </nav>
         </div>
     </header>
 
-    <!-- ================= HERO SECTION ================= -->
+    <!-- ================= HERO SECTION (RESTORED BANNER) ================= -->
     <section id="home" class="hero-section">
-        <div class="hero-container">
-            <div class="hero-content">
-                <span class="hero-tagline">Graphic & Web Designer • AI Creator</span>
-                <h1 class="hero-heading">Crafting Visual Systems & Digital Experiences</h1>
-                <p class="hero-description">Transforming ideas into high-impact graphics, sleek web layouts, and interactive media.</p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">View Projects <i class="fa-solid fa-arrow-right"></i></a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        <!-- Main Hero Background Overlay Container -->
+        <div class="hero-banner-container">
+            <!-- Background Image with Overlay -->
+            <img src="hero.png" alt="Spiritual & Creative Banner" class="hero-bg-img" onerror="this.src='hero.jpg'">
+            <div class="hero-overlay"></div>
+
+            <!-- Content Overlay Positioned Elegantly -->
+            <div class="hero-content-wrapper">
+                <div class="hero-text-box">
+                    <h1 class="hero-headline">
+                        <span class="line-1">The Muskan Kumari</span>
+                        <span class="line-2">Graphic & Web</span>
+                        <span class="line-3">Designer</span>
+                    </h1>
+
+                    <!-- Orange Lotus Ornamental Line Divider -->
+                    <div class="ornament-divider">
+                        <span class="line-left"></span>
+                        <span class="lotus-icon">🪷</span>
+                        <span class="line-right"></span>
+                    </div>
+
+                    <!-- Hinglish Tagline -->
+                    <p class="hero-tagline-text">Creativity मेरे रग-रग में है।</p>
                 </div>
-            </div>
-            <div class="hero-banner-wrap">
-                <img src="hero.png" alt="Creative Design Showcase" class="hero-fluid-img">
             </div>
         </div>
     </section>
 
-    <!-- ================= ABOUT ME SECTION ================= -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2 class="section-title">Welcome to My Creative Space</h2>
-            
-            <div class="about-split-layout">
-                <!-- Left: Profile Logo Box -->
-                <div class="about-left-logo-block">
-                    <div class="clean-white-card">
-                        <img src="logo.png" alt="Profile Visual" class="profile-image-styled">
+    <!-- ================= MAIN FOOTER SECTION ================= -->
+    <footer class="luxury-footer">
+        <!-- Quote Banner Block -->
+        <div class="footer-quote-section">
+            <div class="quote-container">
+                <div class="quote-ornament">✦ 🪷 ✦</div>
+                <p class="spiritual-quote">"You are not the body, not the mind. You are the consciousness."</p>
+                <div class="quote-ornament">✦ 🪷 ✦</div>
+            </div>
+        </div>
+
+        <div class="footer-main-container">
+            <!-- Left Column: Branding -->
+            <div class="footer-col footer-about">
+                <div class="footer-brand-header">
+                    <img src="mklogo.png" alt="MK Logo" class="footer-logo" onerror="this.style.display='none'">
+                    <div>
+                        <h3 class="footer-title">MK Spiritual Hub</h3>
+                        <span class="footer-subtitle">Awaken • Align • Transform</span>
                     </div>
                 </div>
-
-                <!-- Right: Bio Content -->
-                <div class="about-right-text-block">
-                    <p class="profile-narrative">
-                        Hi, I am Muskan Kumari from Delhi, a passionate Graphic & Web Designer. I work professionally as a Graphic Designer, Web Designer, Video Editor, and AI Creator. I am skilled in Adobe Photoshop, Illustrator, InDesign, CorelDraw, and Canva. I also build clean websites using HTML, CSS, JavaScript, WordPress, and Google Sites. I do video editing using Filmora, VN, and InShot. Additionally, I work as an AI Creator using all AI tools to create AI visuals, AI animation videos, and AI motion graphics.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= SKILLS & TECH STACK ================= -->
-    <section id="skills" class="skills-tech-stack-section">
-        <div class="container">
-            <h2 class="section-title">Skills & Tech Stack</h2>
-            
-            <div class="marquee-wrapper">
-                <div class="marquee-track">
-                    <!-- Set 1 -->
-                    <div class="value-card-item"><img src="photoshop.png" alt="Photoshop"><h4>Adobe Photoshop</h4></div>
-                    <div class="value-card-item"><img src="illustrator.png" alt="Illustrator"><h4>Adobe Illustrator</h4></div>
-                    <div class="value-card-item"><img src="indesign.png" alt="InDesign"><h4>Adobe InDesign</h4></div>
-                    <div class="value-card-item"><img src="canva.png" alt="Canva"><h4>Canva</h4></div>
-                    <div class="value-card-item"><img src="coreldraw.png" alt="CorelDraw"><h4>CorelDraw</h4></div>
-                    <div class="value-card-item"><img src="html.png" alt="HTML"><h4>HTML</h4></div>
-                    <div class="value-card-item"><img src="css.png" alt="CSS"><h4>CSS</h4></div>
-                    <div class="value-card-item"><img src="javascript.png" alt="JavaScript"><h4>JavaScript</h4></div>
-                    <div class="value-card-item"><img src="wordpress.png" alt="WordPress"><h4>WordPress</h4></div>
-                    <div class="value-card-item"><img src="googledocs.png" alt="Google Docs"><h4>Google Docs</h4></div>
-                    <div class="value-card-item"><img src="googlesheets.png" alt="Google Sheets"><h4>Google Sheets</h4></div>
-                    <div class="value-card-item"><img src="googleslides.png" alt="Google Slides"><h4>Google Slides</h4></div>
-                    <div class="value-card-item"><img src="drive.png" alt="Google Drive"><h4>Google Drive</h4></div>
-                    <div class="value-card-item"><img src="word.png" alt="MS Word"><h4>MS Word</h4></div>
-                    <div class="value-card-item"><img src="excel.png" alt="MS Excel"><h4>MS Excel</h4></div>
-                    <div class="value-card-item"><img src="powerpoint.png" alt="MS PowerPoint"><h4>MS PowerPoint</h4></div>
-                    <div class="value-card-item"><img src="filmora.png" alt="Filmora"><h4>Filmora</h4></div>
-                    <div class="value-card-item"><img src="vn.png" alt="VN"><h4>VN</h4></div>
-                    <div class="value-card-item"><img src="inshot.png" alt="InShot"><h4>InShot</h4></div>
-
-                    <!-- Duplicated Set 2 for Infinite Scrolling -->
-                    <div class="value-card-item"><img src="photoshop.png" alt="Photoshop"><h4>Adobe Photoshop</h4></div>
-                    <div class="value-card-item"><img src="illustrator.png" alt="Illustrator"><h4>Adobe Illustrator</h4></div>
-                    <div class="value-card-item"><img src="indesign.png" alt="InDesign"><h4>Adobe InDesign</h4></div>
-                    <div class="value-card-item"><img src="canva.png" alt="Canva"><h4>Canva</h4></div>
-                    <div class="value-card-item"><img src="coreldraw.png" alt="CorelDraw"><h4>CorelDraw</h4></div>
-                    <div class="value-card-item"><img src="html.png" alt="HTML"><h4>HTML</h4></div>
-                    <div class="value-card-item"><img src="css.png" alt="CSS"><h4>CSS</h4></div>
-                    <div class="value-card-item"><img src="javascript.png" alt="JavaScript"><h4>JavaScript</h4></div>
-                    <div class="value-card-item"><img src="wordpress.png" alt="WordPress"><h4>WordPress</h4></div>
-                    <div class="value-card-item"><img src="googledocs.png" alt="Google Docs"><h4>Google Docs</h4></div>
-                    <div class="value-card-item"><img src="googlesheets.png" alt="Google Sheets"><h4>Google Sheets</h4></div>
-                    <div class="value-card-item"><img src="googleslides.png" alt="Google Slides"><h4>Google Slides</h4></div>
-                    <div class="value-card-item"><img src="drive.png" alt="Google Drive"><h4>Google Drive</h4></div>
-                    <div class="value-card-item"><img src="word.png" alt="MS Word"><h4>MS Word</h4></div>
-                    <div class="value-card-item"><img src="excel.png" alt="MS Excel"><h4>MS Excel</h4></div>
-                    <div class="value-card-item"><img src="powerpoint.png" alt="MS PowerPoint"><h4>MS PowerPoint</h4></div>
-                    <div class="value-card-item"><img src="filmora.png" alt="Filmora"><h4>Filmora</h4></div>
-                    <div class="value-card-item"><img src="vn.png" alt="VN"><h4>VN</h4></div>
-                    <div class="value-card-item"><img src="inshot.png" alt="InShot"><h4>InShot</h4></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= PROJECTS / GALLERY SECTION ================= -->
-    <section id="projects" class="services-section">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            
-            <!-- Category Tabs -->
-            <div class="filter-tabs">
-                <button class="tab-btn active" onclick="filterGallery('graphic', event)">Graphic Design Projects</button>
-                <button class="tab-btn" onclick="filterGallery('web', event)">Web Design / UI Layouts</button>
-                <button class="tab-btn" onclick="filterGallery('ai', event)">AI Visuals</button>
-                <button class="tab-btn" onclick="filterGallery('motion', event)">AI Animation Videos</button>
-            </div>
-            
-            <!-- Dynamic Grid (Starts with 9 items in 3x3 layout) -->
-            <div class="dribbble-grid-layout" id="main-portfolio-gallery"></div>
-            
-            <!-- View More Action Button -->
-            <div class="view-more-container-block">
-                <button class="hub-view-more-btn" id="galleryViewMoreTrigger" onclick="handleViewMoreAction()">View More</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= LIGHTBOX MODAL ================= -->
-    <div class="gallery-lightbox" id="galleryLightbox">
-        <span class="lightbox-close" onclick="closeGallerySlider()">&times;</span>
-        <button class="slider-arrow prev-arrow" onclick="changeSlide(-1)">&#10094;</button>
-        <div class="lightbox-img-wrap" id="lightboxMediaContent"></div>
-        <button class="slider-arrow next-arrow" onclick="changeSlide(1)">&#10095;</button>
-    </div>
-
-    <!-- ================= CONTACT SECTION (FORM ONLY - 100% PRIVATE) ================= -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="contact-card-wrapper">
-                <div class="contact-header-text">
-                    <h2 class="section-title">Send Me a Message</h2>
-                    <p class="contact-subtext">Have a project in mind or want to collaborate? Fill out the form below to get in touch!</p>
-                </div>
-                
-                <form id="hub-action-form" action="https://formspree.io/f/muskankumari3330@gmail.com" method="POST" onsubmit="handleFormSubmit(event)">
-                    <div class="form-row">
-                        <div class="field-container">
-                            <span class="field-icon"><i class="fa-solid fa-user"></i></span>
-                            <input type="text" name="name" placeholder="Your Full Name" required>
-                        </div>
-                        <div class="field-container">
-                            <span class="field-icon"><i class="fa-solid fa-envelope"></i></span>
-                            <input type="email" name="email" placeholder="Your Email Address" required>
-                        </div>
-                    </div>
-                    <div class="field-container textarea-container">
-                        <span class="field-icon"><i class="fa-solid fa-pen"></i></span>
-                        <textarea name="message" placeholder="Write your message here..." rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="hub-submit-btn">Send Message <i class="fa-solid fa-paper-plane"></i></button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= FOOTER (COMPACT CHARCOAL THEME) ================= -->
-    <footer class="main-footer">
-        <div class="container footer-container-3col">
-            <!-- Section 1 (Left): Official Logo & Branding Text ONLY -->
-            <div class="footer-col footer-col-left">
-                <div class="footer-branding-wrap">
-                    <img src="mklogo.png" alt="MK Logo" class="footer-brand-logo">
-                    <span class="footer-brand-title">Muskan Kumari | Portfolio</span>
-                </div>
+                <p class="footer-desc">
+                    Blending high-end graphic & web aesthetics with deep spiritual consciousness. Dedicated to creating visuals that inspire, elevate, and transform digital experiences.
+                </p>
             </div>
 
-            <!-- Section 2 (Middle): Stay Connected -->
-            <div class="footer-col footer-col-center">
+            <!-- Middle Column 1: Quick Links -->
+            <div class="footer-col footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+                    <li><a href="#about"><i class="fa-solid fa-angle-right"></i> About</a></li>
+                    <li><a href="#blogs"><i class="fa-solid fa-angle-right"></i> Blogs</a></li>
+                    <li><a href="#gallery"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
+                    <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Middle Column 2: Categories -->
+            <div class="footer-col footer-links">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Graphic Design</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Web Development</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> AI Art & Visuals</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Motion Graphics</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Column: Stay Connected & Newsletter -->
+            <div class="footer-col footer-connect">
                 <h4>Stay Connected</h4>
-                <div class="footer-social-links">
+                <div class="footer-socials">
                     <a href="https://youtube.com/@I.MuskanKumari" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                     <a href="https://instagram.com/i.musankumari" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.behance.net/muskankumari143" target="_blank" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
-                    <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://pinterest.com" target="_blank" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
                 </div>
-            </div>
 
-            <!-- Section 3 (Right): Total Unique Profile Visits Counter -->
-            <div class="footer-col footer-col-right">
-                <h4>Total Unique Profile Visits</h4>
-                <div class="visitor-counter-display">
-                    <i class="fa-solid fa-eye visitor-eye-icon"></i>
-                    <span class="visitor-count-number" id="uniqueVisitorCount">--</span>
+                <div class="newsletter-box">
+                    <p>Subscribe to our newsletter:</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
         </div>
 
-        <!-- Bottom Copyright Bar -->
+        <!-- Copyright Bottom Bar -->
         <div class="footer-bottom-bar">
-            <p>&copy; 2026 Muskan Kumari. All Rights Reserved.</p>
+            <p>&copy; 2026 MK Spiritual Hub. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Minimal JS for Mobile Menu Toggle -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
-

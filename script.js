@@ -1,4 +1,4 @@
-// Strict File Mapping Configuration Matching Repository Assets
+// Strict Asset Configuration Matching GitHub Repository Filenames
 const portfolioAssets = {
     // Graphic Design: g1.jpg to g50.jpg
     graphic: Array.from({length: 50}, (_, i) => ({ 
@@ -16,7 +16,7 @@ const portfolioAssets = {
         aspectClass: 'aspect-square',
         likes: 0
     })),
-    // AI Visuals: b1.png to b10.png
+    // AI Visuals: b1.png to b10.png (Burger & Visual assets)
     ai: Array.from({length: 10}, (_, i) => ({ 
         id: `b_${i}`, 
         type: 'image', 
@@ -37,31 +37,31 @@ const portfolioAssets = {
 const userLikedItems = new Set();
 let currentCategoryArray = [];
 let activeIndex = 0;
-let visibleCount = 9; // INITIAL STATE: 9 photos (3x3 grid)
+let visibleCount = 10;
 let activeTabGlobal = 'graphic';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Navigation Menu Toggle
-    const menuToggleBtn = document.getElementById('menuToggleBtn');
-    const mainNavigation = document.getElementById('mainNavigation');
+    // Mobile Navigation Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
 
-    if (menuToggleBtn && mainNavigation) {
-        menuToggleBtn.addEventListener('click', () => {
-            mainNavigation.classList.toggle('mobile-active');
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
         });
     }
 
     // Initialize 24-Hour Unique Visitor Counter
     initUniqueVisitorCounter();
 
-    // Render Initial Gallery Tab (Graphic Design)
+    // Initial Gallery Render
     switchTab('graphic');
 });
 
 function closeMobileMenu() {
-    const mainNavigation = document.getElementById('mainNavigation');
-    if (mainNavigation) {
-        mainNavigation.classList.remove('mobile-active');
+    const navMenu = document.getElementById('navMenu');
+    if (navMenu) {
+        navMenu.classList.remove('active');
     }
 }
 
@@ -77,7 +77,7 @@ function filterGallery(category, event) {
 
 function switchTab(category) {
     activeTabGlobal = category;
-    visibleCount = 9; // Reset to 9 cards when switching tabs
+    visibleCount = 10;
     currentCategoryArray = portfolioAssets[category] || [];
     renderGrid();
 }
@@ -121,7 +121,6 @@ function renderGrid() {
         targetGrid.appendChild(itemNode);
     });
 
-    // Toggle View More Button Visibility
     if (viewMoreBtn) {
         if (visibleCount >= currentCategoryArray.length) {
             viewMoreBtn.style.display = 'none';
@@ -131,13 +130,11 @@ function renderGrid() {
     }
 }
 
-/* VIEW MORE LOGIC: IMMEDIATELY SHOW ALL REMAINING PHOTOS AT ONCE */
 function handleViewMoreAction() {
-    visibleCount = currentCategoryArray.length; // Show all remaining items instantly
+    visibleCount += 10;
     renderGrid();
 }
 
-/* Interactive Likes */
 function executeRealLiking(assetId, index, event) {
     event.stopPropagation();
     const targetItem = currentCategoryArray[index];
@@ -195,12 +192,10 @@ function closeGallerySlider() {
 }
 
 function handleFormSubmit(event) {
-    alert('Thank you for reaching out! Your message has been received successfully.');
+    alert('Thank you for your message! It has been received successfully.');
 }
 
-/* ==========================================================================
-   6. ACCURATE UNIQUE VISITOR COUNTER LOGIC (24-HOUR TIMESTAMP FILTER)
-   ========================================================================== */
+/* 24-Hour Unique Visitor Counter Logic */
 function initUniqueVisitorCounter() {
     const counterElement = document.getElementById('uniqueVisitorCount');
     if (!counterElement) return;
@@ -208,26 +203,23 @@ function initUniqueVisitorCounter() {
     const STORAGE_COUNT_KEY = 'mk_unique_visitor_total';
     const STORAGE_TIMESTAMP_KEY = 'mk_visitor_last_timestamp';
 
-    const BASELINE_COUNT = 150; // Professional baseline initial count
-    const TWENTY_FOUR_HOURS_MS = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+    const BASELINE_COUNT = 150;
+    const TWENTY_FOUR_HOURS_MS = 24 * 60 * 60 * 1000;
     const now = new Date().getTime();
 
     let currentTotal = parseInt(localStorage.getItem(STORAGE_COUNT_KEY), 10);
     const lastVisitTimestamp = parseInt(localStorage.getItem(STORAGE_TIMESTAMP_KEY), 10);
 
-    // Set initial baseline if no counter stored
     if (isNaN(currentTotal) || currentTotal < BASELINE_COUNT) {
         currentTotal = BASELINE_COUNT;
     }
 
-    // Only increment if user has NOT visited within the last 24 hours
     if (!lastVisitTimestamp || (now - lastVisitTimestamp) > TWENTY_FOUR_HOURS_MS) {
         currentTotal += 1;
         localStorage.setItem(STORAGE_COUNT_KEY, currentTotal.toString());
         localStorage.setItem(STORAGE_TIMESTAMP_KEY, now.toString());
     }
 
-    // Render count
     counterElement.textContent = `${currentTotal}+`;
 }
 

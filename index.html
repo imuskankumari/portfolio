@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Muskan Kumari | Portfolio</title>
-    <!-- Google Fonts -->
+    <title>Muskan Kumari | Portfolio</title>
+    <!-- Google Fonts: Light, Thin, Elegant Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -15,19 +15,19 @@
 <body id="top">
 
     <!-- ================= TRANSPARENT HEADER OVER HERO ================= -->
-    <header class="transparent-header">
+    <header class="top-navbar">
         <div class="header-container">
-            <!-- Strictly lowercase logo image only -->
-            <a href="#top" class="header-logo-link">
+            <!-- Logo image only (no extra text) -->
+            <a href="#top" class="brand-logo-link">
                 <img src="mk.png" alt="Logo" class="site-logo-img">
             </a>
 
-            <!-- Mobile Menu Toggle Button -->
+            <!-- Mobile Hamburger Toggle -->
             <button class="mobile-toggle-btn" id="mobileToggle" aria-label="Toggle Navigation">
                 <i class="fa-solid fa-bars"></i>
             </button>
 
-            <!-- Navigation Links (Plain text, no background boxes) -->
+            <!-- Navigation Links (Plain text, no button boxes) -->
             <nav class="nav-menu" id="navMenu">
                 <a href="#top" class="nav-link active" onclick="closeMenu()">Home</a>
                 <a href="#about" class="nav-link" onclick="closeMenu()">About</a>
@@ -38,226 +38,76 @@
         </div>
     </header>
 
-    <!-- ================= HERO SECTION (16:9 BANNER WITH BLACK OVERLAY & LIGHTBOX) ================= -->
+    <!-- ================= HERO SECTION (CLEAN 16:9 BANNER) ================= -->
     <section id="home" class="hero-section">
         <div class="hero-aspect-ratio-wrap" id="heroBannerWrap">
-            <!-- Main 16:9 Hero Image -->
-            <img src="hero.png" alt="Hero Banner" class="hero-banner-img" id="heroImage" onerror="this.src='hero.jpg'">
-            <!-- Clean 30% Semi-Transparent Black Overlay -->
-            <div class="hero-black-overlay"></div>
-
-            <!-- Direct Text Overlay over Sky Area -->
-            <div class="hero-direct-text-container">
-                <div class="hero-text-content">
-                    <span class="hero-subheading">The Muskan Kumari</span>
-                    <h1 class="hero-title-main">
-                        <span class="title-line-1">Graphic & Web</span>
-                        <span class="title-line-2">Designer</span>
-                    </h1>
-
-                    <!-- Orange Lotus Divider -->
-                    <div class="lotus-divider">
-                        <span class="divider-line"></span>
-                        <span class="lotus-symbol">🪷</span>
-                        <span class="divider-line"></span>
-                    </div>
-
-                    <p class="hero-tagline">Creativity मेरे रग-रग में है।</p>
-                </div>
-            </div>
+            <!-- Main Hero Image (Text is embedded directly inside the graphic; zero HTML text overlays) -->
+            <img src="hero.png" alt="Hero Banner" class="hero-banner-img" onerror="this.src='hero.jpg'">
+            <!-- Lightweight dark vignette for ambient depth -->
+            <div class="hero-overlay-shade"></div>
         </div>
     </section>
 
-    <!-- ================= ABOUT SECTION ("WHO I AM" NO PHOTO RESUME STYLE) ================= -->
+    <!-- ================= ABOUT SECTION ("WHO I AM" ELEGANT RESUME TEXT) ================= -->
     <section id="about" class="about-section">
         <div class="container">
-            <div class="about-clean-content">
-                <span class="about-subtitle-orange">GRAPHIC & WEB DESIGNER • AI CREATOR</span>
-                <h2 class="about-main-heading">WHO I AM</h2>
-                <p class="about-description-text">
-                    Hi, I am Muskan Kumari from Delhi, a passionate Graphic & Web Designer. I work professionally as a Graphic Designer, Web Designer, Video Editor, and AI Creator. I am skilled in Adobe Photoshop, Illustrator, InDesign, CorelDraw, and Canva. I also build clean websites using HTML, CSS, JavaScript, WordPress, and Google Sites. I do video editing using Filmora, VN, and InShot. Additionally, I work as an AI Creator using all AI tools to create AI visuals, AI animation videos, and AI motion graphics.
+            <div class="about-content-box">
+                <span class="about-sub-tag">GRAPHIC & WEB DESIGNER • AI CREATOR</span>
+                <h2 class="about-heading-thin">WHO I AM</h2>
+                <p class="about-bio-text">
+                    Hi, I am Muskan Kumari, a passionate Graphic & Web Designer from Delhi specializing in visual identity systems, sleek web interfaces, and AI motion graphics. Proficient across Adobe Creative Suite, Canva, HTML, CSS, JavaScript, VN, and Filmora, I bridge aesthetic design with modern web functionality to build impactful digital experiences.
                 </p>
-                <div class="about-cta-buttons">
-                    <a href="#projects" class="btn btn-orange-solid">View Projects <i class="fa-solid fa-arrow-right"></i></a>
+                <div class="about-action-group">
+                    <a href="#projects" class="btn btn-orange-solid">View Projects →</a>
                     <a href="#contact" class="btn btn-black-outline">Get In Touch</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ================= SKILLS SECTION (ENLARGED WHITE STRIPE-STYLE CARDS) ================= -->
+    <!-- ================= SKILLS & TECH STACK (CONTAINED CAROUSEL) ================= -->
     <section id="skills" class="skills-tech-stack-section">
         <div class="container">
-            <h2 class="section-title">Skills & Tech Stack</h2>
+            <h2 class="section-title">SKILLS & <span class="accent-orange">TECH STACK</span></h2>
             
-            <div class="marquee-wrapper">
-                <div class="marquee-track">
-                    <!-- Set 1 -->
-                    <div class="skill-card-box">
-                        <img src="photoshop.png" alt="Photoshop">
-                        <button class="skill-dark-btn">Adobe Photoshop</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="illustrator.png" alt="Illustrator">
-                        <button class="skill-dark-btn">Adobe Illustrator</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="indesign.png" alt="InDesign">
-                        <button class="skill-dark-btn">Adobe InDesign</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="canva.png" alt="Canva">
-                        <button class="skill-dark-btn">Canva</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="coreldraw.png" alt="CorelDraw">
-                        <button class="skill-dark-btn">CorelDraw</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="html.png" alt="HTML">
-                        <button class="skill-dark-btn">HTML</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="css.png" alt="CSS">
-                        <button class="skill-dark-btn">CSS</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="javascript.png" alt="JavaScript">
-                        <button class="skill-dark-btn">JavaScript</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="wordpress.png" alt="WordPress">
-                        <button class="skill-dark-btn">WordPress</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="googledocs.png" alt="Google Docs">
-                        <button class="skill-dark-btn">Google Docs</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="googlesheets.png" alt="Google Sheets">
-                        <button class="skill-dark-btn">Google Sheets</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="googleslides.png" alt="Google Slides">
-                        <button class="skill-dark-btn">Google Slides</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="drive.png" alt="Google Drive">
-                        <button class="skill-dark-btn">Google Drive</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="word.png" alt="MS Word">
-                        <button class="skill-dark-btn">MS Word</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="excel.png" alt="MS Excel">
-                        <button class="skill-dark-btn">MS Excel</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="powerpoint.png" alt="MS PowerPoint">
-                        <button class="skill-dark-btn">MS PowerPoint</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="filmora.png" alt="Filmora">
-                        <button class="skill-dark-btn">Filmora</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="vn.png" alt="VN">
-                        <button class="skill-dark-btn">VN</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="inshot.png" alt="InShot">
-                        <button class="skill-dark-btn">InShot</button>
-                    </div>
+            <div class="skills-carousel-container">
+                <button class="carousel-control prev-btn" id="skillsPrev" aria-label="Previous Skills"><i class="fa-solid fa-chevron-left"></i></button>
 
-                    <!-- Duplicated Set 2 for Infinite Scrolling -->
-                    <div class="skill-card-box">
-                        <img src="photoshop.png" alt="Photoshop">
-                        <button class="skill-dark-btn">Adobe Photoshop</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="illustrator.png" alt="Illustrator">
-                        <button class="skill-dark-btn">Adobe Illustrator</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="indesign.png" alt="InDesign">
-                        <button class="skill-dark-btn">Adobe InDesign</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="canva.png" alt="Canva">
-                        <button class="skill-dark-btn">Canva</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="coreldraw.png" alt="CorelDraw">
-                        <button class="skill-dark-btn">CorelDraw</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="html.png" alt="HTML">
-                        <button class="skill-dark-btn">HTML</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="css.png" alt="CSS">
-                        <button class="skill-dark-btn">CSS</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="javascript.png" alt="JavaScript">
-                        <button class="skill-dark-btn">JavaScript</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="wordpress.png" alt="WordPress">
-                        <button class="skill-dark-btn">WordPress</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="googledocs.png" alt="Google Docs">
-                        <button class="skill-dark-btn">Google Docs</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="googlesheets.png" alt="Google Sheets">
-                        <button class="skill-dark-btn">Google Sheets</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="googleslides.png" alt="Google Slides">
-                        <button class="skill-dark-btn">Google Slides</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="drive.png" alt="Google Drive">
-                        <button class="skill-dark-btn">Google Drive</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="word.png" alt="MS Word">
-                        <button class="skill-dark-btn">MS Word</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="excel.png" alt="MS Excel">
-                        <button class="skill-dark-btn">MS Excel</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="powerpoint.png" alt="MS PowerPoint">
-                        <button class="skill-dark-btn">MS PowerPoint</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="filmora.png" alt="Filmora">
-                        <button class="skill-dark-btn">Filmora</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="vn.png" alt="VN">
-                        <button class="skill-dark-btn">VN</button>
-                    </div>
-                    <div class="skill-card-box">
-                        <img src="inshot.png" alt="InShot">
-                        <button class="skill-dark-btn">InShot</button>
+                <div class="skills-carousel-viewport">
+                    <div class="skills-carousel-track" id="skillsTrack">
+                        <div class="skill-card-box"><img src="photoshop.png" alt="Photoshop"><button class="skill-dark-btn">Adobe Photoshop</button></div>
+                        <div class="skill-card-box"><img src="illustrator.png" alt="Illustrator"><button class="skill-dark-btn">Adobe Illustrator</button></div>
+                        <div class="skill-card-box"><img src="indesign.png" alt="InDesign"><button class="skill-dark-btn">Adobe InDesign</button></div>
+                        <div class="skill-card-box"><img src="canva.png" alt="Canva"><button class="skill-dark-btn">Canva</button></div>
+                        <div class="skill-card-box"><img src="coreldraw.png" alt="CorelDraw"><button class="skill-dark-btn">CorelDraw</button></div>
+                        <div class="skill-card-box"><img src="html.png" alt="HTML"><button class="skill-dark-btn">HTML</button></div>
+                        <div class="skill-card-box"><img src="css.png" alt="CSS"><button class="skill-dark-btn">CSS</button></div>
+                        <div class="skill-card-box"><img src="javascript.png" alt="JavaScript"><button class="skill-dark-btn">JavaScript</button></div>
+                        <div class="skill-card-box"><img src="wordpress.png" alt="WordPress"><button class="skill-dark-btn">WordPress</button></div>
+                        <div class="skill-card-box"><img src="googledocs.png" alt="Google Docs"><button class="skill-dark-btn">Google Docs</button></div>
+                        <div class="skill-card-box"><img src="googlesheets.png" alt="Google Sheets"><button class="skill-dark-btn">Google Sheets</button></div>
+                        <div class="skill-card-box"><img src="googleslides.png" alt="Google Slides"><button class="skill-dark-btn">Google Slides</button></div>
+                        <div class="skill-card-box"><img src="drive.png" alt="Google Drive"><button class="skill-dark-btn">Google Drive</button></div>
+                        <div class="skill-card-box"><img src="word.png" alt="MS Word"><button class="skill-dark-btn">MS Word</button></div>
+                        <div class="skill-card-box"><img src="excel.png" alt="MS Excel"><button class="skill-dark-btn">MS Excel</button></div>
+                        <div class="skill-card-box"><img src="powerpoint.png" alt="MS PowerPoint"><button class="skill-dark-btn">MS PowerPoint</button></div>
+                        <div class="skill-card-box"><img src="filmora.png" alt="Filmora"><button class="skill-dark-btn">Filmora</button></div>
+                        <div class="skill-card-box"><img src="vn.png" alt="VN"><button class="skill-dark-btn">VN</button></div>
+                        <div class="skill-card-box"><img src="inshot.png" alt="InShot"><button class="skill-dark-btn">InShot</button></div>
                     </div>
                 </div>
+
+                <button class="carousel-control next-btn" id="skillsNext" aria-label="Next Skills"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
 
-    <!-- ================= PROJECTS SECTION ================= -->
+    <!-- ================= MY PROJECTS SECTION ================= -->
     <section id="projects" class="projects-section">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
+            <h2 class="section-title">MY <span class="accent-orange">PROJECTS</span></h2>
             
-            <!-- Mobile Single-Line Horizontal Scroll Tabs -->
+            <!-- Horizontal Single-Line Scroll Tabs for Mobile -->
             <div class="horizontal-tabs-wrapper">
                 <div class="filter-tabs">
                     <button class="tab-btn active" onclick="filterGallery('graphic', event)">Graphic Design Projects</button>
@@ -267,10 +117,10 @@
                 </div>
             </div>
             
-            <!-- Project Grid Container -->
+            <!-- Project Grid -->
             <div class="dribbble-grid-layout" id="main-portfolio-gallery"></div>
             
-            <!-- Moderately Rounded View More Button -->
+            <!-- View More Button -->
             <div class="view-more-container-block">
                 <button class="hub-view-more-btn" id="galleryViewMoreTrigger" onclick="handleViewMoreAction()">View More</button>
             </div>
@@ -295,7 +145,6 @@
                 </div>
 
                 <form id="hub-action-form" action="https://formspree.io/f/muskankumari3330@gmail.com" method="POST" onsubmit="handleFormSubmit(event)">
-                    <!-- Vertical Stack Inputs -->
                     <div class="vertical-form-stack">
                         <div class="field-container">
                             <span class="field-icon"><i class="fa-solid fa-user"></i></span>
@@ -316,10 +165,10 @@
         </div>
     </section>
 
-    <!-- ================= FOOTER SECTION (IN-LINE 4 COLUMNS) ================= -->
+    <!-- ================= FOOTER SECTION (4 IN-LINE COLUMNS, EXACT #181A1B MATCH) ================= -->
     <footer class="luxury-footer">
         <div class="footer-grid-container">
-            <!-- Widget 1: Branding & Social Icons -->
+            <!-- Widget 1: Logo & Social Links -->
             <div class="footer-widget">
                 <div class="footer-logo-row">
                     <img src="mk logo.png" alt="Logo" class="footer-logo-img">
@@ -379,7 +228,7 @@
             </div>
         </div>
 
-        <!-- Bottom Bar: Quote & Copyright -->
+        <!-- Bottom Bar -->
         <div class="footer-bottom-bar">
             <p class="spiritual-quote">"You are not the body, not the mind. You are the consciousness."</p>
             <p class="copyright-text">&copy; 2026 Muskan Kumari. All Rights Reserved.</p>

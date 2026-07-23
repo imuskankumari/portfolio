@@ -1,6 +1,5 @@
-// Strict Media Asset Configuration
+// Lightweight Media Asset Mapping Configuration
 const portfolioAssets = {
-    // Graphic Design: g1.jpg to g50.jpg
     graphic: Array.from({length: 50}, (_, i) => ({ 
         id: `g_${i}`, 
         type: 'image', 
@@ -8,7 +7,6 @@ const portfolioAssets = {
         aspectClass: 'aspect-square',
         likes: 0
     })),
-    // Web Design: w1.png to w10.png
     web: Array.from({length: 10}, (_, i) => ({ 
         id: `w_${i}`, 
         type: 'image', 
@@ -16,7 +14,6 @@ const portfolioAssets = {
         aspectClass: 'aspect-square',
         likes: 0
     })),
-    // AI Visuals: b1.png to b10.png
     ai: Array.from({length: 10}, (_, i) => ({ 
         id: `b_${i}`, 
         type: 'image', 
@@ -24,7 +21,6 @@ const portfolioAssets = {
         aspectClass: 'aspect-square',
         likes: 0
     })),
-    // AI Animation Videos: r1.mp4 to r12.mp4
     motion: Array.from({length: 12}, (_, i) => ({ 
         id: `m_${i}`, 
         type: 'video', 
@@ -39,10 +35,9 @@ let currentCategoryArray = [];
 let activeIndex = 0;
 let visibleCount = 10;
 let activeTabGlobal = 'graphic';
-let isHeroLightboxMode = false;
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Navigation Menu Toggle
+    // Mobile Navigation Toggle
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.getElementById('navMenu');
 
@@ -52,8 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Hero Banner Interactive Lightbox Trigger
-    initHeroLightboxMagic();
+    // Initialize Contained Skills Carousel
+    initSkillsCarousel();
+
+    // Initialize Fixed Visitor Counter
+    initVisitorCounter();
 
     // Render Initial Gallery
     switchTab('graphic');
@@ -66,27 +64,42 @@ function closeMenu() {
     }
 }
 
-/* Hero Banner Click Lightbox Trigger */
-function initHeroLightboxMagic() {
-    const heroWrap = document.getElementById('heroBannerWrap');
-    if (!heroWrap) return;
+/* Contained Carousel Engine */
+function initSkillsCarousel() {
+    const track = document.getElementById('skillsTrack');
+    const prevBtn = document.getElementById('skillsPrev');
+    const nextBtn = document.getElementById('skillsNext');
+    if (!track || !prevBtn || !nextBtn) return;
 
-    heroWrap.addEventListener('click', () => {
-        isHeroLightboxMode = true;
-        const lightbox = document.getElementById('galleryLightbox');
-        const contentWrap = document.getElementById('lightboxMediaContent');
-        const prevBtn = document.getElementById('lightboxPrev');
-        const nextBtn = document.getElementById('lightboxNext');
+    let currentIndex = 0;
 
-        if (lightbox && contentWrap) {
-            contentWrap.innerHTML = `<img src="hero.png" alt="Hero Lightbox Zoom" style="max-width:100%; max-height:80vh; object-fit:contain; border-radius:12px; box-shadow: 0 0 30px rgba(255,107,0,0.5);">`;
-            
-            if (prevBtn) prevBtn.style.display = 'none';
-            if (nextBtn) nextBtn.style.display = 'none';
+    const updateCarousel = () => {
+        const card = track.querySelector('.skill-card-box');
+        if (!card) return;
+        const cardWidth = card.offsetWidth + 20; // Width + gap
+        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    };
 
-            lightbox.style.display = 'flex';
+    nextBtn.addEventListener('click', () => {
+        const totalCards = track.children.length;
+        const visibleCards = window.innerWidth > 992 ? 4 : window.innerWidth > 768 ? 3 : window.innerWidth > 480 ? 2 : 1;
+        if (currentIndex < totalCards - visibleCards) {
+            currentIndex++;
+            updateCarousel();
+        } else {
+            currentIndex = 0; // Loop back
+            updateCarousel();
         }
     });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    window.addEventListener('resize', updateCarousel);
 }
 
 /* Filter Tab Switching */
@@ -126,7 +139,6 @@ function renderGrid() {
             ? `<video src="${item.src}" muted loop autoplay playsinline preload="metadata"></video>` 
             : `<img src="${item.src}" loading="lazy" onerror="this.src='placeholder.png'">`;
 
-        // Strictly author name "MK Designs"
         itemNode.innerHTML = `
             <div class="dribbble-img-frame ${item.aspectClass}" onclick="openGallerySlider(${idx})">
                 ${mediaContent}
@@ -183,15 +195,9 @@ function executeRealLiking(assetId, index, event) {
 
 /* Lightbox Modal Slider */
 function openGallerySlider(index) {
-    isHeroLightboxMode = false;
     activeIndex = index;
     const lightbox = document.getElementById('galleryLightbox');
-    const prevBtn = document.getElementById('lightboxPrev');
-    const nextBtn = document.getElementById('lightboxNext');
-
     if (lightbox) {
-        if (prevBtn) prevBtn.style.display = 'block';
-        if (nextBtn) nextBtn.style.display = 'block';
         renderLightboxActiveContent();
         lightbox.style.display = 'flex';
     }
@@ -211,7 +217,6 @@ function renderLightboxActiveContent() {
 }
 
 function changeSlide(direction) {
-    if (isHeroLightboxMode) return;
     activeIndex = (activeIndex + direction + currentCategoryArray.length) % currentCategoryArray.length;
     renderLightboxActiveContent();
 }
@@ -227,3 +232,22 @@ function handleFormSubmit(event) {
     alert('Thank you for your message! It has been received successfully.');
 }
 
+/* VISITOR COUNTER BUG FIX: LocalStorage Check Prevents Refresh Incredmentation */
+function initVisitorCounter() {
+    const counterElement = document.getElementById('uniqueVisitorCount');
+    if (!counterElement) return;
+
+    const STORAGE_KEY = 'mk_visited_unique_session';
+    const BASE_COUNT = 151;
+
+    let totalVisits = parseInt(localStorage.getItem('mk_total_visitor_num')) || BASE_COUNT;
+
+    // Check if this specific user has visited before
+    if (!localStorage.getItem(STORAGE_KEY)) {
+        totalVisits += 1;
+        localStorage.setItem(STORAGE_KEY, 'true'); // Flag session as counted
+        localStorage.setItem('mk_total_visitor_num', totalVisits);
+    }
+
+    counterElement.textContent = `${totalVisits}+`;
+}

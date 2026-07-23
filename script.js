@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Hero Banner Interactive Lightbox Magic
+    // Hero Banner Interactive Lightbox Trigger
     initHeroLightboxMagic();
 
     // Render Initial Gallery
@@ -81,7 +81,6 @@ function initHeroLightboxMagic() {
         if (lightbox && contentWrap) {
             contentWrap.innerHTML = `<img src="hero.png" alt="Hero Lightbox Zoom" style="max-width:100%; max-height:80vh; object-fit:contain; border-radius:12px; box-shadow: 0 0 30px rgba(255,107,0,0.5);">`;
             
-            // Hide navigation arrows when viewing hero standalone
             if (prevBtn) prevBtn.style.display = 'none';
             if (nextBtn) nextBtn.style.display = 'none';
 

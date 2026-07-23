@@ -18,12 +18,12 @@ html {
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #FFFFFF !important;
-    color: #222222;
+    color: #111111;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* Ensure absolute zero grey or tinted background across all content sections */
+/* Ensure absolute zero tint or grey background across all page sections */
 section, .container, .skills-tech-stack-section, .about-section, .projects-section, .contact-section {
     background-color: #FFFFFF !important;
 }
@@ -35,19 +35,25 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
     padding: 60px 0;
 }
 
+/* Clean, Thin, Elegant Typography */
 .section-title {
     text-align: center;
     font-family: 'Cinzel', serif;
     font-size: 2.2rem;
-    font-weight: 700;
-    color: #FF6B00;
+    font-weight: 600;
+    color: #111111;
+    letter-spacing: 1px;
     margin-bottom: 40px;
 }
 
+.accent-orange {
+    color: #E65100;
+}
+
 /* ==========================================================================
-   1. TRANSPARENT HEADER OVER HERO (NO BUTTON BOXES ON LINKS)
+   1. TRANSPARENT HEADER OVER HERO
    ========================================================================== */
-.transparent-header {
+.top-navbar {
     position: absolute;
     top: 0;
     left: 0;
@@ -67,7 +73,7 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
 }
 
 .site-logo-img {
-    height: 50px;
+    height: 48px;
     width: auto;
     object-fit: contain;
     display: block;
@@ -79,28 +85,25 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
     gap: 36px;
 }
 
-/* Plain transparent text navigation links (No boxes/backgrounds) */
 .nav-link {
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 0.95rem;
+    font-weight: 600;
     color: #FFFFFF !important;
     position: relative;
-    padding: 6px 0;
+    padding: 4px 0;
     background: transparent !important;
     border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
     transition: color 0.25s ease;
 }
 
 .nav-link:hover {
-    color: #FF6B00 !important;
+    color: #E65100 !important;
 }
 
-/* Active Link State: Vibrant Orange Text with Solid Orange Underline */
+/* Active State: Vibrant Orange Text with Solid Orange Underline */
 .nav-link.active {
-    color: #FF6B00 !important;
-    font-weight: 800;
+    color: #E65100 !important;
+    font-weight: 700;
 }
 
 .nav-link.active::after {
@@ -109,9 +112,8 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
     bottom: -4px;
     left: 0;
     width: 100%;
-    height: 3px;
-    background-color: #FF6B00;
-    border-radius: 2px;
+    height: 2px;
+    background-color: #E65100;
 }
 
 .mobile-toggle-btn {
@@ -131,7 +133,7 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
         right: -100%;
         width: 100%;
         height: calc(100vh - 75px);
-        background: #111111;
+        background: #181A1B;
         flex-direction: column;
         justify-content: flex-start;
         padding-top: 50px;
@@ -142,7 +144,7 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
 }
 
 /* ==========================================================================
-   2. HERO SECTION (16:9 BANNER WITH 30% BLACK OVERLAY)
+   2. HERO SECTION (16:9 ASPECT RATIO)
    ========================================================================== */
 .hero-section {
     position: relative;
@@ -154,7 +156,7 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
 .hero-aspect-ratio-wrap {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* Strict 16:9 Aspect Ratio */
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
     cursor: pointer;
 }
 
@@ -167,153 +169,65 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
     object-fit: cover;
     object-position: center;
     z-index: 1;
-    transition: transform 0.5s ease;
 }
 
-.hero-aspect-ratio-wrap:hover .hero-banner-img {
-    transform: scale(1.02);
-}
-
-/* 30% Semi-Transparent Black Overlay */
-.hero-black-overlay {
+.hero-overlay-shade {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.30);
+    background: rgba(0, 0, 0, 0.22);
     z-index: 2;
     pointer-events: none;
 }
 
-.hero-direct-text-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    pointer-events: none;
-}
-
-.hero-text-content {
-    max-width: 550px;
-    padding-right: 7%;
-    text-align: left;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    pointer-events: auto;
-}
-
-.hero-subheading {
-    font-family: 'Cinzel', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #FF6B00;
-    letter-spacing: 2px;
-    display: block;
-    margin-bottom: 6px;
-    text-transform: uppercase;
-}
-
-.hero-title-main {
-    font-family: 'Cinzel', serif;
-    display: flex;
-    flex-direction: column;
-}
-
-.title-line-1 {
-    font-size: 2.8rem;
-    font-weight: 800;
-    color: #FFFFFF;
-    line-height: 1.2;
-}
-
-.title-line-2 {
-    font-size: 2.8rem;
-    font-weight: 800;
-    color: #FFFFFF;
-    line-height: 1.5;
-    margin-top: 6px;
-}
-
-.lotus-divider {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin: 20px 0 16px 0;
-    max-width: 300px;
-}
-
-.divider-line {
-    flex: 1;
-    height: 2px;
-    background: linear-gradient(90deg, #FF9800, #FF6B00);
-}
-
-.lotus-symbol {
-    font-size: 1.4rem;
-    color: #FF6B00;
-}
-
-.hero-tagline {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #FFFFFF;
-}
-
 @media (max-width: 900px) {
     .hero-aspect-ratio-wrap { padding-top: 75%; }
-    .hero-direct-text-container { justify-content: center; }
-    .hero-text-content { padding-right: 0; text-align: center; }
-    .lotus-divider { margin: 20px auto; }
-    .title-line-1, .title-line-2 { font-size: 2rem; }
 }
 
 /* ==========================================================================
-   3. ABOUT SECTION ("WHO I AM" NO PHOTO STYLE)
+   3. ABOUT SECTION ("WHO I AM")
    ========================================================================== */
 .about-section {
     padding: 70px 0;
 }
 
-.about-clean-content {
+.about-content-box {
     max-width: 950px;
     margin: 0 auto;
     text-align: left;
 }
 
-.about-subtitle-orange {
+.about-sub-tag {
     font-size: 0.85rem;
-    font-weight: 800;
-    color: #FF6B00;
+    font-weight: 700;
+    color: #E65100;
     letter-spacing: 1.5px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     display: inline-block;
 }
 
-.about-main-heading {
+.about-heading-thin {
     font-family: 'Cinzel', serif;
     font-size: 2.8rem;
-    font-weight: 800;
+    font-weight: 600;
     color: #111111;
     line-height: 1.2;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
 }
 
-.about-description-text {
+.about-bio-text {
     font-size: 1.05rem;
+    font-weight: 400;
     color: #333333;
-    margin-bottom: 32px;
+    margin-bottom: 30px;
     line-height: 1.85;
     text-align: justify;
 }
 
-.about-cta-buttons {
+.about-action-group {
     display: flex;
     gap: 16px;
     align-items: center;
@@ -322,32 +236,31 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
 .btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
     padding: 12px 28px;
     font-size: 0.95rem;
-    font-weight: 700;
-    border-radius: 8px; /* Moderately rounded */
+    font-weight: 600;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.25s ease;
 }
 
 .btn-orange-solid {
-    background: #FF6B00;
+    background: #E65100;
     color: #FFFFFF;
-    border: 2px solid #FF6B00;
-    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.25);
+    border: 2px solid #E65100;
+    box-shadow: 0 4px 15px rgba(230, 81, 0, 0.2);
 }
 
 .btn-orange-solid:hover {
-    background: #E65100;
-    border-color: #E65100;
+    background: #BF360C;
+    border-color: #BF360C;
     transform: translateY(-2px);
 }
 
 .btn-black-outline {
     background: #FFFFFF;
     color: #111111;
-    border: 2px solid #111111;
+    border: 1.5px solid #111111;
 }
 
 .btn-black-outline:hover {
@@ -357,68 +270,76 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
 }
 
 /* ==========================================================================
-   4. SKILLS SECTION CARDS (ENLARGED WHITE STRIPE-STYLE CARDS)
+   4. SKILLS SECTION (CONTAINED CAROUSEL - NO OVERFLOW)
    ========================================================================== */
 .skills-tech-stack-section {
-    overflow: hidden;
+    padding: 60px 0;
 }
 
-.marquee-wrapper {
+.skills-carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.skills-carousel-viewport {
     width: 100%;
     overflow: hidden;
-    position: relative;
-    padding: 10px 0 20px 0;
+    padding: 10px 0;
 }
 
-.marquee-track {
+.skills-carousel-track {
     display: flex;
-    gap: 22px;
-    width: max-content;
-    animation: marqueeScroll 26s linear infinite;
+    gap: 20px;
+    transition: transform 0.4s ease-in-out;
 }
 
-.marquee-wrapper:hover .marquee-track {
-    animation-play-state: paused;
-}
-
-@keyframes marqueeScroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-/* Spacious enlarged white card container with Stripe-style design */
 .skill-card-box {
     background: #FFFFFF !important;
     border: 1px solid #EAEAEA;
-    padding: 24px 22px;
+    padding: 24px 20px;
     border-radius: 14px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-width: 190px;
-    flex-shrink: 0;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    flex: 0 0 calc(25% - 15px); /* Exactly 4 cards visible at a time */
+    min-width: 220px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+@media (max-width: 992px) {
+    .skill-card-box { flex: 0 0 calc(33.333% - 14px); }
+}
+
+@media (max-width: 768px) {
+    .skill-card-box { flex: 0 0 calc(50% - 10px); }
+}
+
+@media (max-width: 480px) {
+    .skill-card-box { flex: 0 0 100%; }
 }
 
 .skill-card-box img {
-    height: 55px;
+    height: 52px;
     width: auto;
     object-fit: contain;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     display: block;
 }
 
-/* Solid Dark Rectangular Boxy Button containing the White Tool Title inside */
 .skill-dark-btn {
     width: 100%;
     padding: 10px 12px;
-    background: #1F242D;
+    background: #181A1B;
     color: #FFFFFF !important;
     border: none;
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 600;
     border-radius: 6px;
     cursor: pointer;
     transition: background 0.2s ease;
@@ -426,17 +347,40 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
 }
 
 .skill-dark-btn:hover {
-    background: #FF6B00;
+    background: #E65100;
+}
+
+.carousel-control {
+    background: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    color: #111111;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    transition: all 0.2s ease;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.carousel-control:hover {
+    background: #E65100;
+    color: #FFFFFF;
+    border-color: #E65100;
 }
 
 /* ==========================================================================
    5. PROJECTS SECTION
    ========================================================================== */
 .projects-section {
-    /* Pure white background inherits globally */
+    padding: 60px 0;
 }
 
-/* Mobile Single-Line Horizontal Scroll Tabs */
 .horizontal-tabs-wrapper {
     width: 100%;
     overflow-x: auto;
@@ -446,14 +390,8 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
     -webkit-overflow-scrolling: touch;
 }
 
-.horizontal-tabs-wrapper::-webkit-scrollbar {
-    height: 4px;
-}
-
-.horizontal-tabs-wrapper::-webkit-scrollbar-thumb {
-    background: #FF6B00;
-    border-radius: 10px;
-}
+.horizontal-tabs-wrapper::-webkit-scrollbar { height: 4px; }
+.horizontal-tabs-wrapper::-webkit-scrollbar-thumb { background: #E65100; border-radius: 10px; }
 
 .filter-tabs {
     display: flex;
@@ -467,20 +405,20 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
 .tab-btn {
     padding: 10px 22px;
     background: #FFFFFF;
-    border: 1.5px solid #E0E0E0;
+    border: 1px solid #E0E0E0;
     color: #111111;
     cursor: pointer;
     font-weight: 600;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     border-radius: 8px;
     transition: all 0.25s ease;
 }
 
 .tab-btn.active, 
 .tab-btn:hover {
-    background: #FF6B00;
+    background: #E65100;
     color: #FFFFFF;
-    border-color: #FF6B00;
+    border-color: #E65100;
 }
 
 .dribbble-grid-layout {
@@ -543,7 +481,7 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
 .dribbble-avatar {
     width: 26px;
     height: 26px;
-    background: #FF6B00;
+    background: #E65100;
     color: #FFFFFF;
     border-radius: 50%;
     font-size: 0.75rem;
@@ -554,7 +492,7 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
 }
 
 .dribbble-username {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 700;
     color: #111111;
 }
@@ -566,7 +504,7 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
     gap: 6px;
 }
 
-.like-click-node.activated i { color: #FF6B00 !important; }
+.like-click-node.activated i { color: #E65100 !important; }
 
 .view-more-container-block {
     display: flex;
@@ -577,21 +515,21 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
 .hub-view-more-btn {
     padding: 12px 36px;
     background-color: #FFFFFF;
-    color: #FF6B00;
-    border: 2px solid #FF6B00;
+    color: #E65100;
+    border: 1.5px solid #E65100;
     font-size: 0.95rem;
-    font-weight: 700;
+    font-weight: 600;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
 .hub-view-more-btn:hover {
-    background-color: #FF6B00;
+    background-color: #E65100;
     color: #FFFFFF;
 }
 
-/* Lightbox Overlay Modal */
+/* Lightbox Modal */
 .gallery-lightbox {
     display: none;
     position: fixed;
@@ -627,7 +565,7 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
     background: #FFFFFF !important;
     padding: 40px;
     border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
     border: 1px solid #EAEAEA;
 }
 
@@ -639,8 +577,8 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
 .contact-card-title {
     font-family: 'Cinzel', serif;
     font-size: 2rem;
-    font-weight: 700;
-    color: #FF6B00;
+    font-weight: 600;
+    color: #E65100;
     margin-bottom: 8px;
 }
 
@@ -659,7 +597,7 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
 .field-container {
     display: flex;
     align-items: center;
-    border: 1.5px solid #FF6B00;
+    border: 1.5px solid #E65100;
     background: #FFFFFF !important;
     border-radius: 8px;
     padding: 4px 16px;
@@ -667,7 +605,7 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
 }
 
 .field-icon {
-    color: #FF6B00;
+    color: #E65100;
     margin-right: 12px;
     font-size: 1.05rem;
 }
@@ -678,7 +616,7 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
     border: none;
     outline: none;
     padding: 12px 0;
-    font-size: 1rem;
+    font-size: 0.98rem;
     color: #111111;
     background: transparent;
 }
@@ -689,40 +627,39 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
 }
 
 .hub-submit-btn {
-    background: #FF6B00;
+    background: #E65100;
     color: #FFFFFF;
     border: none;
     padding: 14px 36px;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 600;
     border-radius: 8px;
     cursor: pointer;
     width: 100%;
     transition: background 0.2s ease;
-    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.25);
+    box-shadow: 0 4px 15px rgba(230, 81, 0, 0.2);
 }
 
 .hub-submit-btn:hover {
-    background: #E65100;
+    background: #BF360C;
 }
 
 /* ==========================================================================
-   7. FOOTER SECTION (STRICTLY 4 IN-LINE HORIZONTAL COLUMNS)
+   7. FOOTER SECTION (EXACT #181A1B MATCH & IN-LINE 4 WIDGETS)
    ========================================================================== */
 .luxury-footer {
-    background-color: #121418 !important;
-    color: #D1D5DB;
+    background-color: #181A1B !important; /* Soft, elegant, light dark-grey tone */
+    color: #CCCCCC;
     padding-top: 55px;
-    border-top: 3px solid #FF6B00;
+    border-top: 3px solid #E65100;
 }
 
-/* Strict Grid: 4 columns side-by-side in one horizontal line on desktop */
 .footer-grid-container {
     max-width: 1300px;
     width: 90%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 In-line columns on desktop */
     gap: 32px;
     padding-bottom: 45px;
 }
@@ -751,7 +688,7 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
 .footer-brand-title {
     font-family: 'Cinzel', serif;
     font-size: 1.05rem;
-    font-weight: 700;
+    font-weight: 600;
     color: #FFFFFF;
 }
 
@@ -771,41 +708,49 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
 }
 
 .footer-widget h4::after {
-    content: ''; position: absolute; bottom: 0; left: 0; width: 35px; height: 2px; background-color: #FF6B00;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    height: 2px;
+    background-color: #E65100;
 }
 
 .footer-menu-links { list-style: none; }
 .footer-menu-links li { margin-bottom: 10px; }
-.footer-menu-links a { color: #9CA3AF; font-size: 0.9rem; transition: color 0.25s ease; }
+.footer-menu-links a { color: #AAAAAA; font-size: 0.9rem; transition: color 0.25s ease; }
 .footer-menu-links a:hover { color: #FFFFFF; }
 
 .footer-socials { display: flex; gap: 12px; }
 .footer-socials a {
     display: flex; align-items: center; justify-content: center;
-    width: 38px; height: 38px; background: #1F242D;
-    border: 1px solid #2D3440; color: #FFFFFF; border-radius: 50%;
+    width: 38px; height: 38px; background: #242729;
+    border: 1px solid #33373B; color: #FFFFFF; border-radius: 50%;
     font-size: 0.95rem; transition: all 0.3s ease;
 }
-.footer-socials a:hover { background: #FF6B00; border-color: #FF6B00; }
+.footer-socials a:hover { background: #E65100; border-color: #E65100; }
 
 .visitor-counter-card {
     display: flex; align-items: center; gap: 12px;
-    background: #1F242D; border: 1px solid #2D3440;
+    background: #242729; border: 1px solid #33373B;
     padding: 10px 14px; border-radius: 8px; margin-bottom: 18px;
 }
-.visitor-icon-box {
-    width: 38px; height: 38px; background: rgba(255, 107, 0, 0.15);
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    color: #FF6B00; font-size: 1.1rem;
-}
-.visitor-text-box { display: flex; flex-direction: column; }
-.visitor-title { font-size: 0.75rem; color: #9CA3AF; text-transform: uppercase; font-weight: 600; }
-.visitor-count { font-size: 1.25rem; font-weight: 800; color: #FFFFFF; }
 
-.newsletter-box p { font-size: 0.85rem; color: #9CA3AF; margin-bottom: 8px; }
+.visitor-icon-box {
+    width: 38px; height: 38px; background: rgba(230, 81, 0, 0.15);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: #E65100; font-size: 1.1rem;
+}
+
+.visitor-text-box { display: flex; flex-direction: column; }
+.visitor-title { font-size: 0.75rem; color: #AAAAAA; text-transform: uppercase; font-weight: 600; }
+.visitor-count { font-size: 1.25rem; font-weight: 700; color: #FFFFFF; }
+
+.newsletter-box p { font-size: 0.85rem; color: #AAAAAA; margin-bottom: 8px; }
 
 .newsletter-form {
-    display: flex; background: #1F242D; border: 1px solid #2D3440; border-radius: 6px; overflow: hidden;
+    display: flex; background: #242729; border: 1px solid #33373B; border-radius: 6px; overflow: hidden;
 }
 
 .newsletter-form input {
@@ -813,15 +758,14 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
 }
 
 .newsletter-form button {
-    background: #FF6B00; color: #FFFFFF; border: none; padding: 0 14px; cursor: pointer;
+    background: #E65100; color: #FFFFFF; border: none; padding: 0 14px; cursor: pointer;
 }
 
-/* Bottom Bar: Quote & Copyright */
 .footer-bottom-bar {
-    background-color: #0B0C0E !important;
+    background-color: #121415 !important;
     text-align: center;
     padding: 22px 15px;
-    border-top: 1px solid #1F242D;
+    border-top: 1px solid #242729;
 }
 
 .spiritual-quote {
@@ -834,6 +778,6 @@ section, .container, .skills-tech-stack-section, .about-section, .projects-secti
 
 .copyright-text {
     font-size: 0.82rem;
-    color: #6B7280;
+    color: #777777;
 }
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MK Muskan Kumari | Portfolio</title>
+    <title>The Muskan Kumari | Portfolio</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,12 +17,12 @@
     <!-- ================= TRANSPARENT HEADER OVER HERO ================= -->
     <header class="transparent-header">
         <div class="header-container">
-            <!-- Exact logo element with no adjacent text -->
+            <!-- Strictly lowercase logo file name with no extra text -->
             <a href="#top" class="header-logo-link">
                 <img src="mk.png" alt="Logo" class="site-logo-img">
             </a>
 
-            <!-- Mobile Hamburger Button -->
+            <!-- Mobile Menu Toggle Button -->
             <button class="mobile-toggle-btn" id="mobileToggle" aria-label="Toggle Navigation">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -38,15 +38,15 @@
         </div>
     </header>
 
-    <!-- ================= HERO SECTION (STRICT 16:9 BANNER) ================= -->
+    <!-- ================= HERO SECTION (16:9 BANNER WITH LIGHTBOX MAGIC) ================= -->
     <section id="home" class="hero-section">
-        <div class="hero-aspect-ratio-wrap">
-            <!-- Hero Image Background -->
-            <img src="hero.png" alt="Hero Banner" class="hero-banner-img" onerror="this.src='hero.jpg'">
-            <!-- White Glow / Radial Overlay -->
+        <div class="hero-aspect-ratio-wrap" id="heroBannerWrap">
+            <!-- Main 16:9 Hero Image -->
+            <img src="hero.png" alt="Hero Banner" class="hero-banner-img" id="heroImage" onerror="this.src='hero.jpg'">
+            <!-- Subtle Dark Transparent Overlay -->
             <div class="hero-glow-overlay"></div>
 
-            <!-- Direct Overlay Text (No Box / No Cards) -->
+            <!-- Direct Text Overlay over Sky Space (No background card) -->
             <div class="hero-direct-text-container">
                 <div class="hero-text-content">
                     <span class="hero-subheading">The Muskan Kumari</span>
@@ -55,7 +55,7 @@
                         <span class="title-line-2">Designer</span>
                     </h1>
 
-                    <!-- Orange Lotus Ornament Divider -->
+                    <!-- Orange Lotus Divider -->
                     <div class="lotus-divider">
                         <span class="divider-line"></span>
                         <span class="lotus-symbol">🪷</span>
@@ -68,28 +68,34 @@
         </div>
     </section>
 
-    <!-- ================= ABOUT SECTION (NO PROFILE IMAGE) ================= -->
+    <!-- ================= ABOUT SECTION (RESUME LAYOUT & BIO) ================= -->
     <section id="about" class="about-section">
         <div class="container">
-            <div class="about-split-layout">
-                <!-- Left Side: Bold Orange & Black Heading -->
-                <div class="about-left-heading-block">
-                    <h2 class="about-main-heading">
-                        Welcome to My <span class="highlight-orange">MK Muskan Kumari</span> Website
-                    </h2>
-                </div>
-
-                <!-- Right Side: Bio Text -->
-                <div class="about-right-text-block">
-                    <p class="profile-narrative">
+            <div class="about-hero-grid">
+                <!-- Left Column: Headline, Bio Summary, & CTA Buttons -->
+                <div class="about-text-column">
+                    <span class="about-subtitle-orange">GRAPHIC & WEB DESIGNER • AI CREATOR</span>
+                    <h2 class="about-headline-black">Crafting Visual Systems & Digital Experiences</h2>
+                    <p class="about-description-text">
                         Hi, I am Muskan Kumari from Delhi, a passionate Graphic & Web Designer. I work professionally as a Graphic Designer, Web Designer, Video Editor, and AI Creator. I am skilled in Adobe Photoshop, Illustrator, InDesign, CorelDraw, and Canva. I also build clean websites using HTML, CSS, JavaScript, WordPress, and Google Sites. I do video editing using Filmora, VN, and InShot. Additionally, I work as an AI Creator using all AI tools to create AI visuals, AI animation videos, and AI motion graphics.
                     </p>
+                    <div class="about-cta-buttons">
+                        <a href="#projects" class="btn btn-orange-solid">View Projects <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#contact" class="btn btn-white-outline">Get In Touch</a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Shiva Hero Preview Card -->
+                <div class="about-card-column">
+                    <div class="shiva-card-frame">
+                        <img src="hero.png" alt="Shiva Banner Preview" class="shiva-preview-img" onerror="this.src='hero.jpg'">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ================= SKILLS SECTION (BUTTON STYLE FIX) ================= -->
+    <!-- ================= SKILLS SECTION (ENLARGED WHITE BOX CARDS) ================= -->
     <section id="skills" class="skills-tech-stack-section">
         <div class="container">
             <h2 class="section-title">Skills & Tech Stack</h2>
@@ -97,159 +103,197 @@
             <div class="marquee-wrapper">
                 <div class="marquee-track">
                     <!-- Set 1 -->
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="photoshop.png" alt="Photoshop">
-                        <span class="skill-button-tag">Adobe Photoshop</span>
+                        <h4 class="skill-tool-title">Adobe Photoshop</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="illustrator.png" alt="Illustrator">
-                        <span class="skill-button-tag">Adobe Illustrator</span>
+                        <h4 class="skill-tool-title">Adobe Illustrator</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="indesign.png" alt="InDesign">
-                        <span class="skill-button-tag">Adobe InDesign</span>
+                        <h4 class="skill-tool-title">Adobe InDesign</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="canva.png" alt="Canva">
-                        <span class="skill-button-tag">Canva</span>
+                        <h4 class="skill-tool-title">Canva</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="coreldraw.png" alt="CorelDraw">
-                        <span class="skill-button-tag">CorelDraw</span>
+                        <h4 class="skill-tool-title">CorelDraw</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="html.png" alt="HTML">
-                        <span class="skill-button-tag">HTML</span>
+                        <h4 class="skill-tool-title">HTML</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="css.png" alt="CSS">
-                        <span class="skill-button-tag">CSS</span>
+                        <h4 class="skill-tool-title">CSS</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="javascript.png" alt="JavaScript">
-                        <span class="skill-button-tag">JavaScript</span>
+                        <h4 class="skill-tool-title">JavaScript</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="wordpress.png" alt="WordPress">
-                        <span class="skill-button-tag">WordPress</span>
+                        <h4 class="skill-tool-title">WordPress</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="googledocs.png" alt="Google Docs">
-                        <span class="skill-button-tag">Google Docs</span>
+                        <h4 class="skill-tool-title">Google Docs</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="googlesheets.png" alt="Google Sheets">
-                        <span class="skill-button-tag">Google Sheets</span>
+                        <h4 class="skill-tool-title">Google Sheets</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="googleslides.png" alt="Google Slides">
-                        <span class="skill-button-tag">Google Slides</span>
+                        <h4 class="skill-tool-title">Google Slides</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="drive.png" alt="Google Drive">
-                        <span class="skill-button-tag">Google Drive</span>
+                        <h4 class="skill-tool-title">Google Drive</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="word.png" alt="MS Word">
-                        <span class="skill-button-tag">MS Word</span>
+                        <h4 class="skill-tool-title">MS Word</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="excel.png" alt="MS Excel">
-                        <span class="skill-button-tag">MS Excel</span>
+                        <h4 class="skill-tool-title">MS Excel</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="powerpoint.png" alt="MS PowerPoint">
-                        <span class="skill-button-tag">MS PowerPoint</span>
+                        <h4 class="skill-tool-title">MS PowerPoint</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="filmora.png" alt="Filmora">
-                        <span class="skill-button-tag">Filmora</span>
+                        <h4 class="skill-tool-title">Filmora</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="vn.png" alt="VN">
-                        <span class="skill-button-tag">VN</span>
+                        <h4 class="skill-tool-title">VN</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="inshot.png" alt="InShot">
-                        <span class="skill-button-tag">InShot</span>
+                        <h4 class="skill-tool-title">InShot</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
 
                     <!-- Duplicated Set 2 for Infinite Scroll -->
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="photoshop.png" alt="Photoshop">
-                        <span class="skill-button-tag">Adobe Photoshop</span>
+                        <h4 class="skill-tool-title">Adobe Photoshop</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="illustrator.png" alt="Illustrator">
-                        <span class="skill-button-tag">Adobe Illustrator</span>
+                        <h4 class="skill-tool-title">Adobe Illustrator</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="indesign.png" alt="InDesign">
-                        <span class="skill-button-tag">Adobe InDesign</span>
+                        <h4 class="skill-tool-title">Adobe InDesign</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="canva.png" alt="Canva">
-                        <span class="skill-button-tag">Canva</span>
+                        <h4 class="skill-tool-title">Canva</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="coreldraw.png" alt="CorelDraw">
-                        <span class="skill-button-tag">CorelDraw</span>
+                        <h4 class="skill-tool-title">CorelDraw</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="html.png" alt="HTML">
-                        <span class="skill-button-tag">HTML</span>
+                        <h4 class="skill-tool-title">HTML</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="css.png" alt="CSS">
-                        <span class="skill-button-tag">CSS</span>
+                        <h4 class="skill-tool-title">CSS</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="javascript.png" alt="JavaScript">
-                        <span class="skill-button-tag">JavaScript</span>
+                        <h4 class="skill-tool-title">JavaScript</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="wordpress.png" alt="WordPress">
-                        <span class="skill-button-tag">WordPress</span>
+                        <h4 class="skill-tool-title">WordPress</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="googledocs.png" alt="Google Docs">
-                        <span class="skill-button-tag">Google Docs</span>
+                        <h4 class="skill-tool-title">Google Docs</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="googlesheets.png" alt="Google Sheets">
-                        <span class="skill-button-tag">Google Sheets</span>
+                        <h4 class="skill-tool-title">Google Sheets</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="googleslides.png" alt="Google Slides">
-                        <span class="skill-button-tag">Google Slides</span>
+                        <h4 class="skill-tool-title">Google Slides</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="drive.png" alt="Google Drive">
-                        <span class="skill-button-tag">Google Drive</span>
+                        <h4 class="skill-tool-title">Google Drive</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="word.png" alt="MS Word">
-                        <span class="skill-button-tag">MS Word</span>
+                        <h4 class="skill-tool-title">MS Word</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="excel.png" alt="MS Excel">
-                        <span class="skill-button-tag">MS Excel</span>
+                        <h4 class="skill-tool-title">MS Excel</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="powerpoint.png" alt="MS PowerPoint">
-                        <span class="skill-button-tag">MS PowerPoint</span>
+                        <h4 class="skill-tool-title">MS PowerPoint</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="filmora.png" alt="Filmora">
-                        <span class="skill-button-tag">Filmora</span>
+                        <h4 class="skill-tool-title">Filmora</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="vn.png" alt="VN">
-                        <span class="skill-button-tag">VN</span>
+                        <h4 class="skill-tool-title">VN</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
-                    <div class="skill-card-item">
+                    <div class="skill-card-box">
                         <img src="inshot.png" alt="InShot">
-                        <span class="skill-button-tag">InShot</span>
+                        <h4 class="skill-tool-title">InShot</h4>
+                        <button class="skill-card-btn">Connect Tool</button>
                     </div>
                 </div>
             </div>
@@ -261,7 +305,7 @@
         <div class="container">
             <h2 class="section-title">My Projects</h2>
             
-            <!-- Horizontal Mobile Scroll Tabs (No Vertical Stacking) -->
+            <!-- Mobile Single-Line Horizontal Scroll Tabs -->
             <div class="horizontal-tabs-wrapper">
                 <div class="filter-tabs">
                     <button class="tab-btn active" onclick="filterGallery('graphic', event)">Graphic Design Projects</button>
@@ -271,47 +315,47 @@
                 </div>
             </div>
             
-            <!-- Project Grid -->
+            <!-- Project Grid Container -->
             <div class="dribbble-grid-layout" id="main-portfolio-gallery"></div>
             
-            <!-- View More Button -->
+            <!-- Moderately Rounded Rectangular View More Button -->
             <div class="view-more-container-block">
                 <button class="hub-view-more-btn" id="galleryViewMoreTrigger" onclick="handleViewMoreAction()">View More</button>
             </div>
         </div>
     </section>
 
-    <!-- Lightbox -->
+    <!-- Lightbox Modal for Projects & Hero Zoom -->
     <div class="gallery-lightbox" id="galleryLightbox">
         <span class="lightbox-close" onclick="closeGallerySlider()">&times;</span>
-        <button class="slider-arrow prev-arrow" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="slider-arrow prev-arrow" id="lightboxPrev" onclick="changeSlide(-1)">&#10094;</button>
         <div class="lightbox-img-wrap" id="lightboxMediaContent"></div>
-        <button class="slider-arrow next-arrow" onclick="changeSlide(1)">&#10095;</button>
+        <button class="slider-arrow next-arrow" id="lightboxNext" onclick="changeSlide(1)">&#10095;</button>
     </div>
 
-    <!-- ================= CONTACT SECTION (VERTICAL FORM ALIGNMENT) ================= -->
+    <!-- ================= CONTACT SECTION (PURE WHITE INTEGRATED CARD) ================= -->
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="single-contact-card">
                 <div class="card-inner-header">
                     <h2 class="contact-card-title">Send Me a Message</h2>
-                    <p class="contact-card-subtitle">Have a project or collaboration in mind? Write to us below.</p>
+                    <p class="contact-card-subtitle">Have a project or collaboration in mind? Feel free to write to us below.</p>
                 </div>
 
                 <form id="hub-action-form" action="https://formspree.io/f/muskankumari3330@gmail.com" method="POST" onsubmit="handleFormSubmit(event)">
-                    <!-- Form inputs stacked 100% vertically -->
+                    <!-- Vertical Inputs Stack -->
                     <div class="vertical-form-stack">
                         <div class="field-container">
                             <span class="field-icon"><i class="fa-solid fa-user"></i></span>
-                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="text" name="name" placeholder="Full Name" required>
                         </div>
                         <div class="field-container">
                             <span class="field-icon"><i class="fa-solid fa-envelope"></i></span>
-                            <input type="email" name="email" placeholder="Your Email" required>
+                            <input type="email" name="email" placeholder="Email Address" required>
                         </div>
                         <div class="field-container textarea-container">
                             <span class="field-icon"><i class="fa-solid fa-pen"></i></span>
-                            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="hub-submit-btn">Send Message <i class="fa-solid fa-paper-plane"></i></button>
                     </div>
@@ -320,18 +364,27 @@
         </div>
     </section>
 
-    <!-- ================= FOOTER SECTION ================= -->
+    <!-- ================= FOOTER SECTION (4-WIDGET STRUCTURE) ================= -->
     <footer class="luxury-footer">
         <div class="footer-main-container">
-            <!-- Left: Footer Logo + Name -->
+            <!-- Widget 1: Logo, Brand Text, & Socials -->
             <div class="footer-col footer-branding-col">
                 <div class="footer-logo-row">
-                    <img src="mk logo.png" alt="Footer Logo" class="footer-logo-img">
-                    <span class="footer-brand-title">MK Muskan Kumari</span>
+                    <img src="mk logo.png" alt="Logo" class="footer-logo-img">
+                    <span class="footer-brand-title">Muskan Kumari | Portfolio</span>
+                </div>
+                <div class="stay-connected-block">
+                    <h4 class="sub-widget-title">Stay Connected</h4>
+                    <div class="footer-socials">
+                        <a href="https://youtube.com/@I.MuskanKumari" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://instagram.com/i.musankumari" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.behance.net/muskankumari143" target="_blank" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Col 2: Quick Links -->
+            <!-- Widget 2: Quick Links -->
             <div class="footer-col footer-links-col">
                 <h4>Quick Links</h4>
                 <ul>
@@ -343,25 +396,25 @@
                 </ul>
             </div>
 
-            <!-- Col 3: Categories -->
+            <!-- Widget 3: Categories -->
             <div class="footer-col footer-links-col">
                 <h4>Categories</h4>
                 <ul>
                     <li><a href="#projects"><i class="fa-solid fa-angle-right"></i> Graphic Design Projects</a></li>
                     <li><a href="#projects"><i class="fa-solid fa-angle-right"></i> Web Layouts</a></li>
                     <li><a href="#projects"><i class="fa-solid fa-angle-right"></i> AI Visuals</a></li>
-                    <li><a href="#projects"><i class="fa-solid fa-angle-right"></i> Motion Graphics</a></li>
+                    <li><a href="#projects"><i class="fa-solid fa-angle-right"></i> AI Animation Videos</a></li>
                 </ul>
             </div>
 
-            <!-- Col 4: Stay Connected & Newsletter -->
+            <!-- Widget 4: Unique Visitor Badge & Newsletter -->
             <div class="footer-col footer-connect-col">
-                <h4>Stay Connected</h4>
-                <div class="footer-socials">
-                    <a href="https://youtube.com/@I.MuskanKumari" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://instagram.com/i.musankumari" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.behance.net/muskankumari143" target="_blank" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
-                    <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <div class="visitor-counter-card">
+                    <div class="visitor-icon-box"><i class="fa-solid fa-eye"></i></div>
+                    <div class="visitor-text-box">
+                        <span class="visitor-title">Total Profile Visits</span>
+                        <span class="visitor-count" id="uniqueVisitorCount">151+</span>
+                    </div>
                 </div>
 
                 <div class="newsletter-box">
@@ -374,8 +427,10 @@
             </div>
         </div>
 
+        <!-- Bottom Bar: Quote & Copyright -->
         <div class="footer-bottom-bar">
-            <p>&copy; 2026 MK Muskan Kumari. All Rights Reserved.</p>
+            <p class="spiritual-quote">"You are not the body, not the mind. You are the consciousness."</p>
+            <p class="copyright-text">&copy; 2026 Muskan Kumari. All Rights Reserved.</p>
         </div>
     </footer>
 

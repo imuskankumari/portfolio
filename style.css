@@ -1,5 +1,5 @@
 /* ==========================================================================
-   RESET & BASE STYLING
+   RESET & GLOBAL BACKGROUND THEME RULES (STRICT PURE WHITE)
    ========================================================================== */
 * {
     margin: 0;
@@ -17,10 +17,15 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #FFFFFF;
+    background-color: #FFFFFF !important;
     color: #222222;
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+/* Ensure absolute zero tint or grey background across all sections */
+section, .container, .skills-tech-stack-section, .about-section, .projects-section, .contact-section {
+    background-color: #FFFFFF !important;
 }
 
 .container {
@@ -49,7 +54,7 @@ body {
     width: 100%;
     z-index: 2500;
     background: transparent !important;
-    padding: 15px 0;
+    padding: 18px 0;
 }
 
 .header-container {
@@ -71,35 +76,31 @@ body {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 28px;
 }
 
-/* Base Nav Links: White Text with Glow Ripple Hover */
+/* Base Nav Links: Pure White Text */
 .nav-link {
     font-size: 0.98rem;
     font-weight: 700;
     color: #FFFFFF !important;
     position: relative;
     padding: 8px 16px;
-    border-radius: 20px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    letter-spacing: 0.5px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
 }
 
-/* Magical Ripple Hover Effect */
 .nav-link:hover {
     color: #FFFFFF !important;
-    background: rgba(255, 107, 0, 0.3);
-    box-shadow: 0 0 15px rgba(255, 107, 0, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
+    background: rgba(255, 107, 0, 0.25);
 }
 
-/* Active Link State: Black Text with Orange Outline/Underline */
+/* Active Link State: Black Text with Vibrant Orange Accent Line */
 .nav-link.active {
     color: #111111 !important;
     background-color: #FFFFFF;
     border: 2px solid #FF6B00;
-    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.25);
     font-weight: 800;
 }
 
@@ -142,7 +143,7 @@ body {
 }
 
 /* ==========================================================================
-   2. HERO SECTION (16:9 BANNER & NO WHITE CARD BOX)
+   2. HERO SECTION (16:9 BANNER & LIGHTBOX ZOOM MAGIC)
    ========================================================================== */
 .hero-section {
     position: relative;
@@ -151,11 +152,11 @@ body {
     overflow: hidden;
 }
 
-/* Strict 16:9 Aspect Ratio Container */
 .hero-aspect-ratio-wrap {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 = 0.5625) */
+    padding-top: 56.25%; /* Strict 16:9 Aspect Ratio */
+    cursor: pointer;
 }
 
 .hero-banner-img {
@@ -167,20 +168,24 @@ body {
     object-fit: cover;
     object-position: center;
     z-index: 1;
+    transition: transform 0.5s ease;
 }
 
-/* White Radial Glow Overlay Preserved */
+.hero-aspect-ratio-wrap:hover .hero-banner-img {
+    transform: scale(1.02);
+}
+
 .hero-glow-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 75% 50%, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.2) 45%, rgba(0,0,0,0.15) 100%);
+    background: radial-gradient(circle at 75% 50%, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.15) 45%, rgba(0,0,0,0.3) 100%);
     z-index: 2;
+    pointer-events: none;
 }
 
-/* Direct Text Rendering Over Image (NO WHITE CARDS / NO BOXES) */
 .hero-direct-text-container {
     position: absolute;
     top: 0;
@@ -190,16 +195,18 @@ body {
     z-index: 3;
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Right sky area placement */
+    justify-content: flex-end;
+    pointer-events: none; /* Allows click through to hero image for lightbox trigger */
 }
 
 .hero-text-content {
     max-width: 550px;
-    padding-right: 7%; /* Generous margin from right screen edge */
+    padding-right: 7%;
     text-align: left;
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
+    pointer-events: auto;
 }
 
 .hero-subheading {
@@ -226,13 +233,12 @@ body {
     line-height: 1.2;
 }
 
-/* Line 2 & 3 gap increased so "Designer" is not squashed */
 .title-line-2 {
     font-size: 2.8rem;
     font-weight: 800;
     color: #111111;
-    line-height: 1.5; /* Vertical breathing space */
-    margin-top: 8px;
+    line-height: 1.5;
+    margin-top: 6px;
 }
 
 .lotus-divider {
@@ -258,79 +264,135 @@ body {
     font-size: 1.2rem;
     font-weight: 700;
     color: #111111;
-    text-shadow: 0 1px 2px rgba(255,255,255,0.8);
 }
 
 @media (max-width: 900px) {
-    .hero-aspect-ratio-wrap {
-        padding-top: 75%; /* Taller aspect ratio for mobile view */
-    }
-    .hero-direct-text-container {
-        justify-content: center;
-    }
-    .hero-text-content {
-        padding-right: 0;
-        text-align: center;
-    }
+    .hero-aspect-ratio-wrap { padding-top: 75%; }
+    .hero-direct-text-container { justify-content: center; }
+    .hero-text-content { padding-right: 0; text-align: center; }
     .lotus-divider { margin: 20px auto; }
     .title-line-1, .title-line-2 { font-size: 2rem; }
 }
 
 /* ==========================================================================
-   3. ABOUT SECTION (NO PROFILE IMAGE)
+   3. ABOUT SECTION (RESUME LAYOUT)
    ========================================================================== */
 .about-section {
-    background: #FFFFFF;
+    padding: 70px 0;
 }
 
-.about-split-layout {
+.about-hero-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 0.9fr;
     gap: 50px;
     align-items: center;
 }
 
-@media (max-width: 850px) {
-    .about-split-layout {
+@media (max-width: 900px) {
+    .about-hero-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 35px;
         text-align: center;
     }
 }
 
-.about-left-heading-block {
-    display: flex;
-    align-items: center;
+.about-subtitle-orange {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #FF6B00;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    display: inline-block;
 }
 
-.about-main-heading {
+.about-headline-black {
     font-family: 'Cinzel', serif;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     font-weight: 800;
     color: #111111;
-    line-height: 1.3;
+    line-height: 1.25;
+    margin-bottom: 18px;
 }
 
-.highlight-orange {
-    color: #FF6B00;
-}
-
-.profile-narrative {
-    font-size: 1.08rem;
+.about-description-text {
+    font-size: 1rem;
+    color: #444444;
+    margin-bottom: 30px;
     line-height: 1.85;
-    color: #333333;
     text-align: justify;
 }
 
-@media (max-width: 850px) {
-    .profile-narrative { text-align: center; }
+@media (max-width: 900px) {
+    .about-description-text { text-align: center; }
+}
+
+.about-cta-buttons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .about-cta-buttons { justify-content: center; }
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 8px; /* Moderately rounded, NOT pill */
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-orange-solid {
+    background: #FF6B00;
+    color: #FFFFFF;
+    border: 2px solid #FF6B00;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.25);
+}
+
+.btn-orange-solid:hover {
+    background: #E65100;
+    border-color: #E65100;
+    transform: translateY(-2px);
+}
+
+.btn-white-outline {
+    background: #FFFFFF;
+    color: #111111;
+    border: 2px solid #111111;
+}
+
+.btn-white-outline:hover {
+    background: #111111;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+.shiva-card-frame {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid #EAEAEA;
+    background: #FFFFFF;
+}
+
+.shiva-preview-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 
 /* ==========================================================================
-   4. SKILLS SECTION CARDS (BUTTON STYLE FIX)
+   4. SKILLS SECTION CARDS (ENLARGED WHITE BOX CARDS)
    ========================================================================== */
 .skills-tech-stack-section {
-    background: #FFFFFF;
     overflow: hidden;
 }
 
@@ -357,50 +419,62 @@ body {
     100% { transform: translateX(-50%); }
 }
 
-.skill-card-item {
-    background: #FFFFFF;
+/* Enlarged Pure White Cards with Clean Subtle Border */
+.skill-card-box {
+    background: #FFFFFF !important;
     border: 1px solid #EAEAEA;
-    padding: 20px 18px;
-    border-radius: 16px;
+    padding: 24px 22px;
+    border-radius: 14px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: 160px;
+    min-width: 190px;
     flex-shrink: 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
 }
 
-.skill-card-item img {
-    height: 48px;
+.skill-card-box img {
+    height: 52px;
     width: auto;
     object-fit: contain;
     margin-bottom: 14px;
     display: block;
 }
 
-/* Vibrant Button Style Fix strictly for Skills cards */
-.skill-button-tag {
-    display: inline-block;
-    padding: 8px 16px;
-    background: #FF6B00;
-    color: #FFFFFF;
-    font-size: 0.85rem;
+.skill-tool-title {
+    font-size: 0.98rem;
     font-weight: 700;
-    border-radius: 20px;
-    box-shadow: 0 3px 10px rgba(255, 107, 0, 0.3);
-    white-space: nowrap;
+    color: #111111;
+    margin-bottom: 14px;
+}
+
+.skill-card-btn {
+    width: 100%;
+    padding: 8px 0;
+    background: #1F242D;
+    color: #FFFFFF;
+    border: none;
+    font-size: 0.82rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.skill-card-btn:hover {
+    background: #FF6B00;
 }
 
 /* ==========================================================================
-   5. PROJECTS SECTION (MOBILE HORIZONTAL SCROLL TABS)
+   5. PROJECTS SECTION
    ========================================================================== */
 .projects-section {
-    background: #FFFFFF;
+    /* Pure white background inherits globally */
 }
 
-/* Mobile Tab Horizontal Single-Line Scroll Fix */
+/* Mobile Horizontal Scroll Tabs */
 .horizontal-tabs-wrapper {
     width: 100%;
     overflow-x: auto;
@@ -423,7 +497,7 @@ body {
     display: flex;
     gap: 12px;
     justify-content: center;
-    flex-wrap: nowrap; /* Prevents vertical stacking on mobile */
+    flex-wrap: nowrap;
     min-width: max-content;
     margin: 0 auto;
 }
@@ -436,7 +510,7 @@ body {
     cursor: pointer;
     font-weight: 600;
     font-size: 0.92rem;
-    border-radius: 30px;
+    border-radius: 8px;
     transition: all 0.25s ease;
 }
 
@@ -445,7 +519,6 @@ body {
     background: #FF6B00;
     color: #FFFFFF;
     border-color: #FF6B00;
-    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.25);
 }
 
 .dribbble-grid-layout {
@@ -464,12 +537,12 @@ body {
 }
 
 .dribbble-item-card {
-    background: #FFFFFF;
+    background: #FFFFFF !important;
     border-radius: 14px;
     overflow: hidden;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-    border: 1px solid #E5E7EB;
+    border: 1px solid #EAEAEA;
 }
 
 .dribbble-img-frame {
@@ -490,7 +563,6 @@ body {
     display: block;
 }
 
-/* Card Meta Row: MK Designs */
 .dribbble-meta-row {
     display: flex;
     justify-content: space-between;
@@ -534,32 +606,21 @@ body {
 
 .like-click-node.activated i { color: #FF6B00 !important; }
 
-.video-reel-tag {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: rgba(255, 107, 0, 0.9);
-    color: #FFFFFF;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-}
-
 .view-more-container-block {
     display: flex;
     justify-content: center;
     margin-top: 40px;
 }
 
+/* Elegant Slightly Rounded Rectangular Button */
 .hub-view-more-btn {
     padding: 12px 36px;
     background-color: #FFFFFF;
     color: #FF6B00;
     border: 2px solid #FF6B00;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    border-radius: 30px;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -569,7 +630,7 @@ body {
     color: #FFFFFF;
 }
 
-/* Lightbox Modal */
+/* Lightbox Overlay Modal */
 .gallery-lightbox {
     display: none;
     position: fixed;
@@ -593,21 +654,20 @@ body {
 .lightbox-close { position: absolute; top: 20px; right: 35px; font-size: 3rem; color: #FFFFFF; cursor: pointer; }
 
 /* ==========================================================================
-   6. CONTACT SECTION (100% VERTICAL FORM ALIGNMENT)
+   6. CONTACT SECTION (PURE WHITE INTEGRATED CARD)
    ========================================================================== */
 .contact-section {
-    background: #FAFAFA;
-    border-top: 1px solid #EEEEEE;
+    padding: 60px 0;
 }
 
 .single-contact-card {
     max-width: 650px;
     margin: 0 auto;
-    background: #FFFFFF;
+    background: #FFFFFF !important;
     padding: 40px;
-    border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-    border: 1.5px solid #FF6B00;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #EAEAEA;
 }
 
 .card-inner-header {
@@ -628,11 +688,10 @@ body {
     color: #666666;
 }
 
-/* ALL FORM INPUTS STACKED 100% VERTICALLY */
 .vertical-form-stack {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
     width: 100%;
 }
 
@@ -640,7 +699,7 @@ body {
     display: flex;
     align-items: center;
     border: 1.5px solid #FF6B00;
-    background: #FFFFFF;
+    background: #FFFFFF !important;
     border-radius: 8px;
     padding: 4px 16px;
     width: 100%;
@@ -677,8 +736,7 @@ body {
     font-weight: 700;
     border-radius: 8px;
     cursor: pointer;
-    align-self: center;
-    width: 100%; /* Full Width Button Inside Card */
+    width: 100%;
     transition: background 0.2s ease;
     box-shadow: 0 4px 15px rgba(255, 107, 0, 0.25);
 }
@@ -688,12 +746,12 @@ body {
 }
 
 /* ==========================================================================
-   7. FOOTER SECTION
+   7. FOOTER SECTION (STRICT 4-WIDGET STRUCTURE)
    ========================================================================== */
 .luxury-footer {
-    background-color: #121418;
+    background-color: #121418 !important;
     color: #D1D5DB;
-    padding-top: 45px;
+    padding-top: 50px;
     border-top: 3px solid #FF6B00;
 }
 
@@ -702,7 +760,7 @@ body {
     width: 90%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.2fr 0.9fr 1.1fr 1.2fr;
+    grid-template-columns: 1.3fr 0.8fr 1.1fr 1.2fr;
     gap: 35px;
     padding-bottom: 45px;
 }
@@ -719,6 +777,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
+    margin-bottom: 18px;
 }
 
 .footer-logo-img {
@@ -732,6 +791,12 @@ body {
     font-size: 1.1rem;
     font-weight: 700;
     color: #FFFFFF;
+}
+
+.sub-widget-title {
+    font-size: 0.95rem;
+    color: #FFFFFF;
+    margin-bottom: 12px;
 }
 
 .footer-col h4 {
@@ -752,7 +817,7 @@ body {
 .footer-links-col a { color: #9CA3AF; font-size: 0.9rem; transition: color 0.25s ease; }
 .footer-links-col a:hover { color: #FFFFFF; }
 
-.footer-socials { display: flex; gap: 12px; margin-bottom: 18px; }
+.footer-socials { display: flex; gap: 12px; }
 .footer-socials a {
     display: flex; align-items: center; justify-content: center;
     width: 38px; height: 38px; background: #1F242D;
@@ -760,6 +825,20 @@ body {
     font-size: 0.95rem; transition: all 0.3s ease;
 }
 .footer-socials a:hover { background: #FF6B00; border-color: #FF6B00; }
+
+.visitor-counter-card {
+    display: flex; align-items: center; gap: 12px;
+    background: #1F242D; border: 1px solid #2D3440;
+    padding: 10px 14px; border-radius: 8px; margin-bottom: 18px;
+}
+.visitor-icon-box {
+    width: 38px; height: 38px; background: rgba(255, 107, 0, 0.15);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: #FF6B00; font-size: 1.1rem;
+}
+.visitor-text-box { display: flex; flex-direction: column; }
+.visitor-title { font-size: 0.75rem; color: #9CA3AF; text-transform: uppercase; font-weight: 600; }
+.visitor-count { font-size: 1.25rem; font-weight: 800; color: #FFFFFF; }
 
 .newsletter-box p { font-size: 0.85rem; color: #9CA3AF; margin-bottom: 8px; }
 
@@ -775,9 +854,24 @@ body {
     background: #FF6B00; color: #FFFFFF; border: none; padding: 0 14px; cursor: pointer;
 }
 
+/* Bottom Bar: Quote & Copyright */
 .footer-bottom-bar {
-    background-color: #0B0C0E; text-align: center; padding: 18px 0; border-top: 1px solid #1F242D;
+    background-color: #0B0C0E !important;
+    text-align: center;
+    padding: 22px 15px;
+    border-top: 1px solid #1F242D;
 }
 
-.footer-bottom-bar p { font-size: 0.82rem; color: #6B7280; }
+.spiritual-quote {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    color: #FFFFFF;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.copyright-text {
+    font-size: 0.82rem;
+    color: #6B7280;
+}
 

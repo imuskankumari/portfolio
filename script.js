@@ -1,4 +1,4 @@
-// Strict Asset Configuration Matching GitHub Repository Filenames
+// Strict Media Asset Configuration
 const portfolioAssets = {
     // Graphic Design: g1.jpg to g50.jpg
     graphic: Array.from({length: 50}, (_, i) => ({ 
@@ -39,9 +39,10 @@ let currentCategoryArray = [];
 let activeIndex = 0;
 let visibleCount = 10;
 let activeTabGlobal = 'graphic';
+let isHeroLightboxMode = false;
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Navigation Toggle
+    // Mobile Navigation Menu Toggle
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.getElementById('navMenu');
 
@@ -50,6 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.toggle('active');
         });
     }
+
+    // Hero Banner Interactive Lightbox Magic
+    initHeroLightboxMagic();
 
     // Render Initial Gallery
     switchTab('graphic');
@@ -60,6 +64,30 @@ function closeMenu() {
     if (navMenu) {
         navMenu.classList.remove('active');
     }
+}
+
+/* Hero Banner Click Lightbox Trigger */
+function initHeroLightboxMagic() {
+    const heroWrap = document.getElementById('heroBannerWrap');
+    if (!heroWrap) return;
+
+    heroWrap.addEventListener('click', () => {
+        isHeroLightboxMode = true;
+        const lightbox = document.getElementById('galleryLightbox');
+        const contentWrap = document.getElementById('lightboxMediaContent');
+        const prevBtn = document.getElementById('lightboxPrev');
+        const nextBtn = document.getElementById('lightboxNext');
+
+        if (lightbox && contentWrap) {
+            contentWrap.innerHTML = `<img src="hero.png" alt="Hero Lightbox Zoom" style="max-width:100%; max-height:80vh; object-fit:contain; border-radius:12px; box-shadow: 0 0 30px rgba(255,107,0,0.5);">`;
+            
+            // Hide navigation arrows when viewing hero standalone
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (nextBtn) nextBtn.style.display = 'none';
+
+            lightbox.style.display = 'flex';
+        }
+    });
 }
 
 /* Filter Tab Switching */
@@ -96,10 +124,10 @@ function renderGrid() {
         const heartStateClass = isLiked ? 'like-click-node activated' : 'like-click-node';
 
         const mediaContent = item.type === 'video' 
-            ? `<video src="${item.src}" muted loop autoplay playsinline preload="metadata"></video><span class="video-reel-tag">▶ Reel</span>` 
+            ? `<video src="${item.src}" muted loop autoplay playsinline preload="metadata"></video>` 
             : `<img src="${item.src}" loading="lazy" onerror="this.src='placeholder.png'">`;
 
-        // Updated card metadata to show "MK Designs"
+        // Strictly author name "MK Designs"
         itemNode.innerHTML = `
             <div class="dribbble-img-frame ${item.aspectClass}" onclick="openGallerySlider(${idx})">
                 ${mediaContent}
@@ -107,7 +135,7 @@ function renderGrid() {
             <div class="dribbble-meta-row">
                 <div class="dribbble-user">
                     <span class="dribbble-avatar">MK</span>
-                    <span class="dribbble-username">Designs</span>
+                    <span class="dribbble-username">MK Designs</span>
                 </div>
                 <div class="dribbble-stats">
                     <span class="${heartStateClass}" onclick="executeRealLiking('${item.id}', ${idx}, event)">
@@ -156,9 +184,15 @@ function executeRealLiking(assetId, index, event) {
 
 /* Lightbox Modal Slider */
 function openGallerySlider(index) {
+    isHeroLightboxMode = false;
     activeIndex = index;
     const lightbox = document.getElementById('galleryLightbox');
+    const prevBtn = document.getElementById('lightboxPrev');
+    const nextBtn = document.getElementById('lightboxNext');
+
     if (lightbox) {
+        if (prevBtn) prevBtn.style.display = 'block';
+        if (nextBtn) nextBtn.style.display = 'block';
         renderLightboxActiveContent();
         lightbox.style.display = 'flex';
     }
@@ -178,6 +212,7 @@ function renderLightboxActiveContent() {
 }
 
 function changeSlide(direction) {
+    if (isHeroLightboxMode) return;
     activeIndex = (activeIndex + direction + currentCategoryArray.length) % currentCategoryArray.length;
     renderLightboxActiveContent();
 }

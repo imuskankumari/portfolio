@@ -16,7 +16,7 @@ const portfolioAssets = {
         aspectClass: 'aspect-square',
         likes: 0
     })),
-    // AI Visuals: b1.png to b10.png (Burger & Visual assets)
+    // AI Visuals: b1.png to b10.png
     ai: Array.from({length: 10}, (_, i) => ({ 
         id: `b_${i}`, 
         type: 'image', 
@@ -42,30 +42,27 @@ let activeTabGlobal = 'graphic';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Navigation Toggle
-    const menuToggle = document.getElementById('menuToggle');
+    const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.getElementById('navMenu');
 
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', () => {
+    if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
     }
 
-    // Initialize 24-Hour Unique Visitor Counter
-    initUniqueVisitorCounter();
-
-    // Initial Gallery Render
+    // Render Initial Gallery
     switchTab('graphic');
 });
 
-function closeMobileMenu() {
+function closeMenu() {
     const navMenu = document.getElementById('navMenu');
     if (navMenu) {
         navMenu.classList.remove('active');
     }
 }
 
-/* Category Filter Switcher */
+/* Filter Tab Switching */
 function filterGallery(category, event) {
     if (event) {
         const buttons = document.querySelectorAll('.tab-btn');
@@ -82,7 +79,7 @@ function switchTab(category) {
     renderGrid();
 }
 
-/* Render Gallery Grid */
+/* Render Gallery Items */
 function renderGrid() {
     const targetGrid = document.getElementById('main-portfolio-gallery');
     const viewMoreBtn = document.getElementById('galleryViewMoreTrigger');
@@ -102,6 +99,7 @@ function renderGrid() {
             ? `<video src="${item.src}" muted loop autoplay playsinline preload="metadata"></video><span class="video-reel-tag">▶ Reel</span>` 
             : `<img src="${item.src}" loading="lazy" onerror="this.src='placeholder.png'">`;
 
+        // Updated card metadata to show "MK Designs"
         itemNode.innerHTML = `
             <div class="dribbble-img-frame ${item.aspectClass}" onclick="openGallerySlider(${idx})">
                 ${mediaContent}
@@ -109,7 +107,7 @@ function renderGrid() {
             <div class="dribbble-meta-row">
                 <div class="dribbble-user">
                     <span class="dribbble-avatar">MK</span>
-                    <span class="dribbble-username">Muskan</span>
+                    <span class="dribbble-username">Designs</span>
                 </div>
                 <div class="dribbble-stats">
                     <span class="${heartStateClass}" onclick="executeRealLiking('${item.id}', ${idx}, event)">
@@ -193,33 +191,5 @@ function closeGallerySlider() {
 
 function handleFormSubmit(event) {
     alert('Thank you for your message! It has been received successfully.');
-}
-
-/* 24-Hour Unique Visitor Counter Logic */
-function initUniqueVisitorCounter() {
-    const counterElement = document.getElementById('uniqueVisitorCount');
-    if (!counterElement) return;
-
-    const STORAGE_COUNT_KEY = 'mk_unique_visitor_total';
-    const STORAGE_TIMESTAMP_KEY = 'mk_visitor_last_timestamp';
-
-    const BASELINE_COUNT = 150;
-    const TWENTY_FOUR_HOURS_MS = 24 * 60 * 60 * 1000;
-    const now = new Date().getTime();
-
-    let currentTotal = parseInt(localStorage.getItem(STORAGE_COUNT_KEY), 10);
-    const lastVisitTimestamp = parseInt(localStorage.getItem(STORAGE_TIMESTAMP_KEY), 10);
-
-    if (isNaN(currentTotal) || currentTotal < BASELINE_COUNT) {
-        currentTotal = BASELINE_COUNT;
-    }
-
-    if (!lastVisitTimestamp || (now - lastVisitTimestamp) > TWENTY_FOUR_HOURS_MS) {
-        currentTotal += 1;
-        localStorage.setItem(STORAGE_COUNT_KEY, currentTotal.toString());
-        localStorage.setItem(STORAGE_TIMESTAMP_KEY, now.toString());
-    }
-
-    counterElement.textContent = `${currentTotal}+`;
 }
 

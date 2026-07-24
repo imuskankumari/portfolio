@@ -3,239 +3,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Portfolio</title>
-    <!-- Google Fonts: Light, Thin, Elegant Typography -->
+    <title>Muskan Kumari | Graphic & Web Designer Portfolio</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body id="top">
+<body>
 
-    <!-- ================= TRANSPARENT HEADER OVER HERO ================= -->
-    <header class="top-navbar">
+    <!-- HEADER / NAVIGATION -->
+    <header class="navbar">
         <div class="header-container">
-            <!-- Logo image only (no extra text) -->
-            <a href="#top" class="brand-logo-link">
-                <img src="mk.png" alt="Logo" class="site-logo-img">
+            <a href="#hero" class="logo-link">
+                <img src="mk.png" alt="Logo" class="logo-img">
             </a>
-
-            <!-- Mobile Hamburger Toggle -->
-            <button class="mobile-toggle-btn" id="mobileToggle" aria-label="Toggle Navigation">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-
-            <!-- Navigation Links (Plain text, no button boxes) -->
-            <nav class="nav-menu" id="navMenu">
-                <a href="#top" class="nav-link active" onclick="closeMenu()">Home</a>
-                <a href="#about" class="nav-link" onclick="closeMenu()">About</a>
-                <a href="#skills" class="nav-link" onclick="closeMenu()">Skills</a>
-                <a href="#projects" class="nav-link" onclick="closeMenu()">Projects</a>
-                <a href="#contact" class="nav-link" onclick="closeMenu()">Contact</a>
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
 
-    <!-- ================= HERO SECTION (CLEAN 16:9 BANNER) ================= -->
-    <section id="home" class="hero-section">
-        <div class="hero-aspect-ratio-wrap" id="heroBannerWrap">
-            <!-- Main Hero Image (Text is embedded directly inside the graphic; zero HTML text overlays) -->
-            <img src="hero.png" alt="Hero Banner" class="hero-banner-img" onerror="this.src='hero.jpg'">
-            <!-- Lightweight dark vignette for ambient depth -->
-            <div class="hero-overlay-shade"></div>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-right-box">
+                <h1 class="hero-title">
+                    <span class="text-black">The</span> <span class="text-magenta">Muskan Kumari</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    <span class="text-black">Graphic &</span> <span class="text-magenta">Web</span>
+                </h2>
+                <h2 class="hero-subtitle">
+                    <span class="text-magenta">Designer</span>
+                </h2>
+                <div class="hero-tagline-wrapper">
+                    <i class="fa-solid fa-spa lotus-icon"></i>
+                    <p class="hero-tagline">Creativity मेरे रग-रग में है।</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- ================= ABOUT SECTION ("WHO I AM" ELEGANT RESUME TEXT) ================= -->
+    <!-- FILMORA-STYLE SOFTWARE MARQUEE (NO SKILLS HEADING) -->
+    <section class="software-marquee-section">
+        <div class="marquee-container">
+            <div class="marquee-track">
+                <!-- First Set -->
+                <div class="tool-card">
+                    <i class="fa-solid fa-paint-brush tool-icon"></i>
+                    <span class="tool-name">Photoshop</span>
+                </div>
+                <div class="tool-card">
+                    <i class="fa-solid fa-pen-nib tool-icon"></i>
+                    <span class="tool-name">Illustrator</span>
+                </div>
+                <div class="tool-card">
+                    <i class="fa-solid fa-book-open tool-icon"></i>
+                    <span class="tool-name">InDesign</span>
+                </div>
+                <div class="tool-card">
+                    <i class="fa-solid fa-vector-square tool-icon"></i>
+                    <span class="tool-name">CorelDraw</span>
+                </div>
+                <div class="tool-card">
+                    <i class="fa-solid fa-palette tool-icon"></i>
+                    <span class="tool-name">Canva</span>
+                </div>
+                <div class="tool-card">
+                    <i class="fa-solid fa-film tool-icon"></i>
+                    <span class="tool-name">Premiere Pro</span>
+                </div>
+                <div class="tool-card">
+                    <i class="fa-solid fa-wand-magic-sparkles tool-icon"></i>
+                    <span class="tool-name">After Effects</span>
+                </div>
+                <div class="tool-card">
+                    <i class="fa-solid fa-robot tool-icon"></i>
+                    <span class="tool-name">Midjourney</span>
+                </div>
+
+                <!-- Duplicate Set for Seamless Loop -->
+                <div class="tool-card">
+                    <i class="fa-solid fa-paint-brush tool-icon"></i>
+                    <span class="tool-name">Photoshop</span>
+                </div>
+                <div class="tool-card">
+                    <i class="fa-solid fa-pen-nib tool-icon"></i>
+                    <span class="tool-name">Illustrator</span>
+                </div>
+                <div class="tool-card">
+                    <i class="fa-solid fa-book-open tool-icon"></i>
+                    <span class="tool-name">InDesign</span>
+                </div>
+                <div class="tool-card">
+                    <i class="fa-solid fa-vector-square tool-icon"></i>
+                    <span class="tool-name">CorelDraw</span>
+                </div>
+                <div class="tool-card">
+                    <i class="fa-solid fa-palette tool-icon"></i>
+                    <span class="tool-name">Canva</span>
+                </div>
+                <div class="tool-card">
+                    <i class="fa-solid fa-film tool-icon"></i>
+                    <span class="tool-name">Premiere Pro</span>
+                </div>
+                <div class="tool-card">
+                    <i class="fa-solid fa-wand-magic-sparkles tool-icon"></i>
+                    <span class="tool-name">After Effects</span>
+                </div>
+                <div class="tool-card">
+                    <i class="fa-solid fa-robot tool-icon"></i>
+                    <span class="tool-name">Midjourney</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
     <section id="about" class="about-section">
         <div class="container">
-            <div class="about-content-box">
-                <span class="about-sub-tag">GRAPHIC & WEB DESIGNER • AI CREATOR</span>
-                <h2 class="about-heading-thin">WHO I AM</h2>
-                <p class="about-bio-text">
-                    Hi, I am Muskan Kumari, a passionate Graphic & Web Designer from Delhi specializing in visual identity systems, sleek web interfaces, and AI motion graphics. Proficient across Adobe Creative Suite, Canva, HTML, CSS, JavaScript, VN, and Filmora, I bridge aesthetic design with modern web functionality to build impactful digital experiences.
+            <h2 class="section-title">
+                <span class="text-black">CREATIVE VISION &</span> <span class="text-magenta">EXPERTISE</span>
+            </h2>
+            <div class="about-content">
+                <p class="about-bio">
+                    Hi, I am Muskan Kumari from Delhi. I am a passionate Graphic & Web Designer specializing in visual communication, modern brand identity, clean UI layouts, and cutting-edge AI Animation Videos. My core mission is to merge deep creative instinct with functional digital craftsmanship to craft engaging brand experiences that leave a lasting impact.
                 </p>
-                <div class="about-action-group">
-                    <a href="#projects" class="btn btn-orange-solid">View Projects →</a>
-                    <a href="#contact" class="btn btn-black-outline">Get In Touch</a>
+                <div class="about-buttons">
+                    <a href="#projects" class="btn btn-magenta">View Projects <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn btn-outline-black">Get In Touch</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ================= SKILLS & TECH STACK (CONTAINED CAROUSEL) ================= -->
-    <section id="skills" class="skills-tech-stack-section">
+    <!-- OUR SERVICES SECTION -->
+    <section id="services" class="services-section">
         <div class="container">
-            <h2 class="section-title">SKILLS & <span class="accent-orange">TECH STACK</span></h2>
-            
-            <div class="skills-carousel-container">
-                <button class="carousel-control prev-btn" id="skillsPrev" aria-label="Previous Skills"><i class="fa-solid fa-chevron-left"></i></button>
-
-                <div class="skills-carousel-viewport">
-                    <div class="skills-carousel-track" id="skillsTrack">
-                        <div class="skill-card-box"><img src="photoshop.png" alt="Photoshop"><button class="skill-dark-btn">Adobe Photoshop</button></div>
-                        <div class="skill-card-box"><img src="illustrator.png" alt="Illustrator"><button class="skill-dark-btn">Adobe Illustrator</button></div>
-                        <div class="skill-card-box"><img src="indesign.png" alt="InDesign"><button class="skill-dark-btn">Adobe InDesign</button></div>
-                        <div class="skill-card-box"><img src="canva.png" alt="Canva"><button class="skill-dark-btn">Canva</button></div>
-                        <div class="skill-card-box"><img src="coreldraw.png" alt="CorelDraw"><button class="skill-dark-btn">CorelDraw</button></div>
-                        <div class="skill-card-box"><img src="html.png" alt="HTML"><button class="skill-dark-btn">HTML</button></div>
-                        <div class="skill-card-box"><img src="css.png" alt="CSS"><button class="skill-dark-btn">CSS</button></div>
-                        <div class="skill-card-box"><img src="javascript.png" alt="JavaScript"><button class="skill-dark-btn">JavaScript</button></div>
-                        <div class="skill-card-box"><img src="wordpress.png" alt="WordPress"><button class="skill-dark-btn">WordPress</button></div>
-                        <div class="skill-card-box"><img src="googledocs.png" alt="Google Docs"><button class="skill-dark-btn">Google Docs</button></div>
-                        <div class="skill-card-box"><img src="googlesheets.png" alt="Google Sheets"><button class="skill-dark-btn">Google Sheets</button></div>
-                        <div class="skill-card-box"><img src="googleslides.png" alt="Google Slides"><button class="skill-dark-btn">Google Slides</button></div>
-                        <div class="skill-card-box"><img src="drive.png" alt="Google Drive"><button class="skill-dark-btn">Google Drive</button></div>
-                        <div class="skill-card-box"><img src="word.png" alt="MS Word"><button class="skill-dark-btn">MS Word</button></div>
-                        <div class="skill-card-box"><img src="excel.png" alt="MS Excel"><button class="skill-dark-btn">MS Excel</button></div>
-                        <div class="skill-card-box"><img src="powerpoint.png" alt="MS PowerPoint"><button class="skill-dark-btn">MS PowerPoint</button></div>
-                        <div class="skill-card-box"><img src="filmora.png" alt="Filmora"><button class="skill-dark-btn">Filmora</button></div>
-                        <div class="skill-card-box"><img src="vn.png" alt="VN"><button class="skill-dark-btn">VN</button></div>
-                        <div class="skill-card-box"><img src="inshot.png" alt="InShot"><button class="skill-dark-btn">InShot</button></div>
+            <h2 class="section-title text-center">
+                <span class="text-black">OUR</span> <span class="text-magenta">SERVICES</span>
+            </h2>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80" alt="Graphic Designing">
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-card-title">Graphic Designing</h3>
+                        <p class="service-card-desc">
+                            Crafting high-impact brand collateral, vector illustrations, logo design, and promotional marketing visuals. We turn creative ideas into bold visual realities that elevate market positioning.
+                        </p>
                     </div>
                 </div>
 
-                <button class="carousel-control next-btn" id="skillsNext" aria-label="Next Skills"><i class="fa-solid fa-chevron-right"></i></button>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=800&q=80" alt="Web & UI Designing">
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-card-title">Web & UI Designing</h3>
+                        <p class="service-card-desc">
+                            Designing clean, responsive web layouts and user-centered digital interfaces. Focus on intuitive user experience, elegant typography, and modern interactive aesthetics tailored for web success.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Video Editing">
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-card-title">Video Editing</h3>
+                        <p class="service-card-desc">
+                            Seamless video editing, audio synchronization, lower thirds, color grading, and dynamic cuts. Delivering polished promotional videos, social content, and engaging multi-platform reels.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="AI Visuals">
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-card-title">AI Visuals</h3>
+                        <p class="service-card-desc">
+                            Generating hyper-realistic digital imagery, concept art, and surreal artistic imagery utilizing advanced generative AI tools. Elevating creative storytelling beyond traditional design boundaries.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=800&q=80" alt="AI Animation Videos">
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-card-title">AI Animation Videos</h3>
+                        <p class="service-card-desc">
+                            Transforming static graphics and prompts into fluid, AI-driven motion artwork and futuristic animated visuals. Bringing next-generation digital storytelling to life dynamically.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ================= MY PROJECTS SECTION ================= -->
+    <!-- MY PROJECTS SECTION -->
     <section id="projects" class="projects-section">
         <div class="container">
-            <h2 class="section-title">MY <span class="accent-orange">PROJECTS</span></h2>
-            
-            <!-- Horizontal Single-Line Scroll Tabs for Mobile -->
-            <div class="horizontal-tabs-wrapper">
+            <h2 class="section-title text-center">
+                <span class="text-black">MY</span> <span class="text-magenta">PROJECTS</span>
+            </h2>
+
+            <!-- Mobile Horizontal Scroll Filter Bar -->
+            <div class="filter-wrapper">
                 <div class="filter-tabs">
-                    <button class="tab-btn active" onclick="filterGallery('graphic', event)">Graphic Design Projects</button>
-                    <button class="tab-btn" onclick="filterGallery('web', event)">Web Design / UI Layouts</button>
-                    <button class="tab-btn" onclick="filterGallery('ai', event)">AI Visuals</button>
-                    <button class="tab-btn" onclick="filterGallery('motion', event)">AI Animation Videos</button>
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="graphic">Graphic Design</button>
+                    <button class="filter-btn" data-filter="web">Web Layouts</button>
+                    <button class="filter-btn" data-filter="ai-visuals">AI Visuals</button>
+                    <button class="filter-btn" data-filter="ai-animation">AI Animation Videos</button>
                 </div>
             </div>
-            
-            <!-- Project Grid -->
-            <div class="dribbble-grid-layout" id="main-portfolio-gallery"></div>
-            
-            <!-- View More Button -->
-            <div class="view-more-container-block">
-                <button class="hub-view-more-btn" id="galleryViewMoreTrigger" onclick="handleViewMoreAction()">View More</button>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="graphic">
+                    <div class="project-img-box">
+                        <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=800&q=80" alt="Brand Identity Guidelines">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Graphic Design</span>
+                        <h3 class="project-title">Corporate Brand Identity</h3>
+                        <p class="project-author">By <strong>MK Designs</strong></p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-img-box">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="SaaS Web Layout">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Web Layout</span>
+                        <h3 class="project-title">E-Commerce Modern Portal</h3>
+                        <p class="project-author">By <strong>MK Designs</strong></p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="ai-visuals">
+                    <div class="project-img-box">
+                        <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=800&q=80" alt="Futuristic AI Concept">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">AI Visuals</span>
+                        <h3 class="project-title">Cybernetic Concept Artwork</h3>
+                        <p class="project-author">By <strong>MK Designs</strong></p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-category="ai-animation">
+                    <div class="project-img-box">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="AI Animated Sequence">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">AI Animation Videos</span>
+                        <h3 class="project-title">Abstract Fluid Dynamics</h3>
+                        <p class="project-author">By <strong>MK Designs</strong></p>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-category="graphic">
+                    <div class="project-img-box">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80" alt="Poster Design">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Graphic Design</span>
+                        <h3 class="project-title">Event Promotion Poster</h3>
+                        <p class="project-author">By <strong>MK Designs</strong></p>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-img-box">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="Mobile App UI Design">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Web Layout</span>
+                        <h3 class="project-title">Creative Portfolio Concept</h3>
+                        <p class="project-author">By <strong>MK Designs</strong></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Lightbox Modal Overlay -->
-    <div class="gallery-lightbox" id="galleryLightbox">
-        <span class="lightbox-close" onclick="closeGallerySlider()">&times;</span>
-        <button class="slider-arrow prev-arrow" id="lightboxPrev" onclick="changeSlide(-1)">&#10094;</button>
-        <div class="lightbox-img-wrap" id="lightboxMediaContent"></div>
-        <button class="slider-arrow next-arrow" id="lightboxNext" onclick="changeSlide(1)">&#10095;</button>
-    </div>
-
-    <!-- ================= CONTACT SECTION (PURE WHITE INTEGRATED CARD) ================= -->
+    <!-- CONTACT SECTION -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <div class="single-contact-card">
-                <div class="card-inner-header">
-                    <h2 class="contact-card-title">Send Me a Message</h2>
-                    <p class="contact-card-subtitle">Have a project or collaboration in mind? Write to us below.</p>
-                </div>
-
-                <form id="hub-action-form" action="https://formspree.io/f/muskankumari3330@gmail.com" method="POST" onsubmit="handleFormSubmit(event)">
-                    <div class="vertical-form-stack">
-                        <div class="field-container">
-                            <span class="field-icon"><i class="fa-solid fa-user"></i></span>
-                            <input type="text" name="name" placeholder="Full Name" required>
-                        </div>
-                        <div class="field-container">
-                            <span class="field-icon"><i class="fa-solid fa-envelope"></i></span>
-                            <input type="email" name="email" placeholder="Email Address" required>
-                        </div>
-                        <div class="field-container textarea-container">
-                            <span class="field-icon"><i class="fa-solid fa-pen"></i></span>
-                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="hub-submit-btn">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+            <h2 class="section-title text-center">
+                <span class="text-black">GET IN</span> <span class="text-magenta">TOUCH</span>
+            </h2>
+            <div class="contact-card">
+                <form id="contactForm" onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="Enter your name" required>
                     </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" rows="4" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-magenta btn-block">Send Message</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- ================= FOOTER SECTION (4 IN-LINE COLUMNS, EXACT #181A1B MATCH) ================= -->
-    <footer class="luxury-footer">
-        <div class="footer-grid-container">
-            <!-- Widget 1: Logo & Social Links -->
-            <div class="footer-widget">
-                <div class="footer-logo-row">
-                    <img src="mk logo.png" alt="Logo" class="footer-logo-img">
-                    <span class="footer-brand-title">Muskan Kumari | Portfolio</span>
-                </div>
-                <div class="stay-connected-block">
-                    <h4 class="sub-widget-title">Stay Connected</h4>
+    <!-- FOOTER (4-WIDGET IN-LINE ROW) -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-row">
+                <!-- Widget 1: Identity & Social -->
+                <div class="footer-widget">
+                    <img src="mk logo.png" alt="Logo" class="footer-logo">
+                    <h4 class="footer-title">Muskan Kumari | Portfolio</h4>
+                    <p class="footer-subtitle">Stay Connected</p>
                     <div class="footer-socials">
-                        <a href="https://youtube.com/@I.MuskanKumari" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="https://instagram.com/i.musankumari" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/muskan-kumari-7a5345407" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://www.behance.net/muskankumari143" target="_blank" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Widget 2: Quick Links -->
+                <div class="footer-widget">
+                    <h4 class="footer-widget-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Widget 3: Categories -->
+                <div class="footer-widget">
+                    <h4 class="footer-widget-title">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#projects">Graphic Design Projects</a></li>
+                        <li><a href="#projects">Web Layouts</a></li>
+                        <li><a href="#projects">AI Visuals</a></li>
+                        <li><a href="#projects">AI Animation Videos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Widget 4: Visits & Newsletter -->
+                <div class="footer-widget">
+                    <div class="visit-counter-box">
+                        <span class="counter-label">Total Profile Visits:</span>
+                        <span id="visitCounter" class="counter-number">151+</span>
+                    </div>
+                    <h4 class="footer-widget-title newsletter-title">Subscribe</h4>
+                    <div class="newsletter-box">
+                        <input type="email" placeholder="Your email address">
+                        <button type="button" class="btn-magenta-submit"><i class="fa-solid fa-paper-plane"></i></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Widget 2: Quick Links -->
-            <div class="footer-widget">
-                <h4>Quick Links</h4>
-                <ul class="footer-menu-links">
-                    <li><a href="#top"><i class="fa-solid fa-angle-right"></i> Home</a></li>
-                    <li><a href="#about"><i class="fa-solid fa-angle-right"></i> About</a></li>
-                    <li><a href="#skills"><i class="fa-solid fa-angle-right"></i> Skills</a></li>
-                    <li><a href="#projects"><i class="fa-solid fa-angle-right"></i> Projects</a></li>
-                    <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Contact</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p class="footer-quote">"Transforming bold concepts into seamless visual reality."</p>
+                <p class="footer-copyright">© 2026 Muskan Kumari. All Rights Reserved.</p>
             </div>
-
-            <!-- Widget 3: Categories -->
-            <div class="footer-widget">
-                <h4>Categories</h4>
-                <ul class="footer-menu-links">
-                    <li><a href="#projects"><i class="fa-solid fa-angle-right"></i> Graphic Design Projects</a></li>
-                    <li><a href="#projects"><i class="fa-solid fa-angle-right"></i> Web Layouts</a></li>
-                    <li><a href="#projects"><i class="fa-solid fa-angle-right"></i> AI Visuals</a></li>
-                    <li><a href="#projects"><i class="fa-solid fa-angle-right"></i> AI Animation Videos</a></li>
-                </ul>
-            </div>
-
-            <!-- Widget 4: Visitor Count & Newsletter -->
-            <div class="footer-widget">
-                <div class="visitor-counter-card">
-                    <div class="visitor-icon-box"><i class="fa-solid fa-eye"></i></div>
-                    <div class="visitor-text-box">
-                        <span class="visitor-title">Total Profile Visits</span>
-                        <span class="visitor-count" id="uniqueVisitorCount">151+</span>
-                    </div>
-                </div>
-
-                <div class="newsletter-box">
-                    <p>Subscribe for updates:</p>
-                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bottom Bar -->
-        <div class="footer-bottom-bar">
-            <p class="spiritual-quote">"You are not the body, not the mind. You are the consciousness."</p>
-            <p class="copyright-text">&copy; 2026 Muskan Kumari. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-

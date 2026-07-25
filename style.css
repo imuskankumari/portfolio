@@ -12,7 +12,7 @@
     --text-black: #111111;
     --accent-magenta: #D81B60;
     --accent-magenta-hover: #b0124c;
-    --card-border: #EEEEEE;
+    --card-border: #E8E8E8;
     --light-gray: #F9F9F9;
     --font-primary: 'Plus Jakarta Sans', sans-serif;
 }
@@ -37,7 +37,7 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 70px 0;
 }
 
 .text-black {
@@ -53,19 +53,19 @@ body {
 }
 
 .section-title {
-    font-size: 2.5rem;
-    font-weight: 800;
+    font-size: 2.8rem;
+    font-weight: 900;
     text-transform: uppercase;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
     letter-spacing: -0.5px;
 }
 
 /* BUTTONS */
 .btn {
     display: inline-block;
-    padding: 12px 26px;
+    padding: 12px 28px;
     font-size: 0.95rem;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
     border-radius: 4px;
     transition: all 0.3s ease;
@@ -120,21 +120,21 @@ body {
 }
 
 .logo-img {
-    height: 45px;
+    height: 48px;
     width: auto;
     display: block;
 }
 
 .nav-menu {
     display: flex;
-    gap: 30px;
+    gap: 32px;
     align-items: center;
 }
 
 .nav-link {
     color: #FFFFFF;
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 1rem;
     position: relative;
     padding-bottom: 4px;
@@ -178,7 +178,7 @@ body {
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
-    min-height: 550px;
+    min-height: 580px;
     background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -202,36 +202,37 @@ body {
 }
 
 .hero-title {
-    font-size: 3.8rem;
-    font-weight: 800;
-    line-height: 1.1;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.05;
 }
 
 .hero-subtitle {
-    font-size: 3.2rem;
-    font-weight: 800;
-    line-height: 1.1;
+    font-size: 3.4rem;
+    font-weight: 900;
+    line-height: 1.05;
 }
 
 .hero-tagline-wrapper {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    margin-top: 15px;
-    background: rgba(255, 255, 255, 0.85);
-    padding: 8px 18px;
+    margin-top: 18px;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 8px 20px;
     border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .lotus-icon {
     color: var(--accent-magenta);
-    font-size: 1.2rem;
+    font-size: 1.25rem;
 }
 
 .hero-tagline {
     color: var(--text-black);
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 700;
+    font-size: 1.05rem;
 }
 
 /* ==========================================================================
@@ -239,20 +240,23 @@ body {
    ========================================================================== */
 .software-marquee-section {
     background-color: var(--text-black);
-    padding: 25px 0;
+    padding: 22px 0;
     overflow: hidden;
-    white-space: nowrap;
+    width: 100%;
+    position: relative;
 }
 
 .marquee-container {
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .marquee-track {
-    display: inline-flex;
-    gap: 25px;
-    animation: marquee 25s linear infinite;
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: marquee 30s linear infinite;
 }
 
 .marquee-track:hover {
@@ -265,20 +269,23 @@ body {
     gap: 12px;
     background-color: #FFFFFF;
     color: var(--text-black);
-    padding: 12px 24px;
+    padding: 10px 20px;
     border-radius: 8px;
     border-left: 4px solid var(--accent-magenta);
     flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .tool-icon {
-    color: var(--accent-magenta);
-    font-size: 1.3rem;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
 }
 
 .tool-name {
-    font-weight: 600;
-    font-size: 0.95rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    white-space: nowrap;
 }
 
 @keyframes marquee {
@@ -294,13 +301,13 @@ body {
 }
 
 .about-content {
-    max-width: 800px;
+    max-width: 850px;
 }
 
 .about-bio {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 300;
-    color: #444444;
+    color: #333333;
     line-height: 1.8;
     margin-bottom: 30px;
 }
@@ -311,16 +318,31 @@ body {
 }
 
 /* ==========================================================================
-   SERVICES SECTION (5 DISPLAY-ONLY CARDS)
+   SERVICES SECTION (3+2 GRID LAYOUT)
    ========================================================================== */
 .services-section {
     background-color: var(--light-gray);
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.services-wrapper {
+    display: flex;
+    flex-direction: column;
     gap: 25px;
+}
+
+.services-row {
+    display: grid;
+    gap: 25px;
+}
+
+.services-row.row-top {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.services-row.row-bottom {
+    grid-template-columns: repeat(2, 1fr);
+    width: 68%;
+    margin: 0 auto;
 }
 
 .service-card {
@@ -333,13 +355,14 @@ body {
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.06);
 }
 
 .service-image-wrapper {
     width: 100%;
-    height: 180px;
+    height: 190px;
     overflow: hidden;
+    background-color: #EFEFEF;
 }
 
 .service-image-wrapper img {
@@ -349,12 +372,12 @@ body {
 }
 
 .service-card-body {
-    padding: 22px;
+    padding: 24px;
 }
 
 .service-card-title {
-    font-size: 1.25rem;
-    font-weight: 800;
+    font-size: 1.3rem;
+    font-weight: 900;
     color: var(--text-black);
     margin-bottom: 10px;
 }
@@ -364,10 +387,6 @@ body {
     font-weight: 300;
     color: #555555;
     line-height: 1.5;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 /* ==========================================================================
@@ -377,12 +396,11 @@ body {
     background-color: var(--bg-white);
 }
 
-/* Filter tabs desktop & mobile layout */
 .filter-wrapper {
     width: 100%;
     overflow-x: auto;
     margin-bottom: 35px;
-    padding-bottom: 5px;
+    padding-bottom: 8px;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -405,11 +423,11 @@ body {
 .filter-btn {
     background: transparent;
     border: 1px solid #DDD;
-    padding: 8px 20px;
+    padding: 8px 22px;
     border-radius: 20px;
     font-family: var(--font-primary);
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-black);
     cursor: pointer;
     transition: all 0.3s ease;
@@ -425,7 +443,7 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
     gap: 25px;
 }
 
@@ -434,22 +452,37 @@ body {
     border: 1px solid var(--card-border);
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
 
-.project-img-box {
+.project-media-box {
     width: 100%;
-    height: 200px;
+    height: 260px;
+    background-color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.project-img-box img {
+.project-media-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    display: block;
+}
+
+.project-media-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #000000;
 }
 
 .project-info {
@@ -458,7 +491,7 @@ body {
 
 .project-tag {
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--accent-magenta);
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -466,15 +499,19 @@ body {
 
 .project-title {
     font-size: 1.1rem;
-    font-weight: 800;
+    font-weight: 900;
     color: var(--text-black);
-    margin: 5px 0;
+    margin: 4px 0;
 }
 
 .project-author {
     font-size: 0.85rem;
     color: #666666;
     font-weight: 300;
+}
+
+.load-more-box {
+    margin-top: 45px;
 }
 
 /* ==========================================================================
@@ -499,7 +536,7 @@ body {
 
 .form-group label {
     display: block;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.9rem;
     margin-bottom: 8px;
 }
@@ -538,7 +575,7 @@ body {
 .footer-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 20px;
     align-items: start;
     padding-bottom: 40px;
     border-bottom: 1px solid #222222;
@@ -551,20 +588,20 @@ body {
 }
 
 .footer-title {
-    font-size: 1rem;
-    font-weight: 800;
+    font-size: 0.95rem;
+    font-weight: 900;
     color: #FFFFFF;
 }
 
 .footer-subtitle {
     font-size: 0.8rem;
     color: #888888;
-    margin: 5px 0 12px;
+    margin: 4px 0 12px;
 }
 
 .footer-socials {
     display: flex;
-    gap: 12px;
+    gap: 10px;
 }
 
 .footer-socials a {
@@ -586,8 +623,8 @@ body {
 }
 
 .footer-widget-title {
-    font-size: 1.05rem;
-    font-weight: 800;
+    font-size: 1rem;
+    font-weight: 900;
     color: var(--accent-magenta);
     margin-bottom: 15px;
 }
@@ -615,10 +652,10 @@ body {
 /* Visit counter & Newsletter Widget */
 .visit-counter-box {
     background: #1A1A1A;
-    padding: 10px 15px;
+    padding: 10px 14px;
     border-radius: 4px;
     border-left: 3px solid var(--accent-magenta);
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
 .counter-label {
@@ -628,8 +665,8 @@ body {
 }
 
 .counter-number {
-    font-size: 1.2rem;
-    font-weight: 800;
+    font-size: 1.15rem;
+    font-weight: 900;
     color: #FFFFFF;
 }
 
@@ -644,7 +681,7 @@ body {
 
 .newsletter-box input {
     width: 100%;
-    padding: 8px 12px;
+    padding: 8px 10px;
     border: none;
     border-radius: 4px;
     font-size: 0.8rem;
@@ -655,7 +692,7 @@ body {
     background: var(--accent-magenta);
     color: #FFFFFF;
     border: none;
-    padding: 0 15px;
+    padding: 0 14px;
     border-radius: 4px;
     cursor: pointer;
     transition: background 0.3s ease;
@@ -674,7 +711,7 @@ body {
     font-size: 0.85rem;
     font-style: italic;
     color: #888888;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 .footer-copyright {
@@ -683,20 +720,78 @@ body {
 }
 
 /* ==========================================================================
+   FULLSCREEN LIGHTBOX MODAL
+   ========================================================================== */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-modal.active {
+    display: flex;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #FFFFFF;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: var(--accent-magenta);
+}
+
+.lightbox-content-wrapper {
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-content-wrapper img,
+.lightbox-content-wrapper video {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+}
+
+/* ==========================================================================
    RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 @media (max-width: 992px) {
+    .services-row.row-top {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .services-row.row-bottom {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
     .footer-row {
         grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
+        gap: 35px;
     }
-
     .hero-title {
-        font-size: 2.8rem;
+        font-size: 3rem;
     }
-
     .hero-subtitle {
-        font-size: 2.3rem;
+        font-size: 2.5rem;
     }
 }
 
@@ -723,7 +818,7 @@ body {
 
     .hero-section {
         aspect-ratio: auto;
-        height: 80vh;
+        height: 75vh;
     }
 
     .hero-content {
@@ -731,11 +826,17 @@ body {
     }
 
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
     }
 
     .hero-subtitle {
-        font-size: 1.8rem;
+        font-size: 2rem;
+    }
+
+    .services-row.row-top,
+    .services-row.row-bottom {
+        grid-template-columns: 1fr;
+        width: 100%;
     }
 
     .filter-tabs {

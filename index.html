@@ -35,9 +35,11 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (LIVE SEA WAVE VIDEO BANNER - NO DARK OVERLAY) -->
     <section id="hero" class="hero-section">
-        <div class="hero-overlay"></div>
+        <video autoplay loop muted playsinline class="hero-bg-video">
+            <source src="hero-video.mp4" type="video/mp4">
+        </video>
         <div class="hero-content">
             <div class="hero-right-box">
                 <h1 class="hero-title">
@@ -53,15 +55,19 @@
                     <i class="fa-solid fa-spa lotus-icon"></i>
                     <p class="hero-tagline">Creativity मेरे रग-रग में है।</p>
                 </div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-magenta">Explore Projects <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn btn-outline-black">Get In Touch</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FILMORA-STYLE SOFTWARE MARQUEE (NO SKILLS HEADING) -->
+    <!-- SKILLS MARQUEE (PURE WHITE BACKGROUND & BOUNDED CONTAINER) -->
     <section class="software-marquee-section">
-        <div class="marquee-container">
+        <div class="marquee-bounded-container">
             <div class="marquee-track">
-                <!-- Track Items Set 1 -->
+                <!-- Set 1 -->
                 <div class="tool-card">
                     <img src="photoshop.png" alt="Photoshop" class="tool-icon">
                     <span class="tool-name">Adobe Photoshop</span>
@@ -73,22 +79,6 @@
                 <div class="tool-card">
                     <img src="indesign.png" alt="InDesign" class="tool-icon">
                     <span class="tool-name">Adobe InDesign</span>
-                </div>
-                <div class="tool-card">
-                    <img src="coreldraw.png" alt="CorelDraw" class="tool-icon">
-                    <span class="tool-name">CorelDraw</span>
-                </div>
-                <div class="tool-card">
-                    <img src="canva.png" alt="Canva" class="tool-icon">
-                    <span class="tool-name">Canva</span>
-                </div>
-                <div class="tool-card">
-                    <img src="filmora.png" alt="Filmora" class="tool-icon">
-                    <span class="tool-name">Wondershare Filmora</span>
-                </div>
-                <div class="tool-card">
-                    <img src="vn.png" alt="VN Editor" class="tool-icon">
-                    <span class="tool-name">VN Video Editor</span>
                 </div>
                 <div class="tool-card">
                     <img src="word.png" alt="Word" class="tool-icon">
@@ -103,7 +93,7 @@
                     <span class="tool-name">Google Sites</span>
                 </div>
 
-                <!-- Duplicate Set 2 for Continuous Seamless Scroll -->
+                <!-- Duplicate Set 2 for Continuous Loop -->
                 <div class="tool-card">
                     <img src="photoshop.png" alt="Photoshop" class="tool-icon">
                     <span class="tool-name">Adobe Photoshop</span>
@@ -115,22 +105,6 @@
                 <div class="tool-card">
                     <img src="indesign.png" alt="InDesign" class="tool-icon">
                     <span class="tool-name">Adobe InDesign</span>
-                </div>
-                <div class="tool-card">
-                    <img src="coreldraw.png" alt="CorelDraw" class="tool-icon">
-                    <span class="tool-name">CorelDraw</span>
-                </div>
-                <div class="tool-card">
-                    <img src="canva.png" alt="Canva" class="tool-icon">
-                    <span class="tool-name">Canva</span>
-                </div>
-                <div class="tool-card">
-                    <img src="filmora.png" alt="Filmora" class="tool-icon">
-                    <span class="tool-name">Wondershare Filmora</span>
-                </div>
-                <div class="tool-card">
-                    <img src="vn.png" alt="VN Editor" class="tool-icon">
-                    <span class="tool-name">VN Video Editor</span>
                 </div>
                 <div class="tool-card">
                     <img src="word.png" alt="Word" class="tool-icon">
@@ -166,7 +140,7 @@
         </div>
     </section>
 
-    <!-- OUR SERVICES SECTION (3+2 GRID) -->
+    <!-- OUR SERVICES SECTION (3+2 GRID WITH DIRECT HERO SEA IMAGE ON CARD 5) -->
     <section id="services" class="services-section">
         <div class="container">
             <h2 class="section-title text-center">
@@ -227,9 +201,10 @@
                         </div>
                     </div>
 
+                    <!-- CARD 5: DIRECT HERO SEA IMAGE FOR DIRECT BROWSER DOWNLOAD -->
                     <div class="service-card">
                         <div class="service-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=800&q=80" alt="AI Animation Videos">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Sea Image">
                         </div>
                         <div class="service-card-body">
                             <h3 class="service-card-title">AI Animation Videos</h3>
@@ -263,10 +238,10 @@
 
             <!-- Grid Container -->
             <div class="projects-grid" id="projectsGrid">
-                <!-- Javascript will inject initial 6 items and expand dynamically -->
+                <!-- Javascript will inject initial items and expand dynamically -->
             </div>
 
-            <!-- View More / Load More Button Container -->
+            <!-- View More Button Container -->
             <div class="text-center load-more-box">
                 <button id="loadMoreBtn" class="btn btn-magenta">View More Projects <i class="fa-solid fa-chevron-down"></i></button>
             </div>
@@ -280,7 +255,7 @@
                 <span class="text-black">GET IN</span> <span class="text-magenta">TOUCH</span>
             </h2>
             <div class="contact-card">
-                <form id="contactForm" onsubmit="event.preventDefault(); alert('Thank you for your message! Muskan will get back to you shortly.');">
+                <form id="contactForm" onsubmit="event.preventDefault(); alert('Thank you for reaching out! Your message has been sent successfully.');">
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" placeholder="Enter your full name" required>
@@ -293,68 +268,43 @@
                         <label for="message">Your Message</label>
                         <textarea id="message" rows="4" placeholder="Write your message here..." required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-magenta btn-block">Send Message</button>
+                    <button type="submit" class="btn btn-magenta btn-block">Send Message <i class="fas fa-paper-plane"></i></button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- MINIMALIST INLINE FOOTER -->
     <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-row">
-                <!-- Widget 1 -->
-                <div class="footer-widget">
+        <div class="footer-inline-container">
+            <div class="footer-inline-row">
+                <!-- Left Column: Identity -->
+                <div class="footer-col footer-left">
                     <img src="mk logo.png" alt="Logo" class="footer-logo">
-                    <h4 class="footer-title">Muskan Kumari | Portfolio</h4>
-                    <p class="footer-subtitle">Stay Connected</p>
+                    <span class="footer-brand-title">Muskan Kumari | Portfolio</span>
+                </div>
+
+                <!-- Middle Column: Socials -->
+                <div class="footer-col footer-middle">
+                    <span class="footer-connect-label">Stay Connected</span>
                     <div class="footer-socials">
-                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
-                        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
 
-                <!-- Widget 2 -->
-                <div class="footer-widget">
-                    <h4 class="footer-widget-title">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Widget 3 -->
-                <div class="footer-widget">
-                    <h4 class="footer-widget-title">Categories</h4>
-                    <ul class="footer-links">
-                        <li><a href="#projects">Graphic Design</a></li>
-                        <li><a href="#projects">Web Layouts</a></li>
-                        <li><a href="#projects">AI Visuals</a></li>
-                        <li><a href="#projects">AI Animation Videos</a></li>
-                    </ul>
-                </div>
-
-                <!-- Widget 4 -->
-                <div class="footer-widget">
-                    <div class="visit-counter-box">
-                        <span class="counter-label">Total Profile Visits:</span>
-                        <span id="visitCounter" class="counter-number">151+</span>
-                    </div>
-                    <h4 class="footer-widget-title newsletter-title">Subscribe</h4>
-                    <div class="newsletter-box">
-                        <input type="email" placeholder="Your email address">
-                        <button type="button" class="btn-magenta-submit" onclick="alert('Subscribed successfully!');"><i class="fa-solid fa-paper-plane"></i></button>
+                <!-- Right Column: Counter Box -->
+                <div class="footer-col footer-right">
+                    <div class="minimal-counter-box">
+                        <span class="counter-text">Total Visits: <strong id="visitCounter">0</strong></span>
                     </div>
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <p class="footer-quote">"Transforming bold concepts into seamless visual reality."</p>
+            <div class="footer-bottom-quote-bar">
+                <p class="footer-quote">"You are not the body, not the mind. You are the consciousness."</p>
                 <p class="footer-copyright">© 2026 Muskan Kumari. All Rights Reserved.</p>
             </div>
         </div>
@@ -363,12 +313,9 @@
     <!-- FULLSCREEN LIGHTBOX POPUP MODAL -->
     <div id="lightboxModal" class="lightbox-modal">
         <span class="lightbox-close" id="lightboxClose">&times;</span>
-        <div class="lightbox-content-wrapper" id="lightboxContent">
-            <!-- Dynamic content injected via JS (Image or Video) -->
-        </div>
+        <div class="lightbox-content-wrapper" id="lightboxContent"></div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-

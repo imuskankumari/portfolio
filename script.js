@@ -38,11 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // 3. MASTER REPOSITORY PROJECT DATA MAPPING
+    // 3. MASTER REPOSITORY FILE MAPPING
     const allProjectsData = [];
 
-    // Graphic Design: g1.jpg to g50.jpg
-    for (let i = 1; i <= 50; i++) {
+    // Graphic Design: g1.jpg to g20.jpg
+    for (let i = 1; i <= 20; i++) {
         allProjectsData.push({
             id: `g_${i}`,
             category: "graphic",
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // AI Visuals: v1.png to v10.png
+    // AI Visuals: v1.png to v10.png AND b1.png to b10.png
     for (let i = 1; i <= 10; i++) {
         allProjectsData.push({
             id: `v_${i}`,
@@ -79,6 +79,17 @@ document.addEventListener("DOMContentLoaded", function () {
             src: `v${i}.png`
         });
     }
+    for (let i = 1; i <= 10; i++) {
+        allProjectsData.push({
+            id: `b_${i}`,
+            category: "ai-visuals",
+            tag: "AI Visuals",
+            title: `AI Visual Artwork #${i}`,
+            author: "MK Designs",
+            type: "image",
+            src: `b${i}.png`
+        });
+    }
 
     // AI Animation Videos / Reels: r1.mp4 to r12.mp4
     for (let i = 1; i <= 12; i++) {
@@ -86,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
             id: `r_${i}`,
             category: "ai-animation",
             tag: "AI Animation Videos",
-            title: `AI Motion Reel #${i}`,
+            title: `Vertical Reel #${i}`,
             author: "MK Designs",
             type: "video",
             src: `r${i}.mp4`
@@ -116,13 +127,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         itemsToRender.forEach(item => {
             const card = document.createElement("div");
-            card.className = "project-card";
+            
+            // Add reel-card class for 9:16 vertical styling on videos
+            if (item.type === "video") {
+                card.className = "project-card reel-card";
+            } else {
+                card.className = "project-card";
+            }
 
             let mediaHTML = "";
             if (item.type === "image") {
                 mediaHTML = `<img src="${item.src}" alt="${item.title}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=800&q=80'">`;
             } else if (item.type === "video") {
-                mediaHTML = `<video controls preload="metadata"><source src="${item.src}" type="video/mp4">Your browser does not support video.</video>`;
+                mediaHTML = `<video controls playsinline preload="metadata"><source src="${item.src}" type="video/mp4"></video>`;
             }
 
             card.innerHTML = `
@@ -165,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
             button.classList.add("active");
 
             currentFilter = button.getAttribute("data-filter");
-            displayedCount = INITIAL_LIMIT; // Reset to 6 on category switch
+            displayedCount = INITIAL_LIMIT; // Reset count on filter change
             renderProjects();
         });
     });
@@ -216,17 +233,41 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 5. VISIT COUNTER
+    // 5. SMART ADMIN-EXCLUDED VISITOR COUNTER
     const counterElement = document.getElementById("visitCounter");
-    if (counterElement) {
-        let visits = localStorage.getItem("pageVisitsCount");
-        if (!visits) {
-            visits = 151;
-        } else {
-            visits = parseInt(visits) + 1;
+    
+    function handleVisitorCounter() {
+        // Check URL parameter to toggle admin mode: ?admin=true
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("admin") === "true") {
+            localStorage.setItem("portfolio_admin", "true");
         }
-        localStorage.setItem("pageVisitsCount", visits);
-        counterElement.textContent = visits + "+";
+
+        const isAdmin = localStorage.getItem("portfolio_admin") === "true";
+        let storedVisits = parseInt(localStorage.getItem("total_unique_visits") || "0", 10);
+
+        if (isAdmin) {
+            // Admin mode: Display count without incrementing
+            if (counterElement) counterElement.textContent = storedVisits;
+            return;
+        }
+
+        // Check 24-hour unique window using timestamp
+        const lastVisitTime = localStorage.getItem("last_visit_timestamp");
+        const now = new Date().getTime();
+        const TWENTY_FOUR_HOURS = 24 * 60 * 60 * 1000;
+
+        if (!lastVisitTime || (now - parseInt(lastVisitTime, 10)) > TWENTY_FOUR_HOURS) {
+            storedVisits += 1;
+            localStorage.setItem("total_unique_visits", storedVisits.toString());
+            localStorage.setItem("last_visit_timestamp", now.toString());
+        }
+
+        if (counterElement) {
+            counterElement.textContent = storedVisits;
+        }
     }
+
+    handleVisitorCounter();
 
 });

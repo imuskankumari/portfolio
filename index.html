@@ -35,10 +35,10 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (LIVE SEA WAVE VIDEO BANNER - NO DARK OVERLAY) -->
+    <!-- HERO SECTION (header.mp4 VIDEO BANNER) -->
     <section id="hero" class="hero-section">
         <video autoplay loop muted playsinline class="hero-bg-video">
-            <source src="hero-video.mp4" type="video/mp4">
+            <source src="header.mp4" type="video/mp4">
         </video>
         <div class="hero-content">
             <div class="hero-right-box">
@@ -51,19 +51,15 @@
                 <h2 class="hero-subtitle">
                     <span class="text-magenta">Designer</span>
                 </h2>
-                <div class="hero-tagline-wrapper">
-                    <i class="fa-solid fa-spa lotus-icon"></i>
-                    <p class="hero-tagline">Creativity मेरे रग-रग में है।</p>
-                </div>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-magenta">Explore Projects <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#projects" class="btn btn-magenta">View Projects <i class="fa-solid fa-arrow-right"></i></a>
                     <a href="#contact" class="btn btn-outline-black">Get In Touch</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SKILLS MARQUEE (PURE WHITE BACKGROUND & BOUNDED CONTAINER) -->
+    <!-- GLASS-CARD SKILLS MARQUEE -->
     <section class="software-marquee-section">
         <div class="marquee-bounded-container">
             <div class="marquee-track">
@@ -81,6 +77,14 @@
                     <span class="tool-name">Adobe InDesign</span>
                 </div>
                 <div class="tool-card">
+                    <img src="coreldraw.png" alt="CorelDraw" class="tool-icon">
+                    <span class="tool-name">CorelDraw</span>
+                </div>
+                <div class="tool-card">
+                    <img src="canva.png" alt="Canva" class="tool-icon">
+                    <span class="tool-name">Canva</span>
+                </div>
+                <div class="tool-card">
                     <img src="word.png" alt="Word" class="tool-icon">
                     <span class="tool-name">Microsoft Word</span>
                 </div>
@@ -93,7 +97,7 @@
                     <span class="tool-name">Google Sites</span>
                 </div>
 
-                <!-- Duplicate Set 2 for Continuous Loop -->
+                <!-- Duplicate Set 2 -->
                 <div class="tool-card">
                     <img src="photoshop.png" alt="Photoshop" class="tool-icon">
                     <span class="tool-name">Adobe Photoshop</span>
@@ -105,6 +109,14 @@
                 <div class="tool-card">
                     <img src="indesign.png" alt="InDesign" class="tool-icon">
                     <span class="tool-name">Adobe InDesign</span>
+                </div>
+                <div class="tool-card">
+                    <img src="coreldraw.png" alt="CorelDraw" class="tool-icon">
+                    <span class="tool-name">CorelDraw</span>
+                </div>
+                <div class="tool-card">
+                    <img src="canva.png" alt="Canva" class="tool-icon">
+                    <span class="tool-name">Canva</span>
                 </div>
                 <div class="tool-card">
                     <img src="word.png" alt="Word" class="tool-icon">
@@ -140,7 +152,7 @@
         </div>
     </section>
 
-    <!-- OUR SERVICES SECTION (3+2 GRID WITH DIRECT HERO SEA IMAGE ON CARD 5) -->
+    <!-- OUR SERVICES SECTION (3+2 GRID) -->
     <section id="services" class="services-section">
         <div class="container">
             <h2 class="section-title text-center">
@@ -148,7 +160,6 @@
             </h2>
             
             <div class="services-wrapper">
-                <!-- Top Row: 3 Cards -->
                 <div class="services-row row-top">
                     <div class="service-card">
                         <div class="service-image-wrapper">
@@ -187,7 +198,6 @@
                     </div>
                 </div>
 
-                <!-- Bottom Row: 2 Cards Centered -->
                 <div class="services-row row-bottom">
                     <div class="service-card">
                         <div class="service-image-wrapper">
@@ -201,10 +211,9 @@
                         </div>
                     </div>
 
-                    <!-- CARD 5: DIRECT HERO SEA IMAGE FOR DIRECT BROWSER DOWNLOAD -->
                     <div class="service-card">
                         <div class="service-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Sea Image">
+                            <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=800&q=80" alt="AI Animation Videos">
                         </div>
                         <div class="service-card-body">
                             <h3 class="service-card-title">AI Animation Videos</h3>
@@ -225,7 +234,6 @@
                 <span class="text-black">MY</span> <span class="text-magenta">PROJECTS</span>
             </h2>
 
-            <!-- Mobile Horizontal Scroll Filter Tabs -->
             <div class="filter-wrapper">
                 <div class="filter-tabs">
                     <button class="filter-btn active" data-filter="all">All</button>
@@ -236,12 +244,8 @@
                 </div>
             </div>
 
-            <!-- Grid Container -->
-            <div class="projects-grid" id="projectsGrid">
-                <!-- Javascript will inject initial items and expand dynamically -->
-            </div>
+            <div class="projects-grid" id="projectsGrid"></div>
 
-            <!-- View More Button Container -->
             <div class="text-center load-more-box">
                 <button id="loadMoreBtn" class="btn btn-magenta">View More Projects <i class="fa-solid fa-chevron-down"></i></button>
             </div>
@@ -274,17 +278,19 @@
         </div>
     </section>
 
-    <!-- MINIMALIST INLINE FOOTER -->
+    <!-- FOOTER (IMAGE 292.JPG MATCH) -->
     <footer class="site-footer">
         <div class="footer-inline-container">
             <div class="footer-inline-row">
-                <!-- Left Column: Identity -->
+                <!-- Column 1: Logo & Quote -->
                 <div class="footer-col footer-left">
                     <img src="mk logo.png" alt="Logo" class="footer-logo">
-                    <span class="footer-brand-title">Muskan Kumari | Portfolio</span>
+                    <p class="footer-quote-text">"You are not the body, not the mind. You are the consciousness."</p>
                 </div>
 
-                <!-- Middle Column: Socials -->
+                <div class="footer-divider"></div>
+
+                <!-- Column 2: Social Links -->
                 <div class="footer-col footer-middle">
                     <span class="footer-connect-label">Stay Connected</span>
                     <div class="footer-socials">
@@ -295,7 +301,9 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Counter Box -->
+                <div class="footer-divider"></div>
+
+                <!-- Column 3: Visitor Counter -->
                 <div class="footer-col footer-right">
                     <div class="minimal-counter-box">
                         <span class="counter-text">Total Visits: <strong id="visitCounter">0</strong></span>
@@ -303,14 +311,13 @@
                 </div>
             </div>
 
-            <div class="footer-bottom-quote-bar">
-                <p class="footer-quote">"You are not the body, not the mind. You are the consciousness."</p>
+            <div class="footer-bottom-bar">
                 <p class="footer-copyright">© 2026 Muskan Kumari. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- FULLSCREEN LIGHTBOX POPUP MODAL -->
+    <!-- LIGHTBOX MODAL -->
     <div id="lightboxModal" class="lightbox-modal">
         <span class="lightbox-close" id="lightboxClose">&times;</span>
         <div class="lightbox-content-wrapper" id="lightboxContent"></div>
@@ -319,3 +326,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+

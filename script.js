@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1. Mobile Hamburger Menu Toggle
+    // 1. Mobile Hamburger Menu
     const hamburger = document.getElementById("hamburger");
     const navMenu = document.querySelector(".nav-menu");
 
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 2. Active Header Navigation Link on Scroll
+    // 2. Active Nav Link on Scroll
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-link");
 
@@ -41,20 +41,20 @@ document.addEventListener("DOMContentLoaded", function () {
     // 3. MASTER REPOSITORY FILE MAPPING
     const allProjectsData = [];
 
-    // Graphic Design: g1.jpg to g20.jpg
+    // Graphic Design (g1.jpg - g20.jpg)
     for (let i = 1; i <= 20; i++) {
         allProjectsData.push({
             id: `g_${i}`,
             category: "graphic",
             tag: "Graphic Design",
-            title: `Graphic Artwork #${i}`,
+            title: `Graphic Design Artwork #${i}`,
             author: "MK Designs",
             type: "image",
             src: `g${i}.jpg`
         });
     }
 
-    // Web Layouts: w1.png to w10.png
+    // Web Layouts (w1.png - w10.png)
     for (let i = 1; i <= 10; i++) {
         allProjectsData.push({
             id: `w_${i}`,
@@ -67,13 +67,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // AI Visuals: v1.png to v10.png AND b1.png to b10.png
+    // AI Visuals (v1.png - v10.png & b1.png - b10.png)
     for (let i = 1; i <= 10; i++) {
         allProjectsData.push({
             id: `v_${i}`,
             category: "ai-visuals",
             tag: "AI Visuals",
-            title: `AI Concept Visual #${i}`,
+            title: `AI Visual Concept #${i}`,
             author: "MK Designs",
             type: "image",
             src: `v${i}.png`
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // AI Animation Videos / Reels: r1.mp4 to r12.mp4
+    // AI Animation Videos / Reels (r1.mp4 - r12.mp4)
     for (let i = 1; i <= 12; i++) {
         allProjectsData.push({
             id: `r_${i}`,
@@ -104,9 +104,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // STATE VARIABLES FOR PAGINATION & FILTERING
+    // STATE VARIABLES FOR ONE-CLICK FULL LOAD
     let currentFilter = "all";
-    let displayedCount = 6;
+    let isExpanded = false;
     const INITIAL_LIMIT = 6;
 
     const projectsGrid = document.getElementById("projectsGrid");
@@ -121,14 +121,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function renderProjects() {
         const filtered = getFilteredProjects();
-        const itemsToRender = filtered.slice(0, displayedCount);
+        const itemsToRender = isExpanded ? filtered : filtered.slice(0, INITIAL_LIMIT);
 
         projectsGrid.innerHTML = "";
 
         itemsToRender.forEach(item => {
             const card = document.createElement("div");
             
-            // Add reel-card class for 9:16 vertical styling on videos
             if (item.type === "video") {
                 card.className = "project-card reel-card";
             } else {
@@ -153,7 +152,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             `;
 
-            // Open Fullscreen Lightbox on click (unless clicking video controls)
             card.addEventListener("click", (e) => {
                 if (e.target.tagName !== "VIDEO") {
                     openLightbox(item);
@@ -163,18 +161,16 @@ document.addEventListener("DOMContentLoaded", function () {
             projectsGrid.appendChild(card);
         });
 
-        // Toggle 'View More' Button Visibility
-        if (displayedCount >= filtered.length) {
+        if (isExpanded || filtered.length <= INITIAL_LIMIT) {
             loadMoreBtn.style.display = "none";
         } else {
             loadMoreBtn.style.display = "inline-block";
         }
     }
 
-    // Initial Render
     renderProjects();
 
-    // Filter Button Click Handler
+    // Filter Buttons Handler
     const filterButtons = document.querySelectorAll(".filter-btn");
     filterButtons.forEach(button => {
         button.addEventListener("click", () => {
@@ -182,20 +178,20 @@ document.addEventListener("DOMContentLoaded", function () {
             button.classList.add("active");
 
             currentFilter = button.getAttribute("data-filter");
-            displayedCount = INITIAL_LIMIT; // Reset count on filter change
+            isExpanded = false;
             renderProjects();
         });
     });
 
-    // View More Button Click Handler
+    // ONE-CLICK VIEW MORE BUTTON HANDLER
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener("click", () => {
-            displayedCount += 6;
+            isExpanded = true;
             renderProjects();
         });
     }
 
-    // 4. FULLSCREEN LIGHTBOX POPUP MODAL LOGIC
+    // LIGHTBOX POPUP LOGIC
     const lightboxModal = document.getElementById("lightboxModal");
     const lightboxContent = document.getElementById("lightboxContent");
     const lightboxClose = document.getElementById("lightboxClose");
@@ -233,11 +229,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 5. SMART ADMIN-EXCLUDED VISITOR COUNTER
+    // SMART ADMIN-EXCLUDED VISITOR COUNTER
     const counterElement = document.getElementById("visitCounter");
     
     function handleVisitorCounter() {
-        // Check URL parameter to toggle admin mode: ?admin=true
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get("admin") === "true") {
             localStorage.setItem("portfolio_admin", "true");
@@ -247,12 +242,10 @@ document.addEventListener("DOMContentLoaded", function () {
         let storedVisits = parseInt(localStorage.getItem("total_unique_visits") || "0", 10);
 
         if (isAdmin) {
-            // Admin mode: Display count without incrementing
             if (counterElement) counterElement.textContent = storedVisits;
             return;
         }
 
-        // Check 24-hour unique window using timestamp
         const lastVisitTime = localStorage.getItem("last_visit_timestamp");
         const now = new Date().getTime();
         const TWENTY_FOUR_HOURS = 24 * 60 * 60 * 1000;
@@ -271,3 +264,4 @@ document.addEventListener("DOMContentLoaded", function () {
     handleVisitorCounter();
 
 });
+

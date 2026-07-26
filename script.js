@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 2. Active Nav Link on Scroll
+    // 2. Active Header Navigation Link on Scroll
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-link");
 
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
             id: `g_${i}`,
             category: "graphic",
             tag: "Graphic Design",
-            title: `Graphic Design Artwork #${i}`,
+            title: `Graphic Artwork #${i}`,
             author: "MK Designs",
             type: "image",
             src: `g${i}.jpg`
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
             id: `v_${i}`,
             category: "ai-visuals",
             tag: "AI Visuals",
-            title: `AI Visual Concept #${i}`,
+            title: `AI Concept Visual #${i}`,
             author: "MK Designs",
             type: "image",
             src: `v${i}.png`
@@ -264,4 +264,3 @@ document.addEventListener("DOMContentLoaded", function () {
     handleVisitorCounter();
 
 });
-

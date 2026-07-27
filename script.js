@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1. Mobile Hamburger Menu Toggle
+    // 1. Mobile Hamburger Menu (Strictly 5 Links)
     const hamburger = document.getElementById("hamburger");
     const navMenu = document.querySelector(".nav-menu");
 
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 2. Active Header Navigation Link on Scroll
+    // 2. Active Header Nav Link on Scroll
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-link");
 
@@ -129,9 +129,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const card = document.createElement("div");
             
             if (item.type === "video") {
-                card.className = "project-card reel-card";
+                card.className = "behance-card reel-card";
             } else {
-                card.className = "project-card";
+                card.className = "behance-card";
             }
 
             let mediaHTML = "";
@@ -142,13 +142,15 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             card.innerHTML = `
-                <div class="project-media-box">
+                <div class="behance-media-box">
                     ${mediaHTML}
                 </div>
-                <div class="project-info">
-                    <span class="project-tag">${item.tag}</span>
-                    <h3 class="project-title">${item.title}</h3>
-                    <p class="project-author">By <strong>${item.author}</strong></p>
+                <div class="behance-info">
+                    <div class="behance-title-box">
+                        <span class="behance-tag">${item.tag}</span>
+                        <h3 class="behance-title">${item.title}</h3>
+                    </div>
+                    <span class="behance-author">By <strong>${item.author}</strong></span>
                 </div>
             `;
 

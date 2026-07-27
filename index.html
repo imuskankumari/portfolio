@@ -23,6 +23,7 @@
             <nav class="nav-menu">
                 <a href="#hero" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
                 <a href="#education" class="nav-link">Education</a>
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#projects" class="nav-link">Projects</a>
@@ -50,7 +51,7 @@
                     <span class="text-black">Graphic &</span> <span class="text-magenta">Web</span>
                 </h2>
                 <h2 class="hero-subtitle">
-                    <span class="text-magenta">Designer</span>
+                    <span class="text-black">Designer</span>
                 </h2>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-magenta">View Projects <i class="fa-solid fa-arrow-right"></i></a>
@@ -60,8 +61,8 @@
         </div>
     </section>
 
-    <!-- MAGENTA PINK SKILLS SCROLLER (STRICTLY CONTAINED) -->
-    <section class="software-marquee-section">
+    <!-- SKILLS MARQUEE SCROLLER -->
+    <section id="skills" class="software-marquee-section">
         <div class="marquee-bounded-container">
             <div class="marquee-track">
                 <!-- Set 1 -->
@@ -149,6 +150,45 @@
                 </div>
             </div>
         </div>
+
+        <!-- SEPARATE STATIC SKILLS GRID -->
+        <div class="container static-skills-container">
+            <h3 class="static-skills-title text-center">TECHNICAL SOFTWARE PROFICIENCY</h3>
+            <div class="skills-grid">
+                <div class="static-skill-card">
+                    <img src="photoshop.png" alt="Photoshop">
+                    <h4>Photoshop</h4>
+                </div>
+                <div class="static-skill-card">
+                    <img src="illustrator.png" alt="Illustrator">
+                    <h4>Illustrator</h4>
+                </div>
+                <div class="static-skill-card">
+                    <img src="indesign.png" alt="InDesign">
+                    <h4>InDesign</h4>
+                </div>
+                <div class="static-skill-card">
+                    <img src="coreldraw.png" alt="CorelDraw">
+                    <h4>CorelDraw</h4>
+                </div>
+                <div class="static-skill-card">
+                    <img src="canva.png" alt="Canva">
+                    <h4>Canva</h4>
+                </div>
+                <div class="static-skill-card">
+                    <img src="word.png" alt="Word">
+                    <h4>MS Word</h4>
+                </div>
+                <div class="static-skill-card">
+                    <img src="excel.png" alt="Excel">
+                    <h4>MS Excel</h4>
+                </div>
+                <div class="static-skill-card">
+                    <img src="googlesites.png" alt="Google Sites">
+                    <h4>Google Sites</h4>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- ABOUT SECTION -->
@@ -211,66 +251,71 @@
         </div>
     </section>
 
-    <!-- OUR SERVICES SECTION (WORDPRESS 2-COLUMN COMPACT GRID) -->
+    <!-- OUR SERVICES SECTION (COMPACT 2-COLUMN GRID) -->
     <section id="services" class="services-section">
         <div class="container">
             <h2 class="section-title text-center">
                 <span class="text-black">OUR</span> <span class="text-magenta">SERVICES</span>
             </h2>
             
-            <div class="services-compact-grid">
-                <!-- Service 1 -->
-                <div class="service-compact-card">
-                    <div class="service-img-box">
+            <div class="services-two-column-grid">
+                <div class="service-card">
+                    <div class="service-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80" alt="Graphic Designing">
                     </div>
-                    <div class="service-compact-body">
+                    <div class="service-card-body">
                         <h3 class="service-card-title">Graphic Designing</h3>
-                        <p class="service-card-desc">High-impact brand collateral, vector graphics, logo design, and promotional marketing materials.</p>
+                        <p class="service-card-desc">
+                            Crafting high-impact brand collateral, vector art, logo design, vector graphics, and marketing materials tailored to elevate brand visibility and audience engagement.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="service-compact-card">
-                    <div class="service-img-box">
+                <div class="service-card">
+                    <div class="service-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=800&q=80" alt="Web & UI Designing">
                     </div>
-                    <div class="service-compact-body">
+                    <div class="service-card-body">
                         <h3 class="service-card-title">Web & UI Designing</h3>
-                        <p class="service-card-desc">Clean, fully responsive digital layouts focused on seamless user experience and modern visual harmony.</p>
+                        <p class="service-card-desc">
+                            Building clean, fully responsive web interfaces and user-focused digital systems. Focus on elegant typography, layout grid harmony, and seamless user interaction.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="service-compact-card">
-                    <div class="service-img-box">
+                <div class="service-card">
+                    <div class="service-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Video Editing">
                     </div>
-                    <div class="service-compact-body">
+                    <div class="service-card-body">
                         <h3 class="service-card-title">Video Editing</h3>
-                        <p class="service-card-desc">Precision video editing, audio synchronization, lower thirds, and smooth cuts for social media and web.</p>
+                        <p class="service-card-desc">
+                            Dynamic timing, audio sync, color correction, lower thirds, and smooth cuts for corporate promos, social reels, and multi-channel campaign content.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Service 4 -->
-                <div class="service-compact-card">
-                    <div class="service-img-box">
+                <div class="service-card">
+                    <div class="service-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="AI Visuals">
                     </div>
-                    <div class="service-compact-body">
+                    <div class="service-card-body">
                         <h3 class="service-card-title">AI Visuals</h3>
-                        <p class="service-card-desc">Generative AI artwork, hyper-detailed concept art, and high-fidelity creative visual compositions.</p>
+                        <p class="service-card-desc">
+                            Generative digital imagery, hyper-detailed concept art, and high-fidelity creative artwork pushed beyond conventional digital design boundaries.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Service 5 -->
-                <div class="service-compact-card full-width-compact">
-                    <div class="service-img-box">
+                <div class="service-card full-width-card">
+                    <div class="service-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=800&q=80" alt="AI Animation Videos">
                     </div>
-                    <div class="service-compact-body">
+                    <div class="service-card-body">
                         <h3 class="service-card-title">AI Animation Videos</h3>
-                        <p class="service-card-desc">Transforming static artwork into fluid, AI-driven motion artwork and futuristic animated video sequences.</p>
+                        <p class="service-card-desc">
+                            Bringing static elements into liquid motion with advanced generative animation sequences, cinematic visual storytelling, and futuristic motion art.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -328,22 +373,25 @@
         </div>
     </section>
 
-    <!-- EXACT HORIZONTAL FOOTER (MATCHING IMAGE 292_3.JPG) -->
+    <!-- EXACT HORIZONTAL FOOTER (MATCHING IMAGE 292_4.JPG) -->
     <footer class="site-footer">
         <div class="footer-inline-container">
             <div class="footer-inline-row">
-                <!-- Column 1: Identity -->
-                <div class="footer-col footer-left">
+                <!-- Column 1: Logo & Title -->
+                <div class="footer-col footer-col-1">
                     <img src="mk.png" alt="Logo" class="footer-logo">
-                    <span class="footer-brand-title">Muskan Kumari | Portfolio</span>
+                    <div class="footer-col-1-text">
+                        <span class="footer-brand-title">Muskan Kumari Portfolio</span>
+                        <span class="footer-brand-sub">Graphic & Web Designer</span>
+                    </div>
                 </div>
 
-                <div class="footer-divider"></div>
+                <div class="footer-v-divider"></div>
 
-                <!-- Column 2: Social Links -->
-                <div class="footer-col footer-middle">
-                    <span class="footer-connect-label">Stay Connected</span>
-                    <div class="footer-socials">
+                <!-- Column 2: Stay Connected -->
+                <div class="footer-col footer-col-2">
+                    <span class="footer-section-heading">Stay Connected</span>
+                    <div class="footer-social-icons">
                         <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                         <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -351,19 +399,20 @@
                     </div>
                 </div>
 
-                <div class="footer-divider"></div>
+                <div class="footer-v-divider"></div>
 
-                <!-- Column 3: Visitor Counter -->
-                <div class="footer-col footer-right">
-                    <div class="minimal-counter-box">
-                        <span class="counter-text">Total Visits: <strong id="visitCounter">0</strong></span>
+                <!-- Column 3: Total Visitors Counter -->
+                <div class="footer-col footer-col-3">
+                    <div class="visitor-counter-card">
+                        <span class="visitor-label">Total Visitors</span>
+                        <span class="visitor-number-white" id="visitCounter">0</span>
                     </div>
                 </div>
             </div>
 
-            <div class="footer-bottom-bar">
-                <p class="footer-quote-text">"You are not the body, not the mind. You are the consciousness."</p>
-                <p class="footer-copyright">© 2026 Muskan Kumari. All Rights Reserved.</p>
+            <!-- Bottom Copyright Bar -->
+            <div class="footer-bottom-single-line">
+                <p>Muskan Kumari Portfolio | 2026. All Rights Reserved.</p>
             </div>
         </div>
     </footer>

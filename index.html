@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <!-- HEADER & NAVIGATION -->
+    <!-- 1. HEADER & NAVIGATION (STRICTLY 5 LINKS ONLY) -->
     <header class="navbar">
         <div class="header-container">
             <a href="#hero" class="logo-link">
@@ -23,8 +23,6 @@
             <nav class="nav-menu">
                 <a href="#hero" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#education" class="nav-link">Education</a>
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#contact" class="nav-link">Contact</a>
@@ -37,7 +35,7 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (header.mp4 VIDEO BANNER - NO OVERLAY) -->
+    <!-- 1. HERO HEADER (RESPONSIVE FOR MOBILE & DESKTOP) -->
     <section id="hero" class="hero-section">
         <video autoplay loop muted playsinline class="hero-bg-video">
             <source src="header.mp4" type="video/mp4">
@@ -61,8 +59,68 @@
         </div>
     </section>
 
-    <!-- SKILLS MARQUEE SCROLLER -->
-    <section id="skills" class="software-marquee-section">
+    <!-- 2. ABOUT ME SECTION -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="text-black">CREATIVE VISION &</span> <span class="text-magenta">EXPERTISE</span>
+            </h2>
+            <div class="about-content">
+                <p class="about-bio">
+                    Hi, I am Muskan Kumari from Delhi. I am a passionate Graphic & Web Designer specializing in visual communication, modern brand identity, clean web layouts, and high-impact AI Animation Videos. My core mission is to bridge creative intuition with precise digital craftsmanship to build compelling brand assets that leave a long-lasting visual mark.
+                </p>
+                <div class="about-buttons">
+                    <a href="#projects" class="btn btn-magenta">View Projects <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn btn-outline-black">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. EDUCATION & CERTIFICATIONS SECTION -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2 class="section-title text-center">
+                <span class="text-black">EDUCATION &</span> <span class="text-magenta">CERTIFICATIONS</span>
+            </h2>
+            <div class="education-grid">
+                <div class="edu-card">
+                    <div class="edu-icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="edu-info">
+                        <h3 class="edu-title">Senior Secondary Education</h3>
+                        <p class="edu-issuer">Central Board of Secondary Education (CBSE)</p>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-icon-box"><i class="fa-solid fa-award"></i></div>
+                    <div class="edu-info">
+                        <h3 class="edu-title">Basic Computer Course (BCC)</h3>
+                        <p class="edu-issuer">Certified Digital Literacy Qualification</p>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-icon-box"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="edu-info">
+                        <h3 class="edu-title">Course on Computer Concepts (CCC)</h3>
+                        <p class="edu-issuer">Certified IT Application Concepts</p>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+                    <div class="edu-info">
+                        <h3 class="edu-title">Diploma In Computer Applications (DCA)</h3>
+                        <p class="edu-issuer">Certified Computer Applications | India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. TECHNICAL SOFTWARE PROFICIENCY (SKILLS MARQUEE) -->
+    <section class="software-marquee-section">
         <div class="marquee-bounded-container">
             <div class="marquee-track">
                 <!-- Set 1 -->
@@ -107,7 +165,7 @@
                     <span class="tool-name">Google Sites</span>
                 </div>
 
-                <!-- Duplicate Set 2 -->
+                <!-- Set 2 for Infinite Scroll -->
                 <div class="tool-card">
                     <i class="fa-solid fa-sparkles card-sparkle-icon"></i>
                     <img src="photoshop.png" alt="Photoshop" class="tool-icon">
@@ -150,179 +208,75 @@
                 </div>
             </div>
         </div>
-
-        <!-- SEPARATE STATIC SKILLS GRID -->
-        <div class="container static-skills-container">
-            <h3 class="static-skills-title text-center">TECHNICAL SOFTWARE PROFICIENCY</h3>
-            <div class="skills-grid">
-                <div class="static-skill-card">
-                    <img src="photoshop.png" alt="Photoshop">
-                    <h4>Photoshop</h4>
-                </div>
-                <div class="static-skill-card">
-                    <img src="illustrator.png" alt="Illustrator">
-                    <h4>Illustrator</h4>
-                </div>
-                <div class="static-skill-card">
-                    <img src="indesign.png" alt="InDesign">
-                    <h4>InDesign</h4>
-                </div>
-                <div class="static-skill-card">
-                    <img src="coreldraw.png" alt="CorelDraw">
-                    <h4>CorelDraw</h4>
-                </div>
-                <div class="static-skill-card">
-                    <img src="canva.png" alt="Canva">
-                    <h4>Canva</h4>
-                </div>
-                <div class="static-skill-card">
-                    <img src="word.png" alt="Word">
-                    <h4>MS Word</h4>
-                </div>
-                <div class="static-skill-card">
-                    <img src="excel.png" alt="Excel">
-                    <h4>MS Excel</h4>
-                </div>
-                <div class="static-skill-card">
-                    <img src="googlesites.png" alt="Google Sites">
-                    <h4>Google Sites</h4>
-                </div>
-            </div>
-        </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="text-black">CREATIVE VISION &</span> <span class="text-magenta">EXPERTISE</span>
-            </h2>
-            <div class="about-content">
-                <p class="about-bio">
-                    Hi, I am Muskan Kumari from Delhi. I am a passionate Graphic & Web Designer specializing in visual communication, modern brand identity, clean web layouts, and high-impact AI Animation Videos. My core mission is to bridge creative intuition with precise digital craftsmanship to build compelling brand assets that leave a long-lasting visual mark.
-                </p>
-                <div class="about-buttons">
-                    <a href="#projects" class="btn btn-magenta">View Projects <i class="fa-solid fa-arrow-right"></i></a>
-                    <a href="#contact" class="btn btn-outline-black">Get In Touch</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- EDUCATION & CERTIFICATIONS SECTION -->
-    <section id="education" class="education-section">
-        <div class="container">
-            <h2 class="section-title text-center">
-                <span class="text-black">EDUCATION &</span> <span class="text-magenta">CERTIFICATIONS</span>
-            </h2>
-            <div class="education-grid">
-                <div class="edu-card">
-                    <div class="edu-icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <div class="edu-info">
-                        <h3 class="edu-title">Senior Secondary Education</h3>
-                        <p class="edu-issuer">Central Board of Secondary Education (CBSE)</p>
-                    </div>
-                </div>
-
-                <div class="edu-card">
-                    <div class="edu-icon-box"><i class="fa-solid fa-award"></i></div>
-                    <div class="edu-info">
-                        <h3 class="edu-title">Basic Computer Course (BCC)</h3>
-                        <p class="edu-issuer">Certified Digital Literacy Qualification</p>
-                    </div>
-                </div>
-
-                <div class="edu-card">
-                    <div class="edu-icon-box"><i class="fa-solid fa-certificate"></i></div>
-                    <div class="edu-info">
-                        <h3 class="edu-title">Course on Computer Concepts (CCC)</h3>
-                        <p class="edu-issuer">Certified IT Application Concepts</p>
-                    </div>
-                </div>
-
-                <div class="edu-card">
-                    <div class="edu-icon-box"><i class="fa-solid fa-laptop-code"></i></div>
-                    <div class="edu-info">
-                        <h3 class="edu-title">Diploma In Computer Applications (DCA)</h3>
-                        <p class="edu-issuer">Certified Computer Applications | India</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- OUR SERVICES SECTION (COMPACT 2-COLUMN GRID) -->
+    <!-- 5. OUR SERVICES SECTION (HORIZONTAL COMPACT BLOCKS MATCHING 399_2.JPG) -->
     <section id="services" class="services-section">
         <div class="container">
             <h2 class="section-title text-center">
                 <span class="text-black">OUR</span> <span class="text-magenta">SERVICES</span>
             </h2>
             
-            <div class="services-two-column-grid">
-                <div class="service-card">
-                    <div class="service-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80" alt="Graphic Designing">
+            <div class="compact-services-grid">
+                <!-- Service 1 -->
+                <div class="service-block">
+                    <div class="service-img-side">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80" alt="Graphic Designing">
                     </div>
-                    <div class="service-card-body">
-                        <h3 class="service-card-title">Graphic Designing</h3>
-                        <p class="service-card-desc">
-                            Crafting high-impact brand collateral, vector art, logo design, vector graphics, and marketing materials tailored to elevate brand visibility and audience engagement.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=800&q=80" alt="Web & UI Designing">
-                    </div>
-                    <div class="service-card-body">
-                        <h3 class="service-card-title">Web & UI Designing</h3>
-                        <p class="service-card-desc">
-                            Building clean, fully responsive web interfaces and user-focused digital systems. Focus on elegant typography, layout grid harmony, and seamless user interaction.
-                        </p>
+                    <div class="service-info-side">
+                        <h3 class="service-block-title">Graphic Designing</h3>
+                        <p class="service-block-desc">High-impact brand collateral, vector illustrations, logo identity, and promotional marketing graphics.</p>
                     </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Video Editing">
+                <!-- Service 2 -->
+                <div class="service-block">
+                    <div class="service-img-side">
+                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=600&q=80" alt="Web & UI Designing">
                     </div>
-                    <div class="service-card-body">
-                        <h3 class="service-card-title">Video Editing</h3>
-                        <p class="service-card-desc">
-                            Dynamic timing, audio sync, color correction, lower thirds, and smooth cuts for corporate promos, social reels, and multi-channel campaign content.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="AI Visuals">
-                    </div>
-                    <div class="service-card-body">
-                        <h3 class="service-card-title">AI Visuals</h3>
-                        <p class="service-card-desc">
-                            Generative digital imagery, hyper-detailed concept art, and high-fidelity creative artwork pushed beyond conventional digital design boundaries.
-                        </p>
+                    <div class="service-info-side">
+                        <h3 class="service-block-title">Web & UI Designing</h3>
+                        <p class="service-block-desc">Clean, fully responsive web interfaces, modern layouts, user experience, and interactive digital systems.</p>
                     </div>
                 </div>
 
-                <div class="service-card full-width-card">
-                    <div class="service-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=800&q=80" alt="AI Animation Videos">
+                <!-- Service 3 -->
+                <div class="service-block">
+                    <div class="service-img-side">
+                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=600&q=80" alt="Video Editing">
                     </div>
-                    <div class="service-card-body">
-                        <h3 class="service-card-title">AI Animation Videos</h3>
-                        <p class="service-card-desc">
-                            Bringing static elements into liquid motion with advanced generative animation sequences, cinematic visual storytelling, and futuristic motion art.
-                        </p>
+                    <div class="service-info-side">
+                        <h3 class="service-block-title">Video Editing</h3>
+                        <p class="service-block-desc">Dynamic timing, audio synchronization, lower thirds, color correction, and smooth social media edits.</p>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-block">
+                    <div class="service-img-side">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="AI Visuals">
+                    </div>
+                    <div class="service-info-side">
+                        <h3 class="service-block-title">AI Visuals</h3>
+                        <p class="service-block-desc">Generative digital artwork, concept art creation, surreal visuals, and high-fidelity prompt engineering.</p>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-block service-block-full">
+                    <div class="service-img-side">
+                        <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=600&q=80" alt="AI Animation Videos">
+                    </div>
+                    <div class="service-info-side">
+                        <h3 class="service-block-title">AI Animation Videos</h3>
+                        <p class="service-block-desc">Transforming static artwork into motion, liquid animations, cinematic storytelling, and futuristic reels.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MY PROJECTS SECTION -->
+    <!-- 6. MY PROJECTS SECTION (BEHANCE/INSTAGRAM CARD STYLE) -->
     <section id="projects" class="projects-section">
         <div class="container">
             <h2 class="section-title text-center">
@@ -339,7 +293,7 @@
                 </div>
             </div>
 
-            <div class="projects-grid" id="projectsGrid"></div>
+            <div class="behance-projects-grid" id="projectsGrid"></div>
 
             <div class="text-center load-more-box">
                 <button id="loadMoreBtn" class="btn btn-magenta">View More Projects <i class="fa-solid fa-chevron-down"></i></button>
@@ -347,7 +301,7 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
+    <!-- 7. GET IN TOUCH SECTION -->
     <section id="contact" class="contact-section">
         <div class="container">
             <h2 class="section-title text-center">
@@ -373,25 +327,22 @@
         </div>
     </section>
 
-    <!-- EXACT HORIZONTAL FOOTER (MATCHING IMAGE 292_4.JPG) -->
+    <!-- 8. EXACT HORIZONTAL FOOTER (MATCHING IMAGES 292_5.JPG & 416.JPG) -->
     <footer class="site-footer">
         <div class="footer-inline-container">
             <div class="footer-inline-row">
-                <!-- Column 1: Logo & Title -->
+                <!-- Column 1: Identity & Logo -->
                 <div class="footer-col footer-col-1">
                     <img src="mk.png" alt="Logo" class="footer-logo">
-                    <div class="footer-col-1-text">
-                        <span class="footer-brand-title">Muskan Kumari Portfolio</span>
-                        <span class="footer-brand-sub">Graphic & Web Designer</span>
-                    </div>
+                    <span class="footer-brand-title">Muskan Kumari Portfolio 2026 | Graphic & Web Designer</span>
                 </div>
 
-                <div class="footer-v-divider"></div>
+                <div class="footer-vertical-line"></div>
 
-                <!-- Column 2: Stay Connected -->
+                <!-- Column 2: Social Links -->
                 <div class="footer-col footer-col-2">
-                    <span class="footer-section-heading">Stay Connected</span>
-                    <div class="footer-social-icons">
+                    <span class="footer-connect-label">Stay Connected</span>
+                    <div class="footer-socials">
                         <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                         <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -399,20 +350,19 @@
                     </div>
                 </div>
 
-                <div class="footer-v-divider"></div>
+                <div class="footer-vertical-line"></div>
 
-                <!-- Column 3: Total Visitors Counter -->
+                <!-- Column 3: Visitor Counter -->
                 <div class="footer-col footer-col-3">
-                    <div class="visitor-counter-card">
-                        <span class="visitor-label">Total Visitors</span>
-                        <span class="visitor-number-white" id="visitCounter">0</span>
+                    <div class="minimal-counter-box">
+                        <span class="counter-label">TOTAL VISITORS</span>
+                        <span class="counter-number" id="visitCounter">0</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Bottom Copyright Bar -->
-            <div class="footer-bottom-single-line">
-                <p>Muskan Kumari Portfolio | 2026. All Rights Reserved.</p>
+            <div class="footer-bottom-line">
+                <p class="footer-copyright">Muskan Kumari Portfolio | 2026. All Rights Reserved.</p>
             </div>
         </div>
     </footer>

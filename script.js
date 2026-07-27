@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1. Mobile Hamburger Menu
+    // 1. Mobile Hamburger Menu Toggle
     const hamburger = document.getElementById("hamburger");
     const navMenu = document.querySelector(".nav-menu");
 
@@ -264,3 +264,4 @@ document.addEventListener("DOMContentLoaded", function () {
     handleVisitorCounter();
 
 });
+

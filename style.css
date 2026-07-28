@@ -9,12 +9,12 @@
 
 :root {
     --bg-white: #FFFFFF;
-    --text-black: #111111;
-    --accent-magenta: #e91e63; /* Bold Vivid Magenta Pink */
-    --accent-magenta-hover: #c2185b;
+    --text-black: #000000;
+    --accent-magenta: #d81b60; /* Bold Vivid Magenta */
+    --accent-magenta-hover: #b0124c;
     --card-border: #E8E8E8;
     --light-gray: #F8F9FA;
-    --footer-bg: #222a35; /* Exact Dark Charcoal/Navy Shade */
+    --footer-bg: #000000; /* Pure Jet Black Footer */
     --font-primary: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -123,7 +123,7 @@ body {
 }
 
 .nav-link {
-    color: #111111;
+    color: #000000;
     text-decoration: none;
     font-weight: 700;
     font-size: 0.95rem;
@@ -159,7 +159,7 @@ body {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background-color: #111111;
+    background-color: #000000;
     border-radius: 2px;
 }
 
@@ -215,12 +215,11 @@ body {
     margin-top: 25px;
 }
 
-/* SOFTWARE SKILLS SCROLLER (RIGHT BELOW HERO) */
+/* FILMORA 15 STYLE SKILLS MARQUEE */
 .software-marquee-section {
-    background-color: var(--bg-white);
+    background-color: #121212;
     padding: 25px 0;
     width: 100%;
-    border-bottom: 1px solid var(--card-border);
 }
 
 .marquee-bounded-container {
@@ -238,135 +237,136 @@ body {
 
 .marquee-track:hover { animation-play-state: paused; }
 
-.tool-card {
-    position: relative;
+.filmora-card {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    background-color: var(--accent-magenta);
-    color: #FFFFFF;
-    padding: 10px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.2);
+    gap: 12px;
+    background: linear-gradient(135deg, #1f1118 0%, #380b1e 100%);
+    border: 1px solid rgba(216, 27, 96, 0.4);
+    border-radius: 12px;
+    padding: 10px 18px;
     flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
-.tool-icon {
-    width: 24px;
-    height: 24px;
+.filmora-icon {
+    width: 32px;
+    height: 32px;
     object-fit: contain;
     background: #FFFFFF;
-    padding: 3px;
-    border-radius: 50%;
+    padding: 4px;
+    border-radius: 8px;
 }
 
-.text-tool-icon {
-    font-size: 1.2rem;
+.filmora-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.filmora-title {
+    font-weight: 800;
+    font-size: 0.9rem;
     color: #FFFFFF;
+    white-space: nowrap;
 }
 
-.tool-name { font-weight: 700; font-size: 0.88rem; color: #FFFFFF; white-space: nowrap; }
+.filmora-stars {
+    color: #FFD700;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
 
 @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
 
-/* ABOUT SECTION WITH SKILLS BOXES */
+/* ABOUT SECTION & 3 CARDS ROW */
 .about-section { background-color: var(--bg-white); }
-.about-content { max-width: 900px; }
-.about-bio { font-size: 1.2rem; font-weight: 300; color: #333333; line-height: 1.8; margin-bottom: 35px; }
+.about-content { max-width: 1000px; margin: 0 auto; }
+.about-bio { font-size: 1.2rem; font-weight: 300; color: #333333; line-height: 1.8; margin-bottom: 25px; }
+.about-buttons { display: flex; gap: 15px; margin-bottom: 40px; }
 
-.skills-detail-wrapper {
+.about-three-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-    margin-top: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
 }
 
-.skills-box {
+.about-presentation-card {
     background-color: var(--light-gray);
     border: 1px solid var(--card-border);
+    border-top: 4px solid var(--accent-magenta);
     border-radius: 10px;
-    padding: 24px;
-}
-
-.skills-box-heading {
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: var(--text-black);
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.skills-box-heading i { color: var(--accent-magenta); }
-
-.skills-tag-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.skill-tag {
-    background: #FFFFFF;
-    border: 1px solid #E0E0E0;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #444444;
-}
-
-.skill-tag.accent-tag {
-    background-color: rgba(233, 30, 99, 0.08);
-    border-color: rgba(233, 30, 99, 0.2);
-    color: var(--accent-magenta);
-}
-
-.about-buttons { display: flex; gap: 15px; }
-
-/* EDUCATION SECTION */
-.education-section { background-color: var(--light-gray); }
-
-.education-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.edu-card {
-    background-color: var(--bg-white);
-    border: 1px solid var(--card-border);
     padding: 22px;
-    border-radius: 10px;
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
     transition: transform 0.3s ease;
 }
 
-.edu-card:hover { transform: translateY(-4px); }
+.about-presentation-card:hover { transform: translateY(-5px); }
 
-.edu-icon-box {
-    background-color: rgba(233, 30, 99, 0.1);
+.card-head-icon {
+    background-color: rgba(216, 27, 96, 0.1);
     color: var(--accent-magenta);
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    flex-shrink: 0;
+    margin-bottom: 12px;
 }
 
-.edu-title { font-size: 1.05rem; font-weight: 800; color: var(--text-black); margin-bottom: 4px; }
-.edu-issuer { font-size: 0.85rem; color: #666; font-weight: 300; }
+.card-head-title {
+    font-size: 1rem;
+    font-weight: 900;
+    color: var(--text-black);
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+}
 
-/* OUR SERVICES (IMAGE 399_3.JPG 2-COLUMN COMPACT GRID) */
-.services-section { background-color: var(--bg-white); }
+.card-list-items {
+    list-style: none;
+}
+
+.card-list-items li {
+    font-size: 0.85rem;
+    color: #444;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-list-items li i {
+    color: var(--accent-magenta);
+    font-size: 0.75rem;
+}
+
+.card-pills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-pill {
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent-magenta);
+}
+
+.skill-pill.soft-pill {
+    color: var(--text-black);
+    background-color: #EFEFEF;
+    border-color: #DDD;
+}
+
+/* OUR SERVICES (EXACT MATCH TO IMAGE 399_4.JPG) */
+.services-section { background-color: var(--light-gray); }
 
 .compact-services-grid {
     display: grid;
@@ -375,7 +375,7 @@ body {
 }
 
 .service-block {
-    background-color: var(--light-gray);
+    background-color: var(--bg-white);
     border: 1px solid var(--card-border);
     border-radius: 10px;
     display: flex;
@@ -427,7 +427,7 @@ body {
 }
 
 /* MY PROJECTS (BEHANCE CARDS) */
-.projects-section { background-color: var(--light-gray); }
+.projects-section { background-color: var(--bg-white); }
 .filter-wrapper { width: 100%; overflow-x: auto; margin-bottom: 35px; padding-bottom: 8px; }
 .filter-tabs { display: flex; justify-content: center; gap: 12px; min-width: max-content; }
 
@@ -518,13 +518,13 @@ body {
 .load-more-box { margin-top: 40px; }
 
 /* CONTACT SECTION */
-.contact-section { background-color: var(--bg-white); }
-.contact-card { max-width: 580px; margin: 0 auto; background: var(--light-gray); padding: 35px; border-radius: 10px; border: 1px solid var(--card-border); }
+.contact-section { background-color: var(--light-gray); }
+.contact-card { max-width: 580px; margin: 0 auto; background: var(--bg-white); padding: 35px; border-radius: 10px; border: 1px solid var(--card-border); }
 .form-group { margin-bottom: 18px; }
 .form-group label { display: block; font-weight: 700; font-size: 0.88rem; margin-bottom: 6px; }
 .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #DDD; border-radius: 4px; font-family: var(--font-primary); }
 
-/* EXACT HORIZONTAL FOOTER (MATCHING IMAGE 292_6.JPG) */
+/* EXACT PURE BLACK HORIZONTAL FOOTER */
 .site-footer {
     background-color: var(--footer-bg);
     color: #FFFFFF;
@@ -552,24 +552,19 @@ body {
 }
 
 .footer-col-1 {
-    gap: 12px;
+    justify-content: flex-start;
 }
 
 .footer-logo {
-    height: 35px;
+    height: 40px;
     width: auto;
-}
-
-.footer-brand-title {
-    font-size: 0.88rem;
-    font-weight: 700;
-    color: #E5E7EB;
+    display: block;
 }
 
 /* Thin Crisp Vertical Divider Lines */
 .footer-vertical-line {
     width: 1px;
-    height: 32px;
+    height: 35px;
     background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -591,7 +586,7 @@ body {
 
 .footer-socials a {
     color: #FFFFFF;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.12);
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -612,10 +607,10 @@ body {
 }
 
 .minimal-counter-box {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.08);
     padding: 6px 16px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -675,6 +670,7 @@ body {
 
 /* RESPONSIVE MEDIA QUERIES */
 @media (max-width: 992px) {
+    .about-three-cards-grid { grid-template-columns: 1fr; }
     .compact-services-grid { grid-template-columns: 1fr; }
     .service-block-full { grid-column: span 1; max-width: 100%; }
     .footer-inline-row { flex-direction: column; text-align: center; gap: 12px; }

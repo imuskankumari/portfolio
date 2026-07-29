@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1. Mobile Hamburger Menu
+    // 1. Mobile Hamburger Menu Navigation Toggle
     const hamburger = document.getElementById("hamburger");
     const navMenu = document.querySelector(".nav-menu");
 
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // 3. MASTER REPOSITORY FILE MAPPING
+    // 3. MASTER REPOSITORY PROJECT FILE MAPPING
     const allProjectsData = [];
 
     // Graphic Design (g1.jpg - g20.jpg)
@@ -129,9 +129,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const card = document.createElement("div");
             
             if (item.type === "video") {
-                card.className = "behance-card reel-card";
+                card.className = "mockup-card reel-card";
             } else {
-                card.className = "behance-card";
+                card.className = "mockup-card";
             }
 
             let mediaHTML = "";
@@ -141,16 +141,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 mediaHTML = `<video controls playsinline preload="metadata"><source src="${item.src}" type="video/mp4"></video>`;
             }
 
+            let cardHeaderHTML = "";
+            if (item.type === "image") {
+                cardHeaderHTML = `
+                    <div class="mockup-card-header">
+                        <span class="mockup-header-title">Muskan Kumari | MK Designs</span>
+                        <div class="mockup-dots"><span></span><span></span><span></span></div>
+                    </div>
+                `;
+            }
+
             card.innerHTML = `
-                <div class="behance-media-box">
+                ${cardHeaderHTML}
+                <div class="mockup-media-box">
                     ${mediaHTML}
                 </div>
-                <div class="behance-info">
-                    <div class="behance-title-box">
-                        <span class="behance-tag">${item.tag}</span>
-                        <h3 class="behance-title">${item.title}</h3>
-                    </div>
-                    <span class="behance-author">By <strong>${item.author}</strong></span>
+                <div class="mockup-card-body">
+                    <span class="mockup-tag">${item.tag}</span>
+                    <h3 class="mockup-title">${item.title}</h3>
+                    <span class="mockup-author">By <strong>${item.author}</strong></span>
                 </div>
             `;
 
@@ -266,4 +275,3 @@ document.addEventListener("DOMContentLoaded", function () {
     handleVisitorCounter();
 
 });
-

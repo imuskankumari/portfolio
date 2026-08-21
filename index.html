@@ -10,15 +10,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- FontAwesome Icons for UI & Socials -->
+  <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   
-  <!-- Stylesheet -->
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ==================== 1. HEADER & NAVIGATION ==================== -->
+  <!-- ==================== 1. NAVIGATION BAR ==================== -->
   <header class="navbar" id="navbar">
     <div class="container nav-container">
       <a href="#home" class="nav-logo">Muskan <span>Kumari</span></a>
@@ -40,21 +40,20 @@
   <!-- ==================== 2. HERO SECTION ==================== -->
   <section class="hero-section" id="home">
     <div class="container hero-content">
-      <span class="hero-badge">Welcome to my portfolio</span>
       <h1 class="hero-title">Muskan Kumari</h1>
       <p class="hero-subtitle">Graphic & Web Designer | AI Creator | Video Editor</p>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
       </div>
     </div>
-    <!-- Decorative background elements -->
+    <!-- Ambient glowing background blobs -->
     <div class="hero-blob blob-1"></div>
     <div class="hero-blob blob-2"></div>
   </section>
 
-  <!-- ==================== 3. ABOUT & CREATIVE VISION ==================== -->
-  <section class="about-section section-padding" id="about">
+  <!-- ==================== 3. CREATIVE VISION & EXPERTISE (ABOUT) ==================== -->
+  <section class="section-padding" id="about">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">About Me</span>
@@ -62,20 +61,22 @@
         <div class="section-divider"></div>
       </div>
 
-      <div class="about-bio-card">
+      <!-- Exact Bio Paragraph Card -->
+      <div class="about-bio-box">
         <p class="about-bio-text">
           Professionally, I am a Graphic Designer, Web Designer, AI Creator and Video Editor. I am skilled in Adobe Photoshop, Illustrator, InDesign, CorelDRAW and Canva. I also build clean websites using HTML, CSS, JavaScript and WordPress. Additionally, I generate AI visuals and AI animation videos using Generative AI tools. I also do video editing and motion graphics using Filmora, VN and InShot.
         </p>
       </div>
 
-      <div class="about-grid">
-        <!-- Education & Certifications -->
-        <div class="info-card">
-          <div class="info-card-header">
-            <i class="fa-solid fa-graduation-cap icon-brand"></i>
+      <!-- 3 Horizontal Pill Cards -->
+      <div class="pill-cards-grid">
+        <!-- Card 1: Education & Certifications -->
+        <div class="pill-card">
+          <div class="pill-card-header">
+            <i class="fa-solid fa-graduation-cap"></i>
             <h3>Education & Certifications</h3>
           </div>
-          <div class="pills-container">
+          <div class="pills-wrap">
             <span class="pill">Senior Secondary (CBSE)</span>
             <span class="pill">BCC Certified</span>
             <span class="pill">CCC Certified</span>
@@ -83,54 +84,53 @@
           </div>
         </div>
 
-        <!-- Technical Skills -->
-        <div class="info-card">
-          <div class="info-card-header">
-            <i class="fa-solid fa-wand-magic-sparkles icon-brand"></i>
+        <!-- Card 2: Technical Skills -->
+        <div class="pill-card">
+          <div class="pill-card-header">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
             <h3>Technical Skills</h3>
           </div>
-          <div class="pills-container">
+          <div class="pills-wrap">
             <span class="pill">Graphic Design & Brand Identity</span>
-            <span class="pill">Vector Illustration</span>
-            <span class="pill">Web Design & UI</span>
-            <span class="pill">Social Media Posts</span>
-            <span class="pill">AI Visuals</span>
-            <span class="pill">AI Animation Videos</span>
-            <span class="pill">Video Editing</span>
+            <span class="pill">Vector Illustration Tracing & Logo Design</span>
+            <span class="pill">Social Media Post & Poster Design</span>
+            <span class="pill">Web Design & UI Layouts</span>
+            <span class="pill">AI Visuals & AI Animation Videos</span>
+            <span class="pill">Video Editing & 2D Motion Graphics</span>
           </div>
         </div>
 
-        <!-- Software Tools -->
-        <div class="info-card info-card-full">
-          <div class="info-card-header">
-            <i class="fa-solid fa-laptop-code icon-brand"></i>
+        <!-- Card 3: Software & Tools -->
+        <div class="pill-card">
+          <div class="pill-card-header">
+            <i class="fa-solid fa-laptop-code"></i>
             <h3>Software & Tools</h3>
           </div>
-          <div class="pills-container">
-            <span class="pill pill-software">Photoshop</span>
-            <span class="pill pill-software">Illustrator</span>
-            <span class="pill pill-software">InDesign</span>
-            <span class="pill pill-software">CorelDRAW</span>
-            <span class="pill pill-software">Canva</span>
-            <span class="pill pill-software">HTML5</span>
-            <span class="pill pill-software">CSS3</span>
-            <span class="pill pill-software">JavaScript</span>
-            <span class="pill pill-software">WordPress</span>
-            <span class="pill pill-software">Generative AI Tools</span>
-            <span class="pill pill-software">Filmora</span>
-            <span class="pill pill-software">VN</span>
-            <span class="pill pill-software">InShot</span>
+          <div class="pills-wrap">
+            <span class="pill pill-tool">Adobe Photoshop</span>
+            <span class="pill pill-tool">Illustrator</span>
+            <span class="pill pill-tool">InDesign</span>
+            <span class="pill pill-tool">CorelDRAW</span>
+            <span class="pill pill-tool">Canva</span>
+            <span class="pill pill-tool">HTML5</span>
+            <span class="pill pill-tool">CSS3</span>
+            <span class="pill pill-tool">JavaScript</span>
+            <span class="pill pill-tool">WordPress</span>
+            <span class="pill pill-tool">Generative AI Tools</span>
+            <span class="pill pill-tool">Filmora</span>
+            <span class="pill pill-tool">VN</span>
+            <span class="pill pill-tool">InShot</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 4. OUR SERVICES ==================== -->
-  <section class="services-section section-padding bg-alt" id="services">
+  <!-- ==================== 4. OUR SERVICES (4-COLUMN CSS GRID) ==================== -->
+  <section class="section-padding bg-alt" id="services">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">What I Offer</span>
+        <span class="section-tag">What I Do</span>
         <h2 class="section-title">OUR SERVICES</h2>
         <div class="section-divider"></div>
       </div>
@@ -138,63 +138,62 @@
       <div class="services-grid">
         <!-- Service 1 -->
         <div class="service-card">
-          <div class="service-icon-wrapper">
-            <i class="fa-solid fa-bezier-curve"></i>
+          <div class="card-img-container">
+            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80" alt="Graphic Designing" />
           </div>
-          <h3>Graphic Designing</h3>
-          <p>Compelling brand identities, vector illustrations, promotional flyers, brochures, and dynamic social media marketing assets.</p>
+          <div class="service-card-body">
+            <h3>Graphic Designing</h3>
+            <p>Brand identity, vector art, promotional posters, social media banners, and typography design.</p>
+          </div>
         </div>
 
         <!-- Service 2 -->
         <div class="service-card">
-          <div class="service-icon-wrapper">
-            <i class="fa-solid fa-code"></i>
+          <div class="card-img-container">
+            <img src="https://images.unsplash.com/photo-1581291518655-9523c932edcf?auto=format&fit=crop&w=600&q=80" alt="Web & UI Designing" />
           </div>
-          <h3>Web & UI Designing</h3>
-          <p>Modern, responsive, user-friendly websites and UI templates using clean semantic HTML5, CSS3, JavaScript, and custom WordPress.</p>
+          <div class="service-card-body">
+            <h3>Web & UI Designing</h3>
+            <p>Responsive, clean HTML/CSS/JS websites, modern UI layouts, and customizable WordPress builds.</p>
+          </div>
         </div>
 
         <!-- Service 3 -->
         <div class="service-card">
-          <div class="service-icon-wrapper">
-            <i class="fa-solid fa-clapperboard"></i>
+          <div class="card-img-container">
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=600&q=80" alt="Video Editing & Motion Graphics" />
           </div>
-          <h3>Video Editing & Motion Graphics</h3>
-          <p>Sleek cuts, seamless transitions, typography animations, and engaging short-form/long-form content tailored for modern media.</p>
+          <div class="service-card-body">
+            <h3>Video Editing & Motion Graphics</h3>
+            <p>Dynamic reels, transitions, color grading, and 2D motion graphics in Filmora, VN, and InShot.</p>
+          </div>
         </div>
 
         <!-- Service 4 -->
         <div class="service-card">
-          <div class="service-icon-wrapper">
-            <i class="fa-solid fa-image"></i>
+          <div class="card-img-container">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="AI Visuals & Animation Videos" />
           </div>
-          <h3>AI Visuals</h3>
-          <p>Next-generation high-resolution visual concept art, product mockups, and digital illustrations produced via modern Generative AI models.</p>
-        </div>
-
-        <!-- Service 5 -->
-        <div class="service-card">
-          <div class="service-icon-wrapper">
-            <i class="fa-solid fa-film"></i>
+          <div class="service-card-body">
+            <h3>AI Visuals & Animation Videos</h3>
+            <p>High-resolution Generative AI concept visuals, stylized character renders, and AI motion scenes.</p>
           </div>
-          <h3>AI Animation Videos</h3>
-          <p>Immersive generative AI motion videos, character animation concepts, and dynamic audio-visual storytelling assets.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 5. MY PROJECTS ==================== -->
-  <section class="projects-section section-padding" id="projects">
+  <!-- ==================== 5. MY PROJECTS (PORTFOLIO GRID) ==================== -->
+  <section class="section-padding" id="projects">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Portfolio Showcase</span>
+        <span class="section-tag">Portfolio</span>
         <h2 class="section-title">MY PROJECTS</h2>
         <div class="section-divider"></div>
       </div>
 
-      <!-- Filter Controls -->
-      <div class="project-filters">
+      <!-- Category Filter Buttons -->
+      <div class="filter-bar">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="graphic">Graphic Design</button>
         <button class="filter-btn" data-filter="web">Web Layouts</button>
@@ -202,97 +201,66 @@
         <button class="filter-btn" data-filter="ai-animation">AI Animation Videos</button>
       </div>
 
-      <!-- Project Cards Grid -->
+      <!-- Strict Projects Grid (4 Project Cards) -->
       <div class="projects-grid" id="projectsGrid">
-        <!-- Project 1: Graphic -->
+        <!-- Project 1 -->
         <div class="project-card" data-category="graphic">
-          <div class="project-image-box">
-            <div class="project-placeholder bg-graphic">
-              <i class="fa-solid fa-palette"></i>
-            </div>
-            <div class="project-overlay">
-              <span class="project-tag">Graphic Design</span>
-              <h4 class="project-name">Brand Identity & Package Design</h4>
-              <p class="project-desc">Complete branding suite with custom typography and vector logos.</p>
-            </div>
+          <div class="card-img-container">
+            <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80" alt="Sunset Desert Vector Art" />
+          </div>
+          <div class="project-card-body">
+            <span class="project-tag">Graphic Design</span>
+            <h4>Sunset Desert Vector Art</h4>
+            <p>Multi-layered desert landscape vector tracing and custom color grading.</p>
           </div>
         </div>
 
-        <!-- Project 2: Web -->
-        <div class="project-card" data-category="web">
-          <div class="project-image-box">
-            <div class="project-placeholder bg-web">
-              <i class="fa-solid fa-desktop"></i>
-            </div>
-            <div class="project-overlay">
-              <span class="project-tag">Web Layouts</span>
-              <h4 class="project-name">Modern SaaS Landing Page</h4>
-              <p class="project-desc">Responsive web layout built with modern HTML5, CSS Grid, and JS interactions.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3: AI Visuals -->
-        <div class="project-card" data-category="ai-visuals">
-          <div class="project-image-box">
-            <div class="project-placeholder bg-ai">
-              <i class="fa-solid fa-eye"></i>
-            </div>
-            <div class="project-overlay">
-              <span class="project-tag">AI Visuals</span>
-              <h4 class="project-name">Cyberpunk Concept Visuals</h4>
-              <p class="project-desc">High-detail generative environmental art and character concept renders.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4: AI Animation -->
-        <div class="project-card" data-category="ai-animation">
-          <div class="project-image-box">
-            <div class="project-placeholder bg-anim">
-              <i class="fa-solid fa-play"></i>
-            </div>
-            <div class="project-overlay">
-              <span class="project-tag">AI Animation Videos</span>
-              <h4 class="project-name">Futuristic World Animation</h4>
-              <p class="project-desc">Generative AI sequence synchronized with custom sound design and motion editing.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 5: Graphic -->
+        <!-- Project 2 -->
         <div class="project-card" data-category="graphic">
-          <div class="project-image-box">
-            <div class="project-placeholder bg-graphic">
-              <i class="fa-solid fa-bullhorn"></i>
-            </div>
-            <div class="project-overlay">
-              <span class="project-tag">Graphic Design</span>
-              <h4 class="project-name">Social Media Campaign Kit</h4>
-              <p class="project-desc">High-engagement banner and story templates tailored for Instagram and LinkedIn.</p>
-            </div>
+          <div class="card-img-container">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80" alt="Burger Promotional Banner" />
+          </div>
+          <div class="project-card-body">
+            <span class="project-tag">Graphic Design</span>
+            <h4>Burger Promotional Banner</h4>
+            <p>Fast-food advertising social banner created in Photoshop and Illustrator.</p>
           </div>
         </div>
 
-        <!-- Project 6: Web -->
+        <!-- Project 3 -->
         <div class="project-card" data-category="web">
-          <div class="project-image-box">
-            <div class="project-placeholder bg-web">
-              <i class="fa-brands fa-wordpress"></i>
-            </div>
-            <div class="project-overlay">
-              <span class="project-tag">Web Layouts</span>
-              <h4 class="project-name">Creative Studio WordPress Theme</h4>
-              <p class="project-desc">Custom responsive template optimized for speed, SEO, and visual portfolio showcase.</p>
-            </div>
+          <div class="card-img-container">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Web UI Layout #1" />
+          </div>
+          <div class="project-card-body">
+            <span class="project-tag">Web Layouts</span>
+            <h4>SaaS Analytics Dashboard UI</h4>
+            <p>Modern responsive CSS grid interface and component library design.</p>
           </div>
         </div>
+
+        <!-- Project 4 -->
+        <div class="project-card" data-category="web">
+          <div class="card-img-container">
+            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Web UI Layout #2" />
+          </div>
+          <div class="project-card-body">
+            <span class="project-tag">Web Layouts</span>
+            <h4>Creative Studio Website</h4>
+            <p>High-converting portfolio layout with smooth transitions and WordPress setup.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- View More CTA -->
+      <div class="projects-more-cta">
+        <a href="#contact" class="btn btn-primary">View More Projects</a>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 6. GET IN TOUCH ==================== -->
-  <section class="contact-section section-padding bg-alt" id="contact">
+  <!-- ==================== 6. GET IN TOUCH (CONTACT FORM & INFO) ==================== -->
+  <section class="section-padding bg-alt" id="contact">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Let's Connect</span>
@@ -300,68 +268,48 @@
         <div class="section-divider"></div>
       </div>
 
-      <div class="contact-wrapper">
-        <!-- Contact Information Info Box -->
-        <div class="contact-info-panel">
-          <h3>Contact Information</h3>
-          <p class="info-intro">Feel free to reach out for collaborations, freelance design projects, or custom creative requests!</p>
-
-          <div class="contact-item">
-            <div class="icon-circle">
-              <i class="fa-solid fa-location-dot"></i>
-            </div>
-            <div>
-              <span class="item-label">Location</span>
-              <p class="item-val">New Delhi, India</p>
-            </div>
+      <!-- Centered Card Container -->
+      <div class="contact-box-centered">
+        <!-- Direct Contact Information Pills -->
+        <div class="contact-meta-row">
+          <div class="contact-meta-pill">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>New Delhi, India</span>
           </div>
-
-          <div class="contact-item">
-            <div class="icon-circle">
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            <div>
-              <span class="item-label">Email</span>
-              <a href="mailto:muskankumari33300@gmail.com" class="item-val link-hover">muskankumari33300@gmail.com</a>
-            </div>
+          <div class="contact-meta-pill">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:muskankumari33300@gmail.com">muskankumari33300@gmail.com</a>
           </div>
-
-          <div class="contact-item">
-            <div class="icon-circle">
-              <i class="fa-solid fa-phone"></i>
-            </div>
-            <div>
-              <span class="item-label">Phone</span>
-              <a href="tel:+918810682518" class="item-val link-hover">+91 8810682518</a>
-            </div>
+          <div class="contact-meta-pill">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+918810682518">+91 8810682518</a>
           </div>
         </div>
 
         <!-- Contact Form -->
-        <div class="contact-form-panel">
-          <form id="contactForm" class="contact-form">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="Enter your full name" required />
-            </div>
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+          </div>
 
-            <div class="form-group">
-              <label for="email">Your Email</label>
-              <input type="email" id="email" name="email" placeholder="name@example.com" required />
-            </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="name@example.com" required />
+          </div>
 
-            <div class="form-group">
-              <label for="message">Your Message</label>
-              <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
-            </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+          </div>
 
-            <button type="submit" class="btn btn-primary btn-submit">
-              <span>Send Message</span>
-              <i class="fa-solid fa-paper-plane"></i>
-            </button>
-            <div id="formStatus" class="form-status"></div>
-          </form>
-        </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span>Send Message</span>
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+          
+          <div id="formStatus" class="form-status-msg"></div>
+        </form>
       </div>
     </div>
   </section>
@@ -369,25 +317,17 @@
   <!-- ==================== 7. FOOTER ==================== -->
   <footer class="footer">
     <div class="container footer-content">
-      <div class="footer-brand">
-        <h3>Muskan Kumari</h3>
-        <p>Graphic & Web Designer | AI Creator | Video Editor</p>
-      </div>
-
       <div class="footer-socials">
         <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
         <a href="https://behance.net" target="_blank" rel="noopener noreferrer" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
         <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
       </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Muskan Kumari. All Rights Reserved.</p>
-      </div>
+      <p class="footer-copyright">&copy; 2026 Muskan Kumari. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <!-- Link JavaScript -->
+  <!-- Main JavaScript File -->
   <script src="script.js"></script>
 </body>
 </html>

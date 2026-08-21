@@ -3,82 +3,674 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muskan Kumari | Portfolio</title>
+    <title>The Muskan Kumari | Graphic & Web Designer | AI Creator & Video Editor</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo"><img src="logo.png" alt="Logo"></div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="home" class="hero">
+    <!-- TOP NAVIGATION BAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <img src="logo.png" alt="Logo" class="brand-logo-img">
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="mobile-toggle" id="mobile-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO HEADER SECTION -->
+    <header id="home" class="hero-section">
         <video autoplay loop muted playsinline class="hero-bg-video">
             <source src="header.mp4" type="video/mp4">
         </video>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>The Muskan Kumari</h1>
-            <p>Graphic & Web Designer | AI Creator | Video Editor</p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn-primary">View Projects</a>
-                <a href="#contact" class="btn-secondary">Contact Me</a>
+            <div class="hero-badge">PORTFOLIO SHOWCASE</div>
+            <h1 class="hero-title">
+                <span class="hero-the">The</span> <span class="hero-name">Muskan Kumari</span>
+            </h1>
+            <p class="hero-subtitle">Graphic & Web Designer | AI Creator & Video Editor</p>
+            <div class="hero-cta-group">
+                <a href="#projects" class="btn btn-magenta">View Projects <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SOFTWARE SKILLS MARQUEE SCROLLER -->
+    <section class="skills-marquee-section">
+        <div class="marquee-track">
+            <!-- 20 Core Software Cards (Repeated for infinite continuous scrolling) -->
+            <div class="marquee-content">
+                <div class="skill-card">
+                    <img src="photoshop.png" alt="Photoshop">
+                    <span class="skill-name">Photoshop</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="illustrator.png" alt="Illustrator">
+                    <span class="skill-name">Illustrator</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="indesign.png" alt="InDesign">
+                    <span class="skill-name">InDesign</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="coreldraw.png" alt="CorelDraw">
+                    <span class="skill-name">CorelDraw</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="canva.png" alt="Canva">
+                    <span class="skill-name">Canva</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="html.png" alt="HTML5">
+                    <span class="skill-name">HTML5</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="css.png" alt="CSS3">
+                    <span class="skill-name">CSS3</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="javascript.png" alt="JavaScript">
+                    <span class="skill-name">JavaScript</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="wordpress.png" alt="WordPress">
+                    <span class="skill-name">WordPress</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="filmora.png" alt="Filmora">
+                    <span class="skill-name">Filmora</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="vn.png" alt="VN Editor">
+                    <span class="skill-name">VN Editor</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="inshot.png" alt="InShot">
+                    <span class="skill-name">InShot</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="word.png" alt="MS Word">
+                    <span class="skill-name">MS Word</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="excel.png" alt="MS Excel">
+                    <span class="skill-name">MS Excel</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="powerpoint.png" alt="PowerPoint">
+                    <span class="skill-name">PowerPoint</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="docs.png" alt="Google Docs">
+                    <span class="skill-name">Google Docs</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="sheets.png" alt="Google Sheets">
+                    <span class="skill-name">Google Sheets</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="slides.png" alt="Google Slides">
+                    <span class="skill-name">Google Slides</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="drive.png" alt="Google Drive">
+                    <span class="skill-name">Google Drive</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="sites.png" alt="Google Sites">
+                    <span class="skill-name">Google Sites</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+            </div>
+            <!-- Duplicate for Seamless Infinite Loop -->
+            <div class="marquee-content" aria-hidden="true">
+                <div class="skill-card">
+                    <img src="photoshop.png" alt="Photoshop">
+                    <span class="skill-name">Photoshop</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="illustrator.png" alt="Illustrator">
+                    <span class="skill-name">Illustrator</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="indesign.png" alt="InDesign">
+                    <span class="skill-name">InDesign</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="coreldraw.png" alt="CorelDraw">
+                    <span class="skill-name">CorelDraw</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="canva.png" alt="Canva">
+                    <span class="skill-name">Canva</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="html.png" alt="HTML5">
+                    <span class="skill-name">HTML5</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="css.png" alt="CSS3">
+                    <span class="skill-name">CSS3</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="javascript.png" alt="JavaScript">
+                    <span class="skill-name">JavaScript</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="wordpress.png" alt="WordPress">
+                    <span class="skill-name">WordPress</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="filmora.png" alt="Filmora">
+                    <span class="skill-name">Filmora</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="vn.png" alt="VN Editor">
+                    <span class="skill-name">VN Editor</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="inshot.png" alt="InShot">
+                    <span class="skill-name">InShot</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="word.png" alt="MS Word">
+                    <span class="skill-name">MS Word</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="excel.png" alt="MS Excel">
+                    <span class="skill-name">MS Excel</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="powerpoint.png" alt="PowerPoint">
+                    <span class="skill-name">PowerPoint</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="docs.png" alt="Google Docs">
+                    <span class="skill-name">Google Docs</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="sheets.png" alt="Google Sheets">
+                    <span class="skill-name">Google Sheets</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="slides.png" alt="Google Slides">
+                    <span class="skill-name">Google Slides</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="drive.png" alt="Google Drive">
+                    <span class="skill-name">Google Drive</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="skill-card">
+                    <img src="sites.png" alt="Google Sites">
+                    <span class="skill-name">Google Sites</span>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <h2>Creative Vision & Expertise</h2>
-        <p>Hi, I am Muskan Kumari from Delhi. A passionate Graphic & Web Designer, AI Creator, and Video Editor. I work professionally on branding, web layouts, and high-impact AI/Video content.</p>
-        
-        <div class="about-grid">
-            <div class="card"><h3>Education</h3><p>CBSE, BCC, CCC, DCA Certified</p></div>
-            <div class="card"><h3>Technical Skills</h3><p>Graphic Design, Web UI, Video Editing, AI Visuals</p></div>
-            <div class="card"><h3>Software Skills</h3><p>Adobe Suite, Canva, HTML/CSS/JS, WordPress, Google Apps</p></div>
+    <!-- ABOUT ME & 3 HORIZONTAL BLOG CARDS SECTION -->
+    <section id="about" class="section-container about-section">
+        <div class="section-header-center">
+            <span class="section-tag">ABOUT ME</span>
+            <h2 class="section-main-heading">CREATIVE VISION & EXPERTISE</h2>
+            <div class="heading-underline"></div>
+        </div>
+
+        <div class="bio-card-wrapper">
+            <p class="bio-paragraph">
+                A passionate Graphic & Web Designer. I work professionally as a Graphic Designer, Web Designer, AI Creator and Video Editor. I am skilled in Adobe Photoshop, Illustrator, InDesign, CorelDraw and Canva. I also build clean websites using HTML, CSS, JavaScript, WordPress and Google Sites. Additionally, I work as an AI Creator using Generative AI tools to generate AI visuals and AI animation videos. I also do video editing and motion graphics using Filmora, VN and InShot.
+            </p>
+            <div class="bio-actions">
+                <a href="#projects" class="btn btn-magenta">View Projects <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            </div>
+        </div>
+
+        <!-- 3 DEDICATED BLOG CARDS IN 1 HORIZONTAL ROW -->
+        <div class="three-blog-cards-grid">
+            <!-- Card 1: Technical Skills -->
+            <div class="blog-info-card">
+                <div class="card-top-header">
+                    <div class="card-icon-badge"><i class="fa-solid fa-star"></i></div>
+                    <h3>Technical Skills</h3>
+                </div>
+                <ul class="clean-bullet-list">
+                    <li><i class="fa-solid fa-check"></i> Graphic Design & Brand Identity</li>
+                    <li><i class="fa-solid fa-check"></i> Web Design & UI Layouts</li>
+                    <li><i class="fa-solid fa-check"></i> Vector Illustration Tracing & Logo Design</li>
+                    <li><i class="fa-solid fa-check"></i> Social Media Post & Poster Design</li>
+                    <li><i class="fa-solid fa-check"></i> AI Visuals & AI Animation Videos</li>
+                    <li><i class="fa-solid fa-check"></i> Video Editing & 2D Motion Graphics</li>
+                </ul>
+            </div>
+
+            <!-- Card 2: Software Skills -->
+            <div class="blog-info-card">
+                <div class="card-top-header">
+                    <div class="card-icon-badge"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>Software Skills</h3>
+                </div>
+                <div class="categorized-skills">
+                    <div class="skill-category">
+                        <strong>Graphic Design:</strong>
+                        <span>Adobe Photoshop, Illustrator, InDesign, CorelDraw, Canva</span>
+                    </div>
+                    <div class="skill-category">
+                        <strong>Web Technologies:</strong>
+                        <span>HTML, CSS, JavaScript, WordPress</span>
+                    </div>
+                    <div class="skill-category">
+                        <strong>AI Tools:</strong>
+                        <span>Generative AI Tools</span>
+                    </div>
+                    <div class="skill-category">
+                        <strong>Video Editing:</strong>
+                        <span>Filmora, VN, InShot</span>
+                    </div>
+                    <div class="skill-category">
+                        <strong>Google Workspace:</strong>
+                        <span>Google Sites, Google Forms, Docs, Sheets, Slides</span>
+                    </div>
+                    <div class="skill-category">
+                        <strong>Microsoft Office:</strong>
+                        <span>MS Word, MS Excel, MS PowerPoint</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Academic Education & Certifications -->
+            <div class="blog-info-card">
+                <div class="card-top-header">
+                    <div class="card-icon-badge"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>Education & Certifications</h3>
+                </div>
+                <ul class="clean-bullet-list edu-list">
+                    <li>
+                        <strong>Senior Secondary Education</strong>
+                        <span>From CBSE Board</span>
+                    </li>
+                    <li>
+                        <strong>Basic Computer Course (BCC)</strong>
+                        <span>Certified</span>
+                    </li>
+                    <li>
+                        <strong>Course on Computer Concepts (CCC)</strong>
+                        <span>Certified</span>
+                    </li>
+                    <li>
+                        <strong>Diploma In Computer Applications (DCA)</strong>
+                        <span>Certified</span>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <section id="services" class="services">
-        <h2>Our Services</h2>
-        <div class="services-container">
-            <div class="service-card"><img src="g1.jpg" alt="Graphic"><p>Graphic Designing</p></div>
-            <div class="service-card"><img src="g2.jpg" alt="Web"><p>Web & UI Designing</p></div>
-            <div class="service-card"><img src="g3.jpg" alt="Video"><p>Video Editing</p></div>
-            <div class="service-card"><img src="g4.jpg" alt="AI"><p>AI Visuals</p></div>
-            <div class="service-card"><img src="g5.jpg" alt="Animation"><p>AI Animation Videos</p></div>
+    <!-- OUR SERVICES (EXACT COMPACT 2-COLUMN GRID) -->
+    <section id="services" class="section-container services-section">
+        <div class="section-header-center">
+            <span class="section-tag">WHAT I OFFER</span>
+            <h2 class="section-main-heading">OUR SERVICES</h2>
+            <div class="heading-underline"></div>
+        </div>
+
+        <div class="services-two-column-grid">
+            <!-- Service 1 -->
+            <div class="service-box">
+                <div class="service-img-wrap">
+                    <img src="g1.jpg" alt="Graphic Designing">
+                </div>
+                <div class="service-info">
+                    <h4>Graphic Designing</h4>
+                    <p>High-impact brand identity, promotional posters, vector tracing, typography, and marketing visuals.</p>
+                </div>
+            </div>
+            <!-- Service 2 -->
+            <div class="service-box">
+                <div class="service-img-wrap">
+                    <img src="g7.jpg" alt="Web & UI Designing">
+                </div>
+                <div class="service-info">
+                    <h4>Web & UI Designing</h4>
+                    <p>Clean, fully responsive UI/UX websites built with HTML5, CSS3, JavaScript, and custom WordPress systems.</p>
+                </div>
+            </div>
+            <!-- Service 3 -->
+            <div class="service-box">
+                <div class="service-img-wrap">
+                    <img src="b1.png" alt="Video Editing">
+                </div>
+                <div class="service-info">
+                    <h4>Video Editing</h4>
+                    <p>Dynamic 2D motion graphics, commercial reels, color grading, audio sync, and modern transitions.</p>
+                </div>
+            </div>
+            <!-- Service 4 -->
+            <div class="service-box">
+                <div class="service-img-wrap">
+                    <img src="b2.png" alt="AI Visuals">
+                </div>
+                <div class="service-info">
+                    <h4>AI Visuals</h4>
+                    <p>Next-gen digital art, photorealistic product imagery, and visual concept designs powered by modern AI tools.</p>
+                </div>
+            </div>
+            <!-- Service 5 -->
+            <div class="service-box service-box-featured">
+                <div class="service-img-wrap">
+                    <img src="b5.png" alt="AI Animation Videos">
+                </div>
+                <div class="service-info">
+                    <h4>AI Animation Videos</h4>
+                    <p>Transforming complex digital prompts into cinematic storytelling, animated motion videos, and branding reels.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="projects" class="projects">
-        <h2>My Projects</h2>
-        <div class="project-container">
-            <div class="project-card"><img src="g1.jpg" alt="Project"></div>
-            <div class="project-card"><img src="g2.jpg" alt="Project"></div>
-            <div class="project-card"><img src="g3.jpg" alt="Project"></div>
+    <!-- MY PROJECTS (PORTFOLIO SECTION) -->
+    <section id="projects" class="section-container projects-section">
+        <div class="section-header-center">
+            <span class="section-tag">PORTFOLIO</span>
+            <h2 class="section-main-heading">MY PROJECTS</h2>
+            <div class="heading-underline"></div>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="project-filter-tabs">
+            <button class="filter-tab active" data-filter="all">All</button>
+            <button class="filter-tab" data-filter="graphic">Graphic Design</button>
+            <button class="filter-tab" data-filter="web">Web Layouts</button>
+            <button class="filter-tab" data-filter="ai">AI Visuals</button>
+            <button class="filter-tab" data-filter="reels">AI Animation & Reels</button>
+        </div>
+
+        <!-- Dynamic Grid Container -->
+        <div class="projects-master-grid" id="projects-grid">
+
+            <!-- GRAPHIC DESIGN ARTWORKS (g1.jpg to g20.jpg) -->
+            <!-- Item 1 -->
+            <div class="portfolio-item project-card-graphic" data-category="graphic">
+                <div class="mockup-header">
+                    <span class="mockup-title">MK Designs</span>
+                    <span class="mockup-dots"><i class="fa-solid fa-ellipsis"></i></span>
+                </div>
+                <div class="mockup-img-container">
+                    <img src="g1.jpg" alt="Graphic Artwork 1">
+                </div>
+                <div class="mockup-footer">
+                    <span class="project-tag">GRAPHIC DESIGN</span>
+                    <h5>Graphic Artwork #1</h5>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="portfolio-item project-card-graphic" data-category="graphic">
+                <div class="mockup-header">
+                    <span class="mockup-title">MK Designs</span>
+                    <span class="mockup-dots"><i class="fa-solid fa-ellipsis"></i></span>
+                </div>
+                <div class="mockup-img-container">
+                    <img src="g7.jpg" alt="Graphic Artwork 2">
+                </div>
+                <div class="mockup-footer">
+                    <span class="project-tag">GRAPHIC DESIGN</span>
+                    <h5>Graphic Artwork #2</h5>
+                </div>
+            </div>
+
+            <!-- Additional Graphic Items (g2 to g6, g8 to g20) -->
+            <div class="portfolio-item project-card-graphic" data-category="graphic">
+                <div class="mockup-header"><span class="mockup-title">MK Designs</span><span class="mockup-dots"><i class="fa-solid fa-ellipsis"></i></span></div>
+                <div class="mockup-img-container"><img src="b1.png" alt="Graphic Artwork 3"></div>
+                <div class="mockup-footer"><span class="project-tag">GRAPHIC DESIGN</span><h5>Graphic Artwork #3</h5></div>
+            </div>
+            <div class="portfolio-item project-card-graphic" data-category="graphic">
+                <div class="mockup-header"><span class="mockup-title">MK Designs</span><span class="mockup-dots"><i class="fa-solid fa-ellipsis"></i></span></div>
+                <div class="mockup-img-container"><img src="b2.png" alt="Graphic Artwork 4"></div>
+                <div class="mockup-footer"><span class="project-tag">GRAPHIC DESIGN</span><h5>Graphic Artwork #4</h5></div>
+            </div>
+            <div class="portfolio-item project-card-graphic extra-item" data-category="graphic">
+                <div class="mockup-header"><span class="mockup-title">MK Designs</span><span class="mockup-dots"><i class="fa-solid fa-ellipsis"></i></span></div>
+                <div class="mockup-img-container"><img src="b3.png" alt="Graphic Artwork 5"></div>
+                <div class="mockup-footer"><span class="project-tag">GRAPHIC DESIGN</span><h5>Graphic Artwork #5</h5></div>
+            </div>
+            <div class="portfolio-item project-card-graphic extra-item" data-category="graphic">
+                <div class="mockup-header"><span class="mockup-title">MK Designs</span><span class="mockup-dots"><i class="fa-solid fa-ellipsis"></i></span></div>
+                <div class="mockup-img-container"><img src="b4.png" alt="Graphic Artwork 6"></div>
+                <div class="mockup-footer"><span class="project-tag">GRAPHIC DESIGN</span><h5>Graphic Artwork #6</h5></div>
+            </div>
+
+            <!-- WEB DESIGN PROJECTS -->
+            <div class="portfolio-item project-card-web" data-category="web">
+                <div class="mockup-header"><span class="mockup-title">Web UI Layout</span><span class="mockup-dots"><i class="fa-solid fa-globe"></i></span></div>
+                <div class="mockup-img-container"><img src="b5.png" alt="Web UI Project 1"></div>
+                <div class="mockup-footer"><span class="project-tag">WEB & UI</span><h5>SaaS Dashboard UI Design</h5></div>
+            </div>
+            <div class="portfolio-item project-card-web" data-category="web">
+                <div class="mockup-header"><span class="mockup-title">Web UI Layout</span><span class="mockup-dots"><i class="fa-solid fa-globe"></i></span></div>
+                <div class="mockup-img-container"><img src="b6.png" alt="Web UI Project 2"></div>
+                <div class="mockup-footer"><span class="project-tag">WEB & UI</span><h5>Creative Agency Landing Page</h5></div>
+            </div>
+            <div class="portfolio-item project-card-web extra-item" data-category="web">
+                <div class="mockup-header"><span class="mockup-title">Web UI Layout</span><span class="mockup-dots"><i class="fa-solid fa-globe"></i></span></div>
+                <div class="mockup-img-container"><img src="b7.png" alt="Web UI Project 3"></div>
+                <div class="mockup-footer"><span class="project-tag">WEB & UI</span><h5>E-Commerce UI Kit</h5></div>
+            </div>
+
+            <!-- AI VISUALS -->
+            <div class="portfolio-item project-card-ai" data-category="ai">
+                <div class="mockup-header"><span class="mockup-title">AI Generative Art</span><span class="mockup-dots"><i class="fa-solid fa-wand-magic-sparkles"></i></span></div>
+                <div class="mockup-img-container"><img src="b8.png" alt="AI Visual 1"></div>
+                <div class="mockup-footer"><span class="project-tag">AI VISUALS</span><h5>Cinematic Concept Art</h5></div>
+            </div>
+            <div class="portfolio-item project-card-ai" data-category="ai">
+                <div class="mockup-header"><span class="mockup-title">AI Generative Art</span><span class="mockup-dots"><i class="fa-solid fa-wand-magic-sparkles"></i></span></div>
+                <div class="mockup-img-container"><img src="b9.png" alt="AI Visual 2"></div>
+                <div class="mockup-footer"><span class="project-tag">AI VISUALS</span><h5>Futuristic Character Art</h5></div>
+            </div>
+            <div class="portfolio-item project-card-ai extra-item" data-category="ai">
+                <div class="mockup-header"><span class="mockup-title">AI Generative Art</span><span class="mockup-dots"><i class="fa-solid fa-wand-magic-sparkles"></i></span></div>
+                <div class="mockup-img-container"><img src="b10.png" alt="AI Visual 3"></div>
+                <div class="mockup-footer"><span class="project-tag">AI VISUALS</span><h5>Surreal 3D Product Visual</h5></div>
+            </div>
+
+            <!-- REELS & AI ANIMATION VIDEOS (9:16 VERTICAL FRAMES) -->
+            <div class="portfolio-item project-card-reel" data-category="reels">
+                <div class="smartphone-frame">
+                    <video autoplay loop muted playsinline class="reel-video">
+                        <source src="r1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="reel-caption">
+                    <span class="project-tag">AI ANIMATION</span>
+                    <h5>Motion Graphic Reel #1</h5>
+                </div>
+            </div>
+
+            <div class="portfolio-item project-card-reel" data-category="reels">
+                <div class="smartphone-frame">
+                    <video autoplay loop muted playsinline class="reel-video">
+                        <source src="r2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="reel-caption">
+                    <span class="project-tag">AI ANIMATION</span>
+                    <h5>Commercial Animation Reel #2</h5>
+                </div>
+            </div>
+
+            <div class="portfolio-item project-card-reel extra-item" data-category="reels">
+                <div class="smartphone-frame">
+                    <video autoplay loop muted playsinline class="reel-video">
+                        <source src="r3.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="reel-caption">
+                    <span class="project-tag">AI ANIMATION</span>
+                    <h5>Cinematic Story Reel #3</h5>
+                </div>
+            </div>
+
+            <div class="portfolio-item project-card-reel extra-item" data-category="reels">
+                <div class="smartphone-frame">
+                    <video autoplay loop muted playsinline class="reel-video">
+                        <source src="r4.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="reel-caption">
+                    <span class="project-tag">AI ANIMATION</span>
+                    <h5>Short-Form Visual Cut #4</h5>
+                </div>
+            </div>
+            
+            <div class="portfolio-item project-card-reel extra-item" data-category="reels">
+                <div class="smartphone-frame">
+                    <video autoplay loop muted playsinline class="reel-video">
+                        <source src="r5.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="reel-caption">
+                    <span class="project-tag">AI ANIMATION</span>
+                    <h5>Social Reel #5</h5>
+                </div>
+            </div>
+
+            <div class="portfolio-item project-card-reel extra-item" data-category="reels">
+                <div class="smartphone-frame">
+                    <video autoplay loop muted playsinline class="reel-video">
+                        <source src="r6.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="reel-caption">
+                    <span class="project-tag">AI ANIMATION</span>
+                    <h5>Visual Sequence #6</h5>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- One-Click View More Action Button -->
+        <div class="view-more-container">
+            <button class="btn btn-magenta btn-expand-all" id="view-more-btn">
+                <span class="btn-text">View More Projects</span> <i class="fa-solid fa-angle-down"></i>
+            </button>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <h2>Get In Touch</h2>
-        <form>
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
-            <textarea placeholder="Your Message"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+    <!-- GET IN TOUCH (CONTACT FORM) -->
+    <section id="contact" class="section-container contact-section">
+        <div class="section-header-center">
+            <span class="section-tag">LET'S CONNECT</span>
+            <h2 class="section-main-heading">GET IN TOUCH</h2>
+            <div class="heading-underline"></div>
+        </div>
+
+        <div class="contact-card-box">
+            <div class="contact-quick-info">
+                <div class="info-pill"><i class="fa-solid fa-location-dot"></i> New Delhi, India</div>
+                <div class="info-pill"><i class="fa-solid fa-envelope"></i> muskankumari33300@gmail.com</div>
+                <div class="info-pill"><i class="fa-solid fa-phone"></i> +91 8810682518</div>
+            </div>
+
+            <form class="contact-form" id="contact-form" onsubmit="event.preventDefault(); alert('Thank you Muskan, message sent successfully!');">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Email</label>
+                    <input type="email" placeholder="name@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Message</label>
+                    <textarea rows="4" placeholder="Write your message here..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-magenta btn-full">
+                    Send Message <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Muskan Kumari Portfolio. All Rights Reserved.</p>
+    <!-- EXACT PURE BLACK FOOTER (STRICTLY NO VISITOR COUNTER) -->
+    <footer class="site-footer">
+        <div class="footer-main-row">
+            <div class="footer-left">
+                <img src="logo.png" alt="Logo" class="footer-logo-img">
+            </div>
+            <div class="footer-divider-vertical"></div>
+            <div class="footer-center-right">
+                <span class="stay-connected-text">Stay Connected</span>
+                <div class="footer-social-icons">
+                    <a href="https://www.youtube.com/@I.MuskanKumari" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/i.muskankumari" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/imuskankumari" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.behance.net/imuskankumari" target="_blank" title="Behance"><i class="fa-brands fa-behance"></i></a>
+                    <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-bar">
+            <p>Muskan Kumari Portfolio | 2026. All Rights Reserved.</p>
+        </div>
     </footer>
 
+    <!-- JAVASCRIPT LINK -->
     <script src="script.js"></script>
 </body>
 </html>

@@ -2,9 +2,9 @@
  * Muskan Kumari Portfolio - Interactive Scripts
  * Handles:
  * 1. Mobile Menu Toggle
- * 2. Sticky Navbar & Active Link Highlights
+ * 2. Sticky Navbar & Section Active Link Highlight
  * 3. Portfolio Category Filtering Logic
- * 4. Contact Form Submission (Client Mock)
+ * 4. Contact Form Simulated Submission
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close mobile menu when clicking any nav link
+    // Close menu when clicking any nav link
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('open');
@@ -37,24 +37,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ================= 2. NAVBAR SCROLL & ACTIVE LINK =================
+  // ================= 2. NAVBAR SCROLL & ACTIVE LINK HIGHLIGHT =================
   const navbar = document.getElementById('navbar');
   const sections = document.querySelectorAll('section[id]');
 
   window.addEventListener('scroll', () => {
     const scrollY = window.pageYOffset;
 
-    // Header styling on scroll
-    if (scrollY > 50) {
+    // Sticky header shadow
+    if (scrollY > 40) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
 
-    // Dynamic active link highlighting based on section visibility
+    // Dynamic active link highlighting on scroll
     sections.forEach(section => {
       const sectionHeight = section.offsetHeight;
-      const sectionTop = section.offsetTop - 100;
+      const sectionTop = section.offsetTop - 110;
       const sectionId = section.getAttribute('id');
       const currentLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
 
@@ -67,26 +67,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ================= 3. PROJECT CATEGORY FILTERING =================
+  // ================= 3. PORTFOLIO FILTERING LOGIC =================
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Toggle active state on buttons
+      // Set active state on button
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       const filterValue = btn.getAttribute('data-filter');
 
-      // Filter project cards
+      // Filter project cards matching category
       projectCards.forEach(card => {
         const cardCategory = card.getAttribute('data-category');
 
         if (filterValue === 'all' || filterValue === cardCategory) {
           card.classList.remove('hide');
-          // Add entrance animation effect
-          card.style.animation = 'fadeIn 0.4s ease forwards';
         } else {
           card.classList.add('hide');
         }
@@ -94,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ================= 4. CONTACT FORM HANDLER =================
+  // ================= 4. CONTACT FORM CLIENT SIMULATION =================
   const contactForm = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
 
@@ -107,31 +105,32 @@ document.addEventListener('DOMContentLoaded', () => {
       const message = document.getElementById('message').value.trim();
 
       if (!name || !email || !message) {
-        showStatus('Please fill in all fields.', 'error');
+        displayStatus('Please fill in all fields before sending.', 'error');
         return;
       }
 
-      // Simulate a submission process
-      showStatus('Sending message...', '');
+      displayStatus('Sending message...', '');
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       submitBtn.disabled = true;
 
+      // Mock network response delay
       setTimeout(() => {
-        showStatus('Thank you, Muskan will get back to you soon!', 'success');
+        displayStatus('Thank you! Your message has been sent successfully.', 'success');
         contactForm.reset();
         submitBtn.disabled = false;
 
         setTimeout(() => {
           formStatus.textContent = '';
-          formStatus.className = 'form-status';
+          formStatus.className = 'form-status-msg';
         }, 5000);
-      }, 1000);
+      }, 900);
     });
   }
 
-  function showStatus(message, type) {
+  function displayStatus(msg, type) {
     if (!formStatus) return;
-    formStatus.textContent = message;
-    formStatus.className = `form-status ${type}`;
+    formStatus.textContent = msg;
+    formStatus.className = `form-status-msg ${type}`;
   }
 });
+

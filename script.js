@@ -1,277 +1,137 @@
-document.addEventListener("DOMContentLoaded", function () {
+/**
+ * Muskan Kumari Portfolio - Interactive Scripts
+ * Handles:
+ * 1. Mobile Menu Toggle
+ * 2. Sticky Navbar & Active Link Highlights
+ * 3. Portfolio Category Filtering Logic
+ * 4. Contact Form Submission (Client Mock)
+ */
 
-    // 1. Mobile Hamburger Menu Navigation Toggle
-    const hamburger = document.getElementById("hamburger");
-    const navMenu = document.querySelector(".nav-menu");
+document.addEventListener('DOMContentLoaded', () => {
 
-    if (hamburger && navMenu) {
-        hamburger.addEventListener("click", function () {
-            navMenu.classList.toggle("active");
-        });
+  // ================= 1. MOBILE NAVIGATION TOGGLE =================
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+  const navLinks = document.querySelectorAll('.nav-link');
 
-        document.querySelectorAll(".nav-link").forEach(link => {
-            link.addEventListener("click", () => {
-                navMenu.classList.remove("active");
-            });
-        });
-    }
-
-    // 2. Active Header Navigation Link on Scroll
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-link");
-
-    window.addEventListener("scroll", () => {
-        let current = "";
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                current = section.getAttribute("id");
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove("active");
-            if (link.getAttribute("href") === "#" + current) {
-                link.classList.add("active");
-            }
-        });
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      const icon = navToggle.querySelector('i');
+      if (icon) {
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-xmark');
+      }
     });
 
-    // 3. MASTER REPOSITORY PROJECT FILE MAPPING
-    const allProjectsData = [];
-
-    // Graphic Design (g1.jpg - g20.jpg)
-    for (let i = 1; i <= 20; i++) {
-        allProjectsData.push({
-            id: `g_${i}`,
-            category: "graphic",
-            tag: "Graphic Design",
-            title: `Graphic Artwork #${i}`,
-            author: "MK Designs",
-            type: "image",
-            src: `g${i}.jpg`
-        });
-    }
-
-    // Web Layouts (w1.png - w10.png)
-    for (let i = 1; i <= 10; i++) {
-        allProjectsData.push({
-            id: `w_${i}`,
-            category: "web",
-            tag: "Web Layout",
-            title: `Web UI Layout #${i}`,
-            author: "MK Designs",
-            type: "image",
-            src: `w${i}.png`
-        });
-    }
-
-    // AI Visuals (v1.png - v10.png & b1.png - b10.png)
-    for (let i = 1; i <= 10; i++) {
-        allProjectsData.push({
-            id: `v_${i}`,
-            category: "ai-visuals",
-            tag: "AI Visuals",
-            title: `AI Concept Visual #${i}`,
-            author: "MK Designs",
-            type: "image",
-            src: `v${i}.png`
-        });
-    }
-    for (let i = 1; i <= 10; i++) {
-        allProjectsData.push({
-            id: `b_${i}`,
-            category: "ai-visuals",
-            tag: "AI Visuals",
-            title: `AI Visual Artwork #${i}`,
-            author: "MK Designs",
-            type: "image",
-            src: `b${i}.png`
-        });
-    }
-
-    // AI Animation Videos / Reels (r1.mp4 - r12.mp4)
-    for (let i = 1; i <= 12; i++) {
-        allProjectsData.push({
-            id: `r_${i}`,
-            category: "ai-animation",
-            tag: "AI Animation Videos",
-            title: `Vertical Reel #${i}`,
-            author: "MK Designs",
-            type: "video",
-            src: `r${i}.mp4`
-        });
-    }
-
-    // STATE VARIABLES FOR ONE-CLICK FULL LOAD
-    let currentFilter = "all";
-    let isExpanded = false;
-    const INITIAL_LIMIT = 6;
-
-    const projectsGrid = document.getElementById("projectsGrid");
-    const loadMoreBtn = document.getElementById("loadMoreBtn");
-
-    function getFilteredProjects() {
-        if (currentFilter === "all") {
-            return allProjectsData;
+    // Close mobile menu when clicking any nav link
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        const icon = navToggle.querySelector('i');
+        if (icon) {
+          icon.classList.add('fa-bars');
+          icon.classList.remove('fa-xmark');
         }
-        return allProjectsData.filter(item => item.category === currentFilter);
+      });
+    });
+  }
+
+  // ================= 2. NAVBAR SCROLL & ACTIVE LINK =================
+  const navbar = document.getElementById('navbar');
+  const sections = document.querySelectorAll('section[id]');
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset;
+
+    // Header styling on scroll
+    if (scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
     }
 
-    function renderProjects() {
-        const filtered = getFilteredProjects();
-        const itemsToRender = isExpanded ? filtered : filtered.slice(0, INITIAL_LIMIT);
+    // Dynamic active link highlighting based on section visibility
+    sections.forEach(section => {
+      const sectionHeight = section.offsetHeight;
+      const sectionTop = section.offsetTop - 100;
+      const sectionId = section.getAttribute('id');
+      const currentLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
 
-        projectsGrid.innerHTML = "";
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        if (currentLink) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          currentLink.classList.add('active');
+        }
+      }
+    });
+  });
 
-        itemsToRender.forEach(item => {
-            const card = document.createElement("div");
-            
-            if (item.type === "video") {
-                card.className = "mockup-card reel-card";
-            } else {
-                card.className = "mockup-card";
-            }
+  // ================= 3. PROJECT CATEGORY FILTERING =================
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
 
-            let mediaHTML = "";
-            if (item.type === "image") {
-                mediaHTML = `<img src="${item.src}" alt="${item.title}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=800&q=80'">`;
-            } else if (item.type === "video") {
-                mediaHTML = `<video controls playsinline preload="metadata"><source src="${item.src}" type="video/mp4"></video>`;
-            }
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Toggle active state on buttons
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-            let cardHeaderHTML = "";
-            if (item.type === "image") {
-                cardHeaderHTML = `
-                    <div class="mockup-card-header">
-                        <span class="mockup-header-title">Muskan Kumari | MK Designs</span>
-                        <div class="mockup-dots"><span></span><span></span><span></span></div>
-                    </div>
-                `;
-            }
+      const filterValue = btn.getAttribute('data-filter');
 
-            card.innerHTML = `
-                ${cardHeaderHTML}
-                <div class="mockup-media-box">
-                    ${mediaHTML}
-                </div>
-                <div class="mockup-card-body">
-                    <span class="mockup-tag">${item.tag}</span>
-                    <h3 class="mockup-title">${item.title}</h3>
-                    <span class="mockup-author">By <strong>${item.author}</strong></span>
-                </div>
-            `;
+      // Filter project cards
+      projectCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
 
-            card.addEventListener("click", (e) => {
-                if (e.target.tagName !== "VIDEO") {
-                    openLightbox(item);
-                }
-            });
-
-            projectsGrid.appendChild(card);
-        });
-
-        if (isExpanded || filtered.length <= INITIAL_LIMIT) {
-            loadMoreBtn.style.display = "none";
+        if (filterValue === 'all' || filterValue === cardCategory) {
+          card.classList.remove('hide');
+          // Add entrance animation effect
+          card.style.animation = 'fadeIn 0.4s ease forwards';
         } else {
-            loadMoreBtn.style.display = "inline-block";
+          card.classList.add('hide');
         }
-    }
-
-    renderProjects();
-
-    // Filter Buttons Handler
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    filterButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            filterButtons.forEach(btn => btn.classList.remove("active"));
-            button.classList.add("active");
-
-            currentFilter = button.getAttribute("data-filter");
-            isExpanded = false;
-            renderProjects();
-        });
+      });
     });
+  });
 
-    // ONE-CLICK VIEW MORE BUTTON HANDLER
-    if (loadMoreBtn) {
-        loadMoreBtn.addEventListener("click", () => {
-            isExpanded = true;
-            renderProjects();
-        });
-    }
+  // ================= 4. CONTACT FORM HANDLER =================
+  const contactForm = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
 
-    // LIGHTBOX POPUP LOGIC
-    const lightboxModal = document.getElementById("lightboxModal");
-    const lightboxContent = document.getElementById("lightboxContent");
-    const lightboxClose = document.getElementById("lightboxClose");
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-    function openLightbox(item) {
-        lightboxContent.innerHTML = "";
-        if (item.type === "image") {
-            const img = document.createElement("img");
-            img.src = item.src;
-            img.alt = item.title;
-            lightboxContent.appendChild(img);
-        } else if (item.type === "video") {
-            const video = document.createElement("video");
-            video.src = item.src;
-            video.controls = true;
-            video.autoplay = true;
-            lightboxContent.appendChild(video);
-        }
-        lightboxModal.classList.add("active");
-    }
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
 
-    if (lightboxClose) {
-        lightboxClose.addEventListener("click", () => {
-            lightboxModal.classList.remove("active");
-            lightboxContent.innerHTML = "";
-        });
-    }
+      if (!name || !email || !message) {
+        showStatus('Please fill in all fields.', 'error');
+        return;
+      }
 
-    if (lightboxModal) {
-        lightboxModal.addEventListener("click", (e) => {
-            if (e.target === lightboxModal) {
-                lightboxModal.classList.remove("active");
-                lightboxContent.innerHTML = "";
-            }
-        });
-    }
+      // Simulate a submission process
+      showStatus('Sending message...', '');
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
 
-    // SMART ADMIN-EXCLUDED VISITOR COUNTER
-    const counterElement = document.getElementById("visitCounter");
-    
-    function handleVisitorCounter() {
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get("admin") === "true") {
-            localStorage.setItem("portfolio_admin", "true");
-        }
+      setTimeout(() => {
+        showStatus('Thank you, Muskan will get back to you soon!', 'success');
+        contactForm.reset();
+        submitBtn.disabled = false;
 
-        const isAdmin = localStorage.getItem("portfolio_admin") === "true";
-        let storedVisits = parseInt(localStorage.getItem("total_unique_visits") || "0", 10);
+        setTimeout(() => {
+          formStatus.textContent = '';
+          formStatus.className = 'form-status';
+        }, 5000);
+      }, 1000);
+    });
+  }
 
-        if (isAdmin) {
-            if (counterElement) counterElement.textContent = storedVisits;
-            return;
-        }
-
-        const lastVisitTime = localStorage.getItem("last_visit_timestamp");
-        const now = new Date().getTime();
-        const TWENTY_FOUR_HOURS = 24 * 60 * 60 * 1000;
-
-        if (!lastVisitTime || (now - parseInt(lastVisitTime, 10)) > TWENTY_FOUR_HOURS) {
-            storedVisits += 1;
-            localStorage.setItem("total_unique_visits", storedVisits.toString());
-            localStorage.setItem("last_visit_timestamp", now.toString());
-        }
-
-        if (counterElement) {
-            counterElement.textContent = storedVisits;
-        }
-    }
-
-    handleVisitorCounter();
-
+  function showStatus(message, type) {
+    if (!formStatus) return;
+    formStatus.textContent = message;
+    formStatus.className = `form-status ${type}`;
+  }
 });

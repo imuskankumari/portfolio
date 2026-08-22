@@ -1,6 +1,6 @@
 /* ==========================================================
    2026 CLEAN PRODUCTION REBUILD - MUSKAN KUMARI
-   PURE CRISP WHITE (#FFFFFF), JET BLACK (#000000), VIVID MAGENTA (#e91e63)
+   PURE CRISP WHITE (#FFFFFF), SOLID JET BLACK (#000000), VIVID MAGENTA (#e91e63)
    ========================================================== */
 
 :root {
@@ -12,7 +12,7 @@
   --magenta: #e91e63;
   --magenta-hover: #d81557;
   --magenta-light: #fce4ec;
-  --footer-bg: #000000;
+  --footer-bg: #0a0a0c;
   --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
   --card-shadow-hover: 0 14px 32px rgba(233, 30, 99, 0.12);
   --radius-sm: 6px;
@@ -70,7 +70,7 @@ ul {
   padding: 80px 0;
 }
 
-/* SECTION TITLES (TWO-TONE HEADINGS) */
+/* SECTION HEADINGS (TWO-TONE) */
 .section-title {
   font-size: 2.2rem;
   font-weight: 800;
@@ -87,7 +87,7 @@ ul {
   color: var(--magenta);
 }
 
-/* RECTANGULAR PILL BUTTONS */
+/* RECTANGULAR BUTTONS */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -127,7 +127,7 @@ ul {
 }
 
 /* ==========================================================
-   TOP HEADER & NAVBAR
+   TOP HEADER & NAVIGATION
    ========================================================== */
 .main-header {
   position: fixed;
@@ -149,18 +149,14 @@ ul {
   justify-content: space-between;
 }
 
-.brand-logo, .footer-logo {
-  font-size: 1.5rem;
-  font-weight: 800;
+.brand-logo {
+  font-size: 1.6rem;
+  font-weight: 900;
   letter-spacing: -0.02em;
 }
 
 .logo-black {
   color: var(--text-black);
-}
-
-.logo-white {
-  color: #ffffff;
 }
 
 .logo-magenta {
@@ -210,7 +206,7 @@ ul {
 }
 
 /* ==========================================================
-   HERO HEADER (LOCKED 16:9 LANDSCAPE ASPECT RATIO)
+   HERO HEADER (EXACT 16:9 LANDSCAPE - ZERO FOGGY OVERLAY)
    ========================================================== */
 .hero-section {
   position: relative;
@@ -224,9 +220,8 @@ ul {
 .hero-video-container {
   position: relative;
   width: 100%;
-  max-width: 100%;
   aspect-ratio: 16 / 9;
-  max-height: 80vh;
+  max-height: 75vh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -246,16 +241,9 @@ ul {
   object-fit: cover;
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.72) 50%, rgba(255, 255, 255, 0.95) 100%);
-  z-index: 2;
-}
-
 .hero-content {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   text-align: center;
   max-width: 850px;
   padding: 0 24px;
@@ -268,12 +256,8 @@ ul {
   margin-bottom: 12px;
 }
 
-.hero-title-black {
+.hero-name {
   color: var(--text-black);
-}
-
-.hero-title-magenta {
-  color: var(--magenta);
 }
 
 .hero-subtitle {
@@ -313,7 +297,7 @@ ul {
 }
 
 /* ==========================================================
-   OUR SERVICES (2-COLUMN COMPACT BLOG CARDS)
+   OUR SERVICES (2-COLUMN GRID WITH ABSTRACT ILLUSTRATIONS)
    ========================================================== */
 .services-section {
   background-color: var(--bg-offwhite);
@@ -322,7 +306,7 @@ ul {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  gap: 24px;
 }
 
 .service-card {
@@ -336,7 +320,7 @@ ul {
   flex-direction: column;
 }
 
-.service-card-span {
+.service-card-wide {
   grid-column: span 2;
 }
 
@@ -382,40 +366,30 @@ ul {
 }
 
 /* ==========================================================
-   SOFTWARE SKILLS LARGE CAROUSEL SHOWCASE
+   CORE SOFTWARE (13 TOOLS ONLY - AUTO-SLIDING CAROUSEL)
    ========================================================== */
-.software-showcase-section {
+.software-carousel-section {
   background-color: var(--bg-white);
   padding-bottom: 90px;
 }
 
-.marquee-wrapper {
-  width: 100%;
+.carousel-viewport {
   overflow: hidden;
   position: relative;
-  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-}
-
-.marquee-track {
-  display: flex;
-  gap: 24px;
-  width: max-content;
-  animation: continuousScroll 35s linear infinite;
+  width: 100%;
   padding: 10px 0;
 }
 
-.marquee-track:hover {
-  animation-play-state: paused;
-}
-
-@keyframes continuousScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
 }
 
 .software-card {
-  width: 220px;
+  flex: 0 0 calc(25% - 15px); /* 4 cards per view on desktop */
+  min-width: 220px;
   background: var(--bg-white);
   padding: 28px 18px;
   border-radius: var(--radius-md);
@@ -443,7 +417,7 @@ ul {
   margin-bottom: 14px;
 }
 
-.software-icon {
+.software-icon-box img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -464,6 +438,28 @@ ul {
 .software-rating {
   font-size: 0.85rem;
   color: var(--magenta);
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.carousel-dot.active {
+  background: var(--magenta);
+  width: 24px;
+  border-radius: 10px;
 }
 
 /* ==========================================================
@@ -534,7 +530,6 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
 }
 
 .project-media-wrap img {
@@ -548,7 +543,7 @@ ul {
   transform: scale(1.02);
 }
 
-/* AI ANIMATION VIDEOS (COMPACT 9:16 VERTICAL SMARTPHONE TILES) */
+/* AI ANIMATION VIDEOS (COMPACT 9:16 VERTICAL SMARTPHONE FRAMES) */
 .project-item.video-project-item {
   justify-content: center;
 }
@@ -656,65 +651,52 @@ ul {
 }
 
 /* ==========================================================
-   ULTRA-SLIM PURE BLACK FOOTER
+   ULTRA-CLEAN ELEGANT DEEP BLACK FOOTER (CENTERED)
    ========================================================== */
 .slim-footer {
   background-color: var(--footer-bg);
   color: #ffffff;
-  padding: 12px 20px;
+  padding: 30px 20px;
+  text-align: center;
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: 600px;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  gap: 14px;
 }
 
-.footer-left .footer-logo {
-  font-size: 1.25rem;
-}
-
-.footer-social-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.stay-connected-text {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #aaaaaa;
+.footer-stay-connected {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ffffff;
 }
 
 .footer-social-links {
   display: flex;
-  gap: 14px;
+  justify-content: center;
+  gap: 18px;
 }
 
 .footer-social-links a {
   color: #ffffff;
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   transition: var(--transition);
 }
 
 .footer-social-links a:hover {
   color: var(--magenta);
-  transform: translateY(-2px);
-}
-
-.footer-bottom-line {
-  text-align: center;
-  padding-top: 6px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: 6px;
+  transform: translateY(-3px);
 }
 
 .copyright-text {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: #777777;
+  margin-top: 4px;
 }
 
 /* ==========================================================
@@ -723,6 +705,10 @@ ul {
 @media (max-width: 992px) {
   .hero-title {
     font-size: 2.8rem;
+  }
+
+  .software-card {
+    flex: 0 0 calc(33.333% - 14px);
   }
 }
 
@@ -769,18 +755,21 @@ ul {
     grid-template-columns: 1fr;
   }
 
-  .service-card-span {
+  .service-card-wide {
     grid-column: span 1;
+  }
+
+  .software-card {
+    flex: 0 0 calc(50% - 10px);
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
   }
-
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
 }
 
+@media (max-width: 480px) {
+  .software-card {
+    flex: 0 0 100%;
+  }
+}

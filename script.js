@@ -30,11 +30,78 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. SEAMLESS INFINITE MARQUEE CLONING
-  const marqueeTrack = document.getElementById('marqueeTrack');
-  if (marqueeTrack) {
-    const clone = marqueeTrack.innerHTML;
-    marqueeTrack.innerHTML += clone;
+  // 2. AUTO-SLIDING SOFTWARE CAROUSEL (13 TOOLS ONLY)
+  const carouselTrack = document.getElementById('carouselTrack');
+  const slides = document.querySelectorAll('.software-card');
+  const dotsContainer = document.getElementById('carouselDots');
+
+  if (carouselTrack && slides.length > 0) {
+    let currentIndex = 0;
+    let autoSlideTimer = null;
+
+    function getVisibleCount() {
+      if (window.innerWidth <= 480) return 1;
+      if (window.innerWidth <= 992) return 2;
+      if (window.innerWidth <= 1200) return 3;
+      return 4;
+    }
+
+    function renderDots() {
+      const visibleCount = getVisibleCount();
+      const totalSteps = Math.max(1, slides.length - visibleCount + 1);
+      
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < totalSteps; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('carousel-dot');
+        if (i === currentIndex) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+          currentIndex = i;
+          updateCarousel();
+          resetTimer();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateCarousel() {
+      const visibleCount = getVisibleCount();
+      const maxIndex = Math.max(0, slides.length - visibleCount);
+      if (currentIndex > maxIndex) currentIndex = 0;
+
+      const slideWidth = slides[0].offsetWidth + 20; // card width + gap
+      carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+      const dots = document.querySelectorAll('.carousel-dot');
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentIndex);
+      });
+    }
+
+    function startTimer() {
+      autoSlideTimer = setInterval(() => {
+        const visibleCount = getVisibleCount();
+        const maxIndex = Math.max(0, slides.length - visibleCount);
+        currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+        updateCarousel();
+      }, 3000);
+    }
+
+    function resetTimer() {
+      clearInterval(autoSlideTimer);
+      startTimer();
+    }
+
+    carouselTrack.addEventListener('mouseenter', () => clearInterval(autoSlideTimer));
+    carouselTrack.addEventListener('mouseleave', () => startTimer());
+
+    window.addEventListener('resize', () => {
+      renderDots();
+      updateCarousel();
+    });
+
+    renderDots();
+    startTimer();
   }
 
   // 3. PROJECTS 4-TAB SWITCHING & VIEW MORE EXPANSION
@@ -44,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let activeTab = 'graphic';
   let isExpanded = false;
-  const INITIAL_VISIBLE_COUNT = 4; // Initial visible items per tab
+  const INITIAL_VISIBLE_COUNT = 4; // Show initial 4 items per tab
 
   function filterProjects() {
     const filtered = projectItems.filter(item => item.dataset.category === activeTab);
@@ -147,4 +214,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-

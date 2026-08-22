@@ -1,5 +1,5 @@
 /* ==========================================================
-   2026 CLEAN PRODUCTION REBUILD - MUSKAN KUMARI
+   2026 CLEAN REBUILD - MUSKAN KUMARI
    PURE CRISP WHITE (#FFFFFF), SOLID JET BLACK (#000000), VIVID MAGENTA (#e91e63)
    ========================================================== */
 
@@ -7,7 +7,7 @@
   --bg-white: #ffffff;
   --bg-offwhite: #fbfbfb;
   --text-black: #000000;
-  --text-dark: #1b1b1b;
+  --text-dark: #1a1a1a;
   --text-muted: #555555;
   --magenta: #e91e63;
   --magenta-hover: #d81557;
@@ -16,8 +16,8 @@
   --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
   --card-shadow-hover: 0 14px 32px rgba(233, 30, 99, 0.12);
   --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
   --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -70,7 +70,7 @@ ul {
   padding: 80px 0;
 }
 
-/* SECTION HEADINGS (TWO-TONE) */
+/* TWO-TONE HEADINGS */
 .section-title {
   font-size: 2.2rem;
   font-weight: 800;
@@ -206,7 +206,7 @@ ul {
 }
 
 /* ==========================================================
-   HERO HEADER (EXACT 16:9 LANDSCAPE - ZERO FOGGY OVERLAY)
+   HERO HEADER (16:9 LANDSCAPE - ZERO FOGGY OVERLAY - NO "THE")
    ========================================================== */
 .hero-section {
   position: relative;
@@ -250,21 +250,18 @@ ul {
 }
 
 .hero-title {
-  font-size: 3.6rem;
-  font-weight: 800;
+  font-size: 3.8rem;
+  font-weight: 900;
   line-height: 1.15;
   margin-bottom: 12px;
-}
-
-.hero-name {
-  color: var(--text-black);
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: var(--text-muted);
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
 
 .hero-actions {
@@ -297,7 +294,7 @@ ul {
 }
 
 /* ==========================================================
-   OUR SERVICES (2-COLUMN GRID WITH ABSTRACT ILLUSTRATIONS)
+   OUR SERVICES (ENHANCED 2-COLUMN BALANCED GRID)
    ========================================================== */
 .services-section {
   background-color: var(--bg-offwhite);
@@ -318,10 +315,7 @@ ul {
   transition: var(--transition);
   display: flex;
   flex-direction: column;
-}
-
-.service-card-wide {
-  grid-column: span 2;
+  min-height: 380px; /* Enhanced substantial height */
 }
 
 .service-card:hover {
@@ -331,9 +325,11 @@ ul {
 
 .service-media-wrap {
   width: 100%;
-  height: 220px;
+  height: 200px; /* Tall and wide frame */
   background-color: #f5f5f5;
   overflow: hidden;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
 .service-media-wrap img {
@@ -348,125 +344,31 @@ ul {
 }
 
 .service-content {
-  padding: 24px;
+  padding: 26px 24px;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .service-name {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: var(--text-black);
   margin-bottom: 8px;
 }
 
 .service-desc {
-  font-size: 0.92rem;
+  font-size: 0.94rem;
   color: var(--text-muted);
   line-height: 1.6;
 }
 
 /* ==========================================================
-   CORE SOFTWARE (13 TOOLS ONLY - AUTO-SLIDING CAROUSEL)
-   ========================================================== */
-.software-carousel-section {
-  background-color: var(--bg-white);
-  padding-bottom: 90px;
-}
-
-.carousel-viewport {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  padding: 10px 0;
-}
-
-.carousel-track {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-  will-change: transform;
-}
-
-.software-card {
-  flex: 0 0 calc(25% - 15px); /* 4 cards per view on desktop */
-  min-width: 220px;
-  background: var(--bg-white);
-  padding: 28px 18px;
-  border-radius: var(--radius-md);
-  border: 1.5px solid var(--magenta-light);
-  box-shadow: var(--card-shadow);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: var(--transition);
-}
-
-.software-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--magenta);
-  box-shadow: var(--card-shadow-hover);
-}
-
-.software-icon-box {
-  width: 68px;
-  height: 68px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
-}
-
-.software-icon-box img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.fa-software-icon {
-  font-size: 2.4rem;
-  color: var(--magenta);
-}
-
-.software-title {
-  font-size: 0.96rem;
-  font-weight: 700;
-  color: var(--text-black);
-  margin-bottom: 6px;
-}
-
-.software-rating {
-  font-size: 0.85rem;
-  color: var(--magenta);
-}
-
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 24px;
-}
-
-.carousel-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #e0e0e0;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.carousel-dot.active {
-  background: var(--magenta);
-  width: 24px;
-  border-radius: 10px;
-}
-
-/* ==========================================================
-   MY PROJECTS (WIDE 2-COLUMN GRID, 4 EXTENDED TABS)
+   MY PROJECTS (EDGE-TO-EDGE 2-COLUMN GRID, 4 EXTENDED TABS)
    ========================================================== */
 .projects-section {
-  background-color: var(--bg-offwhite);
+  background-color: var(--bg-white);
 }
 
 .projects-tabs-nav {
@@ -535,7 +437,7 @@ ul {
 .project-media-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* COMPLETE ARTWORK VISIBILITY WITHOUT CROPPING */
+  object-fit: contain; /* Full complete artwork visibility with no blank side gaps */
   transition: transform 0.4s ease;
 }
 
@@ -590,10 +492,10 @@ ul {
 }
 
 /* ==========================================================
-   GET IN TOUCH (PURE CLEAN CONTACT FORM)
+   GET IN TOUCH (PURE CLEAN CONTACT FORM ONLY)
    ========================================================== */
 .contact-section {
-  background-color: var(--bg-white);
+  background-color: var(--bg-offwhite);
 }
 
 .contact-card-wrapper {
@@ -704,11 +606,7 @@ ul {
    ========================================================== */
 @media (max-width: 992px) {
   .hero-title {
-    font-size: 2.8rem;
-  }
-
-  .software-card {
-    flex: 0 0 calc(33.333% - 14px);
+    font-size: 3rem;
   }
 }
 
@@ -744,7 +642,7 @@ ul {
   }
 
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
 
   .hero-subtitle {
@@ -755,21 +653,7 @@ ul {
     grid-template-columns: 1fr;
   }
 
-  .service-card-wide {
-    grid-column: span 1;
-  }
-
-  .software-card {
-    flex: 0 0 calc(50% - 10px);
-  }
-
   .projects-grid {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .software-card {
-    flex: 0 0 100%;
   }
 }

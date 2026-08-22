@@ -1,102 +1,144 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Mobile Hamburger Toggle
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.querySelector(".nav-links");
+/**
+ * Muskan Kumari - Portfolio 2026 Production Scripts
+ */
+document.addEventListener('DOMContentLoaded', () => {
 
-  if (hamburger && navLinks) {
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
+  /* ------------------------------------------------------------------------
+     1. RESPONSIVE MOBILE NAVIGATION TOGGLE
+     ------------------------------------------------------------------------ */
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navMenu = document.getElementById('navMenu');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('is-active');
+      hamburgerBtn.classList.toggle('open');
     });
 
-    document.querySelectorAll(".nav-links a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('is-active');
+        hamburgerBtn.classList.remove('open');
       });
     });
   }
 
-  // Project Filtering & View More State Management
-  const tabButtons = document.querySelectorAll(".tab-btn");
-  const projectCards = Array.from(document.querySelectorAll(".projects-grid .project-card"));
-  const viewMoreBtn = document.getElementById("viewMoreBtn");
+  /* ------------------------------------------------------------------------
+     2. SOFTWARE MARQUEE INFINITE LOOP CONTROLLER
+     ------------------------------------------------------------------------ */
+  const marqueeTrack = document.getElementById('marqueeTrack');
+  if (marqueeTrack) {
+    let position = 0;
+    const speed = 0.75; // Pixels per frame
+    let isPaused = false;
 
-  let currentCategory = "all";
+    // Hover pause controls
+    marqueeTrack.addEventListener('mouseenter', () => { isPaused = true; });
+    marqueeTrack.addEventListener('mouseleave', () => { isPaused = false; });
+    marqueeTrack.addEventListener('touchstart', () => { isPaused = true; }, { passive: true });
+    marqueeTrack.addEventListener('touchend', () => { isPaused = false; });
+
+    function animateMarquee() {
+      if (!isPaused) {
+        position -= speed;
+        // Total half scroll width check for seamless restart
+        if (Math.abs(position) >= marqueeTrack.scrollWidth / 2) {
+          position = 0;
+        }
+        marqueeTrack.style.transform = `translateX(${position}px)`;
+      }
+      requestAnimationFrame(animateMarquee);
+    }
+    requestAnimationFrame(animateMarquee);
+  }
+
+  /* ------------------------------------------------------------------------
+     3. PROJECT CATEGORY FILTER & SINGLE-CLICK EXPANSION
+     ------------------------------------------------------------------------ */
+  const filterTabs = document.querySelectorAll('.filter-tab');
+  const projectCards = document.querySelectorAll('.project-card');
+  const viewMoreBtn = document.getElementById('viewMoreBtn');
+  const viewMoreContainer = document.getElementById('viewMoreContainer');
+
+  let currentCategory = 'all';
   let isExpanded = false;
-  const INITIAL_LIMIT = 6;
 
   function updateProjectVisibility() {
-    // Filter by active category
-    const matchingCards = projectCards.filter((card) => {
-      const category = card.getAttribute("data-category");
-      return currentCategory === "all" || category === currentCategory;
-    });
-
-    // Hide all cards first
     projectCards.forEach((card) => {
-      card.classList.add("is-hidden");
-    });
+      const cardCategory = card.getAttribute('data-cat');
+      const matchesCategory = (currentCategory === 'all' || cardCategory === currentCategory);
 
-    // Display appropriate cards based on expansion state
-    matchingCards.forEach((card, index) => {
-      if (isExpanded || index < INITIAL_LIMIT) {
-        card.classList.remove("is-hidden");
+      if (!matchesCategory) {
+        card.classList.add('filtered-out');
+      } else {
+        card.classList.remove('filtered-out');
+        
+        // If not expanded, keep items with .is-hidden hidden
+        if (!isExpanded && card.dataset.defaultHidden === 'true') {
+          card.classList.add('is-hidden');
+        } else {
+          card.classList.remove('is-hidden');
+        }
       }
     });
 
-    // Manage 'View More' Button Visibility & Text
-    if (matchingCards.length <= INITIAL_LIMIT) {
-      viewMoreBtn.style.display = "none";
+    // Toggle button visibility if all visible items are shown
+    if (isExpanded) {
+      if (viewMoreContainer) viewMoreContainer.style.display = 'none';
     } else {
-      viewMoreBtn.style.display = "inline-flex";
-      viewMoreBtn.innerHTML = isExpanded
-        ? 'Show Less Projects &uarr;'
-        : 'View More Projects &darr;';
+      if (viewMoreContainer) viewMoreContainer.style.display = 'block';
     }
   }
 
-  // Handle Tab Click
-  tabButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      tabButtons.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      currentCategory = btn.getAttribute("data-category");
-      isExpanded = false; // Reset to collapsed on category change
+  // Mark initially hidden cards
+  projectCards.forEach((card) => {
+    if (card.classList.contains('is-hidden')) {
+      card.dataset.defaultHidden = 'true';
+    }
+  });
+
+  // Filter Tab Switching
+  filterTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      filterTabs.forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
+      currentCategory = tab.getAttribute('data-category');
       updateProjectVisibility();
     });
   });
 
-  // Handle View More Click
+  // Single-Click View More
   if (viewMoreBtn) {
-    viewMoreBtn.addEventListener("click", () => {
-      isExpanded = !isExpanded;
-      updateProjectVisibility();
+    viewMoreBtn.addEventListener('click', () => {
+      isExpanded = true;
+      projectCards.forEach((card) => {
+        card.classList.remove('is-hidden');
+      });
+      if (viewMoreContainer) {
+        viewMoreContainer.style.display = 'none';
+      }
     });
   }
 
-  // Initialize Visibility
-  updateProjectVisibility();
-
-  // Video Autoplay/Pause On Hover for Video Reels
-  const videoCards = document.querySelectorAll(".video-card");
-  videoCards.forEach((card) => {
-    const video = card.querySelector("video");
-    if (video) {
-      card.addEventListener("mouseenter", () => {
-        video.play().catch(() => {});
-      });
-      card.addEventListener("mouseleave", () => {
-        video.pause();
-      });
-    }
+  /* ------------------------------------------------------------------------
+     4. SMOOTH SCROLL OFFSET FOR FIXED HEADER
+     ------------------------------------------------------------------------ */
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        const headerHeight = document.getElementById('navbar')?.offsetHeight || 70;
+        const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
   });
 
-  // Contact Form Submission Mock
-  const contactForm = document.getElementById("contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("Thank you! Your message has been sent successfully.");
-      contactForm.reset();
-    });
-  }
 });

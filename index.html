@@ -8,7 +8,7 @@
   <!-- Google Fonts & Font Awesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Core Stylesheet -->
@@ -28,7 +28,6 @@
           <li><a href="#hero" class="nav-link active">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#software" class="nav-link">Software</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
@@ -40,16 +39,14 @@
     </div>
   </header>
 
-  <!-- HERO HEADER (EXACT 16:9 LANDSCAPE - ZERO FOGGY OVERLAY - NO "THE") -->
+  <!-- HERO HEADER (EXACT 16:9 LANDSCAPE, NO WHITE OVERLAY, NO "MK", NO "THE") -->
   <section class="hero-section" id="hero">
     <div class="hero-video-container">
       <video autoplay loop muted playsinline class="hero-bg-video">
         <source src="header.mp4" type="video/mp4">
       </video>
       <div class="hero-content">
-        <h1 class="hero-title">
-          <span class="title-black">M</span><span class="title-magenta">K</span> <span class="hero-name">Muskan Kumari</span>
-        </h1>
+        <h1 class="hero-title"><span class="title-black">Muskan</span> <span class="title-magenta">Kumari</span></h1>
         <p class="hero-subtitle">Graphic &amp; Web Designer</p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">View Projects &rarr;</a>
@@ -75,7 +72,7 @@
     </div>
   </section>
 
-  <!-- OUR SERVICES (2-COLUMN GRID - PROFESSIONAL ABSTRACT ILLUSTRATIONS) -->
+  <!-- OUR SERVICES (ENHANCED HEIGHT 2-COLUMN BALANCED GRID) -->
   <section class="section services-section" id="services">
     <div class="container">
       <h2 class="section-title text-center">
@@ -127,10 +124,10 @@
           </div>
         </div>
 
-        <!-- 5. AI Animation Videos (Wide Card) -->
-        <div class="service-card service-card-wide">
+        <!-- 5. AI Animation Videos (Standard Single Column Width) -->
+        <div class="service-card">
           <div class="service-media-wrap">
-            <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1200&q=80" alt="AI Animation Videos" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1000&q=80" alt="AI Animation Videos" loading="lazy">
           </div>
           <div class="service-content">
             <h3 class="service-name">AI Animation Videos</h3>
@@ -141,139 +138,7 @@
     </div>
   </section>
 
-  <!-- CORE SOFTWARE (13 SOFTWARE ITEMS ONLY - AUTO-SLIDING CAROUSEL) -->
-  <section class="section software-carousel-section" id="software">
-    <div class="container">
-      <h2 class="section-title text-center">
-        <span class="title-black">CORE</span> <span class="title-magenta">SOFTWARE</span>
-      </h2>
-
-      <div class="carousel-viewport" id="carouselViewport">
-        <div class="carousel-track" id="carouselTrack">
-          <!-- 1. Adobe Photoshop -->
-          <div class="software-card">
-            <div class="software-icon-box">
-              <img src="photoshop.png" alt="Adobe Photoshop" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg'">
-            </div>
-            <h4 class="software-title">Adobe Photoshop</h4>
-            <span class="software-rating">★★★★★</span>
-          </div>
-
-          <!-- 2. Adobe Illustrator -->
-          <div class="software-card">
-            <div class="software-icon-box">
-              <img src="illustrator.png" alt="Adobe Illustrator" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg'">
-            </div>
-            <h4 class="software-title">Adobe Illustrator</h4>
-            <span class="software-rating">★★★★★</span>
-          </div>
-
-          <!-- 3. Adobe InDesign -->
-          <div class="software-card">
-            <div class="software-icon-box">
-              <img src="indesign.png" alt="Adobe InDesign" onerror="this.src='https://img.icons8.com/color/96/adobe-indesign.png'">
-            </div>
-            <h4 class="software-title">Adobe InDesign</h4>
-            <span class="software-rating">★★★★★</span>
-          </div>
-
-          <!-- 4. CorelDraw -->
-          <div class="software-card">
-            <div class="software-icon-box">
-              <img src="coreldraw.png" alt="CorelDraw" onerror="this.src='https://img.icons8.com/color/96/coreldraw.png'">
-            </div>
-            <h4 class="software-title">CorelDraw</h4>
-            <span class="software-rating">★★★★★</span>
-          </div>
-
-          <!-- 5. Canva -->
-          <div class="software-card">
-            <div class="software-icon-box">
-              <img src="canva.png" alt="Canva" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg'">
-            </div>
-            <h4 class="software-title">Canva</h4>
-            <span class="software-rating">★★★★★</span>
-          </div>
-
-          <!-- 6. Generative AI Tools -->
-          <div class="software-card">
-            <div class="software-icon-box">
-              <i class="fa-solid fa-wand-magic-sparkles fa-software-icon"></i>
-            </div>
-            <h4 class="software-title">Generative AI Tools</h4>
-            <span class="software-rating">★★★★★</span>
-          </div>
-
-          <!-- 7. Filmora -->
-          <div class="software-card">
-            <div class="software-icon-box">
-              <img src="filmora.png" alt="Filmora" onerror="this.src='https://img.icons8.com/color/96/filmora.png'">
-            </div>
-            <h4 class="software-title">Filmora</h4>
-            <span class="software-rating">★★★★★</span>
-          </div>
-
-          <!-- 8. VN -->
-          <div class="software-card">
-            <div class="software-icon-box">
-              <img src="vn.png" alt="VN" onerror="this.src='https://img.icons8.com/fluency/96/video-editing.png'">
-            </div>
-            <h4 class="software-title">VN</h4>
-            <span class="software-rating">★★★★★</span>
-          </div>
-
-          <!-- 9. InShot -->
-          <div class="software-card">
-            <div class="software-icon-box">
-              <img src="inshot.png" alt="InShot" onerror="this.src='https://img.icons8.com/fluency/96/video-editing.png'">
-            </div>
-            <h4 class="software-title">InShot</h4>
-            <span class="software-rating">★★★★★</span>
-          </div>
-
-          <!-- 10. HTML -->
-          <div class="software-card">
-            <div class="software-icon-box">
-              <img src="html.png" alt="HTML" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'">
-            </div>
-            <h4 class="software-title">HTML</h4>
-            <span class="software-rating">★★★★★</span>
-          </div>
-
-          <!-- 11. CSS -->
-          <div class="software-card">
-            <div class="software-icon-box">
-              <img src="css.png" alt="CSS" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'">
-            </div>
-            <h4 class="software-title">CSS</h4>
-            <span class="software-rating">★★★★★</span>
-          </div>
-
-          <!-- 12. JavaScript -->
-          <div class="software-card">
-            <div class="software-icon-box">
-              <img src="javascript.png" alt="JavaScript" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'">
-            </div>
-            <h4 class="software-title">JavaScript</h4>
-            <span class="software-rating">★★★★★</span>
-          </div>
-
-          <!-- 13. WordPress -->
-          <div class="software-card">
-            <div class="software-icon-box">
-              <img src="wordpress.png" alt="WordPress" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg'">
-            </div>
-            <h4 class="software-title">WordPress</h4>
-            <span class="software-rating">★★★★★</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="carousel-dots" id="carouselDots"></div>
-    </div>
-  </section>
-
-  <!-- MY PROJECTS (WIDE 2-COLUMN GRID, 4 DIRECT TABS & EDGE-TO-EDGE CARDS) -->
+  <!-- MY PROJECTS (EDGE-TO-EDGE 2-COLUMN GRID, 4 DIRECT TABS & ZERO WEIRD SIDE GAPS) -->
   <section class="section projects-section" id="projects">
     <div class="container">
       <h2 class="section-title text-center">
@@ -288,7 +153,7 @@
         <button class="tab-button" data-tab="videos">AI Animation Videos</button>
       </div>
 
-      <!-- Projects Grid Display -->
+      <!-- Projects Grid Display Area -->
       <div class="projects-grid" id="projectsGrid">
 
         <!-- GRAPHIC DESIGN (g1.jpg to g10.jpg) -->
@@ -652,7 +517,7 @@
     </div>
   </section>
 
-  <!-- GET IN TOUCH (PURE CLEAN CONTACT FORM ONLY) -->
+  <!-- GET IN TOUCH (PURE CLEAN CONTACT FORM ONLY - ZERO EXTRA INFO) -->
   <section class="section contact-section" id="contact">
     <div class="container">
       <h2 class="section-title text-center">

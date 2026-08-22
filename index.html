@@ -1,716 +1,991 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muskan Kumari | Graphic & Web Designer, AI Creator & Video Editor</title>
-  <meta name="description" content="Portfolio of Muskan Kumari - Graphic Designer, Web Designer, AI Creator, and Video Editor." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muskan Kumari | Graphic & Web Designer</title>
   
-  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Font & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <header class="site-header" id="navbar">
-    <div class="header-container">
+  <!-- NAVIGATION -->
+  <header class="main-header">
+    <div class="nav-container">
       <a href="#hero" class="brand-logo">
         <span class="logo-black">Muskan</span> <span class="logo-magenta">Kumari</span>
       </a>
 
-      <nav class="nav-menu" id="navMenu">
-        <ul class="nav-list">
-          <li><a href="#hero" class="nav-link">Home</a></li>
+      <nav class="navbar" id="navbar">
+        <ul class="nav-menu">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#contact" class="nav-link cta-nav">Get In Touch</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
-      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
       </button>
     </div>
   </header>
 
-  <!-- Hero Header Section with Video Background -->
+  <!-- HERO SECTION -->
   <section class="hero-section" id="hero">
     <video autoplay loop muted playsinline class="hero-bg-video">
-      <source src="header.mp4" type="video/mp4" />
+      <source src="header.mp4" type="video/mp4">
     </video>
-    <div class="hero-scrim"></div>
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-prefix">The</p>
-      <h1 class="hero-title"><span class="name-highlight">Muskan Kumari</span></h1>
-      <p class="hero-subtitle">Graphic &amp; Web Designer | AI Creator &amp; Video Editor</p>
-      <div class="hero-cta-group">
-        <a href="#projects" class="btn btn-pill-magenta">View Projects <i class="fa-solid fa-arrow-right"></i></a>
-        <a href="#contact" class="btn btn-outline-white">Get In Touch</a>
+      <h1 class="hero-title">
+        <span class="hero-title-black">The</span> <span class="hero-title-magenta">Muskan Kumari</span>
+      </h1>
+      <p class="hero-subtitle">Graphic & Web Designer</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects &rarr;</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
       </div>
     </div>
   </section>
 
-  <!-- Software Skills Marquee (Contained 1200px Scroller) -->
-  <section class="marquee-section">
-    <div class="marquee-bounded-container">
-      <div class="marquee-wrapper">
-        <div class="marquee-track" id="marqueeTrack">
-          <!-- Item 1: Photoshop -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="photoshop.png" alt="Photoshop" /></div>
-            <div class="skill-info"><span class="skill-name">Photoshop</span><span class="skill-stars">★★★★★</span></div>
+  <!-- SOFTWARE SKILLS MARQUEE -->
+  <section class="skills-scroller-section">
+    <div class="skills-scroller-container">
+      <div class="marquee-track" id="marquee-track">
+        <!-- Item 1 -->
+        <div class="skill-card">
+          <img src="photoshop.png" alt="Adobe Photoshop" class="skill-icon" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg'">
+          <div class="skill-info">
+            <span class="skill-name">Photoshop</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 2: Illustrator -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="illustrator.png" alt="Illustrator" /></div>
-            <div class="skill-info"><span class="skill-name">Illustrator</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 2 -->
+        <div class="skill-card">
+          <img src="illustrator.png" alt="Adobe Illustrator" class="skill-icon" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg'">
+          <div class="skill-info">
+            <span class="skill-name">Illustrator</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 3: InDesign -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="indesign.png" alt="InDesign" /></div>
-            <div class="skill-info"><span class="skill-name">InDesign</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 3 -->
+        <div class="skill-card">
+          <img src="indesign.png" alt="Adobe InDesign" class="skill-icon" onerror="this.src='https://img.icons8.com/color/48/adobe-indesign.png'">
+          <div class="skill-info">
+            <span class="skill-name">InDesign</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 4: CorelDraw -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="coreldraw.png" alt="CorelDraw" /></div>
-            <div class="skill-info"><span class="skill-name">CorelDraw</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 4 -->
+        <div class="skill-card">
+          <img src="coreldraw.png" alt="CorelDraw" class="skill-icon" onerror="this.src='https://img.icons8.com/color/48/coreldraw.png'">
+          <div class="skill-info">
+            <span class="skill-name">CorelDraw</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 5: Canva -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="canva.png" alt="Canva" /></div>
-            <div class="skill-info"><span class="skill-name">Canva</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 5 -->
+        <div class="skill-card">
+          <img src="canva.png" alt="Canva" class="skill-icon" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg'">
+          <div class="skill-info">
+            <span class="skill-name">Canva</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 6: Word -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="word.png" alt="MS Word" /></div>
-            <div class="skill-info"><span class="skill-name">MS Word</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 6 -->
+        <div class="skill-card">
+          <img src="word.png" alt="MS Word" class="skill-icon" onerror="this.src='https://img.icons8.com/color/48/microsoft-word-2019--v2.png'">
+          <div class="skill-info">
+            <span class="skill-name">MS Word</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 7: Excel -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="excel.png" alt="MS Excel" /></div>
-            <div class="skill-info"><span class="skill-name">MS Excel</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 7 -->
+        <div class="skill-card">
+          <img src="excel.png" alt="MS Excel" class="skill-icon" onerror="this.src='https://img.icons8.com/color/48/microsoft-excel-2019--v1.png'">
+          <div class="skill-info">
+            <span class="skill-name">MS Excel</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 8: PowerPoint -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="powerpoint.png" alt="MS PowerPoint" /></div>
-            <div class="skill-info"><span class="skill-name">PowerPoint</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 8 -->
+        <div class="skill-card">
+          <img src="powerpoint.png" alt="MS PowerPoint" class="skill-icon" onerror="this.src='https://img.icons8.com/color/48/microsoft-powerpoint-2019--v1.png'">
+          <div class="skill-info">
+            <span class="skill-name">PowerPoint</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 9: Docs -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="docs.png" alt="Google Docs" /></div>
-            <div class="skill-info"><span class="skill-name">Google Docs</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 9 -->
+        <div class="skill-card">
+          <img src="docs.png" alt="Google Docs" class="skill-icon" onerror="this.src='https://img.icons8.com/color/48/google-docs--v1.png'">
+          <div class="skill-info">
+            <span class="skill-name">Google Docs</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 10: Sheets -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="sheets.png" alt="Google Sheets" /></div>
-            <div class="skill-info"><span class="skill-name">Google Sheets</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 10 -->
+        <div class="skill-card">
+          <img src="sheets.png" alt="Google Sheets" class="skill-icon" onerror="this.src='https://img.icons8.com/color/48/google-sheets.png'">
+          <div class="skill-info">
+            <span class="skill-name">Sheets</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 11: Slides -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="slides.png" alt="Google Slides" /></div>
-            <div class="skill-info"><span class="skill-name">Google Slides</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 11 -->
+        <div class="skill-card">
+          <img src="slides.png" alt="Google Slides" class="skill-icon" onerror="this.src='https://img.icons8.com/color/48/google-slides.png'">
+          <div class="skill-info">
+            <span class="skill-name">Slides</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 12: Drive -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="drive.png" alt="Google Drive" /></div>
-            <div class="skill-info"><span class="skill-name">Google Drive</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 12 -->
+        <div class="skill-card">
+          <img src="drive.png" alt="Google Drive" class="skill-icon" onerror="this.src='https://img.icons8.com/color/48/google-drive--v2.png'">
+          <div class="skill-info">
+            <span class="skill-name">Drive</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 13: Sites -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="sites.png" alt="Google Sites" /></div>
-            <div class="skill-info"><span class="skill-name">Google Sites</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 13 -->
+        <div class="skill-card">
+          <img src="sites.png" alt="Google Sites" class="skill-icon" onerror="this.src='https://img.icons8.com/color/48/google-sites.png'">
+          <div class="skill-info">
+            <span class="skill-name">Sites</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 14: Filmora -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="filmora.png" alt="Filmora" /></div>
-            <div class="skill-info"><span class="skill-name">Filmora</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 14 -->
+        <div class="skill-card">
+          <img src="filmora.png" alt="Filmora" class="skill-icon" onerror="this.src='https://img.icons8.com/color/48/filmora.png'">
+          <div class="skill-info">
+            <span class="skill-name">Filmora</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 15: VN -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="vn.png" alt="VN Editor" /></div>
-            <div class="skill-info"><span class="skill-name">VN Editor</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 15 -->
+        <div class="skill-card">
+          <img src="vn.png" alt="VN Video Editor" class="skill-icon" onerror="this.src='https://img.icons8.com/fluency/48/video-editing.png'">
+          <div class="skill-info">
+            <span class="skill-name">VN Editor</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 16: InShot -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="inshot.png" alt="InShot" /></div>
-            <div class="skill-info"><span class="skill-name">InShot</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 16 -->
+        <div class="skill-card">
+          <img src="inshot.png" alt="InShot" class="skill-icon" onerror="this.src='https://img.icons8.com/fluency/48/video-editing.png'">
+          <div class="skill-info">
+            <span class="skill-name">InShot</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 17: WordPress -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="wordpress.png" alt="WordPress" /></div>
-            <div class="skill-info"><span class="skill-name">WordPress</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 17 -->
+        <div class="skill-card">
+          <img src="wordpress.png" alt="WordPress" class="skill-icon" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg'">
+          <div class="skill-info">
+            <span class="skill-name">WordPress</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 18: HTML -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="html.png" alt="HTML5" /></div>
-            <div class="skill-info"><span class="skill-name">HTML5</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 18 -->
+        <div class="skill-card">
+          <img src="html.png" alt="HTML5" class="skill-icon" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'">
+          <div class="skill-info">
+            <span class="skill-name">HTML5</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 19: CSS -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="css.png" alt="CSS3" /></div>
-            <div class="skill-info"><span class="skill-name">CSS3</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 19 -->
+        <div class="skill-card">
+          <img src="css.png" alt="CSS3" class="skill-icon" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'">
+          <div class="skill-info">
+            <span class="skill-name">CSS3</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
-          <!-- Item 20: JavaScript -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="javascript.png" alt="JavaScript" /></div>
-            <div class="skill-info"><span class="skill-name">JavaScript</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          
-          <!-- Cloned Duplicate items for seamless continuous looping -->
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="photoshop.png" alt="Photoshop" /></div>
-            <div class="skill-info"><span class="skill-name">Photoshop</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="illustrator.png" alt="Illustrator" /></div>
-            <div class="skill-info"><span class="skill-name">Illustrator</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="indesign.png" alt="InDesign" /></div>
-            <div class="skill-info"><span class="skill-name">InDesign</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="coreldraw.png" alt="CorelDraw" /></div>
-            <div class="skill-info"><span class="skill-name">CorelDraw</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="canva.png" alt="Canva" /></div>
-            <div class="skill-info"><span class="skill-name">Canva</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="word.png" alt="MS Word" /></div>
-            <div class="skill-info"><span class="skill-name">MS Word</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="excel.png" alt="MS Excel" /></div>
-            <div class="skill-info"><span class="skill-name">MS Excel</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="powerpoint.png" alt="MS PowerPoint" /></div>
-            <div class="skill-info"><span class="skill-name">PowerPoint</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="docs.png" alt="Google Docs" /></div>
-            <div class="skill-info"><span class="skill-name">Google Docs</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="sheets.png" alt="Google Sheets" /></div>
-            <div class="skill-info"><span class="skill-name">Google Sheets</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="slides.png" alt="Google Slides" /></div>
-            <div class="skill-info"><span class="skill-name">Google Slides</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="drive.png" alt="Google Drive" /></div>
-            <div class="skill-info"><span class="skill-name">Google Drive</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="sites.png" alt="Google Sites" /></div>
-            <div class="skill-info"><span class="skill-name">Google Sites</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="filmora.png" alt="Filmora" /></div>
-            <div class="skill-info"><span class="skill-name">Filmora</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="vn.png" alt="VN Editor" /></div>
-            <div class="skill-info"><span class="skill-name">VN Editor</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="inshot.png" alt="InShot" /></div>
-            <div class="skill-info"><span class="skill-name">InShot</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="wordpress.png" alt="WordPress" /></div>
-            <div class="skill-info"><span class="skill-name">WordPress</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="html.png" alt="HTML5" /></div>
-            <div class="skill-info"><span class="skill-name">HTML5</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="css.png" alt="CSS3" /></div>
-            <div class="skill-info"><span class="skill-name">CSS3</span><span class="skill-stars">★★★★★</span></div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-icon-frame"><img src="javascript.png" alt="JavaScript" /></div>
-            <div class="skill-info"><span class="skill-name">JavaScript</span><span class="skill-stars">★★★★★</span></div>
+        </div>
+        <!-- Item 20 -->
+        <div class="skill-card">
+          <img src="javascript.png" alt="JavaScript" class="skill-icon" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'">
+          <div class="skill-info">
+            <span class="skill-name">JavaScript</span>
+            <span class="skill-rating">★★★★★</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Me & Pinterest-Style Horizontal Blog Cards -->
-  <section class="about-section" id="about">
-    <div class="section-container">
-      <div class="about-header-block">
-        <span class="section-tag">ABOUT ME</span>
-        <h2 class="section-heading">CREATIVE VISION &amp; EXPERTISE</h2>
-        <p class="about-bio-text">
-          A passionate Graphic &amp; Web Designer. I work professionally as a Graphic Designer, Web Designer, AI Creator and Video Editor. I am skilled in Adobe Photoshop, Illustrator, InDesign, CorelDraw and Canva. I also build clean websites using HTML, CSS, JavaScript, WordPress and Google Sites. Additionally, I work as an AI Creator using Generative AI tools to generate AI visuals and AI animation videos. I also do video editing and motion graphics using Filmora, VN and InShot.
-        </p>
-        <div class="about-cta-row">
-          <a href="#projects" class="btn btn-pill-magenta">View Projects <i class="fa-solid fa-arrow-right"></i></a>
-          <a href="#contact" class="btn btn-outline-dark">Get In Touch</a>
-        </div>
-      </div>
+  <!-- ABOUT ME SECTION -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-black">CREATIVE VISION &amp;</span> <span class="title-magenta">EXPERTISE</span>
+      </h2>
+      <p class="about-lead">
+        A passionate Graphic &amp; Web Designer. I work professionally as a Graphic Designer, Web Designer, AI Creator and Video Editor. I am skilled in Adobe Photoshop, Illustrator, InDesign, CorelDraw and Canva. I also build clean websites using HTML, CSS, JavaScript, WordPress and Google Sites. Additionally, I work as an AI Creator using Generative AI tools to generate AI visuals and AI animation videos. I also do video editing and motion graphics using Filmora, VN and InShot.
+      </p>
 
-      <!-- 3 Pinterest-Style Cards in One Grid Row -->
-      <div class="pinterest-cards-grid">
-        <!-- Card 1: Education & Certifications -->
-        <div class="pinterest-card">
-          <div class="card-accent-badge"><i class="fa-solid fa-graduation-cap"></i></div>
-          <h3 class="card-title">EDUCATION &amp; CERTIFICATIONS</h3>
-          <ul class="card-list">
-            <li><i class="fa-solid fa-circle-check"></i> <strong>Senior Secondary</strong> — CBSE Board</li>
-            <li><i class="fa-solid fa-certificate"></i> <strong>BCC Certified</strong> (Basic Computer Concepts)</li>
-            <li><i class="fa-solid fa-certificate"></i> <strong>CCC Certified</strong> (Course on Computer Concepts)</li>
-            <li><i class="fa-solid fa-certificate"></i> <strong>DCA Certified</strong> (Diploma in Computer Applications)</li>
+      <!-- 3 Horizontal Blog / Qualification Cards -->
+      <div class="about-cards-grid">
+        <!-- Card 1 -->
+        <div class="info-card">
+          <div class="info-card-header">
+            <i class="fa-solid fa-graduation-cap card-icon"></i>
+            <h3>EDUCATION &amp; QUALIFICATIONS</h3>
+          </div>
+          <ul class="info-list">
+            <li><i class="fa-solid fa-check"></i> Senior Secondary Education (CBSE)</li>
+            <li><i class="fa-solid fa-check"></i> Basic Computer Course (BCC) Certified</li>
+            <li><i class="fa-solid fa-check"></i> Course on Computer Concepts (CCC) Certified</li>
+            <li><i class="fa-solid fa-check"></i> Diploma in Computer Applications (DCA) Certified</li>
           </ul>
         </div>
 
-        <!-- Card 2: Technical Skills -->
-        <div class="pinterest-card">
-          <div class="card-accent-badge"><i class="fa-solid fa-layer-group"></i></div>
-          <h3 class="card-title">TECHNICAL SKILLS</h3>
-          <ul class="card-list">
+        <!-- Card 2 -->
+        <div class="info-card">
+          <div class="info-card-header">
+            <i class="fa-solid fa-layer-group card-icon"></i>
+            <h3>TECHNICAL SKILLS</h3>
+          </div>
+          <ul class="info-list">
             <li><i class="fa-solid fa-check"></i> Graphic Design &amp; Brand Identity</li>
             <li><i class="fa-solid fa-check"></i> Web Design &amp; UI Layouts</li>
-            <li><i class="fa-solid fa-check"></i> Vector Tracing &amp; Logo Design</li>
-            <li><i class="fa-solid fa-check"></i> Social Media Posters &amp; Banners</li>
+            <li><i class="fa-solid fa-check"></i> Vector Illustration Tracing &amp; Logo Design</li>
+            <li><i class="fa-solid fa-check"></i> Social Media Post &amp; Poster Design</li>
             <li><i class="fa-solid fa-check"></i> AI Visuals &amp; AI Animation Videos</li>
             <li><i class="fa-solid fa-check"></i> Video Editing &amp; 2D Motion Graphics</li>
           </ul>
         </div>
 
-        <!-- Card 3: Software & Tools -->
-        <div class="pinterest-card">
-          <div class="card-accent-badge"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-          <h3 class="card-title">SOFTWARE &amp; TOOLS</h3>
-          <div class="card-tags-cloud">
-            <span class="tag-pill">Adobe Photoshop</span>
-            <span class="tag-pill">Adobe Illustrator</span>
-            <span class="tag-pill">Adobe InDesign</span>
-            <span class="tag-pill">CorelDraw</span>
-            <span class="tag-pill">Canva</span>
-            <span class="tag-pill">HTML &amp; CSS</span>
-            <span class="tag-pill">JavaScript</span>
-            <span class="tag-pill">WordPress</span>
-            <span class="tag-pill">Google Apps</span>
-            <span class="tag-pill">MS Office</span>
-            <span class="tag-pill">Filmora</span>
-            <span class="tag-pill">VN Editor</span>
-            <span class="tag-pill">InShot</span>
+        <!-- Card 3 -->
+        <div class="info-card">
+          <div class="info-card-header">
+            <i class="fa-solid fa-cubes card-icon"></i>
+            <h3>SOFTWARE SKILLS</h3>
           </div>
+          <ul class="info-list">
+            <li><i class="fa-solid fa-check"></i> Adobe Photoshop, Illustrator, InDesign</li>
+            <li><i class="fa-solid fa-check"></i> CorelDraw &amp; Canva</li>
+            <li><i class="fa-solid fa-check"></i> HTML5, CSS3 &amp; JavaScript</li>
+            <li><i class="fa-solid fa-check"></i> WordPress &amp; Google Sites</li>
+            <li><i class="fa-solid fa-check"></i> Google Workspace &amp; MS Office</li>
+            <li><i class="fa-solid fa-check"></i> Filmora, VN &amp; InShot</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Our Services (2-Column Side-by-Side Presentation Cards) -->
-  <section class="services-section" id="services">
-    <div class="section-container">
-      <div class="text-center-header">
-        <span class="section-tag">WHAT I OFFER</span>
-        <h2 class="section-heading">OUR SERVICES</h2>
-        <p class="section-subtext">Comprehensive creative solutions engineered with precision, artistic flair, and modern digital standards.</p>
-      </div>
+  <!-- OUR SERVICES SECTION -->
+  <section class="section services-section" id="services">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-black">OUR</span> <span class="title-magenta">SERVICES</span>
+      </h2>
 
       <div class="services-grid">
         <!-- Service 1 -->
-        <div class="service-box">
-          <div class="service-header">
-            <div class="service-num">01</div>
-            <div class="service-icon"><i class="fa-solid fa-pen-nib"></i></div>
+        <div class="service-card">
+          <div class="service-preview">
+            <img src="g1.jpg" alt="Graphic Design" onerror="this.src='https://picsum.photos/seed/design/600/400'">
           </div>
-          <h3 class="service-title">Graphic Designing</h3>
-          <p class="service-desc">Complete branding, high-precision vector art, corporate logo identities, stationery kits, advertising flyers, brochures, and visual marketing assets.</p>
+          <div class="service-content">
+            <h3 class="service-name">Graphic Design</h3>
+            <p class="service-desc">Crafting high-impact brand collateral, vector illustrations, logo identity, and professional marketing visuals.</p>
+          </div>
         </div>
 
         <!-- Service 2 -->
-        <div class="service-box">
-          <div class="service-header">
-            <div class="service-num">02</div>
-            <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+        <div class="service-card">
+          <div class="service-preview">
+            <img src="w1.jpg" alt="Web Design" onerror="this.src='https://picsum.photos/seed/web/600/400'">
           </div>
-          <h3 class="service-title">Web &amp; UI Designing</h3>
-          <p class="service-desc">Fully responsive layouts, modern interactive UI/UX architectures, clean semantic HTML5, CSS3, JavaScript coding, and customized WordPress websites.</p>
+          <div class="service-content">
+            <h3 class="service-name">Web Design</h3>
+            <p class="service-desc">Developing responsive, pixel-perfect digital layouts and clean websites with modern UI/UX focus.</p>
+          </div>
         </div>
 
         <!-- Service 3 -->
-        <div class="service-box">
-          <div class="service-header">
-            <div class="service-num">03</div>
-            <div class="service-icon"><i class="fa-solid fa-film"></i></div>
+        <div class="service-card">
+          <div class="service-preview">
+            <img src="b1.png" alt="AI Projects" onerror="this.src='https://picsum.photos/seed/aiproj/600/400'">
           </div>
-          <h3 class="service-title">Video Editing</h3>
-          <p class="service-desc">Dynamic cinematic transitions, precise audio synchronizations, professional color grading, YouTube edits, short-form reels, and motion text overlays.</p>
+          <div class="service-content">
+            <h3 class="service-name">AI Projects</h3>
+            <p class="service-desc">Generative AI workflows to conceptualize futuristic visuals, prompt synthesis, and hyper-detailed digital art.</p>
+          </div>
         </div>
 
         <!-- Service 4 -->
-        <div class="service-box">
-          <div class="service-header">
-            <div class="service-num">04</div>
-            <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <div class="service-card">
+          <div class="service-preview">
+            <img src="b2.png" alt="AI Animation Videos" onerror="this.src='https://picsum.photos/seed/aianim/600/400'">
           </div>
-          <h3 class="service-title">AI Visuals</h3>
-          <p class="service-desc">State-of-the-art Generative AI concept art, hyper-realistic product visualizations, futuristic illustrations, and surreal artistic imagery.</p>
+          <div class="service-content">
+            <h3 class="service-name">AI Animation Videos</h3>
+            <p class="service-desc">Transforming static concepts into motion-driven cinematic AI video narratives with high fidelity.</p>
+          </div>
         </div>
 
         <!-- Service 5 -->
-        <div class="service-box service-box-wide">
-          <div class="service-header">
-            <div class="service-num">05</div>
-            <div class="service-icon"><i class="fa-solid fa-video"></i></div>
+        <div class="service-card">
+          <div class="service-preview">
+            <img src="g2.jpg" alt="Motion Graphics" onerror="this.src='https://picsum.photos/seed/motion/600/400'">
           </div>
-          <h3 class="service-title">AI Animation Videos</h3>
-          <p class="service-desc">Fluid liquid 3D motions, futuristic AI visual reels, generative storytelling clips, and high-impact social media short video productions.</p>
+          <div class="service-content">
+            <h3 class="service-name">Motion Graphics</h3>
+            <p class="service-desc">Engaging 2D animations, title cards, typography motion, and visual transitions that elevate storytelling.</p>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card">
+          <div class="service-preview">
+            <img src="g3.jpg" alt="Video Editing" onerror="this.src='https://picsum.photos/seed/video/600/400'">
+          </div>
+          <div class="service-content">
+            <h3 class="service-name">Video Editing</h3>
+            <p class="service-desc">Seamless narrative cuts, precise color grading, pacing, and multi-format audio mastering using premier tools.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- My Projects (Exact Repo Mapping & Zero Image Cropping) -->
-  <section class="projects-section" id="projects">
-    <div class="section-container">
-      <div class="text-center-header">
-        <span class="section-tag">PORTFOLIO</span>
-        <h2 class="section-heading">MY PROJECTS</h2>
-        <p class="section-subtext">Explore my curated collection of graphic artworks, UI layouts, AI artworks, and motion reels.</p>
+  <!-- MY PROJECTS SECTION -->
+  <section class="section projects-section" id="projects">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-black">MY</span> <span class="title-magenta">PROJECTS</span>
+      </h2>
+
+      <!-- Main Filter Tabs -->
+      <div class="project-tabs-container">
+        <button class="tab-btn active" data-tab="all">All</button>
+        <button class="tab-btn" data-tab="graphic">Graphic Design</button>
+        <button class="tab-btn" data-tab="web">Web Design</button>
+        <button class="tab-btn" data-tab="ai">AI Projects</button>
       </div>
 
-      <!-- Category Filter Tabs -->
-      <div class="filter-tabs-container">
-        <button class="filter-tab active" data-category="all">All Works</button>
-        <button class="filter-tab" data-category="graphic">Graphic Design</button>
-        <button class="filter-tab" data-category="web">Web Layouts</button>
-        <button class="filter-tab" data-category="ai-visuals">AI Visuals</button>
-        <button class="filter-tab" data-category="ai-videos">AI Animation Videos</button>
-      </div>
-
-      <!-- Projects Dynamic Grid -->
-      <div class="projects-grid" id="projectsGrid">
-        
-        <!-- Graphic Design Items (g1.jpg to g20.jpg) -->
-        <div class="project-card" data-cat="graphic">
-          <div class="project-img-holder"><img src="g1.jpg" alt="Graphic Design Project 1" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Brand Poster 01</h4></div>
-        </div>
-        <div class="project-card" data-cat="graphic">
-          <div class="project-img-holder"><img src="g2.jpg" alt="Graphic Design Project 2" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Vector Identity 02</h4></div>
-        </div>
-        <div class="project-card" data-cat="graphic">
-          <div class="project-img-holder"><img src="g3.jpg" alt="Graphic Design Project 3" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Marketing Artwork 03</h4></div>
-        </div>
-        <div class="project-card" data-cat="graphic">
-          <div class="project-img-holder"><img src="g4.jpg" alt="Graphic Design Project 4" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Social Media Post 04</h4></div>
-        </div>
-        <div class="project-card" data-cat="graphic">
-          <div class="project-img-holder"><img src="g5.jpg" alt="Graphic Design Project 5" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Advertising Banner 05</h4></div>
-        </div>
-        <div class="project-card" data-cat="graphic">
-          <div class="project-img-holder"><img src="g6.jpg" alt="Graphic Design Project 6" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Event Flyer 06</h4></div>
-        </div>
-        <div class="project-card is-hidden" data-cat="graphic">
-          <div class="project-img-holder"><img src="g7.jpg" alt="Graphic Design Project 7" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Print Layout 07</h4></div>
-        </div>
-        <div class="project-card is-hidden" data-cat="graphic">
-          <div class="project-img-holder"><img src="g8.jpg" alt="Graphic Design Project 8" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Vector Illustration 08</h4></div>
-        </div>
-        <div class="project-card is-hidden" data-cat="graphic">
-          <div class="project-img-holder"><img src="g9.jpg" alt="Graphic Design Project 9" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Typography Art 09</h4></div>
-        </div>
-        <div class="project-card is-hidden" data-cat="graphic">
-          <div class="project-img-holder"><img src="g10.jpg" alt="Graphic Design Project 10" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Corporate Identity 10</h4></div>
-        </div>
-        <div class="project-card is-hidden" data-cat="graphic">
-          <div class="project-img-holder"><img src="g11.jpg" alt="Graphic Design Project 11" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Brand Collateral 11</h4></div>
-        </div>
-        <div class="project-card is-hidden" data-cat="graphic">
-          <div class="project-img-holder"><img src="g12.jpg" alt="Graphic Design Project 12" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Logo Concept 12</h4></div>
-        </div>
-        <div class="project-card is-hidden" data-cat="graphic">
-          <div class="project-img-holder"><img src="g13.jpg" alt="Graphic Design Project 13" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Vector Emblem 13</h4></div>
-        </div>
-        <div class="project-card is-hidden" data-cat="graphic">
-          <div class="project-img-holder"><img src="g14.jpg" alt="Graphic Design Project 14" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Packaging Design 14</h4></div>
-        </div>
-        <div class="project-card is-hidden" data-cat="graphic">
-          <div class="project-img-holder"><img src="g15.jpg" alt="Graphic Design Project 15" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Digital Artwork 15</h4></div>
-        </div>
-        <div class="project-card is-hidden" data-cat="graphic">
-          <div class="project-img-holder"><img src="g16.jpg" alt="Graphic Design Project 16" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Social Media Creative 16</h4></div>
-        </div>
-        <div class="project-card is-hidden" data-cat="graphic">
-          <div class="project-img-holder"><img src="g17.jpg" alt="Graphic Design Project 17" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Creative Banner 17</h4></div>
-        </div>
-        <div class="project-card is-hidden" data-cat="graphic">
-          <div class="project-img-holder"><img src="g18.jpg" alt="Graphic Design Project 18" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Brand Poster 18</h4></div>
-        </div>
-        <div class="project-card is-hidden" data-cat="graphic">
-          <div class="project-img-holder"><img src="g19.jpg" alt="Graphic Design Project 19" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Digital Showcase 19</h4></div>
-        </div>
-        <div class="project-card is-hidden" data-cat="graphic">
-          <div class="project-img-holder"><img src="g20.jpg" alt="Graphic Design Project 20" loading="lazy" /></div>
-          <div class="project-meta"><span>Graphic Design</span><h4>Visual Poster 20</h4></div>
-        </div>
-
-        <!-- Web Layouts Items -->
-        <div class="project-card" data-cat="web">
-          <div class="project-img-holder"><img src="g1.jpg" alt="Web Layout Design 01" loading="lazy" /></div>
-          <div class="project-meta"><span>Web &amp; UI Layout</span><h4>Modern SaaS Landing Page</h4></div>
-        </div>
-        <div class="project-card" data-cat="web">
-          <div class="project-img-holder"><img src="g2.jpg" alt="Web Layout Design 02" loading="lazy" /></div>
-          <div class="project-meta"><span>Web &amp; UI Layout</span><h4>Agency Portfolio UI</h4></div>
-        </div>
-        <div class="project-card" data-cat="web">
-          <div class="project-img-holder"><img src="g3.jpg" alt="Web Layout Design 03" loading="lazy" /></div>
-          <div class="project-meta"><span>Web &amp; UI Layout</span><h4>E-Commerce Dashboard</h4></div>
-        </div>
-
-        <!-- AI Visuals Items (b1.png to b10.png) -->
-        <div class="project-card" data-cat="ai-visuals">
-          <div class="project-img-holder"><img src="b1.png" alt="AI Visual 1" loading="lazy" /></div>
-          <div class="project-meta"><span>AI Visuals</span><h4>Generative Concept 01</h4></div>
-        </div>
-        <div class="project-card" data-cat="ai-visuals">
-          <div class="project-img-holder"><img src="b2.png" alt="AI Visual 2" loading="lazy" /></div>
-          <div class="project-meta"><span>AI Visuals</span><h4>Generative Concept 02</h4></div>
-        </div>
-        <div class="project-card" data-cat="ai-visuals">
-          <div class="project-img-holder"><img src="b3.png" alt="AI Visual 3" loading="lazy" /></div>
-          <div class="project-meta"><span>AI Visuals</span><h4>Generative Concept 03</h4></div>
-        </div>
-        <div class="project-card" data-cat="ai-visuals">
-          <div class="project-img-holder"><img src="b4.png" alt="AI Visual 4" loading="lazy" /></div>
-          <div class="project-meta"><span>AI Visuals</span><h4>Generative Concept 04</h4></div>
-        </div>
-        <div class="project-card" data-cat="ai-visuals">
-          <div class="project-img-holder"><img src="b5.png" alt="AI Visual 5" loading="lazy" /></div>
-          <div class="project-meta"><span>AI Visuals</span><h4>Generative Concept 05</h4></div>
-        </div>
-        <div class="project-card" data-cat="ai-visuals">
-          <div class="project-img-holder"><img src="b6.png" alt="AI Visual 6" loading="lazy" /></div>
-          <div class="project-meta"><span>AI Visuals</span><h4>Generative Concept 06</h4></div>
-        </div>
-        <div class="project-card is-hidden" data-cat="ai-visuals">
-          <div class="project-img-holder"><img src="b7.png" alt="AI Visual 7" loading="lazy" /></div>
-          <div class="project-meta"><span>AI Visuals</span><h4>Generative Concept 07</h4></div>
-        </div>
-        <div class="project-card is-hidden" data-cat="ai-visuals">
-          <div class="project-img-holder"><img src="b8.png" alt="AI Visual 8" loading="lazy" /></div>
-          <div class="project-meta"><span>AI Visuals</span><h4>Generative Concept 08</h4></div>
-        </div>
-        <div class="project-card is-hidden" data-cat="ai-visuals">
-          <div class="project-img-holder"><img src="b9.png" alt="AI Visual 9" loading="lazy" /></div>
-          <div class="project-meta"><span>AI Visuals</span><h4>Generative Concept 09</h4></div>
-        </div>
-        <div class="project-card is-hidden" data-cat="ai-visuals">
-          <div class="project-img-holder"><img src="b10.png" alt="AI Visual 10" loading="lazy" /></div>
-          <div class="project-meta"><span>AI Visuals</span><h4>Generative Concept 10</h4></div>
-        </div>
-
-        <!-- AI Animation Videos Items (r1.mp4 to r12.mp4, 9:16 vertical smartphone frame) -->
-        <div class="project-card project-card-video" data-cat="ai-videos">
-          <div class="video-phone-frame">
-            <video controls preload="metadata" playsinline>
-              <source src="r1.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <div class="project-meta"><span>AI Animation Reel</span><h4>Motion Reel 01</h4></div>
-        </div>
-        <div class="project-card project-card-video" data-cat="ai-videos">
-          <div class="video-phone-frame">
-            <video controls preload="metadata" playsinline>
-              <source src="r2.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <div class="project-meta"><span>AI Animation Reel</span><h4>Motion Reel 02</h4></div>
-        </div>
-        <div class="project-card project-card-video" data-cat="ai-videos">
-          <div class="video-phone-frame">
-            <video controls preload="metadata" playsinline>
-              <source src="r3.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <div class="project-meta"><span>AI Animation Reel</span><h4>Motion Reel 03</h4></div>
-        </div>
-        <div class="project-card project-card-video" data-cat="ai-videos">
-          <div class="video-phone-frame">
-            <video controls preload="metadata" playsinline>
-              <source src="r4.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <div class="project-meta"><span>AI Animation Reel</span><h4>Motion Reel 04</h4></div>
-        </div>
-        <div class="project-card project-card-video" data-cat="ai-videos">
-          <div class="video-phone-frame">
-            <video controls preload="metadata" playsinline>
-              <source src="r5.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <div class="project-meta"><span>AI Animation Reel</span><h4>Motion Reel 05</h4></div>
-        </div>
-        <div class="project-card project-card-video" data-cat="ai-videos">
-          <div class="video-phone-frame">
-            <video controls preload="metadata" playsinline>
-              <source src="r6.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <div class="project-meta"><span>AI Animation Reel</span><h4>Motion Reel 06</h4></div>
-        </div>
-        <div class="project-card project-card-video is-hidden" data-cat="ai-videos">
-          <div class="video-phone-frame">
-            <video controls preload="metadata" playsinline>
-              <source src="r7.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <div class="project-meta"><span>AI Animation Reel</span><h4>Motion Reel 07</h4></div>
-        </div>
-        <div class="project-card project-card-video is-hidden" data-cat="ai-videos">
-          <div class="video-phone-frame">
-            <video controls preload="metadata" playsinline>
-              <source src="r8.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <div class="project-meta"><span>AI Animation Reel</span><h4>Motion Reel 08</h4></div>
-        </div>
-        <div class="project-card project-card-video is-hidden" data-cat="ai-videos">
-          <div class="video-phone-frame">
-            <video controls preload="metadata" playsinline>
-              <source src="r9.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <div class="project-meta"><span>AI Animation Reel</span><h4>Motion Reel 09</h4></div>
-        </div>
-        <div class="project-card project-card-video is-hidden" data-cat="ai-videos">
-          <div class="video-phone-frame">
-            <video controls preload="metadata" playsinline>
-              <source src="r10.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <div class="project-meta"><span>AI Animation Reel</span><h4>Motion Reel 10</h4></div>
-        </div>
-        <div class="project-card project-card-video is-hidden" data-cat="ai-videos">
-          <div class="video-phone-frame">
-            <video controls preload="metadata" playsinline>
-              <source src="r11.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <div class="project-meta"><span>AI Animation Reel</span><h4>Motion Reel 11</h4></div>
-        </div>
-        <div class="project-card project-card-video is-hidden" data-cat="ai-videos">
-          <div class="video-phone-frame">
-            <video controls preload="metadata" playsinline>
-              <source src="r12.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <div class="project-meta"><span>AI Animation Reel</span><h4>Motion Reel 12</h4></div>
-        </div>
-
-      </div>
-
-      <!-- Single-Click View More Button -->
-      <div class="view-more-wrapper" id="viewMoreContainer">
-        <button class="btn btn-view-more" id="viewMoreBtn">
-          View All Works <i class="fa-solid fa-chevron-down"></i>
+      <!-- Nested AI Sub-Tabs (Active strictly when AI Projects is open) -->
+      <div class="ai-subtabs-container" id="aiSubtabs" style="display: none;">
+        <button class="subtab-btn active" data-subtab="ai-visuals">
+          <i class="fa-regular fa-image"></i> AI Visuals
+        </button>
+        <button class="subtab-btn" data-subtab="ai-videos">
+          <i class="fa-solid fa-film"></i> AI Animation Videos &amp; Motion Graphics
         </button>
       </div>
-    </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section class="contact-section" id="contact">
-    <div class="section-container">
-      <div class="contact-box-wrapper">
-        <div class="contact-left">
-          <span class="section-tag">GET IN TOUCH</span>
-          <h2 class="section-heading-white">Let’s Create Something Exceptional Together.</h2>
-          <p class="contact-subtext">Open for freelance opportunities, full-time roles, creative collaborations, and AI design inquiries.</p>
-          <div class="contact-direct-links">
-            <a href="mailto:muskankumari@example.com" class="direct-link-item"><i class="fa-solid fa-envelope"></i> muskankumari@example.com</a>
-            <span class="direct-link-item"><i class="fa-solid fa-location-dot"></i> India</span>
+      <!-- Projects Grid Display Area -->
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- GRAPHIC DESIGN ITEMS (g1.jpg to g20.jpg) -->
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g1.jpg" alt="Graphic Design 1" loading="lazy" onerror="this.src='https://picsum.photos/seed/g1/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Corporate Brand Identity</h4>
           </div>
         </div>
-        <div class="contact-right">
-          <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.'); this.reset();">
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g2.jpg" alt="Graphic Design 2" loading="lazy" onerror="this.src='https://picsum.photos/seed/g2/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Vector Illustration Poster</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g3.jpg" alt="Graphic Design 3" loading="lazy" onerror="this.src='https://picsum.photos/seed/g3/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Social Media Banner Kit</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g4.jpg" alt="Graphic Design 4" loading="lazy" onerror="this.src='https://picsum.photos/seed/g4/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Minimalist Logo Identity</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g5.jpg" alt="Graphic Design 5" loading="lazy" onerror="this.src='https://picsum.photos/seed/g5/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Promotional Event Flyer</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g6.jpg" alt="Graphic Design 6" loading="lazy" onerror="this.src='https://picsum.photos/seed/g6/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Product Packaging Layout</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g7.jpg" alt="Graphic Design 7" loading="lazy" onerror="this.src='https://picsum.photos/seed/g7/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Modern Typography Poster</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g8.jpg" alt="Graphic Design 8" loading="lazy" onerror="this.src='https://picsum.photos/seed/g8/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Creative Trifold Brochure</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g9.jpg" alt="Graphic Design 9" loading="lazy" onerror="this.src='https://picsum.photos/seed/g9/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Brand Stationery Concept</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g10.jpg" alt="Graphic Design 10" loading="lazy" onerror="this.src='https://picsum.photos/seed/g10/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Digital Marketing Graphics</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g11.jpg" alt="Graphic Design 11" loading="lazy" onerror="this.src='https://picsum.photos/seed/g11/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Vector Character Art</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g12.jpg" alt="Graphic Design 12" loading="lazy" onerror="this.src='https://picsum.photos/seed/g12/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Luxury Business Card</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g13.jpg" alt="Graphic Design 13" loading="lazy" onerror="this.src='https://picsum.photos/seed/g13/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Infographic Data Chart</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g14.jpg" alt="Graphic Design 14" loading="lazy" onerror="this.src='https://picsum.photos/seed/g14/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Editorial Magazine Cover</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g15.jpg" alt="Graphic Design 15" loading="lazy" onerror="this.src='https://picsum.photos/seed/g15/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Typography &amp; Signage</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g16.jpg" alt="Graphic Design 16" loading="lazy" onerror="this.src='https://picsum.photos/seed/g16/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Restaurant Menu Booklet</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g17.jpg" alt="Graphic Design 17" loading="lazy" onerror="this.src='https://picsum.photos/seed/g17/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Apparel Print Graphic</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g18.jpg" alt="Graphic Design 18" loading="lazy" onerror="this.src='https://picsum.photos/seed/g18/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Exhibition Stand Display</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g19.jpg" alt="Graphic Design 19" loading="lazy" onerror="this.src='https://picsum.photos/seed/g19/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Custom Vector Badge</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="graphic" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="g20.jpg" alt="Graphic Design 20" loading="lazy" onerror="this.src='https://picsum.photos/seed/g20/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">GRAPHIC DESIGN</span>
+            <h4 class="meta-title">Brand Lookbook Design</h4>
+          </div>
+        </div>
+
+        <!-- WEB DESIGN ITEMS (w1.jpg to w10.jpg) -->
+        <div class="project-card" data-category="web" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="w1.jpg" alt="Web Design 1" loading="lazy" onerror="this.src='https://picsum.photos/seed/w1/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">WEB DESIGN</span>
+            <h4 class="meta-title">SaaS Analytics Dashboard UI</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="web" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="w2.jpg" alt="Web Design 2" loading="lazy" onerror="this.src='https://picsum.photos/seed/w2/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">WEB DESIGN</span>
+            <h4 class="meta-title">E-Commerce Fashion Store</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="web" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="w3.jpg" alt="Web Design 3" loading="lazy" onerror="this.src='https://picsum.photos/seed/w3/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">WEB DESIGN</span>
+            <h4 class="meta-title">Creative Studio Portfolio</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="web" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="w4.jpg" alt="Web Design 4" loading="lazy" onerror="this.src='https://picsum.photos/seed/w4/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">WEB DESIGN</span>
+            <h4 class="meta-title">Fintech Banking Web App</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="web" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="w5.jpg" alt="Web Design 5" loading="lazy" onerror="this.src='https://picsum.photos/seed/w5/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">WEB DESIGN</span>
+            <h4 class="meta-title">Healthcare Patient Portal</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="web" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="w6.jpg" alt="Web Design 6" loading="lazy" onerror="this.src='https://picsum.photos/seed/w6/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">WEB DESIGN</span>
+            <h4 class="meta-title">Real Estate Landing Page</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="web" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="w7.jpg" alt="Web Design 7" loading="lazy" onerror="this.src='https://picsum.photos/seed/w7/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">WEB DESIGN</span>
+            <h4 class="meta-title">Restaurant Booking Platform</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="web" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="w8.jpg" alt="Web Design 8" loading="lazy" onerror="this.src='https://picsum.photos/seed/w8/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">WEB DESIGN</span>
+            <h4 class="meta-title">Travel &amp; Tour Booking UI</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="web" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="w9.jpg" alt="Web Design 9" loading="lazy" onerror="this.src='https://picsum.photos/seed/w9/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">WEB DESIGN</span>
+            <h4 class="meta-title">Online Learning LMS Layout</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="web" data-subcategory="">
+          <div class="card-media-wrap">
+            <img src="w10.jpg" alt="Web Design 10" loading="lazy" onerror="this.src='https://picsum.photos/seed/w10/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">WEB DESIGN</span>
+            <h4 class="meta-title">Digital Agency Landing Page</h4>
+          </div>
+        </div>
+
+        <!-- AI VISUALS ITEMS (b1.png to b10.png) -->
+        <div class="project-card" data-category="ai" data-subcategory="ai-visuals">
+          <div class="card-media-wrap">
+            <img src="b1.png" alt="AI Visual 1" loading="lazy" onerror="this.src='https://picsum.photos/seed/b1/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">AI VISUALS</span>
+            <h4 class="meta-title">Cybernetic Fluid Concept</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ai" data-subcategory="ai-visuals">
+          <div class="card-media-wrap">
+            <img src="b2.png" alt="AI Visual 2" loading="lazy" onerror="this.src='https://picsum.photos/seed/b2/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">AI VISUALS</span>
+            <h4 class="meta-title">Hyperrealistic Neon Portrait</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ai" data-subcategory="ai-visuals">
+          <div class="card-media-wrap">
+            <img src="b3.png" alt="AI Visual 3" loading="lazy" onerror="this.src='https://picsum.photos/seed/b3/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">AI VISUALS</span>
+            <h4 class="meta-title">Futuristic Architecture Mesh</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ai" data-subcategory="ai-visuals">
+          <div class="card-media-wrap">
+            <img src="b4.png" alt="AI Visual 4" loading="lazy" onerror="this.src='https://picsum.photos/seed/b4/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">AI VISUALS</span>
+            <h4 class="meta-title">Surrealist Abstract Landscape</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ai" data-subcategory="ai-visuals">
+          <div class="card-media-wrap">
+            <img src="b5.png" alt="AI Visual 5" loading="lazy" onerror="this.src='https://picsum.photos/seed/b5/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">AI VISUALS</span>
+            <h4 class="meta-title">Generative Synthwave Render</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ai" data-subcategory="ai-visuals">
+          <div class="card-media-wrap">
+            <img src="b6.png" alt="AI Visual 6" loading="lazy" onerror="this.src='https://picsum.photos/seed/b6/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">AI VISUALS</span>
+            <h4 class="meta-title">Cosmic Nebula Exploration</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ai" data-subcategory="ai-visuals">
+          <div class="card-media-wrap">
+            <img src="b7.png" alt="AI Visual 7" loading="lazy" onerror="this.src='https://picsum.photos/seed/b7/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">AI VISUALS</span>
+            <h4 class="meta-title">Bio-Digital Organic Geometry</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ai" data-subcategory="ai-visuals">
+          <div class="card-media-wrap">
+            <img src="b8.png" alt="AI Visual 8" loading="lazy" onerror="this.src='https://picsum.photos/seed/b8/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">AI VISUALS</span>
+            <h4 class="meta-title">Holographic Product Synthesis</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ai" data-subcategory="ai-visuals">
+          <div class="card-media-wrap">
+            <img src="b9.png" alt="AI Visual 9" loading="lazy" onerror="this.src='https://picsum.photos/seed/b9/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">AI VISUALS</span>
+            <h4 class="meta-title">Dimensional Wavefronts</h4>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ai" data-subcategory="ai-visuals">
+          <div class="card-media-wrap">
+            <img src="b10.png" alt="AI Visual 10" loading="lazy" onerror="this.src='https://picsum.photos/seed/b10/800/600'">
+          </div>
+          <div class="project-card-meta">
+            <span class="meta-tag">AI VISUALS</span>
+            <h4 class="meta-title">Neural Character Generation</h4>
+          </div>
+        </div>
+
+        <!-- AI ANIMATION VIDEOS & MOTION GRAPHICS (r1.mp4 to r12.mp4 - 9:16 Frameless Video Cards) -->
+        <div class="project-card video-card-item" data-category="ai" data-subcategory="ai-videos">
+          <div class="vertical-video-wrapper">
+            <video class="portfolio-video" muted loop playsinline preload="metadata">
+              <source src="r1.mp4" type="video/mp4">
+            </video>
+            <div class="video-play-overlay"><i class="fa-solid fa-play"></i></div>
+          </div>
+        </div>
+
+        <div class="project-card video-card-item" data-category="ai" data-subcategory="ai-videos">
+          <div class="vertical-video-wrapper">
+            <video class="portfolio-video" muted loop playsinline preload="metadata">
+              <source src="r2.mp4" type="video/mp4">
+            </video>
+            <div class="video-play-overlay"><i class="fa-solid fa-play"></i></div>
+          </div>
+        </div>
+
+        <div class="project-card video-card-item" data-category="ai" data-subcategory="ai-videos">
+          <div class="vertical-video-wrapper">
+            <video class="portfolio-video" muted loop playsinline preload="metadata">
+              <source src="r3.mp4" type="video/mp4">
+            </video>
+            <div class="video-play-overlay"><i class="fa-solid fa-play"></i></div>
+          </div>
+        </div>
+
+        <div class="project-card video-card-item" data-category="ai" data-subcategory="ai-videos">
+          <div class="vertical-video-wrapper">
+            <video class="portfolio-video" muted loop playsinline preload="metadata">
+              <source src="r4.mp4" type="video/mp4">
+            </video>
+            <div class="video-play-overlay"><i class="fa-solid fa-play"></i></div>
+          </div>
+        </div>
+
+        <div class="project-card video-card-item" data-category="ai" data-subcategory="ai-videos">
+          <div class="vertical-video-wrapper">
+            <video class="portfolio-video" muted loop playsinline preload="metadata">
+              <source src="r5.mp4" type="video/mp4">
+            </video>
+            <div class="video-play-overlay"><i class="fa-solid fa-play"></i></div>
+          </div>
+        </div>
+
+        <div class="project-card video-card-item" data-category="ai" data-subcategory="ai-videos">
+          <div class="vertical-video-wrapper">
+            <video class="portfolio-video" muted loop playsinline preload="metadata">
+              <source src="r6.mp4" type="video/mp4">
+            </video>
+            <div class="video-play-overlay"><i class="fa-solid fa-play"></i></div>
+          </div>
+        </div>
+
+        <div class="project-card video-card-item" data-category="ai" data-subcategory="ai-videos">
+          <div class="vertical-video-wrapper">
+            <video class="portfolio-video" muted loop playsinline preload="metadata">
+              <source src="r7.mp4" type="video/mp4">
+            </video>
+            <div class="video-play-overlay"><i class="fa-solid fa-play"></i></div>
+          </div>
+        </div>
+
+        <div class="project-card video-card-item" data-category="ai" data-subcategory="ai-videos">
+          <div class="vertical-video-wrapper">
+            <video class="portfolio-video" muted loop playsinline preload="metadata">
+              <source src="r8.mp4" type="video/mp4">
+            </video>
+            <div class="video-play-overlay"><i class="fa-solid fa-play"></i></div>
+          </div>
+        </div>
+
+        <div class="project-card video-card-item" data-category="ai" data-subcategory="ai-videos">
+          <div class="vertical-video-wrapper">
+            <video class="portfolio-video" muted loop playsinline preload="metadata">
+              <source src="r9.mp4" type="video/mp4">
+            </video>
+            <div class="video-play-overlay"><i class="fa-solid fa-play"></i></div>
+          </div>
+        </div>
+
+        <div class="project-card video-card-item" data-category="ai" data-subcategory="ai-videos">
+          <div class="vertical-video-wrapper">
+            <video class="portfolio-video" muted loop playsinline preload="metadata">
+              <source src="r10.mp4" type="video/mp4">
+            </video>
+            <div class="video-play-overlay"><i class="fa-solid fa-play"></i></div>
+          </div>
+        </div>
+
+        <div class="project-card video-card-item" data-category="ai" data-subcategory="ai-videos">
+          <div class="vertical-video-wrapper">
+            <video class="portfolio-video" muted loop playsinline preload="metadata">
+              <source src="r11.mp4" type="video/mp4">
+            </video>
+            <div class="video-play-overlay"><i class="fa-solid fa-play"></i></div>
+          </div>
+        </div>
+
+        <div class="project-card video-card-item" data-category="ai" data-subcategory="ai-videos">
+          <div class="vertical-video-wrapper">
+            <video class="portfolio-video" muted loop playsinline preload="metadata">
+              <source src="r12.mp4" type="video/mp4">
+            </video>
+            <div class="video-play-overlay"><i class="fa-solid fa-play"></i></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- View More Action Button -->
+      <div class="view-more-container">
+        <button id="viewMoreBtn" class="btn btn-primary">View More Projects &darr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET IN TOUCH SECTION -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-black">GET IN</span> <span class="title-magenta">TOUCH</span>
+      </h2>
+
+      <div class="contact-card-wrapper">
+        <div class="contact-card">
+          <form class="contact-form" id="contactForm" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.'); this.reset();">
             <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" required placeholder="Muskan Kumari" />
+              <label for="userName">Your Name</label>
+              <input type="text" id="userName" name="name" placeholder="Enter your name" required>
             </div>
+
             <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" required placeholder="you@example.com" />
+              <label for="userEmail">Your Email</label>
+              <input type="email" id="userEmail" name="email" placeholder="Enter your email" required>
             </div>
+
             <div class="form-group">
-              <label for="message">Project Details</label>
-              <textarea id="message" rows="4" required placeholder="Tell me about your project or vision..."></textarea>
+              <label for="userMessage">Your Message</label>
+              <textarea id="userMessage" name="message" rows="5" placeholder="Write your message here..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-pill-magenta btn-block">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+
+            <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
           </form>
+
+          <div class="contact-meta">
+            <div class="meta-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>New Delhi, India</span>
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:muskankumari3330@gmail.com">muskankumari3330@gmail.com</a>
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+918810682518">+91 8810682518</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Exact Pure Black Horizontal Footer -->
-  <footer class="site-footer">
+  <!-- ULTRA-SLIM PURE BLACK FOOTER -->
+  <footer class="slim-footer">
     <div class="footer-container">
       <div class="footer-left">
-        <span class="footer-logo">Muskan Kumari</span>
+        <span class="brand-logo">
+          <span class="logo-white">Muskan</span> <span class="logo-magenta">Kumari</span>
+        </span>
       </div>
 
-      <div class="footer-divider"></div>
-
-      <div class="footer-right">
-        <span class="social-label">Stay Connected</span>
-        <div class="footer-social-icons">
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="https://behance.net" target="_blank" rel="noopener noreferrer" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <div class="footer-center">
+        <span class="stay-connected-text">Stay Connected:</span>
+        <div class="footer-social-links">
+          <a href="https://www.youtube.com/@I.MuskanKumari" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.instagram.com/i.muskankumari" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://github.com/imuskankumari" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.behance.net/imuskankumari" target="_blank" rel="noopener noreferrer" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Muskan Kumari. All Rights Reserved.</p>
+
+      <div class="footer-right">
+        <p class="copyright-text">&copy; 2026 Muskan Kumari. All Rights Reserved.</p>
+      </div>
     </div>
   </footer>
 
-  <!-- Script -->
+  <!-- Javascript -->
   <script src="script.js"></script>
 </body>
 </html>

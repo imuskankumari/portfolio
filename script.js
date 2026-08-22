@@ -1,144 +1,181 @@
 /**
- * Muskan Kumari - Portfolio 2026 Production Scripts
+ * 2026 Portfolio Core Scripts - Muskan Kumari
  */
+
 document.addEventListener('DOMContentLoaded', () => {
+  // 1. MOBILE NAVIGATION TOGGLE
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navMenu = document.getElementById('navbar')?.querySelector('.nav-menu');
 
-  /* ------------------------------------------------------------------------
-     1. RESPONSIVE MOBILE NAVIGATION TOGGLE
-     ------------------------------------------------------------------------ */
-  const hamburgerBtn = document.getElementById('hamburgerBtn');
-  const navMenu = document.getElementById('navMenu');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  if (hamburgerBtn && navMenu) {
-    hamburgerBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('is-active');
-      hamburgerBtn.classList.toggle('open');
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      const icon = mobileToggle.querySelector('i');
+      if (icon) {
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-xmark');
+      }
     });
 
-    navLinks.forEach((link) => {
+    // Close mobile menu on nav item click
+    document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
-        navMenu.classList.remove('is-active');
-        hamburgerBtn.classList.remove('open');
+        navMenu.classList.remove('open');
+        const icon = mobileToggle.querySelector('i');
+        if (icon) {
+          icon.classList.add('fa-bars');
+          icon.classList.remove('fa-xmark');
+        }
       });
     });
   }
 
-  /* ------------------------------------------------------------------------
-     2. SOFTWARE MARQUEE INFINITE LOOP CONTROLLER
-     ------------------------------------------------------------------------ */
-  const marqueeTrack = document.getElementById('marqueeTrack');
+  // 2. SEAMLESS INFINITE MARQUEE CLONING
+  const marqueeTrack = document.getElementById('marquee-track');
   if (marqueeTrack) {
-    let position = 0;
-    const speed = 0.75; // Pixels per frame
-    let isPaused = false;
-
-    // Hover pause controls
-    marqueeTrack.addEventListener('mouseenter', () => { isPaused = true; });
-    marqueeTrack.addEventListener('mouseleave', () => { isPaused = false; });
-    marqueeTrack.addEventListener('touchstart', () => { isPaused = true; }, { passive: true });
-    marqueeTrack.addEventListener('touchend', () => { isPaused = false; });
-
-    function animateMarquee() {
-      if (!isPaused) {
-        position -= speed;
-        // Total half scroll width check for seamless restart
-        if (Math.abs(position) >= marqueeTrack.scrollWidth / 2) {
-          position = 0;
-        }
-        marqueeTrack.style.transform = `translateX(${position}px)`;
-      }
-      requestAnimationFrame(animateMarquee);
-    }
-    requestAnimationFrame(animateMarquee);
+    // Clone contents to ensure continuous marquee scrolling
+    const items = marqueeTrack.innerHTML;
+    marqueeTrack.innerHTML += items;
   }
 
-  /* ------------------------------------------------------------------------
-     3. PROJECT CATEGORY FILTER & SINGLE-CLICK EXPANSION
-     ------------------------------------------------------------------------ */
-  const filterTabs = document.querySelectorAll('.filter-tab');
-  const projectCards = document.querySelectorAll('.project-card');
+  // 3. PROJECT FILTERING & NESTED SUB-TABS LOGIC
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const subTabButtons = document.querySelectorAll('.subtab-btn');
+  const aiSubtabsContainer = document.getElementById('aiSubtabs');
+  const projectCards = Array.from(document.querySelectorAll('.project-card'));
   const viewMoreBtn = document.getElementById('viewMoreBtn');
-  const viewMoreContainer = document.getElementById('viewMoreContainer');
 
   let currentCategory = 'all';
+  let currentSubcategory = 'ai-visuals';
   let isExpanded = false;
+  const INITIAL_LIMIT = 5;
 
-  function updateProjectVisibility() {
-    projectCards.forEach((card) => {
-      const cardCategory = card.getAttribute('data-cat');
-      const matchesCategory = (currentCategory === 'all' || cardCategory === currentCategory);
+  function filterProjects() {
+    let filtered = [];
 
-      if (!matchesCategory) {
-        card.classList.add('filtered-out');
-      } else {
-        card.classList.remove('filtered-out');
-        
-        // If not expanded, keep items with .is-hidden hidden
-        if (!isExpanded && card.dataset.defaultHidden === 'true') {
-          card.classList.add('is-hidden');
-        } else {
-          card.classList.remove('is-hidden');
-        }
-      }
+    if (currentCategory === 'all') {
+      filtered = projectCards;
+    } else if (currentCategory === 'ai') {
+      filtered = projectCards.filter(card => {
+        return (
+          card.dataset.category === 'ai' &&
+          card.dataset.subcategory === currentSubcategory
+        );
+      });
+    } else {
+      filtered = projectCards.filter(card => card.dataset.category === currentCategory);
+    }
+
+    // Determine how many items to display
+    const itemsToShow = isExpanded ? filtered.length : Math.min(INITIAL_LIMIT, filtered.length);
+
+    projectCards.forEach(card => {
+      card.style.display = 'none';
     });
 
-    // Toggle button visibility if all visible items are shown
-    if (isExpanded) {
-      if (viewMoreContainer) viewMoreContainer.style.display = 'none';
-    } else {
-      if (viewMoreContainer) viewMoreContainer.style.display = 'block';
+    filtered.slice(0, itemsToShow).forEach(card => {
+      card.style.display = card.classList.contains('video-card-item') ? 'flex' : 'flex';
+    });
+
+    // Toggle "View More" button visibility
+    if (viewMoreBtn) {
+      if (filtered.length <= INITIAL_LIMIT || isExpanded) {
+        viewMoreBtn.style.display = 'none';
+      } else {
+        viewMoreBtn.style.display = 'inline-flex';
+        viewMoreBtn.innerHTML = `View More Projects &darr; (${filtered.length - INITIAL_LIMIT} more)`;
+      }
     }
   }
 
-  // Mark initially hidden cards
-  projectCards.forEach((card) => {
-    if (card.classList.contains('is-hidden')) {
-      card.dataset.defaultHidden = 'true';
-    }
-  });
+  // Handle Main Category Tabs
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-  // Filter Tab Switching
-  filterTabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      filterTabs.forEach((t) => t.classList.remove('active'));
-      tab.classList.add('active');
-      currentCategory = tab.getAttribute('data-category');
-      updateProjectVisibility();
+      currentCategory = btn.dataset.tab;
+      isExpanded = false;
+
+      if (currentCategory === 'ai') {
+        aiSubtabsContainer.style.display = 'flex';
+      } else {
+        aiSubtabsContainer.style.display = 'none';
+      }
+
+      filterProjects();
     });
   });
 
-  // Single-Click View More
+  // Handle AI Nested Sub-Tabs
+  subTabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      subTabButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      currentSubcategory = btn.dataset.subtab;
+      isExpanded = false;
+      filterProjects();
+    });
+  });
+
+  // View More Button Interaction
   if (viewMoreBtn) {
     viewMoreBtn.addEventListener('click', () => {
       isExpanded = true;
-      projectCards.forEach((card) => {
-        card.classList.remove('is-hidden');
-      });
-      if (viewMoreContainer) {
-        viewMoreContainer.style.display = 'none';
-      }
+      filterProjects();
     });
   }
 
-  /* ------------------------------------------------------------------------
-     4. SMOOTH SCROLL OFFSET FOR FIXED HEADER
-     ------------------------------------------------------------------------ */
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      const targetEl = document.querySelector(targetId);
-      if (targetEl) {
-        e.preventDefault();
-        const headerHeight = document.getElementById('navbar')?.offsetHeight || 70;
-        const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
+  // Initialize Portfolio Display
+  filterProjects();
+
+  // 4. VERTICAL AI VIDEO CARD PLAY/PAUSE ON HOVER OR TAP
+  const videoCards = document.querySelectorAll('.vertical-video-wrapper');
+  videoCards.forEach(wrapper => {
+    const video = wrapper.querySelector('video');
+    const overlay = wrapper.querySelector('.video-play-overlay');
+
+    if (video) {
+      wrapper.addEventListener('mouseenter', () => {
+        video.play().catch(() => {});
+        if (overlay) overlay.style.opacity = '0';
+      });
+
+      wrapper.addEventListener('mouseleave', () => {
+        video.pause();
+        if (overlay) overlay.style.opacity = '1';
+      });
+
+      // Mobile Touch Toggle
+      wrapper.addEventListener('click', () => {
+        if (video.paused) {
+          video.play().catch(() => {});
+          if (overlay) overlay.style.opacity = '0';
+        } else {
+          video.pause();
+          if (overlay) overlay.style.opacity = '1';
+        }
+      });
+    }
+  });
+
+  // 5. ACTIVE NAVBAR LINK ON SCROLL
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset;
+
+    sections.forEach(section => {
+      const sectionHeight = section.offsetHeight;
+      const sectionTop = section.offsetTop - 120;
+      const sectionId = section.getAttribute('id');
+      const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        if (navLink) navLink.classList.add('active');
       }
     });
   });
-
 });
+

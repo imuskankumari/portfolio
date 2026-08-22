@@ -1,239 +1,145 @@
-/* ==========================================================
-   2026 BEHANCE-STYLE CLEAN PORTFOLIO - MUSKAN KUMARI
-   FONT: POPPINS (600, 700, 800, 900) - TIGHT NATURAL TRACKING
-   PALETTE: PURE WHITE (#FFFFFF), JET BLACK (#000000), VIVID MAGENTA (#e91e63)
-   ========================================================== */
+/* ==================== CSS RESET & BASE VARIABLES ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 :root {
   --bg-white: #ffffff;
-  --bg-offwhite: #fafafa;
   --text-black: #000000;
   --text-dark: #111111;
-  --text-muted: #444444;
-  --magenta: #e91e63;
-  --magenta-hover: #d81557;
-  --magenta-light: #fce4ec;
-  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-  --card-shadow-hover: 0 10px 25px rgba(233, 30, 99, 0.12);
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
-  --radius-pill: 50px;
-  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  --text-muted: #333333;
+  --accent-magenta: #e91e63;
+  --accent-magenta-hover: #d81557;
+  --border-light: #eeeeee;
+  --font-main: 'Poppins', sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-main);
   background-color: var(--bg-white);
-  color: var(--text-dark);
+  color: var(--text-black);
+  letter-spacing: 0px;
   line-height: 1.6;
-  letter-spacing: -0.2px;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-img, video {
-  display: block;
-  max-width: 100%;
-}
-
-a {
+/* ==================== TYPOGRAPHY & BRAND LOGO ==================== */
+.brand-logo, .footer-logo {
   text-decoration: none;
-  color: inherit;
-  transition: var(--transition);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
 }
 
-ul {
-  list-style: none;
+.logo-mk {
+  font-weight: 900;
+  color: var(--accent-magenta);
+  font-size: 1.7rem;
+  letter-spacing: -1px;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.logo-designs {
+  font-weight: 600;
+  font-style: italic;
+  color: var(--text-black);
+  font-size: 1.3rem;
+  font-family: var(--font-main);
 }
 
-.text-center {
-  text-align: center;
-}
-
-.section {
-  padding: 75px 0;
-}
-
-/* TWO-TONE SECTION HEADINGS */
 .section-title {
-  font-size: clamp(1.8rem, 4vw, 2.3rem);
-  font-weight: 800;
-  letter-spacing: -0.5px;
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin-bottom: 36px;
+  letter-spacing: -0.3px;
   text-transform: uppercase;
 }
 
-.title-black {
+.title-regular {
+  font-weight: 400;
   color: var(--text-black);
 }
 
-.title-magenta {
-  color: var(--magenta);
+.title-bold-magenta {
+  font-weight: 800;
+  color: var(--accent-magenta);
 }
 
-/* HIGH-END RECTANGULAR PILL BUTTONS */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 28px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  border-radius: var(--radius-pill);
-  cursor: pointer;
-  transition: var(--transition);
-  border: 2px solid transparent;
-  gap: 8px;
-  font-family: inherit;
-  letter-spacing: 0;
-}
-
-.btn-primary {
-  background-color: var(--magenta);
-  color: #ffffff;
-  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
-  border: none;
-}
-
-.btn-primary:hover {
-  background-color: var(--magenta-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.42);
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: var(--text-black);
-  border: 2px solid var(--text-black);
-}
-
-.btn-outline:hover {
-  background-color: var(--text-black);
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-/* ==========================================================
-   TOP HEADER & NAVIGATION
-   ========================================================== */
-.main-header {
-  position: fixed;
+/* ==================== HEADER & NAVBAR ==================== */
+.site-header {
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 14px 20px;
+  padding: 16px 24px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-}
-
-.brand-logo {
-  font-size: 1.7rem;
-  font-weight: 900;
-  letter-spacing: -0.5px;
-  display: inline-flex;
-  gap: 4px;
-  line-height: 1;
-}
-
-.logo-magenta {
-  color: var(--magenta);
-}
-
-.logo-black {
-  color: var(--text-black);
-}
-
-.nav-menu {
-  display: flex;
   align-items: center;
-  gap: 28px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 32px;
 }
 
 .nav-link {
-  font-size: 0.92rem;
-  font-weight: 700;
+  text-decoration: none;
   color: var(--text-black);
-  position: relative;
-  padding: 4px 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--magenta);
-  transition: var(--transition);
+.nav-link:hover {
+  color: var(--accent-magenta);
 }
 
-.nav-link:hover, .nav-link.active {
-  color: var(--magenta);
+.nav-link-cta {
+  color: var(--accent-magenta);
+  border: 1.5px solid var(--accent-magenta);
+  padding: 6px 18px;
+  border-radius: 50px;
 }
 
-.nav-link:hover::after, .nav-link.active::after {
-  width: 100%;
+.nav-link-cta:hover {
+  background: var(--accent-magenta);
+  color: var(--bg-white);
 }
 
-.mobile-toggle {
+.menu-toggle {
   display: none;
   background: none;
   border: none;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: var(--text-black);
   cursor: pointer;
 }
 
-/* ==========================================================
-   HERO HEADER (16:9 LANDSCAPE - ZERO OVERLAY - MAX HIERARCHY)
-   ========================================================== */
-.hero-section {
-  position: relative;
-  width: 100%;
-  padding-top: 68px;
-  background-color: var(--bg-white);
-  display: flex;
-  justify-content: center;
-}
-
-.hero-video-container {
-  position: relative;
-  width: 100%;
+/* ==================== HERO SECTION (16:9 LANDSCAPE) ==================== */
+.hero-container {
   aspect-ratio: 16 / 9;
+  width: 100%;
   max-height: 75vh;
   overflow: hidden;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #000;
 }
 
 .hero-bg-video {
@@ -245,72 +151,125 @@ ul {
   width: auto;
   height: auto;
   transform: translate(-50%, -50%);
-  z-index: 1;
   object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
-  max-width: 850px;
-  padding: 0 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2.6rem, 6.5vw, 4.2rem);
   font-weight: 900;
   line-height: 1.1;
   margin-bottom: 8px;
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
+}
+
+.title-magenta {
+  color: var(--accent-magenta);
+}
+
+.title-black {
+  color: var(--text-black);
 }
 
 .hero-subtitle {
-  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-size: clamp(1.2rem, 2.8vw, 1.6rem);
   font-weight: 700;
-  color: #111111;
-  margin-bottom: 20px;
-  letter-spacing: 0;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* ==========================================================
-   ABOUT SECTION
-   ========================================================== */
-.about-section {
-  background-color: var(--bg-white);
-}
-
-.about-lead {
-  max-width: 900px;
-  margin: 0 auto 32px;
-  font-size: 1.02rem;
-  font-weight: 400;
   color: var(--text-dark);
-  line-height: 1.8;
-  letter-spacing: 0;
+  margin-bottom: 22px;
 }
 
-.about-actions {
+.hero-cta-group {
   display: flex;
-  gap: 14px;
+  gap: 16px;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
-/* ==========================================================
-   MY DESIGN SERVICES (2-COLUMN BALANCED GRID)
-   ========================================================== */
-.services-section {
-  background-color: var(--bg-offwhite);
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
 }
 
+.btn-primary {
+  background: var(--accent-magenta);
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--accent-magenta-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-black);
+  border: 2px solid var(--text-black);
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+}
+
+.btn-outline:hover {
+  background: var(--text-black);
+  color: var(--bg-white);
+  transform: translateY(-2px);
+}
+
+/* ==================== COMMON SECTION LAYOUT ==================== */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 24px;
+}
+
+/* ==================== ABOUT SECTION ==================== */
+.about-section {
+  padding-bottom: 40px;
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-bio {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* ==================== SERVICES SECTION (2-COLUMN CARDS) ==================== */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -318,400 +277,297 @@ ul {
 }
 
 .service-card {
+  min-height: 380px;
   background: var(--bg-white);
-  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: var(--card-shadow);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
-  min-height: 380px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .service-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--card-shadow-hover);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-.service-media-wrap {
-  width: 100%;
+.service-img-wrap {
   height: 210px;
-  background-color: #f5f5f5;
+  width: 100%;
   overflow: hidden;
+}
+
+.service-img {
+  height: 210px;
+  width: 100%;
+  object-fit: cover;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+  display: block;
 }
 
-.service-media-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.service-card:hover .service-media-wrap img {
-  transform: scale(1.03);
-}
-
-.service-content {
-  padding: 24px;
+.service-info {
+  padding: 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
-.service-name {
+.service-title {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-black);
-  margin-bottom: 6px;
-  letter-spacing: -0.3px;
+  margin-bottom: 8px;
 }
 
-.service-desc {
-  font-size: 0.92rem;
-  font-weight: 400;
+.service-description {
+  font-size: 0.95rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
-/* ==========================================================
-   MY DESIGN PROJECTS (BEHANCE 2-COLUMN 4:3 GRID)
-   ========================================================== */
-.projects-section {
-  background-color: var(--bg-white);
-}
-
-.projects-tabs-nav {
+/* ==================== PROJECTS SECTION (BEHANCE RAW GRID) ==================== */
+.project-tabs {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 36px;
+  gap: 12px;
+  margin-bottom: 32px;
 }
 
-.tab-button {
-  background: #ffffff;
+.tab-btn {
+  background: transparent;
+  border: 1.5px solid var(--border-light);
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 600;
   color: var(--text-black);
-  border: 1.5px solid #e2e2e2;
-  padding: 10px 24px;
-  border-radius: var(--radius-pill);
-  font-size: 0.92rem;
-  font-weight: 700;
   cursor: pointer;
-  transition: var(--transition);
-  font-family: inherit;
+  transition: all 0.2s ease;
 }
 
-.tab-button:hover, .tab-button.active {
-  background-color: var(--magenta);
-  color: #ffffff;
-  border-color: var(--magenta);
-  box-shadow: 0 4px 14px rgba(233, 30, 99, 0.25);
+.tab-btn:hover {
+  border-color: var(--accent-magenta);
+  color: var(--accent-magenta);
 }
 
-/* BEHANCE 2-COLUMN GRID (GAP: 16PX) */
-.projects-grid {
+.tab-btn.active {
+  background: var(--accent-magenta);
+  border-color: var(--accent-magenta);
+  color: var(--bg-white);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* Behance Raw 2-Column Grid */
+.behance-raw-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
 
-.project-item {
-  display: flex;
+.behance-visual-frame {
   width: 100%;
-}
-
-.project-behance-card {
-  aspect-ratio: 4 / 3;
-  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 10px;
   overflow: hidden;
-  border-radius: var(--radius-md);
-  background: #ffffff;
-  box-shadow: var(--card-shadow);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  transition: var(--transition);
+  background: transparent;
 }
 
-.project-behance-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--card-shadow-hover);
-}
-
-.project-media-frame {
-  width: 100%;
-  height: 85%;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px;
-  overflow: hidden;
-}
-
-.project-media-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: transform 0.4s ease;
-}
-
-.project-behance-card:hover .project-media-frame img {
-  transform: scale(1.02);
-}
-
-.project-bottom-strip {
-  height: 15%;
-  padding: 0 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid #f0f0f0;
-  background-color: #ffffff;
-}
-
-.card-brand-tag {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: #111111;
-  letter-spacing: -0.2px;
-}
-
-.strip-icon {
-  font-size: 0.8rem;
-  color: var(--magenta);
-  opacity: 0.85;
-}
-
-/* AI ANIMATION VIDEOS (9:16 VERTICAL SMARTPHONE TILES) */
-.project-item.video-project-item {
-  justify-content: center;
-}
-
-.video-smartphone-frame {
-  position: relative;
-  width: 100%;
-  max-width: 260px;
-  height: 440px;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #000000;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  margin: 0 auto;
-}
-
-.project-video-player {
+.behance-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
-.video-play-hint {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
+.behance-visual-frame:hover .behance-img {
+  transform: scale(1.03);
+}
+
+/* Video Reels (Vertical 9:16) */
+.video-item-wrap {
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: #ffffff;
-  font-size: 2rem;
-  opacity: 0;
-  transition: var(--transition);
 }
 
-.video-smartphone-frame:hover .video-play-hint {
-  opacity: 1;
+.reel-video {
+  max-width: 260px;
+  width: 100%;
+  height: 440px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* ==========================================================
-   GET IN TOUCH (CLEAN CONTACT FORM)
-   ========================================================== */
+/* ==================== CONTACT SECTION ==================== */
 .contact-section {
-  background-color: var(--bg-offwhite);
-}
-
-.contact-card-wrapper {
-  max-width: 600px;
-  margin: 0 auto;
+  padding-top: 40px;
 }
 
 .contact-card {
-  background: #ffffff;
-  padding: 38px 32px;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--card-shadow);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--bg-white);
+  padding: 36px 32px;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-light);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .form-group {
-  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .form-group label {
-  display: block;
-  font-size: 0.88rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: var(--text-black);
-  margin-bottom: 6px;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
   padding: 12px 16px;
-  font-size: 0.92rem;
-  font-family: inherit;
-  background: #fdfdfd;
-  border: 1.5px solid #e4e4e4;
-  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-light);
+  border-radius: 8px;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
   color: var(--text-black);
-  transition: var(--transition);
+  outline: none;
+  transition: border-color 0.2s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  outline: none;
-  border-color: var(--magenta);
-  box-shadow: 0 0 0 3px var(--magenta-light);
-  background: #ffffff;
+  border-color: var(--accent-magenta);
 }
 
-.submit-btn {
-  width: 100%;
-  padding: 13px;
-  font-size: 0.95rem;
-  border-radius: var(--radius-sm);
-  margin-top: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.btn-submit {
+  background: var(--accent-magenta);
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  border: none;
   gap: 10px;
+  margin-top: 8px;
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
 }
 
-.paper-plane-svg {
-  transition: transform 0.3s ease;
+.btn-submit:hover {
+  background: var(--accent-magenta-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
 }
 
-.submit-btn:hover .paper-plane-svg {
-  transform: translateX(3px) translateY(-2px);
-}
-
-/* ==========================================================
-   ULTRA-CLEAN WHITE FOOTER (BEHANCE / DRIBBBLE STYLE)
-   ========================================================== */
-.clean-white-footer {
-  background-color: #ffffff;
-  border-top: 1px solid #eeeeee;
+/* ==================== FOOTER ==================== */
+.site-footer {
+  background-color: var(--bg-white);
+  border-top: 1px solid var(--border-light);
   padding: 40px 20px 25px;
   text-align: center;
 }
 
-.footer-container {
-  max-width: 700px;
+.footer-inner {
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 20px;
 }
 
-.footer-logo {
-  font-size: 1.6rem;
-  font-weight: 900;
-  letter-spacing: -0.5px;
-  display: inline-flex;
-  gap: 4px;
-  line-height: 1;
-}
-
-.footer-stay-connected {
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: -0.2px;
-  color: #111111;
-}
-
-.footer-social-links {
+.footer-social-icons {
   display: flex;
-  justify-content: center;
-  gap: 22px;
+  gap: 24px;
 }
 
-.footer-social-links a {
+.social-icon {
   font-size: 1.6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
+  color: var(--text-black);
+  transition: color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
 }
 
-/* REAL BRAND COLORS */
-.social-behance {
+.social-icon.behance:hover {
   color: #1769ff;
+  transform: translateY(-3px);
 }
 
-.social-youtube {
+.social-icon.youtube:hover {
   color: #ff0000;
+  transform: translateY(-3px);
 }
 
-.social-instagram {
+.social-icon.instagram:hover {
   color: #e1306c;
+  transform: translateY(-3px);
 }
 
-.footer-social-links a:hover {
-  transform: translateY(-3px) scale(1.1);
-  filter: brightness(1.15);
-}
-
-.copyright-text {
-  font-size: 0.84rem;
+.footer-copyright {
+  font-size: 0.85rem;
+  color: #666666;
   font-weight: 400;
-  color: #777777;
-  margin-top: 4px;
-  line-height: 1.5;
 }
 
-/* ==========================================================
-   RESPONSIVE DESIGN (MEDIA QUERIES)
-   ========================================================== */
+/* ==================== RESPONSIVE BREAKPOINTS ==================== */
 @media (max-width: 768px) {
-  .mobile-toggle {
+  .menu-toggle {
     display: block;
   }
 
-  .nav-menu {
+  .nav-links {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
     background: #ffffff;
     flex-direction: column;
-    padding: 20px;
-    gap: 16px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+    gap: 20px;
+    border-bottom: 1px solid var(--border-light);
     display: none;
   }
 
-  .nav-menu.open {
+  .nav-links.active {
     display: flex;
   }
 
-  .hero-section {
-    padding-top: 60px;
-  }
-
-  .hero-video-container {
-    aspect-ratio: auto;
-    min-height: 52vh;
-  }
-
-  .services-grid,
-  .projects-grid {
+  .services-grid {
     grid-template-columns: 1fr;
   }
+
+  .behance-raw-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-container {
+    aspect-ratio: auto;
+    height: 60vh;
+  }
 }
+

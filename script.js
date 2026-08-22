@@ -1,9 +1,10 @@
 /**
- * 2026 Portfolio Core Scripts - Muskan Kumari
+ * 2026 Core Portfolio JavaScript - Muskan Kumari
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. MOBILE NAVIGATION TOGGLE
+
+  // 1. MOBILE MENU TOGGLE
   const mobileToggle = document.getElementById('mobile-toggle');
   const navMenu = document.getElementById('navbar')?.querySelector('.nav-menu');
 
@@ -17,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close mobile menu on nav item click
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('open');
@@ -30,15 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. SEAMLESS INFINITE MARQUEE CLONING
+  // 2. INFINITE CONTINUOUS MARQUEE CLONING
   const marqueeTrack = document.getElementById('marquee-track');
   if (marqueeTrack) {
-    // Clone contents to ensure continuous marquee scrolling
-    const items = marqueeTrack.innerHTML;
-    marqueeTrack.innerHTML += items;
+    const clone = marqueeTrack.innerHTML;
+    marqueeTrack.innerHTML += clone;
   }
 
-  // 3. PROJECT FILTERING & NESTED SUB-TABS LOGIC
+  // 3. PROJECT FILTERING & NESTED AI SUB-TABS
   const tabButtons = document.querySelectorAll('.tab-btn');
   const subTabButtons = document.querySelectorAll('.subtab-btn');
   const aiSubtabsContainer = document.getElementById('aiSubtabs');
@@ -66,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
       filtered = projectCards.filter(card => card.dataset.category === currentCategory);
     }
 
-    // Determine how many items to display
     const itemsToShow = isExpanded ? filtered.length : Math.min(INITIAL_LIMIT, filtered.length);
 
     projectCards.forEach(card => {
@@ -74,10 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     filtered.slice(0, itemsToShow).forEach(card => {
-      card.style.display = card.classList.contains('video-card-item') ? 'flex' : 'flex';
+      card.style.display = 'flex';
     });
 
-    // Toggle "View More" button visibility
+    // Handle "View More Projects" Button
     if (viewMoreBtn) {
       if (filtered.length <= INITIAL_LIMIT || isExpanded) {
         viewMoreBtn.style.display = 'none';
@@ -88,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Handle Main Category Tabs
+  // Main Category Tab Clicks
   tabButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       tabButtons.forEach(b => b.classList.remove('active'));
@@ -107,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Handle AI Nested Sub-Tabs
+  // Nested AI Sub-Tab Clicks
   subTabButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       subTabButtons.forEach(b => b.classList.remove('active'));
@@ -119,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // View More Button Interaction
+  // View More Expansion Click
   if (viewMoreBtn) {
     viewMoreBtn.addEventListener('click', () => {
       isExpanded = true;
@@ -127,10 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Initialize Portfolio Display
+  // Initial Run
   filterProjects();
 
-  // 4. VERTICAL AI VIDEO CARD PLAY/PAUSE ON HOVER OR TAP
+  // 4. VERTICAL AI VIDEO HOVER / TOUCH CONTROLS
   const videoCards = document.querySelectorAll('.vertical-video-wrapper');
   videoCards.forEach(wrapper => {
     const video = wrapper.querySelector('video');
@@ -147,7 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (overlay) overlay.style.opacity = '1';
       });
 
-      // Mobile Touch Toggle
       wrapper.addEventListener('click', () => {
         if (video.paused) {
           video.play().catch(() => {});
@@ -160,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 5. ACTIVE NAVBAR LINK ON SCROLL
+  // 5. NAVBAR ACTIVE STATE ON SCROLL
   const sections = document.querySelectorAll('section[id]');
   window.addEventListener('scroll', () => {
     const scrollY = window.pageYOffset;

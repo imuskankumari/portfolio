@@ -30,14 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. INFINITE CONTINUOUS MARQUEE CLONING
-  const marqueeTrack = document.getElementById('marquee-track');
-  if (marqueeTrack) {
-    const clone = marqueeTrack.innerHTML;
-    marqueeTrack.innerHTML += clone;
-  }
-
-  // 3. PROJECT FILTERING & NESTED AI SUB-TABS
+  // 2. PROJECT FILTERING & NESTED AI SUB-TABS
   const tabButtons = document.querySelectorAll('.tab-btn');
   const subTabButtons = document.querySelectorAll('.subtab-btn');
   const aiSubtabsContainer = document.getElementById('aiSubtabs');
@@ -47,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentCategory = 'all';
   let currentSubcategory = 'ai-visuals';
   let isExpanded = false;
-  const INITIAL_LIMIT = 5;
+  const INITIAL_LIMIT = 6;
 
   function filterProjects() {
     let filtered = [];
@@ -72,10 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     filtered.slice(0, itemsToShow).forEach(card => {
-      card.style.display = 'flex';
+      card.style.display = card.classList.contains('video-card-item') ? 'flex' : 'flex';
     });
 
-    // Handle "View More Projects" Button
+    // Handle "View More" Button visibility
     if (viewMoreBtn) {
       if (filtered.length <= INITIAL_LIMIT || isExpanded) {
         viewMoreBtn.style.display = 'none';
@@ -128,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial Run
   filterProjects();
 
-  // 4. VERTICAL AI VIDEO HOVER / TOUCH CONTROLS
+  // 3. VERTICAL AI VIDEO HOVER / TOUCH CONTROLS
   const videoCards = document.querySelectorAll('.vertical-video-wrapper');
   videoCards.forEach(wrapper => {
     const video = wrapper.querySelector('video');
@@ -156,6 +149,75 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  // 4. AUTO-FLIPPING SOFTWARE CAROUSEL
+  const carouselTrack = document.getElementById('carouselTrack');
+  const slides = document.querySelectorAll('.software-slide');
+  const dotsContainer = document.getElementById('carouselDots');
+
+  if (carouselTrack && slides.length > 0) {
+    let currentIndex = 0;
+    let autoSlideTimer = null;
+
+    function getVisibleCount() {
+      if (window.innerWidth <= 480) return 1;
+      if (window.innerWidth <= 992) return 2;
+      return 4;
+    }
+
+    const totalSteps = Math.max(1, slides.length - getVisibleCount() + 1);
+
+    // Build dots
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalSteps; i++) {
+      const dot = document.createElement('span');
+      dot.classList.add('carousel-dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        currentIndex = i;
+        updateCarousel();
+        resetTimer();
+      });
+      dotsContainer.appendChild(dot);
+    }
+
+    function updateCarousel() {
+      const visibleCount = getVisibleCount();
+      const maxIndex = slides.length - visibleCount;
+      if (currentIndex > maxIndex) currentIndex = 0;
+
+      const slideWidth = slides[0].offsetWidth + 20; // width + gap
+      carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+      const dots = document.querySelectorAll('.carousel-dot');
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentIndex);
+      });
+    }
+
+    function startTimer() {
+      autoSlideTimer = setInterval(() => {
+        const visibleCount = getVisibleCount();
+        const maxIndex = slides.length - visibleCount;
+        currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+        updateCarousel();
+      }, 3000);
+    }
+
+    function resetTimer() {
+      clearInterval(autoSlideTimer);
+      startTimer();
+    }
+
+    carouselTrack.addEventListener('mouseenter', () => clearInterval(autoSlideTimer));
+    carouselTrack.addEventListener('mouseleave', () => startTimer());
+
+    window.addEventListener('resize', () => {
+      updateCarousel();
+    });
+
+    startTimer();
+  }
 
   // 5. NAVBAR ACTIVE STATE ON SCROLL
   const sections = document.querySelectorAll('section[id]');

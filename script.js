@@ -4,7 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. MOBILE NAVBAR TOGGLE
+  // 1. MOBILE NAVIGATION MENU TOGGLE
   const mobileToggle = document.getElementById('mobile-toggle');
   const navMenu = document.getElementById('navbar')?.querySelector('.nav-menu');
 
@@ -30,36 +30,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. PROJECTS 4-TAB SWITCHING & VIEW MORE EXPANSION
+  // 2. PROJECTS 4-TAB SWITCHING (ALL 10 ITEMS DIRECTLY VISIBLE)
   const tabButtons = document.querySelectorAll('.tab-button');
   const projectItems = Array.from(document.querySelectorAll('.project-item'));
-  const viewMoreBtn = document.getElementById('viewMoreBtn');
 
   let activeTab = 'graphic';
-  let isExpanded = false;
-  const INITIAL_VISIBLE_COUNT = 4; // Show initial 4 items per category
 
   function filterProjects() {
-    const filtered = projectItems.filter(item => item.dataset.category === activeTab);
-    const limit = isExpanded ? filtered.length : Math.min(INITIAL_VISIBLE_COUNT, filtered.length);
-
     projectItems.forEach(item => {
-      item.style.display = 'none';
-    });
-
-    filtered.slice(0, limit).forEach(item => {
-      item.style.display = 'flex';
-    });
-
-    // Handle "View More Projects" Button
-    if (viewMoreBtn) {
-      if (filtered.length <= INITIAL_VISIBLE_COUNT || isExpanded) {
-        viewMoreBtn.style.display = 'none';
+      if (item.dataset.category === activeTab) {
+        item.style.display = 'flex';
       } else {
-        viewMoreBtn.style.display = 'inline-flex';
-        viewMoreBtn.innerHTML = `View More Projects &darr; (${filtered.length - INITIAL_VISIBLE_COUNT} more)`;
+        item.style.display = 'none';
       }
-    }
+    });
   }
 
   tabButtons.forEach(btn => {
@@ -68,19 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.add('active');
 
       activeTab = btn.dataset.tab;
-      isExpanded = false;
       filterProjects();
     });
   });
 
-  if (viewMoreBtn) {
-    viewMoreBtn.addEventListener('click', () => {
-      isExpanded = true;
-      filterProjects();
-    });
-  }
-
-  // Initial Run
+  // Initial tab filter execution
   filterProjects();
 
   // 3. VERTICAL AI VIDEO HOVER / TOUCH CONTROLS
@@ -122,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. ACTIVE NAVBAR LINK ON SCROLL
+  // 5. NAVBAR ACTIVE STATE ON SCROLL
   const sections = document.querySelectorAll('section[id]');
   window.addEventListener('scroll', () => {
     const scrollY = window.pageYOffset;
@@ -140,4 +116,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-

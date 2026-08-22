@@ -1,104 +1,102 @@
-/* ==========================================================================
-   PRODUCTION READY JAVASCRIPT FOR MUSKAN KUMARI PORTFOLIO
-   Category Filtering | Instant View-More Expansion | Smooth Navigation
-   ========================================================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
-    
-    // 1. FILTERING LOGIC
-    const filterTabs = document.querySelectorAll(".filter-tab");
-    const portfolioItems = document.querySelectorAll(".portfolio-item");
-    const viewMoreBtn = document.getElementById("view-more-btn");
-    let isExpanded = false;
+  // Mobile Hamburger Toggle
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.querySelector(".nav-links");
 
-    function applyFilter(category) {
-        portfolioItems.forEach(item => {
-            const itemCat = item.getAttribute("data-category");
-            const isExtra = item.classList.contains("extra-item");
-
-            const matchesCategory = (category === "all" || itemCat === category);
-
-            if (matchesCategory) {
-                if (isExtra) {
-                    item.style.display = isExpanded ? "block" : "none";
-                } else {
-                    item.style.display = "block";
-                }
-            } else {
-                item.style.display = "none";
-            }
-        });
-    }
-
-    filterTabs.forEach(tab => {
-        tab.addEventListener("click", () => {
-            filterTabs.forEach(t => t.classList.remove("active"));
-            tab.classList.add("active");
-
-            const activeCategory = tab.getAttribute("data-filter");
-            applyFilter(activeCategory);
-        });
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
     });
 
-    // 2. ONE-CLICK "VIEW MORE PROJECTS" EXPANSION
-    if (viewMoreBtn) {
-        viewMoreBtn.addEventListener("click", () => {
-            isExpanded = !isExpanded;
-            const activeTab = document.querySelector(".filter-tab.active");
-            const activeCategory = activeTab ? activeTab.getAttribute("data-filter") : "all";
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+    });
+  }
 
-            applyFilter(activeCategory);
+  // Project Filtering & View More State Management
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  const projectCards = Array.from(document.querySelectorAll(".projects-grid .project-card"));
+  const viewMoreBtn = document.getElementById("viewMoreBtn");
 
-            if (isExpanded) {
-                viewMoreBtn.innerHTML = '<span class="btn-text">Show Less</span> <i class="fa-solid fa-angle-up"></i>';
-            } else {
-                viewMoreBtn.innerHTML = '<span class="btn-text">View More Projects</span> <i class="fa-solid fa-angle-down"></i>';
-            }
-        });
-    }
+  let currentCategory = "all";
+  let isExpanded = false;
+  const INITIAL_LIMIT = 6;
 
-    // 3. ACTIVE NAVIGATION LINK HIGHLIGHT ON SCROLL
-    const sections = document.querySelectorAll("header, section");
-    const navLinks = document.querySelectorAll(".nav-link");
-
-    window.addEventListener("scroll", () => {
-        let currentSection = "";
-        const scrollPosition = window.pageYOffset + 200;
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                currentSection = section.getAttribute("id");
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove("active");
-            if (link.getAttribute("href") === `#${currentSection}`) {
-                link.classList.add("active");
-            }
-        });
+  function updateProjectVisibility() {
+    // Filter by active category
+    const matchingCards = projectCards.filter((card) => {
+      const category = card.getAttribute("data-category");
+      return currentCategory === "all" || category === currentCategory;
     });
 
-    // 4. MOBILE MENU TOGGLE
-    const mobileToggle = document.getElementById("mobile-toggle");
-    const navMenu = document.getElementById("nav-menu");
+    // Hide all cards first
+    projectCards.forEach((card) => {
+      card.classList.add("is-hidden");
+    });
 
-    if (mobileToggle && navMenu) {
-        mobileToggle.addEventListener("click", () => {
-            navMenu.style.display = navMenu.style.display === "flex" ? "none" : "flex";
-            if (navMenu.style.display === "flex") {
-                navMenu.style.flexDirection = "column";
-                navMenu.style.position = "absolute";
-                navMenu.style.top = "72px";
-                navMenu.style.left = "0";
-                navMenu.style.width = "100%";
-                navMenu.style.background = "#ffffff";
-                navMenu.style.padding = "20px";
-                navMenu.style.boxShadow = "0 10px 20px rgba(0,0,0,0.1)";
-            }
-        });
+    // Display appropriate cards based on expansion state
+    matchingCards.forEach((card, index) => {
+      if (isExpanded || index < INITIAL_LIMIT) {
+        card.classList.remove("is-hidden");
+      }
+    });
+
+    // Manage 'View More' Button Visibility & Text
+    if (matchingCards.length <= INITIAL_LIMIT) {
+      viewMoreBtn.style.display = "none";
+    } else {
+      viewMoreBtn.style.display = "inline-flex";
+      viewMoreBtn.innerHTML = isExpanded
+        ? 'Show Less Projects &uarr;'
+        : 'View More Projects &darr;';
     }
+  }
+
+  // Handle Tab Click
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      tabButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentCategory = btn.getAttribute("data-category");
+      isExpanded = false; // Reset to collapsed on category change
+      updateProjectVisibility();
+    });
+  });
+
+  // Handle View More Click
+  if (viewMoreBtn) {
+    viewMoreBtn.addEventListener("click", () => {
+      isExpanded = !isExpanded;
+      updateProjectVisibility();
+    });
+  }
+
+  // Initialize Visibility
+  updateProjectVisibility();
+
+  // Video Autoplay/Pause On Hover for Video Reels
+  const videoCards = document.querySelectorAll(".video-card");
+  videoCards.forEach((card) => {
+    const video = card.querySelector("video");
+    if (video) {
+      card.addEventListener("mouseenter", () => {
+        video.play().catch(() => {});
+      });
+      card.addEventListener("mouseleave", () => {
+        video.pause();
+      });
+    }
+  });
+
+  // Contact Form Submission Mock
+  const contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Thank you! Your message has been sent successfully.");
+      contactForm.reset();
+    });
+  }
 });

@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let activeTab = 'graphic';
   let isExpanded = false;
-  const INITIAL_VISIBLE_COUNT = 4; // Show initial 4 items per tab
+  const INITIAL_VISIBLE_COUNT = 4; // Show initial 4 items per category
 
   function filterProjects() {
     const filtered = projectItems.filter(item => item.dataset.category === activeTab);
@@ -140,3 +140,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+

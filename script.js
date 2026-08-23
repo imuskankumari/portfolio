@@ -1,24 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile Navbar Toggle
-  const navToggle = document.getElementById('nav-toggle');
-  const navLinks = document.getElementById('nav-links');
+  // Mobile Nav Toggle
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navMenu = document.getElementById('nav-menu');
 
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      const icon = navToggle.querySelector('i');
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      const icon = mobileToggle.querySelector('i');
       if (icon) {
         icon.classList.toggle('fa-bars');
         icon.classList.toggle('fa-xmark');
       }
     });
 
-    // Close menu when navigation link is clicked
-    const links = navLinks.querySelectorAll('a');
-    links.forEach((link) => {
+    // Close menu on link click
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach((link) => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        const icon = navToggle.querySelector('i');
+        navMenu.classList.remove('open');
+        const icon = mobileToggle.querySelector('i');
         if (icon) {
           icon.classList.add('fa-bars');
           icon.classList.remove('fa-xmark');
@@ -27,19 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Project Filter Tabs Switching Logic
-  const tabs = document.querySelectorAll('.filter-tab');
+  // Project Tab Switching
+  const tabButtons = document.querySelectorAll('.tab-btn');
   const tabPanes = document.querySelectorAll('.tab-pane');
 
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      // Remove active class from all tabs & panes
-      tabs.forEach((t) => t.classList.remove('active'));
-      tabPanes.forEach((pane) => pane.classList.remove('active'));
+  tabButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      tabButtons.forEach((b) => b.classList.remove('active'));
+      tabPanes.forEach((p) => p.classList.remove('active'));
 
-      // Activate clicked tab and target pane
-      tab.classList.add('active');
-      const targetId = tab.getAttribute('data-target');
+      btn.classList.add('active');
+      const targetId = btn.getAttribute('data-target');
       const targetPane = document.getElementById(targetId);
       if (targetPane) {
         targetPane.classList.add('active');
@@ -52,10 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const nameInput = document.getElementById('name');
-      const senderName = nameInput ? nameInput.value.trim() : 'there';
+      const nameField = document.getElementById('fullName');
+      const name = nameField ? nameField.value.trim() : 'there';
 
-      alert(`Thank you, ${senderName}! Your message has been sent successfully. Muskan will reach out to you soon.`);
+      alert(`Thank you, ${name}! Your message has been sent successfully. Muskan will reach out to you shortly.`);
       contactForm.reset();
     });
   }

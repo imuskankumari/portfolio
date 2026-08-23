@@ -1,24 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile Navigation Toggle
-  const mobileToggle = document.getElementById('mobile-toggle');
-  const navMenu = document.getElementById('nav-menu');
+  // Mobile Navbar Toggle
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
 
-  if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-      const icon = mobileToggle.querySelector('i');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      const icon = navToggle.querySelector('i');
       if (icon) {
         icon.classList.toggle('fa-bars');
         icon.classList.toggle('fa-xmark');
       }
     });
 
-    // Close menu when clicking navigation links
-    const navLinks = navMenu.querySelectorAll('.nav-link');
-    navLinks.forEach((link) => {
+    // Close menu when navigation link is clicked
+    const links = navLinks.querySelectorAll('a');
+    links.forEach((link) => {
       link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        const icon = mobileToggle.querySelector('i');
+        navLinks.classList.remove('open');
+        const icon = navToggle.querySelector('i');
         if (icon) {
           icon.classList.add('fa-bars');
           icon.classList.remove('fa-xmark');
@@ -27,35 +27,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Portfolio Tab Switching
-  const tabButtons = document.querySelectorAll('.tab-btn');
-  const tabContents = document.querySelectorAll('.tab-content');
+  // Project Filter Tabs Switching Logic
+  const tabs = document.querySelectorAll('.filter-tab');
+  const tabPanes = document.querySelectorAll('.tab-pane');
 
-  tabButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      // Deactivate active states
-      tabButtons.forEach((btn) => btn.classList.remove('active'));
-      tabContents.forEach((content) => content.classList.remove('active'));
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      // Remove active class from all tabs & panes
+      tabs.forEach((t) => t.classList.remove('active'));
+      tabPanes.forEach((pane) => pane.classList.remove('active'));
 
-      // Activate clicked tab and corresponding target content
-      button.classList.add('active');
-      const targetId = button.getAttribute('data-target');
-      const targetContent = document.getElementById(targetId);
-      if (targetContent) {
-        targetContent.classList.add('active');
+      // Activate clicked tab and target pane
+      tab.classList.add('active');
+      const targetId = tab.getAttribute('data-target');
+      const targetPane = document.getElementById(targetId);
+      if (targetPane) {
+        targetPane.classList.add('active');
       }
     });
   });
 
-  // Contact Form Submission
+  // Contact Form Submission Handler
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const nameInput = document.getElementById('name');
       const senderName = nameInput ? nameInput.value.trim() : 'there';
-      
-      alert(`Thank you, ${senderName}! Your message has been received. Muskan will get back to you soon.`);
+
+      alert(`Thank you, ${senderName}! Your message has been sent successfully. Muskan will reach out to you soon.`);
       contactForm.reset();
     });
   }

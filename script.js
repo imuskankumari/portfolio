@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile Nav Toggle
+  // Mobile Navigation Toggle
   const mobileToggle = document.getElementById('mobile-toggle');
   const navMenu = document.getElementById('nav-menu');
 
@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close menu on link click
-    const navLinks = navMenu.querySelectorAll('a');
+    // Close menu when clicking navigation links
+    const navLinks = navMenu.querySelectorAll('.nav-link');
     navLinks.forEach((link) => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('open');
@@ -27,33 +27,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Project Tab Switching
+  // Portfolio Tab Switching
   const tabButtons = document.querySelectorAll('.tab-btn');
-  const tabPanes = document.querySelectorAll('.tab-pane');
+  const tabContents = document.querySelectorAll('.tab-content');
 
-  tabButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      tabButtons.forEach((b) => b.classList.remove('active'));
-      tabPanes.forEach((p) => p.classList.remove('active'));
+  tabButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      // Deactivate active states
+      tabButtons.forEach((btn) => btn.classList.remove('active'));
+      tabContents.forEach((content) => content.classList.remove('active'));
 
-      btn.classList.add('active');
-      const targetId = btn.getAttribute('data-target');
-      const targetPane = document.getElementById(targetId);
-      if (targetPane) {
-        targetPane.classList.add('active');
+      // Activate clicked tab and corresponding target content
+      button.classList.add('active');
+      const targetId = button.getAttribute('data-target');
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) {
+        targetContent.classList.add('active');
       }
     });
   });
 
-  // Contact Form Submission Handler
+  // Contact Form Submission
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const nameField = document.getElementById('fullName');
-      const name = nameField ? nameField.value.trim() : 'there';
-
-      alert(`Thank you, ${name}! Your message has been sent successfully. Muskan will reach out to you shortly.`);
+      const nameInput = document.getElementById('name');
+      const senderName = nameInput ? nameInput.value.trim() : 'there';
+      
+      alert(`Thank you, ${senderName}! Your message has been received. Muskan will get back to you soon.`);
       contactForm.reset();
     });
   }

@@ -3,353 +3,221 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muskan Kumari | Graphic &amp; Web Designer Portfolio</title>
-  
+  <title>Muskan Kumari | Graphic &amp; Web Designer</title>
+
   <!-- Google Fonts: Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  
-  <!-- Custom Styles -->
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <header class="header">
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
     <div class="nav-container">
-      <a href="#" class="brand-logo">
-        <span class="logo-accent">MK</span> <span class="logo-text">Designs</span>
+      <a href="#" class="nav-brand">
+        <div class="logo-pill">
+          <span class="logo-m">M</span><span class="logo-k">K</span>
+        </div>
       </a>
-      
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
         <i class="fa-solid fa-bars"></i>
       </button>
 
-      <nav class="nav-menu" id="nav-menu">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link nav-btn-cta">Contact</a>
+      <nav class="nav-links" id="nav-links">
+        <a href="#projects" class="nav-item">Projects</a>
+        <a href="#contact" class="nav-item">Contact</a>
+        <a href="#contact" class="nav-btn-magenta">Get In Touch</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Awebco-Style Split Hero Section -->
   <section class="hero-section">
     <div class="hero-container">
+      
+      <!-- Left Column: Bold Copy & Bio -->
       <div class="hero-left">
-        <span class="hero-badge">CREATIVE DESIGN &amp; WEB STUDIO</span>
-        <h1 class="hero-heading">SKYROCKET YOUR BRAND WITH <span class="highlight-magenta">NEXT-GEN DESIGNS</span></h1>
-        <p class="hero-subtext">I craft high-impact brand identities, modern UI/UX digital layouts, and cinematic AI motion visuals that set you apart.</p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn-primary">Explore Projects 🚀</a>
-          <a href="#contact" class="btn-secondary">Contact Me</a>
+        <span class="hero-capsule">CREATIVE VISION &amp; EXPERTISE</span>
+        <h1 class="hero-name"><span class="name-magenta">Muskan</span> <span class="name-white">Kumari</span></h1>
+        <p class="hero-subtitle">Graphic &amp; Web Designer</p>
+        <p class="hero-bio">
+          A passionate Graphic &amp; Web Designer. I work professionally as a Graphic Designer, Web Designer, AI Creator and Video Editor. I am skilled in Adobe Photoshop, Illustrator, InDesign, CorelDraw and Canva. I also build clean websites using HTML, CSS, JavaScript, WordPress and Google Sites. Additionally, I work as an AI Creator using Generative AI tools to generate AI visuals and AI animation videos. I also do video editing and motion graphics using Filmora, VN and InShot.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">Explore Projects →</a>
+          <a href="#contact" class="btn-secondary">Contact</a>
         </div>
       </div>
-      
+
+      <!-- Right Column: Floating 3D MK Monogram Card -->
       <div class="hero-right">
-        <div class="floating-art-wrapper">
+        <div class="glass-card-wrapper">
           <div class="glow-orb"></div>
-          <div class="floating-art-card">
-            <div class="card-inner-graphic">
-              <i class="fa-solid fa-wand-magic-sparkles floating-icon"></i>
-              <div class="cyber-circle"></div>
-              <div class="floating-meta">
-                <span class="meta-tag"><i class="fa-solid fa-circle-check"></i> Interactive 3D</span>
-                <span class="meta-tag"><i class="fa-solid fa-bolt"></i> High Performance</span>
+          <div class="glass-card">
+            <div class="card-inner">
+              <div class="monogram-ring">
+                <span class="ring-m">M</span><span class="ring-k">K</span>
+              </div>
+              <div class="card-meta">
+                <span class="status-pill"><i class="fa-solid fa-circle-dot"></i> Available for Hire</span>
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
 
-    <!-- Overlapping Quick Service Badges (Awebco Style) -->
+    <!-- 4 Hanging Service Badges -->
     <div class="hero-badges-wrapper">
-      <div class="badges-container">
-        <div class="quick-badge"><i class="fa-solid fa-palette"></i> Graphic Design</div>
-        <div class="quick-badge"><i class="fa-solid fa-code"></i> Web &amp; UI</div>
-        <div class="quick-badge"><i class="fa-solid fa-brain"></i> AI Motion</div>
-        <div class="quick-badge"><i class="fa-solid fa-video"></i> Video Editing</div>
+      <div class="hanging-badges">
+        <span class="service-pill"><i class="fa-solid fa-palette"></i> Graphic Design</span>
+        <span class="service-pill"><i class="fa-solid fa-code"></i> Web Design</span>
+        <span class="service-pill"><i class="fa-solid fa-brain"></i> AI Visuals</span>
+        <span class="service-pill"><i class="fa-solid fa-clapperboard"></i> AI Animation Videos</span>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section class="section about-section" id="about">
-    <div class="container text-center">
-      <h2 class="section-title"><span class="title-dark">CREATIVE VISION &amp;</span> <span class="title-magenta">EXPERTISE</span></h2>
-      <div class="title-underline"></div>
-      <p class="about-bio">
-        A passionate Graphic &amp; Web Designer. I work professionally as a Graphic Designer, Web Designer, AI Creator and Video Editor. I am skilled in Adobe Photoshop, Illustrator, InDesign, CorelDraw and Canva. I also build clean websites using HTML, CSS, JavaScript, WordPress and Google Sites. Additionally, I work as an AI Creator using Generative AI tools to generate AI visuals and AI animation videos. I also do video editing and motion graphics using Filmora, VN and InShot.
-      </p>
-    </div>
-  </section>
-
-  <!-- Our Services Section -->
-  <section class="section services-section" id="services">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-title"><span class="title-dark">OUR</span> <span class="title-magenta">SERVICES</span></h2>
-        <div class="title-underline"></div>
-      </div>
-
-      <div class="services-grid">
-        <!-- Service 1 -->
-        <div class="service-card">
-          <div class="service-img-wrap">
-            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80" alt="Graphic Designing" class="service-img" />
-          </div>
-          <div class="service-content">
-            <h3 class="service-title"><i class="fa-solid fa-pen-nib"></i> Graphic Designing</h3>
-            <p class="service-desc">High-impact brand collateral, vector illustrations, logo identity, and promotional marketing graphics.</p>
-          </div>
-        </div>
-
-        <!-- Service 2 -->
-        <div class="service-card">
-          <div class="service-img-wrap">
-            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="Web & UI Designing" class="service-img" />
-          </div>
-          <div class="service-content">
-            <h3 class="service-title"><i class="fa-solid fa-desktop"></i> Web &amp; UI Designing</h3>
-            <p class="service-desc">Clean, responsive web interfaces, modern layouts, user experience, and interactive digital systems.</p>
-          </div>
-        </div>
-
-        <!-- Service 3 -->
-        <div class="service-card">
-          <div class="service-img-wrap">
-            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Video Editing" class="service-img" />
-          </div>
-          <div class="service-content">
-            <h3 class="service-title"><i class="fa-solid fa-film"></i> Video Editing</h3>
-            <p class="service-desc">Dynamic timing, audio synchronization, lower thirds, color correction, and smooth video cuts.</p>
-          </div>
-        </div>
-
-        <!-- Service 4 -->
-        <div class="service-card">
-          <div class="service-img-wrap">
-            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="AI Visuals" class="service-img" />
-          </div>
-          <div class="service-content">
-            <h3 class="service-title"><i class="fa-solid fa-microchip"></i> AI Visuals</h3>
-            <p class="service-desc">Generative digital artwork, 3D AI visual concepts, surreal imagery, and high-fidelity prompt engineering.</p>
-          </div>
-        </div>
-
-        <!-- Service 5 -->
-        <div class="service-card">
-          <div class="service-img-wrap">
-            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="AI Animation Videos" class="service-img" />
-          </div>
-          <div class="service-content">
-            <h3 class="service-title"><i class="fa-solid fa-clapperboard"></i> AI Animation Videos</h3>
-            <p class="service-desc">Transforming static artwork into liquid 3D motion, cinematic visual storytelling, and futuristic motion reels.</p>
-          </div>
-        </div>
-
-        <!-- Service 6 -->
-        <div class="service-card">
-          <div class="service-img-wrap">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Motion Graphics" class="service-img" />
-          </div>
-          <div class="service-content">
-            <h3 class="service-title"><i class="fa-solid fa-cubes"></i> Motion Graphics</h3>
-            <p class="service-desc">Engaging kinetic typography, logo reveals, visual transitions, and promotional motion sequences.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- My Projects Section -->
-  <section class="section projects-section" id="projects">
-    <div class="container">
+  <!-- My Projects Section (Direct Behance 2-Column Grid) -->
+  <section class="projects-section" id="projects">
+    <div class="section-container">
       <div class="text-center">
         <h2 class="section-title"><span class="title-dark">MY</span> <span class="title-magenta">PROJECTS</span></h2>
-        <div class="title-underline"></div>
+        <div class="title-bar"></div>
       </div>
 
-      <!-- Category Filter Tabs -->
-      <div class="project-tabs">
-        <button class="tab-btn active" data-target="graphic-design">Graphic Design</button>
-        <button class="tab-btn" data-target="web-design">Web Design</button>
-        <button class="tab-btn" data-target="ai-visuals">AI Visuals</button>
-        <button class="tab-btn" data-target="ai-videos">AI Animation Videos</button>
-      </div>
-
-      <!-- Tab Content: Graphic Design (Behance 4:3 2-Column Grid) -->
-      <div class="tab-content active" id="graphic-design">
-        <div class="behance-grid">
-          <div class="behance-card">
-            <div class="behance-img-wrap">
-              <img src="g1.jpg" alt="Graphic Design Project 1" class="behance-img" />
-            </div>
-            <div class="behance-strip">
-              <span class="project-name">Branding &amp; Creative Poster</span>
-              <span class="project-author">MK Designs</span>
-            </div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap">
-              <img src="g2.jpg" alt="Graphic Design Project 2" class="behance-img" />
-            </div>
-            <div class="behance-strip">
-              <span class="project-name">Marketing &amp; Promo Poster</span>
-              <span class="project-author">MK Designs</span>
-            </div>
-          </div>
+      <!-- Edge-to-Edge Behance Dark Filter Tabs -->
+      <div class="tabs-wrapper">
+        <div class="tabs-scroller">
+          <button class="filter-tab active" data-target="tab-graphic">Graphic Design</button>
+          <button class="filter-tab" data-target="tab-web">Web Design</button>
+          <button class="filter-tab" data-target="tab-visuals">AI Visuals</button>
+          <button class="filter-tab" data-target="tab-videos">AI Animation Videos</button>
         </div>
       </div>
 
-      <!-- Tab Content: Web Design -->
-      <div class="tab-content" id="web-design">
+      <!-- Tab Pane 1: Graphic Design (15 Direct 4:3 Behance Slots) -->
+      <div class="tab-pane active" id="tab-graphic">
         <div class="behance-grid">
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="w1.jpg" alt="Web Design 1" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">Digital Agency UI Layout</span><span class="project-author">MK Designs</span></div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="w2.jpg" alt="Web Design 2" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">E-Commerce Experience Design</span><span class="project-author">MK Designs</span></div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="w3.jpg" alt="Web Design 3" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">SaaS Product Landing Page</span><span class="project-author">MK Designs</span></div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="w4.jpg" alt="Web Design 4" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">Corporate Portal Architecture</span><span class="project-author">MK Designs</span></div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="w5.jpg" alt="Web Design 5" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">Creative Studio Portfolio Page</span><span class="project-author">MK Designs</span></div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="w6.jpg" alt="Web Design 6" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">Fintech Analytics Dashboard</span><span class="project-author">MK Designs</span></div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="w7.jpg" alt="Web Design 7" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">Healthcare Platform UI Design</span><span class="project-author">MK Designs</span></div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="w8.jpg" alt="Web Design 8" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">Mobile-First Web Application</span><span class="project-author">MK Designs</span></div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="w9.jpg" alt="Web Design 9" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">Community Forum &amp; Social Hub</span><span class="project-author">MK Designs</span></div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="w10.jpg" alt="Web Design 10" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">Custom Responsive Framework</span><span class="project-author">MK Designs</span></div>
-          </div>
+          <div class="behance-card"><img src="g1.jpg" alt="Graphic Design 1" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="g2.jpg" alt="Graphic Design 2" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="g3.jpg" alt="Graphic Design 3" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="g4.jpg" alt="Graphic Design 4" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="g5.jpg" alt="Graphic Design 5" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="g6.jpg" alt="Graphic Design 6" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="g7.jpg" alt="Graphic Design 7" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="g8.jpg" alt="Graphic Design 8" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="g9.jpg" alt="Graphic Design 9" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="g10.jpg" alt="Graphic Design 10" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="g11.jpg" alt="Graphic Design 11" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="g12.jpg" alt="Graphic Design 12" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="g13.jpg" alt="Graphic Design 13" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="g14.jpg" alt="Graphic Design 14" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="g15.jpg" alt="Graphic Design 15" class="behance-img" loading="lazy" /></div>
         </div>
       </div>
 
-      <!-- Tab Content: AI Visuals -->
-      <div class="tab-content" id="ai-visuals">
+      <!-- Tab Pane 2: Web Design (15 Direct 4:3 Behance Slots) -->
+      <div class="tab-pane" id="tab-web">
         <div class="behance-grid">
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="b1.png" alt="AI Visual 1" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">Generative Surreal Landscape</span><span class="project-author">MK Designs</span></div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="b2.png" alt="AI Visual 2" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">Cyberpunk Character Concept</span><span class="project-author">MK Designs</span></div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="b3.png" alt="AI Visual 3" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">3D Futuristic Architecture</span><span class="project-author">MK Designs</span></div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="b4.png" alt="AI Visual 4" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">Bioluminescent Fauna Design</span><span class="project-author">MK Designs</span></div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="b5.png" alt="AI Visual 5" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">Abstract Liquid 3D Form</span><span class="project-author">MK Designs</span></div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="b6.png" alt="AI Visual 6" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">Cinematic Sci-Fi Portrait</span><span class="project-author">MK Designs</span></div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="b7.png" alt="AI Visual 7" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">Isometric Holographic City</span><span class="project-author">MK Designs</span></div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="b8.png" alt="AI Visual 8" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">Hyper-Real Product Concept</span><span class="project-author">MK Designs</span></div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="b9.png" alt="AI Visual 9" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">Ethereal Botanical Synthesis</span><span class="project-author">MK Designs</span></div>
-          </div>
-          <div class="behance-card">
-            <div class="behance-img-wrap"><img src="b10.png" alt="AI Visual 10" class="behance-img" /></div>
-            <div class="behance-strip"><span class="project-name">Quantum Flux Energy Artwork</span><span class="project-author">MK Designs</span></div>
-          </div>
+          <div class="behance-card"><img src="w1.jpg" alt="Web Design 1" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="w2.jpg" alt="Web Design 2" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="w3.jpg" alt="Web Design 3" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="w4.jpg" alt="Web Design 4" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="w5.jpg" alt="Web Design 5" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="w6.jpg" alt="Web Design 6" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="w7.jpg" alt="Web Design 7" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="w8.jpg" alt="Web Design 8" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="w9.jpg" alt="Web Design 9" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="w10.jpg" alt="Web Design 10" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="w11.jpg" alt="Web Design 11" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="w12.jpg" alt="Web Design 12" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="w13.jpg" alt="Web Design 13" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="w14.jpg" alt="Web Design 14" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="w15.jpg" alt="Web Design 15" class="behance-img" loading="lazy" /></div>
         </div>
       </div>
 
-      <!-- Tab Content: AI Animation Videos (9:16 Vertical Grid) -->
-      <div class="tab-content" id="ai-videos">
+      <!-- Tab Pane 3: AI Visuals (15 Direct 4:3 Behance Slots) -->
+      <div class="tab-pane" id="tab-visuals">
+        <div class="behance-grid">
+          <div class="behance-card"><img src="b1.png" alt="AI Visual 1" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="b2.png" alt="AI Visual 2" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="b3.png" alt="AI Visual 3" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="b4.png" alt="AI Visual 4" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="b5.png" alt="AI Visual 5" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="b6.png" alt="AI Visual 6" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="b7.png" alt="AI Visual 7" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="b8.png" alt="AI Visual 8" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="b9.png" alt="AI Visual 9" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="b10.png" alt="AI Visual 10" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="b11.png" alt="AI Visual 11" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="b12.png" alt="AI Visual 12" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="b13.png" alt="AI Visual 13" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="b14.png" alt="AI Visual 14" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="b15.png" alt="AI Visual 15" class="behance-img" loading="lazy" /></div>
+        </div>
+      </div>
+
+      <!-- Tab Pane 4: AI Animation Videos (Exact 9:16 Vertical Reel Grid) -->
+      <div class="tab-pane" id="tab-videos">
         <div class="video-grid">
           <div class="video-card">
             <video class="reel-video" src="r1.mp4" controls preload="metadata"></video>
-            <div class="video-caption">Motion Reel 01</div>
+            <div class="video-label">AI Motion Reel 01</div>
           </div>
           <div class="video-card">
             <video class="reel-video" src="r2.mp4" controls preload="metadata"></video>
-            <div class="video-caption">Motion Reel 02</div>
+            <div class="video-label">AI Motion Reel 02</div>
           </div>
           <div class="video-card">
             <video class="reel-video" src="r3.mp4" controls preload="metadata"></video>
-            <div class="video-caption">Motion Reel 03</div>
+            <div class="video-label">AI Motion Reel 03</div>
           </div>
           <div class="video-card">
             <video class="reel-video" src="r4.mp4" controls preload="metadata"></video>
-            <div class="video-caption">Motion Reel 04</div>
+            <div class="video-label">AI Motion Reel 04</div>
           </div>
           <div class="video-card">
             <video class="reel-video" src="r5.mp4" controls preload="metadata"></video>
-            <div class="video-caption">Motion Reel 05</div>
+            <div class="video-label">AI Motion Reel 05</div>
           </div>
           <div class="video-card">
             <video class="reel-video" src="r6.mp4" controls preload="metadata"></video>
-            <div class="video-caption">Motion Reel 06</div>
+            <div class="video-label">AI Motion Reel 06</div>
           </div>
           <div class="video-card">
             <video class="reel-video" src="r7.mp4" controls preload="metadata"></video>
-            <div class="video-caption">Motion Reel 07</div>
+            <div class="video-label">AI Motion Reel 07</div>
           </div>
           <div class="video-card">
             <video class="reel-video" src="r8.mp4" controls preload="metadata"></video>
-            <div class="video-caption">Motion Reel 08</div>
+            <div class="video-label">AI Motion Reel 08</div>
           </div>
           <div class="video-card">
             <video class="reel-video" src="r9.mp4" controls preload="metadata"></video>
-            <div class="video-caption">Motion Reel 09</div>
+            <div class="video-label">AI Motion Reel 09</div>
           </div>
           <div class="video-card">
             <video class="reel-video" src="r10.mp4" controls preload="metadata"></video>
-            <div class="video-caption">Motion Reel 10</div>
+            <div class="video-label">AI Motion Reel 10</div>
           </div>
           <div class="video-card">
             <video class="reel-video" src="r11.mp4" controls preload="metadata"></video>
-            <div class="video-caption">Motion Reel 11</div>
+            <div class="video-label">AI Motion Reel 11</div>
           </div>
           <div class="video-card">
             <video class="reel-video" src="r12.mp4" controls preload="metadata"></video>
-            <div class="video-caption">Motion Reel 12</div>
+            <div class="video-label">AI Motion Reel 12</div>
           </div>
         </div>
       </div>
@@ -357,29 +225,29 @@
     </div>
   </section>
 
-  <!-- Get In Touch Section -->
-  <section class="section contact-section" id="contact">
-    <div class="container">
+  <!-- Get In Touch Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="section-container">
       <div class="text-center">
         <h2 class="section-title"><span class="title-dark">GET IN</span> <span class="title-magenta">TOUCH</span></h2>
-        <div class="title-underline"></div>
+        <div class="title-bar"></div>
       </div>
 
       <div class="contact-card">
         <form id="contact-form" class="contact-form">
           <div class="form-group">
-            <label for="name" class="form-label">Your Name</label>
-            <input type="text" id="name" name="name" class="form-input" placeholder="e.g. John Doe" required />
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required />
           </div>
 
           <div class="form-group">
-            <label for="email" class="form-label">Your Email</label>
-            <input type="email" id="email" name="email" class="form-input" placeholder="e.g. john@example.com" required />
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address" required />
           </div>
 
           <div class="form-group">
-            <label for="message" class="form-label">Your Message</label>
-            <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell me about your project or vision..." required></textarea>
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name="message" class="form-control form-textarea" rows="5" placeholder="Write your message here..." required></textarea>
           </div>
 
           <button type="submit" class="btn-submit">Send Message ✈️</button>
@@ -388,34 +256,14 @@
     </div>
   </section>
 
-  <!-- Ultra-Clean Footer -->
+  <!-- Slim Dark Footer -->
   <footer class="footer">
     <div class="footer-container">
-      <div class="footer-left">
-        <div class="brand-logo">
-          <span class="logo-accent">MK</span> <span class="logo-text">Designs</span>
-        </div>
-        <p class="footer-copy">Muskan Kumari Graphic &amp; Web Designer Portfolio Website 2026. All Rights Reserved.</p>
-      </div>
-
-      <div class="footer-right">
-        <!-- Behance Blue Badge -->
-        <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer" class="social-badge behance-badge" title="Behance Profile">
-          Bē
-        </a>
-        <!-- YouTube Red Badge -->
-        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-badge youtube-badge" title="YouTube Channel">
-          <i class="fa-brands fa-youtube"></i>
-        </a>
-        <!-- Instagram Magenta Badge -->
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-badge instagram-badge" title="Instagram Profile">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-      </div>
+      <p class="footer-text">Muskan Kumari Graphic &amp; Web Designer Portfolio Website 2026. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <!-- Script -->
+  <!-- Main JavaScript File -->
   <script src="script.js"></script>
 </body>
 </html>

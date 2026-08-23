@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muskan Kumari | Graphic &amp; Web Designer</title>
+  <title>Muskan Kumari — Graphic &amp; Web Designer Portfolio</title>
 
   <!-- Google Fonts: Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <!-- Stylesheet -->
@@ -18,206 +18,323 @@
 </head>
 <body>
 
-  <!-- Top Navigation Bar -->
+  <!-- Navigation Bar -->
   <header class="navbar">
     <div class="nav-container">
-      <a href="#" class="nav-brand">
-        <div class="logo-pill">
-          <span class="logo-m">M</span><span class="logo-k">K</span>
+      <!-- Circular Badge Brand Logo -->
+      <a href="#" class="brand-badge-link" aria-label="MK Designs Home">
+        <div class="brand-badge">
+          <span class="badge-m">M</span><span class="badge-k">K</span>
         </div>
       </a>
 
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
         <i class="fa-solid fa-bars"></i>
       </button>
 
-      <nav class="nav-links" id="nav-links">
-        <a href="#projects" class="nav-item">Projects</a>
-        <a href="#contact" class="nav-item">Contact</a>
-        <a href="#contact" class="nav-btn-magenta">Get In Touch</a>
+      <!-- Nav Menu -->
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-btn-contact">Get In Touch</a>
       </nav>
     </div>
   </header>
 
-  <!-- Awebco-Style Split Hero Section -->
-  <section class="hero-section">
-    <div class="hero-container">
-      
-      <!-- Left Column: Bold Copy & Bio -->
-      <div class="hero-left">
-        <span class="hero-capsule">CREATIVE VISION &amp; EXPERTISE</span>
-        <h1 class="hero-name"><span class="name-magenta">Muskan</span> <span class="name-white">Kumari</span></h1>
-        <p class="hero-subtitle">Graphic &amp; Web Designer</p>
-        <p class="hero-bio">
-          A passionate Graphic &amp; Web Designer. I work professionally as a Graphic Designer, Web Designer, AI Creator and Video Editor. I am skilled in Adobe Photoshop, Illustrator, InDesign, CorelDraw and Canva. I also build clean websites using HTML, CSS, JavaScript, WordPress and Google Sites. Additionally, I work as an AI Creator using Generative AI tools to generate AI visuals and AI animation videos. I also do video editing and motion graphics using Filmora, VN and InShot.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn-primary">Explore Projects →</a>
-          <a href="#contact" class="btn-secondary">Contact</a>
+  <!-- Hero Section (Exact 5884.jpg Layout Restoration) -->
+  <section class="hero-section" id="about">
+    <div class="hero-content">
+      <!-- Main Headline -->
+      <h1 class="hero-main-title">
+        <span class="title-white">CREATIVE VISION &amp;</span> <span class="title-magenta">EXPERTISE</span>
+      </h1>
+
+      <!-- Sub-headline -->
+      <p class="hero-subtitle">
+        <span class="highlight-magenta">Muskan</span> Kumari — Graphic &amp; Web Designer
+      </p>
+
+      <!-- Hero Bio Paragraph -->
+      <p class="hero-bio">
+        A passionate Graphic &amp; Web Designer. I work professionally as a Graphic Designer, Web Designer, AI Creator and Video Editor. I am skilled in Adobe Photoshop, Illustrator, InDesign, CorelDraw and Canva. I also build clean websites using HTML, CSS, JavaScript, WordPress and Google Sites. Additionally, I work as an AI Creator using Generative AI tools to generate AI visuals and AI animation videos. I also do video editing and motion graphics using Filmora, VN and InShot.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">Explore Projects 🚀</a>
+        <a href="#contact" class="btn-secondary">Contact Me</a>
+      </div>
+
+      <!-- 3D Floating Sparkle Card -->
+      <div class="floating-sparkle-card">
+        <div class="sparkle-art">
+          <svg class="sparkle-svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+          </svg>
+        </div>
+        <div class="sparkle-circle">
+          <span class="card-m">M</span><span class="card-k">K</span>
+        </div>
+        <div class="sparkle-badges">
+          <span class="micro-badge"><i class="fa-solid fa-cube"></i> Interactive 3D</span>
+          <span class="micro-badge"><i class="fa-solid fa-bolt"></i> High Performance</span>
         </div>
       </div>
 
-      <!-- Right Column: Floating 3D MK Monogram Card -->
-      <div class="hero-right">
-        <div class="glass-card-wrapper">
-          <div class="glow-orb"></div>
-          <div class="glass-card">
-            <div class="card-inner">
-              <div class="monogram-ring">
-                <span class="ring-m">M</span><span class="ring-k">K</span>
-              </div>
-              <div class="card-meta">
-                <span class="status-pill"><i class="fa-solid fa-circle-dot"></i> Available for Hire</span>
-              </div>
-            </div>
+      <!-- 4 Hero Bottom Quick Service Badges -->
+      <div class="hero-service-badges">
+        <span class="quick-pill"><i class="fa-solid fa-palette"></i> Graphic Design</span>
+        <span class="quick-pill"><i class="fa-solid fa-code"></i> Web Design</span>
+        <span class="quick-pill"><i class="fa-solid fa-brain"></i> AI Visuals</span>
+        <span class="quick-pill"><i class="fa-solid fa-video"></i> AI Animation Videos</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Services Section (6 Restored Interactive Cards) -->
+  <section class="section services-section" id="services">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-dark">OUR</span> <span class="title-magenta">SERVICES</span>
+      </h2>
+      <div class="title-bar"></div>
+
+      <div class="services-grid-2col">
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div class="service-media-wrap">
+            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80" alt="Graphic Designing" class="service-media" />
+          </div>
+          <div class="service-info">
+            <h3 class="service-card-title"><i class="fa-solid fa-pen-nib"></i> Graphic Designing</h3>
+            <p class="service-card-text">High-impact brand collateral, vector illustrations, logo identity, and promotional marketing graphics.</p>
           </div>
         </div>
-      </div>
 
-    </div>
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div class="service-media-wrap">
+            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="Web &amp; UI Designing" class="service-media" />
+          </div>
+          <div class="service-info">
+            <h3 class="service-card-title"><i class="fa-solid fa-desktop"></i> Web &amp; UI Designing</h3>
+            <p class="service-card-text">Clean, responsive web interfaces, modern layouts, user experience, and interactive digital systems.</p>
+          </div>
+        </div>
 
-    <!-- 4 Hanging Service Badges -->
-    <div class="hero-badges-wrapper">
-      <div class="hanging-badges">
-        <span class="service-pill"><i class="fa-solid fa-palette"></i> Graphic Design</span>
-        <span class="service-pill"><i class="fa-solid fa-code"></i> Web Design</span>
-        <span class="service-pill"><i class="fa-solid fa-brain"></i> AI Visuals</span>
-        <span class="service-pill"><i class="fa-solid fa-clapperboard"></i> AI Animation Videos</span>
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div class="service-media-wrap">
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Video Editing" class="service-media" />
+          </div>
+          <div class="service-info">
+            <h3 class="service-card-title"><i class="fa-solid fa-film"></i> Video Editing</h3>
+            <p class="service-card-text">Dynamic timing, audio synchronization, lower thirds, color correction, and smooth video cuts.</p>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card">
+          <div class="service-media-wrap">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="AI Visuals" class="service-media" />
+          </div>
+          <div class="service-info">
+            <h3 class="service-card-title"><i class="fa-solid fa-microchip"></i> AI Visuals</h3>
+            <p class="service-card-text">Generative digital artwork, 3D AI visual concepts, surreal imagery, and high-fidelity prompt engineering.</p>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card">
+          <div class="service-media-wrap">
+            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="AI Animation Videos" class="service-media" />
+          </div>
+          <div class="service-info">
+            <h3 class="service-card-title"><i class="fa-solid fa-clapperboard"></i> AI Animation Videos</h3>
+            <p class="service-card-text">Transforming static artwork into liquid 3D motion, cinematic visual storytelling, and futuristic motion reels.</p>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card">
+          <div class="service-media-wrap">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Motion Graphics" class="service-media" />
+          </div>
+          <div class="service-info">
+            <h3 class="service-card-title"><i class="fa-solid fa-cubes"></i> Motion Graphics</h3>
+            <p class="service-card-text">Engaging kinetic typography, logo reveals, visual transitions, and promotional motion sequences.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- My Projects Section (Direct Behance 2-Column Grid) -->
-  <section class="projects-section" id="projects">
-    <div class="section-container">
-      <div class="text-center">
-        <h2 class="section-title"><span class="title-dark">MY</span> <span class="title-magenta">PROJECTS</span></h2>
-        <div class="title-bar"></div>
+  <!-- My Projects Section (Behance 2-Column 4:3 Grid) -->
+  <section class="section projects-section" id="projects">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-dark">MY</span> <span class="title-magenta">PROJECTS</span>
+      </h2>
+      <div class="title-bar"></div>
+
+      <!-- 4 Filter Tabs -->
+      <div class="project-tabs">
+        <button class="tab-btn active" data-target="graphic-design">Graphic Design</button>
+        <button class="tab-btn" data-target="web-design">Web Design</button>
+        <button class="tab-btn" data-target="ai-visuals">AI Visuals</button>
+        <button class="tab-btn" data-target="ai-videos">AI Animation Videos</button>
       </div>
 
-      <!-- Edge-to-Edge Behance Dark Filter Tabs -->
-      <div class="tabs-wrapper">
-        <div class="tabs-scroller">
-          <button class="filter-tab active" data-target="tab-graphic">Graphic Design</button>
-          <button class="filter-tab" data-target="tab-web">Web Design</button>
-          <button class="filter-tab" data-target="tab-visuals">AI Visuals</button>
-          <button class="filter-tab" data-target="tab-videos">AI Animation Videos</button>
-        </div>
-      </div>
-
-      <!-- Tab Pane 1: Graphic Design (15 Direct 4:3 Behance Slots) -->
-      <div class="tab-pane active" id="tab-graphic">
+      <!-- Tab Content: Graphic Design (15 Slots Edge-to-Edge) -->
+      <div class="tab-pane active" id="graphic-design">
         <div class="behance-grid">
-          <div class="behance-card"><img src="g1.jpg" alt="Graphic Design 1" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="g2.jpg" alt="Graphic Design 2" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="g3.jpg" alt="Graphic Design 3" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="g4.jpg" alt="Graphic Design 4" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="g5.jpg" alt="Graphic Design 5" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="g6.jpg" alt="Graphic Design 6" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="g7.jpg" alt="Graphic Design 7" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="g8.jpg" alt="Graphic Design 8" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="g9.jpg" alt="Graphic Design 9" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="g10.jpg" alt="Graphic Design 10" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="g11.jpg" alt="Graphic Design 11" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="g12.jpg" alt="Graphic Design 12" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="g13.jpg" alt="Graphic Design 13" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="g14.jpg" alt="Graphic Design 14" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="g15.jpg" alt="Graphic Design 15" class="behance-img" loading="lazy" /></div>
+          <!-- Active Slot 1 -->
+          <div class="behance-card">
+            <img src="g1.jpg" alt="Graphic Design Project 01" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1000&q=80'" />
+          </div>
+          <!-- Active Slot 2 -->
+          <div class="behance-card">
+            <img src="g2.jpg" alt="Graphic Design Project 02" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1572044162444-ad60f128bdea?auto=format&fit=crop&w=1000&q=80'" />
+          </div>
+          <!-- Slot 3 -->
+          <div class="behance-card">
+            <img src="g3.jpg" alt="Graphic Design Project 03" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=1000&q=80'" />
+          </div>
+          <!-- Slot 4 -->
+          <div class="behance-card">
+            <img src="g4.jpg" alt="Graphic Design Project 04" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1581291518655-9523c932edcf?auto=format&fit=crop&w=1000&q=80'" />
+          </div>
+          <!-- Slot 5 -->
+          <div class="behance-card">
+            <img src="g5.jpg" alt="Graphic Design Project 05" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1000&q=80'" />
+          </div>
+          <!-- Slot 6 -->
+          <div class="behance-card">
+            <img src="g6.jpg" alt="Graphic Design Project 06" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1000&q=80'" />
+          </div>
+          <!-- Slot 7 -->
+          <div class="behance-card">
+            <img src="g7.jpg" alt="Graphic Design Project 07" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=1000&q=80'" />
+          </div>
+          <!-- Slot 8 -->
+          <div class="behance-card">
+            <img src="g8.jpg" alt="Graphic Design Project 08" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80'" />
+          </div>
+          <!-- Slot 9 -->
+          <div class="behance-card">
+            <img src="g9.jpg" alt="Graphic Design Project 09" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?auto=format&fit=crop&w=1000&q=80'" />
+          </div>
+          <!-- Slot 10 -->
+          <div class="behance-card">
+            <img src="g10.jpg" alt="Graphic Design Project 10" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1000&q=80'" />
+          </div>
+          <!-- Slot 11 -->
+          <div class="behance-card">
+            <img src="g11.jpg" alt="Graphic Design Project 11" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1534972195531-a756b1140f6c?auto=format&fit=crop&w=1000&q=80'" />
+          </div>
+          <!-- Slot 12 -->
+          <div class="behance-card">
+            <img src="g12.jpg" alt="Graphic Design Project 12" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=1000&q=80'" />
+          </div>
+          <!-- Slot 13 -->
+          <div class="behance-card">
+            <img src="g13.jpg" alt="Graphic Design Project 13" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=80'" />
+          </div>
+          <!-- Slot 14 -->
+          <div class="behance-card">
+            <img src="g14.jpg" alt="Graphic Design Project 14" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1000&q=80'" />
+          </div>
+          <!-- Slot 15 -->
+          <div class="behance-card">
+            <img src="g15.jpg" alt="Graphic Design Project 15" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1000&q=80'" />
+          </div>
         </div>
       </div>
 
-      <!-- Tab Pane 2: Web Design (15 Direct 4:3 Behance Slots) -->
-      <div class="tab-pane" id="tab-web">
+      <!-- Tab Content: Web Design (w1.jpg to w10.jpg) -->
+      <div class="tab-pane" id="web-design">
         <div class="behance-grid">
-          <div class="behance-card"><img src="w1.jpg" alt="Web Design 1" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="w2.jpg" alt="Web Design 2" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="w3.jpg" alt="Web Design 3" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="w4.jpg" alt="Web Design 4" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="w5.jpg" alt="Web Design 5" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="w6.jpg" alt="Web Design 6" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="w7.jpg" alt="Web Design 7" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="w8.jpg" alt="Web Design 8" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="w9.jpg" alt="Web Design 9" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="w10.jpg" alt="Web Design 10" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="w11.jpg" alt="Web Design 11" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="w12.jpg" alt="Web Design 12" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="w13.jpg" alt="Web Design 13" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="w14.jpg" alt="Web Design 14" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="w15.jpg" alt="Web Design 15" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="w1.jpg" alt="Web Project 1" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1000&q=80'" /></div>
+          <div class="behance-card"><img src="w2.jpg" alt="Web Project 2" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80'" /></div>
+          <div class="behance-card"><img src="w3.jpg" alt="Web Project 3" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80'" /></div>
+          <div class="behance-card"><img src="w4.jpg" alt="Web Project 4" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1000&q=80'" /></div>
+          <div class="behance-card"><img src="w5.jpg" alt="Web Project 5" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1481487196290-c152efe083f5?auto=format&fit=crop&w=1000&q=80'" /></div>
+          <div class="behance-card"><img src="w6.jpg" alt="Web Project 6" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1000&q=80'" /></div>
+          <div class="behance-card"><img src="w7.jpg" alt="Web Project 7" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=80'" /></div>
+          <div class="behance-card"><img src="w8.jpg" alt="Web Project 8" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1000&q=80'" /></div>
+          <div class="behance-card"><img src="w9.jpg" alt="Web Project 9" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80'" /></div>
+          <div class="behance-card"><img src="w10.jpg" alt="Web Project 10" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80'" /></div>
         </div>
       </div>
 
-      <!-- Tab Pane 3: AI Visuals (15 Direct 4:3 Behance Slots) -->
-      <div class="tab-pane" id="tab-visuals">
+      <!-- Tab Content: AI Visuals (b1.png to b10.png) -->
+      <div class="tab-pane" id="ai-visuals">
         <div class="behance-grid">
-          <div class="behance-card"><img src="b1.png" alt="AI Visual 1" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="b2.png" alt="AI Visual 2" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="b3.png" alt="AI Visual 3" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="b4.png" alt="AI Visual 4" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="b5.png" alt="AI Visual 5" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="b6.png" alt="AI Visual 6" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="b7.png" alt="AI Visual 7" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="b8.png" alt="AI Visual 8" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="b9.png" alt="AI Visual 9" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="b10.png" alt="AI Visual 10" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="b11.png" alt="AI Visual 11" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="b12.png" alt="AI Visual 12" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="b13.png" alt="AI Visual 13" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="b14.png" alt="AI Visual 14" class="behance-img" loading="lazy" /></div>
-          <div class="behance-card"><img src="b15.png" alt="AI Visual 15" class="behance-img" loading="lazy" /></div>
+          <div class="behance-card"><img src="b1.png" alt="AI Visual 01" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80'" /></div>
+          <div class="behance-card"><img src="b2.png" alt="AI Visual 02" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1000&q=80'" /></div>
+          <div class="behance-card"><img src="b3.png" alt="AI Visual 03" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80'" /></div>
+          <div class="behance-card"><img src="b4.png" alt="AI Visual 04" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1000&q=80'" /></div>
+          <div class="behance-card"><img src="b5.png" alt="AI Visual 05" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=1000&q=80'" /></div>
+          <div class="behance-card"><img src="b6.png" alt="AI Visual 06" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?auto=format&fit=crop&w=1000&q=80'" /></div>
+          <div class="behance-card"><img src="b7.png" alt="AI Visual 07" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1633167606207-d840b5070fc2?auto=format&fit=crop&w=1000&q=80'" /></div>
+          <div class="behance-card"><img src="b8.png" alt="AI Visual 08" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80'" /></div>
+          <div class="behance-card"><img src="b9.png" alt="AI Visual 09" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80'" /></div>
+          <div class="behance-card"><img src="b10.png" alt="AI Visual 10" class="behance-img" onerror="this.src='https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=1000&q=80'" /></div>
         </div>
       </div>
 
-      <!-- Tab Pane 4: AI Animation Videos (Exact 9:16 Vertical Reel Grid) -->
-      <div class="tab-pane" id="tab-videos">
-        <div class="video-grid">
-          <div class="video-card">
-            <video class="reel-video" src="r1.mp4" controls preload="metadata"></video>
-            <div class="video-label">AI Motion Reel 01</div>
+      <!-- Tab Content: AI Animation Videos (9:16 Smartphone Reel Player Grid) -->
+      <div class="tab-pane" id="ai-videos">
+        <div class="video-grid-3col">
+          <div class="reel-card">
+            <video class="reel-player" src="r1.mp4" controls preload="metadata"></video>
+            <div class="reel-tag">AI Reel 01</div>
           </div>
-          <div class="video-card">
-            <video class="reel-video" src="r2.mp4" controls preload="metadata"></video>
-            <div class="video-label">AI Motion Reel 02</div>
+          <div class="reel-card">
+            <video class="reel-player" src="r2.mp4" controls preload="metadata"></video>
+            <div class="reel-tag">AI Reel 02</div>
           </div>
-          <div class="video-card">
-            <video class="reel-video" src="r3.mp4" controls preload="metadata"></video>
-            <div class="video-label">AI Motion Reel 03</div>
+          <div class="reel-card">
+            <video class="reel-player" src="r3.mp4" controls preload="metadata"></video>
+            <div class="reel-tag">AI Reel 03</div>
           </div>
-          <div class="video-card">
-            <video class="reel-video" src="r4.mp4" controls preload="metadata"></video>
-            <div class="video-label">AI Motion Reel 04</div>
+          <div class="reel-card">
+            <video class="reel-player" src="r4.mp4" controls preload="metadata"></video>
+            <div class="reel-tag">AI Reel 04</div>
           </div>
-          <div class="video-card">
-            <video class="reel-video" src="r5.mp4" controls preload="metadata"></video>
-            <div class="video-label">AI Motion Reel 05</div>
+          <div class="reel-card">
+            <video class="reel-player" src="r5.mp4" controls preload="metadata"></video>
+            <div class="reel-tag">AI Reel 05</div>
           </div>
-          <div class="video-card">
-            <video class="reel-video" src="r6.mp4" controls preload="metadata"></video>
-            <div class="video-label">AI Motion Reel 06</div>
+          <div class="reel-card">
+            <video class="reel-player" src="r6.mp4" controls preload="metadata"></video>
+            <div class="reel-tag">AI Reel 06</div>
           </div>
-          <div class="video-card">
-            <video class="reel-video" src="r7.mp4" controls preload="metadata"></video>
-            <div class="video-label">AI Motion Reel 07</div>
+          <div class="reel-card">
+            <video class="reel-player" src="r7.mp4" controls preload="metadata"></video>
+            <div class="reel-tag">AI Reel 07</div>
           </div>
-          <div class="video-card">
-            <video class="reel-video" src="r8.mp4" controls preload="metadata"></video>
-            <div class="video-label">AI Motion Reel 08</div>
+          <div class="reel-card">
+            <video class="reel-player" src="r8.mp4" controls preload="metadata"></video>
+            <div class="reel-tag">AI Reel 08</div>
           </div>
-          <div class="video-card">
-            <video class="reel-video" src="r9.mp4" controls preload="metadata"></video>
-            <div class="video-label">AI Motion Reel 09</div>
+          <div class="reel-card">
+            <video class="reel-player" src="r9.mp4" controls preload="metadata"></video>
+            <div class="reel-tag">AI Reel 09</div>
           </div>
-          <div class="video-card">
-            <video class="reel-video" src="r10.mp4" controls preload="metadata"></video>
-            <div class="video-label">AI Motion Reel 10</div>
+          <div class="reel-card">
+            <video class="reel-player" src="r10.mp4" controls preload="metadata"></video>
+            <div class="reel-tag">AI Reel 10</div>
           </div>
-          <div class="video-card">
-            <video class="reel-video" src="r11.mp4" controls preload="metadata"></video>
-            <div class="video-label">AI Motion Reel 11</div>
+          <div class="reel-card">
+            <video class="reel-player" src="r11.mp4" controls preload="metadata"></video>
+            <div class="reel-tag">AI Reel 11</div>
           </div>
-          <div class="video-card">
-            <video class="reel-video" src="r12.mp4" controls preload="metadata"></video>
-            <div class="video-label">AI Motion Reel 12</div>
+          <div class="reel-card">
+            <video class="reel-player" src="r12.mp4" controls preload="metadata"></video>
+            <div class="reel-tag">AI Reel 12</div>
           </div>
         </div>
       </div>
@@ -225,29 +342,29 @@
     </div>
   </section>
 
-  <!-- Get In Touch Contact Section -->
-  <section class="contact-section" id="contact">
-    <div class="section-container">
-      <div class="text-center">
-        <h2 class="section-title"><span class="title-dark">GET IN</span> <span class="title-magenta">TOUCH</span></h2>
-        <div class="title-bar"></div>
-      </div>
+  <!-- Get In Touch Section (Clean White Form) -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-dark">GET IN</span> <span class="title-magenta">TOUCH</span>
+      </h2>
+      <div class="title-bar"></div>
 
       <div class="contact-card">
         <form id="contact-form" class="contact-form">
-          <div class="form-group">
-            <label for="name" class="form-label">Full Name</label>
-            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required />
+          <div class="form-field">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Enter your full name" required />
           </div>
 
-          <div class="form-group">
-            <label for="email" class="form-label">Email Address</label>
-            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address" required />
+          <div class="form-field">
+            <label for="emailAddr" class="form-label">Email Address</label>
+            <input type="email" id="emailAddr" name="emailAddr" class="form-input" placeholder="Enter your email address" required />
           </div>
 
-          <div class="form-group">
-            <label for="message" class="form-label">Message</label>
-            <textarea id="message" name="message" class="form-control form-textarea" rows="5" placeholder="Write your message here..." required></textarea>
+          <div class="form-field">
+            <label for="msgText" class="form-label">Message</label>
+            <textarea id="msgText" name="msgText" class="form-textarea" rows="5" placeholder="Write your message here..." required></textarea>
           </div>
 
           <button type="submit" class="btn-submit">Send Message ✈️</button>
@@ -256,14 +373,12 @@
     </div>
   </section>
 
-  <!-- Slim Dark Footer -->
+  <!-- Slim Matching Dark Footer -->
   <footer class="footer">
-    <div class="footer-container">
-      <p class="footer-text">Muskan Kumari Graphic &amp; Web Designer Portfolio Website 2026. All Rights Reserved.</p>
-    </div>
+    <p class="footer-text">Muskan Kumari Graphic &amp; Web Designer Portfolio Website 2026. All Rights Reserved.</p>
   </footer>
 
-  <!-- Main JavaScript File -->
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>

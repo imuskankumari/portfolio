@@ -1,44 +1,50 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Tab Switching Logic for "MY PROJECTS"
-  const tabButtons = document.querySelectorAll('.tab-btn');
-  const tabPanes = document.querySelectorAll('.tab-pane');
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. BEHANCE PORTFOLIO TAB SWITCHER
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  const tabContents = document.querySelectorAll(".tab-content");
 
-  tabButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const targetId = button.getAttribute('data-tab');
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Remove active class from all buttons
+      tabButtons.forEach((b) => b.classList.remove("active"));
+      // Add active class to clicked button
+      btn.classList.add("active");
 
-      // Remove active class from all buttons and panes
-      tabButtons.forEach((btn) => btn.classList.remove('active'));
-      tabPanes.forEach((pane) => pane.classList.remove('active'));
+      // Hide all tab grids
+      tabContents.forEach((content) => content.classList.remove("active"));
 
-      // Activate selected button and pane
-      button.classList.add('active');
-      const targetPane = document.getElementById(targetId);
-      if (targetPane) {
-        targetPane.classList.add('active');
+      // Target active grid
+      const category = btn.getAttribute("data-category");
+      const targetGrid = document.getElementById(`tab-${category}`);
+      if (targetGrid) {
+        targetGrid.classList.add("active");
       }
     });
   });
 
-  // Contact Form Submission Handler
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      const submitBtn = contactForm.querySelector('.btn-submit');
-      const originalText = submitBtn.innerHTML;
+  // 2. SMOOTH SCROLL OFFSET FOR FIXED HEADER
+  const header = document.querySelector(".top-header");
+  const navLinks = document.querySelectorAll('a[href^="#"]');
 
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin"></i>';
+  navLinks.forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href");
+      if (targetId === "#") return;
 
-      // Simulation of submission
-      setTimeout(() => {
-        alert('Thank you! Your message has been sent to Muskan Kumari.');
-        contactForm.reset();
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
-      }, 1000);
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        const headerHeight = header.offsetHeight || 70;
+        const targetPosition =
+          targetElement.getBoundingClientRect().top +
+          window.pageYOffset -
+          headerHeight;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        });
+      }
     });
-  }
+  });
 });

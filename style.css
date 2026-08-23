@@ -73,32 +73,35 @@ img, video {
 }
 
 /* ==========================================================================
-   BRAND LOGO
+   BRAND LOGO (EXACT CIRCLE BADGE)
    ========================================================================== */
 .brand-logo {
   display: inline-flex;
   align-items: center;
 }
 
-.logo-badge {
+.logo-circle {
+  width: 44px;
+  height: 44px;
   background: #0B0F19;
-  padding: 6px 18px;
-  border-radius: 50px;
-  display: inline-flex;
+  border: 2px solid #E91E63;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .logo-m {
   font-weight: 800;
   color: #E91E63;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 }
 
 .logo-k {
   font-weight: 800;
   color: #FFFFFF;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 }
 
 /* ==========================================================================
@@ -162,45 +165,46 @@ img, video {
 }
 
 /* ==========================================================================
-   AWEBCO-STYLE SPLIT HERO SECTION
+   CENTERED HERO SECTION (EXACT RESTORATION OF 5884.JPG PROPORTIONS)
    ========================================================================== */
 .hero-section {
   background: linear-gradient(135deg, #0B0F19 0%, #171E31 100%);
   color: #ffffff;
-  padding: 100px 24px 80px;
+  padding: 80px 24px 60px;
   overflow: hidden;
   position: relative;
+  text-align: center;
 }
 
 .hero-container {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 48px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .hero-badge {
   background: rgba(233, 30, 99, 0.15);
   color: #ff4081;
-  padding: 6px 14px;
+  padding: 6px 16px;
   border-radius: 50px;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   display: inline-block;
   margin-bottom: 18px;
   border: 1px solid rgba(233, 30, 99, 0.3);
 }
 
 .hero-heading {
-  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  font-size: clamp(2.4rem, 6vw, 4rem);
   font-weight: 800;
   line-height: 1.15;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   letter-spacing: -0.5px;
+  text-transform: uppercase;
 }
 
 .highlight-magenta {
@@ -208,19 +212,26 @@ img, video {
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: clamp(1.15rem, 3vw, 1.45rem);
+  font-weight: 700;
   color: #FFFFFF;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
   letter-spacing: 0.5px;
+}
+
+.sub-magenta {
+  color: #E91E63;
+}
+
+.hero-bio-wrap {
+  max-width: 760px;
+  margin: 0 auto 28px;
 }
 
 .hero-subtext {
   font-size: 1.05rem;
-  line-height: 1.7;
+  line-height: 1.75;
   color: #CBD5E1;
-  max-width: 620px;
-  margin-bottom: 28px;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -228,14 +239,16 @@ img, video {
 .hero-buttons {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 14px;
+  margin-bottom: 40px;
 }
 
 .btn-primary {
   background: #e91e63;
   color: #ffffff;
-  padding: 14px 32px;
+  padding: 14px 34px;
   border-radius: 8px;
   font-weight: 700;
   text-decoration: none;
@@ -255,7 +268,7 @@ img, video {
   background: transparent;
   color: #ffffff;
   border: 2px solid rgba(255, 255, 255, 0.4);
-  padding: 12px 28px;
+  padding: 12px 30px;
   border-radius: 8px;
   font-weight: 700;
   text-decoration: none;
@@ -269,18 +282,13 @@ img, video {
   border-color: #ffffff;
 }
 
-/* Floating 3D Artwork Column */
-.hero-right {
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-
+/* Centered Floating 3D Sparkle Card */
 .floating-art-wrapper {
   position: relative;
   width: 100%;
-  max-width: 380px;
+  max-width: 320px;
   aspect-ratio: 1;
+  margin: 0 auto 40px;
 }
 
 .glow-orb {
@@ -288,8 +296,8 @@ img, video {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 280px;
-  height: 280px;
+  width: 240px;
+  height: 240px;
   background: radial-gradient(circle, rgba(233, 30, 99, 0.45) 0%, rgba(233, 30, 99, 0) 70%);
   filter: blur(40px);
   z-index: 1;
@@ -304,7 +312,7 @@ img, video {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px);
-  padding: 24px;
+  padding: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
   animation: floatSlow 4s ease-in-out infinite;
 }
@@ -314,7 +322,7 @@ img, video {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-16px) rotate(1.5deg);
+    transform: translateY(-14px) rotate(1deg);
   }
 }
 
@@ -322,26 +330,26 @@ img, video {
   width: 100%;
   height: 100%;
   border-radius: 16px;
-  background: linear-gradient(135deg, rgba(233, 30, 99, 0.3) 0%, rgba(11, 15, 25, 0.8) 100%);
+  background: linear-gradient(135deg, rgba(233, 30, 99, 0.3) 0%, rgba(11, 15, 25, 0.85) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 20px;
+  padding: 24px 16px;
   position: relative;
   overflow: hidden;
 }
 
 .floating-icon {
-  font-size: 3rem;
+  font-size: 2.8rem;
   color: #ff4081;
   text-shadow: 0 0 20px rgba(255, 64, 129, 0.8);
 }
 
 .cyber-circle-wrapper {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -365,7 +373,7 @@ img, video {
   z-index: 2;
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 2.2rem;
   letter-spacing: -1px;
 }
 
@@ -380,7 +388,7 @@ img, video {
 
 .floating-meta {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   width: 100%;
   justify-content: center;
 }
@@ -388,14 +396,14 @@ img, video {
 .meta-tag {
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 6px 12px;
+  padding: 5px 10px;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
   color: #ffffff;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 
 .meta-tag i {
@@ -404,7 +412,7 @@ img, video {
 
 /* Quick Service Badges */
 .hero-badges-wrapper {
-  margin-top: 60px;
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -413,17 +421,17 @@ img, video {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 14px;
-  max-width: 1000px;
+  gap: 12px;
+  max-width: 900px;
 }
 
 .quick-badge {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #FFFFFF;
-  padding: 10px 20px;
+  padding: 8px 18px;
   border-radius: 50px;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -598,8 +606,7 @@ img, video {
 .behance-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  background-color: #FFFFFF;
+  object-fit: cover;
 }
 
 .behance-strip {
@@ -732,6 +739,10 @@ img, video {
   font-family: 'Montserrat', sans-serif;
   box-shadow: 0 4px 15px rgba(233, 30, 99, 0.35);
   transition: opacity 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .btn-submit:hover {
@@ -765,21 +776,6 @@ img, video {
    RESPONSIVE DESIGN BREAKPOINTS
    ========================================================================== */
 @media (max-width: 992px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 40px;
-  }
-
-  .hero-subtext {
-    margin: 0 auto 28px auto;
-    text-align: center;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }

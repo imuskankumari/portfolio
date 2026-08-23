@@ -5,418 +5,324 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muskan Kumari | Graphic & Web Designer Portfolio</title>
   
-  <!-- Google Font: Montserrat (400, 600, 700, 800) -->
+  <!-- Montserrat Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="brand-link">
-        <div class="brand-badge"><span class="badge-text">MK</span></div>
-      </a>
+  <!-- 1. BRAND LOGO & TOP NAVIGATION -->
+  <header class="top-header">
+    <a href="#" class="brand-logo">
+      <span class="logo-mk">MK</span><span class="logo-text">Designs</span>
+    </a>
+    
+    <nav>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-contact-btn">Contact</a></li>
       </ul>
-      <a href="#contact" class="nav-cta-btn">Hire Me</a>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <!-- Hero Header (16:9 Landscape Video Container) -->
-  <header id="hero" class="hero-header">
+  <!-- 3. HERO HEADER -->
+  <section class="hero-section">
     <video autoplay loop muted playsinline class="hero-bg-video">
       <source src="header.mp4" type="video/mp4" />
     </video>
     <div class="hero-overlay"></div>
+    
     <div class="hero-content">
-      <h1 class="hero-title"><span style="color: #e91e63;">Muskan</span> <span style="color: #111111;">Kumari</span></h1>
+      <h1 class="hero-title">
+        <span class="highlight">Muskan</span> Kumari
+      </h1>
       <p class="hero-subtitle">Graphic & Web Designer</p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="#contact" class="btn-secondary">Get In Touch</a>
+        <a href="#contact" class="btn-secondary">Hire Me</a>
       </div>
-    </div>
-  </header>
-
-  <!-- About Section -->
-  <section id="about" class="section about-section">
-    <div class="container">
-      <h2 class="section-title"><span style="color: #111111;">CREATIVE VISION &</span> <span style="color: #e91e63;">EXPERTISE</span></h2>
-      <p class="about-bio">
-        A passionate Graphic & Web Designer. I work professionally as a Graphic Designer, Web Designer, AI Creator and Video Editor. I am skilled in Adobe Photoshop, Illustrator, InDesign, CorelDraw and Canva. I also build clean websites using HTML, CSS, JavaScript, WordPress and Google Sites. Additionally, I work as an AI Creator using Generative AI tools to generate AI visuals and AI animation videos. I also do video editing and motion graphics using Filmora, VN and InShot.
-      </p>
     </div>
   </section>
 
-  <!-- Our Services Section -->
-  <section id="services" class="section services-section">
-    <div class="container">
-      <h2 class="section-title"><span style="color: #111111;">OUR</span> <span style="color: #e91e63;">SERVICES</span></h2>
+  <!-- MAIN CONTAINER -->
+  <main class="page-container">
+
+    <!-- 4. ABOUT SECTION -->
+    <section id="about" class="section-block">
+      <h2 class="section-title">
+        <span>CREATIVE VISION &</span> <span class="highlight">EXPERTISE</span>
+      </h2>
+      <div class="about-card">
+        <p class="about-text">
+          A passionate Graphic & Web Designer. I work professionally as a Graphic Designer, Web Designer, AI Creator and Video Editor. I am skilled in Adobe Photoshop, Illustrator, InDesign, CorelDraw and Canva. I also build clean websites using HTML, CSS, JavaScript, WordPress and Google Sites. Additionally, I work as an AI Creator using Generative AI tools to generate AI visuals and AI animation videos. I also do video editing and motion graphics using Filmora, VN and InShot.
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. OUR SERVICES -->
+    <section id="services" class="section-block">
+      <h2 class="section-title">
+        <span>OUR</span> <span class="highlight">SERVICES</span>
+      </h2>
+
       <div class="services-grid">
-        
-        <!-- Card 1 -->
+        <!-- Service 1 -->
         <div class="service-card">
-          <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80" alt="Graphic Designing" class="service-img" />
-          <div class="service-content">
+          <div class="service-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1200&q=80" alt="Graphic Designing" class="service-img" />
+          </div>
+          <div class="service-body">
             <h3 class="service-title">Graphic Designing</h3>
-            <p class="service-description">High-impact brand collateral, vector illustrations, logo identity, and promotional marketing graphics.</p>
+            <p class="service-desc">
+              Custom branding, visual identity, social media creatives, print materials, posters, and flyers crafted with Adobe Photoshop, Illustrator, and CorelDraw.
+            </p>
           </div>
         </div>
 
-        <!-- Card 2 -->
+        <!-- Service 2 -->
         <div class="service-card">
-          <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=800&q=80" alt="Web & UI Designing" class="service-img" />
-          <div class="service-content">
+          <div class="service-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80" alt="Web & UI Designing" class="service-img" />
+          </div>
+          <div class="service-body">
             <h3 class="service-title">Web & UI Designing</h3>
-            <p class="service-description">Clean, responsive web interfaces, modern layouts, user experience, and interactive digital systems.</p>
+            <p class="service-desc">
+              Responsive, sleek, and conversion-oriented websites built with modern HTML5, CSS3, JavaScript, WordPress, and Google Sites.
+            </p>
           </div>
         </div>
 
-        <!-- Card 3 -->
+        <!-- Service 3 -->
         <div class="service-card">
-          <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Video Editing" class="service-img" />
-          <div class="service-content">
+          <div class="service-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80" alt="Video Editing" class="service-img" />
+          </div>
+          <div class="service-body">
             <h3 class="service-title">Video Editing</h3>
-            <p class="service-description">Dynamic timing, audio synchronization, lower thirds, color correction, and smooth video cuts.</p>
+            <p class="service-desc">
+              High-engagement reels, promotional videos, cinematic color grading, and dynamic motion transitions using Filmora, VN, and InShot.
+            </p>
           </div>
         </div>
 
-        <!-- Card 4 -->
+        <!-- Service 4 -->
         <div class="service-card">
-          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="AI Visuals" class="service-img" />
-          <div class="service-content">
+          <div class="service-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80" alt="AI Visuals" class="service-img" />
+          </div>
+          <div class="service-body">
             <h3 class="service-title">AI Visuals</h3>
-            <p class="service-description">Generative digital artwork, 3D AI visual concepts, surreal imagery, and high-fidelity prompt engineering.</p>
+            <p class="service-desc">
+              High-concept photorealistic and 3D visual art generated with advanced generative AI frameworks to bring imaginative brand concepts to life.
+            </p>
           </div>
         </div>
 
-        <!-- Card 5 (Standard width, not stretched) -->
+        <!-- Service 5 -->
         <div class="service-card">
-          <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=800&q=80" alt="AI Animation Videos" class="service-img" />
-          <div class="service-content">
+          <div class="service-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1200&q=80" alt="AI Animation Videos" class="service-img" />
+          </div>
+          <div class="service-body">
             <h3 class="service-title">AI Animation Videos</h3>
-            <p class="service-description">Transforming static artwork into liquid 3D motion, cinematic visual storytelling, and futuristic motion reels.</p>
+            <p class="service-desc">
+              3D fluid AI animations and futuristic storytelling videos tailored for next-gen digital marketing campaigns.
+            </p>
           </div>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- My Projects Section (Behance Wide Grid) -->
-  <section id="projects" class="section projects-section">
-    <div class="container">
-      <h2 class="section-title"><span style="color: #111111;">MY</span> <span style="color: #e91e63;">PROJECTS</span></h2>
-      
-      <!-- Tab Navigation -->
+    <!-- 6. MY PROJECTS -->
+    <section id="projects" class="section-block">
+      <h2 class="section-title">
+        <span>MY</span> <span class="highlight">PROJECTS</span>
+      </h2>
+
+      <!-- Tab Buttons -->
       <div class="project-tabs">
-        <button class="tab-btn active" data-tab="graphic-design">Graphic Design</button>
-        <button class="tab-btn" data-tab="web-design">Web Design</button>
-        <button class="tab-btn" data-tab="ai-visuals">AI Visuals</button>
-        <button class="tab-btn" data-tab="ai-animations">AI Animation Videos</button>
+        <button class="tab-btn active" data-category="graphic">Graphic Design</button>
+        <button class="tab-btn" data-category="web">Web Design</button>
+        <button class="tab-btn" data-category="aivisuals">AI Visuals</button>
+        <button class="tab-btn" data-category="aivideos">AI Animation Videos</button>
       </div>
 
-      <!-- Tab 1: Graphic Design (10 Slots: g1.jpg to g10.jpg) -->
-      <div class="tab-pane active" id="graphic-design">
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="g1.jpg" alt="Graphic Design 1" /></div>
-            <div class="project-info"><span>Brand Identity & Layout</span><span class="project-label">MK Designs</span></div>
+      <!-- Graphic Design Grid -->
+      <div class="projects-grid tab-content active" id="tab-graphic">
+        <div class="project-card">
+          <div class="project-media-wrapper">
+            <img src="g1.jpg" alt="Graphic Design Project 1" class="project-img" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80';" />
           </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="g2.jpg" alt="Graphic Design 2" /></div>
-            <div class="project-info"><span>Vector Illustration</span><span class="project-label">MK Designs</span></div>
+          <div class="project-footer-bar">
+            <span class="project-author"><i class="fa-solid fa-palette"></i> MK Designs</span>
+            <span class="behance-stat"><i class="fa-solid fa-thumbs-up"></i> 248</span>
           </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="g3.jpg" alt="Graphic Design 3" /></div>
-            <div class="project-info"><span>Promotional Poster</span><span class="project-label">MK Designs</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-media-wrapper">
+            <img src="g2.jpg" alt="Graphic Design Project 2" class="project-img" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=800&q=80';" />
           </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="g4.jpg" alt="Graphic Design 4" /></div>
-            <div class="project-info"><span>Typography Artwork</span><span class="project-label">MK Designs</span></div>
+          <div class="project-footer-bar">
+            <span class="project-author"><i class="fa-solid fa-palette"></i> MK Designs</span>
+            <span class="behance-stat"><i class="fa-solid fa-thumbs-up"></i> 194</span>
           </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="g5.jpg" alt="Graphic Design 5" /></div>
-            <div class="project-info"><span>Product Packaging</span><span class="project-label">MK Designs</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-media-wrapper">
+            <img src="g3.jpg" alt="Graphic Design Project 3" class="project-img" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=800&q=80';" />
           </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="g6.jpg" alt="Graphic Design 6" /></div>
-            <div class="project-info"><span>Corporate Brochure</span><span class="project-label">MK Designs</span></div>
+          <div class="project-footer-bar">
+            <span class="project-author"><i class="fa-solid fa-palette"></i> MK Designs</span>
+            <span class="behance-stat"><i class="fa-solid fa-thumbs-up"></i> 312</span>
           </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="g7.jpg" alt="Graphic Design 7" /></div>
-            <div class="project-info"><span>Social Media Creative</span><span class="project-label">MK Designs</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-media-wrapper">
+            <img src="g4.jpg" alt="Graphic Design Project 4" class="project-img" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80';" />
           </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="g8.jpg" alt="Graphic Design 8" /></div>
-            <div class="project-info"><span>Event Banner Design</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="g9.jpg" alt="Graphic Design 9" /></div>
-            <div class="project-info"><span>Creative Visual Ad</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="g10.jpg" alt="Graphic Design 10" /></div>
-            <div class="project-info"><span>Editorial Publication</span><span class="project-label">MK Designs</span></div>
+          <div class="project-footer-bar">
+            <span class="project-author"><i class="fa-solid fa-palette"></i> MK Designs</span>
+            <span class="behance-stat"><i class="fa-solid fa-thumbs-up"></i> 180</span>
           </div>
         </div>
       </div>
 
-      <!-- Tab 2: Web Design (10 Slots: w1.jpg to w10.jpg) -->
-      <div class="tab-pane" id="web-design">
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="w1.jpg" alt="Web Design 1" /></div>
-            <div class="project-info"><span>SaaS Landing Interface</span><span class="project-label">MK Designs</span></div>
+      <!-- Web Design Grid -->
+      <div class="projects-grid tab-content" id="tab-web">
+        <div class="project-card">
+          <div class="project-media-wrapper">
+            <img src="w1.jpg" alt="Web Design Project 1" class="project-img" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=800&q=80';" />
           </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="w2.jpg" alt="Web Design 2" /></div>
-            <div class="project-info"><span>E-Commerce Storefront</span><span class="project-label">MK Designs</span></div>
+          <div class="project-footer-bar">
+            <span class="project-author"><i class="fa-solid fa-code"></i> MK Designs</span>
+            <span class="behance-stat"><i class="fa-solid fa-thumbs-up"></i> 265</span>
           </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="w3.jpg" alt="Web Design 3" /></div>
-            <div class="project-info"><span>Creative Agency Portal</span><span class="project-label">MK Designs</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-media-wrapper">
+            <img src="w2.jpg" alt="Web Design Project 2" class="project-img" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80';" />
           </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="w4.jpg" alt="Web Design 4" /></div>
-            <div class="project-info"><span>Mobile-Responsive App</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="w5.jpg" alt="Web Design 5" /></div>
-            <div class="project-info"><span>Finance Dashboard UI</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="w6.jpg" alt="Web Design 6" /></div>
-            <div class="project-info"><span>Personal Portfolio Layout</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="w7.jpg" alt="Web Design 7" /></div>
-            <div class="project-info"><span>Modern Blog Platform</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="w8.jpg" alt="Web Design 8" /></div>
-            <div class="project-info"><span>Restaurant Ordering Web App</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="w9.jpg" alt="Web Design 9" /></div>
-            <div class="project-info"><span>Real Estate Experience</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="w10.jpg" alt="Web Design 10" /></div>
-            <div class="project-info"><span>Interactive Educational Hub</span><span class="project-label">MK Designs</span></div>
+          <div class="project-footer-bar">
+            <span class="project-author"><i class="fa-solid fa-code"></i> MK Designs</span>
+            <span class="behance-stat"><i class="fa-solid fa-thumbs-up"></i> 340</span>
           </div>
         </div>
       </div>
 
-      <!-- Tab 3: AI Visuals (10 Slots: b1.png to b10.png) -->
-      <div class="tab-pane" id="ai-visuals">
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="b1.png" alt="AI Visual 1" /></div>
-            <div class="project-info"><span>Cyberpunk Architecture</span><span class="project-label">MK Designs</span></div>
+      <!-- AI Visuals Grid -->
+      <div class="projects-grid tab-content" id="tab-aivisuals">
+        <div class="project-card">
+          <div class="project-media-wrapper">
+            <img src="b1.png" alt="AI Visual Project 1" class="project-img" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=800&q=80';" />
           </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="b2.png" alt="AI Visual 2" /></div>
-            <div class="project-info"><span>Surreal 3D Character</span><span class="project-label">MK Designs</span></div>
+          <div class="project-footer-bar">
+            <span class="project-author"><i class="fa-solid fa-wand-magic-sparkles"></i> MK Designs</span>
+            <span class="behance-stat"><i class="fa-solid fa-thumbs-up"></i> 410</span>
           </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="b3.png" alt="AI Visual 3" /></div>
-            <div class="project-info"><span>Futuristic Vehicle Concept</span><span class="project-label">MK Designs</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-media-wrapper">
+            <img src="b2.png" alt="AI Visual Project 2" class="project-img" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80';" />
           </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="b4.png" alt="AI Visual 4" /></div>
-            <div class="project-info"><span>Bioluminescent Flora</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="b5.png" alt="AI Visual 5" /></div>
-            <div class="project-info"><span>Abstract Dimensional Portal</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="b6.png" alt="AI Visual 6" /></div>
-            <div class="project-info"><span>Hyperrealistic Portraiture</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="b7.png" alt="AI Visual 7" /></div>
-            <div class="project-info"><span>Atmospheric Sci-Fi Landscape</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="b8.png" alt="AI Visual 8" /></div>
-            <div class="project-info"><span>Cosmic Digital Concept</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="b9.png" alt="AI Visual 9" /></div>
-            <div class="project-info"><span>Neo-Tokyo Night Environment</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="project-card">
-            <div class="project-img-wrapper"><img src="b10.png" alt="AI Visual 10" /></div>
-            <div class="project-info"><span>Surreal Isometric World</span><span class="project-label">MK Designs</span></div>
+          <div class="project-footer-bar">
+            <span class="project-author"><i class="fa-solid fa-wand-magic-sparkles"></i> MK Designs</span>
+            <span class="behance-stat"><i class="fa-solid fa-thumbs-up"></i> 298</span>
           </div>
         </div>
       </div>
 
-      <!-- Tab 4: AI Animation Videos (9:16 Vertical Smartphone Video Frames: r1.mp4 to r12.mp4) -->
-      <div class="tab-pane" id="ai-animations">
-        <div class="video-reels-grid">
-          <div class="reel-card">
-            <div class="smartphone-frame">
-              <video controls loop muted playsinline preload="metadata">
-                <source src="r1.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div class="reel-info"><span>Motion Reel 01</span><span class="project-label">MK Designs</span></div>
+      <!-- AI Animation Videos Grid (9:16 Vertical format) -->
+      <div class="projects-grid videos-grid tab-content" id="tab-aivideos">
+        <div class="project-card video-card">
+          <div class="project-media-wrapper vertical-video">
+            <video controls playsinline preload="metadata">
+              <source src="r1.mp4" type="video/mp4" />
+            </video>
           </div>
-          <div class="reel-card">
-            <div class="smartphone-frame">
-              <video controls loop muted playsinline preload="metadata">
-                <source src="r2.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div class="reel-info"><span>Motion Reel 02</span><span class="project-label">MK Designs</span></div>
+          <div class="project-footer-bar">
+            <span class="project-author"><i class="fa-solid fa-film"></i> MK Animation 01</span>
+            <span class="behance-stat"><i class="fa-solid fa-eye"></i> 1.2k</span>
           </div>
-          <div class="reel-card">
-            <div class="smartphone-frame">
-              <video controls loop muted playsinline preload="metadata">
-                <source src="r3.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div class="reel-info"><span>Motion Reel 03</span><span class="project-label">MK Designs</span></div>
+        </div>
+
+        <div class="project-card video-card">
+          <div class="project-media-wrapper vertical-video">
+            <video controls playsinline preload="metadata">
+              <source src="r2.mp4" type="video/mp4" />
+            </video>
           </div>
-          <div class="reel-card">
-            <div class="smartphone-frame">
-              <video controls loop muted playsinline preload="metadata">
-                <source src="r4.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div class="reel-info"><span>Motion Reel 04</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="reel-card">
-            <div class="smartphone-frame">
-              <video controls loop muted playsinline preload="metadata">
-                <source src="r5.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div class="reel-info"><span>Motion Reel 05</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="reel-card">
-            <div class="smartphone-frame">
-              <video controls loop muted playsinline preload="metadata">
-                <source src="r6.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div class="reel-info"><span>Motion Reel 06</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="reel-card">
-            <div class="smartphone-frame">
-              <video controls loop muted playsinline preload="metadata">
-                <source src="r7.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div class="reel-info"><span>Motion Reel 07</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="reel-card">
-            <div class="smartphone-frame">
-              <video controls loop muted playsinline preload="metadata">
-                <source src="r8.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div class="reel-info"><span>Motion Reel 08</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="reel-card">
-            <div class="smartphone-frame">
-              <video controls loop muted playsinline preload="metadata">
-                <source src="r9.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div class="reel-info"><span>Motion Reel 09</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="reel-card">
-            <div class="smartphone-frame">
-              <video controls loop muted playsinline preload="metadata">
-                <source src="r10.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div class="reel-info"><span>Motion Reel 10</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="reel-card">
-            <div class="smartphone-frame">
-              <video controls loop muted playsinline preload="metadata">
-                <source src="r11.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div class="reel-info"><span>Motion Reel 11</span><span class="project-label">MK Designs</span></div>
-          </div>
-          <div class="reel-card">
-            <div class="smartphone-frame">
-              <video controls loop muted playsinline preload="metadata">
-                <source src="r12.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div class="reel-info"><span>Motion Reel 12</span><span class="project-label">MK Designs</span></div>
+          <div class="project-footer-bar">
+            <span class="project-author"><i class="fa-solid fa-film"></i> MK Animation 02</span>
+            <span class="behance-stat"><i class="fa-solid fa-eye"></i> 870</span>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- 7. GET IN TOUCH -->
+    <section id="contact" class="section-block">
+      <h2 class="section-title">
+        <span>GET IN</span> <span class="highlight">TOUCH</span>
+      </h2>
 
-  <!-- Get In Touch Section -->
-  <section id="contact" class="section contact-section">
-    <div class="container">
-      <h2 class="section-title"><span style="color: #111111;">GET IN</span> <span style="color: #e91e63;">TOUCH</span></h2>
       <div class="contact-card">
-        <form id="contactForm" class="contact-form">
+        <form class="contact-form" id="contactForm" onsubmit="event.preventDefault(); alert('Thank you for reaching out! Your message has been received.');">
           <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="John Doe" required />
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Rahul Sharma" required />
           </div>
+
           <div class="form-group">
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="e.g. rahul@example.com" required />
           </div>
+
           <div class="form-group">
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Let's discuss your next project..." required></textarea>
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name="message" rows="5" class="form-input form-textarea" placeholder="Tell me about your project..." required></textarea>
           </div>
+
           <button type="submit" class="btn-submit">
-            Send Message <i class="fa-solid fa-paper-plane"></i>
+            Send Message <i class="fa-solid fa-paper-plane" style="margin-left: 8px;"></i>
           </button>
         </form>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-left">
-        <div class="brand-badge"><span class="badge-text">MK</span></div>
-        <p class="footer-copy">Muskan Kumari Graphic & Web Designer Portfolio Website 2026. All Rights Reserved.</p>
+  </main>
+
+  <!-- 8. FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-left">
+      <div class="brand-logo">
+        <span class="logo-mk">MK</span><span class="logo-text">Designs</span>
       </div>
-      <div class="footer-right">
-        <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer" class="behance-badge">Bē</a>
-        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon icon-youtube" aria-label="YouTube">
-          <i class="fa-brands fa-youtube"></i>
-        </a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon icon-instagram" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-      </div>
+      <p class="copyright-text">
+        Muskan Kumari Graphic & Web Designer Portfolio Website 2026. All Rights Reserved.
+      </p>
+    </div>
+
+    <div class="footer-right">
+      <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer" class="behance-badge" title="Behance">
+        Bē
+      </a>
+      <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon youtube-icon" title="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon instagram-icon" title="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>

@@ -90,6 +90,11 @@ img, video {
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.logo-circle:hover {
+  transform: scale(1.05);
 }
 
 .logo-m {
@@ -165,12 +170,12 @@ img, video {
 }
 
 /* ==========================================================================
-   HERO SECTION (EXACT PYRAMID PROPORTIONS FROM 5884_3.JPG)
+   HERO SECTION (EXACT PYRAMID PROPORTIONS FROM 5884_5.JPG)
    ========================================================================== */
 .hero-section {
   background: linear-gradient(135deg, #0B0F19 0%, #171E31 100%);
   color: #ffffff;
-  padding: 85px 24px 60px;
+  padding: 85px 24px 70px;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -184,8 +189,27 @@ img, video {
   align-items: center;
 }
 
+.hero-badge {
+  background: rgba(233, 30, 99, 0.15);
+  color: #ff4081;
+  padding: 7px 20px;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin-bottom: 22px;
+  border: 1px solid rgba(233, 30, 99, 0.35);
+  box-shadow: 0 2px 12px rgba(233, 30, 99, 0.2);
+}
+
+.badge-en {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+}
+
 .hero-heading-white {
-  font-size: clamp(2.2rem, 5.8vw, 3.8rem);
+  font-size: clamp(2.3rem, 5.8vw, 3.8rem);
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: 8px;
@@ -196,10 +220,10 @@ img, video {
 }
 
 .hero-heading-magenta {
-  font-size: clamp(1.4rem, 4vw, 2.6rem);
+  font-size: clamp(2.3rem, 5.8vw, 3.8rem);
   font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 24px;
+  line-height: 1.15;
+  margin-bottom: 22px;
   letter-spacing: -0.5px;
   text-transform: uppercase;
   color: #E91E63;
@@ -207,12 +231,12 @@ img, video {
 }
 
 .hero-bio-wrap {
-  max-width: 760px;
+  max-width: 660px;
   margin: 0 auto 28px;
 }
 
 .hero-subtext {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   line-height: 1.75;
   color: #CBD5E1;
   text-align: justify;
@@ -271,7 +295,7 @@ img, video {
   width: 100%;
   max-width: 320px;
   aspect-ratio: 1;
-  margin: 0 auto 40px;
+  margin: 0 auto;
 }
 
 .glow-orb {
@@ -297,7 +321,7 @@ img, video {
   backdrop-filter: blur(12px);
   padding: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  animation: floatSlow 4s ease-in-out infinite;
+  animation: floatSlow 4.5s ease-in-out infinite;
 }
 
 @keyframes floatSlow {
@@ -305,7 +329,7 @@ img, video {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-14px) rotate(1deg);
+    transform: translateY(-14px) rotate(1.2deg);
   }
 }
 
@@ -393,119 +417,97 @@ img, video {
   color: #ff4081;
 }
 
-/* Quick Service Badges */
-.hero-badges-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.badges-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  max-width: 900px;
-}
-
-.quick-badge {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #FFFFFF;
-  padding: 8px 18px;
-  border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  backdrop-filter: blur(6px);
-  transition: background 0.3s ease, border-color 0.3s ease;
-}
-
-.quick-badge:hover {
-  background: rgba(233, 30, 99, 0.2);
-  border-color: #E91E63;
-}
-
-.quick-badge i {
-  color: #E91E63;
-}
-
 /* ==========================================================================
-   OUR SERVICES SECTION (3-COLUMN INTERACTIVE CARDS)
+   HANGING 3D FLOATING SERVICE CARDS (MATCHING HERO THEME)
    ========================================================================== */
-.services-section {
-  background-color: #F8F9FD;
+.services-hanging-section {
+  background-color: #0B0F19;
+  padding: 0 24px 70px;
+  margin-top: -20px;
+  position: relative;
+  z-index: 10;
 }
 
-.services-grid {
+.services-3d-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.service-card {
-  background: #ffffff;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid #EEF2F6;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.service-3d-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 24px 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+.card-float-1 { animation: floatSubtle 4.5s ease-in-out infinite 0s; }
+.card-float-2 { animation: floatSubtle 4.5s ease-in-out infinite 0.8s; }
+.card-float-3 { animation: floatSubtle 4.5s ease-in-out infinite 1.6s; }
+.card-float-4 { animation: floatSubtle 4.5s ease-in-out infinite 2.4s; }
+
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
-.service-img-wrap {
-  height: 190px;
-  width: 100%;
-  overflow: hidden;
+.service-3d-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  border-color: #E91E63;
+  box-shadow: 0 15px 35px rgba(233, 30, 99, 0.25);
 }
 
-.service-img {
-  width: 100%;
+.service-3d-inner {
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
 }
 
-.service-card:hover .service-img {
-  transform: scale(1.05);
-}
-
-.service-content {
-  padding: 24px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.service-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #0B0F19;
-  margin-bottom: 10px;
+.service-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(233, 30, 99, 0.18);
+  border: 1px solid rgba(233, 30, 99, 0.35);
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #FF4081;
+  margin-bottom: 16px;
 }
 
-.service-title i {
-  color: #E91E63;
-  font-size: 1rem;
+.service-3d-title {
+  color: #FFFFFF;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-.service-desc {
-  font-size: 0.92rem;
-  color: #64748B;
+.service-3d-desc {
+  color: #94A3B8;
+  font-size: 0.88rem;
   line-height: 1.6;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+.service-badge-tag {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #FF4081;
+  background: rgba(233, 30, 99, 0.1);
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(233, 30, 99, 0.2);
 }
 
 /* ==========================================================================
@@ -513,6 +515,7 @@ img, video {
    ========================================================================== */
 .projects-section {
   background-color: #FFFFFF;
+  padding-top: 80px;
 }
 
 .project-tabs {
@@ -572,6 +575,8 @@ img, video {
   background: #0B0F19;
   border: 1px solid #EEF2F6;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  position: relative;
+  cursor: pointer;
 }
 
 .behance-img {
@@ -579,6 +584,32 @@ img, video {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.35s ease;
+}
+
+.behance-card:hover .behance-img {
+  transform: scale(1.04);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 15, 25, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.card-overlay i {
+  color: #FFFFFF;
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
+}
+
+.behance-card:hover .card-overlay {
+  opacity: 1;
 }
 
 /* 9:16 Vertical Video Grid */
@@ -619,6 +650,64 @@ img, video {
   align-items: center;
   justify-content: center;
   border-top: 1px solid #EEF2F6;
+}
+
+/* ==========================================================================
+   LIGHTBOX MODAL FOR IMAGES
+   ========================================================================== */
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(11, 15, 25, 0.92);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.lightbox-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  font-size: 2.8rem;
+  font-weight: 300;
+  cursor: pointer;
+  z-index: 2010;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+  color: #E91E63;
+  transform: scale(1.1);
 }
 
 /* ==========================================================================
@@ -723,7 +812,7 @@ img, video {
    RESPONSIVE DESIGN BREAKPOINTS
    ========================================================================== */
 @media (max-width: 992px) {
-  .services-grid {
+  .services-3d-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -756,7 +845,7 @@ img, video {
     display: flex;
   }
 
-  .services-grid {
+  .services-3d-grid {
     grid-template-columns: 1fr;
   }
 
@@ -764,3 +853,4 @@ img, video {
     grid-template-columns: 1fr;
   }
 }
+

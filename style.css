@@ -165,62 +165,45 @@ img, video {
 }
 
 /* ==========================================================================
-   CENTERED HERO SECTION (EXACT RESTORATION OF 5884.JPG PROPORTIONS)
+   HERO SECTION (EXACT PYRAMID PROPORTIONS FROM 5884_3.JPG)
    ========================================================================== */
 .hero-section {
   background: linear-gradient(135deg, #0B0F19 0%, #171E31 100%);
   color: #ffffff;
-  padding: 80px 24px 60px;
+  padding: 85px 24px 60px;
   overflow: hidden;
   position: relative;
   text-align: center;
 }
 
 .hero-container {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.hero-badge {
-  background: rgba(233, 30, 99, 0.15);
-  color: #ff4081;
-  padding: 6px 16px;
-  border-radius: 50px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  display: inline-block;
-  margin-bottom: 18px;
-  border: 1px solid rgba(233, 30, 99, 0.3);
-}
-
-.hero-heading {
-  font-size: clamp(2.4rem, 6vw, 4rem);
+.hero-heading-white {
+  font-size: clamp(2.2rem, 5.8vw, 3.8rem);
   font-weight: 800;
   line-height: 1.15;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   letter-spacing: -0.5px;
   text-transform: uppercase;
-}
-
-.highlight-magenta {
-  color: #e91e63;
-}
-
-.hero-subtitle {
-  font-size: clamp(1.15rem, 3vw, 1.45rem);
-  font-weight: 700;
   color: #FFFFFF;
-  margin-bottom: 22px;
-  letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
-.sub-magenta {
+.hero-heading-magenta {
+  font-size: clamp(1.4rem, 4vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
   color: #E91E63;
+  white-space: nowrap;
 }
 
 .hero-bio-wrap {
@@ -572,7 +555,7 @@ img, video {
   display: block;
 }
 
-/* Behance 2-Column Grid */
+/* Pure Behance 2-Column Grid (Zero Extra Text) */
 .behance-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -586,52 +569,16 @@ img, video {
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
-  background: #ffffff;
+  background: #0B0F19;
   border: 1px solid #EEF2F6;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-  display: flex;
-  flex-direction: column;
-}
-
-.behance-img-wrap {
-  width: 100%;
-  height: 86%;
-  background-color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
 }
 
 .behance-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.behance-strip {
-  height: 14%;
-  padding: 0 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: #0b0f19;
-  border-top: 1px solid #f1f5f9;
-  background-color: #FFFFFF;
-}
-
-.project-name {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 70%;
-}
-
-.project-author {
-  color: #E91E63;
-  font-size: 0.82rem;
+  display: block;
 }
 
 /* 9:16 Vertical Video Grid */
@@ -782,6 +729,11 @@ img, video {
 }
 
 @media (max-width: 768px) {
+  .hero-heading-white,
+  .hero-heading-magenta {
+    white-space: normal;
+  }
+
   .mobile-toggle {
     display: block;
   }
@@ -812,4 +764,3 @@ img, video {
     grid-template-columns: 1fr;
   }
 }
-

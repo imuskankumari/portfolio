@@ -1,50 +1,62 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // 1. BEHANCE PORTFOLIO TAB SWITCHER
-  const tabButtons = document.querySelectorAll(".tab-btn");
-  const tabContents = document.querySelectorAll(".tab-content");
+document.addEventListener('DOMContentLoaded', () => {
+  // Mobile Navigation Toggle
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navMenu = document.getElementById('nav-menu');
 
-  tabButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      // Remove active class from all buttons
-      tabButtons.forEach((b) => b.classList.remove("active"));
-      // Add active class to clicked button
-      btn.classList.add("active");
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      const icon = mobileToggle.querySelector('i');
+      if (icon) {
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-xmark');
+      }
+    });
 
-      // Hide all tab grids
-      tabContents.forEach((content) => content.classList.remove("active"));
+    // Close menu when clicking navigation links
+    const navLinks = navMenu.querySelectorAll('.nav-link');
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        const icon = mobileToggle.querySelector('i');
+        if (icon) {
+          icon.classList.add('fa-bars');
+          icon.classList.remove('fa-xmark');
+        }
+      });
+    });
+  }
 
-      // Target active grid
-      const category = btn.getAttribute("data-category");
-      const targetGrid = document.getElementById(`tab-${category}`);
-      if (targetGrid) {
-        targetGrid.classList.add("active");
+  // Portfolio Tab Switching
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      // Deactivate active states
+      tabButtons.forEach((btn) => btn.classList.remove('active'));
+      tabContents.forEach((content) => content.classList.remove('active'));
+
+      // Activate clicked tab and corresponding target content
+      button.classList.add('active');
+      const targetId = button.getAttribute('data-target');
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) {
+        targetContent.classList.add('active');
       }
     });
   });
 
-  // 2. SMOOTH SCROLL OFFSET FOR FIXED HEADER
-  const header = document.querySelector(".top-header");
-  const navLinks = document.querySelectorAll('a[href^="#"]');
-
-  navLinks.forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      const targetId = this.getAttribute("href");
-      if (targetId === "#") return;
-
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        e.preventDefault();
-        const headerHeight = header.offsetHeight || 70;
-        const targetPosition =
-          targetElement.getBoundingClientRect().top +
-          window.pageYOffset -
-          headerHeight;
-
-        window.scrollTo({
-          top: targetPosition,
-          behavior: "smooth",
-        });
-      }
+  // Contact Form Submission
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nameInput = document.getElementById('name');
+      const senderName = nameInput ? nameInput.value.trim() : 'there';
+      
+      alert(`Thank you, ${senderName}! Your message has been received. Muskan will get back to you soon.`);
+      contactForm.reset();
     });
-  });
+  }
 });

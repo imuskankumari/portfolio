@@ -47,6 +47,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Lightbox Modal for Project Images
+  const lightboxModal = document.getElementById('lightbox-modal');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const projectItems = document.querySelectorAll('.project-item');
+
+  projectItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      const img = item.querySelector('.behance-img');
+      if (img && lightboxModal && lightboxImg) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || 'Project Preview';
+        lightboxModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  const closeLightbox = () => {
+    if (lightboxModal) {
+      lightboxModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  };
+
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+  }
+
+  if (lightboxModal) {
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) {
+        closeLightbox();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightboxModal && lightboxModal.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+
   // Contact Form Submission
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {

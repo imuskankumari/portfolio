@@ -1,59 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Instant Tab Switching
+  // Tab Switching Logic for "MY PROJECTS"
   const tabButtons = document.querySelectorAll('.tab-btn');
   const tabPanes = document.querySelectorAll('.tab-pane');
 
-  tabButtons.forEach(button => {
+  tabButtons.forEach((button) => {
     button.addEventListener('click', () => {
-      const targetTabId = button.getAttribute('data-tab');
+      const targetId = button.getAttribute('data-tab');
 
-      // Update button active state
-      tabButtons.forEach(btn => btn.classList.remove('active'));
+      // Remove active class from all buttons and panes
+      tabButtons.forEach((btn) => btn.classList.remove('active'));
+      tabPanes.forEach((pane) => pane.classList.remove('active'));
+
+      // Activate selected button and pane
       button.classList.add('active');
-
-      // Update pane active state
-      tabPanes.forEach(pane => {
-        if (pane.id === targetTabId) {
-          pane.classList.add('active');
-        } else {
-          pane.classList.remove('active');
-        }
-      });
+      const targetPane = document.getElementById(targetId);
+      if (targetPane) {
+        targetPane.classList.add('active');
+      }
     });
   });
 
-  // 2. Mobile Hamburger Menu Toggle
-  const navToggle = document.getElementById('navToggle');
-  const mainNav = document.getElementById('mainNav');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  if (navToggle && mainNav) {
-    navToggle.addEventListener('click', () => {
-      mainNav.classList.toggle('open');
-    });
-
-    // Close mobile menu on clicking any navigation anchor
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if (mainNav.classList.contains('open')) {
-          mainNav.classList.remove('open');
-        }
-      });
-    });
-  }
-
-  // 3. Contact Form Submission Handling
+  // Contact Form Submission Handler
   const contactForm = document.getElementById('contactForm');
-
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      
+      const submitBtn = contactForm.querySelector('.btn-submit');
+      const originalText = submitBtn.innerHTML;
 
-      const nameInput = document.getElementById('userName');
-      const senderName = nameInput ? nameInput.value.trim() : 'there';
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin"></i>';
 
-      alert(`Thank you, ${senderName}! Your message has been sent successfully.`);
-      contactForm.reset();
+      // Simulation of submission
+      setTimeout(() => {
+        alert('Thank you! Your message has been sent to Muskan Kumari.');
+        contactForm.reset();
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }, 1000);
     });
   }
 });

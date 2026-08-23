@@ -1,57 +1,59 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Mobile Menu Toggle
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
+  // 1. Instant Tab Switching
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabPanes = document.querySelectorAll('.tab-pane');
 
-  if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetTabId = button.getAttribute('data-tab');
+
+      // Update button active state
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      // Update pane active state
+      tabPanes.forEach(pane => {
+        if (pane.id === targetTabId) {
+          pane.classList.add('active');
+        } else {
+          pane.classList.remove('active');
+        }
+      });
+    });
+  });
+
+  // 2. Mobile Hamburger Menu Toggle
+  const navToggle = document.getElementById('navToggle');
+  const mainNav = document.getElementById('mainNav');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
     });
 
-    // Close menu when a link is clicked
-    document.querySelectorAll('.nav-link').forEach(link => {
+    // Close mobile menu on clicking any navigation anchor
+    navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
+        if (mainNav.classList.contains('open')) {
+          mainNav.classList.remove('open');
+        }
       });
     });
   }
 
-  // 2. Project Tabs Category Switcher
-  const tabButtons = document.querySelectorAll('.tab-btn');
-  const tabPanels = document.querySelectorAll('.tab-panel');
-
-  tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Remove active class from all buttons and panels
-      tabButtons.forEach(btn => btn.classList.remove('active'));
-      tabPanels.forEach(panel => panel.classList.remove('active'));
-
-      // Add active class to clicked button
-      button.classList.add('active');
-
-      // Show the selected target panel
-      const targetCategory = button.getAttribute('data-category');
-      const targetPanel = document.getElementById(targetCategory);
-      if (targetPanel) {
-        targetPanel.classList.add('active');
-      }
-    });
-  });
-
-  // 3. Contact Form Submission Handler
+  // 3. Contact Form Submission Handling
   const contactForm = document.getElementById('contactForm');
+
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      
-      const name = document.getElementById('name').value;
-      
-      // Clean confirmation
-      alert(`Thank you, ${name}! Your message has been sent successfully.`);
-      
-      // Reset form fields
+
+      const nameInput = document.getElementById('userName');
+      const senderName = nameInput ? nameInput.value.trim() : 'there';
+
+      alert(`Thank you, ${senderName}! Your message has been sent successfully.`);
       contactForm.reset();
     });
   }
 });
-
